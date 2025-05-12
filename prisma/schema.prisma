@@ -1,0 +1,187 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User{
+  id       Int      @id @default(autoincrement())
+  name     String
+  email    String   @unique
+  password String
+  admin   Boolean  @default(false)
+  canUpload Boolean @default(false)
+  canCreate Boolean @default(false)
+  canViewDeck Boolean @default(false)
+  canUploadDeck Boolean @default(false)
+  canAdd Boolean @default(false)
+  canRemove Boolean @default(false)
+  canEdit Boolean @default(false)
+  superAdmin Boolean @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Insurers{
+  id Int @id @default(autoincrement())
+  name String @unique
+
+  Clients Clients[]
+  Uploads Uploads[]
+}
+
+model Clients{
+  id Int @id @default(autoincrement()) 
+  client_name String
+  description String?
+  insurer_id Int?
+  insurer Insurers? @relation(fields: [insurer_id], references: [id])
+
+  Uploads Uploads[]
+  Decks Decks[]
+  IntellicareMasterlist IntellicareMasterlist[]
+  MaxicareMasterlist MaxicareMasterlist[]
+  Intellicare Intellicare[]
+  Maxicare Maxicare[]
+  CustomIllnesses CustomIllnesses[]
+}
+
+model Uploads{
+  id Int @id @default(autoincrement())
+  clientId Int
+  insurerId Int
+  year String
+  months String?
+  type String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  Clients Clients @relation(fields: [clientId], references: [id])
+  Insurers Insurers @relation(fields: [insurerId], references: [id])
+}
+
+model Decks {
+  id Int @id @default(autoincrement())
+  name String
+  description String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  clientId Int
+
+  Clients Clients @relation(fields: [clientId], references: [id])
+}
+
+model IntellicareMasterlist {
+  id Int @id @default(autoincrement())
+  clientId Int
+  PY String?
+  ACCOUNT_NO String?
+  STATUS String? @db.Char(1)
+  MEMBER_TYPE String? @db.Char(1)
+  RNB String?
+  PREEXIST Float?
+  LIMIT Float?
+  BIRTHDATE DateTime?
+  AGE Int?
+  RELATION String?
+  EE_ID String?
+  CARD_NO String?
+  COMPANY String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  Clients Clients @relation(fields: [clientId], references: [id])
+}
+
+model MaxicareMasterlist {
+  id Int @id @default(autoincrement())
+  clientId Int
+  PY String?
+  ACCOUNT_NO String? //POLICYNO
+  STATUS String? @db.Char(1) //STATUSDESC
+  MEMBER_TYPE String? @db.Char(1) //MEMBERTYPE
+  LIMIT Float? //MBL
+  RELATION String? //REALDESC
+  EE_ID String? //EMPNO
+  CARD_NO String? //CARDNO
+  COMPANY String? //COMPANY
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  Clients Clients @relation(fields: [clientId], references: [id])
+}
+
+model Intellicare {
+  id Int @id @default(autoincrement())
+  clientId Int
+  PY String
+  Company String?
+  Member_Account String?
+  Member_Type String?
+  ICD_10_Code String?
+  Diagnosis String?
+  Claim_Type String?
+  Admission_Date  DateTime?
+  Provider_Name String?
+  Provider_Type String?
+  Approved_Claim_Amount Float? @db.Double
+  Class_Plan_Level String?
+  Maximum_Benefit_Limit Float? @db.Double
+  Date_of_Birth DateTime?
+  Relationship String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  Clients Clients @relation(fields: [clientId], references: [id])
+}
+
+model Maxicare {
+  id Int @id @default(autoincrement())
+  clientId Int
+  PY String
+  Company String?
+  Member_Account String? //Member_ID
+  Member_Type String? //Plan
+  ICD_10_Code String? //ICD10_Code
+  Diagnosis String? //ICD10_Desc
+  Claim_Type String? //Claim_Type
+  Admission_Date  DateTime? //Admission_Date
+  Provider_Name String? //Provider_Name
+  Provider_Type String? //Provider_Type
+  Approved_Claim_Amount Float? @db.Double //Approved_Claim_Amount
+  Relationship String? //Relationship
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  Clients Clients @relation(fields: [clientId], references: [id])
+}
+
+
+model CustomIllnesses{
+  id Int @id @default(autoincrement())
+  clientId Int
+  py String?
+  member_type String?
+  icd_10_code String?
+  diagnosis String?
+  claim_amount Int?
+  percentage_to_total_amount Decimal? @db.Decimal(8,2)
+  claim_count Int?
+  percentage_to_total_count Decimal? @db.Decimal(8,2)
+  average_cost_per_claim Int?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  Clients Clients @relation(fields: [clientId], references: [id])
+}
+
+
