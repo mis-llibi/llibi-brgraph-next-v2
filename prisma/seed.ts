@@ -1,4 +1,4 @@
-import { PrismaClient, Prisma } from "@prisma/client";
+import { PrismaClient, Prisma } from "./generated/client";
 import { hashPassword } from "../src/lib/hash";
 
 const prisma = new PrismaClient();
@@ -9,7 +9,7 @@ async function main() {
   const adminEmail = "admin@example.com";
   const hashedPassword = await hashPassword("admin123");
 
-  const adminData: Prisma.UserCreateInput[] = [
+  const adminData: Prisma.userCreateInput[] = [
     {
       name: "Admin User",
       email: adminEmail,
@@ -26,7 +26,7 @@ async function main() {
     },
   ];
 
-  const insurersData: Prisma.InsurersCreateInput[] = [
+  const insurersData: Prisma.insurersCreateInput[] = [
     {
       name: "Intellicare",
     },

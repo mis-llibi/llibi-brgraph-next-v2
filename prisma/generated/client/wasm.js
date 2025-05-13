@@ -265,13 +265,13 @@ exports.Prisma.SortOrder = {
   desc: 'desc'
 };
 
-exports.Prisma.UserOrderByRelevanceFieldEnum = {
+exports.Prisma.userOrderByRelevanceFieldEnum = {
   name: 'name',
   email: 'email',
   password: 'password'
 };
 
-exports.Prisma.InsurersOrderByRelevanceFieldEnum = {
+exports.Prisma.insurersOrderByRelevanceFieldEnum = {
   name: 'name'
 };
 
@@ -280,23 +280,23 @@ exports.Prisma.NullsOrder = {
   last: 'last'
 };
 
-exports.Prisma.ClientsOrderByRelevanceFieldEnum = {
+exports.Prisma.clientsOrderByRelevanceFieldEnum = {
   client_name: 'client_name',
   description: 'description'
 };
 
-exports.Prisma.UploadsOrderByRelevanceFieldEnum = {
+exports.Prisma.uploadsOrderByRelevanceFieldEnum = {
   year: 'year',
   months: 'months',
   type: 'type'
 };
 
-exports.Prisma.DecksOrderByRelevanceFieldEnum = {
+exports.Prisma.decksOrderByRelevanceFieldEnum = {
   name: 'name',
   description: 'description'
 };
 
-exports.Prisma.IntellicareMasterlistOrderByRelevanceFieldEnum = {
+exports.Prisma.intellicareMasterlistOrderByRelevanceFieldEnum = {
   PY: 'PY',
   ACCOUNT_NO: 'ACCOUNT_NO',
   STATUS: 'STATUS',
@@ -308,7 +308,7 @@ exports.Prisma.IntellicareMasterlistOrderByRelevanceFieldEnum = {
   COMPANY: 'COMPANY'
 };
 
-exports.Prisma.MaxicareMasterlistOrderByRelevanceFieldEnum = {
+exports.Prisma.maxicareMasterlistOrderByRelevanceFieldEnum = {
   PY: 'PY',
   ACCOUNT_NO: 'ACCOUNT_NO',
   STATUS: 'STATUS',
@@ -319,7 +319,7 @@ exports.Prisma.MaxicareMasterlistOrderByRelevanceFieldEnum = {
   COMPANY: 'COMPANY'
 };
 
-exports.Prisma.IntellicareOrderByRelevanceFieldEnum = {
+exports.Prisma.intellicareOrderByRelevanceFieldEnum = {
   PY: 'PY',
   Company: 'Company',
   Member_Account: 'Member_Account',
@@ -333,7 +333,7 @@ exports.Prisma.IntellicareOrderByRelevanceFieldEnum = {
   Relationship: 'Relationship'
 };
 
-exports.Prisma.MaxicareOrderByRelevanceFieldEnum = {
+exports.Prisma.maxicareOrderByRelevanceFieldEnum = {
   PY: 'PY',
   Company: 'Company',
   Member_Account: 'Member_Account',
@@ -346,7 +346,7 @@ exports.Prisma.MaxicareOrderByRelevanceFieldEnum = {
   Relationship: 'Relationship'
 };
 
-exports.Prisma.CustomIllnessesOrderByRelevanceFieldEnum = {
+exports.Prisma.customIllnessesOrderByRelevanceFieldEnum = {
   py: 'py',
   member_type: 'member_type',
   icd_10_code: 'icd_10_code',
@@ -355,16 +355,16 @@ exports.Prisma.CustomIllnessesOrderByRelevanceFieldEnum = {
 
 
 exports.Prisma.ModelName = {
-  User: 'User',
-  Insurers: 'Insurers',
-  Clients: 'Clients',
-  Uploads: 'Uploads',
-  Decks: 'Decks',
-  IntellicareMasterlist: 'IntellicareMasterlist',
-  MaxicareMasterlist: 'MaxicareMasterlist',
-  Intellicare: 'Intellicare',
-  Maxicare: 'Maxicare',
-  CustomIllnesses: 'CustomIllnesses'
+  user: 'user',
+  insurers: 'insurers',
+  clients: 'clients',
+  uploads: 'uploads',
+  decks: 'decks',
+  intellicareMasterlist: 'intellicareMasterlist',
+  maxicareMasterlist: 'maxicareMasterlist',
+  intellicare: 'intellicare',
+  maxicare: 'maxicare',
+  customIllnesses: 'customIllnesses'
 };
 
 /**

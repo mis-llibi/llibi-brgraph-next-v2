@@ -1,6 +1,6 @@
 export const dynamic = "force-dynamic";
 import { prisma } from "@/lib/prisma";
-import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
+import { PrismaClientKnownRequestError } from "../../../../../../../prisma/generated/client/runtime/library";
 import { error } from "console";
 import { DateTime } from "luxon";
 

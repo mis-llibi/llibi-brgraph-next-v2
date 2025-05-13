@@ -14,55 +14,55 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
 
 
 /**
- * Model User
+ * Model user
  * 
  */
-export type User = $Result.DefaultSelection<Prisma.$UserPayload>
+export type user = $Result.DefaultSelection<Prisma.$userPayload>
 /**
- * Model Insurers
+ * Model insurers
  * 
  */
-export type Insurers = $Result.DefaultSelection<Prisma.$InsurersPayload>
+export type insurers = $Result.DefaultSelection<Prisma.$insurersPayload>
 /**
- * Model Clients
+ * Model clients
  * 
  */
-export type Clients = $Result.DefaultSelection<Prisma.$ClientsPayload>
+export type clients = $Result.DefaultSelection<Prisma.$clientsPayload>
 /**
- * Model Uploads
+ * Model uploads
  * 
  */
-export type Uploads = $Result.DefaultSelection<Prisma.$UploadsPayload>
+export type uploads = $Result.DefaultSelection<Prisma.$uploadsPayload>
 /**
- * Model Decks
+ * Model decks
  * 
  */
-export type Decks = $Result.DefaultSelection<Prisma.$DecksPayload>
+export type decks = $Result.DefaultSelection<Prisma.$decksPayload>
 /**
- * Model IntellicareMasterlist
+ * Model intellicareMasterlist
  * 
  */
-export type IntellicareMasterlist = $Result.DefaultSelection<Prisma.$IntellicareMasterlistPayload>
+export type intellicareMasterlist = $Result.DefaultSelection<Prisma.$intellicareMasterlistPayload>
 /**
- * Model MaxicareMasterlist
+ * Model maxicareMasterlist
  * 
  */
-export type MaxicareMasterlist = $Result.DefaultSelection<Prisma.$MaxicareMasterlistPayload>
+export type maxicareMasterlist = $Result.DefaultSelection<Prisma.$maxicareMasterlistPayload>
 /**
- * Model Intellicare
+ * Model intellicare
  * 
  */
-export type Intellicare = $Result.DefaultSelection<Prisma.$IntellicarePayload>
+export type intellicare = $Result.DefaultSelection<Prisma.$intellicarePayload>
 /**
- * Model Maxicare
+ * Model maxicare
  * 
  */
-export type Maxicare = $Result.DefaultSelection<Prisma.$MaxicarePayload>
+export type maxicare = $Result.DefaultSelection<Prisma.$maxicarePayload>
 /**
- * Model CustomIllnesses
+ * Model customIllnesses
  * 
  */
-export type CustomIllnesses = $Result.DefaultSelection<Prisma.$CustomIllnessesPayload>
+export type customIllnesses = $Result.DefaultSelection<Prisma.$customIllnessesPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -190,104 +190,104 @@ export class PrismaClient<
   }>, ClientOptions>
 
       /**
-   * `prisma.user`: Exposes CRUD operations for the **User** model.
+   * `prisma.user`: Exposes CRUD operations for the **user** model.
     * Example usage:
     * ```ts
     * // Fetch zero or more Users
     * const users = await prisma.user.findMany()
     * ```
     */
-  get user(): Prisma.UserDelegate<ExtArgs, ClientOptions>;
+  get user(): Prisma.userDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.insurers`: Exposes CRUD operations for the **Insurers** model.
+   * `prisma.insurers`: Exposes CRUD operations for the **insurers** model.
     * Example usage:
     * ```ts
     * // Fetch zero or more Insurers
     * const insurers = await prisma.insurers.findMany()
     * ```
     */
-  get insurers(): Prisma.InsurersDelegate<ExtArgs, ClientOptions>;
+  get insurers(): Prisma.insurersDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.clients`: Exposes CRUD operations for the **Clients** model.
+   * `prisma.clients`: Exposes CRUD operations for the **clients** model.
     * Example usage:
     * ```ts
     * // Fetch zero or more Clients
     * const clients = await prisma.clients.findMany()
     * ```
     */
-  get clients(): Prisma.ClientsDelegate<ExtArgs, ClientOptions>;
+  get clients(): Prisma.clientsDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.uploads`: Exposes CRUD operations for the **Uploads** model.
+   * `prisma.uploads`: Exposes CRUD operations for the **uploads** model.
     * Example usage:
     * ```ts
     * // Fetch zero or more Uploads
     * const uploads = await prisma.uploads.findMany()
     * ```
     */
-  get uploads(): Prisma.UploadsDelegate<ExtArgs, ClientOptions>;
+  get uploads(): Prisma.uploadsDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.decks`: Exposes CRUD operations for the **Decks** model.
+   * `prisma.decks`: Exposes CRUD operations for the **decks** model.
     * Example usage:
     * ```ts
     * // Fetch zero or more Decks
     * const decks = await prisma.decks.findMany()
     * ```
     */
-  get decks(): Prisma.DecksDelegate<ExtArgs, ClientOptions>;
+  get decks(): Prisma.decksDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.intellicareMasterlist`: Exposes CRUD operations for the **IntellicareMasterlist** model.
+   * `prisma.intellicareMasterlist`: Exposes CRUD operations for the **intellicareMasterlist** model.
     * Example usage:
     * ```ts
     * // Fetch zero or more IntellicareMasterlists
     * const intellicareMasterlists = await prisma.intellicareMasterlist.findMany()
     * ```
     */
-  get intellicareMasterlist(): Prisma.IntellicareMasterlistDelegate<ExtArgs, ClientOptions>;
+  get intellicareMasterlist(): Prisma.intellicareMasterlistDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.maxicareMasterlist`: Exposes CRUD operations for the **MaxicareMasterlist** model.
+   * `prisma.maxicareMasterlist`: Exposes CRUD operations for the **maxicareMasterlist** model.
     * Example usage:
     * ```ts
     * // Fetch zero or more MaxicareMasterlists
     * const maxicareMasterlists = await prisma.maxicareMasterlist.findMany()
     * ```
     */
-  get maxicareMasterlist(): Prisma.MaxicareMasterlistDelegate<ExtArgs, ClientOptions>;
+  get maxicareMasterlist(): Prisma.maxicareMasterlistDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.intellicare`: Exposes CRUD operations for the **Intellicare** model.
+   * `prisma.intellicare`: Exposes CRUD operations for the **intellicare** model.
     * Example usage:
     * ```ts
     * // Fetch zero or more Intellicares
     * const intellicares = await prisma.intellicare.findMany()
     * ```
     */
-  get intellicare(): Prisma.IntellicareDelegate<ExtArgs, ClientOptions>;
+  get intellicare(): Prisma.intellicareDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.maxicare`: Exposes CRUD operations for the **Maxicare** model.
+   * `prisma.maxicare`: Exposes CRUD operations for the **maxicare** model.
     * Example usage:
     * ```ts
     * // Fetch zero or more Maxicares
     * const maxicares = await prisma.maxicare.findMany()
     * ```
     */
-  get maxicare(): Prisma.MaxicareDelegate<ExtArgs, ClientOptions>;
+  get maxicare(): Prisma.maxicareDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.customIllnesses`: Exposes CRUD operations for the **CustomIllnesses** model.
+   * `prisma.customIllnesses`: Exposes CRUD operations for the **customIllnesses** model.
     * Example usage:
     * ```ts
     * // Fetch zero or more CustomIllnesses
     * const customIllnesses = await prisma.customIllnesses.findMany()
     * ```
     */
-  get customIllnesses(): Prisma.CustomIllnessesDelegate<ExtArgs, ClientOptions>;
+  get customIllnesses(): Prisma.customIllnessesDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -728,16 +728,16 @@ export namespace Prisma {
 
 
   export const ModelName: {
-    User: 'User',
-    Insurers: 'Insurers',
-    Clients: 'Clients',
-    Uploads: 'Uploads',
-    Decks: 'Decks',
-    IntellicareMasterlist: 'IntellicareMasterlist',
-    MaxicareMasterlist: 'MaxicareMasterlist',
-    Intellicare: 'Intellicare',
-    Maxicare: 'Maxicare',
-    CustomIllnesses: 'CustomIllnesses'
+    user: 'user',
+    insurers: 'insurers',
+    clients: 'clients',
+    uploads: 'uploads',
+    decks: 'decks',
+    intellicareMasterlist: 'intellicareMasterlist',
+    maxicareMasterlist: 'maxicareMasterlist',
+    intellicare: 'intellicare',
+    maxicare: 'maxicare',
+    customIllnesses: 'customIllnesses'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -757,662 +757,662 @@ export namespace Prisma {
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
-      User: {
-        payload: Prisma.$UserPayload<ExtArgs>
-        fields: Prisma.UserFieldRefs
+      user: {
+        payload: Prisma.$userPayload<ExtArgs>
+        fields: Prisma.userFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.UserFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPayload> | null
+            args: Prisma.userFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$userPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.UserFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPayload>
+            args: Prisma.userFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$userPayload>
           }
           findFirst: {
-            args: Prisma.UserFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPayload> | null
+            args: Prisma.userFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$userPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.UserFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPayload>
+            args: Prisma.userFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$userPayload>
           }
           findMany: {
-            args: Prisma.UserFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPayload>[]
+            args: Prisma.userFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$userPayload>[]
           }
           create: {
-            args: Prisma.UserCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPayload>
+            args: Prisma.userCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$userPayload>
           }
           createMany: {
-            args: Prisma.UserCreateManyArgs<ExtArgs>
+            args: Prisma.userCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           delete: {
-            args: Prisma.UserDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPayload>
+            args: Prisma.userDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$userPayload>
           }
           update: {
-            args: Prisma.UserUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPayload>
+            args: Prisma.userUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$userPayload>
           }
           deleteMany: {
-            args: Prisma.UserDeleteManyArgs<ExtArgs>
+            args: Prisma.userDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.UserUpdateManyArgs<ExtArgs>
+            args: Prisma.userUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           upsert: {
-            args: Prisma.UserUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPayload>
+            args: Prisma.userUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$userPayload>
           }
           aggregate: {
             args: Prisma.UserAggregateArgs<ExtArgs>
             result: $Utils.Optional<AggregateUser>
           }
           groupBy: {
-            args: Prisma.UserGroupByArgs<ExtArgs>
+            args: Prisma.userGroupByArgs<ExtArgs>
             result: $Utils.Optional<UserGroupByOutputType>[]
           }
           count: {
-            args: Prisma.UserCountArgs<ExtArgs>
+            args: Prisma.userCountArgs<ExtArgs>
             result: $Utils.Optional<UserCountAggregateOutputType> | number
           }
         }
       }
-      Insurers: {
-        payload: Prisma.$InsurersPayload<ExtArgs>
-        fields: Prisma.InsurersFieldRefs
+      insurers: {
+        payload: Prisma.$insurersPayload<ExtArgs>
+        fields: Prisma.insurersFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.InsurersFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$InsurersPayload> | null
+            args: Prisma.insurersFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$insurersPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.InsurersFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$InsurersPayload>
+            args: Prisma.insurersFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$insurersPayload>
           }
           findFirst: {
-            args: Prisma.InsurersFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$InsurersPayload> | null
+            args: Prisma.insurersFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$insurersPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.InsurersFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$InsurersPayload>
+            args: Prisma.insurersFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$insurersPayload>
           }
           findMany: {
-            args: Prisma.InsurersFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$InsurersPayload>[]
+            args: Prisma.insurersFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$insurersPayload>[]
           }
           create: {
-            args: Prisma.InsurersCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$InsurersPayload>
+            args: Prisma.insurersCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$insurersPayload>
           }
           createMany: {
-            args: Prisma.InsurersCreateManyArgs<ExtArgs>
+            args: Prisma.insurersCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           delete: {
-            args: Prisma.InsurersDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$InsurersPayload>
+            args: Prisma.insurersDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$insurersPayload>
           }
           update: {
-            args: Prisma.InsurersUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$InsurersPayload>
+            args: Prisma.insurersUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$insurersPayload>
           }
           deleteMany: {
-            args: Prisma.InsurersDeleteManyArgs<ExtArgs>
+            args: Prisma.insurersDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.InsurersUpdateManyArgs<ExtArgs>
+            args: Prisma.insurersUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           upsert: {
-            args: Prisma.InsurersUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$InsurersPayload>
+            args: Prisma.insurersUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$insurersPayload>
           }
           aggregate: {
             args: Prisma.InsurersAggregateArgs<ExtArgs>
             result: $Utils.Optional<AggregateInsurers>
           }
           groupBy: {
-            args: Prisma.InsurersGroupByArgs<ExtArgs>
+            args: Prisma.insurersGroupByArgs<ExtArgs>
             result: $Utils.Optional<InsurersGroupByOutputType>[]
           }
           count: {
-            args: Prisma.InsurersCountArgs<ExtArgs>
+            args: Prisma.insurersCountArgs<ExtArgs>
             result: $Utils.Optional<InsurersCountAggregateOutputType> | number
           }
         }
       }
-      Clients: {
-        payload: Prisma.$ClientsPayload<ExtArgs>
-        fields: Prisma.ClientsFieldRefs
+      clients: {
+        payload: Prisma.$clientsPayload<ExtArgs>
+        fields: Prisma.clientsFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.ClientsFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ClientsPayload> | null
+            args: Prisma.clientsFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$clientsPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.ClientsFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ClientsPayload>
+            args: Prisma.clientsFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$clientsPayload>
           }
           findFirst: {
-            args: Prisma.ClientsFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ClientsPayload> | null
+            args: Prisma.clientsFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$clientsPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.ClientsFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ClientsPayload>
+            args: Prisma.clientsFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$clientsPayload>
           }
           findMany: {
-            args: Prisma.ClientsFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ClientsPayload>[]
+            args: Prisma.clientsFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$clientsPayload>[]
           }
           create: {
-            args: Prisma.ClientsCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ClientsPayload>
+            args: Prisma.clientsCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$clientsPayload>
           }
           createMany: {
-            args: Prisma.ClientsCreateManyArgs<ExtArgs>
+            args: Prisma.clientsCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           delete: {
-            args: Prisma.ClientsDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ClientsPayload>
+            args: Prisma.clientsDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$clientsPayload>
           }
           update: {
-            args: Prisma.ClientsUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ClientsPayload>
+            args: Prisma.clientsUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$clientsPayload>
           }
           deleteMany: {
-            args: Prisma.ClientsDeleteManyArgs<ExtArgs>
+            args: Prisma.clientsDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.ClientsUpdateManyArgs<ExtArgs>
+            args: Prisma.clientsUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           upsert: {
-            args: Prisma.ClientsUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ClientsPayload>
+            args: Prisma.clientsUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$clientsPayload>
           }
           aggregate: {
             args: Prisma.ClientsAggregateArgs<ExtArgs>
             result: $Utils.Optional<AggregateClients>
           }
           groupBy: {
-            args: Prisma.ClientsGroupByArgs<ExtArgs>
+            args: Prisma.clientsGroupByArgs<ExtArgs>
             result: $Utils.Optional<ClientsGroupByOutputType>[]
           }
           count: {
-            args: Prisma.ClientsCountArgs<ExtArgs>
+            args: Prisma.clientsCountArgs<ExtArgs>
             result: $Utils.Optional<ClientsCountAggregateOutputType> | number
           }
         }
       }
-      Uploads: {
-        payload: Prisma.$UploadsPayload<ExtArgs>
-        fields: Prisma.UploadsFieldRefs
+      uploads: {
+        payload: Prisma.$uploadsPayload<ExtArgs>
+        fields: Prisma.uploadsFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.UploadsFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UploadsPayload> | null
+            args: Prisma.uploadsFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$uploadsPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.UploadsFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UploadsPayload>
+            args: Prisma.uploadsFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$uploadsPayload>
           }
           findFirst: {
-            args: Prisma.UploadsFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UploadsPayload> | null
+            args: Prisma.uploadsFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$uploadsPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.UploadsFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UploadsPayload>
+            args: Prisma.uploadsFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$uploadsPayload>
           }
           findMany: {
-            args: Prisma.UploadsFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UploadsPayload>[]
+            args: Prisma.uploadsFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$uploadsPayload>[]
           }
           create: {
-            args: Prisma.UploadsCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UploadsPayload>
+            args: Prisma.uploadsCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$uploadsPayload>
           }
           createMany: {
-            args: Prisma.UploadsCreateManyArgs<ExtArgs>
+            args: Prisma.uploadsCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           delete: {
-            args: Prisma.UploadsDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UploadsPayload>
+            args: Prisma.uploadsDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$uploadsPayload>
           }
           update: {
-            args: Prisma.UploadsUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UploadsPayload>
+            args: Prisma.uploadsUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$uploadsPayload>
           }
           deleteMany: {
-            args: Prisma.UploadsDeleteManyArgs<ExtArgs>
+            args: Prisma.uploadsDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.UploadsUpdateManyArgs<ExtArgs>
+            args: Prisma.uploadsUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           upsert: {
-            args: Prisma.UploadsUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UploadsPayload>
+            args: Prisma.uploadsUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$uploadsPayload>
           }
           aggregate: {
             args: Prisma.UploadsAggregateArgs<ExtArgs>
             result: $Utils.Optional<AggregateUploads>
           }
           groupBy: {
-            args: Prisma.UploadsGroupByArgs<ExtArgs>
+            args: Prisma.uploadsGroupByArgs<ExtArgs>
             result: $Utils.Optional<UploadsGroupByOutputType>[]
           }
           count: {
-            args: Prisma.UploadsCountArgs<ExtArgs>
+            args: Prisma.uploadsCountArgs<ExtArgs>
             result: $Utils.Optional<UploadsCountAggregateOutputType> | number
           }
         }
       }
-      Decks: {
-        payload: Prisma.$DecksPayload<ExtArgs>
-        fields: Prisma.DecksFieldRefs
+      decks: {
+        payload: Prisma.$decksPayload<ExtArgs>
+        fields: Prisma.decksFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.DecksFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$DecksPayload> | null
+            args: Prisma.decksFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$decksPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.DecksFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$DecksPayload>
+            args: Prisma.decksFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$decksPayload>
           }
           findFirst: {
-            args: Prisma.DecksFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$DecksPayload> | null
+            args: Prisma.decksFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$decksPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.DecksFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$DecksPayload>
+            args: Prisma.decksFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$decksPayload>
           }
           findMany: {
-            args: Prisma.DecksFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$DecksPayload>[]
+            args: Prisma.decksFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$decksPayload>[]
           }
           create: {
-            args: Prisma.DecksCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$DecksPayload>
+            args: Prisma.decksCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$decksPayload>
           }
           createMany: {
-            args: Prisma.DecksCreateManyArgs<ExtArgs>
+            args: Prisma.decksCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           delete: {
-            args: Prisma.DecksDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$DecksPayload>
+            args: Prisma.decksDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$decksPayload>
           }
           update: {
-            args: Prisma.DecksUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$DecksPayload>
+            args: Prisma.decksUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$decksPayload>
           }
           deleteMany: {
-            args: Prisma.DecksDeleteManyArgs<ExtArgs>
+            args: Prisma.decksDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.DecksUpdateManyArgs<ExtArgs>
+            args: Prisma.decksUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           upsert: {
-            args: Prisma.DecksUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$DecksPayload>
+            args: Prisma.decksUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$decksPayload>
           }
           aggregate: {
             args: Prisma.DecksAggregateArgs<ExtArgs>
             result: $Utils.Optional<AggregateDecks>
           }
           groupBy: {
-            args: Prisma.DecksGroupByArgs<ExtArgs>
+            args: Prisma.decksGroupByArgs<ExtArgs>
             result: $Utils.Optional<DecksGroupByOutputType>[]
           }
           count: {
-            args: Prisma.DecksCountArgs<ExtArgs>
+            args: Prisma.decksCountArgs<ExtArgs>
             result: $Utils.Optional<DecksCountAggregateOutputType> | number
           }
         }
       }
-      IntellicareMasterlist: {
-        payload: Prisma.$IntellicareMasterlistPayload<ExtArgs>
-        fields: Prisma.IntellicareMasterlistFieldRefs
+      intellicareMasterlist: {
+        payload: Prisma.$intellicareMasterlistPayload<ExtArgs>
+        fields: Prisma.intellicareMasterlistFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.IntellicareMasterlistFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$IntellicareMasterlistPayload> | null
+            args: Prisma.intellicareMasterlistFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$intellicareMasterlistPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.IntellicareMasterlistFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$IntellicareMasterlistPayload>
+            args: Prisma.intellicareMasterlistFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$intellicareMasterlistPayload>
           }
           findFirst: {
-            args: Prisma.IntellicareMasterlistFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$IntellicareMasterlistPayload> | null
+            args: Prisma.intellicareMasterlistFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$intellicareMasterlistPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.IntellicareMasterlistFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$IntellicareMasterlistPayload>
+            args: Prisma.intellicareMasterlistFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$intellicareMasterlistPayload>
           }
           findMany: {
-            args: Prisma.IntellicareMasterlistFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$IntellicareMasterlistPayload>[]
+            args: Prisma.intellicareMasterlistFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$intellicareMasterlistPayload>[]
           }
           create: {
-            args: Prisma.IntellicareMasterlistCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$IntellicareMasterlistPayload>
+            args: Prisma.intellicareMasterlistCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$intellicareMasterlistPayload>
           }
           createMany: {
-            args: Prisma.IntellicareMasterlistCreateManyArgs<ExtArgs>
+            args: Prisma.intellicareMasterlistCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           delete: {
-            args: Prisma.IntellicareMasterlistDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$IntellicareMasterlistPayload>
+            args: Prisma.intellicareMasterlistDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$intellicareMasterlistPayload>
           }
           update: {
-            args: Prisma.IntellicareMasterlistUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$IntellicareMasterlistPayload>
+            args: Prisma.intellicareMasterlistUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$intellicareMasterlistPayload>
           }
           deleteMany: {
-            args: Prisma.IntellicareMasterlistDeleteManyArgs<ExtArgs>
+            args: Prisma.intellicareMasterlistDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.IntellicareMasterlistUpdateManyArgs<ExtArgs>
+            args: Prisma.intellicareMasterlistUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           upsert: {
-            args: Prisma.IntellicareMasterlistUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$IntellicareMasterlistPayload>
+            args: Prisma.intellicareMasterlistUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$intellicareMasterlistPayload>
           }
           aggregate: {
             args: Prisma.IntellicareMasterlistAggregateArgs<ExtArgs>
             result: $Utils.Optional<AggregateIntellicareMasterlist>
           }
           groupBy: {
-            args: Prisma.IntellicareMasterlistGroupByArgs<ExtArgs>
+            args: Prisma.intellicareMasterlistGroupByArgs<ExtArgs>
             result: $Utils.Optional<IntellicareMasterlistGroupByOutputType>[]
           }
           count: {
-            args: Prisma.IntellicareMasterlistCountArgs<ExtArgs>
+            args: Prisma.intellicareMasterlistCountArgs<ExtArgs>
             result: $Utils.Optional<IntellicareMasterlistCountAggregateOutputType> | number
           }
         }
       }
-      MaxicareMasterlist: {
-        payload: Prisma.$MaxicareMasterlistPayload<ExtArgs>
-        fields: Prisma.MaxicareMasterlistFieldRefs
+      maxicareMasterlist: {
+        payload: Prisma.$maxicareMasterlistPayload<ExtArgs>
+        fields: Prisma.maxicareMasterlistFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.MaxicareMasterlistFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$MaxicareMasterlistPayload> | null
+            args: Prisma.maxicareMasterlistFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$maxicareMasterlistPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.MaxicareMasterlistFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$MaxicareMasterlistPayload>
+            args: Prisma.maxicareMasterlistFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$maxicareMasterlistPayload>
           }
           findFirst: {
-            args: Prisma.MaxicareMasterlistFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$MaxicareMasterlistPayload> | null
+            args: Prisma.maxicareMasterlistFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$maxicareMasterlistPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.MaxicareMasterlistFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$MaxicareMasterlistPayload>
+            args: Prisma.maxicareMasterlistFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$maxicareMasterlistPayload>
           }
           findMany: {
-            args: Prisma.MaxicareMasterlistFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$MaxicareMasterlistPayload>[]
+            args: Prisma.maxicareMasterlistFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$maxicareMasterlistPayload>[]
           }
           create: {
-            args: Prisma.MaxicareMasterlistCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$MaxicareMasterlistPayload>
+            args: Prisma.maxicareMasterlistCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$maxicareMasterlistPayload>
           }
           createMany: {
-            args: Prisma.MaxicareMasterlistCreateManyArgs<ExtArgs>
+            args: Prisma.maxicareMasterlistCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           delete: {
-            args: Prisma.MaxicareMasterlistDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$MaxicareMasterlistPayload>
+            args: Prisma.maxicareMasterlistDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$maxicareMasterlistPayload>
           }
           update: {
-            args: Prisma.MaxicareMasterlistUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$MaxicareMasterlistPayload>
+            args: Prisma.maxicareMasterlistUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$maxicareMasterlistPayload>
           }
           deleteMany: {
-            args: Prisma.MaxicareMasterlistDeleteManyArgs<ExtArgs>
+            args: Prisma.maxicareMasterlistDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.MaxicareMasterlistUpdateManyArgs<ExtArgs>
+            args: Prisma.maxicareMasterlistUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           upsert: {
-            args: Prisma.MaxicareMasterlistUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$MaxicareMasterlistPayload>
+            args: Prisma.maxicareMasterlistUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$maxicareMasterlistPayload>
           }
           aggregate: {
             args: Prisma.MaxicareMasterlistAggregateArgs<ExtArgs>
             result: $Utils.Optional<AggregateMaxicareMasterlist>
           }
           groupBy: {
-            args: Prisma.MaxicareMasterlistGroupByArgs<ExtArgs>
+            args: Prisma.maxicareMasterlistGroupByArgs<ExtArgs>
             result: $Utils.Optional<MaxicareMasterlistGroupByOutputType>[]
           }
           count: {
-            args: Prisma.MaxicareMasterlistCountArgs<ExtArgs>
+            args: Prisma.maxicareMasterlistCountArgs<ExtArgs>
             result: $Utils.Optional<MaxicareMasterlistCountAggregateOutputType> | number
           }
         }
       }
-      Intellicare: {
-        payload: Prisma.$IntellicarePayload<ExtArgs>
-        fields: Prisma.IntellicareFieldRefs
+      intellicare: {
+        payload: Prisma.$intellicarePayload<ExtArgs>
+        fields: Prisma.intellicareFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.IntellicareFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$IntellicarePayload> | null
+            args: Prisma.intellicareFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$intellicarePayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.IntellicareFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$IntellicarePayload>
+            args: Prisma.intellicareFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$intellicarePayload>
           }
           findFirst: {
-            args: Prisma.IntellicareFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$IntellicarePayload> | null
+            args: Prisma.intellicareFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$intellicarePayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.IntellicareFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$IntellicarePayload>
+            args: Prisma.intellicareFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$intellicarePayload>
           }
           findMany: {
-            args: Prisma.IntellicareFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$IntellicarePayload>[]
+            args: Prisma.intellicareFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$intellicarePayload>[]
           }
           create: {
-            args: Prisma.IntellicareCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$IntellicarePayload>
+            args: Prisma.intellicareCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$intellicarePayload>
           }
           createMany: {
-            args: Prisma.IntellicareCreateManyArgs<ExtArgs>
+            args: Prisma.intellicareCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           delete: {
-            args: Prisma.IntellicareDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$IntellicarePayload>
+            args: Prisma.intellicareDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$intellicarePayload>
           }
           update: {
-            args: Prisma.IntellicareUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$IntellicarePayload>
+            args: Prisma.intellicareUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$intellicarePayload>
           }
           deleteMany: {
-            args: Prisma.IntellicareDeleteManyArgs<ExtArgs>
+            args: Prisma.intellicareDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.IntellicareUpdateManyArgs<ExtArgs>
+            args: Prisma.intellicareUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           upsert: {
-            args: Prisma.IntellicareUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$IntellicarePayload>
+            args: Prisma.intellicareUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$intellicarePayload>
           }
           aggregate: {
             args: Prisma.IntellicareAggregateArgs<ExtArgs>
             result: $Utils.Optional<AggregateIntellicare>
           }
           groupBy: {
-            args: Prisma.IntellicareGroupByArgs<ExtArgs>
+            args: Prisma.intellicareGroupByArgs<ExtArgs>
             result: $Utils.Optional<IntellicareGroupByOutputType>[]
           }
           count: {
-            args: Prisma.IntellicareCountArgs<ExtArgs>
+            args: Prisma.intellicareCountArgs<ExtArgs>
             result: $Utils.Optional<IntellicareCountAggregateOutputType> | number
           }
         }
       }
-      Maxicare: {
-        payload: Prisma.$MaxicarePayload<ExtArgs>
-        fields: Prisma.MaxicareFieldRefs
+      maxicare: {
+        payload: Prisma.$maxicarePayload<ExtArgs>
+        fields: Prisma.maxicareFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.MaxicareFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$MaxicarePayload> | null
+            args: Prisma.maxicareFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$maxicarePayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.MaxicareFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$MaxicarePayload>
+            args: Prisma.maxicareFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$maxicarePayload>
           }
           findFirst: {
-            args: Prisma.MaxicareFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$MaxicarePayload> | null
+            args: Prisma.maxicareFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$maxicarePayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.MaxicareFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$MaxicarePayload>
+            args: Prisma.maxicareFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$maxicarePayload>
           }
           findMany: {
-            args: Prisma.MaxicareFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$MaxicarePayload>[]
+            args: Prisma.maxicareFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$maxicarePayload>[]
           }
           create: {
-            args: Prisma.MaxicareCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$MaxicarePayload>
+            args: Prisma.maxicareCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$maxicarePayload>
           }
           createMany: {
-            args: Prisma.MaxicareCreateManyArgs<ExtArgs>
+            args: Prisma.maxicareCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           delete: {
-            args: Prisma.MaxicareDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$MaxicarePayload>
+            args: Prisma.maxicareDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$maxicarePayload>
           }
           update: {
-            args: Prisma.MaxicareUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$MaxicarePayload>
+            args: Prisma.maxicareUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$maxicarePayload>
           }
           deleteMany: {
-            args: Prisma.MaxicareDeleteManyArgs<ExtArgs>
+            args: Prisma.maxicareDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.MaxicareUpdateManyArgs<ExtArgs>
+            args: Prisma.maxicareUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           upsert: {
-            args: Prisma.MaxicareUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$MaxicarePayload>
+            args: Prisma.maxicareUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$maxicarePayload>
           }
           aggregate: {
             args: Prisma.MaxicareAggregateArgs<ExtArgs>
             result: $Utils.Optional<AggregateMaxicare>
           }
           groupBy: {
-            args: Prisma.MaxicareGroupByArgs<ExtArgs>
+            args: Prisma.maxicareGroupByArgs<ExtArgs>
             result: $Utils.Optional<MaxicareGroupByOutputType>[]
           }
           count: {
-            args: Prisma.MaxicareCountArgs<ExtArgs>
+            args: Prisma.maxicareCountArgs<ExtArgs>
             result: $Utils.Optional<MaxicareCountAggregateOutputType> | number
           }
         }
       }
-      CustomIllnesses: {
-        payload: Prisma.$CustomIllnessesPayload<ExtArgs>
-        fields: Prisma.CustomIllnessesFieldRefs
+      customIllnesses: {
+        payload: Prisma.$customIllnessesPayload<ExtArgs>
+        fields: Prisma.customIllnessesFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.CustomIllnessesFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$CustomIllnessesPayload> | null
+            args: Prisma.customIllnessesFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$customIllnessesPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.CustomIllnessesFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$CustomIllnessesPayload>
+            args: Prisma.customIllnessesFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$customIllnessesPayload>
           }
           findFirst: {
-            args: Prisma.CustomIllnessesFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$CustomIllnessesPayload> | null
+            args: Prisma.customIllnessesFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$customIllnessesPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.CustomIllnessesFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$CustomIllnessesPayload>
+            args: Prisma.customIllnessesFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$customIllnessesPayload>
           }
           findMany: {
-            args: Prisma.CustomIllnessesFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$CustomIllnessesPayload>[]
+            args: Prisma.customIllnessesFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$customIllnessesPayload>[]
           }
           create: {
-            args: Prisma.CustomIllnessesCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$CustomIllnessesPayload>
+            args: Prisma.customIllnessesCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$customIllnessesPayload>
           }
           createMany: {
-            args: Prisma.CustomIllnessesCreateManyArgs<ExtArgs>
+            args: Prisma.customIllnessesCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           delete: {
-            args: Prisma.CustomIllnessesDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$CustomIllnessesPayload>
+            args: Prisma.customIllnessesDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$customIllnessesPayload>
           }
           update: {
-            args: Prisma.CustomIllnessesUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$CustomIllnessesPayload>
+            args: Prisma.customIllnessesUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$customIllnessesPayload>
           }
           deleteMany: {
-            args: Prisma.CustomIllnessesDeleteManyArgs<ExtArgs>
+            args: Prisma.customIllnessesDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.CustomIllnessesUpdateManyArgs<ExtArgs>
+            args: Prisma.customIllnessesUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           upsert: {
-            args: Prisma.CustomIllnessesUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$CustomIllnessesPayload>
+            args: Prisma.customIllnessesUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$customIllnessesPayload>
           }
           aggregate: {
             args: Prisma.CustomIllnessesAggregateArgs<ExtArgs>
             result: $Utils.Optional<AggregateCustomIllnesses>
           }
           groupBy: {
-            args: Prisma.CustomIllnessesGroupByArgs<ExtArgs>
+            args: Prisma.customIllnessesGroupByArgs<ExtArgs>
             result: $Utils.Optional<CustomIllnessesGroupByOutputType>[]
           }
           count: {
-            args: Prisma.CustomIllnessesCountArgs<ExtArgs>
+            args: Prisma.customIllnessesCountArgs<ExtArgs>
             result: $Utils.Optional<CustomIllnessesCountAggregateOutputType> | number
           }
         }
@@ -1501,16 +1501,16 @@ export namespace Prisma {
     omit?: Prisma.GlobalOmitConfig
   }
   export type GlobalOmitConfig = {
-    user?: UserOmit
-    insurers?: InsurersOmit
-    clients?: ClientsOmit
-    uploads?: UploadsOmit
-    decks?: DecksOmit
-    intellicareMasterlist?: IntellicareMasterlistOmit
-    maxicareMasterlist?: MaxicareMasterlistOmit
-    intellicare?: IntellicareOmit
-    maxicare?: MaxicareOmit
-    customIllnesses?: CustomIllnessesOmit
+    user?: userOmit
+    insurers?: insurersOmit
+    clients?: clientsOmit
+    uploads?: uploadsOmit
+    decks?: decksOmit
+    intellicareMasterlist?: intellicareMasterlistOmit
+    maxicareMasterlist?: maxicareMasterlistOmit
+    intellicare?: intellicareOmit
+    maxicare?: maxicareOmit
+    customIllnesses?: customIllnessesOmit
   }
 
   /* Types for Logging */
@@ -1605,13 +1605,13 @@ export namespace Prisma {
    */
 
   export type InsurersCountOutputType = {
-    Clients: number
-    Uploads: number
+    clients: number
+    uploads: number
   }
 
   export type InsurersCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    Clients?: boolean | InsurersCountOutputTypeCountClientsArgs
-    Uploads?: boolean | InsurersCountOutputTypeCountUploadsArgs
+    clients?: boolean | InsurersCountOutputTypeCountClientsArgs
+    uploads?: boolean | InsurersCountOutputTypeCountUploadsArgs
   }
 
   // Custom InputTypes
@@ -1629,14 +1629,14 @@ export namespace Prisma {
    * InsurersCountOutputType without action
    */
   export type InsurersCountOutputTypeCountClientsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ClientsWhereInput
+    where?: clientsWhereInput
   }
 
   /**
    * InsurersCountOutputType without action
    */
   export type InsurersCountOutputTypeCountUploadsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: UploadsWhereInput
+    where?: uploadsWhereInput
   }
 
 
@@ -1645,23 +1645,23 @@ export namespace Prisma {
    */
 
   export type ClientsCountOutputType = {
-    Uploads: number
-    Decks: number
-    IntellicareMasterlist: number
-    MaxicareMasterlist: number
-    Intellicare: number
-    Maxicare: number
-    CustomIllnesses: number
+    uploads: number
+    decks: number
+    intellicareMasterlist: number
+    maxicareMasterlist: number
+    intellicare: number
+    maxicare: number
+    customIllnesses: number
   }
 
   export type ClientsCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    Uploads?: boolean | ClientsCountOutputTypeCountUploadsArgs
-    Decks?: boolean | ClientsCountOutputTypeCountDecksArgs
-    IntellicareMasterlist?: boolean | ClientsCountOutputTypeCountIntellicareMasterlistArgs
-    MaxicareMasterlist?: boolean | ClientsCountOutputTypeCountMaxicareMasterlistArgs
-    Intellicare?: boolean | ClientsCountOutputTypeCountIntellicareArgs
-    Maxicare?: boolean | ClientsCountOutputTypeCountMaxicareArgs
-    CustomIllnesses?: boolean | ClientsCountOutputTypeCountCustomIllnessesArgs
+    uploads?: boolean | ClientsCountOutputTypeCountUploadsArgs
+    decks?: boolean | ClientsCountOutputTypeCountDecksArgs
+    intellicareMasterlist?: boolean | ClientsCountOutputTypeCountIntellicareMasterlistArgs
+    maxicareMasterlist?: boolean | ClientsCountOutputTypeCountMaxicareMasterlistArgs
+    intellicare?: boolean | ClientsCountOutputTypeCountIntellicareArgs
+    maxicare?: boolean | ClientsCountOutputTypeCountMaxicareArgs
+    customIllnesses?: boolean | ClientsCountOutputTypeCountCustomIllnessesArgs
   }
 
   // Custom InputTypes
@@ -1679,49 +1679,49 @@ export namespace Prisma {
    * ClientsCountOutputType without action
    */
   export type ClientsCountOutputTypeCountUploadsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: UploadsWhereInput
+    where?: uploadsWhereInput
   }
 
   /**
    * ClientsCountOutputType without action
    */
   export type ClientsCountOutputTypeCountDecksArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: DecksWhereInput
+    where?: decksWhereInput
   }
 
   /**
    * ClientsCountOutputType without action
    */
   export type ClientsCountOutputTypeCountIntellicareMasterlistArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: IntellicareMasterlistWhereInput
+    where?: intellicareMasterlistWhereInput
   }
 
   /**
    * ClientsCountOutputType without action
    */
   export type ClientsCountOutputTypeCountMaxicareMasterlistArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: MaxicareMasterlistWhereInput
+    where?: maxicareMasterlistWhereInput
   }
 
   /**
    * ClientsCountOutputType without action
    */
   export type ClientsCountOutputTypeCountIntellicareArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: IntellicareWhereInput
+    where?: intellicareWhereInput
   }
 
   /**
    * ClientsCountOutputType without action
    */
   export type ClientsCountOutputTypeCountMaxicareArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: MaxicareWhereInput
+    where?: maxicareWhereInput
   }
 
   /**
    * ClientsCountOutputType without action
    */
   export type ClientsCountOutputTypeCountCustomIllnessesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: CustomIllnessesWhereInput
+    where?: customIllnessesWhereInput
   }
 
 
@@ -1730,7 +1730,7 @@ export namespace Prisma {
    */
 
   /**
-   * Model User
+   * Model user
    */
 
   export type AggregateUser = {
@@ -1870,37 +1870,37 @@ export namespace Prisma {
 
   export type UserAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which User to aggregate.
+     * Filter which user to aggregate.
      */
-    where?: UserWhereInput
+    where?: userWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Users to fetch.
+     * Determine the order of users to fetch.
      */
-    orderBy?: UserOrderByWithRelationInput | UserOrderByWithRelationInput[]
+    orderBy?: userOrderByWithRelationInput | userOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: UserWhereUniqueInput
+    cursor?: userWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Users from the position of the cursor.
+     * Take `±n` users from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Users.
+     * Skip the first `n` users.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Users
+     * Count returned users
     **/
     _count?: true | UserCountAggregateInputType
     /**
@@ -1940,11 +1940,11 @@ export namespace Prisma {
 
 
 
-  export type UserGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: UserWhereInput
-    orderBy?: UserOrderByWithAggregationInput | UserOrderByWithAggregationInput[]
+  export type userGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: userWhereInput
+    orderBy?: userOrderByWithAggregationInput | userOrderByWithAggregationInput[]
     by: UserScalarFieldEnum[] | UserScalarFieldEnum
-    having?: UserScalarWhereWithAggregatesInput
+    having?: userScalarWhereWithAggregatesInput
     take?: number
     skip?: number
     _count?: UserCountAggregateInputType | true
@@ -1977,7 +1977,7 @@ export namespace Prisma {
     _max: UserMaxAggregateOutputType | null
   }
 
-  type GetUserGroupByPayload<T extends UserGroupByArgs> = Prisma.PrismaPromise<
+  type GetUserGroupByPayload<T extends userGroupByArgs> = Prisma.PrismaPromise<
     Array<
       PickEnumerable<UserGroupByOutputType, T['by']> &
         {
@@ -1991,7 +1991,7 @@ export namespace Prisma {
     >
 
 
-  export type UserSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type userSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
     email?: boolean
@@ -2011,7 +2011,7 @@ export namespace Prisma {
 
 
 
-  export type UserSelectScalar = {
+  export type userSelectScalar = {
     id?: boolean
     name?: boolean
     email?: boolean
@@ -2029,10 +2029,10 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "password" | "admin" | "canUpload" | "canCreate" | "canViewDeck" | "canUploadDeck" | "canAdd" | "canRemove" | "canEdit" | "superAdmin" | "createdAt" | "updatedAt", ExtArgs["result"]["user"]>
+  export type userOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "password" | "admin" | "canUpload" | "canCreate" | "canViewDeck" | "canUploadDeck" | "canAdd" | "canRemove" | "canEdit" | "superAdmin" | "createdAt" | "updatedAt", ExtArgs["result"]["user"]>
 
-  export type $UserPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "User"
+  export type $userPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "user"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -2054,18 +2054,18 @@ export namespace Prisma {
     composites: {}
   }
 
-  type UserGetPayload<S extends boolean | null | undefined | UserDefaultArgs> = $Result.GetResult<Prisma.$UserPayload, S>
+  type userGetPayload<S extends boolean | null | undefined | userDefaultArgs> = $Result.GetResult<Prisma.$userPayload, S>
 
-  type UserCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<UserFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+  type userCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<userFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
       select?: UserCountAggregateInputType | true
     }
 
-  export interface UserDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['User'], meta: { name: 'User' } }
+  export interface userDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['user'], meta: { name: 'user' } }
     /**
      * Find zero or one User that matches the filter.
-     * @param {UserFindUniqueArgs} args - Arguments to find a User
+     * @param {userFindUniqueArgs} args - Arguments to find a User
      * @example
      * // Get one User
      * const user = await prisma.user.findUnique({
@@ -2074,12 +2074,12 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUnique<T extends UserFindUniqueArgs>(args: SelectSubset<T, UserFindUniqueArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUnique", ClientOptions> | null, null, ExtArgs, ClientOptions>
+    findUnique<T extends userFindUniqueArgs>(args: SelectSubset<T, userFindUniqueArgs<ExtArgs>>): Prisma__userClient<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "findUnique", ClientOptions> | null, null, ExtArgs, ClientOptions>
 
     /**
      * Find one User that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {UserFindUniqueOrThrowArgs} args - Arguments to find a User
+     * @param {userFindUniqueOrThrowArgs} args - Arguments to find a User
      * @example
      * // Get one User
      * const user = await prisma.user.findUniqueOrThrow({
@@ -2088,13 +2088,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUniqueOrThrow<T extends UserFindUniqueOrThrowArgs>(args: SelectSubset<T, UserFindUniqueOrThrowArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
+    findUniqueOrThrow<T extends userFindUniqueOrThrowArgs>(args: SelectSubset<T, userFindUniqueOrThrowArgs<ExtArgs>>): Prisma__userClient<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "findUniqueOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Find the first User that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserFindFirstArgs} args - Arguments to find a User
+     * @param {userFindFirstArgs} args - Arguments to find a User
      * @example
      * // Get one User
      * const user = await prisma.user.findFirst({
@@ -2103,14 +2103,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirst<T extends UserFindFirstArgs>(args?: SelectSubset<T, UserFindFirstArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findFirst", ClientOptions> | null, null, ExtArgs, ClientOptions>
+    findFirst<T extends userFindFirstArgs>(args?: SelectSubset<T, userFindFirstArgs<ExtArgs>>): Prisma__userClient<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "findFirst", ClientOptions> | null, null, ExtArgs, ClientOptions>
 
     /**
      * Find the first User that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserFindFirstOrThrowArgs} args - Arguments to find a User
+     * @param {userFindFirstOrThrowArgs} args - Arguments to find a User
      * @example
      * // Get one User
      * const user = await prisma.user.findFirstOrThrow({
@@ -2119,13 +2119,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirstOrThrow<T extends UserFindFirstOrThrowArgs>(args?: SelectSubset<T, UserFindFirstOrThrowArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findFirstOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
+    findFirstOrThrow<T extends userFindFirstOrThrowArgs>(args?: SelectSubset<T, userFindFirstOrThrowArgs<ExtArgs>>): Prisma__userClient<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "findFirstOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Find zero or more Users that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {userFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all Users
      * const users = await prisma.user.findMany()
@@ -2137,11 +2137,11 @@ export namespace Prisma {
      * const userWithIdOnly = await prisma.user.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends UserFindManyArgs>(args?: SelectSubset<T, UserFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findMany", ClientOptions>>
+    findMany<T extends userFindManyArgs>(args?: SelectSubset<T, userFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "findMany", ClientOptions>>
 
     /**
      * Create a User.
-     * @param {UserCreateArgs} args - Arguments to create a User.
+     * @param {userCreateArgs} args - Arguments to create a User.
      * @example
      * // Create one User
      * const User = await prisma.user.create({
@@ -2151,11 +2151,11 @@ export namespace Prisma {
      * })
      * 
      */
-    create<T extends UserCreateArgs>(args: SelectSubset<T, UserCreateArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "create", ClientOptions>, never, ExtArgs, ClientOptions>
+    create<T extends userCreateArgs>(args: SelectSubset<T, userCreateArgs<ExtArgs>>): Prisma__userClient<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "create", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Create many Users.
-     * @param {UserCreateManyArgs} args - Arguments to create many Users.
+     * @param {userCreateManyArgs} args - Arguments to create many Users.
      * @example
      * // Create many Users
      * const user = await prisma.user.createMany({
@@ -2165,11 +2165,11 @@ export namespace Prisma {
      * })
      *     
      */
-    createMany<T extends UserCreateManyArgs>(args?: SelectSubset<T, UserCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends userCreateManyArgs>(args?: SelectSubset<T, userCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Delete a User.
-     * @param {UserDeleteArgs} args - Arguments to delete one User.
+     * @param {userDeleteArgs} args - Arguments to delete one User.
      * @example
      * // Delete one User
      * const User = await prisma.user.delete({
@@ -2179,11 +2179,11 @@ export namespace Prisma {
      * })
      * 
      */
-    delete<T extends UserDeleteArgs>(args: SelectSubset<T, UserDeleteArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "delete", ClientOptions>, never, ExtArgs, ClientOptions>
+    delete<T extends userDeleteArgs>(args: SelectSubset<T, userDeleteArgs<ExtArgs>>): Prisma__userClient<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "delete", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Update one User.
-     * @param {UserUpdateArgs} args - Arguments to update one User.
+     * @param {userUpdateArgs} args - Arguments to update one User.
      * @example
      * // Update one User
      * const user = await prisma.user.update({
@@ -2196,11 +2196,11 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends UserUpdateArgs>(args: SelectSubset<T, UserUpdateArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "update", ClientOptions>, never, ExtArgs, ClientOptions>
+    update<T extends userUpdateArgs>(args: SelectSubset<T, userUpdateArgs<ExtArgs>>): Prisma__userClient<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "update", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Delete zero or more Users.
-     * @param {UserDeleteManyArgs} args - Arguments to filter Users to delete.
+     * @param {userDeleteManyArgs} args - Arguments to filter Users to delete.
      * @example
      * // Delete a few Users
      * const { count } = await prisma.user.deleteMany({
@@ -2210,13 +2210,13 @@ export namespace Prisma {
      * })
      * 
      */
-    deleteMany<T extends UserDeleteManyArgs>(args?: SelectSubset<T, UserDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends userDeleteManyArgs>(args?: SelectSubset<T, userDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Users.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {userUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
      * // Update many Users
      * const user = await prisma.user.updateMany({
@@ -2229,11 +2229,11 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends UserUpdateManyArgs>(args: SelectSubset<T, UserUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends userUpdateManyArgs>(args: SelectSubset<T, userUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Create or update one User.
-     * @param {UserUpsertArgs} args - Arguments to update or create a User.
+     * @param {userUpsertArgs} args - Arguments to update or create a User.
      * @example
      * // Update or create a User
      * const user = await prisma.user.upsert({
@@ -2248,14 +2248,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    upsert<T extends UserUpsertArgs>(args: SelectSubset<T, UserUpsertArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "upsert", ClientOptions>, never, ExtArgs, ClientOptions>
+    upsert<T extends userUpsertArgs>(args: SelectSubset<T, userUpsertArgs<ExtArgs>>): Prisma__userClient<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "upsert", ClientOptions>, never, ExtArgs, ClientOptions>
 
 
     /**
      * Count the number of Users.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserCountArgs} args - Arguments to filter Users to count.
+     * @param {userCountArgs} args - Arguments to filter Users to count.
      * @example
      * // Count the number of Users
      * const count = await prisma.user.count({
@@ -2264,8 +2264,8 @@ export namespace Prisma {
      *   }
      * })
     **/
-    count<T extends UserCountArgs>(
-      args?: Subset<T, UserCountArgs>,
+    count<T extends userCountArgs>(
+      args?: Subset<T, userCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
@@ -2304,7 +2304,7 @@ export namespace Prisma {
      * Group by User.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserGroupByArgs} args - Group by arguments.
+     * @param {userGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -2319,14 +2319,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends UserGroupByArgs,
+      T extends userGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: UserGroupByArgs['orderBy'] }
-        : { orderBy?: UserGroupByArgs['orderBy'] },
+        ? { orderBy: userGroupByArgs['orderBy'] }
+        : { orderBy?: userGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -2375,20 +2375,20 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, UserGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetUserGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, userGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetUserGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the User model
+   * Fields of the user model
    */
-  readonly fields: UserFieldRefs;
+  readonly fields: userFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for User.
+   * The delegate class that acts as a "Promise-like" for user.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__UserClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__userClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -2416,347 +2416,347 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the User model
+   * Fields of the user model
    */ 
-  interface UserFieldRefs {
-    readonly id: FieldRef<"User", 'Int'>
-    readonly name: FieldRef<"User", 'String'>
-    readonly email: FieldRef<"User", 'String'>
-    readonly password: FieldRef<"User", 'String'>
-    readonly admin: FieldRef<"User", 'Boolean'>
-    readonly canUpload: FieldRef<"User", 'Boolean'>
-    readonly canCreate: FieldRef<"User", 'Boolean'>
-    readonly canViewDeck: FieldRef<"User", 'Boolean'>
-    readonly canUploadDeck: FieldRef<"User", 'Boolean'>
-    readonly canAdd: FieldRef<"User", 'Boolean'>
-    readonly canRemove: FieldRef<"User", 'Boolean'>
-    readonly canEdit: FieldRef<"User", 'Boolean'>
-    readonly superAdmin: FieldRef<"User", 'Boolean'>
-    readonly createdAt: FieldRef<"User", 'DateTime'>
-    readonly updatedAt: FieldRef<"User", 'DateTime'>
+  interface userFieldRefs {
+    readonly id: FieldRef<"user", 'Int'>
+    readonly name: FieldRef<"user", 'String'>
+    readonly email: FieldRef<"user", 'String'>
+    readonly password: FieldRef<"user", 'String'>
+    readonly admin: FieldRef<"user", 'Boolean'>
+    readonly canUpload: FieldRef<"user", 'Boolean'>
+    readonly canCreate: FieldRef<"user", 'Boolean'>
+    readonly canViewDeck: FieldRef<"user", 'Boolean'>
+    readonly canUploadDeck: FieldRef<"user", 'Boolean'>
+    readonly canAdd: FieldRef<"user", 'Boolean'>
+    readonly canRemove: FieldRef<"user", 'Boolean'>
+    readonly canEdit: FieldRef<"user", 'Boolean'>
+    readonly superAdmin: FieldRef<"user", 'Boolean'>
+    readonly createdAt: FieldRef<"user", 'DateTime'>
+    readonly updatedAt: FieldRef<"user", 'DateTime'>
   }
     
 
   // Custom InputTypes
   /**
-   * User findUnique
+   * user findUnique
    */
-  export type UserFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the User
+     * Select specific fields to fetch from the user
      */
-    select?: UserSelect<ExtArgs> | null
+    select?: userSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the User
+     * Omit specific fields from the user
      */
-    omit?: UserOmit<ExtArgs> | null
+    omit?: userOmit<ExtArgs> | null
     /**
-     * Filter, which User to fetch.
+     * Filter, which user to fetch.
      */
-    where: UserWhereUniqueInput
+    where: userWhereUniqueInput
   }
 
   /**
-   * User findUniqueOrThrow
+   * user findUniqueOrThrow
    */
-  export type UserFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the User
+     * Select specific fields to fetch from the user
      */
-    select?: UserSelect<ExtArgs> | null
+    select?: userSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the User
+     * Omit specific fields from the user
      */
-    omit?: UserOmit<ExtArgs> | null
+    omit?: userOmit<ExtArgs> | null
     /**
-     * Filter, which User to fetch.
+     * Filter, which user to fetch.
      */
-    where: UserWhereUniqueInput
+    where: userWhereUniqueInput
   }
 
   /**
-   * User findFirst
+   * user findFirst
    */
-  export type UserFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the User
+     * Select specific fields to fetch from the user
      */
-    select?: UserSelect<ExtArgs> | null
+    select?: userSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the User
+     * Omit specific fields from the user
      */
-    omit?: UserOmit<ExtArgs> | null
+    omit?: userOmit<ExtArgs> | null
     /**
-     * Filter, which User to fetch.
+     * Filter, which user to fetch.
      */
-    where?: UserWhereInput
+    where?: userWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Users to fetch.
+     * Determine the order of users to fetch.
      */
-    orderBy?: UserOrderByWithRelationInput | UserOrderByWithRelationInput[]
+    orderBy?: userOrderByWithRelationInput | userOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Users.
+     * Sets the position for searching for users.
      */
-    cursor?: UserWhereUniqueInput
+    cursor?: userWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Users from the position of the cursor.
+     * Take `±n` users from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Users.
+     * Skip the first `n` users.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Users.
+     * Filter by unique combinations of users.
      */
     distinct?: UserScalarFieldEnum | UserScalarFieldEnum[]
   }
 
   /**
-   * User findFirstOrThrow
+   * user findFirstOrThrow
    */
-  export type UserFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the User
+     * Select specific fields to fetch from the user
      */
-    select?: UserSelect<ExtArgs> | null
+    select?: userSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the User
+     * Omit specific fields from the user
      */
-    omit?: UserOmit<ExtArgs> | null
+    omit?: userOmit<ExtArgs> | null
     /**
-     * Filter, which User to fetch.
+     * Filter, which user to fetch.
      */
-    where?: UserWhereInput
+    where?: userWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Users to fetch.
+     * Determine the order of users to fetch.
      */
-    orderBy?: UserOrderByWithRelationInput | UserOrderByWithRelationInput[]
+    orderBy?: userOrderByWithRelationInput | userOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Users.
+     * Sets the position for searching for users.
      */
-    cursor?: UserWhereUniqueInput
+    cursor?: userWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Users from the position of the cursor.
+     * Take `±n` users from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Users.
+     * Skip the first `n` users.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Users.
+     * Filter by unique combinations of users.
      */
     distinct?: UserScalarFieldEnum | UserScalarFieldEnum[]
   }
 
   /**
-   * User findMany
+   * user findMany
    */
-  export type UserFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the User
+     * Select specific fields to fetch from the user
      */
-    select?: UserSelect<ExtArgs> | null
+    select?: userSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the User
+     * Omit specific fields from the user
      */
-    omit?: UserOmit<ExtArgs> | null
+    omit?: userOmit<ExtArgs> | null
     /**
-     * Filter, which Users to fetch.
+     * Filter, which users to fetch.
      */
-    where?: UserWhereInput
+    where?: userWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Users to fetch.
+     * Determine the order of users to fetch.
      */
-    orderBy?: UserOrderByWithRelationInput | UserOrderByWithRelationInput[]
+    orderBy?: userOrderByWithRelationInput | userOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Users.
+     * Sets the position for listing users.
      */
-    cursor?: UserWhereUniqueInput
+    cursor?: userWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Users from the position of the cursor.
+     * Take `±n` users from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Users.
+     * Skip the first `n` users.
      */
     skip?: number
     distinct?: UserScalarFieldEnum | UserScalarFieldEnum[]
   }
 
   /**
-   * User create
+   * user create
    */
-  export type UserCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the User
+     * Select specific fields to fetch from the user
      */
-    select?: UserSelect<ExtArgs> | null
+    select?: userSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the User
+     * Omit specific fields from the user
      */
-    omit?: UserOmit<ExtArgs> | null
+    omit?: userOmit<ExtArgs> | null
     /**
-     * The data needed to create a User.
+     * The data needed to create a user.
      */
-    data: XOR<UserCreateInput, UserUncheckedCreateInput>
+    data: XOR<userCreateInput, userUncheckedCreateInput>
   }
 
   /**
-   * User createMany
+   * user createMany
    */
-  export type UserCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Users.
+     * The data used to create many users.
      */
-    data: UserCreateManyInput | UserCreateManyInput[]
+    data: userCreateManyInput | userCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * User update
+   * user update
    */
-  export type UserUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the User
+     * Select specific fields to fetch from the user
      */
-    select?: UserSelect<ExtArgs> | null
+    select?: userSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the User
+     * Omit specific fields from the user
      */
-    omit?: UserOmit<ExtArgs> | null
+    omit?: userOmit<ExtArgs> | null
     /**
-     * The data needed to update a User.
+     * The data needed to update a user.
      */
-    data: XOR<UserUpdateInput, UserUncheckedUpdateInput>
+    data: XOR<userUpdateInput, userUncheckedUpdateInput>
     /**
-     * Choose, which User to update.
+     * Choose, which user to update.
      */
-    where: UserWhereUniqueInput
+    where: userWhereUniqueInput
   }
 
   /**
-   * User updateMany
+   * user updateMany
    */
-  export type UserUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Users.
+     * The data used to update users.
      */
-    data: XOR<UserUpdateManyMutationInput, UserUncheckedUpdateManyInput>
+    data: XOR<userUpdateManyMutationInput, userUncheckedUpdateManyInput>
     /**
-     * Filter which Users to update
+     * Filter which users to update
      */
-    where?: UserWhereInput
+    where?: userWhereInput
     /**
-     * Limit how many Users to update.
+     * Limit how many users to update.
      */
     limit?: number
   }
 
   /**
-   * User upsert
+   * user upsert
    */
-  export type UserUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the User
+     * Select specific fields to fetch from the user
      */
-    select?: UserSelect<ExtArgs> | null
+    select?: userSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the User
+     * Omit specific fields from the user
      */
-    omit?: UserOmit<ExtArgs> | null
+    omit?: userOmit<ExtArgs> | null
     /**
-     * The filter to search for the User to update in case it exists.
+     * The filter to search for the user to update in case it exists.
      */
-    where: UserWhereUniqueInput
+    where: userWhereUniqueInput
     /**
-     * In case the User found by the `where` argument doesn't exist, create a new User with this data.
+     * In case the user found by the `where` argument doesn't exist, create a new user with this data.
      */
-    create: XOR<UserCreateInput, UserUncheckedCreateInput>
+    create: XOR<userCreateInput, userUncheckedCreateInput>
     /**
-     * In case the User was found with the provided `where` argument, update it with this data.
+     * In case the user was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<UserUpdateInput, UserUncheckedUpdateInput>
+    update: XOR<userUpdateInput, userUncheckedUpdateInput>
   }
 
   /**
-   * User delete
+   * user delete
    */
-  export type UserDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the User
+     * Select specific fields to fetch from the user
      */
-    select?: UserSelect<ExtArgs> | null
+    select?: userSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the User
+     * Omit specific fields from the user
      */
-    omit?: UserOmit<ExtArgs> | null
+    omit?: userOmit<ExtArgs> | null
     /**
-     * Filter which User to delete.
+     * Filter which user to delete.
      */
-    where: UserWhereUniqueInput
+    where: userWhereUniqueInput
   }
 
   /**
-   * User deleteMany
+   * user deleteMany
    */
-  export type UserDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Users to delete
+     * Filter which users to delete
      */
-    where?: UserWhereInput
+    where?: userWhereInput
     /**
-     * Limit how many Users to delete.
+     * Limit how many users to delete.
      */
     limit?: number
   }
 
   /**
-   * User without action
+   * user without action
    */
-  export type UserDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the User
+     * Select specific fields to fetch from the user
      */
-    select?: UserSelect<ExtArgs> | null
+    select?: userSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the User
+     * Omit specific fields from the user
      */
-    omit?: UserOmit<ExtArgs> | null
+    omit?: userOmit<ExtArgs> | null
   }
 
 
   /**
-   * Model Insurers
+   * Model insurers
    */
 
   export type AggregateInsurers = {
@@ -2818,37 +2818,37 @@ export namespace Prisma {
 
   export type InsurersAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Insurers to aggregate.
+     * Filter which insurers to aggregate.
      */
-    where?: InsurersWhereInput
+    where?: insurersWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Insurers to fetch.
+     * Determine the order of insurers to fetch.
      */
-    orderBy?: InsurersOrderByWithRelationInput | InsurersOrderByWithRelationInput[]
+    orderBy?: insurersOrderByWithRelationInput | insurersOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: InsurersWhereUniqueInput
+    cursor?: insurersWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Insurers from the position of the cursor.
+     * Take `±n` insurers from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Insurers.
+     * Skip the first `n` insurers.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Insurers
+     * Count returned insurers
     **/
     _count?: true | InsurersCountAggregateInputType
     /**
@@ -2888,11 +2888,11 @@ export namespace Prisma {
 
 
 
-  export type InsurersGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: InsurersWhereInput
-    orderBy?: InsurersOrderByWithAggregationInput | InsurersOrderByWithAggregationInput[]
+  export type insurersGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: insurersWhereInput
+    orderBy?: insurersOrderByWithAggregationInput | insurersOrderByWithAggregationInput[]
     by: InsurersScalarFieldEnum[] | InsurersScalarFieldEnum
-    having?: InsurersScalarWhereWithAggregatesInput
+    having?: insurersScalarWhereWithAggregatesInput
     take?: number
     skip?: number
     _count?: InsurersCountAggregateInputType | true
@@ -2912,7 +2912,7 @@ export namespace Prisma {
     _max: InsurersMaxAggregateOutputType | null
   }
 
-  type GetInsurersGroupByPayload<T extends InsurersGroupByArgs> = Prisma.PrismaPromise<
+  type GetInsurersGroupByPayload<T extends insurersGroupByArgs> = Prisma.PrismaPromise<
     Array<
       PickEnumerable<InsurersGroupByOutputType, T['by']> &
         {
@@ -2926,33 +2926,33 @@ export namespace Prisma {
     >
 
 
-  export type InsurersSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type insurersSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
-    Clients?: boolean | Insurers$ClientsArgs<ExtArgs>
-    Uploads?: boolean | Insurers$UploadsArgs<ExtArgs>
+    clients?: boolean | insurers$clientsArgs<ExtArgs>
+    uploads?: boolean | insurers$uploadsArgs<ExtArgs>
     _count?: boolean | InsurersCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["insurers"]>
 
 
 
-  export type InsurersSelectScalar = {
+  export type insurersSelectScalar = {
     id?: boolean
     name?: boolean
   }
 
-  export type InsurersOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name", ExtArgs["result"]["insurers"]>
-  export type InsurersInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    Clients?: boolean | Insurers$ClientsArgs<ExtArgs>
-    Uploads?: boolean | Insurers$UploadsArgs<ExtArgs>
+  export type insurersOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name", ExtArgs["result"]["insurers"]>
+  export type insurersInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    clients?: boolean | insurers$clientsArgs<ExtArgs>
+    uploads?: boolean | insurers$uploadsArgs<ExtArgs>
     _count?: boolean | InsurersCountOutputTypeDefaultArgs<ExtArgs>
   }
 
-  export type $InsurersPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Insurers"
+  export type $insurersPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "insurers"
     objects: {
-      Clients: Prisma.$ClientsPayload<ExtArgs>[]
-      Uploads: Prisma.$UploadsPayload<ExtArgs>[]
+      clients: Prisma.$clientsPayload<ExtArgs>[]
+      uploads: Prisma.$uploadsPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -2961,18 +2961,18 @@ export namespace Prisma {
     composites: {}
   }
 
-  type InsurersGetPayload<S extends boolean | null | undefined | InsurersDefaultArgs> = $Result.GetResult<Prisma.$InsurersPayload, S>
+  type insurersGetPayload<S extends boolean | null | undefined | insurersDefaultArgs> = $Result.GetResult<Prisma.$insurersPayload, S>
 
-  type InsurersCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<InsurersFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+  type insurersCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<insurersFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
       select?: InsurersCountAggregateInputType | true
     }
 
-  export interface InsurersDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Insurers'], meta: { name: 'Insurers' } }
+  export interface insurersDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['insurers'], meta: { name: 'insurers' } }
     /**
      * Find zero or one Insurers that matches the filter.
-     * @param {InsurersFindUniqueArgs} args - Arguments to find a Insurers
+     * @param {insurersFindUniqueArgs} args - Arguments to find a Insurers
      * @example
      * // Get one Insurers
      * const insurers = await prisma.insurers.findUnique({
@@ -2981,12 +2981,12 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUnique<T extends InsurersFindUniqueArgs>(args: SelectSubset<T, InsurersFindUniqueArgs<ExtArgs>>): Prisma__InsurersClient<$Result.GetResult<Prisma.$InsurersPayload<ExtArgs>, T, "findUnique", ClientOptions> | null, null, ExtArgs, ClientOptions>
+    findUnique<T extends insurersFindUniqueArgs>(args: SelectSubset<T, insurersFindUniqueArgs<ExtArgs>>): Prisma__insurersClient<$Result.GetResult<Prisma.$insurersPayload<ExtArgs>, T, "findUnique", ClientOptions> | null, null, ExtArgs, ClientOptions>
 
     /**
      * Find one Insurers that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {InsurersFindUniqueOrThrowArgs} args - Arguments to find a Insurers
+     * @param {insurersFindUniqueOrThrowArgs} args - Arguments to find a Insurers
      * @example
      * // Get one Insurers
      * const insurers = await prisma.insurers.findUniqueOrThrow({
@@ -2995,13 +2995,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUniqueOrThrow<T extends InsurersFindUniqueOrThrowArgs>(args: SelectSubset<T, InsurersFindUniqueOrThrowArgs<ExtArgs>>): Prisma__InsurersClient<$Result.GetResult<Prisma.$InsurersPayload<ExtArgs>, T, "findUniqueOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
+    findUniqueOrThrow<T extends insurersFindUniqueOrThrowArgs>(args: SelectSubset<T, insurersFindUniqueOrThrowArgs<ExtArgs>>): Prisma__insurersClient<$Result.GetResult<Prisma.$insurersPayload<ExtArgs>, T, "findUniqueOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Find the first Insurers that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {InsurersFindFirstArgs} args - Arguments to find a Insurers
+     * @param {insurersFindFirstArgs} args - Arguments to find a Insurers
      * @example
      * // Get one Insurers
      * const insurers = await prisma.insurers.findFirst({
@@ -3010,14 +3010,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirst<T extends InsurersFindFirstArgs>(args?: SelectSubset<T, InsurersFindFirstArgs<ExtArgs>>): Prisma__InsurersClient<$Result.GetResult<Prisma.$InsurersPayload<ExtArgs>, T, "findFirst", ClientOptions> | null, null, ExtArgs, ClientOptions>
+    findFirst<T extends insurersFindFirstArgs>(args?: SelectSubset<T, insurersFindFirstArgs<ExtArgs>>): Prisma__insurersClient<$Result.GetResult<Prisma.$insurersPayload<ExtArgs>, T, "findFirst", ClientOptions> | null, null, ExtArgs, ClientOptions>
 
     /**
      * Find the first Insurers that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {InsurersFindFirstOrThrowArgs} args - Arguments to find a Insurers
+     * @param {insurersFindFirstOrThrowArgs} args - Arguments to find a Insurers
      * @example
      * // Get one Insurers
      * const insurers = await prisma.insurers.findFirstOrThrow({
@@ -3026,13 +3026,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirstOrThrow<T extends InsurersFindFirstOrThrowArgs>(args?: SelectSubset<T, InsurersFindFirstOrThrowArgs<ExtArgs>>): Prisma__InsurersClient<$Result.GetResult<Prisma.$InsurersPayload<ExtArgs>, T, "findFirstOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
+    findFirstOrThrow<T extends insurersFindFirstOrThrowArgs>(args?: SelectSubset<T, insurersFindFirstOrThrowArgs<ExtArgs>>): Prisma__insurersClient<$Result.GetResult<Prisma.$insurersPayload<ExtArgs>, T, "findFirstOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Find zero or more Insurers that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {InsurersFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {insurersFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all Insurers
      * const insurers = await prisma.insurers.findMany()
@@ -3044,11 +3044,11 @@ export namespace Prisma {
      * const insurersWithIdOnly = await prisma.insurers.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends InsurersFindManyArgs>(args?: SelectSubset<T, InsurersFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$InsurersPayload<ExtArgs>, T, "findMany", ClientOptions>>
+    findMany<T extends insurersFindManyArgs>(args?: SelectSubset<T, insurersFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$insurersPayload<ExtArgs>, T, "findMany", ClientOptions>>
 
     /**
      * Create a Insurers.
-     * @param {InsurersCreateArgs} args - Arguments to create a Insurers.
+     * @param {insurersCreateArgs} args - Arguments to create a Insurers.
      * @example
      * // Create one Insurers
      * const Insurers = await prisma.insurers.create({
@@ -3058,11 +3058,11 @@ export namespace Prisma {
      * })
      * 
      */
-    create<T extends InsurersCreateArgs>(args: SelectSubset<T, InsurersCreateArgs<ExtArgs>>): Prisma__InsurersClient<$Result.GetResult<Prisma.$InsurersPayload<ExtArgs>, T, "create", ClientOptions>, never, ExtArgs, ClientOptions>
+    create<T extends insurersCreateArgs>(args: SelectSubset<T, insurersCreateArgs<ExtArgs>>): Prisma__insurersClient<$Result.GetResult<Prisma.$insurersPayload<ExtArgs>, T, "create", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Create many Insurers.
-     * @param {InsurersCreateManyArgs} args - Arguments to create many Insurers.
+     * @param {insurersCreateManyArgs} args - Arguments to create many Insurers.
      * @example
      * // Create many Insurers
      * const insurers = await prisma.insurers.createMany({
@@ -3072,11 +3072,11 @@ export namespace Prisma {
      * })
      *     
      */
-    createMany<T extends InsurersCreateManyArgs>(args?: SelectSubset<T, InsurersCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends insurersCreateManyArgs>(args?: SelectSubset<T, insurersCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Delete a Insurers.
-     * @param {InsurersDeleteArgs} args - Arguments to delete one Insurers.
+     * @param {insurersDeleteArgs} args - Arguments to delete one Insurers.
      * @example
      * // Delete one Insurers
      * const Insurers = await prisma.insurers.delete({
@@ -3086,11 +3086,11 @@ export namespace Prisma {
      * })
      * 
      */
-    delete<T extends InsurersDeleteArgs>(args: SelectSubset<T, InsurersDeleteArgs<ExtArgs>>): Prisma__InsurersClient<$Result.GetResult<Prisma.$InsurersPayload<ExtArgs>, T, "delete", ClientOptions>, never, ExtArgs, ClientOptions>
+    delete<T extends insurersDeleteArgs>(args: SelectSubset<T, insurersDeleteArgs<ExtArgs>>): Prisma__insurersClient<$Result.GetResult<Prisma.$insurersPayload<ExtArgs>, T, "delete", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Update one Insurers.
-     * @param {InsurersUpdateArgs} args - Arguments to update one Insurers.
+     * @param {insurersUpdateArgs} args - Arguments to update one Insurers.
      * @example
      * // Update one Insurers
      * const insurers = await prisma.insurers.update({
@@ -3103,11 +3103,11 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends InsurersUpdateArgs>(args: SelectSubset<T, InsurersUpdateArgs<ExtArgs>>): Prisma__InsurersClient<$Result.GetResult<Prisma.$InsurersPayload<ExtArgs>, T, "update", ClientOptions>, never, ExtArgs, ClientOptions>
+    update<T extends insurersUpdateArgs>(args: SelectSubset<T, insurersUpdateArgs<ExtArgs>>): Prisma__insurersClient<$Result.GetResult<Prisma.$insurersPayload<ExtArgs>, T, "update", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Delete zero or more Insurers.
-     * @param {InsurersDeleteManyArgs} args - Arguments to filter Insurers to delete.
+     * @param {insurersDeleteManyArgs} args - Arguments to filter Insurers to delete.
      * @example
      * // Delete a few Insurers
      * const { count } = await prisma.insurers.deleteMany({
@@ -3117,13 +3117,13 @@ export namespace Prisma {
      * })
      * 
      */
-    deleteMany<T extends InsurersDeleteManyArgs>(args?: SelectSubset<T, InsurersDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends insurersDeleteManyArgs>(args?: SelectSubset<T, insurersDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Insurers.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {InsurersUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {insurersUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
      * // Update many Insurers
      * const insurers = await prisma.insurers.updateMany({
@@ -3136,11 +3136,11 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends InsurersUpdateManyArgs>(args: SelectSubset<T, InsurersUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends insurersUpdateManyArgs>(args: SelectSubset<T, insurersUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Create or update one Insurers.
-     * @param {InsurersUpsertArgs} args - Arguments to update or create a Insurers.
+     * @param {insurersUpsertArgs} args - Arguments to update or create a Insurers.
      * @example
      * // Update or create a Insurers
      * const insurers = await prisma.insurers.upsert({
@@ -3155,14 +3155,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    upsert<T extends InsurersUpsertArgs>(args: SelectSubset<T, InsurersUpsertArgs<ExtArgs>>): Prisma__InsurersClient<$Result.GetResult<Prisma.$InsurersPayload<ExtArgs>, T, "upsert", ClientOptions>, never, ExtArgs, ClientOptions>
+    upsert<T extends insurersUpsertArgs>(args: SelectSubset<T, insurersUpsertArgs<ExtArgs>>): Prisma__insurersClient<$Result.GetResult<Prisma.$insurersPayload<ExtArgs>, T, "upsert", ClientOptions>, never, ExtArgs, ClientOptions>
 
 
     /**
      * Count the number of Insurers.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {InsurersCountArgs} args - Arguments to filter Insurers to count.
+     * @param {insurersCountArgs} args - Arguments to filter Insurers to count.
      * @example
      * // Count the number of Insurers
      * const count = await prisma.insurers.count({
@@ -3171,8 +3171,8 @@ export namespace Prisma {
      *   }
      * })
     **/
-    count<T extends InsurersCountArgs>(
-      args?: Subset<T, InsurersCountArgs>,
+    count<T extends insurersCountArgs>(
+      args?: Subset<T, insurersCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
@@ -3211,7 +3211,7 @@ export namespace Prisma {
      * Group by Insurers.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {InsurersGroupByArgs} args - Group by arguments.
+     * @param {insurersGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -3226,14 +3226,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends InsurersGroupByArgs,
+      T extends insurersGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: InsurersGroupByArgs['orderBy'] }
-        : { orderBy?: InsurersGroupByArgs['orderBy'] },
+        ? { orderBy: insurersGroupByArgs['orderBy'] }
+        : { orderBy?: insurersGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -3282,23 +3282,23 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, InsurersGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetInsurersGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, insurersGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetInsurersGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Insurers model
+   * Fields of the insurers model
    */
-  readonly fields: InsurersFieldRefs;
+  readonly fields: insurersFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Insurers.
+   * The delegate class that acts as a "Promise-like" for insurers.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__InsurersClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__insurersClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    Clients<T extends Insurers$ClientsArgs<ExtArgs> = {}>(args?: Subset<T, Insurers$ClientsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ClientsPayload<ExtArgs>, T, "findMany", ClientOptions> | Null>
-    Uploads<T extends Insurers$UploadsArgs<ExtArgs> = {}>(args?: Subset<T, Insurers$UploadsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UploadsPayload<ExtArgs>, T, "findMany", ClientOptions> | Null>
+    clients<T extends insurers$clientsArgs<ExtArgs> = {}>(args?: Subset<T, insurers$clientsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$clientsPayload<ExtArgs>, T, "findMany", ClientOptions> | Null>
+    uploads<T extends insurers$uploadsArgs<ExtArgs> = {}>(args?: Subset<T, insurers$uploadsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$uploadsPayload<ExtArgs>, T, "findMany", ClientOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -3325,422 +3325,422 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Insurers model
+   * Fields of the insurers model
    */ 
-  interface InsurersFieldRefs {
-    readonly id: FieldRef<"Insurers", 'Int'>
-    readonly name: FieldRef<"Insurers", 'String'>
+  interface insurersFieldRefs {
+    readonly id: FieldRef<"insurers", 'Int'>
+    readonly name: FieldRef<"insurers", 'String'>
   }
     
 
   // Custom InputTypes
   /**
-   * Insurers findUnique
+   * insurers findUnique
    */
-  export type InsurersFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type insurersFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Insurers
+     * Select specific fields to fetch from the insurers
      */
-    select?: InsurersSelect<ExtArgs> | null
+    select?: insurersSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Insurers
+     * Omit specific fields from the insurers
      */
-    omit?: InsurersOmit<ExtArgs> | null
+    omit?: insurersOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: InsurersInclude<ExtArgs> | null
+    include?: insurersInclude<ExtArgs> | null
     /**
-     * Filter, which Insurers to fetch.
+     * Filter, which insurers to fetch.
      */
-    where: InsurersWhereUniqueInput
+    where: insurersWhereUniqueInput
   }
 
   /**
-   * Insurers findUniqueOrThrow
+   * insurers findUniqueOrThrow
    */
-  export type InsurersFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type insurersFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Insurers
+     * Select specific fields to fetch from the insurers
      */
-    select?: InsurersSelect<ExtArgs> | null
+    select?: insurersSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Insurers
+     * Omit specific fields from the insurers
      */
-    omit?: InsurersOmit<ExtArgs> | null
+    omit?: insurersOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: InsurersInclude<ExtArgs> | null
+    include?: insurersInclude<ExtArgs> | null
     /**
-     * Filter, which Insurers to fetch.
+     * Filter, which insurers to fetch.
      */
-    where: InsurersWhereUniqueInput
+    where: insurersWhereUniqueInput
   }
 
   /**
-   * Insurers findFirst
+   * insurers findFirst
    */
-  export type InsurersFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type insurersFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Insurers
+     * Select specific fields to fetch from the insurers
      */
-    select?: InsurersSelect<ExtArgs> | null
+    select?: insurersSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Insurers
+     * Omit specific fields from the insurers
      */
-    omit?: InsurersOmit<ExtArgs> | null
+    omit?: insurersOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: InsurersInclude<ExtArgs> | null
+    include?: insurersInclude<ExtArgs> | null
     /**
-     * Filter, which Insurers to fetch.
+     * Filter, which insurers to fetch.
      */
-    where?: InsurersWhereInput
+    where?: insurersWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Insurers to fetch.
+     * Determine the order of insurers to fetch.
      */
-    orderBy?: InsurersOrderByWithRelationInput | InsurersOrderByWithRelationInput[]
+    orderBy?: insurersOrderByWithRelationInput | insurersOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Insurers.
+     * Sets the position for searching for insurers.
      */
-    cursor?: InsurersWhereUniqueInput
+    cursor?: insurersWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Insurers from the position of the cursor.
+     * Take `±n` insurers from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Insurers.
+     * Skip the first `n` insurers.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Insurers.
+     * Filter by unique combinations of insurers.
      */
     distinct?: InsurersScalarFieldEnum | InsurersScalarFieldEnum[]
   }
 
   /**
-   * Insurers findFirstOrThrow
+   * insurers findFirstOrThrow
    */
-  export type InsurersFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type insurersFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Insurers
+     * Select specific fields to fetch from the insurers
      */
-    select?: InsurersSelect<ExtArgs> | null
+    select?: insurersSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Insurers
+     * Omit specific fields from the insurers
      */
-    omit?: InsurersOmit<ExtArgs> | null
+    omit?: insurersOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: InsurersInclude<ExtArgs> | null
+    include?: insurersInclude<ExtArgs> | null
     /**
-     * Filter, which Insurers to fetch.
+     * Filter, which insurers to fetch.
      */
-    where?: InsurersWhereInput
+    where?: insurersWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Insurers to fetch.
+     * Determine the order of insurers to fetch.
      */
-    orderBy?: InsurersOrderByWithRelationInput | InsurersOrderByWithRelationInput[]
+    orderBy?: insurersOrderByWithRelationInput | insurersOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Insurers.
+     * Sets the position for searching for insurers.
      */
-    cursor?: InsurersWhereUniqueInput
+    cursor?: insurersWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Insurers from the position of the cursor.
+     * Take `±n` insurers from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Insurers.
+     * Skip the first `n` insurers.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Insurers.
+     * Filter by unique combinations of insurers.
      */
     distinct?: InsurersScalarFieldEnum | InsurersScalarFieldEnum[]
   }
 
   /**
-   * Insurers findMany
+   * insurers findMany
    */
-  export type InsurersFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type insurersFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Insurers
+     * Select specific fields to fetch from the insurers
      */
-    select?: InsurersSelect<ExtArgs> | null
+    select?: insurersSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Insurers
+     * Omit specific fields from the insurers
      */
-    omit?: InsurersOmit<ExtArgs> | null
+    omit?: insurersOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: InsurersInclude<ExtArgs> | null
+    include?: insurersInclude<ExtArgs> | null
     /**
-     * Filter, which Insurers to fetch.
+     * Filter, which insurers to fetch.
      */
-    where?: InsurersWhereInput
+    where?: insurersWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Insurers to fetch.
+     * Determine the order of insurers to fetch.
      */
-    orderBy?: InsurersOrderByWithRelationInput | InsurersOrderByWithRelationInput[]
+    orderBy?: insurersOrderByWithRelationInput | insurersOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Insurers.
+     * Sets the position for listing insurers.
      */
-    cursor?: InsurersWhereUniqueInput
+    cursor?: insurersWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Insurers from the position of the cursor.
+     * Take `±n` insurers from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Insurers.
+     * Skip the first `n` insurers.
      */
     skip?: number
     distinct?: InsurersScalarFieldEnum | InsurersScalarFieldEnum[]
   }
 
   /**
-   * Insurers create
+   * insurers create
    */
-  export type InsurersCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type insurersCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Insurers
+     * Select specific fields to fetch from the insurers
      */
-    select?: InsurersSelect<ExtArgs> | null
+    select?: insurersSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Insurers
+     * Omit specific fields from the insurers
      */
-    omit?: InsurersOmit<ExtArgs> | null
+    omit?: insurersOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: InsurersInclude<ExtArgs> | null
+    include?: insurersInclude<ExtArgs> | null
     /**
-     * The data needed to create a Insurers.
+     * The data needed to create a insurers.
      */
-    data: XOR<InsurersCreateInput, InsurersUncheckedCreateInput>
+    data: XOR<insurersCreateInput, insurersUncheckedCreateInput>
   }
 
   /**
-   * Insurers createMany
+   * insurers createMany
    */
-  export type InsurersCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type insurersCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Insurers.
+     * The data used to create many insurers.
      */
-    data: InsurersCreateManyInput | InsurersCreateManyInput[]
+    data: insurersCreateManyInput | insurersCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Insurers update
+   * insurers update
    */
-  export type InsurersUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type insurersUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Insurers
+     * Select specific fields to fetch from the insurers
      */
-    select?: InsurersSelect<ExtArgs> | null
+    select?: insurersSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Insurers
+     * Omit specific fields from the insurers
      */
-    omit?: InsurersOmit<ExtArgs> | null
+    omit?: insurersOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: InsurersInclude<ExtArgs> | null
+    include?: insurersInclude<ExtArgs> | null
     /**
-     * The data needed to update a Insurers.
+     * The data needed to update a insurers.
      */
-    data: XOR<InsurersUpdateInput, InsurersUncheckedUpdateInput>
+    data: XOR<insurersUpdateInput, insurersUncheckedUpdateInput>
     /**
-     * Choose, which Insurers to update.
+     * Choose, which insurers to update.
      */
-    where: InsurersWhereUniqueInput
+    where: insurersWhereUniqueInput
   }
 
   /**
-   * Insurers updateMany
+   * insurers updateMany
    */
-  export type InsurersUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type insurersUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Insurers.
+     * The data used to update insurers.
      */
-    data: XOR<InsurersUpdateManyMutationInput, InsurersUncheckedUpdateManyInput>
+    data: XOR<insurersUpdateManyMutationInput, insurersUncheckedUpdateManyInput>
     /**
-     * Filter which Insurers to update
+     * Filter which insurers to update
      */
-    where?: InsurersWhereInput
+    where?: insurersWhereInput
     /**
-     * Limit how many Insurers to update.
+     * Limit how many insurers to update.
      */
     limit?: number
   }
 
   /**
-   * Insurers upsert
+   * insurers upsert
    */
-  export type InsurersUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type insurersUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Insurers
+     * Select specific fields to fetch from the insurers
      */
-    select?: InsurersSelect<ExtArgs> | null
+    select?: insurersSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Insurers
+     * Omit specific fields from the insurers
      */
-    omit?: InsurersOmit<ExtArgs> | null
+    omit?: insurersOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: InsurersInclude<ExtArgs> | null
+    include?: insurersInclude<ExtArgs> | null
     /**
-     * The filter to search for the Insurers to update in case it exists.
+     * The filter to search for the insurers to update in case it exists.
      */
-    where: InsurersWhereUniqueInput
+    where: insurersWhereUniqueInput
     /**
-     * In case the Insurers found by the `where` argument doesn't exist, create a new Insurers with this data.
+     * In case the insurers found by the `where` argument doesn't exist, create a new insurers with this data.
      */
-    create: XOR<InsurersCreateInput, InsurersUncheckedCreateInput>
+    create: XOR<insurersCreateInput, insurersUncheckedCreateInput>
     /**
-     * In case the Insurers was found with the provided `where` argument, update it with this data.
+     * In case the insurers was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<InsurersUpdateInput, InsurersUncheckedUpdateInput>
+    update: XOR<insurersUpdateInput, insurersUncheckedUpdateInput>
   }
 
   /**
-   * Insurers delete
+   * insurers delete
    */
-  export type InsurersDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type insurersDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Insurers
+     * Select specific fields to fetch from the insurers
      */
-    select?: InsurersSelect<ExtArgs> | null
+    select?: insurersSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Insurers
+     * Omit specific fields from the insurers
      */
-    omit?: InsurersOmit<ExtArgs> | null
+    omit?: insurersOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: InsurersInclude<ExtArgs> | null
+    include?: insurersInclude<ExtArgs> | null
     /**
-     * Filter which Insurers to delete.
+     * Filter which insurers to delete.
      */
-    where: InsurersWhereUniqueInput
+    where: insurersWhereUniqueInput
   }
 
   /**
-   * Insurers deleteMany
+   * insurers deleteMany
    */
-  export type InsurersDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type insurersDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Insurers to delete
+     * Filter which insurers to delete
      */
-    where?: InsurersWhereInput
+    where?: insurersWhereInput
     /**
-     * Limit how many Insurers to delete.
+     * Limit how many insurers to delete.
      */
     limit?: number
   }
 
   /**
-   * Insurers.Clients
+   * insurers.clients
    */
-  export type Insurers$ClientsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type insurers$clientsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Clients
+     * Select specific fields to fetch from the clients
      */
-    select?: ClientsSelect<ExtArgs> | null
+    select?: clientsSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Clients
+     * Omit specific fields from the clients
      */
-    omit?: ClientsOmit<ExtArgs> | null
+    omit?: clientsOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ClientsInclude<ExtArgs> | null
-    where?: ClientsWhereInput
-    orderBy?: ClientsOrderByWithRelationInput | ClientsOrderByWithRelationInput[]
-    cursor?: ClientsWhereUniqueInput
+    include?: clientsInclude<ExtArgs> | null
+    where?: clientsWhereInput
+    orderBy?: clientsOrderByWithRelationInput | clientsOrderByWithRelationInput[]
+    cursor?: clientsWhereUniqueInput
     take?: number
     skip?: number
     distinct?: ClientsScalarFieldEnum | ClientsScalarFieldEnum[]
   }
 
   /**
-   * Insurers.Uploads
+   * insurers.uploads
    */
-  export type Insurers$UploadsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type insurers$uploadsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Uploads
+     * Select specific fields to fetch from the uploads
      */
-    select?: UploadsSelect<ExtArgs> | null
+    select?: uploadsSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Uploads
+     * Omit specific fields from the uploads
      */
-    omit?: UploadsOmit<ExtArgs> | null
+    omit?: uploadsOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: UploadsInclude<ExtArgs> | null
-    where?: UploadsWhereInput
-    orderBy?: UploadsOrderByWithRelationInput | UploadsOrderByWithRelationInput[]
-    cursor?: UploadsWhereUniqueInput
+    include?: uploadsInclude<ExtArgs> | null
+    where?: uploadsWhereInput
+    orderBy?: uploadsOrderByWithRelationInput | uploadsOrderByWithRelationInput[]
+    cursor?: uploadsWhereUniqueInput
     take?: number
     skip?: number
     distinct?: UploadsScalarFieldEnum | UploadsScalarFieldEnum[]
   }
 
   /**
-   * Insurers without action
+   * insurers without action
    */
-  export type InsurersDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type insurersDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Insurers
+     * Select specific fields to fetch from the insurers
      */
-    select?: InsurersSelect<ExtArgs> | null
+    select?: insurersSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Insurers
+     * Omit specific fields from the insurers
      */
-    omit?: InsurersOmit<ExtArgs> | null
+    omit?: insurersOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: InsurersInclude<ExtArgs> | null
+    include?: insurersInclude<ExtArgs> | null
   }
 
 
   /**
-   * Model Clients
+   * Model clients
    */
 
   export type AggregateClients = {
@@ -3818,37 +3818,37 @@ export namespace Prisma {
 
   export type ClientsAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Clients to aggregate.
+     * Filter which clients to aggregate.
      */
-    where?: ClientsWhereInput
+    where?: clientsWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Clients to fetch.
+     * Determine the order of clients to fetch.
      */
-    orderBy?: ClientsOrderByWithRelationInput | ClientsOrderByWithRelationInput[]
+    orderBy?: clientsOrderByWithRelationInput | clientsOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: ClientsWhereUniqueInput
+    cursor?: clientsWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Clients from the position of the cursor.
+     * Take `±n` clients from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Clients.
+     * Skip the first `n` clients.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Clients
+     * Count returned clients
     **/
     _count?: true | ClientsCountAggregateInputType
     /**
@@ -3888,11 +3888,11 @@ export namespace Prisma {
 
 
 
-  export type ClientsGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ClientsWhereInput
-    orderBy?: ClientsOrderByWithAggregationInput | ClientsOrderByWithAggregationInput[]
+  export type clientsGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: clientsWhereInput
+    orderBy?: clientsOrderByWithAggregationInput | clientsOrderByWithAggregationInput[]
     by: ClientsScalarFieldEnum[] | ClientsScalarFieldEnum
-    having?: ClientsScalarWhereWithAggregatesInput
+    having?: clientsScalarWhereWithAggregatesInput
     take?: number
     skip?: number
     _count?: ClientsCountAggregateInputType | true
@@ -3914,7 +3914,7 @@ export namespace Prisma {
     _max: ClientsMaxAggregateOutputType | null
   }
 
-  type GetClientsGroupByPayload<T extends ClientsGroupByArgs> = Prisma.PrismaPromise<
+  type GetClientsGroupByPayload<T extends clientsGroupByArgs> = Prisma.PrismaPromise<
     Array<
       PickEnumerable<ClientsGroupByOutputType, T['by']> &
         {
@@ -3928,55 +3928,55 @@ export namespace Prisma {
     >
 
 
-  export type ClientsSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type clientsSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     client_name?: boolean
     description?: boolean
     insurer_id?: boolean
-    insurer?: boolean | Clients$insurerArgs<ExtArgs>
-    Uploads?: boolean | Clients$UploadsArgs<ExtArgs>
-    Decks?: boolean | Clients$DecksArgs<ExtArgs>
-    IntellicareMasterlist?: boolean | Clients$IntellicareMasterlistArgs<ExtArgs>
-    MaxicareMasterlist?: boolean | Clients$MaxicareMasterlistArgs<ExtArgs>
-    Intellicare?: boolean | Clients$IntellicareArgs<ExtArgs>
-    Maxicare?: boolean | Clients$MaxicareArgs<ExtArgs>
-    CustomIllnesses?: boolean | Clients$CustomIllnessesArgs<ExtArgs>
+    insurer?: boolean | clients$insurerArgs<ExtArgs>
+    uploads?: boolean | clients$uploadsArgs<ExtArgs>
+    decks?: boolean | clients$decksArgs<ExtArgs>
+    intellicareMasterlist?: boolean | clients$intellicareMasterlistArgs<ExtArgs>
+    maxicareMasterlist?: boolean | clients$maxicareMasterlistArgs<ExtArgs>
+    intellicare?: boolean | clients$intellicareArgs<ExtArgs>
+    maxicare?: boolean | clients$maxicareArgs<ExtArgs>
+    customIllnesses?: boolean | clients$customIllnessesArgs<ExtArgs>
     _count?: boolean | ClientsCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["clients"]>
 
 
 
-  export type ClientsSelectScalar = {
+  export type clientsSelectScalar = {
     id?: boolean
     client_name?: boolean
     description?: boolean
     insurer_id?: boolean
   }
 
-  export type ClientsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "client_name" | "description" | "insurer_id", ExtArgs["result"]["clients"]>
-  export type ClientsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    insurer?: boolean | Clients$insurerArgs<ExtArgs>
-    Uploads?: boolean | Clients$UploadsArgs<ExtArgs>
-    Decks?: boolean | Clients$DecksArgs<ExtArgs>
-    IntellicareMasterlist?: boolean | Clients$IntellicareMasterlistArgs<ExtArgs>
-    MaxicareMasterlist?: boolean | Clients$MaxicareMasterlistArgs<ExtArgs>
-    Intellicare?: boolean | Clients$IntellicareArgs<ExtArgs>
-    Maxicare?: boolean | Clients$MaxicareArgs<ExtArgs>
-    CustomIllnesses?: boolean | Clients$CustomIllnessesArgs<ExtArgs>
+  export type clientsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "client_name" | "description" | "insurer_id", ExtArgs["result"]["clients"]>
+  export type clientsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    insurer?: boolean | clients$insurerArgs<ExtArgs>
+    uploads?: boolean | clients$uploadsArgs<ExtArgs>
+    decks?: boolean | clients$decksArgs<ExtArgs>
+    intellicareMasterlist?: boolean | clients$intellicareMasterlistArgs<ExtArgs>
+    maxicareMasterlist?: boolean | clients$maxicareMasterlistArgs<ExtArgs>
+    intellicare?: boolean | clients$intellicareArgs<ExtArgs>
+    maxicare?: boolean | clients$maxicareArgs<ExtArgs>
+    customIllnesses?: boolean | clients$customIllnessesArgs<ExtArgs>
     _count?: boolean | ClientsCountOutputTypeDefaultArgs<ExtArgs>
   }
 
-  export type $ClientsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Clients"
+  export type $clientsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "clients"
     objects: {
-      insurer: Prisma.$InsurersPayload<ExtArgs> | null
-      Uploads: Prisma.$UploadsPayload<ExtArgs>[]
-      Decks: Prisma.$DecksPayload<ExtArgs>[]
-      IntellicareMasterlist: Prisma.$IntellicareMasterlistPayload<ExtArgs>[]
-      MaxicareMasterlist: Prisma.$MaxicareMasterlistPayload<ExtArgs>[]
-      Intellicare: Prisma.$IntellicarePayload<ExtArgs>[]
-      Maxicare: Prisma.$MaxicarePayload<ExtArgs>[]
-      CustomIllnesses: Prisma.$CustomIllnessesPayload<ExtArgs>[]
+      insurer: Prisma.$insurersPayload<ExtArgs> | null
+      uploads: Prisma.$uploadsPayload<ExtArgs>[]
+      decks: Prisma.$decksPayload<ExtArgs>[]
+      intellicareMasterlist: Prisma.$intellicareMasterlistPayload<ExtArgs>[]
+      maxicareMasterlist: Prisma.$maxicareMasterlistPayload<ExtArgs>[]
+      intellicare: Prisma.$intellicarePayload<ExtArgs>[]
+      maxicare: Prisma.$maxicarePayload<ExtArgs>[]
+      customIllnesses: Prisma.$customIllnessesPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -3987,18 +3987,18 @@ export namespace Prisma {
     composites: {}
   }
 
-  type ClientsGetPayload<S extends boolean | null | undefined | ClientsDefaultArgs> = $Result.GetResult<Prisma.$ClientsPayload, S>
+  type clientsGetPayload<S extends boolean | null | undefined | clientsDefaultArgs> = $Result.GetResult<Prisma.$clientsPayload, S>
 
-  type ClientsCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<ClientsFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+  type clientsCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<clientsFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
       select?: ClientsCountAggregateInputType | true
     }
 
-  export interface ClientsDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Clients'], meta: { name: 'Clients' } }
+  export interface clientsDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['clients'], meta: { name: 'clients' } }
     /**
      * Find zero or one Clients that matches the filter.
-     * @param {ClientsFindUniqueArgs} args - Arguments to find a Clients
+     * @param {clientsFindUniqueArgs} args - Arguments to find a Clients
      * @example
      * // Get one Clients
      * const clients = await prisma.clients.findUnique({
@@ -4007,12 +4007,12 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUnique<T extends ClientsFindUniqueArgs>(args: SelectSubset<T, ClientsFindUniqueArgs<ExtArgs>>): Prisma__ClientsClient<$Result.GetResult<Prisma.$ClientsPayload<ExtArgs>, T, "findUnique", ClientOptions> | null, null, ExtArgs, ClientOptions>
+    findUnique<T extends clientsFindUniqueArgs>(args: SelectSubset<T, clientsFindUniqueArgs<ExtArgs>>): Prisma__clientsClient<$Result.GetResult<Prisma.$clientsPayload<ExtArgs>, T, "findUnique", ClientOptions> | null, null, ExtArgs, ClientOptions>
 
     /**
      * Find one Clients that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {ClientsFindUniqueOrThrowArgs} args - Arguments to find a Clients
+     * @param {clientsFindUniqueOrThrowArgs} args - Arguments to find a Clients
      * @example
      * // Get one Clients
      * const clients = await prisma.clients.findUniqueOrThrow({
@@ -4021,13 +4021,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUniqueOrThrow<T extends ClientsFindUniqueOrThrowArgs>(args: SelectSubset<T, ClientsFindUniqueOrThrowArgs<ExtArgs>>): Prisma__ClientsClient<$Result.GetResult<Prisma.$ClientsPayload<ExtArgs>, T, "findUniqueOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
+    findUniqueOrThrow<T extends clientsFindUniqueOrThrowArgs>(args: SelectSubset<T, clientsFindUniqueOrThrowArgs<ExtArgs>>): Prisma__clientsClient<$Result.GetResult<Prisma.$clientsPayload<ExtArgs>, T, "findUniqueOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Find the first Clients that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ClientsFindFirstArgs} args - Arguments to find a Clients
+     * @param {clientsFindFirstArgs} args - Arguments to find a Clients
      * @example
      * // Get one Clients
      * const clients = await prisma.clients.findFirst({
@@ -4036,14 +4036,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirst<T extends ClientsFindFirstArgs>(args?: SelectSubset<T, ClientsFindFirstArgs<ExtArgs>>): Prisma__ClientsClient<$Result.GetResult<Prisma.$ClientsPayload<ExtArgs>, T, "findFirst", ClientOptions> | null, null, ExtArgs, ClientOptions>
+    findFirst<T extends clientsFindFirstArgs>(args?: SelectSubset<T, clientsFindFirstArgs<ExtArgs>>): Prisma__clientsClient<$Result.GetResult<Prisma.$clientsPayload<ExtArgs>, T, "findFirst", ClientOptions> | null, null, ExtArgs, ClientOptions>
 
     /**
      * Find the first Clients that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ClientsFindFirstOrThrowArgs} args - Arguments to find a Clients
+     * @param {clientsFindFirstOrThrowArgs} args - Arguments to find a Clients
      * @example
      * // Get one Clients
      * const clients = await prisma.clients.findFirstOrThrow({
@@ -4052,13 +4052,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirstOrThrow<T extends ClientsFindFirstOrThrowArgs>(args?: SelectSubset<T, ClientsFindFirstOrThrowArgs<ExtArgs>>): Prisma__ClientsClient<$Result.GetResult<Prisma.$ClientsPayload<ExtArgs>, T, "findFirstOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
+    findFirstOrThrow<T extends clientsFindFirstOrThrowArgs>(args?: SelectSubset<T, clientsFindFirstOrThrowArgs<ExtArgs>>): Prisma__clientsClient<$Result.GetResult<Prisma.$clientsPayload<ExtArgs>, T, "findFirstOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Find zero or more Clients that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ClientsFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {clientsFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all Clients
      * const clients = await prisma.clients.findMany()
@@ -4070,11 +4070,11 @@ export namespace Prisma {
      * const clientsWithIdOnly = await prisma.clients.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends ClientsFindManyArgs>(args?: SelectSubset<T, ClientsFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ClientsPayload<ExtArgs>, T, "findMany", ClientOptions>>
+    findMany<T extends clientsFindManyArgs>(args?: SelectSubset<T, clientsFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$clientsPayload<ExtArgs>, T, "findMany", ClientOptions>>
 
     /**
      * Create a Clients.
-     * @param {ClientsCreateArgs} args - Arguments to create a Clients.
+     * @param {clientsCreateArgs} args - Arguments to create a Clients.
      * @example
      * // Create one Clients
      * const Clients = await prisma.clients.create({
@@ -4084,11 +4084,11 @@ export namespace Prisma {
      * })
      * 
      */
-    create<T extends ClientsCreateArgs>(args: SelectSubset<T, ClientsCreateArgs<ExtArgs>>): Prisma__ClientsClient<$Result.GetResult<Prisma.$ClientsPayload<ExtArgs>, T, "create", ClientOptions>, never, ExtArgs, ClientOptions>
+    create<T extends clientsCreateArgs>(args: SelectSubset<T, clientsCreateArgs<ExtArgs>>): Prisma__clientsClient<$Result.GetResult<Prisma.$clientsPayload<ExtArgs>, T, "create", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Create many Clients.
-     * @param {ClientsCreateManyArgs} args - Arguments to create many Clients.
+     * @param {clientsCreateManyArgs} args - Arguments to create many Clients.
      * @example
      * // Create many Clients
      * const clients = await prisma.clients.createMany({
@@ -4098,11 +4098,11 @@ export namespace Prisma {
      * })
      *     
      */
-    createMany<T extends ClientsCreateManyArgs>(args?: SelectSubset<T, ClientsCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends clientsCreateManyArgs>(args?: SelectSubset<T, clientsCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Delete a Clients.
-     * @param {ClientsDeleteArgs} args - Arguments to delete one Clients.
+     * @param {clientsDeleteArgs} args - Arguments to delete one Clients.
      * @example
      * // Delete one Clients
      * const Clients = await prisma.clients.delete({
@@ -4112,11 +4112,11 @@ export namespace Prisma {
      * })
      * 
      */
-    delete<T extends ClientsDeleteArgs>(args: SelectSubset<T, ClientsDeleteArgs<ExtArgs>>): Prisma__ClientsClient<$Result.GetResult<Prisma.$ClientsPayload<ExtArgs>, T, "delete", ClientOptions>, never, ExtArgs, ClientOptions>
+    delete<T extends clientsDeleteArgs>(args: SelectSubset<T, clientsDeleteArgs<ExtArgs>>): Prisma__clientsClient<$Result.GetResult<Prisma.$clientsPayload<ExtArgs>, T, "delete", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Update one Clients.
-     * @param {ClientsUpdateArgs} args - Arguments to update one Clients.
+     * @param {clientsUpdateArgs} args - Arguments to update one Clients.
      * @example
      * // Update one Clients
      * const clients = await prisma.clients.update({
@@ -4129,11 +4129,11 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends ClientsUpdateArgs>(args: SelectSubset<T, ClientsUpdateArgs<ExtArgs>>): Prisma__ClientsClient<$Result.GetResult<Prisma.$ClientsPayload<ExtArgs>, T, "update", ClientOptions>, never, ExtArgs, ClientOptions>
+    update<T extends clientsUpdateArgs>(args: SelectSubset<T, clientsUpdateArgs<ExtArgs>>): Prisma__clientsClient<$Result.GetResult<Prisma.$clientsPayload<ExtArgs>, T, "update", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Delete zero or more Clients.
-     * @param {ClientsDeleteManyArgs} args - Arguments to filter Clients to delete.
+     * @param {clientsDeleteManyArgs} args - Arguments to filter Clients to delete.
      * @example
      * // Delete a few Clients
      * const { count } = await prisma.clients.deleteMany({
@@ -4143,13 +4143,13 @@ export namespace Prisma {
      * })
      * 
      */
-    deleteMany<T extends ClientsDeleteManyArgs>(args?: SelectSubset<T, ClientsDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends clientsDeleteManyArgs>(args?: SelectSubset<T, clientsDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Clients.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ClientsUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {clientsUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
      * // Update many Clients
      * const clients = await prisma.clients.updateMany({
@@ -4162,11 +4162,11 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends ClientsUpdateManyArgs>(args: SelectSubset<T, ClientsUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends clientsUpdateManyArgs>(args: SelectSubset<T, clientsUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Create or update one Clients.
-     * @param {ClientsUpsertArgs} args - Arguments to update or create a Clients.
+     * @param {clientsUpsertArgs} args - Arguments to update or create a Clients.
      * @example
      * // Update or create a Clients
      * const clients = await prisma.clients.upsert({
@@ -4181,14 +4181,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    upsert<T extends ClientsUpsertArgs>(args: SelectSubset<T, ClientsUpsertArgs<ExtArgs>>): Prisma__ClientsClient<$Result.GetResult<Prisma.$ClientsPayload<ExtArgs>, T, "upsert", ClientOptions>, never, ExtArgs, ClientOptions>
+    upsert<T extends clientsUpsertArgs>(args: SelectSubset<T, clientsUpsertArgs<ExtArgs>>): Prisma__clientsClient<$Result.GetResult<Prisma.$clientsPayload<ExtArgs>, T, "upsert", ClientOptions>, never, ExtArgs, ClientOptions>
 
 
     /**
      * Count the number of Clients.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ClientsCountArgs} args - Arguments to filter Clients to count.
+     * @param {clientsCountArgs} args - Arguments to filter Clients to count.
      * @example
      * // Count the number of Clients
      * const count = await prisma.clients.count({
@@ -4197,8 +4197,8 @@ export namespace Prisma {
      *   }
      * })
     **/
-    count<T extends ClientsCountArgs>(
-      args?: Subset<T, ClientsCountArgs>,
+    count<T extends clientsCountArgs>(
+      args?: Subset<T, clientsCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
@@ -4237,7 +4237,7 @@ export namespace Prisma {
      * Group by Clients.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ClientsGroupByArgs} args - Group by arguments.
+     * @param {clientsGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -4252,14 +4252,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends ClientsGroupByArgs,
+      T extends clientsGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: ClientsGroupByArgs['orderBy'] }
-        : { orderBy?: ClientsGroupByArgs['orderBy'] },
+        ? { orderBy: clientsGroupByArgs['orderBy'] }
+        : { orderBy?: clientsGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -4308,29 +4308,29 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, ClientsGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetClientsGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, clientsGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetClientsGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Clients model
+   * Fields of the clients model
    */
-  readonly fields: ClientsFieldRefs;
+  readonly fields: clientsFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Clients.
+   * The delegate class that acts as a "Promise-like" for clients.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__ClientsClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__clientsClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    insurer<T extends Clients$insurerArgs<ExtArgs> = {}>(args?: Subset<T, Clients$insurerArgs<ExtArgs>>): Prisma__InsurersClient<$Result.GetResult<Prisma.$InsurersPayload<ExtArgs>, T, "findUniqueOrThrow", ClientOptions> | null, null, ExtArgs, ClientOptions>
-    Uploads<T extends Clients$UploadsArgs<ExtArgs> = {}>(args?: Subset<T, Clients$UploadsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UploadsPayload<ExtArgs>, T, "findMany", ClientOptions> | Null>
-    Decks<T extends Clients$DecksArgs<ExtArgs> = {}>(args?: Subset<T, Clients$DecksArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DecksPayload<ExtArgs>, T, "findMany", ClientOptions> | Null>
-    IntellicareMasterlist<T extends Clients$IntellicareMasterlistArgs<ExtArgs> = {}>(args?: Subset<T, Clients$IntellicareMasterlistArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$IntellicareMasterlistPayload<ExtArgs>, T, "findMany", ClientOptions> | Null>
-    MaxicareMasterlist<T extends Clients$MaxicareMasterlistArgs<ExtArgs> = {}>(args?: Subset<T, Clients$MaxicareMasterlistArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MaxicareMasterlistPayload<ExtArgs>, T, "findMany", ClientOptions> | Null>
-    Intellicare<T extends Clients$IntellicareArgs<ExtArgs> = {}>(args?: Subset<T, Clients$IntellicareArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$IntellicarePayload<ExtArgs>, T, "findMany", ClientOptions> | Null>
-    Maxicare<T extends Clients$MaxicareArgs<ExtArgs> = {}>(args?: Subset<T, Clients$MaxicareArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MaxicarePayload<ExtArgs>, T, "findMany", ClientOptions> | Null>
-    CustomIllnesses<T extends Clients$CustomIllnessesArgs<ExtArgs> = {}>(args?: Subset<T, Clients$CustomIllnessesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CustomIllnessesPayload<ExtArgs>, T, "findMany", ClientOptions> | Null>
+    insurer<T extends clients$insurerArgs<ExtArgs> = {}>(args?: Subset<T, clients$insurerArgs<ExtArgs>>): Prisma__insurersClient<$Result.GetResult<Prisma.$insurersPayload<ExtArgs>, T, "findUniqueOrThrow", ClientOptions> | null, null, ExtArgs, ClientOptions>
+    uploads<T extends clients$uploadsArgs<ExtArgs> = {}>(args?: Subset<T, clients$uploadsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$uploadsPayload<ExtArgs>, T, "findMany", ClientOptions> | Null>
+    decks<T extends clients$decksArgs<ExtArgs> = {}>(args?: Subset<T, clients$decksArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$decksPayload<ExtArgs>, T, "findMany", ClientOptions> | Null>
+    intellicareMasterlist<T extends clients$intellicareMasterlistArgs<ExtArgs> = {}>(args?: Subset<T, clients$intellicareMasterlistArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$intellicareMasterlistPayload<ExtArgs>, T, "findMany", ClientOptions> | Null>
+    maxicareMasterlist<T extends clients$maxicareMasterlistArgs<ExtArgs> = {}>(args?: Subset<T, clients$maxicareMasterlistArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$maxicareMasterlistPayload<ExtArgs>, T, "findMany", ClientOptions> | Null>
+    intellicare<T extends clients$intellicareArgs<ExtArgs> = {}>(args?: Subset<T, clients$intellicareArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$intellicarePayload<ExtArgs>, T, "findMany", ClientOptions> | Null>
+    maxicare<T extends clients$maxicareArgs<ExtArgs> = {}>(args?: Subset<T, clients$maxicareArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$maxicarePayload<ExtArgs>, T, "findMany", ClientOptions> | Null>
+    customIllnesses<T extends clients$customIllnessesArgs<ExtArgs> = {}>(args?: Subset<T, clients$customIllnessesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$customIllnessesPayload<ExtArgs>, T, "findMany", ClientOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -4357,563 +4357,563 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Clients model
+   * Fields of the clients model
    */ 
-  interface ClientsFieldRefs {
-    readonly id: FieldRef<"Clients", 'Int'>
-    readonly client_name: FieldRef<"Clients", 'String'>
-    readonly description: FieldRef<"Clients", 'String'>
-    readonly insurer_id: FieldRef<"Clients", 'Int'>
+  interface clientsFieldRefs {
+    readonly id: FieldRef<"clients", 'Int'>
+    readonly client_name: FieldRef<"clients", 'String'>
+    readonly description: FieldRef<"clients", 'String'>
+    readonly insurer_id: FieldRef<"clients", 'Int'>
   }
     
 
   // Custom InputTypes
   /**
-   * Clients findUnique
+   * clients findUnique
    */
-  export type ClientsFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type clientsFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Clients
+     * Select specific fields to fetch from the clients
      */
-    select?: ClientsSelect<ExtArgs> | null
+    select?: clientsSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Clients
+     * Omit specific fields from the clients
      */
-    omit?: ClientsOmit<ExtArgs> | null
+    omit?: clientsOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ClientsInclude<ExtArgs> | null
+    include?: clientsInclude<ExtArgs> | null
     /**
-     * Filter, which Clients to fetch.
+     * Filter, which clients to fetch.
      */
-    where: ClientsWhereUniqueInput
+    where: clientsWhereUniqueInput
   }
 
   /**
-   * Clients findUniqueOrThrow
+   * clients findUniqueOrThrow
    */
-  export type ClientsFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type clientsFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Clients
+     * Select specific fields to fetch from the clients
      */
-    select?: ClientsSelect<ExtArgs> | null
+    select?: clientsSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Clients
+     * Omit specific fields from the clients
      */
-    omit?: ClientsOmit<ExtArgs> | null
+    omit?: clientsOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ClientsInclude<ExtArgs> | null
+    include?: clientsInclude<ExtArgs> | null
     /**
-     * Filter, which Clients to fetch.
+     * Filter, which clients to fetch.
      */
-    where: ClientsWhereUniqueInput
+    where: clientsWhereUniqueInput
   }
 
   /**
-   * Clients findFirst
+   * clients findFirst
    */
-  export type ClientsFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type clientsFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Clients
+     * Select specific fields to fetch from the clients
      */
-    select?: ClientsSelect<ExtArgs> | null
+    select?: clientsSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Clients
+     * Omit specific fields from the clients
      */
-    omit?: ClientsOmit<ExtArgs> | null
+    omit?: clientsOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ClientsInclude<ExtArgs> | null
+    include?: clientsInclude<ExtArgs> | null
     /**
-     * Filter, which Clients to fetch.
+     * Filter, which clients to fetch.
      */
-    where?: ClientsWhereInput
+    where?: clientsWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Clients to fetch.
+     * Determine the order of clients to fetch.
      */
-    orderBy?: ClientsOrderByWithRelationInput | ClientsOrderByWithRelationInput[]
+    orderBy?: clientsOrderByWithRelationInput | clientsOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Clients.
+     * Sets the position for searching for clients.
      */
-    cursor?: ClientsWhereUniqueInput
+    cursor?: clientsWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Clients from the position of the cursor.
+     * Take `±n` clients from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Clients.
+     * Skip the first `n` clients.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Clients.
+     * Filter by unique combinations of clients.
      */
     distinct?: ClientsScalarFieldEnum | ClientsScalarFieldEnum[]
   }
 
   /**
-   * Clients findFirstOrThrow
+   * clients findFirstOrThrow
    */
-  export type ClientsFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type clientsFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Clients
+     * Select specific fields to fetch from the clients
      */
-    select?: ClientsSelect<ExtArgs> | null
+    select?: clientsSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Clients
+     * Omit specific fields from the clients
      */
-    omit?: ClientsOmit<ExtArgs> | null
+    omit?: clientsOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ClientsInclude<ExtArgs> | null
+    include?: clientsInclude<ExtArgs> | null
     /**
-     * Filter, which Clients to fetch.
+     * Filter, which clients to fetch.
      */
-    where?: ClientsWhereInput
+    where?: clientsWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Clients to fetch.
+     * Determine the order of clients to fetch.
      */
-    orderBy?: ClientsOrderByWithRelationInput | ClientsOrderByWithRelationInput[]
+    orderBy?: clientsOrderByWithRelationInput | clientsOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Clients.
+     * Sets the position for searching for clients.
      */
-    cursor?: ClientsWhereUniqueInput
+    cursor?: clientsWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Clients from the position of the cursor.
+     * Take `±n` clients from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Clients.
+     * Skip the first `n` clients.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Clients.
+     * Filter by unique combinations of clients.
      */
     distinct?: ClientsScalarFieldEnum | ClientsScalarFieldEnum[]
   }
 
   /**
-   * Clients findMany
+   * clients findMany
    */
-  export type ClientsFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type clientsFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Clients
+     * Select specific fields to fetch from the clients
      */
-    select?: ClientsSelect<ExtArgs> | null
+    select?: clientsSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Clients
+     * Omit specific fields from the clients
      */
-    omit?: ClientsOmit<ExtArgs> | null
+    omit?: clientsOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ClientsInclude<ExtArgs> | null
+    include?: clientsInclude<ExtArgs> | null
     /**
-     * Filter, which Clients to fetch.
+     * Filter, which clients to fetch.
      */
-    where?: ClientsWhereInput
+    where?: clientsWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Clients to fetch.
+     * Determine the order of clients to fetch.
      */
-    orderBy?: ClientsOrderByWithRelationInput | ClientsOrderByWithRelationInput[]
+    orderBy?: clientsOrderByWithRelationInput | clientsOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Clients.
+     * Sets the position for listing clients.
      */
-    cursor?: ClientsWhereUniqueInput
+    cursor?: clientsWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Clients from the position of the cursor.
+     * Take `±n` clients from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Clients.
+     * Skip the first `n` clients.
      */
     skip?: number
     distinct?: ClientsScalarFieldEnum | ClientsScalarFieldEnum[]
   }
 
   /**
-   * Clients create
+   * clients create
    */
-  export type ClientsCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type clientsCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Clients
+     * Select specific fields to fetch from the clients
      */
-    select?: ClientsSelect<ExtArgs> | null
+    select?: clientsSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Clients
+     * Omit specific fields from the clients
      */
-    omit?: ClientsOmit<ExtArgs> | null
+    omit?: clientsOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ClientsInclude<ExtArgs> | null
+    include?: clientsInclude<ExtArgs> | null
     /**
-     * The data needed to create a Clients.
+     * The data needed to create a clients.
      */
-    data: XOR<ClientsCreateInput, ClientsUncheckedCreateInput>
+    data: XOR<clientsCreateInput, clientsUncheckedCreateInput>
   }
 
   /**
-   * Clients createMany
+   * clients createMany
    */
-  export type ClientsCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type clientsCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Clients.
+     * The data used to create many clients.
      */
-    data: ClientsCreateManyInput | ClientsCreateManyInput[]
+    data: clientsCreateManyInput | clientsCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Clients update
+   * clients update
    */
-  export type ClientsUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type clientsUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Clients
+     * Select specific fields to fetch from the clients
      */
-    select?: ClientsSelect<ExtArgs> | null
+    select?: clientsSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Clients
+     * Omit specific fields from the clients
      */
-    omit?: ClientsOmit<ExtArgs> | null
+    omit?: clientsOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ClientsInclude<ExtArgs> | null
+    include?: clientsInclude<ExtArgs> | null
     /**
-     * The data needed to update a Clients.
+     * The data needed to update a clients.
      */
-    data: XOR<ClientsUpdateInput, ClientsUncheckedUpdateInput>
+    data: XOR<clientsUpdateInput, clientsUncheckedUpdateInput>
     /**
-     * Choose, which Clients to update.
+     * Choose, which clients to update.
      */
-    where: ClientsWhereUniqueInput
+    where: clientsWhereUniqueInput
   }
 
   /**
-   * Clients updateMany
+   * clients updateMany
    */
-  export type ClientsUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type clientsUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Clients.
+     * The data used to update clients.
      */
-    data: XOR<ClientsUpdateManyMutationInput, ClientsUncheckedUpdateManyInput>
+    data: XOR<clientsUpdateManyMutationInput, clientsUncheckedUpdateManyInput>
     /**
-     * Filter which Clients to update
+     * Filter which clients to update
      */
-    where?: ClientsWhereInput
+    where?: clientsWhereInput
     /**
-     * Limit how many Clients to update.
+     * Limit how many clients to update.
      */
     limit?: number
   }
 
   /**
-   * Clients upsert
+   * clients upsert
    */
-  export type ClientsUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type clientsUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Clients
+     * Select specific fields to fetch from the clients
      */
-    select?: ClientsSelect<ExtArgs> | null
+    select?: clientsSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Clients
+     * Omit specific fields from the clients
      */
-    omit?: ClientsOmit<ExtArgs> | null
+    omit?: clientsOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ClientsInclude<ExtArgs> | null
+    include?: clientsInclude<ExtArgs> | null
     /**
-     * The filter to search for the Clients to update in case it exists.
+     * The filter to search for the clients to update in case it exists.
      */
-    where: ClientsWhereUniqueInput
+    where: clientsWhereUniqueInput
     /**
-     * In case the Clients found by the `where` argument doesn't exist, create a new Clients with this data.
+     * In case the clients found by the `where` argument doesn't exist, create a new clients with this data.
      */
-    create: XOR<ClientsCreateInput, ClientsUncheckedCreateInput>
+    create: XOR<clientsCreateInput, clientsUncheckedCreateInput>
     /**
-     * In case the Clients was found with the provided `where` argument, update it with this data.
+     * In case the clients was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<ClientsUpdateInput, ClientsUncheckedUpdateInput>
+    update: XOR<clientsUpdateInput, clientsUncheckedUpdateInput>
   }
 
   /**
-   * Clients delete
+   * clients delete
    */
-  export type ClientsDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type clientsDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Clients
+     * Select specific fields to fetch from the clients
      */
-    select?: ClientsSelect<ExtArgs> | null
+    select?: clientsSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Clients
+     * Omit specific fields from the clients
      */
-    omit?: ClientsOmit<ExtArgs> | null
+    omit?: clientsOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ClientsInclude<ExtArgs> | null
+    include?: clientsInclude<ExtArgs> | null
     /**
-     * Filter which Clients to delete.
+     * Filter which clients to delete.
      */
-    where: ClientsWhereUniqueInput
+    where: clientsWhereUniqueInput
   }
 
   /**
-   * Clients deleteMany
+   * clients deleteMany
    */
-  export type ClientsDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type clientsDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Clients to delete
+     * Filter which clients to delete
      */
-    where?: ClientsWhereInput
+    where?: clientsWhereInput
     /**
-     * Limit how many Clients to delete.
+     * Limit how many clients to delete.
      */
     limit?: number
   }
 
   /**
-   * Clients.insurer
+   * clients.insurer
    */
-  export type Clients$insurerArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type clients$insurerArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Insurers
+     * Select specific fields to fetch from the insurers
      */
-    select?: InsurersSelect<ExtArgs> | null
+    select?: insurersSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Insurers
+     * Omit specific fields from the insurers
      */
-    omit?: InsurersOmit<ExtArgs> | null
+    omit?: insurersOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: InsurersInclude<ExtArgs> | null
-    where?: InsurersWhereInput
+    include?: insurersInclude<ExtArgs> | null
+    where?: insurersWhereInput
   }
 
   /**
-   * Clients.Uploads
+   * clients.uploads
    */
-  export type Clients$UploadsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type clients$uploadsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Uploads
+     * Select specific fields to fetch from the uploads
      */
-    select?: UploadsSelect<ExtArgs> | null
+    select?: uploadsSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Uploads
+     * Omit specific fields from the uploads
      */
-    omit?: UploadsOmit<ExtArgs> | null
+    omit?: uploadsOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: UploadsInclude<ExtArgs> | null
-    where?: UploadsWhereInput
-    orderBy?: UploadsOrderByWithRelationInput | UploadsOrderByWithRelationInput[]
-    cursor?: UploadsWhereUniqueInput
+    include?: uploadsInclude<ExtArgs> | null
+    where?: uploadsWhereInput
+    orderBy?: uploadsOrderByWithRelationInput | uploadsOrderByWithRelationInput[]
+    cursor?: uploadsWhereUniqueInput
     take?: number
     skip?: number
     distinct?: UploadsScalarFieldEnum | UploadsScalarFieldEnum[]
   }
 
   /**
-   * Clients.Decks
+   * clients.decks
    */
-  export type Clients$DecksArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type clients$decksArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Decks
+     * Select specific fields to fetch from the decks
      */
-    select?: DecksSelect<ExtArgs> | null
+    select?: decksSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Decks
+     * Omit specific fields from the decks
      */
-    omit?: DecksOmit<ExtArgs> | null
+    omit?: decksOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: DecksInclude<ExtArgs> | null
-    where?: DecksWhereInput
-    orderBy?: DecksOrderByWithRelationInput | DecksOrderByWithRelationInput[]
-    cursor?: DecksWhereUniqueInput
+    include?: decksInclude<ExtArgs> | null
+    where?: decksWhereInput
+    orderBy?: decksOrderByWithRelationInput | decksOrderByWithRelationInput[]
+    cursor?: decksWhereUniqueInput
     take?: number
     skip?: number
     distinct?: DecksScalarFieldEnum | DecksScalarFieldEnum[]
   }
 
   /**
-   * Clients.IntellicareMasterlist
+   * clients.intellicareMasterlist
    */
-  export type Clients$IntellicareMasterlistArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type clients$intellicareMasterlistArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the IntellicareMasterlist
+     * Select specific fields to fetch from the intellicareMasterlist
      */
-    select?: IntellicareMasterlistSelect<ExtArgs> | null
+    select?: intellicareMasterlistSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the IntellicareMasterlist
+     * Omit specific fields from the intellicareMasterlist
      */
-    omit?: IntellicareMasterlistOmit<ExtArgs> | null
+    omit?: intellicareMasterlistOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: IntellicareMasterlistInclude<ExtArgs> | null
-    where?: IntellicareMasterlistWhereInput
-    orderBy?: IntellicareMasterlistOrderByWithRelationInput | IntellicareMasterlistOrderByWithRelationInput[]
-    cursor?: IntellicareMasterlistWhereUniqueInput
+    include?: intellicareMasterlistInclude<ExtArgs> | null
+    where?: intellicareMasterlistWhereInput
+    orderBy?: intellicareMasterlistOrderByWithRelationInput | intellicareMasterlistOrderByWithRelationInput[]
+    cursor?: intellicareMasterlistWhereUniqueInput
     take?: number
     skip?: number
     distinct?: IntellicareMasterlistScalarFieldEnum | IntellicareMasterlistScalarFieldEnum[]
   }
 
   /**
-   * Clients.MaxicareMasterlist
+   * clients.maxicareMasterlist
    */
-  export type Clients$MaxicareMasterlistArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type clients$maxicareMasterlistArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the MaxicareMasterlist
+     * Select specific fields to fetch from the maxicareMasterlist
      */
-    select?: MaxicareMasterlistSelect<ExtArgs> | null
+    select?: maxicareMasterlistSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the MaxicareMasterlist
+     * Omit specific fields from the maxicareMasterlist
      */
-    omit?: MaxicareMasterlistOmit<ExtArgs> | null
+    omit?: maxicareMasterlistOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: MaxicareMasterlistInclude<ExtArgs> | null
-    where?: MaxicareMasterlistWhereInput
-    orderBy?: MaxicareMasterlistOrderByWithRelationInput | MaxicareMasterlistOrderByWithRelationInput[]
-    cursor?: MaxicareMasterlistWhereUniqueInput
+    include?: maxicareMasterlistInclude<ExtArgs> | null
+    where?: maxicareMasterlistWhereInput
+    orderBy?: maxicareMasterlistOrderByWithRelationInput | maxicareMasterlistOrderByWithRelationInput[]
+    cursor?: maxicareMasterlistWhereUniqueInput
     take?: number
     skip?: number
     distinct?: MaxicareMasterlistScalarFieldEnum | MaxicareMasterlistScalarFieldEnum[]
   }
 
   /**
-   * Clients.Intellicare
+   * clients.intellicare
    */
-  export type Clients$IntellicareArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type clients$intellicareArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Intellicare
+     * Select specific fields to fetch from the intellicare
      */
-    select?: IntellicareSelect<ExtArgs> | null
+    select?: intellicareSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Intellicare
+     * Omit specific fields from the intellicare
      */
-    omit?: IntellicareOmit<ExtArgs> | null
+    omit?: intellicareOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: IntellicareInclude<ExtArgs> | null
-    where?: IntellicareWhereInput
-    orderBy?: IntellicareOrderByWithRelationInput | IntellicareOrderByWithRelationInput[]
-    cursor?: IntellicareWhereUniqueInput
+    include?: intellicareInclude<ExtArgs> | null
+    where?: intellicareWhereInput
+    orderBy?: intellicareOrderByWithRelationInput | intellicareOrderByWithRelationInput[]
+    cursor?: intellicareWhereUniqueInput
     take?: number
     skip?: number
     distinct?: IntellicareScalarFieldEnum | IntellicareScalarFieldEnum[]
   }
 
   /**
-   * Clients.Maxicare
+   * clients.maxicare
    */
-  export type Clients$MaxicareArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type clients$maxicareArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Maxicare
+     * Select specific fields to fetch from the maxicare
      */
-    select?: MaxicareSelect<ExtArgs> | null
+    select?: maxicareSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Maxicare
+     * Omit specific fields from the maxicare
      */
-    omit?: MaxicareOmit<ExtArgs> | null
+    omit?: maxicareOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: MaxicareInclude<ExtArgs> | null
-    where?: MaxicareWhereInput
-    orderBy?: MaxicareOrderByWithRelationInput | MaxicareOrderByWithRelationInput[]
-    cursor?: MaxicareWhereUniqueInput
+    include?: maxicareInclude<ExtArgs> | null
+    where?: maxicareWhereInput
+    orderBy?: maxicareOrderByWithRelationInput | maxicareOrderByWithRelationInput[]
+    cursor?: maxicareWhereUniqueInput
     take?: number
     skip?: number
     distinct?: MaxicareScalarFieldEnum | MaxicareScalarFieldEnum[]
   }
 
   /**
-   * Clients.CustomIllnesses
+   * clients.customIllnesses
    */
-  export type Clients$CustomIllnessesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type clients$customIllnessesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the CustomIllnesses
+     * Select specific fields to fetch from the customIllnesses
      */
-    select?: CustomIllnessesSelect<ExtArgs> | null
+    select?: customIllnessesSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the CustomIllnesses
+     * Omit specific fields from the customIllnesses
      */
-    omit?: CustomIllnessesOmit<ExtArgs> | null
+    omit?: customIllnessesOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: CustomIllnessesInclude<ExtArgs> | null
-    where?: CustomIllnessesWhereInput
-    orderBy?: CustomIllnessesOrderByWithRelationInput | CustomIllnessesOrderByWithRelationInput[]
-    cursor?: CustomIllnessesWhereUniqueInput
+    include?: customIllnessesInclude<ExtArgs> | null
+    where?: customIllnessesWhereInput
+    orderBy?: customIllnessesOrderByWithRelationInput | customIllnessesOrderByWithRelationInput[]
+    cursor?: customIllnessesWhereUniqueInput
     take?: number
     skip?: number
     distinct?: CustomIllnessesScalarFieldEnum | CustomIllnessesScalarFieldEnum[]
   }
 
   /**
-   * Clients without action
+   * clients without action
    */
-  export type ClientsDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type clientsDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Clients
+     * Select specific fields to fetch from the clients
      */
-    select?: ClientsSelect<ExtArgs> | null
+    select?: clientsSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Clients
+     * Omit specific fields from the clients
      */
-    omit?: ClientsOmit<ExtArgs> | null
+    omit?: clientsOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ClientsInclude<ExtArgs> | null
+    include?: clientsInclude<ExtArgs> | null
   }
 
 
   /**
-   * Model Uploads
+   * Model uploads
    */
 
   export type AggregateUploads = {
@@ -5019,37 +5019,37 @@ export namespace Prisma {
 
   export type UploadsAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Uploads to aggregate.
+     * Filter which uploads to aggregate.
      */
-    where?: UploadsWhereInput
+    where?: uploadsWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Uploads to fetch.
+     * Determine the order of uploads to fetch.
      */
-    orderBy?: UploadsOrderByWithRelationInput | UploadsOrderByWithRelationInput[]
+    orderBy?: uploadsOrderByWithRelationInput | uploadsOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: UploadsWhereUniqueInput
+    cursor?: uploadsWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Uploads from the position of the cursor.
+     * Take `±n` uploads from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Uploads.
+     * Skip the first `n` uploads.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Uploads
+     * Count returned uploads
     **/
     _count?: true | UploadsCountAggregateInputType
     /**
@@ -5089,11 +5089,11 @@ export namespace Prisma {
 
 
 
-  export type UploadsGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: UploadsWhereInput
-    orderBy?: UploadsOrderByWithAggregationInput | UploadsOrderByWithAggregationInput[]
+  export type uploadsGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: uploadsWhereInput
+    orderBy?: uploadsOrderByWithAggregationInput | uploadsOrderByWithAggregationInput[]
     by: UploadsScalarFieldEnum[] | UploadsScalarFieldEnum
-    having?: UploadsScalarWhereWithAggregatesInput
+    having?: uploadsScalarWhereWithAggregatesInput
     take?: number
     skip?: number
     _count?: UploadsCountAggregateInputType | true
@@ -5119,7 +5119,7 @@ export namespace Prisma {
     _max: UploadsMaxAggregateOutputType | null
   }
 
-  type GetUploadsGroupByPayload<T extends UploadsGroupByArgs> = Prisma.PrismaPromise<
+  type GetUploadsGroupByPayload<T extends uploadsGroupByArgs> = Prisma.PrismaPromise<
     Array<
       PickEnumerable<UploadsGroupByOutputType, T['by']> &
         {
@@ -5133,7 +5133,7 @@ export namespace Prisma {
     >
 
 
-  export type UploadsSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type uploadsSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     clientId?: boolean
     insurerId?: boolean
@@ -5142,13 +5142,13 @@ export namespace Prisma {
     type?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    Clients?: boolean | ClientsDefaultArgs<ExtArgs>
-    Insurers?: boolean | InsurersDefaultArgs<ExtArgs>
+    clients?: boolean | clientsDefaultArgs<ExtArgs>
+    insurers?: boolean | insurersDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["uploads"]>
 
 
 
-  export type UploadsSelectScalar = {
+  export type uploadsSelectScalar = {
     id?: boolean
     clientId?: boolean
     insurerId?: boolean
@@ -5159,17 +5159,17 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type UploadsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "clientId" | "insurerId" | "year" | "months" | "type" | "createdAt" | "updatedAt", ExtArgs["result"]["uploads"]>
-  export type UploadsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    Clients?: boolean | ClientsDefaultArgs<ExtArgs>
-    Insurers?: boolean | InsurersDefaultArgs<ExtArgs>
+  export type uploadsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "clientId" | "insurerId" | "year" | "months" | "type" | "createdAt" | "updatedAt", ExtArgs["result"]["uploads"]>
+  export type uploadsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    clients?: boolean | clientsDefaultArgs<ExtArgs>
+    insurers?: boolean | insurersDefaultArgs<ExtArgs>
   }
 
-  export type $UploadsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Uploads"
+  export type $uploadsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "uploads"
     objects: {
-      Clients: Prisma.$ClientsPayload<ExtArgs>
-      Insurers: Prisma.$InsurersPayload<ExtArgs>
+      clients: Prisma.$clientsPayload<ExtArgs>
+      insurers: Prisma.$insurersPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -5184,18 +5184,18 @@ export namespace Prisma {
     composites: {}
   }
 
-  type UploadsGetPayload<S extends boolean | null | undefined | UploadsDefaultArgs> = $Result.GetResult<Prisma.$UploadsPayload, S>
+  type uploadsGetPayload<S extends boolean | null | undefined | uploadsDefaultArgs> = $Result.GetResult<Prisma.$uploadsPayload, S>
 
-  type UploadsCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<UploadsFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+  type uploadsCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<uploadsFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
       select?: UploadsCountAggregateInputType | true
     }
 
-  export interface UploadsDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Uploads'], meta: { name: 'Uploads' } }
+  export interface uploadsDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['uploads'], meta: { name: 'uploads' } }
     /**
      * Find zero or one Uploads that matches the filter.
-     * @param {UploadsFindUniqueArgs} args - Arguments to find a Uploads
+     * @param {uploadsFindUniqueArgs} args - Arguments to find a Uploads
      * @example
      * // Get one Uploads
      * const uploads = await prisma.uploads.findUnique({
@@ -5204,12 +5204,12 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUnique<T extends UploadsFindUniqueArgs>(args: SelectSubset<T, UploadsFindUniqueArgs<ExtArgs>>): Prisma__UploadsClient<$Result.GetResult<Prisma.$UploadsPayload<ExtArgs>, T, "findUnique", ClientOptions> | null, null, ExtArgs, ClientOptions>
+    findUnique<T extends uploadsFindUniqueArgs>(args: SelectSubset<T, uploadsFindUniqueArgs<ExtArgs>>): Prisma__uploadsClient<$Result.GetResult<Prisma.$uploadsPayload<ExtArgs>, T, "findUnique", ClientOptions> | null, null, ExtArgs, ClientOptions>
 
     /**
      * Find one Uploads that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {UploadsFindUniqueOrThrowArgs} args - Arguments to find a Uploads
+     * @param {uploadsFindUniqueOrThrowArgs} args - Arguments to find a Uploads
      * @example
      * // Get one Uploads
      * const uploads = await prisma.uploads.findUniqueOrThrow({
@@ -5218,13 +5218,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUniqueOrThrow<T extends UploadsFindUniqueOrThrowArgs>(args: SelectSubset<T, UploadsFindUniqueOrThrowArgs<ExtArgs>>): Prisma__UploadsClient<$Result.GetResult<Prisma.$UploadsPayload<ExtArgs>, T, "findUniqueOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
+    findUniqueOrThrow<T extends uploadsFindUniqueOrThrowArgs>(args: SelectSubset<T, uploadsFindUniqueOrThrowArgs<ExtArgs>>): Prisma__uploadsClient<$Result.GetResult<Prisma.$uploadsPayload<ExtArgs>, T, "findUniqueOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Find the first Uploads that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {UploadsFindFirstArgs} args - Arguments to find a Uploads
+     * @param {uploadsFindFirstArgs} args - Arguments to find a Uploads
      * @example
      * // Get one Uploads
      * const uploads = await prisma.uploads.findFirst({
@@ -5233,14 +5233,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirst<T extends UploadsFindFirstArgs>(args?: SelectSubset<T, UploadsFindFirstArgs<ExtArgs>>): Prisma__UploadsClient<$Result.GetResult<Prisma.$UploadsPayload<ExtArgs>, T, "findFirst", ClientOptions> | null, null, ExtArgs, ClientOptions>
+    findFirst<T extends uploadsFindFirstArgs>(args?: SelectSubset<T, uploadsFindFirstArgs<ExtArgs>>): Prisma__uploadsClient<$Result.GetResult<Prisma.$uploadsPayload<ExtArgs>, T, "findFirst", ClientOptions> | null, null, ExtArgs, ClientOptions>
 
     /**
      * Find the first Uploads that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {UploadsFindFirstOrThrowArgs} args - Arguments to find a Uploads
+     * @param {uploadsFindFirstOrThrowArgs} args - Arguments to find a Uploads
      * @example
      * // Get one Uploads
      * const uploads = await prisma.uploads.findFirstOrThrow({
@@ -5249,13 +5249,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirstOrThrow<T extends UploadsFindFirstOrThrowArgs>(args?: SelectSubset<T, UploadsFindFirstOrThrowArgs<ExtArgs>>): Prisma__UploadsClient<$Result.GetResult<Prisma.$UploadsPayload<ExtArgs>, T, "findFirstOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
+    findFirstOrThrow<T extends uploadsFindFirstOrThrowArgs>(args?: SelectSubset<T, uploadsFindFirstOrThrowArgs<ExtArgs>>): Prisma__uploadsClient<$Result.GetResult<Prisma.$uploadsPayload<ExtArgs>, T, "findFirstOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Find zero or more Uploads that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {UploadsFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {uploadsFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all Uploads
      * const uploads = await prisma.uploads.findMany()
@@ -5267,11 +5267,11 @@ export namespace Prisma {
      * const uploadsWithIdOnly = await prisma.uploads.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends UploadsFindManyArgs>(args?: SelectSubset<T, UploadsFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UploadsPayload<ExtArgs>, T, "findMany", ClientOptions>>
+    findMany<T extends uploadsFindManyArgs>(args?: SelectSubset<T, uploadsFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$uploadsPayload<ExtArgs>, T, "findMany", ClientOptions>>
 
     /**
      * Create a Uploads.
-     * @param {UploadsCreateArgs} args - Arguments to create a Uploads.
+     * @param {uploadsCreateArgs} args - Arguments to create a Uploads.
      * @example
      * // Create one Uploads
      * const Uploads = await prisma.uploads.create({
@@ -5281,11 +5281,11 @@ export namespace Prisma {
      * })
      * 
      */
-    create<T extends UploadsCreateArgs>(args: SelectSubset<T, UploadsCreateArgs<ExtArgs>>): Prisma__UploadsClient<$Result.GetResult<Prisma.$UploadsPayload<ExtArgs>, T, "create", ClientOptions>, never, ExtArgs, ClientOptions>
+    create<T extends uploadsCreateArgs>(args: SelectSubset<T, uploadsCreateArgs<ExtArgs>>): Prisma__uploadsClient<$Result.GetResult<Prisma.$uploadsPayload<ExtArgs>, T, "create", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Create many Uploads.
-     * @param {UploadsCreateManyArgs} args - Arguments to create many Uploads.
+     * @param {uploadsCreateManyArgs} args - Arguments to create many Uploads.
      * @example
      * // Create many Uploads
      * const uploads = await prisma.uploads.createMany({
@@ -5295,11 +5295,11 @@ export namespace Prisma {
      * })
      *     
      */
-    createMany<T extends UploadsCreateManyArgs>(args?: SelectSubset<T, UploadsCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends uploadsCreateManyArgs>(args?: SelectSubset<T, uploadsCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Delete a Uploads.
-     * @param {UploadsDeleteArgs} args - Arguments to delete one Uploads.
+     * @param {uploadsDeleteArgs} args - Arguments to delete one Uploads.
      * @example
      * // Delete one Uploads
      * const Uploads = await prisma.uploads.delete({
@@ -5309,11 +5309,11 @@ export namespace Prisma {
      * })
      * 
      */
-    delete<T extends UploadsDeleteArgs>(args: SelectSubset<T, UploadsDeleteArgs<ExtArgs>>): Prisma__UploadsClient<$Result.GetResult<Prisma.$UploadsPayload<ExtArgs>, T, "delete", ClientOptions>, never, ExtArgs, ClientOptions>
+    delete<T extends uploadsDeleteArgs>(args: SelectSubset<T, uploadsDeleteArgs<ExtArgs>>): Prisma__uploadsClient<$Result.GetResult<Prisma.$uploadsPayload<ExtArgs>, T, "delete", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Update one Uploads.
-     * @param {UploadsUpdateArgs} args - Arguments to update one Uploads.
+     * @param {uploadsUpdateArgs} args - Arguments to update one Uploads.
      * @example
      * // Update one Uploads
      * const uploads = await prisma.uploads.update({
@@ -5326,11 +5326,11 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends UploadsUpdateArgs>(args: SelectSubset<T, UploadsUpdateArgs<ExtArgs>>): Prisma__UploadsClient<$Result.GetResult<Prisma.$UploadsPayload<ExtArgs>, T, "update", ClientOptions>, never, ExtArgs, ClientOptions>
+    update<T extends uploadsUpdateArgs>(args: SelectSubset<T, uploadsUpdateArgs<ExtArgs>>): Prisma__uploadsClient<$Result.GetResult<Prisma.$uploadsPayload<ExtArgs>, T, "update", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Delete zero or more Uploads.
-     * @param {UploadsDeleteManyArgs} args - Arguments to filter Uploads to delete.
+     * @param {uploadsDeleteManyArgs} args - Arguments to filter Uploads to delete.
      * @example
      * // Delete a few Uploads
      * const { count } = await prisma.uploads.deleteMany({
@@ -5340,13 +5340,13 @@ export namespace Prisma {
      * })
      * 
      */
-    deleteMany<T extends UploadsDeleteManyArgs>(args?: SelectSubset<T, UploadsDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends uploadsDeleteManyArgs>(args?: SelectSubset<T, uploadsDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Uploads.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {UploadsUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {uploadsUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
      * // Update many Uploads
      * const uploads = await prisma.uploads.updateMany({
@@ -5359,11 +5359,11 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends UploadsUpdateManyArgs>(args: SelectSubset<T, UploadsUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends uploadsUpdateManyArgs>(args: SelectSubset<T, uploadsUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Create or update one Uploads.
-     * @param {UploadsUpsertArgs} args - Arguments to update or create a Uploads.
+     * @param {uploadsUpsertArgs} args - Arguments to update or create a Uploads.
      * @example
      * // Update or create a Uploads
      * const uploads = await prisma.uploads.upsert({
@@ -5378,14 +5378,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    upsert<T extends UploadsUpsertArgs>(args: SelectSubset<T, UploadsUpsertArgs<ExtArgs>>): Prisma__UploadsClient<$Result.GetResult<Prisma.$UploadsPayload<ExtArgs>, T, "upsert", ClientOptions>, never, ExtArgs, ClientOptions>
+    upsert<T extends uploadsUpsertArgs>(args: SelectSubset<T, uploadsUpsertArgs<ExtArgs>>): Prisma__uploadsClient<$Result.GetResult<Prisma.$uploadsPayload<ExtArgs>, T, "upsert", ClientOptions>, never, ExtArgs, ClientOptions>
 
 
     /**
      * Count the number of Uploads.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {UploadsCountArgs} args - Arguments to filter Uploads to count.
+     * @param {uploadsCountArgs} args - Arguments to filter Uploads to count.
      * @example
      * // Count the number of Uploads
      * const count = await prisma.uploads.count({
@@ -5394,8 +5394,8 @@ export namespace Prisma {
      *   }
      * })
     **/
-    count<T extends UploadsCountArgs>(
-      args?: Subset<T, UploadsCountArgs>,
+    count<T extends uploadsCountArgs>(
+      args?: Subset<T, uploadsCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
@@ -5434,7 +5434,7 @@ export namespace Prisma {
      * Group by Uploads.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {UploadsGroupByArgs} args - Group by arguments.
+     * @param {uploadsGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -5449,14 +5449,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends UploadsGroupByArgs,
+      T extends uploadsGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: UploadsGroupByArgs['orderBy'] }
-        : { orderBy?: UploadsGroupByArgs['orderBy'] },
+        ? { orderBy: uploadsGroupByArgs['orderBy'] }
+        : { orderBy?: uploadsGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -5505,23 +5505,23 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, UploadsGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetUploadsGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, uploadsGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetUploadsGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Uploads model
+   * Fields of the uploads model
    */
-  readonly fields: UploadsFieldRefs;
+  readonly fields: uploadsFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Uploads.
+   * The delegate class that acts as a "Promise-like" for uploads.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__UploadsClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__uploadsClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    Clients<T extends ClientsDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ClientsDefaultArgs<ExtArgs>>): Prisma__ClientsClient<$Result.GetResult<Prisma.$ClientsPayload<ExtArgs>, T, "findUniqueOrThrow", ClientOptions> | Null, Null, ExtArgs, ClientOptions>
-    Insurers<T extends InsurersDefaultArgs<ExtArgs> = {}>(args?: Subset<T, InsurersDefaultArgs<ExtArgs>>): Prisma__InsurersClient<$Result.GetResult<Prisma.$InsurersPayload<ExtArgs>, T, "findUniqueOrThrow", ClientOptions> | Null, Null, ExtArgs, ClientOptions>
+    clients<T extends clientsDefaultArgs<ExtArgs> = {}>(args?: Subset<T, clientsDefaultArgs<ExtArgs>>): Prisma__clientsClient<$Result.GetResult<Prisma.$clientsPayload<ExtArgs>, T, "findUniqueOrThrow", ClientOptions> | Null, Null, ExtArgs, ClientOptions>
+    insurers<T extends insurersDefaultArgs<ExtArgs> = {}>(args?: Subset<T, insurersDefaultArgs<ExtArgs>>): Prisma__insurersClient<$Result.GetResult<Prisma.$insurersPayload<ExtArgs>, T, "findUniqueOrThrow", ClientOptions> | Null, Null, ExtArgs, ClientOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -5548,380 +5548,380 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Uploads model
+   * Fields of the uploads model
    */ 
-  interface UploadsFieldRefs {
-    readonly id: FieldRef<"Uploads", 'Int'>
-    readonly clientId: FieldRef<"Uploads", 'Int'>
-    readonly insurerId: FieldRef<"Uploads", 'Int'>
-    readonly year: FieldRef<"Uploads", 'String'>
-    readonly months: FieldRef<"Uploads", 'String'>
-    readonly type: FieldRef<"Uploads", 'String'>
-    readonly createdAt: FieldRef<"Uploads", 'DateTime'>
-    readonly updatedAt: FieldRef<"Uploads", 'DateTime'>
+  interface uploadsFieldRefs {
+    readonly id: FieldRef<"uploads", 'Int'>
+    readonly clientId: FieldRef<"uploads", 'Int'>
+    readonly insurerId: FieldRef<"uploads", 'Int'>
+    readonly year: FieldRef<"uploads", 'String'>
+    readonly months: FieldRef<"uploads", 'String'>
+    readonly type: FieldRef<"uploads", 'String'>
+    readonly createdAt: FieldRef<"uploads", 'DateTime'>
+    readonly updatedAt: FieldRef<"uploads", 'DateTime'>
   }
     
 
   // Custom InputTypes
   /**
-   * Uploads findUnique
+   * uploads findUnique
    */
-  export type UploadsFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type uploadsFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Uploads
+     * Select specific fields to fetch from the uploads
      */
-    select?: UploadsSelect<ExtArgs> | null
+    select?: uploadsSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Uploads
+     * Omit specific fields from the uploads
      */
-    omit?: UploadsOmit<ExtArgs> | null
+    omit?: uploadsOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: UploadsInclude<ExtArgs> | null
+    include?: uploadsInclude<ExtArgs> | null
     /**
-     * Filter, which Uploads to fetch.
+     * Filter, which uploads to fetch.
      */
-    where: UploadsWhereUniqueInput
+    where: uploadsWhereUniqueInput
   }
 
   /**
-   * Uploads findUniqueOrThrow
+   * uploads findUniqueOrThrow
    */
-  export type UploadsFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type uploadsFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Uploads
+     * Select specific fields to fetch from the uploads
      */
-    select?: UploadsSelect<ExtArgs> | null
+    select?: uploadsSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Uploads
+     * Omit specific fields from the uploads
      */
-    omit?: UploadsOmit<ExtArgs> | null
+    omit?: uploadsOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: UploadsInclude<ExtArgs> | null
+    include?: uploadsInclude<ExtArgs> | null
     /**
-     * Filter, which Uploads to fetch.
+     * Filter, which uploads to fetch.
      */
-    where: UploadsWhereUniqueInput
+    where: uploadsWhereUniqueInput
   }
 
   /**
-   * Uploads findFirst
+   * uploads findFirst
    */
-  export type UploadsFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type uploadsFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Uploads
+     * Select specific fields to fetch from the uploads
      */
-    select?: UploadsSelect<ExtArgs> | null
+    select?: uploadsSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Uploads
+     * Omit specific fields from the uploads
      */
-    omit?: UploadsOmit<ExtArgs> | null
+    omit?: uploadsOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: UploadsInclude<ExtArgs> | null
+    include?: uploadsInclude<ExtArgs> | null
     /**
-     * Filter, which Uploads to fetch.
+     * Filter, which uploads to fetch.
      */
-    where?: UploadsWhereInput
+    where?: uploadsWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Uploads to fetch.
+     * Determine the order of uploads to fetch.
      */
-    orderBy?: UploadsOrderByWithRelationInput | UploadsOrderByWithRelationInput[]
+    orderBy?: uploadsOrderByWithRelationInput | uploadsOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Uploads.
+     * Sets the position for searching for uploads.
      */
-    cursor?: UploadsWhereUniqueInput
+    cursor?: uploadsWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Uploads from the position of the cursor.
+     * Take `±n` uploads from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Uploads.
+     * Skip the first `n` uploads.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Uploads.
+     * Filter by unique combinations of uploads.
      */
     distinct?: UploadsScalarFieldEnum | UploadsScalarFieldEnum[]
   }
 
   /**
-   * Uploads findFirstOrThrow
+   * uploads findFirstOrThrow
    */
-  export type UploadsFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type uploadsFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Uploads
+     * Select specific fields to fetch from the uploads
      */
-    select?: UploadsSelect<ExtArgs> | null
+    select?: uploadsSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Uploads
+     * Omit specific fields from the uploads
      */
-    omit?: UploadsOmit<ExtArgs> | null
+    omit?: uploadsOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: UploadsInclude<ExtArgs> | null
+    include?: uploadsInclude<ExtArgs> | null
     /**
-     * Filter, which Uploads to fetch.
+     * Filter, which uploads to fetch.
      */
-    where?: UploadsWhereInput
+    where?: uploadsWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Uploads to fetch.
+     * Determine the order of uploads to fetch.
      */
-    orderBy?: UploadsOrderByWithRelationInput | UploadsOrderByWithRelationInput[]
+    orderBy?: uploadsOrderByWithRelationInput | uploadsOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Uploads.
+     * Sets the position for searching for uploads.
      */
-    cursor?: UploadsWhereUniqueInput
+    cursor?: uploadsWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Uploads from the position of the cursor.
+     * Take `±n` uploads from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Uploads.
+     * Skip the first `n` uploads.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Uploads.
+     * Filter by unique combinations of uploads.
      */
     distinct?: UploadsScalarFieldEnum | UploadsScalarFieldEnum[]
   }
 
   /**
-   * Uploads findMany
+   * uploads findMany
    */
-  export type UploadsFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type uploadsFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Uploads
+     * Select specific fields to fetch from the uploads
      */
-    select?: UploadsSelect<ExtArgs> | null
+    select?: uploadsSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Uploads
+     * Omit specific fields from the uploads
      */
-    omit?: UploadsOmit<ExtArgs> | null
+    omit?: uploadsOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: UploadsInclude<ExtArgs> | null
+    include?: uploadsInclude<ExtArgs> | null
     /**
-     * Filter, which Uploads to fetch.
+     * Filter, which uploads to fetch.
      */
-    where?: UploadsWhereInput
+    where?: uploadsWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Uploads to fetch.
+     * Determine the order of uploads to fetch.
      */
-    orderBy?: UploadsOrderByWithRelationInput | UploadsOrderByWithRelationInput[]
+    orderBy?: uploadsOrderByWithRelationInput | uploadsOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Uploads.
+     * Sets the position for listing uploads.
      */
-    cursor?: UploadsWhereUniqueInput
+    cursor?: uploadsWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Uploads from the position of the cursor.
+     * Take `±n` uploads from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Uploads.
+     * Skip the first `n` uploads.
      */
     skip?: number
     distinct?: UploadsScalarFieldEnum | UploadsScalarFieldEnum[]
   }
 
   /**
-   * Uploads create
+   * uploads create
    */
-  export type UploadsCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type uploadsCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Uploads
+     * Select specific fields to fetch from the uploads
      */
-    select?: UploadsSelect<ExtArgs> | null
+    select?: uploadsSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Uploads
+     * Omit specific fields from the uploads
      */
-    omit?: UploadsOmit<ExtArgs> | null
+    omit?: uploadsOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: UploadsInclude<ExtArgs> | null
+    include?: uploadsInclude<ExtArgs> | null
     /**
-     * The data needed to create a Uploads.
+     * The data needed to create a uploads.
      */
-    data: XOR<UploadsCreateInput, UploadsUncheckedCreateInput>
+    data: XOR<uploadsCreateInput, uploadsUncheckedCreateInput>
   }
 
   /**
-   * Uploads createMany
+   * uploads createMany
    */
-  export type UploadsCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type uploadsCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Uploads.
+     * The data used to create many uploads.
      */
-    data: UploadsCreateManyInput | UploadsCreateManyInput[]
+    data: uploadsCreateManyInput | uploadsCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Uploads update
+   * uploads update
    */
-  export type UploadsUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type uploadsUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Uploads
+     * Select specific fields to fetch from the uploads
      */
-    select?: UploadsSelect<ExtArgs> | null
+    select?: uploadsSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Uploads
+     * Omit specific fields from the uploads
      */
-    omit?: UploadsOmit<ExtArgs> | null
+    omit?: uploadsOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: UploadsInclude<ExtArgs> | null
+    include?: uploadsInclude<ExtArgs> | null
     /**
-     * The data needed to update a Uploads.
+     * The data needed to update a uploads.
      */
-    data: XOR<UploadsUpdateInput, UploadsUncheckedUpdateInput>
+    data: XOR<uploadsUpdateInput, uploadsUncheckedUpdateInput>
     /**
-     * Choose, which Uploads to update.
+     * Choose, which uploads to update.
      */
-    where: UploadsWhereUniqueInput
+    where: uploadsWhereUniqueInput
   }
 
   /**
-   * Uploads updateMany
+   * uploads updateMany
    */
-  export type UploadsUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type uploadsUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Uploads.
+     * The data used to update uploads.
      */
-    data: XOR<UploadsUpdateManyMutationInput, UploadsUncheckedUpdateManyInput>
+    data: XOR<uploadsUpdateManyMutationInput, uploadsUncheckedUpdateManyInput>
     /**
-     * Filter which Uploads to update
+     * Filter which uploads to update
      */
-    where?: UploadsWhereInput
+    where?: uploadsWhereInput
     /**
-     * Limit how many Uploads to update.
+     * Limit how many uploads to update.
      */
     limit?: number
   }
 
   /**
-   * Uploads upsert
+   * uploads upsert
    */
-  export type UploadsUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type uploadsUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Uploads
+     * Select specific fields to fetch from the uploads
      */
-    select?: UploadsSelect<ExtArgs> | null
+    select?: uploadsSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Uploads
+     * Omit specific fields from the uploads
      */
-    omit?: UploadsOmit<ExtArgs> | null
+    omit?: uploadsOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: UploadsInclude<ExtArgs> | null
+    include?: uploadsInclude<ExtArgs> | null
     /**
-     * The filter to search for the Uploads to update in case it exists.
+     * The filter to search for the uploads to update in case it exists.
      */
-    where: UploadsWhereUniqueInput
+    where: uploadsWhereUniqueInput
     /**
-     * In case the Uploads found by the `where` argument doesn't exist, create a new Uploads with this data.
+     * In case the uploads found by the `where` argument doesn't exist, create a new uploads with this data.
      */
-    create: XOR<UploadsCreateInput, UploadsUncheckedCreateInput>
+    create: XOR<uploadsCreateInput, uploadsUncheckedCreateInput>
     /**
-     * In case the Uploads was found with the provided `where` argument, update it with this data.
+     * In case the uploads was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<UploadsUpdateInput, UploadsUncheckedUpdateInput>
+    update: XOR<uploadsUpdateInput, uploadsUncheckedUpdateInput>
   }
 
   /**
-   * Uploads delete
+   * uploads delete
    */
-  export type UploadsDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type uploadsDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Uploads
+     * Select specific fields to fetch from the uploads
      */
-    select?: UploadsSelect<ExtArgs> | null
+    select?: uploadsSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Uploads
+     * Omit specific fields from the uploads
      */
-    omit?: UploadsOmit<ExtArgs> | null
+    omit?: uploadsOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: UploadsInclude<ExtArgs> | null
+    include?: uploadsInclude<ExtArgs> | null
     /**
-     * Filter which Uploads to delete.
+     * Filter which uploads to delete.
      */
-    where: UploadsWhereUniqueInput
+    where: uploadsWhereUniqueInput
   }
 
   /**
-   * Uploads deleteMany
+   * uploads deleteMany
    */
-  export type UploadsDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type uploadsDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Uploads to delete
+     * Filter which uploads to delete
      */
-    where?: UploadsWhereInput
+    where?: uploadsWhereInput
     /**
-     * Limit how many Uploads to delete.
+     * Limit how many uploads to delete.
      */
     limit?: number
   }
 
   /**
-   * Uploads without action
+   * uploads without action
    */
-  export type UploadsDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type uploadsDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Uploads
+     * Select specific fields to fetch from the uploads
      */
-    select?: UploadsSelect<ExtArgs> | null
+    select?: uploadsSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Uploads
+     * Omit specific fields from the uploads
      */
-    omit?: UploadsOmit<ExtArgs> | null
+    omit?: uploadsOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: UploadsInclude<ExtArgs> | null
+    include?: uploadsInclude<ExtArgs> | null
   }
 
 
   /**
-   * Model Decks
+   * Model decks
    */
 
   export type AggregateDecks = {
@@ -6011,37 +6011,37 @@ export namespace Prisma {
 
   export type DecksAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Decks to aggregate.
+     * Filter which decks to aggregate.
      */
-    where?: DecksWhereInput
+    where?: decksWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Decks to fetch.
+     * Determine the order of decks to fetch.
      */
-    orderBy?: DecksOrderByWithRelationInput | DecksOrderByWithRelationInput[]
+    orderBy?: decksOrderByWithRelationInput | decksOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: DecksWhereUniqueInput
+    cursor?: decksWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Decks from the position of the cursor.
+     * Take `±n` decks from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Decks.
+     * Skip the first `n` decks.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Decks
+     * Count returned decks
     **/
     _count?: true | DecksCountAggregateInputType
     /**
@@ -6081,11 +6081,11 @@ export namespace Prisma {
 
 
 
-  export type DecksGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: DecksWhereInput
-    orderBy?: DecksOrderByWithAggregationInput | DecksOrderByWithAggregationInput[]
+  export type decksGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: decksWhereInput
+    orderBy?: decksOrderByWithAggregationInput | decksOrderByWithAggregationInput[]
     by: DecksScalarFieldEnum[] | DecksScalarFieldEnum
-    having?: DecksScalarWhereWithAggregatesInput
+    having?: decksScalarWhereWithAggregatesInput
     take?: number
     skip?: number
     _count?: DecksCountAggregateInputType | true
@@ -6109,7 +6109,7 @@ export namespace Prisma {
     _max: DecksMaxAggregateOutputType | null
   }
 
-  type GetDecksGroupByPayload<T extends DecksGroupByArgs> = Prisma.PrismaPromise<
+  type GetDecksGroupByPayload<T extends decksGroupByArgs> = Prisma.PrismaPromise<
     Array<
       PickEnumerable<DecksGroupByOutputType, T['by']> &
         {
@@ -6123,19 +6123,19 @@ export namespace Prisma {
     >
 
 
-  export type DecksSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type decksSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
     description?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     clientId?: boolean
-    Clients?: boolean | ClientsDefaultArgs<ExtArgs>
+    clients?: boolean | clientsDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["decks"]>
 
 
 
-  export type DecksSelectScalar = {
+  export type decksSelectScalar = {
     id?: boolean
     name?: boolean
     description?: boolean
@@ -6144,15 +6144,15 @@ export namespace Prisma {
     clientId?: boolean
   }
 
-  export type DecksOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "description" | "createdAt" | "updatedAt" | "clientId", ExtArgs["result"]["decks"]>
-  export type DecksInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    Clients?: boolean | ClientsDefaultArgs<ExtArgs>
+  export type decksOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "description" | "createdAt" | "updatedAt" | "clientId", ExtArgs["result"]["decks"]>
+  export type decksInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    clients?: boolean | clientsDefaultArgs<ExtArgs>
   }
 
-  export type $DecksPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Decks"
+  export type $decksPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "decks"
     objects: {
-      Clients: Prisma.$ClientsPayload<ExtArgs>
+      clients: Prisma.$clientsPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -6165,18 +6165,18 @@ export namespace Prisma {
     composites: {}
   }
 
-  type DecksGetPayload<S extends boolean | null | undefined | DecksDefaultArgs> = $Result.GetResult<Prisma.$DecksPayload, S>
+  type decksGetPayload<S extends boolean | null | undefined | decksDefaultArgs> = $Result.GetResult<Prisma.$decksPayload, S>
 
-  type DecksCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<DecksFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+  type decksCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<decksFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
       select?: DecksCountAggregateInputType | true
     }
 
-  export interface DecksDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Decks'], meta: { name: 'Decks' } }
+  export interface decksDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['decks'], meta: { name: 'decks' } }
     /**
      * Find zero or one Decks that matches the filter.
-     * @param {DecksFindUniqueArgs} args - Arguments to find a Decks
+     * @param {decksFindUniqueArgs} args - Arguments to find a Decks
      * @example
      * // Get one Decks
      * const decks = await prisma.decks.findUnique({
@@ -6185,12 +6185,12 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUnique<T extends DecksFindUniqueArgs>(args: SelectSubset<T, DecksFindUniqueArgs<ExtArgs>>): Prisma__DecksClient<$Result.GetResult<Prisma.$DecksPayload<ExtArgs>, T, "findUnique", ClientOptions> | null, null, ExtArgs, ClientOptions>
+    findUnique<T extends decksFindUniqueArgs>(args: SelectSubset<T, decksFindUniqueArgs<ExtArgs>>): Prisma__decksClient<$Result.GetResult<Prisma.$decksPayload<ExtArgs>, T, "findUnique", ClientOptions> | null, null, ExtArgs, ClientOptions>
 
     /**
      * Find one Decks that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {DecksFindUniqueOrThrowArgs} args - Arguments to find a Decks
+     * @param {decksFindUniqueOrThrowArgs} args - Arguments to find a Decks
      * @example
      * // Get one Decks
      * const decks = await prisma.decks.findUniqueOrThrow({
@@ -6199,13 +6199,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUniqueOrThrow<T extends DecksFindUniqueOrThrowArgs>(args: SelectSubset<T, DecksFindUniqueOrThrowArgs<ExtArgs>>): Prisma__DecksClient<$Result.GetResult<Prisma.$DecksPayload<ExtArgs>, T, "findUniqueOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
+    findUniqueOrThrow<T extends decksFindUniqueOrThrowArgs>(args: SelectSubset<T, decksFindUniqueOrThrowArgs<ExtArgs>>): Prisma__decksClient<$Result.GetResult<Prisma.$decksPayload<ExtArgs>, T, "findUniqueOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Find the first Decks that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {DecksFindFirstArgs} args - Arguments to find a Decks
+     * @param {decksFindFirstArgs} args - Arguments to find a Decks
      * @example
      * // Get one Decks
      * const decks = await prisma.decks.findFirst({
@@ -6214,14 +6214,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirst<T extends DecksFindFirstArgs>(args?: SelectSubset<T, DecksFindFirstArgs<ExtArgs>>): Prisma__DecksClient<$Result.GetResult<Prisma.$DecksPayload<ExtArgs>, T, "findFirst", ClientOptions> | null, null, ExtArgs, ClientOptions>
+    findFirst<T extends decksFindFirstArgs>(args?: SelectSubset<T, decksFindFirstArgs<ExtArgs>>): Prisma__decksClient<$Result.GetResult<Prisma.$decksPayload<ExtArgs>, T, "findFirst", ClientOptions> | null, null, ExtArgs, ClientOptions>
 
     /**
      * Find the first Decks that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {DecksFindFirstOrThrowArgs} args - Arguments to find a Decks
+     * @param {decksFindFirstOrThrowArgs} args - Arguments to find a Decks
      * @example
      * // Get one Decks
      * const decks = await prisma.decks.findFirstOrThrow({
@@ -6230,13 +6230,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirstOrThrow<T extends DecksFindFirstOrThrowArgs>(args?: SelectSubset<T, DecksFindFirstOrThrowArgs<ExtArgs>>): Prisma__DecksClient<$Result.GetResult<Prisma.$DecksPayload<ExtArgs>, T, "findFirstOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
+    findFirstOrThrow<T extends decksFindFirstOrThrowArgs>(args?: SelectSubset<T, decksFindFirstOrThrowArgs<ExtArgs>>): Prisma__decksClient<$Result.GetResult<Prisma.$decksPayload<ExtArgs>, T, "findFirstOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Find zero or more Decks that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {DecksFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {decksFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all Decks
      * const decks = await prisma.decks.findMany()
@@ -6248,11 +6248,11 @@ export namespace Prisma {
      * const decksWithIdOnly = await prisma.decks.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends DecksFindManyArgs>(args?: SelectSubset<T, DecksFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DecksPayload<ExtArgs>, T, "findMany", ClientOptions>>
+    findMany<T extends decksFindManyArgs>(args?: SelectSubset<T, decksFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$decksPayload<ExtArgs>, T, "findMany", ClientOptions>>
 
     /**
      * Create a Decks.
-     * @param {DecksCreateArgs} args - Arguments to create a Decks.
+     * @param {decksCreateArgs} args - Arguments to create a Decks.
      * @example
      * // Create one Decks
      * const Decks = await prisma.decks.create({
@@ -6262,11 +6262,11 @@ export namespace Prisma {
      * })
      * 
      */
-    create<T extends DecksCreateArgs>(args: SelectSubset<T, DecksCreateArgs<ExtArgs>>): Prisma__DecksClient<$Result.GetResult<Prisma.$DecksPayload<ExtArgs>, T, "create", ClientOptions>, never, ExtArgs, ClientOptions>
+    create<T extends decksCreateArgs>(args: SelectSubset<T, decksCreateArgs<ExtArgs>>): Prisma__decksClient<$Result.GetResult<Prisma.$decksPayload<ExtArgs>, T, "create", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Create many Decks.
-     * @param {DecksCreateManyArgs} args - Arguments to create many Decks.
+     * @param {decksCreateManyArgs} args - Arguments to create many Decks.
      * @example
      * // Create many Decks
      * const decks = await prisma.decks.createMany({
@@ -6276,11 +6276,11 @@ export namespace Prisma {
      * })
      *     
      */
-    createMany<T extends DecksCreateManyArgs>(args?: SelectSubset<T, DecksCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends decksCreateManyArgs>(args?: SelectSubset<T, decksCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Delete a Decks.
-     * @param {DecksDeleteArgs} args - Arguments to delete one Decks.
+     * @param {decksDeleteArgs} args - Arguments to delete one Decks.
      * @example
      * // Delete one Decks
      * const Decks = await prisma.decks.delete({
@@ -6290,11 +6290,11 @@ export namespace Prisma {
      * })
      * 
      */
-    delete<T extends DecksDeleteArgs>(args: SelectSubset<T, DecksDeleteArgs<ExtArgs>>): Prisma__DecksClient<$Result.GetResult<Prisma.$DecksPayload<ExtArgs>, T, "delete", ClientOptions>, never, ExtArgs, ClientOptions>
+    delete<T extends decksDeleteArgs>(args: SelectSubset<T, decksDeleteArgs<ExtArgs>>): Prisma__decksClient<$Result.GetResult<Prisma.$decksPayload<ExtArgs>, T, "delete", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Update one Decks.
-     * @param {DecksUpdateArgs} args - Arguments to update one Decks.
+     * @param {decksUpdateArgs} args - Arguments to update one Decks.
      * @example
      * // Update one Decks
      * const decks = await prisma.decks.update({
@@ -6307,11 +6307,11 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends DecksUpdateArgs>(args: SelectSubset<T, DecksUpdateArgs<ExtArgs>>): Prisma__DecksClient<$Result.GetResult<Prisma.$DecksPayload<ExtArgs>, T, "update", ClientOptions>, never, ExtArgs, ClientOptions>
+    update<T extends decksUpdateArgs>(args: SelectSubset<T, decksUpdateArgs<ExtArgs>>): Prisma__decksClient<$Result.GetResult<Prisma.$decksPayload<ExtArgs>, T, "update", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Delete zero or more Decks.
-     * @param {DecksDeleteManyArgs} args - Arguments to filter Decks to delete.
+     * @param {decksDeleteManyArgs} args - Arguments to filter Decks to delete.
      * @example
      * // Delete a few Decks
      * const { count } = await prisma.decks.deleteMany({
@@ -6321,13 +6321,13 @@ export namespace Prisma {
      * })
      * 
      */
-    deleteMany<T extends DecksDeleteManyArgs>(args?: SelectSubset<T, DecksDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends decksDeleteManyArgs>(args?: SelectSubset<T, decksDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Decks.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {DecksUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {decksUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
      * // Update many Decks
      * const decks = await prisma.decks.updateMany({
@@ -6340,11 +6340,11 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends DecksUpdateManyArgs>(args: SelectSubset<T, DecksUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends decksUpdateManyArgs>(args: SelectSubset<T, decksUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Create or update one Decks.
-     * @param {DecksUpsertArgs} args - Arguments to update or create a Decks.
+     * @param {decksUpsertArgs} args - Arguments to update or create a Decks.
      * @example
      * // Update or create a Decks
      * const decks = await prisma.decks.upsert({
@@ -6359,14 +6359,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    upsert<T extends DecksUpsertArgs>(args: SelectSubset<T, DecksUpsertArgs<ExtArgs>>): Prisma__DecksClient<$Result.GetResult<Prisma.$DecksPayload<ExtArgs>, T, "upsert", ClientOptions>, never, ExtArgs, ClientOptions>
+    upsert<T extends decksUpsertArgs>(args: SelectSubset<T, decksUpsertArgs<ExtArgs>>): Prisma__decksClient<$Result.GetResult<Prisma.$decksPayload<ExtArgs>, T, "upsert", ClientOptions>, never, ExtArgs, ClientOptions>
 
 
     /**
      * Count the number of Decks.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {DecksCountArgs} args - Arguments to filter Decks to count.
+     * @param {decksCountArgs} args - Arguments to filter Decks to count.
      * @example
      * // Count the number of Decks
      * const count = await prisma.decks.count({
@@ -6375,8 +6375,8 @@ export namespace Prisma {
      *   }
      * })
     **/
-    count<T extends DecksCountArgs>(
-      args?: Subset<T, DecksCountArgs>,
+    count<T extends decksCountArgs>(
+      args?: Subset<T, decksCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
@@ -6415,7 +6415,7 @@ export namespace Prisma {
      * Group by Decks.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {DecksGroupByArgs} args - Group by arguments.
+     * @param {decksGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -6430,14 +6430,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends DecksGroupByArgs,
+      T extends decksGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: DecksGroupByArgs['orderBy'] }
-        : { orderBy?: DecksGroupByArgs['orderBy'] },
+        ? { orderBy: decksGroupByArgs['orderBy'] }
+        : { orderBy?: decksGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -6486,22 +6486,22 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, DecksGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetDecksGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, decksGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetDecksGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Decks model
+   * Fields of the decks model
    */
-  readonly fields: DecksFieldRefs;
+  readonly fields: decksFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Decks.
+   * The delegate class that acts as a "Promise-like" for decks.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__DecksClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__decksClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    Clients<T extends ClientsDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ClientsDefaultArgs<ExtArgs>>): Prisma__ClientsClient<$Result.GetResult<Prisma.$ClientsPayload<ExtArgs>, T, "findUniqueOrThrow", ClientOptions> | Null, Null, ExtArgs, ClientOptions>
+    clients<T extends clientsDefaultArgs<ExtArgs> = {}>(args?: Subset<T, clientsDefaultArgs<ExtArgs>>): Prisma__clientsClient<$Result.GetResult<Prisma.$clientsPayload<ExtArgs>, T, "findUniqueOrThrow", ClientOptions> | Null, Null, ExtArgs, ClientOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -6528,378 +6528,378 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Decks model
+   * Fields of the decks model
    */ 
-  interface DecksFieldRefs {
-    readonly id: FieldRef<"Decks", 'Int'>
-    readonly name: FieldRef<"Decks", 'String'>
-    readonly description: FieldRef<"Decks", 'String'>
-    readonly createdAt: FieldRef<"Decks", 'DateTime'>
-    readonly updatedAt: FieldRef<"Decks", 'DateTime'>
-    readonly clientId: FieldRef<"Decks", 'Int'>
+  interface decksFieldRefs {
+    readonly id: FieldRef<"decks", 'Int'>
+    readonly name: FieldRef<"decks", 'String'>
+    readonly description: FieldRef<"decks", 'String'>
+    readonly createdAt: FieldRef<"decks", 'DateTime'>
+    readonly updatedAt: FieldRef<"decks", 'DateTime'>
+    readonly clientId: FieldRef<"decks", 'Int'>
   }
     
 
   // Custom InputTypes
   /**
-   * Decks findUnique
+   * decks findUnique
    */
-  export type DecksFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type decksFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Decks
+     * Select specific fields to fetch from the decks
      */
-    select?: DecksSelect<ExtArgs> | null
+    select?: decksSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Decks
+     * Omit specific fields from the decks
      */
-    omit?: DecksOmit<ExtArgs> | null
+    omit?: decksOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: DecksInclude<ExtArgs> | null
+    include?: decksInclude<ExtArgs> | null
     /**
-     * Filter, which Decks to fetch.
+     * Filter, which decks to fetch.
      */
-    where: DecksWhereUniqueInput
+    where: decksWhereUniqueInput
   }
 
   /**
-   * Decks findUniqueOrThrow
+   * decks findUniqueOrThrow
    */
-  export type DecksFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type decksFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Decks
+     * Select specific fields to fetch from the decks
      */
-    select?: DecksSelect<ExtArgs> | null
+    select?: decksSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Decks
+     * Omit specific fields from the decks
      */
-    omit?: DecksOmit<ExtArgs> | null
+    omit?: decksOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: DecksInclude<ExtArgs> | null
+    include?: decksInclude<ExtArgs> | null
     /**
-     * Filter, which Decks to fetch.
+     * Filter, which decks to fetch.
      */
-    where: DecksWhereUniqueInput
+    where: decksWhereUniqueInput
   }
 
   /**
-   * Decks findFirst
+   * decks findFirst
    */
-  export type DecksFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type decksFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Decks
+     * Select specific fields to fetch from the decks
      */
-    select?: DecksSelect<ExtArgs> | null
+    select?: decksSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Decks
+     * Omit specific fields from the decks
      */
-    omit?: DecksOmit<ExtArgs> | null
+    omit?: decksOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: DecksInclude<ExtArgs> | null
+    include?: decksInclude<ExtArgs> | null
     /**
-     * Filter, which Decks to fetch.
+     * Filter, which decks to fetch.
      */
-    where?: DecksWhereInput
+    where?: decksWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Decks to fetch.
+     * Determine the order of decks to fetch.
      */
-    orderBy?: DecksOrderByWithRelationInput | DecksOrderByWithRelationInput[]
+    orderBy?: decksOrderByWithRelationInput | decksOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Decks.
+     * Sets the position for searching for decks.
      */
-    cursor?: DecksWhereUniqueInput
+    cursor?: decksWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Decks from the position of the cursor.
+     * Take `±n` decks from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Decks.
+     * Skip the first `n` decks.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Decks.
+     * Filter by unique combinations of decks.
      */
     distinct?: DecksScalarFieldEnum | DecksScalarFieldEnum[]
   }
 
   /**
-   * Decks findFirstOrThrow
+   * decks findFirstOrThrow
    */
-  export type DecksFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type decksFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Decks
+     * Select specific fields to fetch from the decks
      */
-    select?: DecksSelect<ExtArgs> | null
+    select?: decksSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Decks
+     * Omit specific fields from the decks
      */
-    omit?: DecksOmit<ExtArgs> | null
+    omit?: decksOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: DecksInclude<ExtArgs> | null
+    include?: decksInclude<ExtArgs> | null
     /**
-     * Filter, which Decks to fetch.
+     * Filter, which decks to fetch.
      */
-    where?: DecksWhereInput
+    where?: decksWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Decks to fetch.
+     * Determine the order of decks to fetch.
      */
-    orderBy?: DecksOrderByWithRelationInput | DecksOrderByWithRelationInput[]
+    orderBy?: decksOrderByWithRelationInput | decksOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Decks.
+     * Sets the position for searching for decks.
      */
-    cursor?: DecksWhereUniqueInput
+    cursor?: decksWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Decks from the position of the cursor.
+     * Take `±n` decks from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Decks.
+     * Skip the first `n` decks.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Decks.
+     * Filter by unique combinations of decks.
      */
     distinct?: DecksScalarFieldEnum | DecksScalarFieldEnum[]
   }
 
   /**
-   * Decks findMany
+   * decks findMany
    */
-  export type DecksFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type decksFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Decks
+     * Select specific fields to fetch from the decks
      */
-    select?: DecksSelect<ExtArgs> | null
+    select?: decksSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Decks
+     * Omit specific fields from the decks
      */
-    omit?: DecksOmit<ExtArgs> | null
+    omit?: decksOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: DecksInclude<ExtArgs> | null
+    include?: decksInclude<ExtArgs> | null
     /**
-     * Filter, which Decks to fetch.
+     * Filter, which decks to fetch.
      */
-    where?: DecksWhereInput
+    where?: decksWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Decks to fetch.
+     * Determine the order of decks to fetch.
      */
-    orderBy?: DecksOrderByWithRelationInput | DecksOrderByWithRelationInput[]
+    orderBy?: decksOrderByWithRelationInput | decksOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Decks.
+     * Sets the position for listing decks.
      */
-    cursor?: DecksWhereUniqueInput
+    cursor?: decksWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Decks from the position of the cursor.
+     * Take `±n` decks from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Decks.
+     * Skip the first `n` decks.
      */
     skip?: number
     distinct?: DecksScalarFieldEnum | DecksScalarFieldEnum[]
   }
 
   /**
-   * Decks create
+   * decks create
    */
-  export type DecksCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type decksCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Decks
+     * Select specific fields to fetch from the decks
      */
-    select?: DecksSelect<ExtArgs> | null
+    select?: decksSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Decks
+     * Omit specific fields from the decks
      */
-    omit?: DecksOmit<ExtArgs> | null
+    omit?: decksOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: DecksInclude<ExtArgs> | null
+    include?: decksInclude<ExtArgs> | null
     /**
-     * The data needed to create a Decks.
+     * The data needed to create a decks.
      */
-    data: XOR<DecksCreateInput, DecksUncheckedCreateInput>
+    data: XOR<decksCreateInput, decksUncheckedCreateInput>
   }
 
   /**
-   * Decks createMany
+   * decks createMany
    */
-  export type DecksCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type decksCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Decks.
+     * The data used to create many decks.
      */
-    data: DecksCreateManyInput | DecksCreateManyInput[]
+    data: decksCreateManyInput | decksCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Decks update
+   * decks update
    */
-  export type DecksUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type decksUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Decks
+     * Select specific fields to fetch from the decks
      */
-    select?: DecksSelect<ExtArgs> | null
+    select?: decksSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Decks
+     * Omit specific fields from the decks
      */
-    omit?: DecksOmit<ExtArgs> | null
+    omit?: decksOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: DecksInclude<ExtArgs> | null
+    include?: decksInclude<ExtArgs> | null
     /**
-     * The data needed to update a Decks.
+     * The data needed to update a decks.
      */
-    data: XOR<DecksUpdateInput, DecksUncheckedUpdateInput>
+    data: XOR<decksUpdateInput, decksUncheckedUpdateInput>
     /**
-     * Choose, which Decks to update.
+     * Choose, which decks to update.
      */
-    where: DecksWhereUniqueInput
+    where: decksWhereUniqueInput
   }
 
   /**
-   * Decks updateMany
+   * decks updateMany
    */
-  export type DecksUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type decksUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Decks.
+     * The data used to update decks.
      */
-    data: XOR<DecksUpdateManyMutationInput, DecksUncheckedUpdateManyInput>
+    data: XOR<decksUpdateManyMutationInput, decksUncheckedUpdateManyInput>
     /**
-     * Filter which Decks to update
+     * Filter which decks to update
      */
-    where?: DecksWhereInput
+    where?: decksWhereInput
     /**
-     * Limit how many Decks to update.
+     * Limit how many decks to update.
      */
     limit?: number
   }
 
   /**
-   * Decks upsert
+   * decks upsert
    */
-  export type DecksUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type decksUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Decks
+     * Select specific fields to fetch from the decks
      */
-    select?: DecksSelect<ExtArgs> | null
+    select?: decksSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Decks
+     * Omit specific fields from the decks
      */
-    omit?: DecksOmit<ExtArgs> | null
+    omit?: decksOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: DecksInclude<ExtArgs> | null
+    include?: decksInclude<ExtArgs> | null
     /**
-     * The filter to search for the Decks to update in case it exists.
+     * The filter to search for the decks to update in case it exists.
      */
-    where: DecksWhereUniqueInput
+    where: decksWhereUniqueInput
     /**
-     * In case the Decks found by the `where` argument doesn't exist, create a new Decks with this data.
+     * In case the decks found by the `where` argument doesn't exist, create a new decks with this data.
      */
-    create: XOR<DecksCreateInput, DecksUncheckedCreateInput>
+    create: XOR<decksCreateInput, decksUncheckedCreateInput>
     /**
-     * In case the Decks was found with the provided `where` argument, update it with this data.
+     * In case the decks was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<DecksUpdateInput, DecksUncheckedUpdateInput>
+    update: XOR<decksUpdateInput, decksUncheckedUpdateInput>
   }
 
   /**
-   * Decks delete
+   * decks delete
    */
-  export type DecksDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type decksDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Decks
+     * Select specific fields to fetch from the decks
      */
-    select?: DecksSelect<ExtArgs> | null
+    select?: decksSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Decks
+     * Omit specific fields from the decks
      */
-    omit?: DecksOmit<ExtArgs> | null
+    omit?: decksOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: DecksInclude<ExtArgs> | null
+    include?: decksInclude<ExtArgs> | null
     /**
-     * Filter which Decks to delete.
+     * Filter which decks to delete.
      */
-    where: DecksWhereUniqueInput
+    where: decksWhereUniqueInput
   }
 
   /**
-   * Decks deleteMany
+   * decks deleteMany
    */
-  export type DecksDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type decksDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Decks to delete
+     * Filter which decks to delete
      */
-    where?: DecksWhereInput
+    where?: decksWhereInput
     /**
-     * Limit how many Decks to delete.
+     * Limit how many decks to delete.
      */
     limit?: number
   }
 
   /**
-   * Decks without action
+   * decks without action
    */
-  export type DecksDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type decksDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Decks
+     * Select specific fields to fetch from the decks
      */
-    select?: DecksSelect<ExtArgs> | null
+    select?: decksSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Decks
+     * Omit specific fields from the decks
      */
-    omit?: DecksOmit<ExtArgs> | null
+    omit?: decksOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: DecksInclude<ExtArgs> | null
+    include?: decksInclude<ExtArgs> | null
   }
 
 
   /**
-   * Model IntellicareMasterlist
+   * Model intellicareMasterlist
    */
 
   export type AggregateIntellicareMasterlist = {
@@ -7067,37 +7067,37 @@ export namespace Prisma {
 
   export type IntellicareMasterlistAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which IntellicareMasterlist to aggregate.
+     * Filter which intellicareMasterlist to aggregate.
      */
-    where?: IntellicareMasterlistWhereInput
+    where?: intellicareMasterlistWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of IntellicareMasterlists to fetch.
+     * Determine the order of intellicareMasterlists to fetch.
      */
-    orderBy?: IntellicareMasterlistOrderByWithRelationInput | IntellicareMasterlistOrderByWithRelationInput[]
+    orderBy?: intellicareMasterlistOrderByWithRelationInput | intellicareMasterlistOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: IntellicareMasterlistWhereUniqueInput
+    cursor?: intellicareMasterlistWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` IntellicareMasterlists from the position of the cursor.
+     * Take `±n` intellicareMasterlists from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` IntellicareMasterlists.
+     * Skip the first `n` intellicareMasterlists.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned IntellicareMasterlists
+     * Count returned intellicareMasterlists
     **/
     _count?: true | IntellicareMasterlistCountAggregateInputType
     /**
@@ -7137,11 +7137,11 @@ export namespace Prisma {
 
 
 
-  export type IntellicareMasterlistGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: IntellicareMasterlistWhereInput
-    orderBy?: IntellicareMasterlistOrderByWithAggregationInput | IntellicareMasterlistOrderByWithAggregationInput[]
+  export type intellicareMasterlistGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: intellicareMasterlistWhereInput
+    orderBy?: intellicareMasterlistOrderByWithAggregationInput | intellicareMasterlistOrderByWithAggregationInput[]
     by: IntellicareMasterlistScalarFieldEnum[] | IntellicareMasterlistScalarFieldEnum
-    having?: IntellicareMasterlistScalarWhereWithAggregatesInput
+    having?: intellicareMasterlistScalarWhereWithAggregatesInput
     take?: number
     skip?: number
     _count?: IntellicareMasterlistCountAggregateInputType | true
@@ -7176,7 +7176,7 @@ export namespace Prisma {
     _max: IntellicareMasterlistMaxAggregateOutputType | null
   }
 
-  type GetIntellicareMasterlistGroupByPayload<T extends IntellicareMasterlistGroupByArgs> = Prisma.PrismaPromise<
+  type GetIntellicareMasterlistGroupByPayload<T extends intellicareMasterlistGroupByArgs> = Prisma.PrismaPromise<
     Array<
       PickEnumerable<IntellicareMasterlistGroupByOutputType, T['by']> &
         {
@@ -7190,7 +7190,7 @@ export namespace Prisma {
     >
 
 
-  export type IntellicareMasterlistSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type intellicareMasterlistSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     clientId?: boolean
     PY?: boolean
@@ -7208,12 +7208,12 @@ export namespace Prisma {
     COMPANY?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    Clients?: boolean | ClientsDefaultArgs<ExtArgs>
+    clients?: boolean | clientsDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["intellicareMasterlist"]>
 
 
 
-  export type IntellicareMasterlistSelectScalar = {
+  export type intellicareMasterlistSelectScalar = {
     id?: boolean
     clientId?: boolean
     PY?: boolean
@@ -7233,15 +7233,15 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type IntellicareMasterlistOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "clientId" | "PY" | "ACCOUNT_NO" | "STATUS" | "MEMBER_TYPE" | "RNB" | "PREEXIST" | "LIMIT" | "BIRTHDATE" | "AGE" | "RELATION" | "EE_ID" | "CARD_NO" | "COMPANY" | "createdAt" | "updatedAt", ExtArgs["result"]["intellicareMasterlist"]>
-  export type IntellicareMasterlistInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    Clients?: boolean | ClientsDefaultArgs<ExtArgs>
+  export type intellicareMasterlistOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "clientId" | "PY" | "ACCOUNT_NO" | "STATUS" | "MEMBER_TYPE" | "RNB" | "PREEXIST" | "LIMIT" | "BIRTHDATE" | "AGE" | "RELATION" | "EE_ID" | "CARD_NO" | "COMPANY" | "createdAt" | "updatedAt", ExtArgs["result"]["intellicareMasterlist"]>
+  export type intellicareMasterlistInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    clients?: boolean | clientsDefaultArgs<ExtArgs>
   }
 
-  export type $IntellicareMasterlistPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "IntellicareMasterlist"
+  export type $intellicareMasterlistPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "intellicareMasterlist"
     objects: {
-      Clients: Prisma.$ClientsPayload<ExtArgs>
+      clients: Prisma.$clientsPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -7265,18 +7265,18 @@ export namespace Prisma {
     composites: {}
   }
 
-  type IntellicareMasterlistGetPayload<S extends boolean | null | undefined | IntellicareMasterlistDefaultArgs> = $Result.GetResult<Prisma.$IntellicareMasterlistPayload, S>
+  type intellicareMasterlistGetPayload<S extends boolean | null | undefined | intellicareMasterlistDefaultArgs> = $Result.GetResult<Prisma.$intellicareMasterlistPayload, S>
 
-  type IntellicareMasterlistCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<IntellicareMasterlistFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+  type intellicareMasterlistCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<intellicareMasterlistFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
       select?: IntellicareMasterlistCountAggregateInputType | true
     }
 
-  export interface IntellicareMasterlistDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['IntellicareMasterlist'], meta: { name: 'IntellicareMasterlist' } }
+  export interface intellicareMasterlistDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['intellicareMasterlist'], meta: { name: 'intellicareMasterlist' } }
     /**
      * Find zero or one IntellicareMasterlist that matches the filter.
-     * @param {IntellicareMasterlistFindUniqueArgs} args - Arguments to find a IntellicareMasterlist
+     * @param {intellicareMasterlistFindUniqueArgs} args - Arguments to find a IntellicareMasterlist
      * @example
      * // Get one IntellicareMasterlist
      * const intellicareMasterlist = await prisma.intellicareMasterlist.findUnique({
@@ -7285,12 +7285,12 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUnique<T extends IntellicareMasterlistFindUniqueArgs>(args: SelectSubset<T, IntellicareMasterlistFindUniqueArgs<ExtArgs>>): Prisma__IntellicareMasterlistClient<$Result.GetResult<Prisma.$IntellicareMasterlistPayload<ExtArgs>, T, "findUnique", ClientOptions> | null, null, ExtArgs, ClientOptions>
+    findUnique<T extends intellicareMasterlistFindUniqueArgs>(args: SelectSubset<T, intellicareMasterlistFindUniqueArgs<ExtArgs>>): Prisma__intellicareMasterlistClient<$Result.GetResult<Prisma.$intellicareMasterlistPayload<ExtArgs>, T, "findUnique", ClientOptions> | null, null, ExtArgs, ClientOptions>
 
     /**
      * Find one IntellicareMasterlist that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {IntellicareMasterlistFindUniqueOrThrowArgs} args - Arguments to find a IntellicareMasterlist
+     * @param {intellicareMasterlistFindUniqueOrThrowArgs} args - Arguments to find a IntellicareMasterlist
      * @example
      * // Get one IntellicareMasterlist
      * const intellicareMasterlist = await prisma.intellicareMasterlist.findUniqueOrThrow({
@@ -7299,13 +7299,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUniqueOrThrow<T extends IntellicareMasterlistFindUniqueOrThrowArgs>(args: SelectSubset<T, IntellicareMasterlistFindUniqueOrThrowArgs<ExtArgs>>): Prisma__IntellicareMasterlistClient<$Result.GetResult<Prisma.$IntellicareMasterlistPayload<ExtArgs>, T, "findUniqueOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
+    findUniqueOrThrow<T extends intellicareMasterlistFindUniqueOrThrowArgs>(args: SelectSubset<T, intellicareMasterlistFindUniqueOrThrowArgs<ExtArgs>>): Prisma__intellicareMasterlistClient<$Result.GetResult<Prisma.$intellicareMasterlistPayload<ExtArgs>, T, "findUniqueOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Find the first IntellicareMasterlist that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {IntellicareMasterlistFindFirstArgs} args - Arguments to find a IntellicareMasterlist
+     * @param {intellicareMasterlistFindFirstArgs} args - Arguments to find a IntellicareMasterlist
      * @example
      * // Get one IntellicareMasterlist
      * const intellicareMasterlist = await prisma.intellicareMasterlist.findFirst({
@@ -7314,14 +7314,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirst<T extends IntellicareMasterlistFindFirstArgs>(args?: SelectSubset<T, IntellicareMasterlistFindFirstArgs<ExtArgs>>): Prisma__IntellicareMasterlistClient<$Result.GetResult<Prisma.$IntellicareMasterlistPayload<ExtArgs>, T, "findFirst", ClientOptions> | null, null, ExtArgs, ClientOptions>
+    findFirst<T extends intellicareMasterlistFindFirstArgs>(args?: SelectSubset<T, intellicareMasterlistFindFirstArgs<ExtArgs>>): Prisma__intellicareMasterlistClient<$Result.GetResult<Prisma.$intellicareMasterlistPayload<ExtArgs>, T, "findFirst", ClientOptions> | null, null, ExtArgs, ClientOptions>
 
     /**
      * Find the first IntellicareMasterlist that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {IntellicareMasterlistFindFirstOrThrowArgs} args - Arguments to find a IntellicareMasterlist
+     * @param {intellicareMasterlistFindFirstOrThrowArgs} args - Arguments to find a IntellicareMasterlist
      * @example
      * // Get one IntellicareMasterlist
      * const intellicareMasterlist = await prisma.intellicareMasterlist.findFirstOrThrow({
@@ -7330,13 +7330,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirstOrThrow<T extends IntellicareMasterlistFindFirstOrThrowArgs>(args?: SelectSubset<T, IntellicareMasterlistFindFirstOrThrowArgs<ExtArgs>>): Prisma__IntellicareMasterlistClient<$Result.GetResult<Prisma.$IntellicareMasterlistPayload<ExtArgs>, T, "findFirstOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
+    findFirstOrThrow<T extends intellicareMasterlistFindFirstOrThrowArgs>(args?: SelectSubset<T, intellicareMasterlistFindFirstOrThrowArgs<ExtArgs>>): Prisma__intellicareMasterlistClient<$Result.GetResult<Prisma.$intellicareMasterlistPayload<ExtArgs>, T, "findFirstOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Find zero or more IntellicareMasterlists that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {IntellicareMasterlistFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {intellicareMasterlistFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all IntellicareMasterlists
      * const intellicareMasterlists = await prisma.intellicareMasterlist.findMany()
@@ -7348,11 +7348,11 @@ export namespace Prisma {
      * const intellicareMasterlistWithIdOnly = await prisma.intellicareMasterlist.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends IntellicareMasterlistFindManyArgs>(args?: SelectSubset<T, IntellicareMasterlistFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$IntellicareMasterlistPayload<ExtArgs>, T, "findMany", ClientOptions>>
+    findMany<T extends intellicareMasterlistFindManyArgs>(args?: SelectSubset<T, intellicareMasterlistFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$intellicareMasterlistPayload<ExtArgs>, T, "findMany", ClientOptions>>
 
     /**
      * Create a IntellicareMasterlist.
-     * @param {IntellicareMasterlistCreateArgs} args - Arguments to create a IntellicareMasterlist.
+     * @param {intellicareMasterlistCreateArgs} args - Arguments to create a IntellicareMasterlist.
      * @example
      * // Create one IntellicareMasterlist
      * const IntellicareMasterlist = await prisma.intellicareMasterlist.create({
@@ -7362,11 +7362,11 @@ export namespace Prisma {
      * })
      * 
      */
-    create<T extends IntellicareMasterlistCreateArgs>(args: SelectSubset<T, IntellicareMasterlistCreateArgs<ExtArgs>>): Prisma__IntellicareMasterlistClient<$Result.GetResult<Prisma.$IntellicareMasterlistPayload<ExtArgs>, T, "create", ClientOptions>, never, ExtArgs, ClientOptions>
+    create<T extends intellicareMasterlistCreateArgs>(args: SelectSubset<T, intellicareMasterlistCreateArgs<ExtArgs>>): Prisma__intellicareMasterlistClient<$Result.GetResult<Prisma.$intellicareMasterlistPayload<ExtArgs>, T, "create", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Create many IntellicareMasterlists.
-     * @param {IntellicareMasterlistCreateManyArgs} args - Arguments to create many IntellicareMasterlists.
+     * @param {intellicareMasterlistCreateManyArgs} args - Arguments to create many IntellicareMasterlists.
      * @example
      * // Create many IntellicareMasterlists
      * const intellicareMasterlist = await prisma.intellicareMasterlist.createMany({
@@ -7376,11 +7376,11 @@ export namespace Prisma {
      * })
      *     
      */
-    createMany<T extends IntellicareMasterlistCreateManyArgs>(args?: SelectSubset<T, IntellicareMasterlistCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends intellicareMasterlistCreateManyArgs>(args?: SelectSubset<T, intellicareMasterlistCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Delete a IntellicareMasterlist.
-     * @param {IntellicareMasterlistDeleteArgs} args - Arguments to delete one IntellicareMasterlist.
+     * @param {intellicareMasterlistDeleteArgs} args - Arguments to delete one IntellicareMasterlist.
      * @example
      * // Delete one IntellicareMasterlist
      * const IntellicareMasterlist = await prisma.intellicareMasterlist.delete({
@@ -7390,11 +7390,11 @@ export namespace Prisma {
      * })
      * 
      */
-    delete<T extends IntellicareMasterlistDeleteArgs>(args: SelectSubset<T, IntellicareMasterlistDeleteArgs<ExtArgs>>): Prisma__IntellicareMasterlistClient<$Result.GetResult<Prisma.$IntellicareMasterlistPayload<ExtArgs>, T, "delete", ClientOptions>, never, ExtArgs, ClientOptions>
+    delete<T extends intellicareMasterlistDeleteArgs>(args: SelectSubset<T, intellicareMasterlistDeleteArgs<ExtArgs>>): Prisma__intellicareMasterlistClient<$Result.GetResult<Prisma.$intellicareMasterlistPayload<ExtArgs>, T, "delete", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Update one IntellicareMasterlist.
-     * @param {IntellicareMasterlistUpdateArgs} args - Arguments to update one IntellicareMasterlist.
+     * @param {intellicareMasterlistUpdateArgs} args - Arguments to update one IntellicareMasterlist.
      * @example
      * // Update one IntellicareMasterlist
      * const intellicareMasterlist = await prisma.intellicareMasterlist.update({
@@ -7407,11 +7407,11 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends IntellicareMasterlistUpdateArgs>(args: SelectSubset<T, IntellicareMasterlistUpdateArgs<ExtArgs>>): Prisma__IntellicareMasterlistClient<$Result.GetResult<Prisma.$IntellicareMasterlistPayload<ExtArgs>, T, "update", ClientOptions>, never, ExtArgs, ClientOptions>
+    update<T extends intellicareMasterlistUpdateArgs>(args: SelectSubset<T, intellicareMasterlistUpdateArgs<ExtArgs>>): Prisma__intellicareMasterlistClient<$Result.GetResult<Prisma.$intellicareMasterlistPayload<ExtArgs>, T, "update", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Delete zero or more IntellicareMasterlists.
-     * @param {IntellicareMasterlistDeleteManyArgs} args - Arguments to filter IntellicareMasterlists to delete.
+     * @param {intellicareMasterlistDeleteManyArgs} args - Arguments to filter IntellicareMasterlists to delete.
      * @example
      * // Delete a few IntellicareMasterlists
      * const { count } = await prisma.intellicareMasterlist.deleteMany({
@@ -7421,13 +7421,13 @@ export namespace Prisma {
      * })
      * 
      */
-    deleteMany<T extends IntellicareMasterlistDeleteManyArgs>(args?: SelectSubset<T, IntellicareMasterlistDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends intellicareMasterlistDeleteManyArgs>(args?: SelectSubset<T, intellicareMasterlistDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more IntellicareMasterlists.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {IntellicareMasterlistUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {intellicareMasterlistUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
      * // Update many IntellicareMasterlists
      * const intellicareMasterlist = await prisma.intellicareMasterlist.updateMany({
@@ -7440,11 +7440,11 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends IntellicareMasterlistUpdateManyArgs>(args: SelectSubset<T, IntellicareMasterlistUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends intellicareMasterlistUpdateManyArgs>(args: SelectSubset<T, intellicareMasterlistUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Create or update one IntellicareMasterlist.
-     * @param {IntellicareMasterlistUpsertArgs} args - Arguments to update or create a IntellicareMasterlist.
+     * @param {intellicareMasterlistUpsertArgs} args - Arguments to update or create a IntellicareMasterlist.
      * @example
      * // Update or create a IntellicareMasterlist
      * const intellicareMasterlist = await prisma.intellicareMasterlist.upsert({
@@ -7459,14 +7459,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    upsert<T extends IntellicareMasterlistUpsertArgs>(args: SelectSubset<T, IntellicareMasterlistUpsertArgs<ExtArgs>>): Prisma__IntellicareMasterlistClient<$Result.GetResult<Prisma.$IntellicareMasterlistPayload<ExtArgs>, T, "upsert", ClientOptions>, never, ExtArgs, ClientOptions>
+    upsert<T extends intellicareMasterlistUpsertArgs>(args: SelectSubset<T, intellicareMasterlistUpsertArgs<ExtArgs>>): Prisma__intellicareMasterlistClient<$Result.GetResult<Prisma.$intellicareMasterlistPayload<ExtArgs>, T, "upsert", ClientOptions>, never, ExtArgs, ClientOptions>
 
 
     /**
      * Count the number of IntellicareMasterlists.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {IntellicareMasterlistCountArgs} args - Arguments to filter IntellicareMasterlists to count.
+     * @param {intellicareMasterlistCountArgs} args - Arguments to filter IntellicareMasterlists to count.
      * @example
      * // Count the number of IntellicareMasterlists
      * const count = await prisma.intellicareMasterlist.count({
@@ -7475,8 +7475,8 @@ export namespace Prisma {
      *   }
      * })
     **/
-    count<T extends IntellicareMasterlistCountArgs>(
-      args?: Subset<T, IntellicareMasterlistCountArgs>,
+    count<T extends intellicareMasterlistCountArgs>(
+      args?: Subset<T, intellicareMasterlistCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
@@ -7515,7 +7515,7 @@ export namespace Prisma {
      * Group by IntellicareMasterlist.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {IntellicareMasterlistGroupByArgs} args - Group by arguments.
+     * @param {intellicareMasterlistGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -7530,14 +7530,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends IntellicareMasterlistGroupByArgs,
+      T extends intellicareMasterlistGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: IntellicareMasterlistGroupByArgs['orderBy'] }
-        : { orderBy?: IntellicareMasterlistGroupByArgs['orderBy'] },
+        ? { orderBy: intellicareMasterlistGroupByArgs['orderBy'] }
+        : { orderBy?: intellicareMasterlistGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -7586,22 +7586,22 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, IntellicareMasterlistGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetIntellicareMasterlistGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, intellicareMasterlistGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetIntellicareMasterlistGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the IntellicareMasterlist model
+   * Fields of the intellicareMasterlist model
    */
-  readonly fields: IntellicareMasterlistFieldRefs;
+  readonly fields: intellicareMasterlistFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for IntellicareMasterlist.
+   * The delegate class that acts as a "Promise-like" for intellicareMasterlist.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__IntellicareMasterlistClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__intellicareMasterlistClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    Clients<T extends ClientsDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ClientsDefaultArgs<ExtArgs>>): Prisma__ClientsClient<$Result.GetResult<Prisma.$ClientsPayload<ExtArgs>, T, "findUniqueOrThrow", ClientOptions> | Null, Null, ExtArgs, ClientOptions>
+    clients<T extends clientsDefaultArgs<ExtArgs> = {}>(args?: Subset<T, clientsDefaultArgs<ExtArgs>>): Prisma__clientsClient<$Result.GetResult<Prisma.$clientsPayload<ExtArgs>, T, "findUniqueOrThrow", ClientOptions> | Null, Null, ExtArgs, ClientOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -7628,389 +7628,389 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the IntellicareMasterlist model
+   * Fields of the intellicareMasterlist model
    */ 
-  interface IntellicareMasterlistFieldRefs {
-    readonly id: FieldRef<"IntellicareMasterlist", 'Int'>
-    readonly clientId: FieldRef<"IntellicareMasterlist", 'Int'>
-    readonly PY: FieldRef<"IntellicareMasterlist", 'String'>
-    readonly ACCOUNT_NO: FieldRef<"IntellicareMasterlist", 'String'>
-    readonly STATUS: FieldRef<"IntellicareMasterlist", 'String'>
-    readonly MEMBER_TYPE: FieldRef<"IntellicareMasterlist", 'String'>
-    readonly RNB: FieldRef<"IntellicareMasterlist", 'String'>
-    readonly PREEXIST: FieldRef<"IntellicareMasterlist", 'Float'>
-    readonly LIMIT: FieldRef<"IntellicareMasterlist", 'Float'>
-    readonly BIRTHDATE: FieldRef<"IntellicareMasterlist", 'DateTime'>
-    readonly AGE: FieldRef<"IntellicareMasterlist", 'Int'>
-    readonly RELATION: FieldRef<"IntellicareMasterlist", 'String'>
-    readonly EE_ID: FieldRef<"IntellicareMasterlist", 'String'>
-    readonly CARD_NO: FieldRef<"IntellicareMasterlist", 'String'>
-    readonly COMPANY: FieldRef<"IntellicareMasterlist", 'String'>
-    readonly createdAt: FieldRef<"IntellicareMasterlist", 'DateTime'>
-    readonly updatedAt: FieldRef<"IntellicareMasterlist", 'DateTime'>
+  interface intellicareMasterlistFieldRefs {
+    readonly id: FieldRef<"intellicareMasterlist", 'Int'>
+    readonly clientId: FieldRef<"intellicareMasterlist", 'Int'>
+    readonly PY: FieldRef<"intellicareMasterlist", 'String'>
+    readonly ACCOUNT_NO: FieldRef<"intellicareMasterlist", 'String'>
+    readonly STATUS: FieldRef<"intellicareMasterlist", 'String'>
+    readonly MEMBER_TYPE: FieldRef<"intellicareMasterlist", 'String'>
+    readonly RNB: FieldRef<"intellicareMasterlist", 'String'>
+    readonly PREEXIST: FieldRef<"intellicareMasterlist", 'Float'>
+    readonly LIMIT: FieldRef<"intellicareMasterlist", 'Float'>
+    readonly BIRTHDATE: FieldRef<"intellicareMasterlist", 'DateTime'>
+    readonly AGE: FieldRef<"intellicareMasterlist", 'Int'>
+    readonly RELATION: FieldRef<"intellicareMasterlist", 'String'>
+    readonly EE_ID: FieldRef<"intellicareMasterlist", 'String'>
+    readonly CARD_NO: FieldRef<"intellicareMasterlist", 'String'>
+    readonly COMPANY: FieldRef<"intellicareMasterlist", 'String'>
+    readonly createdAt: FieldRef<"intellicareMasterlist", 'DateTime'>
+    readonly updatedAt: FieldRef<"intellicareMasterlist", 'DateTime'>
   }
     
 
   // Custom InputTypes
   /**
-   * IntellicareMasterlist findUnique
+   * intellicareMasterlist findUnique
    */
-  export type IntellicareMasterlistFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type intellicareMasterlistFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the IntellicareMasterlist
+     * Select specific fields to fetch from the intellicareMasterlist
      */
-    select?: IntellicareMasterlistSelect<ExtArgs> | null
+    select?: intellicareMasterlistSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the IntellicareMasterlist
+     * Omit specific fields from the intellicareMasterlist
      */
-    omit?: IntellicareMasterlistOmit<ExtArgs> | null
+    omit?: intellicareMasterlistOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: IntellicareMasterlistInclude<ExtArgs> | null
+    include?: intellicareMasterlistInclude<ExtArgs> | null
     /**
-     * Filter, which IntellicareMasterlist to fetch.
+     * Filter, which intellicareMasterlist to fetch.
      */
-    where: IntellicareMasterlistWhereUniqueInput
+    where: intellicareMasterlistWhereUniqueInput
   }
 
   /**
-   * IntellicareMasterlist findUniqueOrThrow
+   * intellicareMasterlist findUniqueOrThrow
    */
-  export type IntellicareMasterlistFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type intellicareMasterlistFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the IntellicareMasterlist
+     * Select specific fields to fetch from the intellicareMasterlist
      */
-    select?: IntellicareMasterlistSelect<ExtArgs> | null
+    select?: intellicareMasterlistSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the IntellicareMasterlist
+     * Omit specific fields from the intellicareMasterlist
      */
-    omit?: IntellicareMasterlistOmit<ExtArgs> | null
+    omit?: intellicareMasterlistOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: IntellicareMasterlistInclude<ExtArgs> | null
+    include?: intellicareMasterlistInclude<ExtArgs> | null
     /**
-     * Filter, which IntellicareMasterlist to fetch.
+     * Filter, which intellicareMasterlist to fetch.
      */
-    where: IntellicareMasterlistWhereUniqueInput
+    where: intellicareMasterlistWhereUniqueInput
   }
 
   /**
-   * IntellicareMasterlist findFirst
+   * intellicareMasterlist findFirst
    */
-  export type IntellicareMasterlistFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type intellicareMasterlistFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the IntellicareMasterlist
+     * Select specific fields to fetch from the intellicareMasterlist
      */
-    select?: IntellicareMasterlistSelect<ExtArgs> | null
+    select?: intellicareMasterlistSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the IntellicareMasterlist
+     * Omit specific fields from the intellicareMasterlist
      */
-    omit?: IntellicareMasterlistOmit<ExtArgs> | null
+    omit?: intellicareMasterlistOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: IntellicareMasterlistInclude<ExtArgs> | null
+    include?: intellicareMasterlistInclude<ExtArgs> | null
     /**
-     * Filter, which IntellicareMasterlist to fetch.
+     * Filter, which intellicareMasterlist to fetch.
      */
-    where?: IntellicareMasterlistWhereInput
+    where?: intellicareMasterlistWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of IntellicareMasterlists to fetch.
+     * Determine the order of intellicareMasterlists to fetch.
      */
-    orderBy?: IntellicareMasterlistOrderByWithRelationInput | IntellicareMasterlistOrderByWithRelationInput[]
+    orderBy?: intellicareMasterlistOrderByWithRelationInput | intellicareMasterlistOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for IntellicareMasterlists.
+     * Sets the position for searching for intellicareMasterlists.
      */
-    cursor?: IntellicareMasterlistWhereUniqueInput
+    cursor?: intellicareMasterlistWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` IntellicareMasterlists from the position of the cursor.
+     * Take `±n` intellicareMasterlists from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` IntellicareMasterlists.
+     * Skip the first `n` intellicareMasterlists.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of IntellicareMasterlists.
+     * Filter by unique combinations of intellicareMasterlists.
      */
     distinct?: IntellicareMasterlistScalarFieldEnum | IntellicareMasterlistScalarFieldEnum[]
   }
 
   /**
-   * IntellicareMasterlist findFirstOrThrow
+   * intellicareMasterlist findFirstOrThrow
    */
-  export type IntellicareMasterlistFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type intellicareMasterlistFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the IntellicareMasterlist
+     * Select specific fields to fetch from the intellicareMasterlist
      */
-    select?: IntellicareMasterlistSelect<ExtArgs> | null
+    select?: intellicareMasterlistSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the IntellicareMasterlist
+     * Omit specific fields from the intellicareMasterlist
      */
-    omit?: IntellicareMasterlistOmit<ExtArgs> | null
+    omit?: intellicareMasterlistOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: IntellicareMasterlistInclude<ExtArgs> | null
+    include?: intellicareMasterlistInclude<ExtArgs> | null
     /**
-     * Filter, which IntellicareMasterlist to fetch.
+     * Filter, which intellicareMasterlist to fetch.
      */
-    where?: IntellicareMasterlistWhereInput
+    where?: intellicareMasterlistWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of IntellicareMasterlists to fetch.
+     * Determine the order of intellicareMasterlists to fetch.
      */
-    orderBy?: IntellicareMasterlistOrderByWithRelationInput | IntellicareMasterlistOrderByWithRelationInput[]
+    orderBy?: intellicareMasterlistOrderByWithRelationInput | intellicareMasterlistOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for IntellicareMasterlists.
+     * Sets the position for searching for intellicareMasterlists.
      */
-    cursor?: IntellicareMasterlistWhereUniqueInput
+    cursor?: intellicareMasterlistWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` IntellicareMasterlists from the position of the cursor.
+     * Take `±n` intellicareMasterlists from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` IntellicareMasterlists.
+     * Skip the first `n` intellicareMasterlists.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of IntellicareMasterlists.
+     * Filter by unique combinations of intellicareMasterlists.
      */
     distinct?: IntellicareMasterlistScalarFieldEnum | IntellicareMasterlistScalarFieldEnum[]
   }
 
   /**
-   * IntellicareMasterlist findMany
+   * intellicareMasterlist findMany
    */
-  export type IntellicareMasterlistFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type intellicareMasterlistFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the IntellicareMasterlist
+     * Select specific fields to fetch from the intellicareMasterlist
      */
-    select?: IntellicareMasterlistSelect<ExtArgs> | null
+    select?: intellicareMasterlistSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the IntellicareMasterlist
+     * Omit specific fields from the intellicareMasterlist
      */
-    omit?: IntellicareMasterlistOmit<ExtArgs> | null
+    omit?: intellicareMasterlistOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: IntellicareMasterlistInclude<ExtArgs> | null
+    include?: intellicareMasterlistInclude<ExtArgs> | null
     /**
-     * Filter, which IntellicareMasterlists to fetch.
+     * Filter, which intellicareMasterlists to fetch.
      */
-    where?: IntellicareMasterlistWhereInput
+    where?: intellicareMasterlistWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of IntellicareMasterlists to fetch.
+     * Determine the order of intellicareMasterlists to fetch.
      */
-    orderBy?: IntellicareMasterlistOrderByWithRelationInput | IntellicareMasterlistOrderByWithRelationInput[]
+    orderBy?: intellicareMasterlistOrderByWithRelationInput | intellicareMasterlistOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing IntellicareMasterlists.
+     * Sets the position for listing intellicareMasterlists.
      */
-    cursor?: IntellicareMasterlistWhereUniqueInput
+    cursor?: intellicareMasterlistWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` IntellicareMasterlists from the position of the cursor.
+     * Take `±n` intellicareMasterlists from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` IntellicareMasterlists.
+     * Skip the first `n` intellicareMasterlists.
      */
     skip?: number
     distinct?: IntellicareMasterlistScalarFieldEnum | IntellicareMasterlistScalarFieldEnum[]
   }
 
   /**
-   * IntellicareMasterlist create
+   * intellicareMasterlist create
    */
-  export type IntellicareMasterlistCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type intellicareMasterlistCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the IntellicareMasterlist
+     * Select specific fields to fetch from the intellicareMasterlist
      */
-    select?: IntellicareMasterlistSelect<ExtArgs> | null
+    select?: intellicareMasterlistSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the IntellicareMasterlist
+     * Omit specific fields from the intellicareMasterlist
      */
-    omit?: IntellicareMasterlistOmit<ExtArgs> | null
+    omit?: intellicareMasterlistOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: IntellicareMasterlistInclude<ExtArgs> | null
+    include?: intellicareMasterlistInclude<ExtArgs> | null
     /**
-     * The data needed to create a IntellicareMasterlist.
+     * The data needed to create a intellicareMasterlist.
      */
-    data: XOR<IntellicareMasterlistCreateInput, IntellicareMasterlistUncheckedCreateInput>
+    data: XOR<intellicareMasterlistCreateInput, intellicareMasterlistUncheckedCreateInput>
   }
 
   /**
-   * IntellicareMasterlist createMany
+   * intellicareMasterlist createMany
    */
-  export type IntellicareMasterlistCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type intellicareMasterlistCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many IntellicareMasterlists.
+     * The data used to create many intellicareMasterlists.
      */
-    data: IntellicareMasterlistCreateManyInput | IntellicareMasterlistCreateManyInput[]
+    data: intellicareMasterlistCreateManyInput | intellicareMasterlistCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * IntellicareMasterlist update
+   * intellicareMasterlist update
    */
-  export type IntellicareMasterlistUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type intellicareMasterlistUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the IntellicareMasterlist
+     * Select specific fields to fetch from the intellicareMasterlist
      */
-    select?: IntellicareMasterlistSelect<ExtArgs> | null
+    select?: intellicareMasterlistSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the IntellicareMasterlist
+     * Omit specific fields from the intellicareMasterlist
      */
-    omit?: IntellicareMasterlistOmit<ExtArgs> | null
+    omit?: intellicareMasterlistOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: IntellicareMasterlistInclude<ExtArgs> | null
+    include?: intellicareMasterlistInclude<ExtArgs> | null
     /**
-     * The data needed to update a IntellicareMasterlist.
+     * The data needed to update a intellicareMasterlist.
      */
-    data: XOR<IntellicareMasterlistUpdateInput, IntellicareMasterlistUncheckedUpdateInput>
+    data: XOR<intellicareMasterlistUpdateInput, intellicareMasterlistUncheckedUpdateInput>
     /**
-     * Choose, which IntellicareMasterlist to update.
+     * Choose, which intellicareMasterlist to update.
      */
-    where: IntellicareMasterlistWhereUniqueInput
+    where: intellicareMasterlistWhereUniqueInput
   }
 
   /**
-   * IntellicareMasterlist updateMany
+   * intellicareMasterlist updateMany
    */
-  export type IntellicareMasterlistUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type intellicareMasterlistUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update IntellicareMasterlists.
+     * The data used to update intellicareMasterlists.
      */
-    data: XOR<IntellicareMasterlistUpdateManyMutationInput, IntellicareMasterlistUncheckedUpdateManyInput>
+    data: XOR<intellicareMasterlistUpdateManyMutationInput, intellicareMasterlistUncheckedUpdateManyInput>
     /**
-     * Filter which IntellicareMasterlists to update
+     * Filter which intellicareMasterlists to update
      */
-    where?: IntellicareMasterlistWhereInput
+    where?: intellicareMasterlistWhereInput
     /**
-     * Limit how many IntellicareMasterlists to update.
+     * Limit how many intellicareMasterlists to update.
      */
     limit?: number
   }
 
   /**
-   * IntellicareMasterlist upsert
+   * intellicareMasterlist upsert
    */
-  export type IntellicareMasterlistUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type intellicareMasterlistUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the IntellicareMasterlist
+     * Select specific fields to fetch from the intellicareMasterlist
      */
-    select?: IntellicareMasterlistSelect<ExtArgs> | null
+    select?: intellicareMasterlistSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the IntellicareMasterlist
+     * Omit specific fields from the intellicareMasterlist
      */
-    omit?: IntellicareMasterlistOmit<ExtArgs> | null
+    omit?: intellicareMasterlistOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: IntellicareMasterlistInclude<ExtArgs> | null
+    include?: intellicareMasterlistInclude<ExtArgs> | null
     /**
-     * The filter to search for the IntellicareMasterlist to update in case it exists.
+     * The filter to search for the intellicareMasterlist to update in case it exists.
      */
-    where: IntellicareMasterlistWhereUniqueInput
+    where: intellicareMasterlistWhereUniqueInput
     /**
-     * In case the IntellicareMasterlist found by the `where` argument doesn't exist, create a new IntellicareMasterlist with this data.
+     * In case the intellicareMasterlist found by the `where` argument doesn't exist, create a new intellicareMasterlist with this data.
      */
-    create: XOR<IntellicareMasterlistCreateInput, IntellicareMasterlistUncheckedCreateInput>
+    create: XOR<intellicareMasterlistCreateInput, intellicareMasterlistUncheckedCreateInput>
     /**
-     * In case the IntellicareMasterlist was found with the provided `where` argument, update it with this data.
+     * In case the intellicareMasterlist was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<IntellicareMasterlistUpdateInput, IntellicareMasterlistUncheckedUpdateInput>
+    update: XOR<intellicareMasterlistUpdateInput, intellicareMasterlistUncheckedUpdateInput>
   }
 
   /**
-   * IntellicareMasterlist delete
+   * intellicareMasterlist delete
    */
-  export type IntellicareMasterlistDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type intellicareMasterlistDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the IntellicareMasterlist
+     * Select specific fields to fetch from the intellicareMasterlist
      */
-    select?: IntellicareMasterlistSelect<ExtArgs> | null
+    select?: intellicareMasterlistSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the IntellicareMasterlist
+     * Omit specific fields from the intellicareMasterlist
      */
-    omit?: IntellicareMasterlistOmit<ExtArgs> | null
+    omit?: intellicareMasterlistOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: IntellicareMasterlistInclude<ExtArgs> | null
+    include?: intellicareMasterlistInclude<ExtArgs> | null
     /**
-     * Filter which IntellicareMasterlist to delete.
+     * Filter which intellicareMasterlist to delete.
      */
-    where: IntellicareMasterlistWhereUniqueInput
+    where: intellicareMasterlistWhereUniqueInput
   }
 
   /**
-   * IntellicareMasterlist deleteMany
+   * intellicareMasterlist deleteMany
    */
-  export type IntellicareMasterlistDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type intellicareMasterlistDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which IntellicareMasterlists to delete
+     * Filter which intellicareMasterlists to delete
      */
-    where?: IntellicareMasterlistWhereInput
+    where?: intellicareMasterlistWhereInput
     /**
-     * Limit how many IntellicareMasterlists to delete.
+     * Limit how many intellicareMasterlists to delete.
      */
     limit?: number
   }
 
   /**
-   * IntellicareMasterlist without action
+   * intellicareMasterlist without action
    */
-  export type IntellicareMasterlistDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type intellicareMasterlistDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the IntellicareMasterlist
+     * Select specific fields to fetch from the intellicareMasterlist
      */
-    select?: IntellicareMasterlistSelect<ExtArgs> | null
+    select?: intellicareMasterlistSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the IntellicareMasterlist
+     * Omit specific fields from the intellicareMasterlist
      */
-    omit?: IntellicareMasterlistOmit<ExtArgs> | null
+    omit?: intellicareMasterlistOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: IntellicareMasterlistInclude<ExtArgs> | null
+    include?: intellicareMasterlistInclude<ExtArgs> | null
   }
 
 
   /**
-   * Model MaxicareMasterlist
+   * Model maxicareMasterlist
    */
 
   export type AggregateMaxicareMasterlist = {
@@ -8146,37 +8146,37 @@ export namespace Prisma {
 
   export type MaxicareMasterlistAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which MaxicareMasterlist to aggregate.
+     * Filter which maxicareMasterlist to aggregate.
      */
-    where?: MaxicareMasterlistWhereInput
+    where?: maxicareMasterlistWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of MaxicareMasterlists to fetch.
+     * Determine the order of maxicareMasterlists to fetch.
      */
-    orderBy?: MaxicareMasterlistOrderByWithRelationInput | MaxicareMasterlistOrderByWithRelationInput[]
+    orderBy?: maxicareMasterlistOrderByWithRelationInput | maxicareMasterlistOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: MaxicareMasterlistWhereUniqueInput
+    cursor?: maxicareMasterlistWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` MaxicareMasterlists from the position of the cursor.
+     * Take `±n` maxicareMasterlists from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` MaxicareMasterlists.
+     * Skip the first `n` maxicareMasterlists.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned MaxicareMasterlists
+     * Count returned maxicareMasterlists
     **/
     _count?: true | MaxicareMasterlistCountAggregateInputType
     /**
@@ -8216,11 +8216,11 @@ export namespace Prisma {
 
 
 
-  export type MaxicareMasterlistGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: MaxicareMasterlistWhereInput
-    orderBy?: MaxicareMasterlistOrderByWithAggregationInput | MaxicareMasterlistOrderByWithAggregationInput[]
+  export type maxicareMasterlistGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: maxicareMasterlistWhereInput
+    orderBy?: maxicareMasterlistOrderByWithAggregationInput | maxicareMasterlistOrderByWithAggregationInput[]
     by: MaxicareMasterlistScalarFieldEnum[] | MaxicareMasterlistScalarFieldEnum
-    having?: MaxicareMasterlistScalarWhereWithAggregatesInput
+    having?: maxicareMasterlistScalarWhereWithAggregatesInput
     take?: number
     skip?: number
     _count?: MaxicareMasterlistCountAggregateInputType | true
@@ -8251,7 +8251,7 @@ export namespace Prisma {
     _max: MaxicareMasterlistMaxAggregateOutputType | null
   }
 
-  type GetMaxicareMasterlistGroupByPayload<T extends MaxicareMasterlistGroupByArgs> = Prisma.PrismaPromise<
+  type GetMaxicareMasterlistGroupByPayload<T extends maxicareMasterlistGroupByArgs> = Prisma.PrismaPromise<
     Array<
       PickEnumerable<MaxicareMasterlistGroupByOutputType, T['by']> &
         {
@@ -8265,7 +8265,7 @@ export namespace Prisma {
     >
 
 
-  export type MaxicareMasterlistSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type maxicareMasterlistSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     clientId?: boolean
     PY?: boolean
@@ -8279,12 +8279,12 @@ export namespace Prisma {
     COMPANY?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    Clients?: boolean | ClientsDefaultArgs<ExtArgs>
+    clients?: boolean | clientsDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["maxicareMasterlist"]>
 
 
 
-  export type MaxicareMasterlistSelectScalar = {
+  export type maxicareMasterlistSelectScalar = {
     id?: boolean
     clientId?: boolean
     PY?: boolean
@@ -8300,15 +8300,15 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type MaxicareMasterlistOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "clientId" | "PY" | "ACCOUNT_NO" | "STATUS" | "MEMBER_TYPE" | "LIMIT" | "RELATION" | "EE_ID" | "CARD_NO" | "COMPANY" | "createdAt" | "updatedAt", ExtArgs["result"]["maxicareMasterlist"]>
-  export type MaxicareMasterlistInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    Clients?: boolean | ClientsDefaultArgs<ExtArgs>
+  export type maxicareMasterlistOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "clientId" | "PY" | "ACCOUNT_NO" | "STATUS" | "MEMBER_TYPE" | "LIMIT" | "RELATION" | "EE_ID" | "CARD_NO" | "COMPANY" | "createdAt" | "updatedAt", ExtArgs["result"]["maxicareMasterlist"]>
+  export type maxicareMasterlistInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    clients?: boolean | clientsDefaultArgs<ExtArgs>
   }
 
-  export type $MaxicareMasterlistPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "MaxicareMasterlist"
+  export type $maxicareMasterlistPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "maxicareMasterlist"
     objects: {
-      Clients: Prisma.$ClientsPayload<ExtArgs>
+      clients: Prisma.$clientsPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -8328,18 +8328,18 @@ export namespace Prisma {
     composites: {}
   }
 
-  type MaxicareMasterlistGetPayload<S extends boolean | null | undefined | MaxicareMasterlistDefaultArgs> = $Result.GetResult<Prisma.$MaxicareMasterlistPayload, S>
+  type maxicareMasterlistGetPayload<S extends boolean | null | undefined | maxicareMasterlistDefaultArgs> = $Result.GetResult<Prisma.$maxicareMasterlistPayload, S>
 
-  type MaxicareMasterlistCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<MaxicareMasterlistFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+  type maxicareMasterlistCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<maxicareMasterlistFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
       select?: MaxicareMasterlistCountAggregateInputType | true
     }
 
-  export interface MaxicareMasterlistDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['MaxicareMasterlist'], meta: { name: 'MaxicareMasterlist' } }
+  export interface maxicareMasterlistDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['maxicareMasterlist'], meta: { name: 'maxicareMasterlist' } }
     /**
      * Find zero or one MaxicareMasterlist that matches the filter.
-     * @param {MaxicareMasterlistFindUniqueArgs} args - Arguments to find a MaxicareMasterlist
+     * @param {maxicareMasterlistFindUniqueArgs} args - Arguments to find a MaxicareMasterlist
      * @example
      * // Get one MaxicareMasterlist
      * const maxicareMasterlist = await prisma.maxicareMasterlist.findUnique({
@@ -8348,12 +8348,12 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUnique<T extends MaxicareMasterlistFindUniqueArgs>(args: SelectSubset<T, MaxicareMasterlistFindUniqueArgs<ExtArgs>>): Prisma__MaxicareMasterlistClient<$Result.GetResult<Prisma.$MaxicareMasterlistPayload<ExtArgs>, T, "findUnique", ClientOptions> | null, null, ExtArgs, ClientOptions>
+    findUnique<T extends maxicareMasterlistFindUniqueArgs>(args: SelectSubset<T, maxicareMasterlistFindUniqueArgs<ExtArgs>>): Prisma__maxicareMasterlistClient<$Result.GetResult<Prisma.$maxicareMasterlistPayload<ExtArgs>, T, "findUnique", ClientOptions> | null, null, ExtArgs, ClientOptions>
 
     /**
      * Find one MaxicareMasterlist that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {MaxicareMasterlistFindUniqueOrThrowArgs} args - Arguments to find a MaxicareMasterlist
+     * @param {maxicareMasterlistFindUniqueOrThrowArgs} args - Arguments to find a MaxicareMasterlist
      * @example
      * // Get one MaxicareMasterlist
      * const maxicareMasterlist = await prisma.maxicareMasterlist.findUniqueOrThrow({
@@ -8362,13 +8362,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUniqueOrThrow<T extends MaxicareMasterlistFindUniqueOrThrowArgs>(args: SelectSubset<T, MaxicareMasterlistFindUniqueOrThrowArgs<ExtArgs>>): Prisma__MaxicareMasterlistClient<$Result.GetResult<Prisma.$MaxicareMasterlistPayload<ExtArgs>, T, "findUniqueOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
+    findUniqueOrThrow<T extends maxicareMasterlistFindUniqueOrThrowArgs>(args: SelectSubset<T, maxicareMasterlistFindUniqueOrThrowArgs<ExtArgs>>): Prisma__maxicareMasterlistClient<$Result.GetResult<Prisma.$maxicareMasterlistPayload<ExtArgs>, T, "findUniqueOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Find the first MaxicareMasterlist that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {MaxicareMasterlistFindFirstArgs} args - Arguments to find a MaxicareMasterlist
+     * @param {maxicareMasterlistFindFirstArgs} args - Arguments to find a MaxicareMasterlist
      * @example
      * // Get one MaxicareMasterlist
      * const maxicareMasterlist = await prisma.maxicareMasterlist.findFirst({
@@ -8377,14 +8377,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirst<T extends MaxicareMasterlistFindFirstArgs>(args?: SelectSubset<T, MaxicareMasterlistFindFirstArgs<ExtArgs>>): Prisma__MaxicareMasterlistClient<$Result.GetResult<Prisma.$MaxicareMasterlistPayload<ExtArgs>, T, "findFirst", ClientOptions> | null, null, ExtArgs, ClientOptions>
+    findFirst<T extends maxicareMasterlistFindFirstArgs>(args?: SelectSubset<T, maxicareMasterlistFindFirstArgs<ExtArgs>>): Prisma__maxicareMasterlistClient<$Result.GetResult<Prisma.$maxicareMasterlistPayload<ExtArgs>, T, "findFirst", ClientOptions> | null, null, ExtArgs, ClientOptions>
 
     /**
      * Find the first MaxicareMasterlist that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {MaxicareMasterlistFindFirstOrThrowArgs} args - Arguments to find a MaxicareMasterlist
+     * @param {maxicareMasterlistFindFirstOrThrowArgs} args - Arguments to find a MaxicareMasterlist
      * @example
      * // Get one MaxicareMasterlist
      * const maxicareMasterlist = await prisma.maxicareMasterlist.findFirstOrThrow({
@@ -8393,13 +8393,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirstOrThrow<T extends MaxicareMasterlistFindFirstOrThrowArgs>(args?: SelectSubset<T, MaxicareMasterlistFindFirstOrThrowArgs<ExtArgs>>): Prisma__MaxicareMasterlistClient<$Result.GetResult<Prisma.$MaxicareMasterlistPayload<ExtArgs>, T, "findFirstOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
+    findFirstOrThrow<T extends maxicareMasterlistFindFirstOrThrowArgs>(args?: SelectSubset<T, maxicareMasterlistFindFirstOrThrowArgs<ExtArgs>>): Prisma__maxicareMasterlistClient<$Result.GetResult<Prisma.$maxicareMasterlistPayload<ExtArgs>, T, "findFirstOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Find zero or more MaxicareMasterlists that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {MaxicareMasterlistFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {maxicareMasterlistFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all MaxicareMasterlists
      * const maxicareMasterlists = await prisma.maxicareMasterlist.findMany()
@@ -8411,11 +8411,11 @@ export namespace Prisma {
      * const maxicareMasterlistWithIdOnly = await prisma.maxicareMasterlist.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends MaxicareMasterlistFindManyArgs>(args?: SelectSubset<T, MaxicareMasterlistFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MaxicareMasterlistPayload<ExtArgs>, T, "findMany", ClientOptions>>
+    findMany<T extends maxicareMasterlistFindManyArgs>(args?: SelectSubset<T, maxicareMasterlistFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$maxicareMasterlistPayload<ExtArgs>, T, "findMany", ClientOptions>>
 
     /**
      * Create a MaxicareMasterlist.
-     * @param {MaxicareMasterlistCreateArgs} args - Arguments to create a MaxicareMasterlist.
+     * @param {maxicareMasterlistCreateArgs} args - Arguments to create a MaxicareMasterlist.
      * @example
      * // Create one MaxicareMasterlist
      * const MaxicareMasterlist = await prisma.maxicareMasterlist.create({
@@ -8425,11 +8425,11 @@ export namespace Prisma {
      * })
      * 
      */
-    create<T extends MaxicareMasterlistCreateArgs>(args: SelectSubset<T, MaxicareMasterlistCreateArgs<ExtArgs>>): Prisma__MaxicareMasterlistClient<$Result.GetResult<Prisma.$MaxicareMasterlistPayload<ExtArgs>, T, "create", ClientOptions>, never, ExtArgs, ClientOptions>
+    create<T extends maxicareMasterlistCreateArgs>(args: SelectSubset<T, maxicareMasterlistCreateArgs<ExtArgs>>): Prisma__maxicareMasterlistClient<$Result.GetResult<Prisma.$maxicareMasterlistPayload<ExtArgs>, T, "create", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Create many MaxicareMasterlists.
-     * @param {MaxicareMasterlistCreateManyArgs} args - Arguments to create many MaxicareMasterlists.
+     * @param {maxicareMasterlistCreateManyArgs} args - Arguments to create many MaxicareMasterlists.
      * @example
      * // Create many MaxicareMasterlists
      * const maxicareMasterlist = await prisma.maxicareMasterlist.createMany({
@@ -8439,11 +8439,11 @@ export namespace Prisma {
      * })
      *     
      */
-    createMany<T extends MaxicareMasterlistCreateManyArgs>(args?: SelectSubset<T, MaxicareMasterlistCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends maxicareMasterlistCreateManyArgs>(args?: SelectSubset<T, maxicareMasterlistCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Delete a MaxicareMasterlist.
-     * @param {MaxicareMasterlistDeleteArgs} args - Arguments to delete one MaxicareMasterlist.
+     * @param {maxicareMasterlistDeleteArgs} args - Arguments to delete one MaxicareMasterlist.
      * @example
      * // Delete one MaxicareMasterlist
      * const MaxicareMasterlist = await prisma.maxicareMasterlist.delete({
@@ -8453,11 +8453,11 @@ export namespace Prisma {
      * })
      * 
      */
-    delete<T extends MaxicareMasterlistDeleteArgs>(args: SelectSubset<T, MaxicareMasterlistDeleteArgs<ExtArgs>>): Prisma__MaxicareMasterlistClient<$Result.GetResult<Prisma.$MaxicareMasterlistPayload<ExtArgs>, T, "delete", ClientOptions>, never, ExtArgs, ClientOptions>
+    delete<T extends maxicareMasterlistDeleteArgs>(args: SelectSubset<T, maxicareMasterlistDeleteArgs<ExtArgs>>): Prisma__maxicareMasterlistClient<$Result.GetResult<Prisma.$maxicareMasterlistPayload<ExtArgs>, T, "delete", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Update one MaxicareMasterlist.
-     * @param {MaxicareMasterlistUpdateArgs} args - Arguments to update one MaxicareMasterlist.
+     * @param {maxicareMasterlistUpdateArgs} args - Arguments to update one MaxicareMasterlist.
      * @example
      * // Update one MaxicareMasterlist
      * const maxicareMasterlist = await prisma.maxicareMasterlist.update({
@@ -8470,11 +8470,11 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends MaxicareMasterlistUpdateArgs>(args: SelectSubset<T, MaxicareMasterlistUpdateArgs<ExtArgs>>): Prisma__MaxicareMasterlistClient<$Result.GetResult<Prisma.$MaxicareMasterlistPayload<ExtArgs>, T, "update", ClientOptions>, never, ExtArgs, ClientOptions>
+    update<T extends maxicareMasterlistUpdateArgs>(args: SelectSubset<T, maxicareMasterlistUpdateArgs<ExtArgs>>): Prisma__maxicareMasterlistClient<$Result.GetResult<Prisma.$maxicareMasterlistPayload<ExtArgs>, T, "update", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Delete zero or more MaxicareMasterlists.
-     * @param {MaxicareMasterlistDeleteManyArgs} args - Arguments to filter MaxicareMasterlists to delete.
+     * @param {maxicareMasterlistDeleteManyArgs} args - Arguments to filter MaxicareMasterlists to delete.
      * @example
      * // Delete a few MaxicareMasterlists
      * const { count } = await prisma.maxicareMasterlist.deleteMany({
@@ -8484,13 +8484,13 @@ export namespace Prisma {
      * })
      * 
      */
-    deleteMany<T extends MaxicareMasterlistDeleteManyArgs>(args?: SelectSubset<T, MaxicareMasterlistDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends maxicareMasterlistDeleteManyArgs>(args?: SelectSubset<T, maxicareMasterlistDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more MaxicareMasterlists.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {MaxicareMasterlistUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {maxicareMasterlistUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
      * // Update many MaxicareMasterlists
      * const maxicareMasterlist = await prisma.maxicareMasterlist.updateMany({
@@ -8503,11 +8503,11 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends MaxicareMasterlistUpdateManyArgs>(args: SelectSubset<T, MaxicareMasterlistUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends maxicareMasterlistUpdateManyArgs>(args: SelectSubset<T, maxicareMasterlistUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Create or update one MaxicareMasterlist.
-     * @param {MaxicareMasterlistUpsertArgs} args - Arguments to update or create a MaxicareMasterlist.
+     * @param {maxicareMasterlistUpsertArgs} args - Arguments to update or create a MaxicareMasterlist.
      * @example
      * // Update or create a MaxicareMasterlist
      * const maxicareMasterlist = await prisma.maxicareMasterlist.upsert({
@@ -8522,14 +8522,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    upsert<T extends MaxicareMasterlistUpsertArgs>(args: SelectSubset<T, MaxicareMasterlistUpsertArgs<ExtArgs>>): Prisma__MaxicareMasterlistClient<$Result.GetResult<Prisma.$MaxicareMasterlistPayload<ExtArgs>, T, "upsert", ClientOptions>, never, ExtArgs, ClientOptions>
+    upsert<T extends maxicareMasterlistUpsertArgs>(args: SelectSubset<T, maxicareMasterlistUpsertArgs<ExtArgs>>): Prisma__maxicareMasterlistClient<$Result.GetResult<Prisma.$maxicareMasterlistPayload<ExtArgs>, T, "upsert", ClientOptions>, never, ExtArgs, ClientOptions>
 
 
     /**
      * Count the number of MaxicareMasterlists.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {MaxicareMasterlistCountArgs} args - Arguments to filter MaxicareMasterlists to count.
+     * @param {maxicareMasterlistCountArgs} args - Arguments to filter MaxicareMasterlists to count.
      * @example
      * // Count the number of MaxicareMasterlists
      * const count = await prisma.maxicareMasterlist.count({
@@ -8538,8 +8538,8 @@ export namespace Prisma {
      *   }
      * })
     **/
-    count<T extends MaxicareMasterlistCountArgs>(
-      args?: Subset<T, MaxicareMasterlistCountArgs>,
+    count<T extends maxicareMasterlistCountArgs>(
+      args?: Subset<T, maxicareMasterlistCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
@@ -8578,7 +8578,7 @@ export namespace Prisma {
      * Group by MaxicareMasterlist.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {MaxicareMasterlistGroupByArgs} args - Group by arguments.
+     * @param {maxicareMasterlistGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -8593,14 +8593,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends MaxicareMasterlistGroupByArgs,
+      T extends maxicareMasterlistGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: MaxicareMasterlistGroupByArgs['orderBy'] }
-        : { orderBy?: MaxicareMasterlistGroupByArgs['orderBy'] },
+        ? { orderBy: maxicareMasterlistGroupByArgs['orderBy'] }
+        : { orderBy?: maxicareMasterlistGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -8649,22 +8649,22 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, MaxicareMasterlistGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetMaxicareMasterlistGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, maxicareMasterlistGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetMaxicareMasterlistGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the MaxicareMasterlist model
+   * Fields of the maxicareMasterlist model
    */
-  readonly fields: MaxicareMasterlistFieldRefs;
+  readonly fields: maxicareMasterlistFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for MaxicareMasterlist.
+   * The delegate class that acts as a "Promise-like" for maxicareMasterlist.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__MaxicareMasterlistClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__maxicareMasterlistClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    Clients<T extends ClientsDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ClientsDefaultArgs<ExtArgs>>): Prisma__ClientsClient<$Result.GetResult<Prisma.$ClientsPayload<ExtArgs>, T, "findUniqueOrThrow", ClientOptions> | Null, Null, ExtArgs, ClientOptions>
+    clients<T extends clientsDefaultArgs<ExtArgs> = {}>(args?: Subset<T, clientsDefaultArgs<ExtArgs>>): Prisma__clientsClient<$Result.GetResult<Prisma.$clientsPayload<ExtArgs>, T, "findUniqueOrThrow", ClientOptions> | Null, Null, ExtArgs, ClientOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -8691,385 +8691,385 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the MaxicareMasterlist model
+   * Fields of the maxicareMasterlist model
    */ 
-  interface MaxicareMasterlistFieldRefs {
-    readonly id: FieldRef<"MaxicareMasterlist", 'Int'>
-    readonly clientId: FieldRef<"MaxicareMasterlist", 'Int'>
-    readonly PY: FieldRef<"MaxicareMasterlist", 'String'>
-    readonly ACCOUNT_NO: FieldRef<"MaxicareMasterlist", 'String'>
-    readonly STATUS: FieldRef<"MaxicareMasterlist", 'String'>
-    readonly MEMBER_TYPE: FieldRef<"MaxicareMasterlist", 'String'>
-    readonly LIMIT: FieldRef<"MaxicareMasterlist", 'Float'>
-    readonly RELATION: FieldRef<"MaxicareMasterlist", 'String'>
-    readonly EE_ID: FieldRef<"MaxicareMasterlist", 'String'>
-    readonly CARD_NO: FieldRef<"MaxicareMasterlist", 'String'>
-    readonly COMPANY: FieldRef<"MaxicareMasterlist", 'String'>
-    readonly createdAt: FieldRef<"MaxicareMasterlist", 'DateTime'>
-    readonly updatedAt: FieldRef<"MaxicareMasterlist", 'DateTime'>
+  interface maxicareMasterlistFieldRefs {
+    readonly id: FieldRef<"maxicareMasterlist", 'Int'>
+    readonly clientId: FieldRef<"maxicareMasterlist", 'Int'>
+    readonly PY: FieldRef<"maxicareMasterlist", 'String'>
+    readonly ACCOUNT_NO: FieldRef<"maxicareMasterlist", 'String'>
+    readonly STATUS: FieldRef<"maxicareMasterlist", 'String'>
+    readonly MEMBER_TYPE: FieldRef<"maxicareMasterlist", 'String'>
+    readonly LIMIT: FieldRef<"maxicareMasterlist", 'Float'>
+    readonly RELATION: FieldRef<"maxicareMasterlist", 'String'>
+    readonly EE_ID: FieldRef<"maxicareMasterlist", 'String'>
+    readonly CARD_NO: FieldRef<"maxicareMasterlist", 'String'>
+    readonly COMPANY: FieldRef<"maxicareMasterlist", 'String'>
+    readonly createdAt: FieldRef<"maxicareMasterlist", 'DateTime'>
+    readonly updatedAt: FieldRef<"maxicareMasterlist", 'DateTime'>
   }
     
 
   // Custom InputTypes
   /**
-   * MaxicareMasterlist findUnique
+   * maxicareMasterlist findUnique
    */
-  export type MaxicareMasterlistFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type maxicareMasterlistFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the MaxicareMasterlist
+     * Select specific fields to fetch from the maxicareMasterlist
      */
-    select?: MaxicareMasterlistSelect<ExtArgs> | null
+    select?: maxicareMasterlistSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the MaxicareMasterlist
+     * Omit specific fields from the maxicareMasterlist
      */
-    omit?: MaxicareMasterlistOmit<ExtArgs> | null
+    omit?: maxicareMasterlistOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: MaxicareMasterlistInclude<ExtArgs> | null
+    include?: maxicareMasterlistInclude<ExtArgs> | null
     /**
-     * Filter, which MaxicareMasterlist to fetch.
+     * Filter, which maxicareMasterlist to fetch.
      */
-    where: MaxicareMasterlistWhereUniqueInput
+    where: maxicareMasterlistWhereUniqueInput
   }
 
   /**
-   * MaxicareMasterlist findUniqueOrThrow
+   * maxicareMasterlist findUniqueOrThrow
    */
-  export type MaxicareMasterlistFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type maxicareMasterlistFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the MaxicareMasterlist
+     * Select specific fields to fetch from the maxicareMasterlist
      */
-    select?: MaxicareMasterlistSelect<ExtArgs> | null
+    select?: maxicareMasterlistSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the MaxicareMasterlist
+     * Omit specific fields from the maxicareMasterlist
      */
-    omit?: MaxicareMasterlistOmit<ExtArgs> | null
+    omit?: maxicareMasterlistOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: MaxicareMasterlistInclude<ExtArgs> | null
+    include?: maxicareMasterlistInclude<ExtArgs> | null
     /**
-     * Filter, which MaxicareMasterlist to fetch.
+     * Filter, which maxicareMasterlist to fetch.
      */
-    where: MaxicareMasterlistWhereUniqueInput
+    where: maxicareMasterlistWhereUniqueInput
   }
 
   /**
-   * MaxicareMasterlist findFirst
+   * maxicareMasterlist findFirst
    */
-  export type MaxicareMasterlistFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type maxicareMasterlistFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the MaxicareMasterlist
+     * Select specific fields to fetch from the maxicareMasterlist
      */
-    select?: MaxicareMasterlistSelect<ExtArgs> | null
+    select?: maxicareMasterlistSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the MaxicareMasterlist
+     * Omit specific fields from the maxicareMasterlist
      */
-    omit?: MaxicareMasterlistOmit<ExtArgs> | null
+    omit?: maxicareMasterlistOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: MaxicareMasterlistInclude<ExtArgs> | null
+    include?: maxicareMasterlistInclude<ExtArgs> | null
     /**
-     * Filter, which MaxicareMasterlist to fetch.
+     * Filter, which maxicareMasterlist to fetch.
      */
-    where?: MaxicareMasterlistWhereInput
+    where?: maxicareMasterlistWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of MaxicareMasterlists to fetch.
+     * Determine the order of maxicareMasterlists to fetch.
      */
-    orderBy?: MaxicareMasterlistOrderByWithRelationInput | MaxicareMasterlistOrderByWithRelationInput[]
+    orderBy?: maxicareMasterlistOrderByWithRelationInput | maxicareMasterlistOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for MaxicareMasterlists.
+     * Sets the position for searching for maxicareMasterlists.
      */
-    cursor?: MaxicareMasterlistWhereUniqueInput
+    cursor?: maxicareMasterlistWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` MaxicareMasterlists from the position of the cursor.
+     * Take `±n` maxicareMasterlists from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` MaxicareMasterlists.
+     * Skip the first `n` maxicareMasterlists.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of MaxicareMasterlists.
+     * Filter by unique combinations of maxicareMasterlists.
      */
     distinct?: MaxicareMasterlistScalarFieldEnum | MaxicareMasterlistScalarFieldEnum[]
   }
 
   /**
-   * MaxicareMasterlist findFirstOrThrow
+   * maxicareMasterlist findFirstOrThrow
    */
-  export type MaxicareMasterlistFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type maxicareMasterlistFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the MaxicareMasterlist
+     * Select specific fields to fetch from the maxicareMasterlist
      */
-    select?: MaxicareMasterlistSelect<ExtArgs> | null
+    select?: maxicareMasterlistSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the MaxicareMasterlist
+     * Omit specific fields from the maxicareMasterlist
      */
-    omit?: MaxicareMasterlistOmit<ExtArgs> | null
+    omit?: maxicareMasterlistOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: MaxicareMasterlistInclude<ExtArgs> | null
+    include?: maxicareMasterlistInclude<ExtArgs> | null
     /**
-     * Filter, which MaxicareMasterlist to fetch.
+     * Filter, which maxicareMasterlist to fetch.
      */
-    where?: MaxicareMasterlistWhereInput
+    where?: maxicareMasterlistWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of MaxicareMasterlists to fetch.
+     * Determine the order of maxicareMasterlists to fetch.
      */
-    orderBy?: MaxicareMasterlistOrderByWithRelationInput | MaxicareMasterlistOrderByWithRelationInput[]
+    orderBy?: maxicareMasterlistOrderByWithRelationInput | maxicareMasterlistOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for MaxicareMasterlists.
+     * Sets the position for searching for maxicareMasterlists.
      */
-    cursor?: MaxicareMasterlistWhereUniqueInput
+    cursor?: maxicareMasterlistWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` MaxicareMasterlists from the position of the cursor.
+     * Take `±n` maxicareMasterlists from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` MaxicareMasterlists.
+     * Skip the first `n` maxicareMasterlists.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of MaxicareMasterlists.
+     * Filter by unique combinations of maxicareMasterlists.
      */
     distinct?: MaxicareMasterlistScalarFieldEnum | MaxicareMasterlistScalarFieldEnum[]
   }
 
   /**
-   * MaxicareMasterlist findMany
+   * maxicareMasterlist findMany
    */
-  export type MaxicareMasterlistFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type maxicareMasterlistFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the MaxicareMasterlist
+     * Select specific fields to fetch from the maxicareMasterlist
      */
-    select?: MaxicareMasterlistSelect<ExtArgs> | null
+    select?: maxicareMasterlistSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the MaxicareMasterlist
+     * Omit specific fields from the maxicareMasterlist
      */
-    omit?: MaxicareMasterlistOmit<ExtArgs> | null
+    omit?: maxicareMasterlistOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: MaxicareMasterlistInclude<ExtArgs> | null
+    include?: maxicareMasterlistInclude<ExtArgs> | null
     /**
-     * Filter, which MaxicareMasterlists to fetch.
+     * Filter, which maxicareMasterlists to fetch.
      */
-    where?: MaxicareMasterlistWhereInput
+    where?: maxicareMasterlistWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of MaxicareMasterlists to fetch.
+     * Determine the order of maxicareMasterlists to fetch.
      */
-    orderBy?: MaxicareMasterlistOrderByWithRelationInput | MaxicareMasterlistOrderByWithRelationInput[]
+    orderBy?: maxicareMasterlistOrderByWithRelationInput | maxicareMasterlistOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing MaxicareMasterlists.
+     * Sets the position for listing maxicareMasterlists.
      */
-    cursor?: MaxicareMasterlistWhereUniqueInput
+    cursor?: maxicareMasterlistWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` MaxicareMasterlists from the position of the cursor.
+     * Take `±n` maxicareMasterlists from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` MaxicareMasterlists.
+     * Skip the first `n` maxicareMasterlists.
      */
     skip?: number
     distinct?: MaxicareMasterlistScalarFieldEnum | MaxicareMasterlistScalarFieldEnum[]
   }
 
   /**
-   * MaxicareMasterlist create
+   * maxicareMasterlist create
    */
-  export type MaxicareMasterlistCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type maxicareMasterlistCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the MaxicareMasterlist
+     * Select specific fields to fetch from the maxicareMasterlist
      */
-    select?: MaxicareMasterlistSelect<ExtArgs> | null
+    select?: maxicareMasterlistSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the MaxicareMasterlist
+     * Omit specific fields from the maxicareMasterlist
      */
-    omit?: MaxicareMasterlistOmit<ExtArgs> | null
+    omit?: maxicareMasterlistOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: MaxicareMasterlistInclude<ExtArgs> | null
+    include?: maxicareMasterlistInclude<ExtArgs> | null
     /**
-     * The data needed to create a MaxicareMasterlist.
+     * The data needed to create a maxicareMasterlist.
      */
-    data: XOR<MaxicareMasterlistCreateInput, MaxicareMasterlistUncheckedCreateInput>
+    data: XOR<maxicareMasterlistCreateInput, maxicareMasterlistUncheckedCreateInput>
   }
 
   /**
-   * MaxicareMasterlist createMany
+   * maxicareMasterlist createMany
    */
-  export type MaxicareMasterlistCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type maxicareMasterlistCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many MaxicareMasterlists.
+     * The data used to create many maxicareMasterlists.
      */
-    data: MaxicareMasterlistCreateManyInput | MaxicareMasterlistCreateManyInput[]
+    data: maxicareMasterlistCreateManyInput | maxicareMasterlistCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * MaxicareMasterlist update
+   * maxicareMasterlist update
    */
-  export type MaxicareMasterlistUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type maxicareMasterlistUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the MaxicareMasterlist
+     * Select specific fields to fetch from the maxicareMasterlist
      */
-    select?: MaxicareMasterlistSelect<ExtArgs> | null
+    select?: maxicareMasterlistSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the MaxicareMasterlist
+     * Omit specific fields from the maxicareMasterlist
      */
-    omit?: MaxicareMasterlistOmit<ExtArgs> | null
+    omit?: maxicareMasterlistOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: MaxicareMasterlistInclude<ExtArgs> | null
+    include?: maxicareMasterlistInclude<ExtArgs> | null
     /**
-     * The data needed to update a MaxicareMasterlist.
+     * The data needed to update a maxicareMasterlist.
      */
-    data: XOR<MaxicareMasterlistUpdateInput, MaxicareMasterlistUncheckedUpdateInput>
+    data: XOR<maxicareMasterlistUpdateInput, maxicareMasterlistUncheckedUpdateInput>
     /**
-     * Choose, which MaxicareMasterlist to update.
+     * Choose, which maxicareMasterlist to update.
      */
-    where: MaxicareMasterlistWhereUniqueInput
+    where: maxicareMasterlistWhereUniqueInput
   }
 
   /**
-   * MaxicareMasterlist updateMany
+   * maxicareMasterlist updateMany
    */
-  export type MaxicareMasterlistUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type maxicareMasterlistUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update MaxicareMasterlists.
+     * The data used to update maxicareMasterlists.
      */
-    data: XOR<MaxicareMasterlistUpdateManyMutationInput, MaxicareMasterlistUncheckedUpdateManyInput>
+    data: XOR<maxicareMasterlistUpdateManyMutationInput, maxicareMasterlistUncheckedUpdateManyInput>
     /**
-     * Filter which MaxicareMasterlists to update
+     * Filter which maxicareMasterlists to update
      */
-    where?: MaxicareMasterlistWhereInput
+    where?: maxicareMasterlistWhereInput
     /**
-     * Limit how many MaxicareMasterlists to update.
+     * Limit how many maxicareMasterlists to update.
      */
     limit?: number
   }
 
   /**
-   * MaxicareMasterlist upsert
+   * maxicareMasterlist upsert
    */
-  export type MaxicareMasterlistUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type maxicareMasterlistUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the MaxicareMasterlist
+     * Select specific fields to fetch from the maxicareMasterlist
      */
-    select?: MaxicareMasterlistSelect<ExtArgs> | null
+    select?: maxicareMasterlistSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the MaxicareMasterlist
+     * Omit specific fields from the maxicareMasterlist
      */
-    omit?: MaxicareMasterlistOmit<ExtArgs> | null
+    omit?: maxicareMasterlistOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: MaxicareMasterlistInclude<ExtArgs> | null
+    include?: maxicareMasterlistInclude<ExtArgs> | null
     /**
-     * The filter to search for the MaxicareMasterlist to update in case it exists.
+     * The filter to search for the maxicareMasterlist to update in case it exists.
      */
-    where: MaxicareMasterlistWhereUniqueInput
+    where: maxicareMasterlistWhereUniqueInput
     /**
-     * In case the MaxicareMasterlist found by the `where` argument doesn't exist, create a new MaxicareMasterlist with this data.
+     * In case the maxicareMasterlist found by the `where` argument doesn't exist, create a new maxicareMasterlist with this data.
      */
-    create: XOR<MaxicareMasterlistCreateInput, MaxicareMasterlistUncheckedCreateInput>
+    create: XOR<maxicareMasterlistCreateInput, maxicareMasterlistUncheckedCreateInput>
     /**
-     * In case the MaxicareMasterlist was found with the provided `where` argument, update it with this data.
+     * In case the maxicareMasterlist was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<MaxicareMasterlistUpdateInput, MaxicareMasterlistUncheckedUpdateInput>
+    update: XOR<maxicareMasterlistUpdateInput, maxicareMasterlistUncheckedUpdateInput>
   }
 
   /**
-   * MaxicareMasterlist delete
+   * maxicareMasterlist delete
    */
-  export type MaxicareMasterlistDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type maxicareMasterlistDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the MaxicareMasterlist
+     * Select specific fields to fetch from the maxicareMasterlist
      */
-    select?: MaxicareMasterlistSelect<ExtArgs> | null
+    select?: maxicareMasterlistSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the MaxicareMasterlist
+     * Omit specific fields from the maxicareMasterlist
      */
-    omit?: MaxicareMasterlistOmit<ExtArgs> | null
+    omit?: maxicareMasterlistOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: MaxicareMasterlistInclude<ExtArgs> | null
+    include?: maxicareMasterlistInclude<ExtArgs> | null
     /**
-     * Filter which MaxicareMasterlist to delete.
+     * Filter which maxicareMasterlist to delete.
      */
-    where: MaxicareMasterlistWhereUniqueInput
+    where: maxicareMasterlistWhereUniqueInput
   }
 
   /**
-   * MaxicareMasterlist deleteMany
+   * maxicareMasterlist deleteMany
    */
-  export type MaxicareMasterlistDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type maxicareMasterlistDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which MaxicareMasterlists to delete
+     * Filter which maxicareMasterlists to delete
      */
-    where?: MaxicareMasterlistWhereInput
+    where?: maxicareMasterlistWhereInput
     /**
-     * Limit how many MaxicareMasterlists to delete.
+     * Limit how many maxicareMasterlists to delete.
      */
     limit?: number
   }
 
   /**
-   * MaxicareMasterlist without action
+   * maxicareMasterlist without action
    */
-  export type MaxicareMasterlistDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type maxicareMasterlistDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the MaxicareMasterlist
+     * Select specific fields to fetch from the maxicareMasterlist
      */
-    select?: MaxicareMasterlistSelect<ExtArgs> | null
+    select?: maxicareMasterlistSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the MaxicareMasterlist
+     * Omit specific fields from the maxicareMasterlist
      */
-    omit?: MaxicareMasterlistOmit<ExtArgs> | null
+    omit?: maxicareMasterlistOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: MaxicareMasterlistInclude<ExtArgs> | null
+    include?: maxicareMasterlistInclude<ExtArgs> | null
   }
 
 
   /**
-   * Model Intellicare
+   * Model intellicare
    */
 
   export type AggregateIntellicare = {
@@ -9245,37 +9245,37 @@ export namespace Prisma {
 
   export type IntellicareAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Intellicare to aggregate.
+     * Filter which intellicare to aggregate.
      */
-    where?: IntellicareWhereInput
+    where?: intellicareWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Intellicares to fetch.
+     * Determine the order of intellicares to fetch.
      */
-    orderBy?: IntellicareOrderByWithRelationInput | IntellicareOrderByWithRelationInput[]
+    orderBy?: intellicareOrderByWithRelationInput | intellicareOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: IntellicareWhereUniqueInput
+    cursor?: intellicareWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Intellicares from the position of the cursor.
+     * Take `±n` intellicares from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Intellicares.
+     * Skip the first `n` intellicares.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Intellicares
+     * Count returned intellicares
     **/
     _count?: true | IntellicareCountAggregateInputType
     /**
@@ -9315,11 +9315,11 @@ export namespace Prisma {
 
 
 
-  export type IntellicareGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: IntellicareWhereInput
-    orderBy?: IntellicareOrderByWithAggregationInput | IntellicareOrderByWithAggregationInput[]
+  export type intellicareGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: intellicareWhereInput
+    orderBy?: intellicareOrderByWithAggregationInput | intellicareOrderByWithAggregationInput[]
     by: IntellicareScalarFieldEnum[] | IntellicareScalarFieldEnum
-    having?: IntellicareScalarWhereWithAggregatesInput
+    having?: intellicareScalarWhereWithAggregatesInput
     take?: number
     skip?: number
     _count?: IntellicareCountAggregateInputType | true
@@ -9356,7 +9356,7 @@ export namespace Prisma {
     _max: IntellicareMaxAggregateOutputType | null
   }
 
-  type GetIntellicareGroupByPayload<T extends IntellicareGroupByArgs> = Prisma.PrismaPromise<
+  type GetIntellicareGroupByPayload<T extends intellicareGroupByArgs> = Prisma.PrismaPromise<
     Array<
       PickEnumerable<IntellicareGroupByOutputType, T['by']> &
         {
@@ -9370,7 +9370,7 @@ export namespace Prisma {
     >
 
 
-  export type IntellicareSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type intellicareSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     clientId?: boolean
     PY?: boolean
@@ -9390,12 +9390,12 @@ export namespace Prisma {
     Relationship?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    Clients?: boolean | ClientsDefaultArgs<ExtArgs>
+    clients?: boolean | clientsDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["intellicare"]>
 
 
 
-  export type IntellicareSelectScalar = {
+  export type intellicareSelectScalar = {
     id?: boolean
     clientId?: boolean
     PY?: boolean
@@ -9417,15 +9417,15 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type IntellicareOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "clientId" | "PY" | "Company" | "Member_Account" | "Member_Type" | "ICD_10_Code" | "Diagnosis" | "Claim_Type" | "Admission_Date" | "Provider_Name" | "Provider_Type" | "Approved_Claim_Amount" | "Class_Plan_Level" | "Maximum_Benefit_Limit" | "Date_of_Birth" | "Relationship" | "createdAt" | "updatedAt", ExtArgs["result"]["intellicare"]>
-  export type IntellicareInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    Clients?: boolean | ClientsDefaultArgs<ExtArgs>
+  export type intellicareOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "clientId" | "PY" | "Company" | "Member_Account" | "Member_Type" | "ICD_10_Code" | "Diagnosis" | "Claim_Type" | "Admission_Date" | "Provider_Name" | "Provider_Type" | "Approved_Claim_Amount" | "Class_Plan_Level" | "Maximum_Benefit_Limit" | "Date_of_Birth" | "Relationship" | "createdAt" | "updatedAt", ExtArgs["result"]["intellicare"]>
+  export type intellicareInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    clients?: boolean | clientsDefaultArgs<ExtArgs>
   }
 
-  export type $IntellicarePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Intellicare"
+  export type $intellicarePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "intellicare"
     objects: {
-      Clients: Prisma.$ClientsPayload<ExtArgs>
+      clients: Prisma.$clientsPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -9451,18 +9451,18 @@ export namespace Prisma {
     composites: {}
   }
 
-  type IntellicareGetPayload<S extends boolean | null | undefined | IntellicareDefaultArgs> = $Result.GetResult<Prisma.$IntellicarePayload, S>
+  type intellicareGetPayload<S extends boolean | null | undefined | intellicareDefaultArgs> = $Result.GetResult<Prisma.$intellicarePayload, S>
 
-  type IntellicareCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<IntellicareFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+  type intellicareCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<intellicareFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
       select?: IntellicareCountAggregateInputType | true
     }
 
-  export interface IntellicareDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Intellicare'], meta: { name: 'Intellicare' } }
+  export interface intellicareDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['intellicare'], meta: { name: 'intellicare' } }
     /**
      * Find zero or one Intellicare that matches the filter.
-     * @param {IntellicareFindUniqueArgs} args - Arguments to find a Intellicare
+     * @param {intellicareFindUniqueArgs} args - Arguments to find a Intellicare
      * @example
      * // Get one Intellicare
      * const intellicare = await prisma.intellicare.findUnique({
@@ -9471,12 +9471,12 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUnique<T extends IntellicareFindUniqueArgs>(args: SelectSubset<T, IntellicareFindUniqueArgs<ExtArgs>>): Prisma__IntellicareClient<$Result.GetResult<Prisma.$IntellicarePayload<ExtArgs>, T, "findUnique", ClientOptions> | null, null, ExtArgs, ClientOptions>
+    findUnique<T extends intellicareFindUniqueArgs>(args: SelectSubset<T, intellicareFindUniqueArgs<ExtArgs>>): Prisma__intellicareClient<$Result.GetResult<Prisma.$intellicarePayload<ExtArgs>, T, "findUnique", ClientOptions> | null, null, ExtArgs, ClientOptions>
 
     /**
      * Find one Intellicare that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {IntellicareFindUniqueOrThrowArgs} args - Arguments to find a Intellicare
+     * @param {intellicareFindUniqueOrThrowArgs} args - Arguments to find a Intellicare
      * @example
      * // Get one Intellicare
      * const intellicare = await prisma.intellicare.findUniqueOrThrow({
@@ -9485,13 +9485,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUniqueOrThrow<T extends IntellicareFindUniqueOrThrowArgs>(args: SelectSubset<T, IntellicareFindUniqueOrThrowArgs<ExtArgs>>): Prisma__IntellicareClient<$Result.GetResult<Prisma.$IntellicarePayload<ExtArgs>, T, "findUniqueOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
+    findUniqueOrThrow<T extends intellicareFindUniqueOrThrowArgs>(args: SelectSubset<T, intellicareFindUniqueOrThrowArgs<ExtArgs>>): Prisma__intellicareClient<$Result.GetResult<Prisma.$intellicarePayload<ExtArgs>, T, "findUniqueOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Find the first Intellicare that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {IntellicareFindFirstArgs} args - Arguments to find a Intellicare
+     * @param {intellicareFindFirstArgs} args - Arguments to find a Intellicare
      * @example
      * // Get one Intellicare
      * const intellicare = await prisma.intellicare.findFirst({
@@ -9500,14 +9500,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirst<T extends IntellicareFindFirstArgs>(args?: SelectSubset<T, IntellicareFindFirstArgs<ExtArgs>>): Prisma__IntellicareClient<$Result.GetResult<Prisma.$IntellicarePayload<ExtArgs>, T, "findFirst", ClientOptions> | null, null, ExtArgs, ClientOptions>
+    findFirst<T extends intellicareFindFirstArgs>(args?: SelectSubset<T, intellicareFindFirstArgs<ExtArgs>>): Prisma__intellicareClient<$Result.GetResult<Prisma.$intellicarePayload<ExtArgs>, T, "findFirst", ClientOptions> | null, null, ExtArgs, ClientOptions>
 
     /**
      * Find the first Intellicare that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {IntellicareFindFirstOrThrowArgs} args - Arguments to find a Intellicare
+     * @param {intellicareFindFirstOrThrowArgs} args - Arguments to find a Intellicare
      * @example
      * // Get one Intellicare
      * const intellicare = await prisma.intellicare.findFirstOrThrow({
@@ -9516,13 +9516,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirstOrThrow<T extends IntellicareFindFirstOrThrowArgs>(args?: SelectSubset<T, IntellicareFindFirstOrThrowArgs<ExtArgs>>): Prisma__IntellicareClient<$Result.GetResult<Prisma.$IntellicarePayload<ExtArgs>, T, "findFirstOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
+    findFirstOrThrow<T extends intellicareFindFirstOrThrowArgs>(args?: SelectSubset<T, intellicareFindFirstOrThrowArgs<ExtArgs>>): Prisma__intellicareClient<$Result.GetResult<Prisma.$intellicarePayload<ExtArgs>, T, "findFirstOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Find zero or more Intellicares that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {IntellicareFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {intellicareFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all Intellicares
      * const intellicares = await prisma.intellicare.findMany()
@@ -9534,11 +9534,11 @@ export namespace Prisma {
      * const intellicareWithIdOnly = await prisma.intellicare.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends IntellicareFindManyArgs>(args?: SelectSubset<T, IntellicareFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$IntellicarePayload<ExtArgs>, T, "findMany", ClientOptions>>
+    findMany<T extends intellicareFindManyArgs>(args?: SelectSubset<T, intellicareFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$intellicarePayload<ExtArgs>, T, "findMany", ClientOptions>>
 
     /**
      * Create a Intellicare.
-     * @param {IntellicareCreateArgs} args - Arguments to create a Intellicare.
+     * @param {intellicareCreateArgs} args - Arguments to create a Intellicare.
      * @example
      * // Create one Intellicare
      * const Intellicare = await prisma.intellicare.create({
@@ -9548,11 +9548,11 @@ export namespace Prisma {
      * })
      * 
      */
-    create<T extends IntellicareCreateArgs>(args: SelectSubset<T, IntellicareCreateArgs<ExtArgs>>): Prisma__IntellicareClient<$Result.GetResult<Prisma.$IntellicarePayload<ExtArgs>, T, "create", ClientOptions>, never, ExtArgs, ClientOptions>
+    create<T extends intellicareCreateArgs>(args: SelectSubset<T, intellicareCreateArgs<ExtArgs>>): Prisma__intellicareClient<$Result.GetResult<Prisma.$intellicarePayload<ExtArgs>, T, "create", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Create many Intellicares.
-     * @param {IntellicareCreateManyArgs} args - Arguments to create many Intellicares.
+     * @param {intellicareCreateManyArgs} args - Arguments to create many Intellicares.
      * @example
      * // Create many Intellicares
      * const intellicare = await prisma.intellicare.createMany({
@@ -9562,11 +9562,11 @@ export namespace Prisma {
      * })
      *     
      */
-    createMany<T extends IntellicareCreateManyArgs>(args?: SelectSubset<T, IntellicareCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends intellicareCreateManyArgs>(args?: SelectSubset<T, intellicareCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Delete a Intellicare.
-     * @param {IntellicareDeleteArgs} args - Arguments to delete one Intellicare.
+     * @param {intellicareDeleteArgs} args - Arguments to delete one Intellicare.
      * @example
      * // Delete one Intellicare
      * const Intellicare = await prisma.intellicare.delete({
@@ -9576,11 +9576,11 @@ export namespace Prisma {
      * })
      * 
      */
-    delete<T extends IntellicareDeleteArgs>(args: SelectSubset<T, IntellicareDeleteArgs<ExtArgs>>): Prisma__IntellicareClient<$Result.GetResult<Prisma.$IntellicarePayload<ExtArgs>, T, "delete", ClientOptions>, never, ExtArgs, ClientOptions>
+    delete<T extends intellicareDeleteArgs>(args: SelectSubset<T, intellicareDeleteArgs<ExtArgs>>): Prisma__intellicareClient<$Result.GetResult<Prisma.$intellicarePayload<ExtArgs>, T, "delete", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Update one Intellicare.
-     * @param {IntellicareUpdateArgs} args - Arguments to update one Intellicare.
+     * @param {intellicareUpdateArgs} args - Arguments to update one Intellicare.
      * @example
      * // Update one Intellicare
      * const intellicare = await prisma.intellicare.update({
@@ -9593,11 +9593,11 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends IntellicareUpdateArgs>(args: SelectSubset<T, IntellicareUpdateArgs<ExtArgs>>): Prisma__IntellicareClient<$Result.GetResult<Prisma.$IntellicarePayload<ExtArgs>, T, "update", ClientOptions>, never, ExtArgs, ClientOptions>
+    update<T extends intellicareUpdateArgs>(args: SelectSubset<T, intellicareUpdateArgs<ExtArgs>>): Prisma__intellicareClient<$Result.GetResult<Prisma.$intellicarePayload<ExtArgs>, T, "update", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Delete zero or more Intellicares.
-     * @param {IntellicareDeleteManyArgs} args - Arguments to filter Intellicares to delete.
+     * @param {intellicareDeleteManyArgs} args - Arguments to filter Intellicares to delete.
      * @example
      * // Delete a few Intellicares
      * const { count } = await prisma.intellicare.deleteMany({
@@ -9607,13 +9607,13 @@ export namespace Prisma {
      * })
      * 
      */
-    deleteMany<T extends IntellicareDeleteManyArgs>(args?: SelectSubset<T, IntellicareDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends intellicareDeleteManyArgs>(args?: SelectSubset<T, intellicareDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Intellicares.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {IntellicareUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {intellicareUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
      * // Update many Intellicares
      * const intellicare = await prisma.intellicare.updateMany({
@@ -9626,11 +9626,11 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends IntellicareUpdateManyArgs>(args: SelectSubset<T, IntellicareUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends intellicareUpdateManyArgs>(args: SelectSubset<T, intellicareUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Create or update one Intellicare.
-     * @param {IntellicareUpsertArgs} args - Arguments to update or create a Intellicare.
+     * @param {intellicareUpsertArgs} args - Arguments to update or create a Intellicare.
      * @example
      * // Update or create a Intellicare
      * const intellicare = await prisma.intellicare.upsert({
@@ -9645,14 +9645,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    upsert<T extends IntellicareUpsertArgs>(args: SelectSubset<T, IntellicareUpsertArgs<ExtArgs>>): Prisma__IntellicareClient<$Result.GetResult<Prisma.$IntellicarePayload<ExtArgs>, T, "upsert", ClientOptions>, never, ExtArgs, ClientOptions>
+    upsert<T extends intellicareUpsertArgs>(args: SelectSubset<T, intellicareUpsertArgs<ExtArgs>>): Prisma__intellicareClient<$Result.GetResult<Prisma.$intellicarePayload<ExtArgs>, T, "upsert", ClientOptions>, never, ExtArgs, ClientOptions>
 
 
     /**
      * Count the number of Intellicares.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {IntellicareCountArgs} args - Arguments to filter Intellicares to count.
+     * @param {intellicareCountArgs} args - Arguments to filter Intellicares to count.
      * @example
      * // Count the number of Intellicares
      * const count = await prisma.intellicare.count({
@@ -9661,8 +9661,8 @@ export namespace Prisma {
      *   }
      * })
     **/
-    count<T extends IntellicareCountArgs>(
-      args?: Subset<T, IntellicareCountArgs>,
+    count<T extends intellicareCountArgs>(
+      args?: Subset<T, intellicareCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
@@ -9701,7 +9701,7 @@ export namespace Prisma {
      * Group by Intellicare.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {IntellicareGroupByArgs} args - Group by arguments.
+     * @param {intellicareGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -9716,14 +9716,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends IntellicareGroupByArgs,
+      T extends intellicareGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: IntellicareGroupByArgs['orderBy'] }
-        : { orderBy?: IntellicareGroupByArgs['orderBy'] },
+        ? { orderBy: intellicareGroupByArgs['orderBy'] }
+        : { orderBy?: intellicareGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -9772,22 +9772,22 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, IntellicareGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetIntellicareGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, intellicareGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetIntellicareGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Intellicare model
+   * Fields of the intellicare model
    */
-  readonly fields: IntellicareFieldRefs;
+  readonly fields: intellicareFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Intellicare.
+   * The delegate class that acts as a "Promise-like" for intellicare.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__IntellicareClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__intellicareClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    Clients<T extends ClientsDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ClientsDefaultArgs<ExtArgs>>): Prisma__ClientsClient<$Result.GetResult<Prisma.$ClientsPayload<ExtArgs>, T, "findUniqueOrThrow", ClientOptions> | Null, Null, ExtArgs, ClientOptions>
+    clients<T extends clientsDefaultArgs<ExtArgs> = {}>(args?: Subset<T, clientsDefaultArgs<ExtArgs>>): Prisma__clientsClient<$Result.GetResult<Prisma.$clientsPayload<ExtArgs>, T, "findUniqueOrThrow", ClientOptions> | Null, Null, ExtArgs, ClientOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -9814,391 +9814,391 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Intellicare model
+   * Fields of the intellicare model
    */ 
-  interface IntellicareFieldRefs {
-    readonly id: FieldRef<"Intellicare", 'Int'>
-    readonly clientId: FieldRef<"Intellicare", 'Int'>
-    readonly PY: FieldRef<"Intellicare", 'String'>
-    readonly Company: FieldRef<"Intellicare", 'String'>
-    readonly Member_Account: FieldRef<"Intellicare", 'String'>
-    readonly Member_Type: FieldRef<"Intellicare", 'String'>
-    readonly ICD_10_Code: FieldRef<"Intellicare", 'String'>
-    readonly Diagnosis: FieldRef<"Intellicare", 'String'>
-    readonly Claim_Type: FieldRef<"Intellicare", 'String'>
-    readonly Admission_Date: FieldRef<"Intellicare", 'DateTime'>
-    readonly Provider_Name: FieldRef<"Intellicare", 'String'>
-    readonly Provider_Type: FieldRef<"Intellicare", 'String'>
-    readonly Approved_Claim_Amount: FieldRef<"Intellicare", 'Float'>
-    readonly Class_Plan_Level: FieldRef<"Intellicare", 'String'>
-    readonly Maximum_Benefit_Limit: FieldRef<"Intellicare", 'Float'>
-    readonly Date_of_Birth: FieldRef<"Intellicare", 'DateTime'>
-    readonly Relationship: FieldRef<"Intellicare", 'String'>
-    readonly createdAt: FieldRef<"Intellicare", 'DateTime'>
-    readonly updatedAt: FieldRef<"Intellicare", 'DateTime'>
+  interface intellicareFieldRefs {
+    readonly id: FieldRef<"intellicare", 'Int'>
+    readonly clientId: FieldRef<"intellicare", 'Int'>
+    readonly PY: FieldRef<"intellicare", 'String'>
+    readonly Company: FieldRef<"intellicare", 'String'>
+    readonly Member_Account: FieldRef<"intellicare", 'String'>
+    readonly Member_Type: FieldRef<"intellicare", 'String'>
+    readonly ICD_10_Code: FieldRef<"intellicare", 'String'>
+    readonly Diagnosis: FieldRef<"intellicare", 'String'>
+    readonly Claim_Type: FieldRef<"intellicare", 'String'>
+    readonly Admission_Date: FieldRef<"intellicare", 'DateTime'>
+    readonly Provider_Name: FieldRef<"intellicare", 'String'>
+    readonly Provider_Type: FieldRef<"intellicare", 'String'>
+    readonly Approved_Claim_Amount: FieldRef<"intellicare", 'Float'>
+    readonly Class_Plan_Level: FieldRef<"intellicare", 'String'>
+    readonly Maximum_Benefit_Limit: FieldRef<"intellicare", 'Float'>
+    readonly Date_of_Birth: FieldRef<"intellicare", 'DateTime'>
+    readonly Relationship: FieldRef<"intellicare", 'String'>
+    readonly createdAt: FieldRef<"intellicare", 'DateTime'>
+    readonly updatedAt: FieldRef<"intellicare", 'DateTime'>
   }
     
 
   // Custom InputTypes
   /**
-   * Intellicare findUnique
+   * intellicare findUnique
    */
-  export type IntellicareFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type intellicareFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Intellicare
+     * Select specific fields to fetch from the intellicare
      */
-    select?: IntellicareSelect<ExtArgs> | null
+    select?: intellicareSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Intellicare
+     * Omit specific fields from the intellicare
      */
-    omit?: IntellicareOmit<ExtArgs> | null
+    omit?: intellicareOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: IntellicareInclude<ExtArgs> | null
+    include?: intellicareInclude<ExtArgs> | null
     /**
-     * Filter, which Intellicare to fetch.
+     * Filter, which intellicare to fetch.
      */
-    where: IntellicareWhereUniqueInput
+    where: intellicareWhereUniqueInput
   }
 
   /**
-   * Intellicare findUniqueOrThrow
+   * intellicare findUniqueOrThrow
    */
-  export type IntellicareFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type intellicareFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Intellicare
+     * Select specific fields to fetch from the intellicare
      */
-    select?: IntellicareSelect<ExtArgs> | null
+    select?: intellicareSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Intellicare
+     * Omit specific fields from the intellicare
      */
-    omit?: IntellicareOmit<ExtArgs> | null
+    omit?: intellicareOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: IntellicareInclude<ExtArgs> | null
+    include?: intellicareInclude<ExtArgs> | null
     /**
-     * Filter, which Intellicare to fetch.
+     * Filter, which intellicare to fetch.
      */
-    where: IntellicareWhereUniqueInput
+    where: intellicareWhereUniqueInput
   }
 
   /**
-   * Intellicare findFirst
+   * intellicare findFirst
    */
-  export type IntellicareFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type intellicareFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Intellicare
+     * Select specific fields to fetch from the intellicare
      */
-    select?: IntellicareSelect<ExtArgs> | null
+    select?: intellicareSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Intellicare
+     * Omit specific fields from the intellicare
      */
-    omit?: IntellicareOmit<ExtArgs> | null
+    omit?: intellicareOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: IntellicareInclude<ExtArgs> | null
+    include?: intellicareInclude<ExtArgs> | null
     /**
-     * Filter, which Intellicare to fetch.
+     * Filter, which intellicare to fetch.
      */
-    where?: IntellicareWhereInput
+    where?: intellicareWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Intellicares to fetch.
+     * Determine the order of intellicares to fetch.
      */
-    orderBy?: IntellicareOrderByWithRelationInput | IntellicareOrderByWithRelationInput[]
+    orderBy?: intellicareOrderByWithRelationInput | intellicareOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Intellicares.
+     * Sets the position for searching for intellicares.
      */
-    cursor?: IntellicareWhereUniqueInput
+    cursor?: intellicareWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Intellicares from the position of the cursor.
+     * Take `±n` intellicares from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Intellicares.
+     * Skip the first `n` intellicares.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Intellicares.
+     * Filter by unique combinations of intellicares.
      */
     distinct?: IntellicareScalarFieldEnum | IntellicareScalarFieldEnum[]
   }
 
   /**
-   * Intellicare findFirstOrThrow
+   * intellicare findFirstOrThrow
    */
-  export type IntellicareFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type intellicareFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Intellicare
+     * Select specific fields to fetch from the intellicare
      */
-    select?: IntellicareSelect<ExtArgs> | null
+    select?: intellicareSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Intellicare
+     * Omit specific fields from the intellicare
      */
-    omit?: IntellicareOmit<ExtArgs> | null
+    omit?: intellicareOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: IntellicareInclude<ExtArgs> | null
+    include?: intellicareInclude<ExtArgs> | null
     /**
-     * Filter, which Intellicare to fetch.
+     * Filter, which intellicare to fetch.
      */
-    where?: IntellicareWhereInput
+    where?: intellicareWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Intellicares to fetch.
+     * Determine the order of intellicares to fetch.
      */
-    orderBy?: IntellicareOrderByWithRelationInput | IntellicareOrderByWithRelationInput[]
+    orderBy?: intellicareOrderByWithRelationInput | intellicareOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Intellicares.
+     * Sets the position for searching for intellicares.
      */
-    cursor?: IntellicareWhereUniqueInput
+    cursor?: intellicareWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Intellicares from the position of the cursor.
+     * Take `±n` intellicares from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Intellicares.
+     * Skip the first `n` intellicares.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Intellicares.
+     * Filter by unique combinations of intellicares.
      */
     distinct?: IntellicareScalarFieldEnum | IntellicareScalarFieldEnum[]
   }
 
   /**
-   * Intellicare findMany
+   * intellicare findMany
    */
-  export type IntellicareFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type intellicareFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Intellicare
+     * Select specific fields to fetch from the intellicare
      */
-    select?: IntellicareSelect<ExtArgs> | null
+    select?: intellicareSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Intellicare
+     * Omit specific fields from the intellicare
      */
-    omit?: IntellicareOmit<ExtArgs> | null
+    omit?: intellicareOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: IntellicareInclude<ExtArgs> | null
+    include?: intellicareInclude<ExtArgs> | null
     /**
-     * Filter, which Intellicares to fetch.
+     * Filter, which intellicares to fetch.
      */
-    where?: IntellicareWhereInput
+    where?: intellicareWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Intellicares to fetch.
+     * Determine the order of intellicares to fetch.
      */
-    orderBy?: IntellicareOrderByWithRelationInput | IntellicareOrderByWithRelationInput[]
+    orderBy?: intellicareOrderByWithRelationInput | intellicareOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Intellicares.
+     * Sets the position for listing intellicares.
      */
-    cursor?: IntellicareWhereUniqueInput
+    cursor?: intellicareWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Intellicares from the position of the cursor.
+     * Take `±n` intellicares from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Intellicares.
+     * Skip the first `n` intellicares.
      */
     skip?: number
     distinct?: IntellicareScalarFieldEnum | IntellicareScalarFieldEnum[]
   }
 
   /**
-   * Intellicare create
+   * intellicare create
    */
-  export type IntellicareCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type intellicareCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Intellicare
+     * Select specific fields to fetch from the intellicare
      */
-    select?: IntellicareSelect<ExtArgs> | null
+    select?: intellicareSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Intellicare
+     * Omit specific fields from the intellicare
      */
-    omit?: IntellicareOmit<ExtArgs> | null
+    omit?: intellicareOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: IntellicareInclude<ExtArgs> | null
+    include?: intellicareInclude<ExtArgs> | null
     /**
-     * The data needed to create a Intellicare.
+     * The data needed to create a intellicare.
      */
-    data: XOR<IntellicareCreateInput, IntellicareUncheckedCreateInput>
+    data: XOR<intellicareCreateInput, intellicareUncheckedCreateInput>
   }
 
   /**
-   * Intellicare createMany
+   * intellicare createMany
    */
-  export type IntellicareCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type intellicareCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Intellicares.
+     * The data used to create many intellicares.
      */
-    data: IntellicareCreateManyInput | IntellicareCreateManyInput[]
+    data: intellicareCreateManyInput | intellicareCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Intellicare update
+   * intellicare update
    */
-  export type IntellicareUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type intellicareUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Intellicare
+     * Select specific fields to fetch from the intellicare
      */
-    select?: IntellicareSelect<ExtArgs> | null
+    select?: intellicareSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Intellicare
+     * Omit specific fields from the intellicare
      */
-    omit?: IntellicareOmit<ExtArgs> | null
+    omit?: intellicareOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: IntellicareInclude<ExtArgs> | null
+    include?: intellicareInclude<ExtArgs> | null
     /**
-     * The data needed to update a Intellicare.
+     * The data needed to update a intellicare.
      */
-    data: XOR<IntellicareUpdateInput, IntellicareUncheckedUpdateInput>
+    data: XOR<intellicareUpdateInput, intellicareUncheckedUpdateInput>
     /**
-     * Choose, which Intellicare to update.
+     * Choose, which intellicare to update.
      */
-    where: IntellicareWhereUniqueInput
+    where: intellicareWhereUniqueInput
   }
 
   /**
-   * Intellicare updateMany
+   * intellicare updateMany
    */
-  export type IntellicareUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type intellicareUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Intellicares.
+     * The data used to update intellicares.
      */
-    data: XOR<IntellicareUpdateManyMutationInput, IntellicareUncheckedUpdateManyInput>
+    data: XOR<intellicareUpdateManyMutationInput, intellicareUncheckedUpdateManyInput>
     /**
-     * Filter which Intellicares to update
+     * Filter which intellicares to update
      */
-    where?: IntellicareWhereInput
+    where?: intellicareWhereInput
     /**
-     * Limit how many Intellicares to update.
+     * Limit how many intellicares to update.
      */
     limit?: number
   }
 
   /**
-   * Intellicare upsert
+   * intellicare upsert
    */
-  export type IntellicareUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type intellicareUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Intellicare
+     * Select specific fields to fetch from the intellicare
      */
-    select?: IntellicareSelect<ExtArgs> | null
+    select?: intellicareSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Intellicare
+     * Omit specific fields from the intellicare
      */
-    omit?: IntellicareOmit<ExtArgs> | null
+    omit?: intellicareOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: IntellicareInclude<ExtArgs> | null
+    include?: intellicareInclude<ExtArgs> | null
     /**
-     * The filter to search for the Intellicare to update in case it exists.
+     * The filter to search for the intellicare to update in case it exists.
      */
-    where: IntellicareWhereUniqueInput
+    where: intellicareWhereUniqueInput
     /**
-     * In case the Intellicare found by the `where` argument doesn't exist, create a new Intellicare with this data.
+     * In case the intellicare found by the `where` argument doesn't exist, create a new intellicare with this data.
      */
-    create: XOR<IntellicareCreateInput, IntellicareUncheckedCreateInput>
+    create: XOR<intellicareCreateInput, intellicareUncheckedCreateInput>
     /**
-     * In case the Intellicare was found with the provided `where` argument, update it with this data.
+     * In case the intellicare was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<IntellicareUpdateInput, IntellicareUncheckedUpdateInput>
+    update: XOR<intellicareUpdateInput, intellicareUncheckedUpdateInput>
   }
 
   /**
-   * Intellicare delete
+   * intellicare delete
    */
-  export type IntellicareDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type intellicareDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Intellicare
+     * Select specific fields to fetch from the intellicare
      */
-    select?: IntellicareSelect<ExtArgs> | null
+    select?: intellicareSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Intellicare
+     * Omit specific fields from the intellicare
      */
-    omit?: IntellicareOmit<ExtArgs> | null
+    omit?: intellicareOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: IntellicareInclude<ExtArgs> | null
+    include?: intellicareInclude<ExtArgs> | null
     /**
-     * Filter which Intellicare to delete.
+     * Filter which intellicare to delete.
      */
-    where: IntellicareWhereUniqueInput
+    where: intellicareWhereUniqueInput
   }
 
   /**
-   * Intellicare deleteMany
+   * intellicare deleteMany
    */
-  export type IntellicareDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type intellicareDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Intellicares to delete
+     * Filter which intellicares to delete
      */
-    where?: IntellicareWhereInput
+    where?: intellicareWhereInput
     /**
-     * Limit how many Intellicares to delete.
+     * Limit how many intellicares to delete.
      */
     limit?: number
   }
 
   /**
-   * Intellicare without action
+   * intellicare without action
    */
-  export type IntellicareDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type intellicareDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Intellicare
+     * Select specific fields to fetch from the intellicare
      */
-    select?: IntellicareSelect<ExtArgs> | null
+    select?: intellicareSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Intellicare
+     * Omit specific fields from the intellicare
      */
-    omit?: IntellicareOmit<ExtArgs> | null
+    omit?: intellicareOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: IntellicareInclude<ExtArgs> | null
+    include?: intellicareInclude<ExtArgs> | null
   }
 
 
   /**
-   * Model Maxicare
+   * Model maxicare
    */
 
   export type AggregateMaxicare = {
@@ -10352,37 +10352,37 @@ export namespace Prisma {
 
   export type MaxicareAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Maxicare to aggregate.
+     * Filter which maxicare to aggregate.
      */
-    where?: MaxicareWhereInput
+    where?: maxicareWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Maxicares to fetch.
+     * Determine the order of maxicares to fetch.
      */
-    orderBy?: MaxicareOrderByWithRelationInput | MaxicareOrderByWithRelationInput[]
+    orderBy?: maxicareOrderByWithRelationInput | maxicareOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: MaxicareWhereUniqueInput
+    cursor?: maxicareWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Maxicares from the position of the cursor.
+     * Take `±n` maxicares from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Maxicares.
+     * Skip the first `n` maxicares.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Maxicares
+     * Count returned maxicares
     **/
     _count?: true | MaxicareCountAggregateInputType
     /**
@@ -10422,11 +10422,11 @@ export namespace Prisma {
 
 
 
-  export type MaxicareGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: MaxicareWhereInput
-    orderBy?: MaxicareOrderByWithAggregationInput | MaxicareOrderByWithAggregationInput[]
+  export type maxicareGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: maxicareWhereInput
+    orderBy?: maxicareOrderByWithAggregationInput | maxicareOrderByWithAggregationInput[]
     by: MaxicareScalarFieldEnum[] | MaxicareScalarFieldEnum
-    having?: MaxicareScalarWhereWithAggregatesInput
+    having?: maxicareScalarWhereWithAggregatesInput
     take?: number
     skip?: number
     _count?: MaxicareCountAggregateInputType | true
@@ -10460,7 +10460,7 @@ export namespace Prisma {
     _max: MaxicareMaxAggregateOutputType | null
   }
 
-  type GetMaxicareGroupByPayload<T extends MaxicareGroupByArgs> = Prisma.PrismaPromise<
+  type GetMaxicareGroupByPayload<T extends maxicareGroupByArgs> = Prisma.PrismaPromise<
     Array<
       PickEnumerable<MaxicareGroupByOutputType, T['by']> &
         {
@@ -10474,7 +10474,7 @@ export namespace Prisma {
     >
 
 
-  export type MaxicareSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type maxicareSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     clientId?: boolean
     PY?: boolean
@@ -10491,12 +10491,12 @@ export namespace Prisma {
     Relationship?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    Clients?: boolean | ClientsDefaultArgs<ExtArgs>
+    clients?: boolean | clientsDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["maxicare"]>
 
 
 
-  export type MaxicareSelectScalar = {
+  export type maxicareSelectScalar = {
     id?: boolean
     clientId?: boolean
     PY?: boolean
@@ -10515,15 +10515,15 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type MaxicareOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "clientId" | "PY" | "Company" | "Member_Account" | "Member_Type" | "ICD_10_Code" | "Diagnosis" | "Claim_Type" | "Admission_Date" | "Provider_Name" | "Provider_Type" | "Approved_Claim_Amount" | "Relationship" | "createdAt" | "updatedAt", ExtArgs["result"]["maxicare"]>
-  export type MaxicareInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    Clients?: boolean | ClientsDefaultArgs<ExtArgs>
+  export type maxicareOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "clientId" | "PY" | "Company" | "Member_Account" | "Member_Type" | "ICD_10_Code" | "Diagnosis" | "Claim_Type" | "Admission_Date" | "Provider_Name" | "Provider_Type" | "Approved_Claim_Amount" | "Relationship" | "createdAt" | "updatedAt", ExtArgs["result"]["maxicare"]>
+  export type maxicareInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    clients?: boolean | clientsDefaultArgs<ExtArgs>
   }
 
-  export type $MaxicarePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Maxicare"
+  export type $maxicarePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "maxicare"
     objects: {
-      Clients: Prisma.$ClientsPayload<ExtArgs>
+      clients: Prisma.$clientsPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -10546,18 +10546,18 @@ export namespace Prisma {
     composites: {}
   }
 
-  type MaxicareGetPayload<S extends boolean | null | undefined | MaxicareDefaultArgs> = $Result.GetResult<Prisma.$MaxicarePayload, S>
+  type maxicareGetPayload<S extends boolean | null | undefined | maxicareDefaultArgs> = $Result.GetResult<Prisma.$maxicarePayload, S>
 
-  type MaxicareCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<MaxicareFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+  type maxicareCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<maxicareFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
       select?: MaxicareCountAggregateInputType | true
     }
 
-  export interface MaxicareDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Maxicare'], meta: { name: 'Maxicare' } }
+  export interface maxicareDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['maxicare'], meta: { name: 'maxicare' } }
     /**
      * Find zero or one Maxicare that matches the filter.
-     * @param {MaxicareFindUniqueArgs} args - Arguments to find a Maxicare
+     * @param {maxicareFindUniqueArgs} args - Arguments to find a Maxicare
      * @example
      * // Get one Maxicare
      * const maxicare = await prisma.maxicare.findUnique({
@@ -10566,12 +10566,12 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUnique<T extends MaxicareFindUniqueArgs>(args: SelectSubset<T, MaxicareFindUniqueArgs<ExtArgs>>): Prisma__MaxicareClient<$Result.GetResult<Prisma.$MaxicarePayload<ExtArgs>, T, "findUnique", ClientOptions> | null, null, ExtArgs, ClientOptions>
+    findUnique<T extends maxicareFindUniqueArgs>(args: SelectSubset<T, maxicareFindUniqueArgs<ExtArgs>>): Prisma__maxicareClient<$Result.GetResult<Prisma.$maxicarePayload<ExtArgs>, T, "findUnique", ClientOptions> | null, null, ExtArgs, ClientOptions>
 
     /**
      * Find one Maxicare that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {MaxicareFindUniqueOrThrowArgs} args - Arguments to find a Maxicare
+     * @param {maxicareFindUniqueOrThrowArgs} args - Arguments to find a Maxicare
      * @example
      * // Get one Maxicare
      * const maxicare = await prisma.maxicare.findUniqueOrThrow({
@@ -10580,13 +10580,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUniqueOrThrow<T extends MaxicareFindUniqueOrThrowArgs>(args: SelectSubset<T, MaxicareFindUniqueOrThrowArgs<ExtArgs>>): Prisma__MaxicareClient<$Result.GetResult<Prisma.$MaxicarePayload<ExtArgs>, T, "findUniqueOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
+    findUniqueOrThrow<T extends maxicareFindUniqueOrThrowArgs>(args: SelectSubset<T, maxicareFindUniqueOrThrowArgs<ExtArgs>>): Prisma__maxicareClient<$Result.GetResult<Prisma.$maxicarePayload<ExtArgs>, T, "findUniqueOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Find the first Maxicare that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {MaxicareFindFirstArgs} args - Arguments to find a Maxicare
+     * @param {maxicareFindFirstArgs} args - Arguments to find a Maxicare
      * @example
      * // Get one Maxicare
      * const maxicare = await prisma.maxicare.findFirst({
@@ -10595,14 +10595,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirst<T extends MaxicareFindFirstArgs>(args?: SelectSubset<T, MaxicareFindFirstArgs<ExtArgs>>): Prisma__MaxicareClient<$Result.GetResult<Prisma.$MaxicarePayload<ExtArgs>, T, "findFirst", ClientOptions> | null, null, ExtArgs, ClientOptions>
+    findFirst<T extends maxicareFindFirstArgs>(args?: SelectSubset<T, maxicareFindFirstArgs<ExtArgs>>): Prisma__maxicareClient<$Result.GetResult<Prisma.$maxicarePayload<ExtArgs>, T, "findFirst", ClientOptions> | null, null, ExtArgs, ClientOptions>
 
     /**
      * Find the first Maxicare that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {MaxicareFindFirstOrThrowArgs} args - Arguments to find a Maxicare
+     * @param {maxicareFindFirstOrThrowArgs} args - Arguments to find a Maxicare
      * @example
      * // Get one Maxicare
      * const maxicare = await prisma.maxicare.findFirstOrThrow({
@@ -10611,13 +10611,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirstOrThrow<T extends MaxicareFindFirstOrThrowArgs>(args?: SelectSubset<T, MaxicareFindFirstOrThrowArgs<ExtArgs>>): Prisma__MaxicareClient<$Result.GetResult<Prisma.$MaxicarePayload<ExtArgs>, T, "findFirstOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
+    findFirstOrThrow<T extends maxicareFindFirstOrThrowArgs>(args?: SelectSubset<T, maxicareFindFirstOrThrowArgs<ExtArgs>>): Prisma__maxicareClient<$Result.GetResult<Prisma.$maxicarePayload<ExtArgs>, T, "findFirstOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Find zero or more Maxicares that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {MaxicareFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {maxicareFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all Maxicares
      * const maxicares = await prisma.maxicare.findMany()
@@ -10629,11 +10629,11 @@ export namespace Prisma {
      * const maxicareWithIdOnly = await prisma.maxicare.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends MaxicareFindManyArgs>(args?: SelectSubset<T, MaxicareFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MaxicarePayload<ExtArgs>, T, "findMany", ClientOptions>>
+    findMany<T extends maxicareFindManyArgs>(args?: SelectSubset<T, maxicareFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$maxicarePayload<ExtArgs>, T, "findMany", ClientOptions>>
 
     /**
      * Create a Maxicare.
-     * @param {MaxicareCreateArgs} args - Arguments to create a Maxicare.
+     * @param {maxicareCreateArgs} args - Arguments to create a Maxicare.
      * @example
      * // Create one Maxicare
      * const Maxicare = await prisma.maxicare.create({
@@ -10643,11 +10643,11 @@ export namespace Prisma {
      * })
      * 
      */
-    create<T extends MaxicareCreateArgs>(args: SelectSubset<T, MaxicareCreateArgs<ExtArgs>>): Prisma__MaxicareClient<$Result.GetResult<Prisma.$MaxicarePayload<ExtArgs>, T, "create", ClientOptions>, never, ExtArgs, ClientOptions>
+    create<T extends maxicareCreateArgs>(args: SelectSubset<T, maxicareCreateArgs<ExtArgs>>): Prisma__maxicareClient<$Result.GetResult<Prisma.$maxicarePayload<ExtArgs>, T, "create", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Create many Maxicares.
-     * @param {MaxicareCreateManyArgs} args - Arguments to create many Maxicares.
+     * @param {maxicareCreateManyArgs} args - Arguments to create many Maxicares.
      * @example
      * // Create many Maxicares
      * const maxicare = await prisma.maxicare.createMany({
@@ -10657,11 +10657,11 @@ export namespace Prisma {
      * })
      *     
      */
-    createMany<T extends MaxicareCreateManyArgs>(args?: SelectSubset<T, MaxicareCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends maxicareCreateManyArgs>(args?: SelectSubset<T, maxicareCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Delete a Maxicare.
-     * @param {MaxicareDeleteArgs} args - Arguments to delete one Maxicare.
+     * @param {maxicareDeleteArgs} args - Arguments to delete one Maxicare.
      * @example
      * // Delete one Maxicare
      * const Maxicare = await prisma.maxicare.delete({
@@ -10671,11 +10671,11 @@ export namespace Prisma {
      * })
      * 
      */
-    delete<T extends MaxicareDeleteArgs>(args: SelectSubset<T, MaxicareDeleteArgs<ExtArgs>>): Prisma__MaxicareClient<$Result.GetResult<Prisma.$MaxicarePayload<ExtArgs>, T, "delete", ClientOptions>, never, ExtArgs, ClientOptions>
+    delete<T extends maxicareDeleteArgs>(args: SelectSubset<T, maxicareDeleteArgs<ExtArgs>>): Prisma__maxicareClient<$Result.GetResult<Prisma.$maxicarePayload<ExtArgs>, T, "delete", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Update one Maxicare.
-     * @param {MaxicareUpdateArgs} args - Arguments to update one Maxicare.
+     * @param {maxicareUpdateArgs} args - Arguments to update one Maxicare.
      * @example
      * // Update one Maxicare
      * const maxicare = await prisma.maxicare.update({
@@ -10688,11 +10688,11 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends MaxicareUpdateArgs>(args: SelectSubset<T, MaxicareUpdateArgs<ExtArgs>>): Prisma__MaxicareClient<$Result.GetResult<Prisma.$MaxicarePayload<ExtArgs>, T, "update", ClientOptions>, never, ExtArgs, ClientOptions>
+    update<T extends maxicareUpdateArgs>(args: SelectSubset<T, maxicareUpdateArgs<ExtArgs>>): Prisma__maxicareClient<$Result.GetResult<Prisma.$maxicarePayload<ExtArgs>, T, "update", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Delete zero or more Maxicares.
-     * @param {MaxicareDeleteManyArgs} args - Arguments to filter Maxicares to delete.
+     * @param {maxicareDeleteManyArgs} args - Arguments to filter Maxicares to delete.
      * @example
      * // Delete a few Maxicares
      * const { count } = await prisma.maxicare.deleteMany({
@@ -10702,13 +10702,13 @@ export namespace Prisma {
      * })
      * 
      */
-    deleteMany<T extends MaxicareDeleteManyArgs>(args?: SelectSubset<T, MaxicareDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends maxicareDeleteManyArgs>(args?: SelectSubset<T, maxicareDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Maxicares.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {MaxicareUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {maxicareUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
      * // Update many Maxicares
      * const maxicare = await prisma.maxicare.updateMany({
@@ -10721,11 +10721,11 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends MaxicareUpdateManyArgs>(args: SelectSubset<T, MaxicareUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends maxicareUpdateManyArgs>(args: SelectSubset<T, maxicareUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Create or update one Maxicare.
-     * @param {MaxicareUpsertArgs} args - Arguments to update or create a Maxicare.
+     * @param {maxicareUpsertArgs} args - Arguments to update or create a Maxicare.
      * @example
      * // Update or create a Maxicare
      * const maxicare = await prisma.maxicare.upsert({
@@ -10740,14 +10740,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    upsert<T extends MaxicareUpsertArgs>(args: SelectSubset<T, MaxicareUpsertArgs<ExtArgs>>): Prisma__MaxicareClient<$Result.GetResult<Prisma.$MaxicarePayload<ExtArgs>, T, "upsert", ClientOptions>, never, ExtArgs, ClientOptions>
+    upsert<T extends maxicareUpsertArgs>(args: SelectSubset<T, maxicareUpsertArgs<ExtArgs>>): Prisma__maxicareClient<$Result.GetResult<Prisma.$maxicarePayload<ExtArgs>, T, "upsert", ClientOptions>, never, ExtArgs, ClientOptions>
 
 
     /**
      * Count the number of Maxicares.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {MaxicareCountArgs} args - Arguments to filter Maxicares to count.
+     * @param {maxicareCountArgs} args - Arguments to filter Maxicares to count.
      * @example
      * // Count the number of Maxicares
      * const count = await prisma.maxicare.count({
@@ -10756,8 +10756,8 @@ export namespace Prisma {
      *   }
      * })
     **/
-    count<T extends MaxicareCountArgs>(
-      args?: Subset<T, MaxicareCountArgs>,
+    count<T extends maxicareCountArgs>(
+      args?: Subset<T, maxicareCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
@@ -10796,7 +10796,7 @@ export namespace Prisma {
      * Group by Maxicare.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {MaxicareGroupByArgs} args - Group by arguments.
+     * @param {maxicareGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -10811,14 +10811,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends MaxicareGroupByArgs,
+      T extends maxicareGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: MaxicareGroupByArgs['orderBy'] }
-        : { orderBy?: MaxicareGroupByArgs['orderBy'] },
+        ? { orderBy: maxicareGroupByArgs['orderBy'] }
+        : { orderBy?: maxicareGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -10867,22 +10867,22 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, MaxicareGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetMaxicareGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, maxicareGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetMaxicareGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Maxicare model
+   * Fields of the maxicare model
    */
-  readonly fields: MaxicareFieldRefs;
+  readonly fields: maxicareFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Maxicare.
+   * The delegate class that acts as a "Promise-like" for maxicare.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__MaxicareClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__maxicareClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    Clients<T extends ClientsDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ClientsDefaultArgs<ExtArgs>>): Prisma__ClientsClient<$Result.GetResult<Prisma.$ClientsPayload<ExtArgs>, T, "findUniqueOrThrow", ClientOptions> | Null, Null, ExtArgs, ClientOptions>
+    clients<T extends clientsDefaultArgs<ExtArgs> = {}>(args?: Subset<T, clientsDefaultArgs<ExtArgs>>): Prisma__clientsClient<$Result.GetResult<Prisma.$clientsPayload<ExtArgs>, T, "findUniqueOrThrow", ClientOptions> | Null, Null, ExtArgs, ClientOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -10909,388 +10909,388 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Maxicare model
+   * Fields of the maxicare model
    */ 
-  interface MaxicareFieldRefs {
-    readonly id: FieldRef<"Maxicare", 'Int'>
-    readonly clientId: FieldRef<"Maxicare", 'Int'>
-    readonly PY: FieldRef<"Maxicare", 'String'>
-    readonly Company: FieldRef<"Maxicare", 'String'>
-    readonly Member_Account: FieldRef<"Maxicare", 'String'>
-    readonly Member_Type: FieldRef<"Maxicare", 'String'>
-    readonly ICD_10_Code: FieldRef<"Maxicare", 'String'>
-    readonly Diagnosis: FieldRef<"Maxicare", 'String'>
-    readonly Claim_Type: FieldRef<"Maxicare", 'String'>
-    readonly Admission_Date: FieldRef<"Maxicare", 'DateTime'>
-    readonly Provider_Name: FieldRef<"Maxicare", 'String'>
-    readonly Provider_Type: FieldRef<"Maxicare", 'String'>
-    readonly Approved_Claim_Amount: FieldRef<"Maxicare", 'Float'>
-    readonly Relationship: FieldRef<"Maxicare", 'String'>
-    readonly createdAt: FieldRef<"Maxicare", 'DateTime'>
-    readonly updatedAt: FieldRef<"Maxicare", 'DateTime'>
+  interface maxicareFieldRefs {
+    readonly id: FieldRef<"maxicare", 'Int'>
+    readonly clientId: FieldRef<"maxicare", 'Int'>
+    readonly PY: FieldRef<"maxicare", 'String'>
+    readonly Company: FieldRef<"maxicare", 'String'>
+    readonly Member_Account: FieldRef<"maxicare", 'String'>
+    readonly Member_Type: FieldRef<"maxicare", 'String'>
+    readonly ICD_10_Code: FieldRef<"maxicare", 'String'>
+    readonly Diagnosis: FieldRef<"maxicare", 'String'>
+    readonly Claim_Type: FieldRef<"maxicare", 'String'>
+    readonly Admission_Date: FieldRef<"maxicare", 'DateTime'>
+    readonly Provider_Name: FieldRef<"maxicare", 'String'>
+    readonly Provider_Type: FieldRef<"maxicare", 'String'>
+    readonly Approved_Claim_Amount: FieldRef<"maxicare", 'Float'>
+    readonly Relationship: FieldRef<"maxicare", 'String'>
+    readonly createdAt: FieldRef<"maxicare", 'DateTime'>
+    readonly updatedAt: FieldRef<"maxicare", 'DateTime'>
   }
     
 
   // Custom InputTypes
   /**
-   * Maxicare findUnique
+   * maxicare findUnique
    */
-  export type MaxicareFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type maxicareFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Maxicare
+     * Select specific fields to fetch from the maxicare
      */
-    select?: MaxicareSelect<ExtArgs> | null
+    select?: maxicareSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Maxicare
+     * Omit specific fields from the maxicare
      */
-    omit?: MaxicareOmit<ExtArgs> | null
+    omit?: maxicareOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: MaxicareInclude<ExtArgs> | null
+    include?: maxicareInclude<ExtArgs> | null
     /**
-     * Filter, which Maxicare to fetch.
+     * Filter, which maxicare to fetch.
      */
-    where: MaxicareWhereUniqueInput
+    where: maxicareWhereUniqueInput
   }
 
   /**
-   * Maxicare findUniqueOrThrow
+   * maxicare findUniqueOrThrow
    */
-  export type MaxicareFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type maxicareFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Maxicare
+     * Select specific fields to fetch from the maxicare
      */
-    select?: MaxicareSelect<ExtArgs> | null
+    select?: maxicareSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Maxicare
+     * Omit specific fields from the maxicare
      */
-    omit?: MaxicareOmit<ExtArgs> | null
+    omit?: maxicareOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: MaxicareInclude<ExtArgs> | null
+    include?: maxicareInclude<ExtArgs> | null
     /**
-     * Filter, which Maxicare to fetch.
+     * Filter, which maxicare to fetch.
      */
-    where: MaxicareWhereUniqueInput
+    where: maxicareWhereUniqueInput
   }
 
   /**
-   * Maxicare findFirst
+   * maxicare findFirst
    */
-  export type MaxicareFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type maxicareFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Maxicare
+     * Select specific fields to fetch from the maxicare
      */
-    select?: MaxicareSelect<ExtArgs> | null
+    select?: maxicareSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Maxicare
+     * Omit specific fields from the maxicare
      */
-    omit?: MaxicareOmit<ExtArgs> | null
+    omit?: maxicareOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: MaxicareInclude<ExtArgs> | null
+    include?: maxicareInclude<ExtArgs> | null
     /**
-     * Filter, which Maxicare to fetch.
+     * Filter, which maxicare to fetch.
      */
-    where?: MaxicareWhereInput
+    where?: maxicareWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Maxicares to fetch.
+     * Determine the order of maxicares to fetch.
      */
-    orderBy?: MaxicareOrderByWithRelationInput | MaxicareOrderByWithRelationInput[]
+    orderBy?: maxicareOrderByWithRelationInput | maxicareOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Maxicares.
+     * Sets the position for searching for maxicares.
      */
-    cursor?: MaxicareWhereUniqueInput
+    cursor?: maxicareWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Maxicares from the position of the cursor.
+     * Take `±n` maxicares from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Maxicares.
+     * Skip the first `n` maxicares.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Maxicares.
+     * Filter by unique combinations of maxicares.
      */
     distinct?: MaxicareScalarFieldEnum | MaxicareScalarFieldEnum[]
   }
 
   /**
-   * Maxicare findFirstOrThrow
+   * maxicare findFirstOrThrow
    */
-  export type MaxicareFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type maxicareFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Maxicare
+     * Select specific fields to fetch from the maxicare
      */
-    select?: MaxicareSelect<ExtArgs> | null
+    select?: maxicareSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Maxicare
+     * Omit specific fields from the maxicare
      */
-    omit?: MaxicareOmit<ExtArgs> | null
+    omit?: maxicareOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: MaxicareInclude<ExtArgs> | null
+    include?: maxicareInclude<ExtArgs> | null
     /**
-     * Filter, which Maxicare to fetch.
+     * Filter, which maxicare to fetch.
      */
-    where?: MaxicareWhereInput
+    where?: maxicareWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Maxicares to fetch.
+     * Determine the order of maxicares to fetch.
      */
-    orderBy?: MaxicareOrderByWithRelationInput | MaxicareOrderByWithRelationInput[]
+    orderBy?: maxicareOrderByWithRelationInput | maxicareOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Maxicares.
+     * Sets the position for searching for maxicares.
      */
-    cursor?: MaxicareWhereUniqueInput
+    cursor?: maxicareWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Maxicares from the position of the cursor.
+     * Take `±n` maxicares from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Maxicares.
+     * Skip the first `n` maxicares.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Maxicares.
+     * Filter by unique combinations of maxicares.
      */
     distinct?: MaxicareScalarFieldEnum | MaxicareScalarFieldEnum[]
   }
 
   /**
-   * Maxicare findMany
+   * maxicare findMany
    */
-  export type MaxicareFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type maxicareFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Maxicare
+     * Select specific fields to fetch from the maxicare
      */
-    select?: MaxicareSelect<ExtArgs> | null
+    select?: maxicareSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Maxicare
+     * Omit specific fields from the maxicare
      */
-    omit?: MaxicareOmit<ExtArgs> | null
+    omit?: maxicareOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: MaxicareInclude<ExtArgs> | null
+    include?: maxicareInclude<ExtArgs> | null
     /**
-     * Filter, which Maxicares to fetch.
+     * Filter, which maxicares to fetch.
      */
-    where?: MaxicareWhereInput
+    where?: maxicareWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Maxicares to fetch.
+     * Determine the order of maxicares to fetch.
      */
-    orderBy?: MaxicareOrderByWithRelationInput | MaxicareOrderByWithRelationInput[]
+    orderBy?: maxicareOrderByWithRelationInput | maxicareOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Maxicares.
+     * Sets the position for listing maxicares.
      */
-    cursor?: MaxicareWhereUniqueInput
+    cursor?: maxicareWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Maxicares from the position of the cursor.
+     * Take `±n` maxicares from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Maxicares.
+     * Skip the first `n` maxicares.
      */
     skip?: number
     distinct?: MaxicareScalarFieldEnum | MaxicareScalarFieldEnum[]
   }
 
   /**
-   * Maxicare create
+   * maxicare create
    */
-  export type MaxicareCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type maxicareCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Maxicare
+     * Select specific fields to fetch from the maxicare
      */
-    select?: MaxicareSelect<ExtArgs> | null
+    select?: maxicareSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Maxicare
+     * Omit specific fields from the maxicare
      */
-    omit?: MaxicareOmit<ExtArgs> | null
+    omit?: maxicareOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: MaxicareInclude<ExtArgs> | null
+    include?: maxicareInclude<ExtArgs> | null
     /**
-     * The data needed to create a Maxicare.
+     * The data needed to create a maxicare.
      */
-    data: XOR<MaxicareCreateInput, MaxicareUncheckedCreateInput>
+    data: XOR<maxicareCreateInput, maxicareUncheckedCreateInput>
   }
 
   /**
-   * Maxicare createMany
+   * maxicare createMany
    */
-  export type MaxicareCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type maxicareCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Maxicares.
+     * The data used to create many maxicares.
      */
-    data: MaxicareCreateManyInput | MaxicareCreateManyInput[]
+    data: maxicareCreateManyInput | maxicareCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Maxicare update
+   * maxicare update
    */
-  export type MaxicareUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type maxicareUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Maxicare
+     * Select specific fields to fetch from the maxicare
      */
-    select?: MaxicareSelect<ExtArgs> | null
+    select?: maxicareSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Maxicare
+     * Omit specific fields from the maxicare
      */
-    omit?: MaxicareOmit<ExtArgs> | null
+    omit?: maxicareOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: MaxicareInclude<ExtArgs> | null
+    include?: maxicareInclude<ExtArgs> | null
     /**
-     * The data needed to update a Maxicare.
+     * The data needed to update a maxicare.
      */
-    data: XOR<MaxicareUpdateInput, MaxicareUncheckedUpdateInput>
+    data: XOR<maxicareUpdateInput, maxicareUncheckedUpdateInput>
     /**
-     * Choose, which Maxicare to update.
+     * Choose, which maxicare to update.
      */
-    where: MaxicareWhereUniqueInput
+    where: maxicareWhereUniqueInput
   }
 
   /**
-   * Maxicare updateMany
+   * maxicare updateMany
    */
-  export type MaxicareUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type maxicareUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Maxicares.
+     * The data used to update maxicares.
      */
-    data: XOR<MaxicareUpdateManyMutationInput, MaxicareUncheckedUpdateManyInput>
+    data: XOR<maxicareUpdateManyMutationInput, maxicareUncheckedUpdateManyInput>
     /**
-     * Filter which Maxicares to update
+     * Filter which maxicares to update
      */
-    where?: MaxicareWhereInput
+    where?: maxicareWhereInput
     /**
-     * Limit how many Maxicares to update.
+     * Limit how many maxicares to update.
      */
     limit?: number
   }
 
   /**
-   * Maxicare upsert
+   * maxicare upsert
    */
-  export type MaxicareUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type maxicareUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Maxicare
+     * Select specific fields to fetch from the maxicare
      */
-    select?: MaxicareSelect<ExtArgs> | null
+    select?: maxicareSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Maxicare
+     * Omit specific fields from the maxicare
      */
-    omit?: MaxicareOmit<ExtArgs> | null
+    omit?: maxicareOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: MaxicareInclude<ExtArgs> | null
+    include?: maxicareInclude<ExtArgs> | null
     /**
-     * The filter to search for the Maxicare to update in case it exists.
+     * The filter to search for the maxicare to update in case it exists.
      */
-    where: MaxicareWhereUniqueInput
+    where: maxicareWhereUniqueInput
     /**
-     * In case the Maxicare found by the `where` argument doesn't exist, create a new Maxicare with this data.
+     * In case the maxicare found by the `where` argument doesn't exist, create a new maxicare with this data.
      */
-    create: XOR<MaxicareCreateInput, MaxicareUncheckedCreateInput>
+    create: XOR<maxicareCreateInput, maxicareUncheckedCreateInput>
     /**
-     * In case the Maxicare was found with the provided `where` argument, update it with this data.
+     * In case the maxicare was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<MaxicareUpdateInput, MaxicareUncheckedUpdateInput>
+    update: XOR<maxicareUpdateInput, maxicareUncheckedUpdateInput>
   }
 
   /**
-   * Maxicare delete
+   * maxicare delete
    */
-  export type MaxicareDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type maxicareDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Maxicare
+     * Select specific fields to fetch from the maxicare
      */
-    select?: MaxicareSelect<ExtArgs> | null
+    select?: maxicareSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Maxicare
+     * Omit specific fields from the maxicare
      */
-    omit?: MaxicareOmit<ExtArgs> | null
+    omit?: maxicareOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: MaxicareInclude<ExtArgs> | null
+    include?: maxicareInclude<ExtArgs> | null
     /**
-     * Filter which Maxicare to delete.
+     * Filter which maxicare to delete.
      */
-    where: MaxicareWhereUniqueInput
+    where: maxicareWhereUniqueInput
   }
 
   /**
-   * Maxicare deleteMany
+   * maxicare deleteMany
    */
-  export type MaxicareDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type maxicareDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Maxicares to delete
+     * Filter which maxicares to delete
      */
-    where?: MaxicareWhereInput
+    where?: maxicareWhereInput
     /**
-     * Limit how many Maxicares to delete.
+     * Limit how many maxicares to delete.
      */
     limit?: number
   }
 
   /**
-   * Maxicare without action
+   * maxicare without action
    */
-  export type MaxicareDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type maxicareDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Maxicare
+     * Select specific fields to fetch from the maxicare
      */
-    select?: MaxicareSelect<ExtArgs> | null
+    select?: maxicareSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Maxicare
+     * Omit specific fields from the maxicare
      */
-    omit?: MaxicareOmit<ExtArgs> | null
+    omit?: maxicareOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: MaxicareInclude<ExtArgs> | null
+    include?: maxicareInclude<ExtArgs> | null
   }
 
 
   /**
-   * Model CustomIllnesses
+   * Model customIllnesses
    */
 
   export type AggregateCustomIllnesses = {
@@ -11442,37 +11442,37 @@ export namespace Prisma {
 
   export type CustomIllnessesAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which CustomIllnesses to aggregate.
+     * Filter which customIllnesses to aggregate.
      */
-    where?: CustomIllnessesWhereInput
+    where?: customIllnessesWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of CustomIllnesses to fetch.
+     * Determine the order of customIllnesses to fetch.
      */
-    orderBy?: CustomIllnessesOrderByWithRelationInput | CustomIllnessesOrderByWithRelationInput[]
+    orderBy?: customIllnessesOrderByWithRelationInput | customIllnessesOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: CustomIllnessesWhereUniqueInput
+    cursor?: customIllnessesWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` CustomIllnesses from the position of the cursor.
+     * Take `±n` customIllnesses from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` CustomIllnesses.
+     * Skip the first `n` customIllnesses.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned CustomIllnesses
+     * Count returned customIllnesses
     **/
     _count?: true | CustomIllnessesCountAggregateInputType
     /**
@@ -11512,11 +11512,11 @@ export namespace Prisma {
 
 
 
-  export type CustomIllnessesGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: CustomIllnessesWhereInput
-    orderBy?: CustomIllnessesOrderByWithAggregationInput | CustomIllnessesOrderByWithAggregationInput[]
+  export type customIllnessesGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: customIllnessesWhereInput
+    orderBy?: customIllnessesOrderByWithAggregationInput | customIllnessesOrderByWithAggregationInput[]
     by: CustomIllnessesScalarFieldEnum[] | CustomIllnessesScalarFieldEnum
-    having?: CustomIllnessesScalarWhereWithAggregatesInput
+    having?: customIllnessesScalarWhereWithAggregatesInput
     take?: number
     skip?: number
     _count?: CustomIllnessesCountAggregateInputType | true
@@ -11547,7 +11547,7 @@ export namespace Prisma {
     _max: CustomIllnessesMaxAggregateOutputType | null
   }
 
-  type GetCustomIllnessesGroupByPayload<T extends CustomIllnessesGroupByArgs> = Prisma.PrismaPromise<
+  type GetCustomIllnessesGroupByPayload<T extends customIllnessesGroupByArgs> = Prisma.PrismaPromise<
     Array<
       PickEnumerable<CustomIllnessesGroupByOutputType, T['by']> &
         {
@@ -11561,7 +11561,7 @@ export namespace Prisma {
     >
 
 
-  export type CustomIllnessesSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type customIllnessesSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     clientId?: boolean
     py?: boolean
@@ -11575,12 +11575,12 @@ export namespace Prisma {
     average_cost_per_claim?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    Clients?: boolean | ClientsDefaultArgs<ExtArgs>
+    clients?: boolean | clientsDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["customIllnesses"]>
 
 
 
-  export type CustomIllnessesSelectScalar = {
+  export type customIllnessesSelectScalar = {
     id?: boolean
     clientId?: boolean
     py?: boolean
@@ -11596,15 +11596,15 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type CustomIllnessesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "clientId" | "py" | "member_type" | "icd_10_code" | "diagnosis" | "claim_amount" | "percentage_to_total_amount" | "claim_count" | "percentage_to_total_count" | "average_cost_per_claim" | "createdAt" | "updatedAt", ExtArgs["result"]["customIllnesses"]>
-  export type CustomIllnessesInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    Clients?: boolean | ClientsDefaultArgs<ExtArgs>
+  export type customIllnessesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "clientId" | "py" | "member_type" | "icd_10_code" | "diagnosis" | "claim_amount" | "percentage_to_total_amount" | "claim_count" | "percentage_to_total_count" | "average_cost_per_claim" | "createdAt" | "updatedAt", ExtArgs["result"]["customIllnesses"]>
+  export type customIllnessesInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    clients?: boolean | clientsDefaultArgs<ExtArgs>
   }
 
-  export type $CustomIllnessesPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "CustomIllnesses"
+  export type $customIllnessesPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "customIllnesses"
     objects: {
-      Clients: Prisma.$ClientsPayload<ExtArgs>
+      clients: Prisma.$clientsPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -11624,18 +11624,18 @@ export namespace Prisma {
     composites: {}
   }
 
-  type CustomIllnessesGetPayload<S extends boolean | null | undefined | CustomIllnessesDefaultArgs> = $Result.GetResult<Prisma.$CustomIllnessesPayload, S>
+  type customIllnessesGetPayload<S extends boolean | null | undefined | customIllnessesDefaultArgs> = $Result.GetResult<Prisma.$customIllnessesPayload, S>
 
-  type CustomIllnessesCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<CustomIllnessesFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+  type customIllnessesCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<customIllnessesFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
       select?: CustomIllnessesCountAggregateInputType | true
     }
 
-  export interface CustomIllnessesDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['CustomIllnesses'], meta: { name: 'CustomIllnesses' } }
+  export interface customIllnessesDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['customIllnesses'], meta: { name: 'customIllnesses' } }
     /**
      * Find zero or one CustomIllnesses that matches the filter.
-     * @param {CustomIllnessesFindUniqueArgs} args - Arguments to find a CustomIllnesses
+     * @param {customIllnessesFindUniqueArgs} args - Arguments to find a CustomIllnesses
      * @example
      * // Get one CustomIllnesses
      * const customIllnesses = await prisma.customIllnesses.findUnique({
@@ -11644,12 +11644,12 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUnique<T extends CustomIllnessesFindUniqueArgs>(args: SelectSubset<T, CustomIllnessesFindUniqueArgs<ExtArgs>>): Prisma__CustomIllnessesClient<$Result.GetResult<Prisma.$CustomIllnessesPayload<ExtArgs>, T, "findUnique", ClientOptions> | null, null, ExtArgs, ClientOptions>
+    findUnique<T extends customIllnessesFindUniqueArgs>(args: SelectSubset<T, customIllnessesFindUniqueArgs<ExtArgs>>): Prisma__customIllnessesClient<$Result.GetResult<Prisma.$customIllnessesPayload<ExtArgs>, T, "findUnique", ClientOptions> | null, null, ExtArgs, ClientOptions>
 
     /**
      * Find one CustomIllnesses that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {CustomIllnessesFindUniqueOrThrowArgs} args - Arguments to find a CustomIllnesses
+     * @param {customIllnessesFindUniqueOrThrowArgs} args - Arguments to find a CustomIllnesses
      * @example
      * // Get one CustomIllnesses
      * const customIllnesses = await prisma.customIllnesses.findUniqueOrThrow({
@@ -11658,13 +11658,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUniqueOrThrow<T extends CustomIllnessesFindUniqueOrThrowArgs>(args: SelectSubset<T, CustomIllnessesFindUniqueOrThrowArgs<ExtArgs>>): Prisma__CustomIllnessesClient<$Result.GetResult<Prisma.$CustomIllnessesPayload<ExtArgs>, T, "findUniqueOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
+    findUniqueOrThrow<T extends customIllnessesFindUniqueOrThrowArgs>(args: SelectSubset<T, customIllnessesFindUniqueOrThrowArgs<ExtArgs>>): Prisma__customIllnessesClient<$Result.GetResult<Prisma.$customIllnessesPayload<ExtArgs>, T, "findUniqueOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Find the first CustomIllnesses that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {CustomIllnessesFindFirstArgs} args - Arguments to find a CustomIllnesses
+     * @param {customIllnessesFindFirstArgs} args - Arguments to find a CustomIllnesses
      * @example
      * // Get one CustomIllnesses
      * const customIllnesses = await prisma.customIllnesses.findFirst({
@@ -11673,14 +11673,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirst<T extends CustomIllnessesFindFirstArgs>(args?: SelectSubset<T, CustomIllnessesFindFirstArgs<ExtArgs>>): Prisma__CustomIllnessesClient<$Result.GetResult<Prisma.$CustomIllnessesPayload<ExtArgs>, T, "findFirst", ClientOptions> | null, null, ExtArgs, ClientOptions>
+    findFirst<T extends customIllnessesFindFirstArgs>(args?: SelectSubset<T, customIllnessesFindFirstArgs<ExtArgs>>): Prisma__customIllnessesClient<$Result.GetResult<Prisma.$customIllnessesPayload<ExtArgs>, T, "findFirst", ClientOptions> | null, null, ExtArgs, ClientOptions>
 
     /**
      * Find the first CustomIllnesses that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {CustomIllnessesFindFirstOrThrowArgs} args - Arguments to find a CustomIllnesses
+     * @param {customIllnessesFindFirstOrThrowArgs} args - Arguments to find a CustomIllnesses
      * @example
      * // Get one CustomIllnesses
      * const customIllnesses = await prisma.customIllnesses.findFirstOrThrow({
@@ -11689,13 +11689,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirstOrThrow<T extends CustomIllnessesFindFirstOrThrowArgs>(args?: SelectSubset<T, CustomIllnessesFindFirstOrThrowArgs<ExtArgs>>): Prisma__CustomIllnessesClient<$Result.GetResult<Prisma.$CustomIllnessesPayload<ExtArgs>, T, "findFirstOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
+    findFirstOrThrow<T extends customIllnessesFindFirstOrThrowArgs>(args?: SelectSubset<T, customIllnessesFindFirstOrThrowArgs<ExtArgs>>): Prisma__customIllnessesClient<$Result.GetResult<Prisma.$customIllnessesPayload<ExtArgs>, T, "findFirstOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Find zero or more CustomIllnesses that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {CustomIllnessesFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {customIllnessesFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all CustomIllnesses
      * const customIllnesses = await prisma.customIllnesses.findMany()
@@ -11707,11 +11707,11 @@ export namespace Prisma {
      * const customIllnessesWithIdOnly = await prisma.customIllnesses.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends CustomIllnessesFindManyArgs>(args?: SelectSubset<T, CustomIllnessesFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CustomIllnessesPayload<ExtArgs>, T, "findMany", ClientOptions>>
+    findMany<T extends customIllnessesFindManyArgs>(args?: SelectSubset<T, customIllnessesFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$customIllnessesPayload<ExtArgs>, T, "findMany", ClientOptions>>
 
     /**
      * Create a CustomIllnesses.
-     * @param {CustomIllnessesCreateArgs} args - Arguments to create a CustomIllnesses.
+     * @param {customIllnessesCreateArgs} args - Arguments to create a CustomIllnesses.
      * @example
      * // Create one CustomIllnesses
      * const CustomIllnesses = await prisma.customIllnesses.create({
@@ -11721,11 +11721,11 @@ export namespace Prisma {
      * })
      * 
      */
-    create<T extends CustomIllnessesCreateArgs>(args: SelectSubset<T, CustomIllnessesCreateArgs<ExtArgs>>): Prisma__CustomIllnessesClient<$Result.GetResult<Prisma.$CustomIllnessesPayload<ExtArgs>, T, "create", ClientOptions>, never, ExtArgs, ClientOptions>
+    create<T extends customIllnessesCreateArgs>(args: SelectSubset<T, customIllnessesCreateArgs<ExtArgs>>): Prisma__customIllnessesClient<$Result.GetResult<Prisma.$customIllnessesPayload<ExtArgs>, T, "create", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Create many CustomIllnesses.
-     * @param {CustomIllnessesCreateManyArgs} args - Arguments to create many CustomIllnesses.
+     * @param {customIllnessesCreateManyArgs} args - Arguments to create many CustomIllnesses.
      * @example
      * // Create many CustomIllnesses
      * const customIllnesses = await prisma.customIllnesses.createMany({
@@ -11735,11 +11735,11 @@ export namespace Prisma {
      * })
      *     
      */
-    createMany<T extends CustomIllnessesCreateManyArgs>(args?: SelectSubset<T, CustomIllnessesCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends customIllnessesCreateManyArgs>(args?: SelectSubset<T, customIllnessesCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Delete a CustomIllnesses.
-     * @param {CustomIllnessesDeleteArgs} args - Arguments to delete one CustomIllnesses.
+     * @param {customIllnessesDeleteArgs} args - Arguments to delete one CustomIllnesses.
      * @example
      * // Delete one CustomIllnesses
      * const CustomIllnesses = await prisma.customIllnesses.delete({
@@ -11749,11 +11749,11 @@ export namespace Prisma {
      * })
      * 
      */
-    delete<T extends CustomIllnessesDeleteArgs>(args: SelectSubset<T, CustomIllnessesDeleteArgs<ExtArgs>>): Prisma__CustomIllnessesClient<$Result.GetResult<Prisma.$CustomIllnessesPayload<ExtArgs>, T, "delete", ClientOptions>, never, ExtArgs, ClientOptions>
+    delete<T extends customIllnessesDeleteArgs>(args: SelectSubset<T, customIllnessesDeleteArgs<ExtArgs>>): Prisma__customIllnessesClient<$Result.GetResult<Prisma.$customIllnessesPayload<ExtArgs>, T, "delete", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Update one CustomIllnesses.
-     * @param {CustomIllnessesUpdateArgs} args - Arguments to update one CustomIllnesses.
+     * @param {customIllnessesUpdateArgs} args - Arguments to update one CustomIllnesses.
      * @example
      * // Update one CustomIllnesses
      * const customIllnesses = await prisma.customIllnesses.update({
@@ -11766,11 +11766,11 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends CustomIllnessesUpdateArgs>(args: SelectSubset<T, CustomIllnessesUpdateArgs<ExtArgs>>): Prisma__CustomIllnessesClient<$Result.GetResult<Prisma.$CustomIllnessesPayload<ExtArgs>, T, "update", ClientOptions>, never, ExtArgs, ClientOptions>
+    update<T extends customIllnessesUpdateArgs>(args: SelectSubset<T, customIllnessesUpdateArgs<ExtArgs>>): Prisma__customIllnessesClient<$Result.GetResult<Prisma.$customIllnessesPayload<ExtArgs>, T, "update", ClientOptions>, never, ExtArgs, ClientOptions>
 
     /**
      * Delete zero or more CustomIllnesses.
-     * @param {CustomIllnessesDeleteManyArgs} args - Arguments to filter CustomIllnesses to delete.
+     * @param {customIllnessesDeleteManyArgs} args - Arguments to filter CustomIllnesses to delete.
      * @example
      * // Delete a few CustomIllnesses
      * const { count } = await prisma.customIllnesses.deleteMany({
@@ -11780,13 +11780,13 @@ export namespace Prisma {
      * })
      * 
      */
-    deleteMany<T extends CustomIllnessesDeleteManyArgs>(args?: SelectSubset<T, CustomIllnessesDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends customIllnessesDeleteManyArgs>(args?: SelectSubset<T, customIllnessesDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more CustomIllnesses.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {CustomIllnessesUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {customIllnessesUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
      * // Update many CustomIllnesses
      * const customIllnesses = await prisma.customIllnesses.updateMany({
@@ -11799,11 +11799,11 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends CustomIllnessesUpdateManyArgs>(args: SelectSubset<T, CustomIllnessesUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends customIllnessesUpdateManyArgs>(args: SelectSubset<T, customIllnessesUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Create or update one CustomIllnesses.
-     * @param {CustomIllnessesUpsertArgs} args - Arguments to update or create a CustomIllnesses.
+     * @param {customIllnessesUpsertArgs} args - Arguments to update or create a CustomIllnesses.
      * @example
      * // Update or create a CustomIllnesses
      * const customIllnesses = await prisma.customIllnesses.upsert({
@@ -11818,14 +11818,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    upsert<T extends CustomIllnessesUpsertArgs>(args: SelectSubset<T, CustomIllnessesUpsertArgs<ExtArgs>>): Prisma__CustomIllnessesClient<$Result.GetResult<Prisma.$CustomIllnessesPayload<ExtArgs>, T, "upsert", ClientOptions>, never, ExtArgs, ClientOptions>
+    upsert<T extends customIllnessesUpsertArgs>(args: SelectSubset<T, customIllnessesUpsertArgs<ExtArgs>>): Prisma__customIllnessesClient<$Result.GetResult<Prisma.$customIllnessesPayload<ExtArgs>, T, "upsert", ClientOptions>, never, ExtArgs, ClientOptions>
 
 
     /**
      * Count the number of CustomIllnesses.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {CustomIllnessesCountArgs} args - Arguments to filter CustomIllnesses to count.
+     * @param {customIllnessesCountArgs} args - Arguments to filter CustomIllnesses to count.
      * @example
      * // Count the number of CustomIllnesses
      * const count = await prisma.customIllnesses.count({
@@ -11834,8 +11834,8 @@ export namespace Prisma {
      *   }
      * })
     **/
-    count<T extends CustomIllnessesCountArgs>(
-      args?: Subset<T, CustomIllnessesCountArgs>,
+    count<T extends customIllnessesCountArgs>(
+      args?: Subset<T, customIllnessesCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
@@ -11874,7 +11874,7 @@ export namespace Prisma {
      * Group by CustomIllnesses.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {CustomIllnessesGroupByArgs} args - Group by arguments.
+     * @param {customIllnessesGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -11889,14 +11889,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends CustomIllnessesGroupByArgs,
+      T extends customIllnessesGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: CustomIllnessesGroupByArgs['orderBy'] }
-        : { orderBy?: CustomIllnessesGroupByArgs['orderBy'] },
+        ? { orderBy: customIllnessesGroupByArgs['orderBy'] }
+        : { orderBy?: customIllnessesGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -11945,22 +11945,22 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, CustomIllnessesGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetCustomIllnessesGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, customIllnessesGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetCustomIllnessesGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the CustomIllnesses model
+   * Fields of the customIllnesses model
    */
-  readonly fields: CustomIllnessesFieldRefs;
+  readonly fields: customIllnessesFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for CustomIllnesses.
+   * The delegate class that acts as a "Promise-like" for customIllnesses.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__CustomIllnessesClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__customIllnessesClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    Clients<T extends ClientsDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ClientsDefaultArgs<ExtArgs>>): Prisma__ClientsClient<$Result.GetResult<Prisma.$ClientsPayload<ExtArgs>, T, "findUniqueOrThrow", ClientOptions> | Null, Null, ExtArgs, ClientOptions>
+    clients<T extends clientsDefaultArgs<ExtArgs> = {}>(args?: Subset<T, clientsDefaultArgs<ExtArgs>>): Prisma__clientsClient<$Result.GetResult<Prisma.$clientsPayload<ExtArgs>, T, "findUniqueOrThrow", ClientOptions> | Null, Null, ExtArgs, ClientOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -11987,380 +11987,380 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the CustomIllnesses model
+   * Fields of the customIllnesses model
    */ 
-  interface CustomIllnessesFieldRefs {
-    readonly id: FieldRef<"CustomIllnesses", 'Int'>
-    readonly clientId: FieldRef<"CustomIllnesses", 'Int'>
-    readonly py: FieldRef<"CustomIllnesses", 'String'>
-    readonly member_type: FieldRef<"CustomIllnesses", 'String'>
-    readonly icd_10_code: FieldRef<"CustomIllnesses", 'String'>
-    readonly diagnosis: FieldRef<"CustomIllnesses", 'String'>
-    readonly claim_amount: FieldRef<"CustomIllnesses", 'Int'>
-    readonly percentage_to_total_amount: FieldRef<"CustomIllnesses", 'Decimal'>
-    readonly claim_count: FieldRef<"CustomIllnesses", 'Int'>
-    readonly percentage_to_total_count: FieldRef<"CustomIllnesses", 'Decimal'>
-    readonly average_cost_per_claim: FieldRef<"CustomIllnesses", 'Int'>
-    readonly createdAt: FieldRef<"CustomIllnesses", 'DateTime'>
-    readonly updatedAt: FieldRef<"CustomIllnesses", 'DateTime'>
+  interface customIllnessesFieldRefs {
+    readonly id: FieldRef<"customIllnesses", 'Int'>
+    readonly clientId: FieldRef<"customIllnesses", 'Int'>
+    readonly py: FieldRef<"customIllnesses", 'String'>
+    readonly member_type: FieldRef<"customIllnesses", 'String'>
+    readonly icd_10_code: FieldRef<"customIllnesses", 'String'>
+    readonly diagnosis: FieldRef<"customIllnesses", 'String'>
+    readonly claim_amount: FieldRef<"customIllnesses", 'Int'>
+    readonly percentage_to_total_amount: FieldRef<"customIllnesses", 'Decimal'>
+    readonly claim_count: FieldRef<"customIllnesses", 'Int'>
+    readonly percentage_to_total_count: FieldRef<"customIllnesses", 'Decimal'>
+    readonly average_cost_per_claim: FieldRef<"customIllnesses", 'Int'>
+    readonly createdAt: FieldRef<"customIllnesses", 'DateTime'>
+    readonly updatedAt: FieldRef<"customIllnesses", 'DateTime'>
   }
     
 
   // Custom InputTypes
   /**
-   * CustomIllnesses findUnique
+   * customIllnesses findUnique
    */
-  export type CustomIllnessesFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type customIllnessesFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the CustomIllnesses
+     * Select specific fields to fetch from the customIllnesses
      */
-    select?: CustomIllnessesSelect<ExtArgs> | null
+    select?: customIllnessesSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the CustomIllnesses
+     * Omit specific fields from the customIllnesses
      */
-    omit?: CustomIllnessesOmit<ExtArgs> | null
+    omit?: customIllnessesOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: CustomIllnessesInclude<ExtArgs> | null
+    include?: customIllnessesInclude<ExtArgs> | null
     /**
-     * Filter, which CustomIllnesses to fetch.
+     * Filter, which customIllnesses to fetch.
      */
-    where: CustomIllnessesWhereUniqueInput
+    where: customIllnessesWhereUniqueInput
   }
 
   /**
-   * CustomIllnesses findUniqueOrThrow
+   * customIllnesses findUniqueOrThrow
    */
-  export type CustomIllnessesFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type customIllnessesFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the CustomIllnesses
+     * Select specific fields to fetch from the customIllnesses
      */
-    select?: CustomIllnessesSelect<ExtArgs> | null
+    select?: customIllnessesSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the CustomIllnesses
+     * Omit specific fields from the customIllnesses
      */
-    omit?: CustomIllnessesOmit<ExtArgs> | null
+    omit?: customIllnessesOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: CustomIllnessesInclude<ExtArgs> | null
+    include?: customIllnessesInclude<ExtArgs> | null
     /**
-     * Filter, which CustomIllnesses to fetch.
+     * Filter, which customIllnesses to fetch.
      */
-    where: CustomIllnessesWhereUniqueInput
+    where: customIllnessesWhereUniqueInput
   }
 
   /**
-   * CustomIllnesses findFirst
+   * customIllnesses findFirst
    */
-  export type CustomIllnessesFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type customIllnessesFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the CustomIllnesses
+     * Select specific fields to fetch from the customIllnesses
      */
-    select?: CustomIllnessesSelect<ExtArgs> | null
+    select?: customIllnessesSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the CustomIllnesses
+     * Omit specific fields from the customIllnesses
      */
-    omit?: CustomIllnessesOmit<ExtArgs> | null
+    omit?: customIllnessesOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: CustomIllnessesInclude<ExtArgs> | null
+    include?: customIllnessesInclude<ExtArgs> | null
     /**
-     * Filter, which CustomIllnesses to fetch.
+     * Filter, which customIllnesses to fetch.
      */
-    where?: CustomIllnessesWhereInput
+    where?: customIllnessesWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of CustomIllnesses to fetch.
+     * Determine the order of customIllnesses to fetch.
      */
-    orderBy?: CustomIllnessesOrderByWithRelationInput | CustomIllnessesOrderByWithRelationInput[]
+    orderBy?: customIllnessesOrderByWithRelationInput | customIllnessesOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for CustomIllnesses.
+     * Sets the position for searching for customIllnesses.
      */
-    cursor?: CustomIllnessesWhereUniqueInput
+    cursor?: customIllnessesWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` CustomIllnesses from the position of the cursor.
+     * Take `±n` customIllnesses from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` CustomIllnesses.
+     * Skip the first `n` customIllnesses.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of CustomIllnesses.
+     * Filter by unique combinations of customIllnesses.
      */
     distinct?: CustomIllnessesScalarFieldEnum | CustomIllnessesScalarFieldEnum[]
   }
 
   /**
-   * CustomIllnesses findFirstOrThrow
+   * customIllnesses findFirstOrThrow
    */
-  export type CustomIllnessesFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type customIllnessesFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the CustomIllnesses
+     * Select specific fields to fetch from the customIllnesses
      */
-    select?: CustomIllnessesSelect<ExtArgs> | null
+    select?: customIllnessesSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the CustomIllnesses
+     * Omit specific fields from the customIllnesses
      */
-    omit?: CustomIllnessesOmit<ExtArgs> | null
+    omit?: customIllnessesOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: CustomIllnessesInclude<ExtArgs> | null
+    include?: customIllnessesInclude<ExtArgs> | null
     /**
-     * Filter, which CustomIllnesses to fetch.
+     * Filter, which customIllnesses to fetch.
      */
-    where?: CustomIllnessesWhereInput
+    where?: customIllnessesWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of CustomIllnesses to fetch.
+     * Determine the order of customIllnesses to fetch.
      */
-    orderBy?: CustomIllnessesOrderByWithRelationInput | CustomIllnessesOrderByWithRelationInput[]
+    orderBy?: customIllnessesOrderByWithRelationInput | customIllnessesOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for CustomIllnesses.
+     * Sets the position for searching for customIllnesses.
      */
-    cursor?: CustomIllnessesWhereUniqueInput
+    cursor?: customIllnessesWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` CustomIllnesses from the position of the cursor.
+     * Take `±n` customIllnesses from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` CustomIllnesses.
+     * Skip the first `n` customIllnesses.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of CustomIllnesses.
+     * Filter by unique combinations of customIllnesses.
      */
     distinct?: CustomIllnessesScalarFieldEnum | CustomIllnessesScalarFieldEnum[]
   }
 
   /**
-   * CustomIllnesses findMany
+   * customIllnesses findMany
    */
-  export type CustomIllnessesFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type customIllnessesFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the CustomIllnesses
+     * Select specific fields to fetch from the customIllnesses
      */
-    select?: CustomIllnessesSelect<ExtArgs> | null
+    select?: customIllnessesSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the CustomIllnesses
+     * Omit specific fields from the customIllnesses
      */
-    omit?: CustomIllnessesOmit<ExtArgs> | null
+    omit?: customIllnessesOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: CustomIllnessesInclude<ExtArgs> | null
+    include?: customIllnessesInclude<ExtArgs> | null
     /**
-     * Filter, which CustomIllnesses to fetch.
+     * Filter, which customIllnesses to fetch.
      */
-    where?: CustomIllnessesWhereInput
+    where?: customIllnessesWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of CustomIllnesses to fetch.
+     * Determine the order of customIllnesses to fetch.
      */
-    orderBy?: CustomIllnessesOrderByWithRelationInput | CustomIllnessesOrderByWithRelationInput[]
+    orderBy?: customIllnessesOrderByWithRelationInput | customIllnessesOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing CustomIllnesses.
+     * Sets the position for listing customIllnesses.
      */
-    cursor?: CustomIllnessesWhereUniqueInput
+    cursor?: customIllnessesWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` CustomIllnesses from the position of the cursor.
+     * Take `±n` customIllnesses from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` CustomIllnesses.
+     * Skip the first `n` customIllnesses.
      */
     skip?: number
     distinct?: CustomIllnessesScalarFieldEnum | CustomIllnessesScalarFieldEnum[]
   }
 
   /**
-   * CustomIllnesses create
+   * customIllnesses create
    */
-  export type CustomIllnessesCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type customIllnessesCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the CustomIllnesses
+     * Select specific fields to fetch from the customIllnesses
      */
-    select?: CustomIllnessesSelect<ExtArgs> | null
+    select?: customIllnessesSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the CustomIllnesses
+     * Omit specific fields from the customIllnesses
      */
-    omit?: CustomIllnessesOmit<ExtArgs> | null
+    omit?: customIllnessesOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: CustomIllnessesInclude<ExtArgs> | null
+    include?: customIllnessesInclude<ExtArgs> | null
     /**
-     * The data needed to create a CustomIllnesses.
+     * The data needed to create a customIllnesses.
      */
-    data: XOR<CustomIllnessesCreateInput, CustomIllnessesUncheckedCreateInput>
+    data: XOR<customIllnessesCreateInput, customIllnessesUncheckedCreateInput>
   }
 
   /**
-   * CustomIllnesses createMany
+   * customIllnesses createMany
    */
-  export type CustomIllnessesCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type customIllnessesCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many CustomIllnesses.
+     * The data used to create many customIllnesses.
      */
-    data: CustomIllnessesCreateManyInput | CustomIllnessesCreateManyInput[]
+    data: customIllnessesCreateManyInput | customIllnessesCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * CustomIllnesses update
+   * customIllnesses update
    */
-  export type CustomIllnessesUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type customIllnessesUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the CustomIllnesses
+     * Select specific fields to fetch from the customIllnesses
      */
-    select?: CustomIllnessesSelect<ExtArgs> | null
+    select?: customIllnessesSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the CustomIllnesses
+     * Omit specific fields from the customIllnesses
      */
-    omit?: CustomIllnessesOmit<ExtArgs> | null
+    omit?: customIllnessesOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: CustomIllnessesInclude<ExtArgs> | null
+    include?: customIllnessesInclude<ExtArgs> | null
     /**
-     * The data needed to update a CustomIllnesses.
+     * The data needed to update a customIllnesses.
      */
-    data: XOR<CustomIllnessesUpdateInput, CustomIllnessesUncheckedUpdateInput>
+    data: XOR<customIllnessesUpdateInput, customIllnessesUncheckedUpdateInput>
     /**
-     * Choose, which CustomIllnesses to update.
+     * Choose, which customIllnesses to update.
      */
-    where: CustomIllnessesWhereUniqueInput
+    where: customIllnessesWhereUniqueInput
   }
 
   /**
-   * CustomIllnesses updateMany
+   * customIllnesses updateMany
    */
-  export type CustomIllnessesUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type customIllnessesUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update CustomIllnesses.
+     * The data used to update customIllnesses.
      */
-    data: XOR<CustomIllnessesUpdateManyMutationInput, CustomIllnessesUncheckedUpdateManyInput>
+    data: XOR<customIllnessesUpdateManyMutationInput, customIllnessesUncheckedUpdateManyInput>
     /**
-     * Filter which CustomIllnesses to update
+     * Filter which customIllnesses to update
      */
-    where?: CustomIllnessesWhereInput
+    where?: customIllnessesWhereInput
     /**
-     * Limit how many CustomIllnesses to update.
+     * Limit how many customIllnesses to update.
      */
     limit?: number
   }
 
   /**
-   * CustomIllnesses upsert
+   * customIllnesses upsert
    */
-  export type CustomIllnessesUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type customIllnessesUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the CustomIllnesses
+     * Select specific fields to fetch from the customIllnesses
      */
-    select?: CustomIllnessesSelect<ExtArgs> | null
+    select?: customIllnessesSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the CustomIllnesses
+     * Omit specific fields from the customIllnesses
      */
-    omit?: CustomIllnessesOmit<ExtArgs> | null
+    omit?: customIllnessesOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: CustomIllnessesInclude<ExtArgs> | null
+    include?: customIllnessesInclude<ExtArgs> | null
     /**
-     * The filter to search for the CustomIllnesses to update in case it exists.
+     * The filter to search for the customIllnesses to update in case it exists.
      */
-    where: CustomIllnessesWhereUniqueInput
+    where: customIllnessesWhereUniqueInput
     /**
-     * In case the CustomIllnesses found by the `where` argument doesn't exist, create a new CustomIllnesses with this data.
+     * In case the customIllnesses found by the `where` argument doesn't exist, create a new customIllnesses with this data.
      */
-    create: XOR<CustomIllnessesCreateInput, CustomIllnessesUncheckedCreateInput>
+    create: XOR<customIllnessesCreateInput, customIllnessesUncheckedCreateInput>
     /**
-     * In case the CustomIllnesses was found with the provided `where` argument, update it with this data.
+     * In case the customIllnesses was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<CustomIllnessesUpdateInput, CustomIllnessesUncheckedUpdateInput>
+    update: XOR<customIllnessesUpdateInput, customIllnessesUncheckedUpdateInput>
   }
 
   /**
-   * CustomIllnesses delete
+   * customIllnesses delete
    */
-  export type CustomIllnessesDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type customIllnessesDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the CustomIllnesses
+     * Select specific fields to fetch from the customIllnesses
      */
-    select?: CustomIllnessesSelect<ExtArgs> | null
+    select?: customIllnessesSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the CustomIllnesses
+     * Omit specific fields from the customIllnesses
      */
-    omit?: CustomIllnessesOmit<ExtArgs> | null
+    omit?: customIllnessesOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: CustomIllnessesInclude<ExtArgs> | null
+    include?: customIllnessesInclude<ExtArgs> | null
     /**
-     * Filter which CustomIllnesses to delete.
+     * Filter which customIllnesses to delete.
      */
-    where: CustomIllnessesWhereUniqueInput
+    where: customIllnessesWhereUniqueInput
   }
 
   /**
-   * CustomIllnesses deleteMany
+   * customIllnesses deleteMany
    */
-  export type CustomIllnessesDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type customIllnessesDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which CustomIllnesses to delete
+     * Filter which customIllnesses to delete
      */
-    where?: CustomIllnessesWhereInput
+    where?: customIllnessesWhereInput
     /**
-     * Limit how many CustomIllnesses to delete.
+     * Limit how many customIllnesses to delete.
      */
     limit?: number
   }
 
   /**
-   * CustomIllnesses without action
+   * customIllnesses without action
    */
-  export type CustomIllnessesDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type customIllnessesDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the CustomIllnesses
+     * Select specific fields to fetch from the customIllnesses
      */
-    select?: CustomIllnessesSelect<ExtArgs> | null
+    select?: customIllnessesSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the CustomIllnesses
+     * Omit specific fields from the customIllnesses
      */
-    omit?: CustomIllnessesOmit<ExtArgs> | null
+    omit?: customIllnessesOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: CustomIllnessesInclude<ExtArgs> | null
+    include?: customIllnessesInclude<ExtArgs> | null
   }
 
 
@@ -12559,20 +12559,20 @@ export namespace Prisma {
   export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
 
 
-  export const UserOrderByRelevanceFieldEnum: {
+  export const userOrderByRelevanceFieldEnum: {
     name: 'name',
     email: 'email',
     password: 'password'
   };
 
-  export type UserOrderByRelevanceFieldEnum = (typeof UserOrderByRelevanceFieldEnum)[keyof typeof UserOrderByRelevanceFieldEnum]
+  export type userOrderByRelevanceFieldEnum = (typeof userOrderByRelevanceFieldEnum)[keyof typeof userOrderByRelevanceFieldEnum]
 
 
-  export const InsurersOrderByRelevanceFieldEnum: {
+  export const insurersOrderByRelevanceFieldEnum: {
     name: 'name'
   };
 
-  export type InsurersOrderByRelevanceFieldEnum = (typeof InsurersOrderByRelevanceFieldEnum)[keyof typeof InsurersOrderByRelevanceFieldEnum]
+  export type insurersOrderByRelevanceFieldEnum = (typeof insurersOrderByRelevanceFieldEnum)[keyof typeof insurersOrderByRelevanceFieldEnum]
 
 
   export const NullsOrder: {
@@ -12583,32 +12583,32 @@ export namespace Prisma {
   export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 
 
-  export const ClientsOrderByRelevanceFieldEnum: {
+  export const clientsOrderByRelevanceFieldEnum: {
     client_name: 'client_name',
     description: 'description'
   };
 
-  export type ClientsOrderByRelevanceFieldEnum = (typeof ClientsOrderByRelevanceFieldEnum)[keyof typeof ClientsOrderByRelevanceFieldEnum]
+  export type clientsOrderByRelevanceFieldEnum = (typeof clientsOrderByRelevanceFieldEnum)[keyof typeof clientsOrderByRelevanceFieldEnum]
 
 
-  export const UploadsOrderByRelevanceFieldEnum: {
+  export const uploadsOrderByRelevanceFieldEnum: {
     year: 'year',
     months: 'months',
     type: 'type'
   };
 
-  export type UploadsOrderByRelevanceFieldEnum = (typeof UploadsOrderByRelevanceFieldEnum)[keyof typeof UploadsOrderByRelevanceFieldEnum]
+  export type uploadsOrderByRelevanceFieldEnum = (typeof uploadsOrderByRelevanceFieldEnum)[keyof typeof uploadsOrderByRelevanceFieldEnum]
 
 
-  export const DecksOrderByRelevanceFieldEnum: {
+  export const decksOrderByRelevanceFieldEnum: {
     name: 'name',
     description: 'description'
   };
 
-  export type DecksOrderByRelevanceFieldEnum = (typeof DecksOrderByRelevanceFieldEnum)[keyof typeof DecksOrderByRelevanceFieldEnum]
+  export type decksOrderByRelevanceFieldEnum = (typeof decksOrderByRelevanceFieldEnum)[keyof typeof decksOrderByRelevanceFieldEnum]
 
 
-  export const IntellicareMasterlistOrderByRelevanceFieldEnum: {
+  export const intellicareMasterlistOrderByRelevanceFieldEnum: {
     PY: 'PY',
     ACCOUNT_NO: 'ACCOUNT_NO',
     STATUS: 'STATUS',
@@ -12620,10 +12620,10 @@ export namespace Prisma {
     COMPANY: 'COMPANY'
   };
 
-  export type IntellicareMasterlistOrderByRelevanceFieldEnum = (typeof IntellicareMasterlistOrderByRelevanceFieldEnum)[keyof typeof IntellicareMasterlistOrderByRelevanceFieldEnum]
+  export type intellicareMasterlistOrderByRelevanceFieldEnum = (typeof intellicareMasterlistOrderByRelevanceFieldEnum)[keyof typeof intellicareMasterlistOrderByRelevanceFieldEnum]
 
 
-  export const MaxicareMasterlistOrderByRelevanceFieldEnum: {
+  export const maxicareMasterlistOrderByRelevanceFieldEnum: {
     PY: 'PY',
     ACCOUNT_NO: 'ACCOUNT_NO',
     STATUS: 'STATUS',
@@ -12634,10 +12634,10 @@ export namespace Prisma {
     COMPANY: 'COMPANY'
   };
 
-  export type MaxicareMasterlistOrderByRelevanceFieldEnum = (typeof MaxicareMasterlistOrderByRelevanceFieldEnum)[keyof typeof MaxicareMasterlistOrderByRelevanceFieldEnum]
+  export type maxicareMasterlistOrderByRelevanceFieldEnum = (typeof maxicareMasterlistOrderByRelevanceFieldEnum)[keyof typeof maxicareMasterlistOrderByRelevanceFieldEnum]
 
 
-  export const IntellicareOrderByRelevanceFieldEnum: {
+  export const intellicareOrderByRelevanceFieldEnum: {
     PY: 'PY',
     Company: 'Company',
     Member_Account: 'Member_Account',
@@ -12651,10 +12651,10 @@ export namespace Prisma {
     Relationship: 'Relationship'
   };
 
-  export type IntellicareOrderByRelevanceFieldEnum = (typeof IntellicareOrderByRelevanceFieldEnum)[keyof typeof IntellicareOrderByRelevanceFieldEnum]
+  export type intellicareOrderByRelevanceFieldEnum = (typeof intellicareOrderByRelevanceFieldEnum)[keyof typeof intellicareOrderByRelevanceFieldEnum]
 
 
-  export const MaxicareOrderByRelevanceFieldEnum: {
+  export const maxicareOrderByRelevanceFieldEnum: {
     PY: 'PY',
     Company: 'Company',
     Member_Account: 'Member_Account',
@@ -12667,17 +12667,17 @@ export namespace Prisma {
     Relationship: 'Relationship'
   };
 
-  export type MaxicareOrderByRelevanceFieldEnum = (typeof MaxicareOrderByRelevanceFieldEnum)[keyof typeof MaxicareOrderByRelevanceFieldEnum]
+  export type maxicareOrderByRelevanceFieldEnum = (typeof maxicareOrderByRelevanceFieldEnum)[keyof typeof maxicareOrderByRelevanceFieldEnum]
 
 
-  export const CustomIllnessesOrderByRelevanceFieldEnum: {
+  export const customIllnessesOrderByRelevanceFieldEnum: {
     py: 'py',
     member_type: 'member_type',
     icd_10_code: 'icd_10_code',
     diagnosis: 'diagnosis'
   };
 
-  export type CustomIllnessesOrderByRelevanceFieldEnum = (typeof CustomIllnessesOrderByRelevanceFieldEnum)[keyof typeof CustomIllnessesOrderByRelevanceFieldEnum]
+  export type customIllnessesOrderByRelevanceFieldEnum = (typeof customIllnessesOrderByRelevanceFieldEnum)[keyof typeof customIllnessesOrderByRelevanceFieldEnum]
 
 
   /**
@@ -12730,28 +12730,28 @@ export namespace Prisma {
    */
 
 
-  export type UserWhereInput = {
-    AND?: UserWhereInput | UserWhereInput[]
-    OR?: UserWhereInput[]
-    NOT?: UserWhereInput | UserWhereInput[]
-    id?: IntFilter<"User"> | number
-    name?: StringFilter<"User"> | string
-    email?: StringFilter<"User"> | string
-    password?: StringFilter<"User"> | string
-    admin?: BoolFilter<"User"> | boolean
-    canUpload?: BoolFilter<"User"> | boolean
-    canCreate?: BoolFilter<"User"> | boolean
-    canViewDeck?: BoolFilter<"User"> | boolean
-    canUploadDeck?: BoolFilter<"User"> | boolean
-    canAdd?: BoolFilter<"User"> | boolean
-    canRemove?: BoolFilter<"User"> | boolean
-    canEdit?: BoolFilter<"User"> | boolean
-    superAdmin?: BoolFilter<"User"> | boolean
-    createdAt?: DateTimeFilter<"User"> | Date | string
-    updatedAt?: DateTimeFilter<"User"> | Date | string
+  export type userWhereInput = {
+    AND?: userWhereInput | userWhereInput[]
+    OR?: userWhereInput[]
+    NOT?: userWhereInput | userWhereInput[]
+    id?: IntFilter<"user"> | number
+    name?: StringFilter<"user"> | string
+    email?: StringFilter<"user"> | string
+    password?: StringFilter<"user"> | string
+    admin?: BoolFilter<"user"> | boolean
+    canUpload?: BoolFilter<"user"> | boolean
+    canCreate?: BoolFilter<"user"> | boolean
+    canViewDeck?: BoolFilter<"user"> | boolean
+    canUploadDeck?: BoolFilter<"user"> | boolean
+    canAdd?: BoolFilter<"user"> | boolean
+    canRemove?: BoolFilter<"user"> | boolean
+    canEdit?: BoolFilter<"user"> | boolean
+    superAdmin?: BoolFilter<"user"> | boolean
+    createdAt?: DateTimeFilter<"user"> | Date | string
+    updatedAt?: DateTimeFilter<"user"> | Date | string
   }
 
-  export type UserOrderByWithRelationInput = {
+  export type userOrderByWithRelationInput = {
     id?: SortOrder
     name?: SortOrder
     email?: SortOrder
@@ -12767,31 +12767,31 @@ export namespace Prisma {
     superAdmin?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    _relevance?: UserOrderByRelevanceInput
+    _relevance?: userOrderByRelevanceInput
   }
 
-  export type UserWhereUniqueInput = Prisma.AtLeast<{
+  export type userWhereUniqueInput = Prisma.AtLeast<{
     id?: number
     email?: string
-    AND?: UserWhereInput | UserWhereInput[]
-    OR?: UserWhereInput[]
-    NOT?: UserWhereInput | UserWhereInput[]
-    name?: StringFilter<"User"> | string
-    password?: StringFilter<"User"> | string
-    admin?: BoolFilter<"User"> | boolean
-    canUpload?: BoolFilter<"User"> | boolean
-    canCreate?: BoolFilter<"User"> | boolean
-    canViewDeck?: BoolFilter<"User"> | boolean
-    canUploadDeck?: BoolFilter<"User"> | boolean
-    canAdd?: BoolFilter<"User"> | boolean
-    canRemove?: BoolFilter<"User"> | boolean
-    canEdit?: BoolFilter<"User"> | boolean
-    superAdmin?: BoolFilter<"User"> | boolean
-    createdAt?: DateTimeFilter<"User"> | Date | string
-    updatedAt?: DateTimeFilter<"User"> | Date | string
+    AND?: userWhereInput | userWhereInput[]
+    OR?: userWhereInput[]
+    NOT?: userWhereInput | userWhereInput[]
+    name?: StringFilter<"user"> | string
+    password?: StringFilter<"user"> | string
+    admin?: BoolFilter<"user"> | boolean
+    canUpload?: BoolFilter<"user"> | boolean
+    canCreate?: BoolFilter<"user"> | boolean
+    canViewDeck?: BoolFilter<"user"> | boolean
+    canUploadDeck?: BoolFilter<"user"> | boolean
+    canAdd?: BoolFilter<"user"> | boolean
+    canRemove?: BoolFilter<"user"> | boolean
+    canEdit?: BoolFilter<"user"> | boolean
+    superAdmin?: BoolFilter<"user"> | boolean
+    createdAt?: DateTimeFilter<"user"> | Date | string
+    updatedAt?: DateTimeFilter<"user"> | Date | string
   }, "id" | "email">
 
-  export type UserOrderByWithAggregationInput = {
+  export type userOrderByWithAggregationInput = {
     id?: SortOrder
     name?: SortOrder
     email?: SortOrder
@@ -12807,171 +12807,171 @@ export namespace Prisma {
     superAdmin?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    _count?: UserCountOrderByAggregateInput
-    _avg?: UserAvgOrderByAggregateInput
-    _max?: UserMaxOrderByAggregateInput
-    _min?: UserMinOrderByAggregateInput
-    _sum?: UserSumOrderByAggregateInput
+    _count?: userCountOrderByAggregateInput
+    _avg?: userAvgOrderByAggregateInput
+    _max?: userMaxOrderByAggregateInput
+    _min?: userMinOrderByAggregateInput
+    _sum?: userSumOrderByAggregateInput
   }
 
-  export type UserScalarWhereWithAggregatesInput = {
-    AND?: UserScalarWhereWithAggregatesInput | UserScalarWhereWithAggregatesInput[]
-    OR?: UserScalarWhereWithAggregatesInput[]
-    NOT?: UserScalarWhereWithAggregatesInput | UserScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"User"> | number
-    name?: StringWithAggregatesFilter<"User"> | string
-    email?: StringWithAggregatesFilter<"User"> | string
-    password?: StringWithAggregatesFilter<"User"> | string
-    admin?: BoolWithAggregatesFilter<"User"> | boolean
-    canUpload?: BoolWithAggregatesFilter<"User"> | boolean
-    canCreate?: BoolWithAggregatesFilter<"User"> | boolean
-    canViewDeck?: BoolWithAggregatesFilter<"User"> | boolean
-    canUploadDeck?: BoolWithAggregatesFilter<"User"> | boolean
-    canAdd?: BoolWithAggregatesFilter<"User"> | boolean
-    canRemove?: BoolWithAggregatesFilter<"User"> | boolean
-    canEdit?: BoolWithAggregatesFilter<"User"> | boolean
-    superAdmin?: BoolWithAggregatesFilter<"User"> | boolean
-    createdAt?: DateTimeWithAggregatesFilter<"User"> | Date | string
-    updatedAt?: DateTimeWithAggregatesFilter<"User"> | Date | string
+  export type userScalarWhereWithAggregatesInput = {
+    AND?: userScalarWhereWithAggregatesInput | userScalarWhereWithAggregatesInput[]
+    OR?: userScalarWhereWithAggregatesInput[]
+    NOT?: userScalarWhereWithAggregatesInput | userScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"user"> | number
+    name?: StringWithAggregatesFilter<"user"> | string
+    email?: StringWithAggregatesFilter<"user"> | string
+    password?: StringWithAggregatesFilter<"user"> | string
+    admin?: BoolWithAggregatesFilter<"user"> | boolean
+    canUpload?: BoolWithAggregatesFilter<"user"> | boolean
+    canCreate?: BoolWithAggregatesFilter<"user"> | boolean
+    canViewDeck?: BoolWithAggregatesFilter<"user"> | boolean
+    canUploadDeck?: BoolWithAggregatesFilter<"user"> | boolean
+    canAdd?: BoolWithAggregatesFilter<"user"> | boolean
+    canRemove?: BoolWithAggregatesFilter<"user"> | boolean
+    canEdit?: BoolWithAggregatesFilter<"user"> | boolean
+    superAdmin?: BoolWithAggregatesFilter<"user"> | boolean
+    createdAt?: DateTimeWithAggregatesFilter<"user"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"user"> | Date | string
   }
 
-  export type InsurersWhereInput = {
-    AND?: InsurersWhereInput | InsurersWhereInput[]
-    OR?: InsurersWhereInput[]
-    NOT?: InsurersWhereInput | InsurersWhereInput[]
-    id?: IntFilter<"Insurers"> | number
-    name?: StringFilter<"Insurers"> | string
-    Clients?: ClientsListRelationFilter
-    Uploads?: UploadsListRelationFilter
+  export type insurersWhereInput = {
+    AND?: insurersWhereInput | insurersWhereInput[]
+    OR?: insurersWhereInput[]
+    NOT?: insurersWhereInput | insurersWhereInput[]
+    id?: IntFilter<"insurers"> | number
+    name?: StringFilter<"insurers"> | string
+    clients?: ClientsListRelationFilter
+    uploads?: UploadsListRelationFilter
   }
 
-  export type InsurersOrderByWithRelationInput = {
+  export type insurersOrderByWithRelationInput = {
     id?: SortOrder
     name?: SortOrder
-    Clients?: ClientsOrderByRelationAggregateInput
-    Uploads?: UploadsOrderByRelationAggregateInput
-    _relevance?: InsurersOrderByRelevanceInput
+    clients?: clientsOrderByRelationAggregateInput
+    uploads?: uploadsOrderByRelationAggregateInput
+    _relevance?: insurersOrderByRelevanceInput
   }
 
-  export type InsurersWhereUniqueInput = Prisma.AtLeast<{
+  export type insurersWhereUniqueInput = Prisma.AtLeast<{
     id?: number
     name?: string
-    AND?: InsurersWhereInput | InsurersWhereInput[]
-    OR?: InsurersWhereInput[]
-    NOT?: InsurersWhereInput | InsurersWhereInput[]
-    Clients?: ClientsListRelationFilter
-    Uploads?: UploadsListRelationFilter
+    AND?: insurersWhereInput | insurersWhereInput[]
+    OR?: insurersWhereInput[]
+    NOT?: insurersWhereInput | insurersWhereInput[]
+    clients?: ClientsListRelationFilter
+    uploads?: UploadsListRelationFilter
   }, "id" | "name">
 
-  export type InsurersOrderByWithAggregationInput = {
+  export type insurersOrderByWithAggregationInput = {
     id?: SortOrder
     name?: SortOrder
-    _count?: InsurersCountOrderByAggregateInput
-    _avg?: InsurersAvgOrderByAggregateInput
-    _max?: InsurersMaxOrderByAggregateInput
-    _min?: InsurersMinOrderByAggregateInput
-    _sum?: InsurersSumOrderByAggregateInput
+    _count?: insurersCountOrderByAggregateInput
+    _avg?: insurersAvgOrderByAggregateInput
+    _max?: insurersMaxOrderByAggregateInput
+    _min?: insurersMinOrderByAggregateInput
+    _sum?: insurersSumOrderByAggregateInput
   }
 
-  export type InsurersScalarWhereWithAggregatesInput = {
-    AND?: InsurersScalarWhereWithAggregatesInput | InsurersScalarWhereWithAggregatesInput[]
-    OR?: InsurersScalarWhereWithAggregatesInput[]
-    NOT?: InsurersScalarWhereWithAggregatesInput | InsurersScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"Insurers"> | number
-    name?: StringWithAggregatesFilter<"Insurers"> | string
+  export type insurersScalarWhereWithAggregatesInput = {
+    AND?: insurersScalarWhereWithAggregatesInput | insurersScalarWhereWithAggregatesInput[]
+    OR?: insurersScalarWhereWithAggregatesInput[]
+    NOT?: insurersScalarWhereWithAggregatesInput | insurersScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"insurers"> | number
+    name?: StringWithAggregatesFilter<"insurers"> | string
   }
 
-  export type ClientsWhereInput = {
-    AND?: ClientsWhereInput | ClientsWhereInput[]
-    OR?: ClientsWhereInput[]
-    NOT?: ClientsWhereInput | ClientsWhereInput[]
-    id?: IntFilter<"Clients"> | number
-    client_name?: StringFilter<"Clients"> | string
-    description?: StringNullableFilter<"Clients"> | string | null
-    insurer_id?: IntNullableFilter<"Clients"> | number | null
-    insurer?: XOR<InsurersNullableScalarRelationFilter, InsurersWhereInput> | null
-    Uploads?: UploadsListRelationFilter
-    Decks?: DecksListRelationFilter
-    IntellicareMasterlist?: IntellicareMasterlistListRelationFilter
-    MaxicareMasterlist?: MaxicareMasterlistListRelationFilter
-    Intellicare?: IntellicareListRelationFilter
-    Maxicare?: MaxicareListRelationFilter
-    CustomIllnesses?: CustomIllnessesListRelationFilter
+  export type clientsWhereInput = {
+    AND?: clientsWhereInput | clientsWhereInput[]
+    OR?: clientsWhereInput[]
+    NOT?: clientsWhereInput | clientsWhereInput[]
+    id?: IntFilter<"clients"> | number
+    client_name?: StringFilter<"clients"> | string
+    description?: StringNullableFilter<"clients"> | string | null
+    insurer_id?: IntNullableFilter<"clients"> | number | null
+    insurer?: XOR<InsurersNullableScalarRelationFilter, insurersWhereInput> | null
+    uploads?: UploadsListRelationFilter
+    decks?: DecksListRelationFilter
+    intellicareMasterlist?: IntellicareMasterlistListRelationFilter
+    maxicareMasterlist?: MaxicareMasterlistListRelationFilter
+    intellicare?: IntellicareListRelationFilter
+    maxicare?: MaxicareListRelationFilter
+    customIllnesses?: CustomIllnessesListRelationFilter
   }
 
-  export type ClientsOrderByWithRelationInput = {
+  export type clientsOrderByWithRelationInput = {
     id?: SortOrder
     client_name?: SortOrder
     description?: SortOrderInput | SortOrder
     insurer_id?: SortOrderInput | SortOrder
-    insurer?: InsurersOrderByWithRelationInput
-    Uploads?: UploadsOrderByRelationAggregateInput
-    Decks?: DecksOrderByRelationAggregateInput
-    IntellicareMasterlist?: IntellicareMasterlistOrderByRelationAggregateInput
-    MaxicareMasterlist?: MaxicareMasterlistOrderByRelationAggregateInput
-    Intellicare?: IntellicareOrderByRelationAggregateInput
-    Maxicare?: MaxicareOrderByRelationAggregateInput
-    CustomIllnesses?: CustomIllnessesOrderByRelationAggregateInput
-    _relevance?: ClientsOrderByRelevanceInput
+    insurer?: insurersOrderByWithRelationInput
+    uploads?: uploadsOrderByRelationAggregateInput
+    decks?: decksOrderByRelationAggregateInput
+    intellicareMasterlist?: intellicareMasterlistOrderByRelationAggregateInput
+    maxicareMasterlist?: maxicareMasterlistOrderByRelationAggregateInput
+    intellicare?: intellicareOrderByRelationAggregateInput
+    maxicare?: maxicareOrderByRelationAggregateInput
+    customIllnesses?: customIllnessesOrderByRelationAggregateInput
+    _relevance?: clientsOrderByRelevanceInput
   }
 
-  export type ClientsWhereUniqueInput = Prisma.AtLeast<{
+  export type clientsWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    AND?: ClientsWhereInput | ClientsWhereInput[]
-    OR?: ClientsWhereInput[]
-    NOT?: ClientsWhereInput | ClientsWhereInput[]
-    client_name?: StringFilter<"Clients"> | string
-    description?: StringNullableFilter<"Clients"> | string | null
-    insurer_id?: IntNullableFilter<"Clients"> | number | null
-    insurer?: XOR<InsurersNullableScalarRelationFilter, InsurersWhereInput> | null
-    Uploads?: UploadsListRelationFilter
-    Decks?: DecksListRelationFilter
-    IntellicareMasterlist?: IntellicareMasterlistListRelationFilter
-    MaxicareMasterlist?: MaxicareMasterlistListRelationFilter
-    Intellicare?: IntellicareListRelationFilter
-    Maxicare?: MaxicareListRelationFilter
-    CustomIllnesses?: CustomIllnessesListRelationFilter
+    AND?: clientsWhereInput | clientsWhereInput[]
+    OR?: clientsWhereInput[]
+    NOT?: clientsWhereInput | clientsWhereInput[]
+    client_name?: StringFilter<"clients"> | string
+    description?: StringNullableFilter<"clients"> | string | null
+    insurer_id?: IntNullableFilter<"clients"> | number | null
+    insurer?: XOR<InsurersNullableScalarRelationFilter, insurersWhereInput> | null
+    uploads?: UploadsListRelationFilter
+    decks?: DecksListRelationFilter
+    intellicareMasterlist?: IntellicareMasterlistListRelationFilter
+    maxicareMasterlist?: MaxicareMasterlistListRelationFilter
+    intellicare?: IntellicareListRelationFilter
+    maxicare?: MaxicareListRelationFilter
+    customIllnesses?: CustomIllnessesListRelationFilter
   }, "id">
 
-  export type ClientsOrderByWithAggregationInput = {
+  export type clientsOrderByWithAggregationInput = {
     id?: SortOrder
     client_name?: SortOrder
     description?: SortOrderInput | SortOrder
     insurer_id?: SortOrderInput | SortOrder
-    _count?: ClientsCountOrderByAggregateInput
-    _avg?: ClientsAvgOrderByAggregateInput
-    _max?: ClientsMaxOrderByAggregateInput
-    _min?: ClientsMinOrderByAggregateInput
-    _sum?: ClientsSumOrderByAggregateInput
+    _count?: clientsCountOrderByAggregateInput
+    _avg?: clientsAvgOrderByAggregateInput
+    _max?: clientsMaxOrderByAggregateInput
+    _min?: clientsMinOrderByAggregateInput
+    _sum?: clientsSumOrderByAggregateInput
   }
 
-  export type ClientsScalarWhereWithAggregatesInput = {
-    AND?: ClientsScalarWhereWithAggregatesInput | ClientsScalarWhereWithAggregatesInput[]
-    OR?: ClientsScalarWhereWithAggregatesInput[]
-    NOT?: ClientsScalarWhereWithAggregatesInput | ClientsScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"Clients"> | number
-    client_name?: StringWithAggregatesFilter<"Clients"> | string
-    description?: StringNullableWithAggregatesFilter<"Clients"> | string | null
-    insurer_id?: IntNullableWithAggregatesFilter<"Clients"> | number | null
+  export type clientsScalarWhereWithAggregatesInput = {
+    AND?: clientsScalarWhereWithAggregatesInput | clientsScalarWhereWithAggregatesInput[]
+    OR?: clientsScalarWhereWithAggregatesInput[]
+    NOT?: clientsScalarWhereWithAggregatesInput | clientsScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"clients"> | number
+    client_name?: StringWithAggregatesFilter<"clients"> | string
+    description?: StringNullableWithAggregatesFilter<"clients"> | string | null
+    insurer_id?: IntNullableWithAggregatesFilter<"clients"> | number | null
   }
 
-  export type UploadsWhereInput = {
-    AND?: UploadsWhereInput | UploadsWhereInput[]
-    OR?: UploadsWhereInput[]
-    NOT?: UploadsWhereInput | UploadsWhereInput[]
-    id?: IntFilter<"Uploads"> | number
-    clientId?: IntFilter<"Uploads"> | number
-    insurerId?: IntFilter<"Uploads"> | number
-    year?: StringFilter<"Uploads"> | string
-    months?: StringNullableFilter<"Uploads"> | string | null
-    type?: StringFilter<"Uploads"> | string
-    createdAt?: DateTimeFilter<"Uploads"> | Date | string
-    updatedAt?: DateTimeFilter<"Uploads"> | Date | string
-    Clients?: XOR<ClientsScalarRelationFilter, ClientsWhereInput>
-    Insurers?: XOR<InsurersScalarRelationFilter, InsurersWhereInput>
+  export type uploadsWhereInput = {
+    AND?: uploadsWhereInput | uploadsWhereInput[]
+    OR?: uploadsWhereInput[]
+    NOT?: uploadsWhereInput | uploadsWhereInput[]
+    id?: IntFilter<"uploads"> | number
+    clientId?: IntFilter<"uploads"> | number
+    insurerId?: IntFilter<"uploads"> | number
+    year?: StringFilter<"uploads"> | string
+    months?: StringNullableFilter<"uploads"> | string | null
+    type?: StringFilter<"uploads"> | string
+    createdAt?: DateTimeFilter<"uploads"> | Date | string
+    updatedAt?: DateTimeFilter<"uploads"> | Date | string
+    clients?: XOR<ClientsScalarRelationFilter, clientsWhereInput>
+    insurers?: XOR<InsurersScalarRelationFilter, insurersWhereInput>
   }
 
-  export type UploadsOrderByWithRelationInput = {
+  export type uploadsOrderByWithRelationInput = {
     id?: SortOrder
     clientId?: SortOrder
     insurerId?: SortOrder
@@ -12980,28 +12980,28 @@ export namespace Prisma {
     type?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    Clients?: ClientsOrderByWithRelationInput
-    Insurers?: InsurersOrderByWithRelationInput
-    _relevance?: UploadsOrderByRelevanceInput
+    clients?: clientsOrderByWithRelationInput
+    insurers?: insurersOrderByWithRelationInput
+    _relevance?: uploadsOrderByRelevanceInput
   }
 
-  export type UploadsWhereUniqueInput = Prisma.AtLeast<{
+  export type uploadsWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    AND?: UploadsWhereInput | UploadsWhereInput[]
-    OR?: UploadsWhereInput[]
-    NOT?: UploadsWhereInput | UploadsWhereInput[]
-    clientId?: IntFilter<"Uploads"> | number
-    insurerId?: IntFilter<"Uploads"> | number
-    year?: StringFilter<"Uploads"> | string
-    months?: StringNullableFilter<"Uploads"> | string | null
-    type?: StringFilter<"Uploads"> | string
-    createdAt?: DateTimeFilter<"Uploads"> | Date | string
-    updatedAt?: DateTimeFilter<"Uploads"> | Date | string
-    Clients?: XOR<ClientsScalarRelationFilter, ClientsWhereInput>
-    Insurers?: XOR<InsurersScalarRelationFilter, InsurersWhereInput>
+    AND?: uploadsWhereInput | uploadsWhereInput[]
+    OR?: uploadsWhereInput[]
+    NOT?: uploadsWhereInput | uploadsWhereInput[]
+    clientId?: IntFilter<"uploads"> | number
+    insurerId?: IntFilter<"uploads"> | number
+    year?: StringFilter<"uploads"> | string
+    months?: StringNullableFilter<"uploads"> | string | null
+    type?: StringFilter<"uploads"> | string
+    createdAt?: DateTimeFilter<"uploads"> | Date | string
+    updatedAt?: DateTimeFilter<"uploads"> | Date | string
+    clients?: XOR<ClientsScalarRelationFilter, clientsWhereInput>
+    insurers?: XOR<InsurersScalarRelationFilter, insurersWhereInput>
   }, "id">
 
-  export type UploadsOrderByWithAggregationInput = {
+  export type uploadsOrderByWithAggregationInput = {
     id?: SortOrder
     clientId?: SortOrder
     insurerId?: SortOrder
@@ -13010,115 +13010,115 @@ export namespace Prisma {
     type?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    _count?: UploadsCountOrderByAggregateInput
-    _avg?: UploadsAvgOrderByAggregateInput
-    _max?: UploadsMaxOrderByAggregateInput
-    _min?: UploadsMinOrderByAggregateInput
-    _sum?: UploadsSumOrderByAggregateInput
+    _count?: uploadsCountOrderByAggregateInput
+    _avg?: uploadsAvgOrderByAggregateInput
+    _max?: uploadsMaxOrderByAggregateInput
+    _min?: uploadsMinOrderByAggregateInput
+    _sum?: uploadsSumOrderByAggregateInput
   }
 
-  export type UploadsScalarWhereWithAggregatesInput = {
-    AND?: UploadsScalarWhereWithAggregatesInput | UploadsScalarWhereWithAggregatesInput[]
-    OR?: UploadsScalarWhereWithAggregatesInput[]
-    NOT?: UploadsScalarWhereWithAggregatesInput | UploadsScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"Uploads"> | number
-    clientId?: IntWithAggregatesFilter<"Uploads"> | number
-    insurerId?: IntWithAggregatesFilter<"Uploads"> | number
-    year?: StringWithAggregatesFilter<"Uploads"> | string
-    months?: StringNullableWithAggregatesFilter<"Uploads"> | string | null
-    type?: StringWithAggregatesFilter<"Uploads"> | string
-    createdAt?: DateTimeWithAggregatesFilter<"Uploads"> | Date | string
-    updatedAt?: DateTimeWithAggregatesFilter<"Uploads"> | Date | string
+  export type uploadsScalarWhereWithAggregatesInput = {
+    AND?: uploadsScalarWhereWithAggregatesInput | uploadsScalarWhereWithAggregatesInput[]
+    OR?: uploadsScalarWhereWithAggregatesInput[]
+    NOT?: uploadsScalarWhereWithAggregatesInput | uploadsScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"uploads"> | number
+    clientId?: IntWithAggregatesFilter<"uploads"> | number
+    insurerId?: IntWithAggregatesFilter<"uploads"> | number
+    year?: StringWithAggregatesFilter<"uploads"> | string
+    months?: StringNullableWithAggregatesFilter<"uploads"> | string | null
+    type?: StringWithAggregatesFilter<"uploads"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"uploads"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"uploads"> | Date | string
   }
 
-  export type DecksWhereInput = {
-    AND?: DecksWhereInput | DecksWhereInput[]
-    OR?: DecksWhereInput[]
-    NOT?: DecksWhereInput | DecksWhereInput[]
-    id?: IntFilter<"Decks"> | number
-    name?: StringFilter<"Decks"> | string
-    description?: StringFilter<"Decks"> | string
-    createdAt?: DateTimeFilter<"Decks"> | Date | string
-    updatedAt?: DateTimeFilter<"Decks"> | Date | string
-    clientId?: IntFilter<"Decks"> | number
-    Clients?: XOR<ClientsScalarRelationFilter, ClientsWhereInput>
+  export type decksWhereInput = {
+    AND?: decksWhereInput | decksWhereInput[]
+    OR?: decksWhereInput[]
+    NOT?: decksWhereInput | decksWhereInput[]
+    id?: IntFilter<"decks"> | number
+    name?: StringFilter<"decks"> | string
+    description?: StringFilter<"decks"> | string
+    createdAt?: DateTimeFilter<"decks"> | Date | string
+    updatedAt?: DateTimeFilter<"decks"> | Date | string
+    clientId?: IntFilter<"decks"> | number
+    clients?: XOR<ClientsScalarRelationFilter, clientsWhereInput>
   }
 
-  export type DecksOrderByWithRelationInput = {
+  export type decksOrderByWithRelationInput = {
     id?: SortOrder
     name?: SortOrder
     description?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     clientId?: SortOrder
-    Clients?: ClientsOrderByWithRelationInput
-    _relevance?: DecksOrderByRelevanceInput
+    clients?: clientsOrderByWithRelationInput
+    _relevance?: decksOrderByRelevanceInput
   }
 
-  export type DecksWhereUniqueInput = Prisma.AtLeast<{
+  export type decksWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    AND?: DecksWhereInput | DecksWhereInput[]
-    OR?: DecksWhereInput[]
-    NOT?: DecksWhereInput | DecksWhereInput[]
-    name?: StringFilter<"Decks"> | string
-    description?: StringFilter<"Decks"> | string
-    createdAt?: DateTimeFilter<"Decks"> | Date | string
-    updatedAt?: DateTimeFilter<"Decks"> | Date | string
-    clientId?: IntFilter<"Decks"> | number
-    Clients?: XOR<ClientsScalarRelationFilter, ClientsWhereInput>
+    AND?: decksWhereInput | decksWhereInput[]
+    OR?: decksWhereInput[]
+    NOT?: decksWhereInput | decksWhereInput[]
+    name?: StringFilter<"decks"> | string
+    description?: StringFilter<"decks"> | string
+    createdAt?: DateTimeFilter<"decks"> | Date | string
+    updatedAt?: DateTimeFilter<"decks"> | Date | string
+    clientId?: IntFilter<"decks"> | number
+    clients?: XOR<ClientsScalarRelationFilter, clientsWhereInput>
   }, "id">
 
-  export type DecksOrderByWithAggregationInput = {
+  export type decksOrderByWithAggregationInput = {
     id?: SortOrder
     name?: SortOrder
     description?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     clientId?: SortOrder
-    _count?: DecksCountOrderByAggregateInput
-    _avg?: DecksAvgOrderByAggregateInput
-    _max?: DecksMaxOrderByAggregateInput
-    _min?: DecksMinOrderByAggregateInput
-    _sum?: DecksSumOrderByAggregateInput
+    _count?: decksCountOrderByAggregateInput
+    _avg?: decksAvgOrderByAggregateInput
+    _max?: decksMaxOrderByAggregateInput
+    _min?: decksMinOrderByAggregateInput
+    _sum?: decksSumOrderByAggregateInput
   }
 
-  export type DecksScalarWhereWithAggregatesInput = {
-    AND?: DecksScalarWhereWithAggregatesInput | DecksScalarWhereWithAggregatesInput[]
-    OR?: DecksScalarWhereWithAggregatesInput[]
-    NOT?: DecksScalarWhereWithAggregatesInput | DecksScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"Decks"> | number
-    name?: StringWithAggregatesFilter<"Decks"> | string
-    description?: StringWithAggregatesFilter<"Decks"> | string
-    createdAt?: DateTimeWithAggregatesFilter<"Decks"> | Date | string
-    updatedAt?: DateTimeWithAggregatesFilter<"Decks"> | Date | string
-    clientId?: IntWithAggregatesFilter<"Decks"> | number
+  export type decksScalarWhereWithAggregatesInput = {
+    AND?: decksScalarWhereWithAggregatesInput | decksScalarWhereWithAggregatesInput[]
+    OR?: decksScalarWhereWithAggregatesInput[]
+    NOT?: decksScalarWhereWithAggregatesInput | decksScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"decks"> | number
+    name?: StringWithAggregatesFilter<"decks"> | string
+    description?: StringWithAggregatesFilter<"decks"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"decks"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"decks"> | Date | string
+    clientId?: IntWithAggregatesFilter<"decks"> | number
   }
 
-  export type IntellicareMasterlistWhereInput = {
-    AND?: IntellicareMasterlistWhereInput | IntellicareMasterlistWhereInput[]
-    OR?: IntellicareMasterlistWhereInput[]
-    NOT?: IntellicareMasterlistWhereInput | IntellicareMasterlistWhereInput[]
-    id?: IntFilter<"IntellicareMasterlist"> | number
-    clientId?: IntFilter<"IntellicareMasterlist"> | number
-    PY?: StringNullableFilter<"IntellicareMasterlist"> | string | null
-    ACCOUNT_NO?: StringNullableFilter<"IntellicareMasterlist"> | string | null
-    STATUS?: StringNullableFilter<"IntellicareMasterlist"> | string | null
-    MEMBER_TYPE?: StringNullableFilter<"IntellicareMasterlist"> | string | null
-    RNB?: StringNullableFilter<"IntellicareMasterlist"> | string | null
-    PREEXIST?: FloatNullableFilter<"IntellicareMasterlist"> | number | null
-    LIMIT?: FloatNullableFilter<"IntellicareMasterlist"> | number | null
-    BIRTHDATE?: DateTimeNullableFilter<"IntellicareMasterlist"> | Date | string | null
-    AGE?: IntNullableFilter<"IntellicareMasterlist"> | number | null
-    RELATION?: StringNullableFilter<"IntellicareMasterlist"> | string | null
-    EE_ID?: StringNullableFilter<"IntellicareMasterlist"> | string | null
-    CARD_NO?: StringNullableFilter<"IntellicareMasterlist"> | string | null
-    COMPANY?: StringNullableFilter<"IntellicareMasterlist"> | string | null
-    createdAt?: DateTimeFilter<"IntellicareMasterlist"> | Date | string
-    updatedAt?: DateTimeFilter<"IntellicareMasterlist"> | Date | string
-    Clients?: XOR<ClientsScalarRelationFilter, ClientsWhereInput>
+  export type intellicareMasterlistWhereInput = {
+    AND?: intellicareMasterlistWhereInput | intellicareMasterlistWhereInput[]
+    OR?: intellicareMasterlistWhereInput[]
+    NOT?: intellicareMasterlistWhereInput | intellicareMasterlistWhereInput[]
+    id?: IntFilter<"intellicareMasterlist"> | number
+    clientId?: IntFilter<"intellicareMasterlist"> | number
+    PY?: StringNullableFilter<"intellicareMasterlist"> | string | null
+    ACCOUNT_NO?: StringNullableFilter<"intellicareMasterlist"> | string | null
+    STATUS?: StringNullableFilter<"intellicareMasterlist"> | string | null
+    MEMBER_TYPE?: StringNullableFilter<"intellicareMasterlist"> | string | null
+    RNB?: StringNullableFilter<"intellicareMasterlist"> | string | null
+    PREEXIST?: FloatNullableFilter<"intellicareMasterlist"> | number | null
+    LIMIT?: FloatNullableFilter<"intellicareMasterlist"> | number | null
+    BIRTHDATE?: DateTimeNullableFilter<"intellicareMasterlist"> | Date | string | null
+    AGE?: IntNullableFilter<"intellicareMasterlist"> | number | null
+    RELATION?: StringNullableFilter<"intellicareMasterlist"> | string | null
+    EE_ID?: StringNullableFilter<"intellicareMasterlist"> | string | null
+    CARD_NO?: StringNullableFilter<"intellicareMasterlist"> | string | null
+    COMPANY?: StringNullableFilter<"intellicareMasterlist"> | string | null
+    createdAt?: DateTimeFilter<"intellicareMasterlist"> | Date | string
+    updatedAt?: DateTimeFilter<"intellicareMasterlist"> | Date | string
+    clients?: XOR<ClientsScalarRelationFilter, clientsWhereInput>
   }
 
-  export type IntellicareMasterlistOrderByWithRelationInput = {
+  export type intellicareMasterlistOrderByWithRelationInput = {
     id?: SortOrder
     clientId?: SortOrder
     PY?: SortOrderInput | SortOrder
@@ -13136,35 +13136,35 @@ export namespace Prisma {
     COMPANY?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    Clients?: ClientsOrderByWithRelationInput
-    _relevance?: IntellicareMasterlistOrderByRelevanceInput
+    clients?: clientsOrderByWithRelationInput
+    _relevance?: intellicareMasterlistOrderByRelevanceInput
   }
 
-  export type IntellicareMasterlistWhereUniqueInput = Prisma.AtLeast<{
+  export type intellicareMasterlistWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    AND?: IntellicareMasterlistWhereInput | IntellicareMasterlistWhereInput[]
-    OR?: IntellicareMasterlistWhereInput[]
-    NOT?: IntellicareMasterlistWhereInput | IntellicareMasterlistWhereInput[]
-    clientId?: IntFilter<"IntellicareMasterlist"> | number
-    PY?: StringNullableFilter<"IntellicareMasterlist"> | string | null
-    ACCOUNT_NO?: StringNullableFilter<"IntellicareMasterlist"> | string | null
-    STATUS?: StringNullableFilter<"IntellicareMasterlist"> | string | null
-    MEMBER_TYPE?: StringNullableFilter<"IntellicareMasterlist"> | string | null
-    RNB?: StringNullableFilter<"IntellicareMasterlist"> | string | null
-    PREEXIST?: FloatNullableFilter<"IntellicareMasterlist"> | number | null
-    LIMIT?: FloatNullableFilter<"IntellicareMasterlist"> | number | null
-    BIRTHDATE?: DateTimeNullableFilter<"IntellicareMasterlist"> | Date | string | null
-    AGE?: IntNullableFilter<"IntellicareMasterlist"> | number | null
-    RELATION?: StringNullableFilter<"IntellicareMasterlist"> | string | null
-    EE_ID?: StringNullableFilter<"IntellicareMasterlist"> | string | null
-    CARD_NO?: StringNullableFilter<"IntellicareMasterlist"> | string | null
-    COMPANY?: StringNullableFilter<"IntellicareMasterlist"> | string | null
-    createdAt?: DateTimeFilter<"IntellicareMasterlist"> | Date | string
-    updatedAt?: DateTimeFilter<"IntellicareMasterlist"> | Date | string
-    Clients?: XOR<ClientsScalarRelationFilter, ClientsWhereInput>
+    AND?: intellicareMasterlistWhereInput | intellicareMasterlistWhereInput[]
+    OR?: intellicareMasterlistWhereInput[]
+    NOT?: intellicareMasterlistWhereInput | intellicareMasterlistWhereInput[]
+    clientId?: IntFilter<"intellicareMasterlist"> | number
+    PY?: StringNullableFilter<"intellicareMasterlist"> | string | null
+    ACCOUNT_NO?: StringNullableFilter<"intellicareMasterlist"> | string | null
+    STATUS?: StringNullableFilter<"intellicareMasterlist"> | string | null
+    MEMBER_TYPE?: StringNullableFilter<"intellicareMasterlist"> | string | null
+    RNB?: StringNullableFilter<"intellicareMasterlist"> | string | null
+    PREEXIST?: FloatNullableFilter<"intellicareMasterlist"> | number | null
+    LIMIT?: FloatNullableFilter<"intellicareMasterlist"> | number | null
+    BIRTHDATE?: DateTimeNullableFilter<"intellicareMasterlist"> | Date | string | null
+    AGE?: IntNullableFilter<"intellicareMasterlist"> | number | null
+    RELATION?: StringNullableFilter<"intellicareMasterlist"> | string | null
+    EE_ID?: StringNullableFilter<"intellicareMasterlist"> | string | null
+    CARD_NO?: StringNullableFilter<"intellicareMasterlist"> | string | null
+    COMPANY?: StringNullableFilter<"intellicareMasterlist"> | string | null
+    createdAt?: DateTimeFilter<"intellicareMasterlist"> | Date | string
+    updatedAt?: DateTimeFilter<"intellicareMasterlist"> | Date | string
+    clients?: XOR<ClientsScalarRelationFilter, clientsWhereInput>
   }, "id">
 
-  export type IntellicareMasterlistOrderByWithAggregationInput = {
+  export type intellicareMasterlistOrderByWithAggregationInput = {
     id?: SortOrder
     clientId?: SortOrder
     PY?: SortOrderInput | SortOrder
@@ -13182,57 +13182,57 @@ export namespace Prisma {
     COMPANY?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    _count?: IntellicareMasterlistCountOrderByAggregateInput
-    _avg?: IntellicareMasterlistAvgOrderByAggregateInput
-    _max?: IntellicareMasterlistMaxOrderByAggregateInput
-    _min?: IntellicareMasterlistMinOrderByAggregateInput
-    _sum?: IntellicareMasterlistSumOrderByAggregateInput
+    _count?: intellicareMasterlistCountOrderByAggregateInput
+    _avg?: intellicareMasterlistAvgOrderByAggregateInput
+    _max?: intellicareMasterlistMaxOrderByAggregateInput
+    _min?: intellicareMasterlistMinOrderByAggregateInput
+    _sum?: intellicareMasterlistSumOrderByAggregateInput
   }
 
-  export type IntellicareMasterlistScalarWhereWithAggregatesInput = {
-    AND?: IntellicareMasterlistScalarWhereWithAggregatesInput | IntellicareMasterlistScalarWhereWithAggregatesInput[]
-    OR?: IntellicareMasterlistScalarWhereWithAggregatesInput[]
-    NOT?: IntellicareMasterlistScalarWhereWithAggregatesInput | IntellicareMasterlistScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"IntellicareMasterlist"> | number
-    clientId?: IntWithAggregatesFilter<"IntellicareMasterlist"> | number
-    PY?: StringNullableWithAggregatesFilter<"IntellicareMasterlist"> | string | null
-    ACCOUNT_NO?: StringNullableWithAggregatesFilter<"IntellicareMasterlist"> | string | null
-    STATUS?: StringNullableWithAggregatesFilter<"IntellicareMasterlist"> | string | null
-    MEMBER_TYPE?: StringNullableWithAggregatesFilter<"IntellicareMasterlist"> | string | null
-    RNB?: StringNullableWithAggregatesFilter<"IntellicareMasterlist"> | string | null
-    PREEXIST?: FloatNullableWithAggregatesFilter<"IntellicareMasterlist"> | number | null
-    LIMIT?: FloatNullableWithAggregatesFilter<"IntellicareMasterlist"> | number | null
-    BIRTHDATE?: DateTimeNullableWithAggregatesFilter<"IntellicareMasterlist"> | Date | string | null
-    AGE?: IntNullableWithAggregatesFilter<"IntellicareMasterlist"> | number | null
-    RELATION?: StringNullableWithAggregatesFilter<"IntellicareMasterlist"> | string | null
-    EE_ID?: StringNullableWithAggregatesFilter<"IntellicareMasterlist"> | string | null
-    CARD_NO?: StringNullableWithAggregatesFilter<"IntellicareMasterlist"> | string | null
-    COMPANY?: StringNullableWithAggregatesFilter<"IntellicareMasterlist"> | string | null
-    createdAt?: DateTimeWithAggregatesFilter<"IntellicareMasterlist"> | Date | string
-    updatedAt?: DateTimeWithAggregatesFilter<"IntellicareMasterlist"> | Date | string
+  export type intellicareMasterlistScalarWhereWithAggregatesInput = {
+    AND?: intellicareMasterlistScalarWhereWithAggregatesInput | intellicareMasterlistScalarWhereWithAggregatesInput[]
+    OR?: intellicareMasterlistScalarWhereWithAggregatesInput[]
+    NOT?: intellicareMasterlistScalarWhereWithAggregatesInput | intellicareMasterlistScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"intellicareMasterlist"> | number
+    clientId?: IntWithAggregatesFilter<"intellicareMasterlist"> | number
+    PY?: StringNullableWithAggregatesFilter<"intellicareMasterlist"> | string | null
+    ACCOUNT_NO?: StringNullableWithAggregatesFilter<"intellicareMasterlist"> | string | null
+    STATUS?: StringNullableWithAggregatesFilter<"intellicareMasterlist"> | string | null
+    MEMBER_TYPE?: StringNullableWithAggregatesFilter<"intellicareMasterlist"> | string | null
+    RNB?: StringNullableWithAggregatesFilter<"intellicareMasterlist"> | string | null
+    PREEXIST?: FloatNullableWithAggregatesFilter<"intellicareMasterlist"> | number | null
+    LIMIT?: FloatNullableWithAggregatesFilter<"intellicareMasterlist"> | number | null
+    BIRTHDATE?: DateTimeNullableWithAggregatesFilter<"intellicareMasterlist"> | Date | string | null
+    AGE?: IntNullableWithAggregatesFilter<"intellicareMasterlist"> | number | null
+    RELATION?: StringNullableWithAggregatesFilter<"intellicareMasterlist"> | string | null
+    EE_ID?: StringNullableWithAggregatesFilter<"intellicareMasterlist"> | string | null
+    CARD_NO?: StringNullableWithAggregatesFilter<"intellicareMasterlist"> | string | null
+    COMPANY?: StringNullableWithAggregatesFilter<"intellicareMasterlist"> | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"intellicareMasterlist"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"intellicareMasterlist"> | Date | string
   }
 
-  export type MaxicareMasterlistWhereInput = {
-    AND?: MaxicareMasterlistWhereInput | MaxicareMasterlistWhereInput[]
-    OR?: MaxicareMasterlistWhereInput[]
-    NOT?: MaxicareMasterlistWhereInput | MaxicareMasterlistWhereInput[]
-    id?: IntFilter<"MaxicareMasterlist"> | number
-    clientId?: IntFilter<"MaxicareMasterlist"> | number
-    PY?: StringNullableFilter<"MaxicareMasterlist"> | string | null
-    ACCOUNT_NO?: StringNullableFilter<"MaxicareMasterlist"> | string | null
-    STATUS?: StringNullableFilter<"MaxicareMasterlist"> | string | null
-    MEMBER_TYPE?: StringNullableFilter<"MaxicareMasterlist"> | string | null
-    LIMIT?: FloatNullableFilter<"MaxicareMasterlist"> | number | null
-    RELATION?: StringNullableFilter<"MaxicareMasterlist"> | string | null
-    EE_ID?: StringNullableFilter<"MaxicareMasterlist"> | string | null
-    CARD_NO?: StringNullableFilter<"MaxicareMasterlist"> | string | null
-    COMPANY?: StringNullableFilter<"MaxicareMasterlist"> | string | null
-    createdAt?: DateTimeFilter<"MaxicareMasterlist"> | Date | string
-    updatedAt?: DateTimeFilter<"MaxicareMasterlist"> | Date | string
-    Clients?: XOR<ClientsScalarRelationFilter, ClientsWhereInput>
+  export type maxicareMasterlistWhereInput = {
+    AND?: maxicareMasterlistWhereInput | maxicareMasterlistWhereInput[]
+    OR?: maxicareMasterlistWhereInput[]
+    NOT?: maxicareMasterlistWhereInput | maxicareMasterlistWhereInput[]
+    id?: IntFilter<"maxicareMasterlist"> | number
+    clientId?: IntFilter<"maxicareMasterlist"> | number
+    PY?: StringNullableFilter<"maxicareMasterlist"> | string | null
+    ACCOUNT_NO?: StringNullableFilter<"maxicareMasterlist"> | string | null
+    STATUS?: StringNullableFilter<"maxicareMasterlist"> | string | null
+    MEMBER_TYPE?: StringNullableFilter<"maxicareMasterlist"> | string | null
+    LIMIT?: FloatNullableFilter<"maxicareMasterlist"> | number | null
+    RELATION?: StringNullableFilter<"maxicareMasterlist"> | string | null
+    EE_ID?: StringNullableFilter<"maxicareMasterlist"> | string | null
+    CARD_NO?: StringNullableFilter<"maxicareMasterlist"> | string | null
+    COMPANY?: StringNullableFilter<"maxicareMasterlist"> | string | null
+    createdAt?: DateTimeFilter<"maxicareMasterlist"> | Date | string
+    updatedAt?: DateTimeFilter<"maxicareMasterlist"> | Date | string
+    clients?: XOR<ClientsScalarRelationFilter, clientsWhereInput>
   }
 
-  export type MaxicareMasterlistOrderByWithRelationInput = {
+  export type maxicareMasterlistOrderByWithRelationInput = {
     id?: SortOrder
     clientId?: SortOrder
     PY?: SortOrderInput | SortOrder
@@ -13246,31 +13246,31 @@ export namespace Prisma {
     COMPANY?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    Clients?: ClientsOrderByWithRelationInput
-    _relevance?: MaxicareMasterlistOrderByRelevanceInput
+    clients?: clientsOrderByWithRelationInput
+    _relevance?: maxicareMasterlistOrderByRelevanceInput
   }
 
-  export type MaxicareMasterlistWhereUniqueInput = Prisma.AtLeast<{
+  export type maxicareMasterlistWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    AND?: MaxicareMasterlistWhereInput | MaxicareMasterlistWhereInput[]
-    OR?: MaxicareMasterlistWhereInput[]
-    NOT?: MaxicareMasterlistWhereInput | MaxicareMasterlistWhereInput[]
-    clientId?: IntFilter<"MaxicareMasterlist"> | number
-    PY?: StringNullableFilter<"MaxicareMasterlist"> | string | null
-    ACCOUNT_NO?: StringNullableFilter<"MaxicareMasterlist"> | string | null
-    STATUS?: StringNullableFilter<"MaxicareMasterlist"> | string | null
-    MEMBER_TYPE?: StringNullableFilter<"MaxicareMasterlist"> | string | null
-    LIMIT?: FloatNullableFilter<"MaxicareMasterlist"> | number | null
-    RELATION?: StringNullableFilter<"MaxicareMasterlist"> | string | null
-    EE_ID?: StringNullableFilter<"MaxicareMasterlist"> | string | null
-    CARD_NO?: StringNullableFilter<"MaxicareMasterlist"> | string | null
-    COMPANY?: StringNullableFilter<"MaxicareMasterlist"> | string | null
-    createdAt?: DateTimeFilter<"MaxicareMasterlist"> | Date | string
-    updatedAt?: DateTimeFilter<"MaxicareMasterlist"> | Date | string
-    Clients?: XOR<ClientsScalarRelationFilter, ClientsWhereInput>
+    AND?: maxicareMasterlistWhereInput | maxicareMasterlistWhereInput[]
+    OR?: maxicareMasterlistWhereInput[]
+    NOT?: maxicareMasterlistWhereInput | maxicareMasterlistWhereInput[]
+    clientId?: IntFilter<"maxicareMasterlist"> | number
+    PY?: StringNullableFilter<"maxicareMasterlist"> | string | null
+    ACCOUNT_NO?: StringNullableFilter<"maxicareMasterlist"> | string | null
+    STATUS?: StringNullableFilter<"maxicareMasterlist"> | string | null
+    MEMBER_TYPE?: StringNullableFilter<"maxicareMasterlist"> | string | null
+    LIMIT?: FloatNullableFilter<"maxicareMasterlist"> | number | null
+    RELATION?: StringNullableFilter<"maxicareMasterlist"> | string | null
+    EE_ID?: StringNullableFilter<"maxicareMasterlist"> | string | null
+    CARD_NO?: StringNullableFilter<"maxicareMasterlist"> | string | null
+    COMPANY?: StringNullableFilter<"maxicareMasterlist"> | string | null
+    createdAt?: DateTimeFilter<"maxicareMasterlist"> | Date | string
+    updatedAt?: DateTimeFilter<"maxicareMasterlist"> | Date | string
+    clients?: XOR<ClientsScalarRelationFilter, clientsWhereInput>
   }, "id">
 
-  export type MaxicareMasterlistOrderByWithAggregationInput = {
+  export type maxicareMasterlistOrderByWithAggregationInput = {
     id?: SortOrder
     clientId?: SortOrder
     PY?: SortOrderInput | SortOrder
@@ -13284,59 +13284,59 @@ export namespace Prisma {
     COMPANY?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    _count?: MaxicareMasterlistCountOrderByAggregateInput
-    _avg?: MaxicareMasterlistAvgOrderByAggregateInput
-    _max?: MaxicareMasterlistMaxOrderByAggregateInput
-    _min?: MaxicareMasterlistMinOrderByAggregateInput
-    _sum?: MaxicareMasterlistSumOrderByAggregateInput
+    _count?: maxicareMasterlistCountOrderByAggregateInput
+    _avg?: maxicareMasterlistAvgOrderByAggregateInput
+    _max?: maxicareMasterlistMaxOrderByAggregateInput
+    _min?: maxicareMasterlistMinOrderByAggregateInput
+    _sum?: maxicareMasterlistSumOrderByAggregateInput
   }
 
-  export type MaxicareMasterlistScalarWhereWithAggregatesInput = {
-    AND?: MaxicareMasterlistScalarWhereWithAggregatesInput | MaxicareMasterlistScalarWhereWithAggregatesInput[]
-    OR?: MaxicareMasterlistScalarWhereWithAggregatesInput[]
-    NOT?: MaxicareMasterlistScalarWhereWithAggregatesInput | MaxicareMasterlistScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"MaxicareMasterlist"> | number
-    clientId?: IntWithAggregatesFilter<"MaxicareMasterlist"> | number
-    PY?: StringNullableWithAggregatesFilter<"MaxicareMasterlist"> | string | null
-    ACCOUNT_NO?: StringNullableWithAggregatesFilter<"MaxicareMasterlist"> | string | null
-    STATUS?: StringNullableWithAggregatesFilter<"MaxicareMasterlist"> | string | null
-    MEMBER_TYPE?: StringNullableWithAggregatesFilter<"MaxicareMasterlist"> | string | null
-    LIMIT?: FloatNullableWithAggregatesFilter<"MaxicareMasterlist"> | number | null
-    RELATION?: StringNullableWithAggregatesFilter<"MaxicareMasterlist"> | string | null
-    EE_ID?: StringNullableWithAggregatesFilter<"MaxicareMasterlist"> | string | null
-    CARD_NO?: StringNullableWithAggregatesFilter<"MaxicareMasterlist"> | string | null
-    COMPANY?: StringNullableWithAggregatesFilter<"MaxicareMasterlist"> | string | null
-    createdAt?: DateTimeWithAggregatesFilter<"MaxicareMasterlist"> | Date | string
-    updatedAt?: DateTimeWithAggregatesFilter<"MaxicareMasterlist"> | Date | string
+  export type maxicareMasterlistScalarWhereWithAggregatesInput = {
+    AND?: maxicareMasterlistScalarWhereWithAggregatesInput | maxicareMasterlistScalarWhereWithAggregatesInput[]
+    OR?: maxicareMasterlistScalarWhereWithAggregatesInput[]
+    NOT?: maxicareMasterlistScalarWhereWithAggregatesInput | maxicareMasterlistScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"maxicareMasterlist"> | number
+    clientId?: IntWithAggregatesFilter<"maxicareMasterlist"> | number
+    PY?: StringNullableWithAggregatesFilter<"maxicareMasterlist"> | string | null
+    ACCOUNT_NO?: StringNullableWithAggregatesFilter<"maxicareMasterlist"> | string | null
+    STATUS?: StringNullableWithAggregatesFilter<"maxicareMasterlist"> | string | null
+    MEMBER_TYPE?: StringNullableWithAggregatesFilter<"maxicareMasterlist"> | string | null
+    LIMIT?: FloatNullableWithAggregatesFilter<"maxicareMasterlist"> | number | null
+    RELATION?: StringNullableWithAggregatesFilter<"maxicareMasterlist"> | string | null
+    EE_ID?: StringNullableWithAggregatesFilter<"maxicareMasterlist"> | string | null
+    CARD_NO?: StringNullableWithAggregatesFilter<"maxicareMasterlist"> | string | null
+    COMPANY?: StringNullableWithAggregatesFilter<"maxicareMasterlist"> | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"maxicareMasterlist"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"maxicareMasterlist"> | Date | string
   }
 
-  export type IntellicareWhereInput = {
-    AND?: IntellicareWhereInput | IntellicareWhereInput[]
-    OR?: IntellicareWhereInput[]
-    NOT?: IntellicareWhereInput | IntellicareWhereInput[]
-    id?: IntFilter<"Intellicare"> | number
-    clientId?: IntFilter<"Intellicare"> | number
-    PY?: StringFilter<"Intellicare"> | string
-    Company?: StringNullableFilter<"Intellicare"> | string | null
-    Member_Account?: StringNullableFilter<"Intellicare"> | string | null
-    Member_Type?: StringNullableFilter<"Intellicare"> | string | null
-    ICD_10_Code?: StringNullableFilter<"Intellicare"> | string | null
-    Diagnosis?: StringNullableFilter<"Intellicare"> | string | null
-    Claim_Type?: StringNullableFilter<"Intellicare"> | string | null
-    Admission_Date?: DateTimeNullableFilter<"Intellicare"> | Date | string | null
-    Provider_Name?: StringNullableFilter<"Intellicare"> | string | null
-    Provider_Type?: StringNullableFilter<"Intellicare"> | string | null
-    Approved_Claim_Amount?: FloatNullableFilter<"Intellicare"> | number | null
-    Class_Plan_Level?: StringNullableFilter<"Intellicare"> | string | null
-    Maximum_Benefit_Limit?: FloatNullableFilter<"Intellicare"> | number | null
-    Date_of_Birth?: DateTimeNullableFilter<"Intellicare"> | Date | string | null
-    Relationship?: StringNullableFilter<"Intellicare"> | string | null
-    createdAt?: DateTimeFilter<"Intellicare"> | Date | string
-    updatedAt?: DateTimeFilter<"Intellicare"> | Date | string
-    Clients?: XOR<ClientsScalarRelationFilter, ClientsWhereInput>
+  export type intellicareWhereInput = {
+    AND?: intellicareWhereInput | intellicareWhereInput[]
+    OR?: intellicareWhereInput[]
+    NOT?: intellicareWhereInput | intellicareWhereInput[]
+    id?: IntFilter<"intellicare"> | number
+    clientId?: IntFilter<"intellicare"> | number
+    PY?: StringFilter<"intellicare"> | string
+    Company?: StringNullableFilter<"intellicare"> | string | null
+    Member_Account?: StringNullableFilter<"intellicare"> | string | null
+    Member_Type?: StringNullableFilter<"intellicare"> | string | null
+    ICD_10_Code?: StringNullableFilter<"intellicare"> | string | null
+    Diagnosis?: StringNullableFilter<"intellicare"> | string | null
+    Claim_Type?: StringNullableFilter<"intellicare"> | string | null
+    Admission_Date?: DateTimeNullableFilter<"intellicare"> | Date | string | null
+    Provider_Name?: StringNullableFilter<"intellicare"> | string | null
+    Provider_Type?: StringNullableFilter<"intellicare"> | string | null
+    Approved_Claim_Amount?: FloatNullableFilter<"intellicare"> | number | null
+    Class_Plan_Level?: StringNullableFilter<"intellicare"> | string | null
+    Maximum_Benefit_Limit?: FloatNullableFilter<"intellicare"> | number | null
+    Date_of_Birth?: DateTimeNullableFilter<"intellicare"> | Date | string | null
+    Relationship?: StringNullableFilter<"intellicare"> | string | null
+    createdAt?: DateTimeFilter<"intellicare"> | Date | string
+    updatedAt?: DateTimeFilter<"intellicare"> | Date | string
+    clients?: XOR<ClientsScalarRelationFilter, clientsWhereInput>
   }
 
-  export type IntellicareOrderByWithRelationInput = {
+  export type intellicareOrderByWithRelationInput = {
     id?: SortOrder
     clientId?: SortOrder
     PY?: SortOrder
@@ -13356,37 +13356,37 @@ export namespace Prisma {
     Relationship?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    Clients?: ClientsOrderByWithRelationInput
-    _relevance?: IntellicareOrderByRelevanceInput
+    clients?: clientsOrderByWithRelationInput
+    _relevance?: intellicareOrderByRelevanceInput
   }
 
-  export type IntellicareWhereUniqueInput = Prisma.AtLeast<{
+  export type intellicareWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    AND?: IntellicareWhereInput | IntellicareWhereInput[]
-    OR?: IntellicareWhereInput[]
-    NOT?: IntellicareWhereInput | IntellicareWhereInput[]
-    clientId?: IntFilter<"Intellicare"> | number
-    PY?: StringFilter<"Intellicare"> | string
-    Company?: StringNullableFilter<"Intellicare"> | string | null
-    Member_Account?: StringNullableFilter<"Intellicare"> | string | null
-    Member_Type?: StringNullableFilter<"Intellicare"> | string | null
-    ICD_10_Code?: StringNullableFilter<"Intellicare"> | string | null
-    Diagnosis?: StringNullableFilter<"Intellicare"> | string | null
-    Claim_Type?: StringNullableFilter<"Intellicare"> | string | null
-    Admission_Date?: DateTimeNullableFilter<"Intellicare"> | Date | string | null
-    Provider_Name?: StringNullableFilter<"Intellicare"> | string | null
-    Provider_Type?: StringNullableFilter<"Intellicare"> | string | null
-    Approved_Claim_Amount?: FloatNullableFilter<"Intellicare"> | number | null
-    Class_Plan_Level?: StringNullableFilter<"Intellicare"> | string | null
-    Maximum_Benefit_Limit?: FloatNullableFilter<"Intellicare"> | number | null
-    Date_of_Birth?: DateTimeNullableFilter<"Intellicare"> | Date | string | null
-    Relationship?: StringNullableFilter<"Intellicare"> | string | null
-    createdAt?: DateTimeFilter<"Intellicare"> | Date | string
-    updatedAt?: DateTimeFilter<"Intellicare"> | Date | string
-    Clients?: XOR<ClientsScalarRelationFilter, ClientsWhereInput>
+    AND?: intellicareWhereInput | intellicareWhereInput[]
+    OR?: intellicareWhereInput[]
+    NOT?: intellicareWhereInput | intellicareWhereInput[]
+    clientId?: IntFilter<"intellicare"> | number
+    PY?: StringFilter<"intellicare"> | string
+    Company?: StringNullableFilter<"intellicare"> | string | null
+    Member_Account?: StringNullableFilter<"intellicare"> | string | null
+    Member_Type?: StringNullableFilter<"intellicare"> | string | null
+    ICD_10_Code?: StringNullableFilter<"intellicare"> | string | null
+    Diagnosis?: StringNullableFilter<"intellicare"> | string | null
+    Claim_Type?: StringNullableFilter<"intellicare"> | string | null
+    Admission_Date?: DateTimeNullableFilter<"intellicare"> | Date | string | null
+    Provider_Name?: StringNullableFilter<"intellicare"> | string | null
+    Provider_Type?: StringNullableFilter<"intellicare"> | string | null
+    Approved_Claim_Amount?: FloatNullableFilter<"intellicare"> | number | null
+    Class_Plan_Level?: StringNullableFilter<"intellicare"> | string | null
+    Maximum_Benefit_Limit?: FloatNullableFilter<"intellicare"> | number | null
+    Date_of_Birth?: DateTimeNullableFilter<"intellicare"> | Date | string | null
+    Relationship?: StringNullableFilter<"intellicare"> | string | null
+    createdAt?: DateTimeFilter<"intellicare"> | Date | string
+    updatedAt?: DateTimeFilter<"intellicare"> | Date | string
+    clients?: XOR<ClientsScalarRelationFilter, clientsWhereInput>
   }, "id">
 
-  export type IntellicareOrderByWithAggregationInput = {
+  export type intellicareOrderByWithAggregationInput = {
     id?: SortOrder
     clientId?: SortOrder
     PY?: SortOrder
@@ -13406,62 +13406,62 @@ export namespace Prisma {
     Relationship?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    _count?: IntellicareCountOrderByAggregateInput
-    _avg?: IntellicareAvgOrderByAggregateInput
-    _max?: IntellicareMaxOrderByAggregateInput
-    _min?: IntellicareMinOrderByAggregateInput
-    _sum?: IntellicareSumOrderByAggregateInput
+    _count?: intellicareCountOrderByAggregateInput
+    _avg?: intellicareAvgOrderByAggregateInput
+    _max?: intellicareMaxOrderByAggregateInput
+    _min?: intellicareMinOrderByAggregateInput
+    _sum?: intellicareSumOrderByAggregateInput
   }
 
-  export type IntellicareScalarWhereWithAggregatesInput = {
-    AND?: IntellicareScalarWhereWithAggregatesInput | IntellicareScalarWhereWithAggregatesInput[]
-    OR?: IntellicareScalarWhereWithAggregatesInput[]
-    NOT?: IntellicareScalarWhereWithAggregatesInput | IntellicareScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"Intellicare"> | number
-    clientId?: IntWithAggregatesFilter<"Intellicare"> | number
-    PY?: StringWithAggregatesFilter<"Intellicare"> | string
-    Company?: StringNullableWithAggregatesFilter<"Intellicare"> | string | null
-    Member_Account?: StringNullableWithAggregatesFilter<"Intellicare"> | string | null
-    Member_Type?: StringNullableWithAggregatesFilter<"Intellicare"> | string | null
-    ICD_10_Code?: StringNullableWithAggregatesFilter<"Intellicare"> | string | null
-    Diagnosis?: StringNullableWithAggregatesFilter<"Intellicare"> | string | null
-    Claim_Type?: StringNullableWithAggregatesFilter<"Intellicare"> | string | null
-    Admission_Date?: DateTimeNullableWithAggregatesFilter<"Intellicare"> | Date | string | null
-    Provider_Name?: StringNullableWithAggregatesFilter<"Intellicare"> | string | null
-    Provider_Type?: StringNullableWithAggregatesFilter<"Intellicare"> | string | null
-    Approved_Claim_Amount?: FloatNullableWithAggregatesFilter<"Intellicare"> | number | null
-    Class_Plan_Level?: StringNullableWithAggregatesFilter<"Intellicare"> | string | null
-    Maximum_Benefit_Limit?: FloatNullableWithAggregatesFilter<"Intellicare"> | number | null
-    Date_of_Birth?: DateTimeNullableWithAggregatesFilter<"Intellicare"> | Date | string | null
-    Relationship?: StringNullableWithAggregatesFilter<"Intellicare"> | string | null
-    createdAt?: DateTimeWithAggregatesFilter<"Intellicare"> | Date | string
-    updatedAt?: DateTimeWithAggregatesFilter<"Intellicare"> | Date | string
+  export type intellicareScalarWhereWithAggregatesInput = {
+    AND?: intellicareScalarWhereWithAggregatesInput | intellicareScalarWhereWithAggregatesInput[]
+    OR?: intellicareScalarWhereWithAggregatesInput[]
+    NOT?: intellicareScalarWhereWithAggregatesInput | intellicareScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"intellicare"> | number
+    clientId?: IntWithAggregatesFilter<"intellicare"> | number
+    PY?: StringWithAggregatesFilter<"intellicare"> | string
+    Company?: StringNullableWithAggregatesFilter<"intellicare"> | string | null
+    Member_Account?: StringNullableWithAggregatesFilter<"intellicare"> | string | null
+    Member_Type?: StringNullableWithAggregatesFilter<"intellicare"> | string | null
+    ICD_10_Code?: StringNullableWithAggregatesFilter<"intellicare"> | string | null
+    Diagnosis?: StringNullableWithAggregatesFilter<"intellicare"> | string | null
+    Claim_Type?: StringNullableWithAggregatesFilter<"intellicare"> | string | null
+    Admission_Date?: DateTimeNullableWithAggregatesFilter<"intellicare"> | Date | string | null
+    Provider_Name?: StringNullableWithAggregatesFilter<"intellicare"> | string | null
+    Provider_Type?: StringNullableWithAggregatesFilter<"intellicare"> | string | null
+    Approved_Claim_Amount?: FloatNullableWithAggregatesFilter<"intellicare"> | number | null
+    Class_Plan_Level?: StringNullableWithAggregatesFilter<"intellicare"> | string | null
+    Maximum_Benefit_Limit?: FloatNullableWithAggregatesFilter<"intellicare"> | number | null
+    Date_of_Birth?: DateTimeNullableWithAggregatesFilter<"intellicare"> | Date | string | null
+    Relationship?: StringNullableWithAggregatesFilter<"intellicare"> | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"intellicare"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"intellicare"> | Date | string
   }
 
-  export type MaxicareWhereInput = {
-    AND?: MaxicareWhereInput | MaxicareWhereInput[]
-    OR?: MaxicareWhereInput[]
-    NOT?: MaxicareWhereInput | MaxicareWhereInput[]
-    id?: IntFilter<"Maxicare"> | number
-    clientId?: IntFilter<"Maxicare"> | number
-    PY?: StringFilter<"Maxicare"> | string
-    Company?: StringNullableFilter<"Maxicare"> | string | null
-    Member_Account?: StringNullableFilter<"Maxicare"> | string | null
-    Member_Type?: StringNullableFilter<"Maxicare"> | string | null
-    ICD_10_Code?: StringNullableFilter<"Maxicare"> | string | null
-    Diagnosis?: StringNullableFilter<"Maxicare"> | string | null
-    Claim_Type?: StringNullableFilter<"Maxicare"> | string | null
-    Admission_Date?: DateTimeNullableFilter<"Maxicare"> | Date | string | null
-    Provider_Name?: StringNullableFilter<"Maxicare"> | string | null
-    Provider_Type?: StringNullableFilter<"Maxicare"> | string | null
-    Approved_Claim_Amount?: FloatNullableFilter<"Maxicare"> | number | null
-    Relationship?: StringNullableFilter<"Maxicare"> | string | null
-    createdAt?: DateTimeFilter<"Maxicare"> | Date | string
-    updatedAt?: DateTimeFilter<"Maxicare"> | Date | string
-    Clients?: XOR<ClientsScalarRelationFilter, ClientsWhereInput>
+  export type maxicareWhereInput = {
+    AND?: maxicareWhereInput | maxicareWhereInput[]
+    OR?: maxicareWhereInput[]
+    NOT?: maxicareWhereInput | maxicareWhereInput[]
+    id?: IntFilter<"maxicare"> | number
+    clientId?: IntFilter<"maxicare"> | number
+    PY?: StringFilter<"maxicare"> | string
+    Company?: StringNullableFilter<"maxicare"> | string | null
+    Member_Account?: StringNullableFilter<"maxicare"> | string | null
+    Member_Type?: StringNullableFilter<"maxicare"> | string | null
+    ICD_10_Code?: StringNullableFilter<"maxicare"> | string | null
+    Diagnosis?: StringNullableFilter<"maxicare"> | string | null
+    Claim_Type?: StringNullableFilter<"maxicare"> | string | null
+    Admission_Date?: DateTimeNullableFilter<"maxicare"> | Date | string | null
+    Provider_Name?: StringNullableFilter<"maxicare"> | string | null
+    Provider_Type?: StringNullableFilter<"maxicare"> | string | null
+    Approved_Claim_Amount?: FloatNullableFilter<"maxicare"> | number | null
+    Relationship?: StringNullableFilter<"maxicare"> | string | null
+    createdAt?: DateTimeFilter<"maxicare"> | Date | string
+    updatedAt?: DateTimeFilter<"maxicare"> | Date | string
+    clients?: XOR<ClientsScalarRelationFilter, clientsWhereInput>
   }
 
-  export type MaxicareOrderByWithRelationInput = {
+  export type maxicareOrderByWithRelationInput = {
     id?: SortOrder
     clientId?: SortOrder
     PY?: SortOrder
@@ -13478,34 +13478,34 @@ export namespace Prisma {
     Relationship?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    Clients?: ClientsOrderByWithRelationInput
-    _relevance?: MaxicareOrderByRelevanceInput
+    clients?: clientsOrderByWithRelationInput
+    _relevance?: maxicareOrderByRelevanceInput
   }
 
-  export type MaxicareWhereUniqueInput = Prisma.AtLeast<{
+  export type maxicareWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    AND?: MaxicareWhereInput | MaxicareWhereInput[]
-    OR?: MaxicareWhereInput[]
-    NOT?: MaxicareWhereInput | MaxicareWhereInput[]
-    clientId?: IntFilter<"Maxicare"> | number
-    PY?: StringFilter<"Maxicare"> | string
-    Company?: StringNullableFilter<"Maxicare"> | string | null
-    Member_Account?: StringNullableFilter<"Maxicare"> | string | null
-    Member_Type?: StringNullableFilter<"Maxicare"> | string | null
-    ICD_10_Code?: StringNullableFilter<"Maxicare"> | string | null
-    Diagnosis?: StringNullableFilter<"Maxicare"> | string | null
-    Claim_Type?: StringNullableFilter<"Maxicare"> | string | null
-    Admission_Date?: DateTimeNullableFilter<"Maxicare"> | Date | string | null
-    Provider_Name?: StringNullableFilter<"Maxicare"> | string | null
-    Provider_Type?: StringNullableFilter<"Maxicare"> | string | null
-    Approved_Claim_Amount?: FloatNullableFilter<"Maxicare"> | number | null
-    Relationship?: StringNullableFilter<"Maxicare"> | string | null
-    createdAt?: DateTimeFilter<"Maxicare"> | Date | string
-    updatedAt?: DateTimeFilter<"Maxicare"> | Date | string
-    Clients?: XOR<ClientsScalarRelationFilter, ClientsWhereInput>
+    AND?: maxicareWhereInput | maxicareWhereInput[]
+    OR?: maxicareWhereInput[]
+    NOT?: maxicareWhereInput | maxicareWhereInput[]
+    clientId?: IntFilter<"maxicare"> | number
+    PY?: StringFilter<"maxicare"> | string
+    Company?: StringNullableFilter<"maxicare"> | string | null
+    Member_Account?: StringNullableFilter<"maxicare"> | string | null
+    Member_Type?: StringNullableFilter<"maxicare"> | string | null
+    ICD_10_Code?: StringNullableFilter<"maxicare"> | string | null
+    Diagnosis?: StringNullableFilter<"maxicare"> | string | null
+    Claim_Type?: StringNullableFilter<"maxicare"> | string | null
+    Admission_Date?: DateTimeNullableFilter<"maxicare"> | Date | string | null
+    Provider_Name?: StringNullableFilter<"maxicare"> | string | null
+    Provider_Type?: StringNullableFilter<"maxicare"> | string | null
+    Approved_Claim_Amount?: FloatNullableFilter<"maxicare"> | number | null
+    Relationship?: StringNullableFilter<"maxicare"> | string | null
+    createdAt?: DateTimeFilter<"maxicare"> | Date | string
+    updatedAt?: DateTimeFilter<"maxicare"> | Date | string
+    clients?: XOR<ClientsScalarRelationFilter, clientsWhereInput>
   }, "id">
 
-  export type MaxicareOrderByWithAggregationInput = {
+  export type maxicareOrderByWithAggregationInput = {
     id?: SortOrder
     clientId?: SortOrder
     PY?: SortOrder
@@ -13522,56 +13522,56 @@ export namespace Prisma {
     Relationship?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    _count?: MaxicareCountOrderByAggregateInput
-    _avg?: MaxicareAvgOrderByAggregateInput
-    _max?: MaxicareMaxOrderByAggregateInput
-    _min?: MaxicareMinOrderByAggregateInput
-    _sum?: MaxicareSumOrderByAggregateInput
+    _count?: maxicareCountOrderByAggregateInput
+    _avg?: maxicareAvgOrderByAggregateInput
+    _max?: maxicareMaxOrderByAggregateInput
+    _min?: maxicareMinOrderByAggregateInput
+    _sum?: maxicareSumOrderByAggregateInput
   }
 
-  export type MaxicareScalarWhereWithAggregatesInput = {
-    AND?: MaxicareScalarWhereWithAggregatesInput | MaxicareScalarWhereWithAggregatesInput[]
-    OR?: MaxicareScalarWhereWithAggregatesInput[]
-    NOT?: MaxicareScalarWhereWithAggregatesInput | MaxicareScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"Maxicare"> | number
-    clientId?: IntWithAggregatesFilter<"Maxicare"> | number
-    PY?: StringWithAggregatesFilter<"Maxicare"> | string
-    Company?: StringNullableWithAggregatesFilter<"Maxicare"> | string | null
-    Member_Account?: StringNullableWithAggregatesFilter<"Maxicare"> | string | null
-    Member_Type?: StringNullableWithAggregatesFilter<"Maxicare"> | string | null
-    ICD_10_Code?: StringNullableWithAggregatesFilter<"Maxicare"> | string | null
-    Diagnosis?: StringNullableWithAggregatesFilter<"Maxicare"> | string | null
-    Claim_Type?: StringNullableWithAggregatesFilter<"Maxicare"> | string | null
-    Admission_Date?: DateTimeNullableWithAggregatesFilter<"Maxicare"> | Date | string | null
-    Provider_Name?: StringNullableWithAggregatesFilter<"Maxicare"> | string | null
-    Provider_Type?: StringNullableWithAggregatesFilter<"Maxicare"> | string | null
-    Approved_Claim_Amount?: FloatNullableWithAggregatesFilter<"Maxicare"> | number | null
-    Relationship?: StringNullableWithAggregatesFilter<"Maxicare"> | string | null
-    createdAt?: DateTimeWithAggregatesFilter<"Maxicare"> | Date | string
-    updatedAt?: DateTimeWithAggregatesFilter<"Maxicare"> | Date | string
+  export type maxicareScalarWhereWithAggregatesInput = {
+    AND?: maxicareScalarWhereWithAggregatesInput | maxicareScalarWhereWithAggregatesInput[]
+    OR?: maxicareScalarWhereWithAggregatesInput[]
+    NOT?: maxicareScalarWhereWithAggregatesInput | maxicareScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"maxicare"> | number
+    clientId?: IntWithAggregatesFilter<"maxicare"> | number
+    PY?: StringWithAggregatesFilter<"maxicare"> | string
+    Company?: StringNullableWithAggregatesFilter<"maxicare"> | string | null
+    Member_Account?: StringNullableWithAggregatesFilter<"maxicare"> | string | null
+    Member_Type?: StringNullableWithAggregatesFilter<"maxicare"> | string | null
+    ICD_10_Code?: StringNullableWithAggregatesFilter<"maxicare"> | string | null
+    Diagnosis?: StringNullableWithAggregatesFilter<"maxicare"> | string | null
+    Claim_Type?: StringNullableWithAggregatesFilter<"maxicare"> | string | null
+    Admission_Date?: DateTimeNullableWithAggregatesFilter<"maxicare"> | Date | string | null
+    Provider_Name?: StringNullableWithAggregatesFilter<"maxicare"> | string | null
+    Provider_Type?: StringNullableWithAggregatesFilter<"maxicare"> | string | null
+    Approved_Claim_Amount?: FloatNullableWithAggregatesFilter<"maxicare"> | number | null
+    Relationship?: StringNullableWithAggregatesFilter<"maxicare"> | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"maxicare"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"maxicare"> | Date | string
   }
 
-  export type CustomIllnessesWhereInput = {
-    AND?: CustomIllnessesWhereInput | CustomIllnessesWhereInput[]
-    OR?: CustomIllnessesWhereInput[]
-    NOT?: CustomIllnessesWhereInput | CustomIllnessesWhereInput[]
-    id?: IntFilter<"CustomIllnesses"> | number
-    clientId?: IntFilter<"CustomIllnesses"> | number
-    py?: StringNullableFilter<"CustomIllnesses"> | string | null
-    member_type?: StringNullableFilter<"CustomIllnesses"> | string | null
-    icd_10_code?: StringNullableFilter<"CustomIllnesses"> | string | null
-    diagnosis?: StringNullableFilter<"CustomIllnesses"> | string | null
-    claim_amount?: IntNullableFilter<"CustomIllnesses"> | number | null
-    percentage_to_total_amount?: DecimalNullableFilter<"CustomIllnesses"> | Decimal | DecimalJsLike | number | string | null
-    claim_count?: IntNullableFilter<"CustomIllnesses"> | number | null
-    percentage_to_total_count?: DecimalNullableFilter<"CustomIllnesses"> | Decimal | DecimalJsLike | number | string | null
-    average_cost_per_claim?: IntNullableFilter<"CustomIllnesses"> | number | null
-    createdAt?: DateTimeFilter<"CustomIllnesses"> | Date | string
-    updatedAt?: DateTimeFilter<"CustomIllnesses"> | Date | string
-    Clients?: XOR<ClientsScalarRelationFilter, ClientsWhereInput>
+  export type customIllnessesWhereInput = {
+    AND?: customIllnessesWhereInput | customIllnessesWhereInput[]
+    OR?: customIllnessesWhereInput[]
+    NOT?: customIllnessesWhereInput | customIllnessesWhereInput[]
+    id?: IntFilter<"customIllnesses"> | number
+    clientId?: IntFilter<"customIllnesses"> | number
+    py?: StringNullableFilter<"customIllnesses"> | string | null
+    member_type?: StringNullableFilter<"customIllnesses"> | string | null
+    icd_10_code?: StringNullableFilter<"customIllnesses"> | string | null
+    diagnosis?: StringNullableFilter<"customIllnesses"> | string | null
+    claim_amount?: IntNullableFilter<"customIllnesses"> | number | null
+    percentage_to_total_amount?: DecimalNullableFilter<"customIllnesses"> | Decimal | DecimalJsLike | number | string | null
+    claim_count?: IntNullableFilter<"customIllnesses"> | number | null
+    percentage_to_total_count?: DecimalNullableFilter<"customIllnesses"> | Decimal | DecimalJsLike | number | string | null
+    average_cost_per_claim?: IntNullableFilter<"customIllnesses"> | number | null
+    createdAt?: DateTimeFilter<"customIllnesses"> | Date | string
+    updatedAt?: DateTimeFilter<"customIllnesses"> | Date | string
+    clients?: XOR<ClientsScalarRelationFilter, clientsWhereInput>
   }
 
-  export type CustomIllnessesOrderByWithRelationInput = {
+  export type customIllnessesOrderByWithRelationInput = {
     id?: SortOrder
     clientId?: SortOrder
     py?: SortOrderInput | SortOrder
@@ -13585,31 +13585,31 @@ export namespace Prisma {
     average_cost_per_claim?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    Clients?: ClientsOrderByWithRelationInput
-    _relevance?: CustomIllnessesOrderByRelevanceInput
+    clients?: clientsOrderByWithRelationInput
+    _relevance?: customIllnessesOrderByRelevanceInput
   }
 
-  export type CustomIllnessesWhereUniqueInput = Prisma.AtLeast<{
+  export type customIllnessesWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    AND?: CustomIllnessesWhereInput | CustomIllnessesWhereInput[]
-    OR?: CustomIllnessesWhereInput[]
-    NOT?: CustomIllnessesWhereInput | CustomIllnessesWhereInput[]
-    clientId?: IntFilter<"CustomIllnesses"> | number
-    py?: StringNullableFilter<"CustomIllnesses"> | string | null
-    member_type?: StringNullableFilter<"CustomIllnesses"> | string | null
-    icd_10_code?: StringNullableFilter<"CustomIllnesses"> | string | null
-    diagnosis?: StringNullableFilter<"CustomIllnesses"> | string | null
-    claim_amount?: IntNullableFilter<"CustomIllnesses"> | number | null
-    percentage_to_total_amount?: DecimalNullableFilter<"CustomIllnesses"> | Decimal | DecimalJsLike | number | string | null
-    claim_count?: IntNullableFilter<"CustomIllnesses"> | number | null
-    percentage_to_total_count?: DecimalNullableFilter<"CustomIllnesses"> | Decimal | DecimalJsLike | number | string | null
-    average_cost_per_claim?: IntNullableFilter<"CustomIllnesses"> | number | null
-    createdAt?: DateTimeFilter<"CustomIllnesses"> | Date | string
-    updatedAt?: DateTimeFilter<"CustomIllnesses"> | Date | string
-    Clients?: XOR<ClientsScalarRelationFilter, ClientsWhereInput>
+    AND?: customIllnessesWhereInput | customIllnessesWhereInput[]
+    OR?: customIllnessesWhereInput[]
+    NOT?: customIllnessesWhereInput | customIllnessesWhereInput[]
+    clientId?: IntFilter<"customIllnesses"> | number
+    py?: StringNullableFilter<"customIllnesses"> | string | null
+    member_type?: StringNullableFilter<"customIllnesses"> | string | null
+    icd_10_code?: StringNullableFilter<"customIllnesses"> | string | null
+    diagnosis?: StringNullableFilter<"customIllnesses"> | string | null
+    claim_amount?: IntNullableFilter<"customIllnesses"> | number | null
+    percentage_to_total_amount?: DecimalNullableFilter<"customIllnesses"> | Decimal | DecimalJsLike | number | string | null
+    claim_count?: IntNullableFilter<"customIllnesses"> | number | null
+    percentage_to_total_count?: DecimalNullableFilter<"customIllnesses"> | Decimal | DecimalJsLike | number | string | null
+    average_cost_per_claim?: IntNullableFilter<"customIllnesses"> | number | null
+    createdAt?: DateTimeFilter<"customIllnesses"> | Date | string
+    updatedAt?: DateTimeFilter<"customIllnesses"> | Date | string
+    clients?: XOR<ClientsScalarRelationFilter, clientsWhereInput>
   }, "id">
 
-  export type CustomIllnessesOrderByWithAggregationInput = {
+  export type customIllnessesOrderByWithAggregationInput = {
     id?: SortOrder
     clientId?: SortOrder
     py?: SortOrderInput | SortOrder
@@ -13623,33 +13623,33 @@ export namespace Prisma {
     average_cost_per_claim?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    _count?: CustomIllnessesCountOrderByAggregateInput
-    _avg?: CustomIllnessesAvgOrderByAggregateInput
-    _max?: CustomIllnessesMaxOrderByAggregateInput
-    _min?: CustomIllnessesMinOrderByAggregateInput
-    _sum?: CustomIllnessesSumOrderByAggregateInput
+    _count?: customIllnessesCountOrderByAggregateInput
+    _avg?: customIllnessesAvgOrderByAggregateInput
+    _max?: customIllnessesMaxOrderByAggregateInput
+    _min?: customIllnessesMinOrderByAggregateInput
+    _sum?: customIllnessesSumOrderByAggregateInput
   }
 
-  export type CustomIllnessesScalarWhereWithAggregatesInput = {
-    AND?: CustomIllnessesScalarWhereWithAggregatesInput | CustomIllnessesScalarWhereWithAggregatesInput[]
-    OR?: CustomIllnessesScalarWhereWithAggregatesInput[]
-    NOT?: CustomIllnessesScalarWhereWithAggregatesInput | CustomIllnessesScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"CustomIllnesses"> | number
-    clientId?: IntWithAggregatesFilter<"CustomIllnesses"> | number
-    py?: StringNullableWithAggregatesFilter<"CustomIllnesses"> | string | null
-    member_type?: StringNullableWithAggregatesFilter<"CustomIllnesses"> | string | null
-    icd_10_code?: StringNullableWithAggregatesFilter<"CustomIllnesses"> | string | null
-    diagnosis?: StringNullableWithAggregatesFilter<"CustomIllnesses"> | string | null
-    claim_amount?: IntNullableWithAggregatesFilter<"CustomIllnesses"> | number | null
-    percentage_to_total_amount?: DecimalNullableWithAggregatesFilter<"CustomIllnesses"> | Decimal | DecimalJsLike | number | string | null
-    claim_count?: IntNullableWithAggregatesFilter<"CustomIllnesses"> | number | null
-    percentage_to_total_count?: DecimalNullableWithAggregatesFilter<"CustomIllnesses"> | Decimal | DecimalJsLike | number | string | null
-    average_cost_per_claim?: IntNullableWithAggregatesFilter<"CustomIllnesses"> | number | null
-    createdAt?: DateTimeWithAggregatesFilter<"CustomIllnesses"> | Date | string
-    updatedAt?: DateTimeWithAggregatesFilter<"CustomIllnesses"> | Date | string
+  export type customIllnessesScalarWhereWithAggregatesInput = {
+    AND?: customIllnessesScalarWhereWithAggregatesInput | customIllnessesScalarWhereWithAggregatesInput[]
+    OR?: customIllnessesScalarWhereWithAggregatesInput[]
+    NOT?: customIllnessesScalarWhereWithAggregatesInput | customIllnessesScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"customIllnesses"> | number
+    clientId?: IntWithAggregatesFilter<"customIllnesses"> | number
+    py?: StringNullableWithAggregatesFilter<"customIllnesses"> | string | null
+    member_type?: StringNullableWithAggregatesFilter<"customIllnesses"> | string | null
+    icd_10_code?: StringNullableWithAggregatesFilter<"customIllnesses"> | string | null
+    diagnosis?: StringNullableWithAggregatesFilter<"customIllnesses"> | string | null
+    claim_amount?: IntNullableWithAggregatesFilter<"customIllnesses"> | number | null
+    percentage_to_total_amount?: DecimalNullableWithAggregatesFilter<"customIllnesses"> | Decimal | DecimalJsLike | number | string | null
+    claim_count?: IntNullableWithAggregatesFilter<"customIllnesses"> | number | null
+    percentage_to_total_count?: DecimalNullableWithAggregatesFilter<"customIllnesses"> | Decimal | DecimalJsLike | number | string | null
+    average_cost_per_claim?: IntNullableWithAggregatesFilter<"customIllnesses"> | number | null
+    createdAt?: DateTimeWithAggregatesFilter<"customIllnesses"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"customIllnesses"> | Date | string
   }
 
-  export type UserCreateInput = {
+  export type userCreateInput = {
     name: string
     email: string
     password: string
@@ -13666,60 +13666,7 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type UserUncheckedCreateInput = {
-    id?: number
-    name: string
-    email: string
-    password: string
-    admin?: boolean
-    canUpload?: boolean
-    canCreate?: boolean
-    canViewDeck?: boolean
-    canUploadDeck?: boolean
-    canAdd?: boolean
-    canRemove?: boolean
-    canEdit?: boolean
-    superAdmin?: boolean
-    createdAt?: Date | string
-    updatedAt?: Date | string
-  }
-
-  export type UserUpdateInput = {
-    name?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
-    admin?: BoolFieldUpdateOperationsInput | boolean
-    canUpload?: BoolFieldUpdateOperationsInput | boolean
-    canCreate?: BoolFieldUpdateOperationsInput | boolean
-    canViewDeck?: BoolFieldUpdateOperationsInput | boolean
-    canUploadDeck?: BoolFieldUpdateOperationsInput | boolean
-    canAdd?: BoolFieldUpdateOperationsInput | boolean
-    canRemove?: BoolFieldUpdateOperationsInput | boolean
-    canEdit?: BoolFieldUpdateOperationsInput | boolean
-    superAdmin?: BoolFieldUpdateOperationsInput | boolean
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type UserUncheckedUpdateInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
-    admin?: BoolFieldUpdateOperationsInput | boolean
-    canUpload?: BoolFieldUpdateOperationsInput | boolean
-    canCreate?: BoolFieldUpdateOperationsInput | boolean
-    canViewDeck?: BoolFieldUpdateOperationsInput | boolean
-    canUploadDeck?: BoolFieldUpdateOperationsInput | boolean
-    canAdd?: BoolFieldUpdateOperationsInput | boolean
-    canRemove?: BoolFieldUpdateOperationsInput | boolean
-    canEdit?: BoolFieldUpdateOperationsInput | boolean
-    superAdmin?: BoolFieldUpdateOperationsInput | boolean
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type UserCreateManyInput = {
+  export type userUncheckedCreateInput = {
     id?: number
     name: string
     email: string
@@ -13737,7 +13684,7 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type UserUpdateManyMutationInput = {
+  export type userUpdateInput = {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
@@ -13754,7 +13701,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type UserUncheckedUpdateManyInput = {
+  export type userUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
@@ -13772,130 +13719,183 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type InsurersCreateInput = {
-    name: string
-    Clients?: ClientsCreateNestedManyWithoutInsurerInput
-    Uploads?: UploadsCreateNestedManyWithoutInsurersInput
-  }
-
-  export type InsurersUncheckedCreateInput = {
+  export type userCreateManyInput = {
     id?: number
     name: string
-    Clients?: ClientsUncheckedCreateNestedManyWithoutInsurerInput
-    Uploads?: UploadsUncheckedCreateNestedManyWithoutInsurersInput
+    email: string
+    password: string
+    admin?: boolean
+    canUpload?: boolean
+    canCreate?: boolean
+    canViewDeck?: boolean
+    canUploadDeck?: boolean
+    canAdd?: boolean
+    canRemove?: boolean
+    canEdit?: boolean
+    superAdmin?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
-  export type InsurersUpdateInput = {
+  export type userUpdateManyMutationInput = {
     name?: StringFieldUpdateOperationsInput | string
-    Clients?: ClientsUpdateManyWithoutInsurerNestedInput
-    Uploads?: UploadsUpdateManyWithoutInsurersNestedInput
+    email?: StringFieldUpdateOperationsInput | string
+    password?: StringFieldUpdateOperationsInput | string
+    admin?: BoolFieldUpdateOperationsInput | boolean
+    canUpload?: BoolFieldUpdateOperationsInput | boolean
+    canCreate?: BoolFieldUpdateOperationsInput | boolean
+    canViewDeck?: BoolFieldUpdateOperationsInput | boolean
+    canUploadDeck?: BoolFieldUpdateOperationsInput | boolean
+    canAdd?: BoolFieldUpdateOperationsInput | boolean
+    canRemove?: BoolFieldUpdateOperationsInput | boolean
+    canEdit?: BoolFieldUpdateOperationsInput | boolean
+    superAdmin?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type InsurersUncheckedUpdateInput = {
+  export type userUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
-    Clients?: ClientsUncheckedUpdateManyWithoutInsurerNestedInput
-    Uploads?: UploadsUncheckedUpdateManyWithoutInsurersNestedInput
+    email?: StringFieldUpdateOperationsInput | string
+    password?: StringFieldUpdateOperationsInput | string
+    admin?: BoolFieldUpdateOperationsInput | boolean
+    canUpload?: BoolFieldUpdateOperationsInput | boolean
+    canCreate?: BoolFieldUpdateOperationsInput | boolean
+    canViewDeck?: BoolFieldUpdateOperationsInput | boolean
+    canUploadDeck?: BoolFieldUpdateOperationsInput | boolean
+    canAdd?: BoolFieldUpdateOperationsInput | boolean
+    canRemove?: BoolFieldUpdateOperationsInput | boolean
+    canEdit?: BoolFieldUpdateOperationsInput | boolean
+    superAdmin?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type InsurersCreateManyInput = {
+  export type insurersCreateInput = {
+    name: string
+    clients?: clientsCreateNestedManyWithoutInsurerInput
+    uploads?: uploadsCreateNestedManyWithoutInsurersInput
+  }
+
+  export type insurersUncheckedCreateInput = {
+    id?: number
+    name: string
+    clients?: clientsUncheckedCreateNestedManyWithoutInsurerInput
+    uploads?: uploadsUncheckedCreateNestedManyWithoutInsurersInput
+  }
+
+  export type insurersUpdateInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    clients?: clientsUpdateManyWithoutInsurerNestedInput
+    uploads?: uploadsUpdateManyWithoutInsurersNestedInput
+  }
+
+  export type insurersUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    clients?: clientsUncheckedUpdateManyWithoutInsurerNestedInput
+    uploads?: uploadsUncheckedUpdateManyWithoutInsurersNestedInput
+  }
+
+  export type insurersCreateManyInput = {
     id?: number
     name: string
   }
 
-  export type InsurersUpdateManyMutationInput = {
+  export type insurersUpdateManyMutationInput = {
     name?: StringFieldUpdateOperationsInput | string
   }
 
-  export type InsurersUncheckedUpdateManyInput = {
+  export type insurersUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
   }
 
-  export type ClientsCreateInput = {
+  export type clientsCreateInput = {
     client_name: string
     description?: string | null
-    insurer?: InsurersCreateNestedOneWithoutClientsInput
-    Uploads?: UploadsCreateNestedManyWithoutClientsInput
-    Decks?: DecksCreateNestedManyWithoutClientsInput
-    IntellicareMasterlist?: IntellicareMasterlistCreateNestedManyWithoutClientsInput
-    MaxicareMasterlist?: MaxicareMasterlistCreateNestedManyWithoutClientsInput
-    Intellicare?: IntellicareCreateNestedManyWithoutClientsInput
-    Maxicare?: MaxicareCreateNestedManyWithoutClientsInput
-    CustomIllnesses?: CustomIllnessesCreateNestedManyWithoutClientsInput
+    insurer?: insurersCreateNestedOneWithoutClientsInput
+    uploads?: uploadsCreateNestedManyWithoutClientsInput
+    decks?: decksCreateNestedManyWithoutClientsInput
+    intellicareMasterlist?: intellicareMasterlistCreateNestedManyWithoutClientsInput
+    maxicareMasterlist?: maxicareMasterlistCreateNestedManyWithoutClientsInput
+    intellicare?: intellicareCreateNestedManyWithoutClientsInput
+    maxicare?: maxicareCreateNestedManyWithoutClientsInput
+    customIllnesses?: customIllnessesCreateNestedManyWithoutClientsInput
   }
 
-  export type ClientsUncheckedCreateInput = {
-    id?: number
-    client_name: string
-    description?: string | null
-    insurer_id?: number | null
-    Uploads?: UploadsUncheckedCreateNestedManyWithoutClientsInput
-    Decks?: DecksUncheckedCreateNestedManyWithoutClientsInput
-    IntellicareMasterlist?: IntellicareMasterlistUncheckedCreateNestedManyWithoutClientsInput
-    MaxicareMasterlist?: MaxicareMasterlistUncheckedCreateNestedManyWithoutClientsInput
-    Intellicare?: IntellicareUncheckedCreateNestedManyWithoutClientsInput
-    Maxicare?: MaxicareUncheckedCreateNestedManyWithoutClientsInput
-    CustomIllnesses?: CustomIllnessesUncheckedCreateNestedManyWithoutClientsInput
-  }
-
-  export type ClientsUpdateInput = {
-    client_name?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    insurer?: InsurersUpdateOneWithoutClientsNestedInput
-    Uploads?: UploadsUpdateManyWithoutClientsNestedInput
-    Decks?: DecksUpdateManyWithoutClientsNestedInput
-    IntellicareMasterlist?: IntellicareMasterlistUpdateManyWithoutClientsNestedInput
-    MaxicareMasterlist?: MaxicareMasterlistUpdateManyWithoutClientsNestedInput
-    Intellicare?: IntellicareUpdateManyWithoutClientsNestedInput
-    Maxicare?: MaxicareUpdateManyWithoutClientsNestedInput
-    CustomIllnesses?: CustomIllnessesUpdateManyWithoutClientsNestedInput
-  }
-
-  export type ClientsUncheckedUpdateInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    client_name?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    insurer_id?: NullableIntFieldUpdateOperationsInput | number | null
-    Uploads?: UploadsUncheckedUpdateManyWithoutClientsNestedInput
-    Decks?: DecksUncheckedUpdateManyWithoutClientsNestedInput
-    IntellicareMasterlist?: IntellicareMasterlistUncheckedUpdateManyWithoutClientsNestedInput
-    MaxicareMasterlist?: MaxicareMasterlistUncheckedUpdateManyWithoutClientsNestedInput
-    Intellicare?: IntellicareUncheckedUpdateManyWithoutClientsNestedInput
-    Maxicare?: MaxicareUncheckedUpdateManyWithoutClientsNestedInput
-    CustomIllnesses?: CustomIllnessesUncheckedUpdateManyWithoutClientsNestedInput
-  }
-
-  export type ClientsCreateManyInput = {
+  export type clientsUncheckedCreateInput = {
     id?: number
     client_name: string
     description?: string | null
     insurer_id?: number | null
+    uploads?: uploadsUncheckedCreateNestedManyWithoutClientsInput
+    decks?: decksUncheckedCreateNestedManyWithoutClientsInput
+    intellicareMasterlist?: intellicareMasterlistUncheckedCreateNestedManyWithoutClientsInput
+    maxicareMasterlist?: maxicareMasterlistUncheckedCreateNestedManyWithoutClientsInput
+    intellicare?: intellicareUncheckedCreateNestedManyWithoutClientsInput
+    maxicare?: maxicareUncheckedCreateNestedManyWithoutClientsInput
+    customIllnesses?: customIllnessesUncheckedCreateNestedManyWithoutClientsInput
   }
 
-  export type ClientsUpdateManyMutationInput = {
+  export type clientsUpdateInput = {
+    client_name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    insurer?: insurersUpdateOneWithoutClientsNestedInput
+    uploads?: uploadsUpdateManyWithoutClientsNestedInput
+    decks?: decksUpdateManyWithoutClientsNestedInput
+    intellicareMasterlist?: intellicareMasterlistUpdateManyWithoutClientsNestedInput
+    maxicareMasterlist?: maxicareMasterlistUpdateManyWithoutClientsNestedInput
+    intellicare?: intellicareUpdateManyWithoutClientsNestedInput
+    maxicare?: maxicareUpdateManyWithoutClientsNestedInput
+    customIllnesses?: customIllnessesUpdateManyWithoutClientsNestedInput
+  }
+
+  export type clientsUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    client_name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    insurer_id?: NullableIntFieldUpdateOperationsInput | number | null
+    uploads?: uploadsUncheckedUpdateManyWithoutClientsNestedInput
+    decks?: decksUncheckedUpdateManyWithoutClientsNestedInput
+    intellicareMasterlist?: intellicareMasterlistUncheckedUpdateManyWithoutClientsNestedInput
+    maxicareMasterlist?: maxicareMasterlistUncheckedUpdateManyWithoutClientsNestedInput
+    intellicare?: intellicareUncheckedUpdateManyWithoutClientsNestedInput
+    maxicare?: maxicareUncheckedUpdateManyWithoutClientsNestedInput
+    customIllnesses?: customIllnessesUncheckedUpdateManyWithoutClientsNestedInput
+  }
+
+  export type clientsCreateManyInput = {
+    id?: number
+    client_name: string
+    description?: string | null
+    insurer_id?: number | null
+  }
+
+  export type clientsUpdateManyMutationInput = {
     client_name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
-  export type ClientsUncheckedUpdateManyInput = {
+  export type clientsUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     client_name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     insurer_id?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
-  export type UploadsCreateInput = {
+  export type uploadsCreateInput = {
     year: string
     months?: string | null
     type: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    Clients: ClientsCreateNestedOneWithoutUploadsInput
-    Insurers: InsurersCreateNestedOneWithoutUploadsInput
+    clients: clientsCreateNestedOneWithoutUploadsInput
+    insurers: insurersCreateNestedOneWithoutUploadsInput
   }
 
-  export type UploadsUncheckedCreateInput = {
+  export type uploadsUncheckedCreateInput = {
     id?: number
     clientId: number
     insurerId: number
@@ -13906,17 +13906,17 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type UploadsUpdateInput = {
+  export type uploadsUpdateInput = {
     year?: StringFieldUpdateOperationsInput | string
     months?: NullableStringFieldUpdateOperationsInput | string | null
     type?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    Clients?: ClientsUpdateOneRequiredWithoutUploadsNestedInput
-    Insurers?: InsurersUpdateOneRequiredWithoutUploadsNestedInput
+    clients?: clientsUpdateOneRequiredWithoutUploadsNestedInput
+    insurers?: insurersUpdateOneRequiredWithoutUploadsNestedInput
   }
 
-  export type UploadsUncheckedUpdateInput = {
+  export type uploadsUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     clientId?: IntFieldUpdateOperationsInput | number
     insurerId?: IntFieldUpdateOperationsInput | number
@@ -13927,7 +13927,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type UploadsCreateManyInput = {
+  export type uploadsCreateManyInput = {
     id?: number
     clientId: number
     insurerId: number
@@ -13938,7 +13938,7 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type UploadsUpdateManyMutationInput = {
+  export type uploadsUpdateManyMutationInput = {
     year?: StringFieldUpdateOperationsInput | string
     months?: NullableStringFieldUpdateOperationsInput | string | null
     type?: StringFieldUpdateOperationsInput | string
@@ -13946,7 +13946,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type UploadsUncheckedUpdateManyInput = {
+  export type uploadsUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     clientId?: IntFieldUpdateOperationsInput | number
     insurerId?: IntFieldUpdateOperationsInput | number
@@ -13957,15 +13957,15 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type DecksCreateInput = {
+  export type decksCreateInput = {
     name: string
     description: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    Clients: ClientsCreateNestedOneWithoutDecksInput
+    clients: clientsCreateNestedOneWithoutDecksInput
   }
 
-  export type DecksUncheckedCreateInput = {
+  export type decksUncheckedCreateInput = {
     id?: number
     name: string
     description: string
@@ -13974,15 +13974,15 @@ export namespace Prisma {
     clientId: number
   }
 
-  export type DecksUpdateInput = {
+  export type decksUpdateInput = {
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    Clients?: ClientsUpdateOneRequiredWithoutDecksNestedInput
+    clients?: clientsUpdateOneRequiredWithoutDecksNestedInput
   }
 
-  export type DecksUncheckedUpdateInput = {
+  export type decksUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
@@ -13991,7 +13991,7 @@ export namespace Prisma {
     clientId?: IntFieldUpdateOperationsInput | number
   }
 
-  export type DecksCreateManyInput = {
+  export type decksCreateManyInput = {
     id?: number
     name: string
     description: string
@@ -14000,14 +14000,14 @@ export namespace Prisma {
     clientId: number
   }
 
-  export type DecksUpdateManyMutationInput = {
+  export type decksUpdateManyMutationInput = {
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type DecksUncheckedUpdateManyInput = {
+  export type decksUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
@@ -14016,7 +14016,7 @@ export namespace Prisma {
     clientId?: IntFieldUpdateOperationsInput | number
   }
 
-  export type IntellicareMasterlistCreateInput = {
+  export type intellicareMasterlistCreateInput = {
     PY?: string | null
     ACCOUNT_NO?: string | null
     STATUS?: string | null
@@ -14032,69 +14032,10 @@ export namespace Prisma {
     COMPANY?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    Clients: ClientsCreateNestedOneWithoutIntellicareMasterlistInput
+    clients: clientsCreateNestedOneWithoutIntellicareMasterlistInput
   }
 
-  export type IntellicareMasterlistUncheckedCreateInput = {
-    id?: number
-    clientId: number
-    PY?: string | null
-    ACCOUNT_NO?: string | null
-    STATUS?: string | null
-    MEMBER_TYPE?: string | null
-    RNB?: string | null
-    PREEXIST?: number | null
-    LIMIT?: number | null
-    BIRTHDATE?: Date | string | null
-    AGE?: number | null
-    RELATION?: string | null
-    EE_ID?: string | null
-    CARD_NO?: string | null
-    COMPANY?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-  }
-
-  export type IntellicareMasterlistUpdateInput = {
-    PY?: NullableStringFieldUpdateOperationsInput | string | null
-    ACCOUNT_NO?: NullableStringFieldUpdateOperationsInput | string | null
-    STATUS?: NullableStringFieldUpdateOperationsInput | string | null
-    MEMBER_TYPE?: NullableStringFieldUpdateOperationsInput | string | null
-    RNB?: NullableStringFieldUpdateOperationsInput | string | null
-    PREEXIST?: NullableFloatFieldUpdateOperationsInput | number | null
-    LIMIT?: NullableFloatFieldUpdateOperationsInput | number | null
-    BIRTHDATE?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    AGE?: NullableIntFieldUpdateOperationsInput | number | null
-    RELATION?: NullableStringFieldUpdateOperationsInput | string | null
-    EE_ID?: NullableStringFieldUpdateOperationsInput | string | null
-    CARD_NO?: NullableStringFieldUpdateOperationsInput | string | null
-    COMPANY?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    Clients?: ClientsUpdateOneRequiredWithoutIntellicareMasterlistNestedInput
-  }
-
-  export type IntellicareMasterlistUncheckedUpdateInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    clientId?: IntFieldUpdateOperationsInput | number
-    PY?: NullableStringFieldUpdateOperationsInput | string | null
-    ACCOUNT_NO?: NullableStringFieldUpdateOperationsInput | string | null
-    STATUS?: NullableStringFieldUpdateOperationsInput | string | null
-    MEMBER_TYPE?: NullableStringFieldUpdateOperationsInput | string | null
-    RNB?: NullableStringFieldUpdateOperationsInput | string | null
-    PREEXIST?: NullableFloatFieldUpdateOperationsInput | number | null
-    LIMIT?: NullableFloatFieldUpdateOperationsInput | number | null
-    BIRTHDATE?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    AGE?: NullableIntFieldUpdateOperationsInput | number | null
-    RELATION?: NullableStringFieldUpdateOperationsInput | string | null
-    EE_ID?: NullableStringFieldUpdateOperationsInput | string | null
-    CARD_NO?: NullableStringFieldUpdateOperationsInput | string | null
-    COMPANY?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type IntellicareMasterlistCreateManyInput = {
+  export type intellicareMasterlistUncheckedCreateInput = {
     id?: number
     clientId: number
     PY?: string | null
@@ -14114,7 +14055,28 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type IntellicareMasterlistUpdateManyMutationInput = {
+  export type intellicareMasterlistUpdateInput = {
+    PY?: NullableStringFieldUpdateOperationsInput | string | null
+    ACCOUNT_NO?: NullableStringFieldUpdateOperationsInput | string | null
+    STATUS?: NullableStringFieldUpdateOperationsInput | string | null
+    MEMBER_TYPE?: NullableStringFieldUpdateOperationsInput | string | null
+    RNB?: NullableStringFieldUpdateOperationsInput | string | null
+    PREEXIST?: NullableFloatFieldUpdateOperationsInput | number | null
+    LIMIT?: NullableFloatFieldUpdateOperationsInput | number | null
+    BIRTHDATE?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    AGE?: NullableIntFieldUpdateOperationsInput | number | null
+    RELATION?: NullableStringFieldUpdateOperationsInput | string | null
+    EE_ID?: NullableStringFieldUpdateOperationsInput | string | null
+    CARD_NO?: NullableStringFieldUpdateOperationsInput | string | null
+    COMPANY?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    clients?: clientsUpdateOneRequiredWithoutIntellicareMasterlistNestedInput
+  }
+
+  export type intellicareMasterlistUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    clientId?: IntFieldUpdateOperationsInput | number
     PY?: NullableStringFieldUpdateOperationsInput | string | null
     ACCOUNT_NO?: NullableStringFieldUpdateOperationsInput | string | null
     STATUS?: NullableStringFieldUpdateOperationsInput | string | null
@@ -14132,7 +14094,45 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type IntellicareMasterlistUncheckedUpdateManyInput = {
+  export type intellicareMasterlistCreateManyInput = {
+    id?: number
+    clientId: number
+    PY?: string | null
+    ACCOUNT_NO?: string | null
+    STATUS?: string | null
+    MEMBER_TYPE?: string | null
+    RNB?: string | null
+    PREEXIST?: number | null
+    LIMIT?: number | null
+    BIRTHDATE?: Date | string | null
+    AGE?: number | null
+    RELATION?: string | null
+    EE_ID?: string | null
+    CARD_NO?: string | null
+    COMPANY?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type intellicareMasterlistUpdateManyMutationInput = {
+    PY?: NullableStringFieldUpdateOperationsInput | string | null
+    ACCOUNT_NO?: NullableStringFieldUpdateOperationsInput | string | null
+    STATUS?: NullableStringFieldUpdateOperationsInput | string | null
+    MEMBER_TYPE?: NullableStringFieldUpdateOperationsInput | string | null
+    RNB?: NullableStringFieldUpdateOperationsInput | string | null
+    PREEXIST?: NullableFloatFieldUpdateOperationsInput | number | null
+    LIMIT?: NullableFloatFieldUpdateOperationsInput | number | null
+    BIRTHDATE?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    AGE?: NullableIntFieldUpdateOperationsInput | number | null
+    RELATION?: NullableStringFieldUpdateOperationsInput | string | null
+    EE_ID?: NullableStringFieldUpdateOperationsInput | string | null
+    CARD_NO?: NullableStringFieldUpdateOperationsInput | string | null
+    COMPANY?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type intellicareMasterlistUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     clientId?: IntFieldUpdateOperationsInput | number
     PY?: NullableStringFieldUpdateOperationsInput | string | null
@@ -14152,7 +14152,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type MaxicareMasterlistCreateInput = {
+  export type maxicareMasterlistCreateInput = {
     PY?: string | null
     ACCOUNT_NO?: string | null
     STATUS?: string | null
@@ -14164,10 +14164,10 @@ export namespace Prisma {
     COMPANY?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    Clients: ClientsCreateNestedOneWithoutMaxicareMasterlistInput
+    clients: clientsCreateNestedOneWithoutMaxicareMasterlistInput
   }
 
-  export type MaxicareMasterlistUncheckedCreateInput = {
+  export type maxicareMasterlistUncheckedCreateInput = {
     id?: number
     clientId: number
     PY?: string | null
@@ -14183,7 +14183,7 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type MaxicareMasterlistUpdateInput = {
+  export type maxicareMasterlistUpdateInput = {
     PY?: NullableStringFieldUpdateOperationsInput | string | null
     ACCOUNT_NO?: NullableStringFieldUpdateOperationsInput | string | null
     STATUS?: NullableStringFieldUpdateOperationsInput | string | null
@@ -14195,10 +14195,10 @@ export namespace Prisma {
     COMPANY?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    Clients?: ClientsUpdateOneRequiredWithoutMaxicareMasterlistNestedInput
+    clients?: clientsUpdateOneRequiredWithoutMaxicareMasterlistNestedInput
   }
 
-  export type MaxicareMasterlistUncheckedUpdateInput = {
+  export type maxicareMasterlistUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     clientId?: IntFieldUpdateOperationsInput | number
     PY?: NullableStringFieldUpdateOperationsInput | string | null
@@ -14214,7 +14214,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type MaxicareMasterlistCreateManyInput = {
+  export type maxicareMasterlistCreateManyInput = {
     id?: number
     clientId: number
     PY?: string | null
@@ -14230,7 +14230,7 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type MaxicareMasterlistUpdateManyMutationInput = {
+  export type maxicareMasterlistUpdateManyMutationInput = {
     PY?: NullableStringFieldUpdateOperationsInput | string | null
     ACCOUNT_NO?: NullableStringFieldUpdateOperationsInput | string | null
     STATUS?: NullableStringFieldUpdateOperationsInput | string | null
@@ -14244,7 +14244,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type MaxicareMasterlistUncheckedUpdateManyInput = {
+  export type maxicareMasterlistUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     clientId?: IntFieldUpdateOperationsInput | number
     PY?: NullableStringFieldUpdateOperationsInput | string | null
@@ -14260,7 +14260,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type IntellicareCreateInput = {
+  export type intellicareCreateInput = {
     PY: string
     Company?: string | null
     Member_Account?: string | null
@@ -14278,75 +14278,10 @@ export namespace Prisma {
     Relationship?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    Clients: ClientsCreateNestedOneWithoutIntellicareInput
+    clients: clientsCreateNestedOneWithoutIntellicareInput
   }
 
-  export type IntellicareUncheckedCreateInput = {
-    id?: number
-    clientId: number
-    PY: string
-    Company?: string | null
-    Member_Account?: string | null
-    Member_Type?: string | null
-    ICD_10_Code?: string | null
-    Diagnosis?: string | null
-    Claim_Type?: string | null
-    Admission_Date?: Date | string | null
-    Provider_Name?: string | null
-    Provider_Type?: string | null
-    Approved_Claim_Amount?: number | null
-    Class_Plan_Level?: string | null
-    Maximum_Benefit_Limit?: number | null
-    Date_of_Birth?: Date | string | null
-    Relationship?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-  }
-
-  export type IntellicareUpdateInput = {
-    PY?: StringFieldUpdateOperationsInput | string
-    Company?: NullableStringFieldUpdateOperationsInput | string | null
-    Member_Account?: NullableStringFieldUpdateOperationsInput | string | null
-    Member_Type?: NullableStringFieldUpdateOperationsInput | string | null
-    ICD_10_Code?: NullableStringFieldUpdateOperationsInput | string | null
-    Diagnosis?: NullableStringFieldUpdateOperationsInput | string | null
-    Claim_Type?: NullableStringFieldUpdateOperationsInput | string | null
-    Admission_Date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    Provider_Name?: NullableStringFieldUpdateOperationsInput | string | null
-    Provider_Type?: NullableStringFieldUpdateOperationsInput | string | null
-    Approved_Claim_Amount?: NullableFloatFieldUpdateOperationsInput | number | null
-    Class_Plan_Level?: NullableStringFieldUpdateOperationsInput | string | null
-    Maximum_Benefit_Limit?: NullableFloatFieldUpdateOperationsInput | number | null
-    Date_of_Birth?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    Relationship?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    Clients?: ClientsUpdateOneRequiredWithoutIntellicareNestedInput
-  }
-
-  export type IntellicareUncheckedUpdateInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    clientId?: IntFieldUpdateOperationsInput | number
-    PY?: StringFieldUpdateOperationsInput | string
-    Company?: NullableStringFieldUpdateOperationsInput | string | null
-    Member_Account?: NullableStringFieldUpdateOperationsInput | string | null
-    Member_Type?: NullableStringFieldUpdateOperationsInput | string | null
-    ICD_10_Code?: NullableStringFieldUpdateOperationsInput | string | null
-    Diagnosis?: NullableStringFieldUpdateOperationsInput | string | null
-    Claim_Type?: NullableStringFieldUpdateOperationsInput | string | null
-    Admission_Date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    Provider_Name?: NullableStringFieldUpdateOperationsInput | string | null
-    Provider_Type?: NullableStringFieldUpdateOperationsInput | string | null
-    Approved_Claim_Amount?: NullableFloatFieldUpdateOperationsInput | number | null
-    Class_Plan_Level?: NullableStringFieldUpdateOperationsInput | string | null
-    Maximum_Benefit_Limit?: NullableFloatFieldUpdateOperationsInput | number | null
-    Date_of_Birth?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    Relationship?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type IntellicareCreateManyInput = {
+  export type intellicareUncheckedCreateInput = {
     id?: number
     clientId: number
     PY: string
@@ -14368,7 +14303,30 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type IntellicareUpdateManyMutationInput = {
+  export type intellicareUpdateInput = {
+    PY?: StringFieldUpdateOperationsInput | string
+    Company?: NullableStringFieldUpdateOperationsInput | string | null
+    Member_Account?: NullableStringFieldUpdateOperationsInput | string | null
+    Member_Type?: NullableStringFieldUpdateOperationsInput | string | null
+    ICD_10_Code?: NullableStringFieldUpdateOperationsInput | string | null
+    Diagnosis?: NullableStringFieldUpdateOperationsInput | string | null
+    Claim_Type?: NullableStringFieldUpdateOperationsInput | string | null
+    Admission_Date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    Provider_Name?: NullableStringFieldUpdateOperationsInput | string | null
+    Provider_Type?: NullableStringFieldUpdateOperationsInput | string | null
+    Approved_Claim_Amount?: NullableFloatFieldUpdateOperationsInput | number | null
+    Class_Plan_Level?: NullableStringFieldUpdateOperationsInput | string | null
+    Maximum_Benefit_Limit?: NullableFloatFieldUpdateOperationsInput | number | null
+    Date_of_Birth?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    Relationship?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    clients?: clientsUpdateOneRequiredWithoutIntellicareNestedInput
+  }
+
+  export type intellicareUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    clientId?: IntFieldUpdateOperationsInput | number
     PY?: StringFieldUpdateOperationsInput | string
     Company?: NullableStringFieldUpdateOperationsInput | string | null
     Member_Account?: NullableStringFieldUpdateOperationsInput | string | null
@@ -14388,7 +14346,49 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type IntellicareUncheckedUpdateManyInput = {
+  export type intellicareCreateManyInput = {
+    id?: number
+    clientId: number
+    PY: string
+    Company?: string | null
+    Member_Account?: string | null
+    Member_Type?: string | null
+    ICD_10_Code?: string | null
+    Diagnosis?: string | null
+    Claim_Type?: string | null
+    Admission_Date?: Date | string | null
+    Provider_Name?: string | null
+    Provider_Type?: string | null
+    Approved_Claim_Amount?: number | null
+    Class_Plan_Level?: string | null
+    Maximum_Benefit_Limit?: number | null
+    Date_of_Birth?: Date | string | null
+    Relationship?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type intellicareUpdateManyMutationInput = {
+    PY?: StringFieldUpdateOperationsInput | string
+    Company?: NullableStringFieldUpdateOperationsInput | string | null
+    Member_Account?: NullableStringFieldUpdateOperationsInput | string | null
+    Member_Type?: NullableStringFieldUpdateOperationsInput | string | null
+    ICD_10_Code?: NullableStringFieldUpdateOperationsInput | string | null
+    Diagnosis?: NullableStringFieldUpdateOperationsInput | string | null
+    Claim_Type?: NullableStringFieldUpdateOperationsInput | string | null
+    Admission_Date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    Provider_Name?: NullableStringFieldUpdateOperationsInput | string | null
+    Provider_Type?: NullableStringFieldUpdateOperationsInput | string | null
+    Approved_Claim_Amount?: NullableFloatFieldUpdateOperationsInput | number | null
+    Class_Plan_Level?: NullableStringFieldUpdateOperationsInput | string | null
+    Maximum_Benefit_Limit?: NullableFloatFieldUpdateOperationsInput | number | null
+    Date_of_Birth?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    Relationship?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type intellicareUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     clientId?: IntFieldUpdateOperationsInput | number
     PY?: StringFieldUpdateOperationsInput | string
@@ -14410,7 +14410,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type MaxicareCreateInput = {
+  export type maxicareCreateInput = {
     PY: string
     Company?: string | null
     Member_Account?: string | null
@@ -14425,66 +14425,10 @@ export namespace Prisma {
     Relationship?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    Clients: ClientsCreateNestedOneWithoutMaxicareInput
+    clients: clientsCreateNestedOneWithoutMaxicareInput
   }
 
-  export type MaxicareUncheckedCreateInput = {
-    id?: number
-    clientId: number
-    PY: string
-    Company?: string | null
-    Member_Account?: string | null
-    Member_Type?: string | null
-    ICD_10_Code?: string | null
-    Diagnosis?: string | null
-    Claim_Type?: string | null
-    Admission_Date?: Date | string | null
-    Provider_Name?: string | null
-    Provider_Type?: string | null
-    Approved_Claim_Amount?: number | null
-    Relationship?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-  }
-
-  export type MaxicareUpdateInput = {
-    PY?: StringFieldUpdateOperationsInput | string
-    Company?: NullableStringFieldUpdateOperationsInput | string | null
-    Member_Account?: NullableStringFieldUpdateOperationsInput | string | null
-    Member_Type?: NullableStringFieldUpdateOperationsInput | string | null
-    ICD_10_Code?: NullableStringFieldUpdateOperationsInput | string | null
-    Diagnosis?: NullableStringFieldUpdateOperationsInput | string | null
-    Claim_Type?: NullableStringFieldUpdateOperationsInput | string | null
-    Admission_Date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    Provider_Name?: NullableStringFieldUpdateOperationsInput | string | null
-    Provider_Type?: NullableStringFieldUpdateOperationsInput | string | null
-    Approved_Claim_Amount?: NullableFloatFieldUpdateOperationsInput | number | null
-    Relationship?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    Clients?: ClientsUpdateOneRequiredWithoutMaxicareNestedInput
-  }
-
-  export type MaxicareUncheckedUpdateInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    clientId?: IntFieldUpdateOperationsInput | number
-    PY?: StringFieldUpdateOperationsInput | string
-    Company?: NullableStringFieldUpdateOperationsInput | string | null
-    Member_Account?: NullableStringFieldUpdateOperationsInput | string | null
-    Member_Type?: NullableStringFieldUpdateOperationsInput | string | null
-    ICD_10_Code?: NullableStringFieldUpdateOperationsInput | string | null
-    Diagnosis?: NullableStringFieldUpdateOperationsInput | string | null
-    Claim_Type?: NullableStringFieldUpdateOperationsInput | string | null
-    Admission_Date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    Provider_Name?: NullableStringFieldUpdateOperationsInput | string | null
-    Provider_Type?: NullableStringFieldUpdateOperationsInput | string | null
-    Approved_Claim_Amount?: NullableFloatFieldUpdateOperationsInput | number | null
-    Relationship?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type MaxicareCreateManyInput = {
+  export type maxicareUncheckedCreateInput = {
     id?: number
     clientId: number
     PY: string
@@ -14503,7 +14447,7 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type MaxicareUpdateManyMutationInput = {
+  export type maxicareUpdateInput = {
     PY?: StringFieldUpdateOperationsInput | string
     Company?: NullableStringFieldUpdateOperationsInput | string | null
     Member_Account?: NullableStringFieldUpdateOperationsInput | string | null
@@ -14518,9 +14462,10 @@ export namespace Prisma {
     Relationship?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    clients?: clientsUpdateOneRequiredWithoutMaxicareNestedInput
   }
 
-  export type MaxicareUncheckedUpdateManyInput = {
+  export type maxicareUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     clientId?: IntFieldUpdateOperationsInput | number
     PY?: StringFieldUpdateOperationsInput | string
@@ -14539,7 +14484,62 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type CustomIllnessesCreateInput = {
+  export type maxicareCreateManyInput = {
+    id?: number
+    clientId: number
+    PY: string
+    Company?: string | null
+    Member_Account?: string | null
+    Member_Type?: string | null
+    ICD_10_Code?: string | null
+    Diagnosis?: string | null
+    Claim_Type?: string | null
+    Admission_Date?: Date | string | null
+    Provider_Name?: string | null
+    Provider_Type?: string | null
+    Approved_Claim_Amount?: number | null
+    Relationship?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type maxicareUpdateManyMutationInput = {
+    PY?: StringFieldUpdateOperationsInput | string
+    Company?: NullableStringFieldUpdateOperationsInput | string | null
+    Member_Account?: NullableStringFieldUpdateOperationsInput | string | null
+    Member_Type?: NullableStringFieldUpdateOperationsInput | string | null
+    ICD_10_Code?: NullableStringFieldUpdateOperationsInput | string | null
+    Diagnosis?: NullableStringFieldUpdateOperationsInput | string | null
+    Claim_Type?: NullableStringFieldUpdateOperationsInput | string | null
+    Admission_Date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    Provider_Name?: NullableStringFieldUpdateOperationsInput | string | null
+    Provider_Type?: NullableStringFieldUpdateOperationsInput | string | null
+    Approved_Claim_Amount?: NullableFloatFieldUpdateOperationsInput | number | null
+    Relationship?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type maxicareUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    clientId?: IntFieldUpdateOperationsInput | number
+    PY?: StringFieldUpdateOperationsInput | string
+    Company?: NullableStringFieldUpdateOperationsInput | string | null
+    Member_Account?: NullableStringFieldUpdateOperationsInput | string | null
+    Member_Type?: NullableStringFieldUpdateOperationsInput | string | null
+    ICD_10_Code?: NullableStringFieldUpdateOperationsInput | string | null
+    Diagnosis?: NullableStringFieldUpdateOperationsInput | string | null
+    Claim_Type?: NullableStringFieldUpdateOperationsInput | string | null
+    Admission_Date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    Provider_Name?: NullableStringFieldUpdateOperationsInput | string | null
+    Provider_Type?: NullableStringFieldUpdateOperationsInput | string | null
+    Approved_Claim_Amount?: NullableFloatFieldUpdateOperationsInput | number | null
+    Relationship?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type customIllnessesCreateInput = {
     py?: string | null
     member_type?: string | null
     icd_10_code?: string | null
@@ -14551,10 +14551,10 @@ export namespace Prisma {
     average_cost_per_claim?: number | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    Clients: ClientsCreateNestedOneWithoutCustomIllnessesInput
+    clients: clientsCreateNestedOneWithoutCustomIllnessesInput
   }
 
-  export type CustomIllnessesUncheckedCreateInput = {
+  export type customIllnessesUncheckedCreateInput = {
     id?: number
     clientId: number
     py?: string | null
@@ -14570,7 +14570,7 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type CustomIllnessesUpdateInput = {
+  export type customIllnessesUpdateInput = {
     py?: NullableStringFieldUpdateOperationsInput | string | null
     member_type?: NullableStringFieldUpdateOperationsInput | string | null
     icd_10_code?: NullableStringFieldUpdateOperationsInput | string | null
@@ -14582,10 +14582,10 @@ export namespace Prisma {
     average_cost_per_claim?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    Clients?: ClientsUpdateOneRequiredWithoutCustomIllnessesNestedInput
+    clients?: clientsUpdateOneRequiredWithoutCustomIllnessesNestedInput
   }
 
-  export type CustomIllnessesUncheckedUpdateInput = {
+  export type customIllnessesUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     clientId?: IntFieldUpdateOperationsInput | number
     py?: NullableStringFieldUpdateOperationsInput | string | null
@@ -14601,7 +14601,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type CustomIllnessesCreateManyInput = {
+  export type customIllnessesCreateManyInput = {
     id?: number
     clientId: number
     py?: string | null
@@ -14617,7 +14617,7 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type CustomIllnessesUpdateManyMutationInput = {
+  export type customIllnessesUpdateManyMutationInput = {
     py?: NullableStringFieldUpdateOperationsInput | string | null
     member_type?: NullableStringFieldUpdateOperationsInput | string | null
     icd_10_code?: NullableStringFieldUpdateOperationsInput | string | null
@@ -14631,7 +14631,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type CustomIllnessesUncheckedUpdateManyInput = {
+  export type customIllnessesUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     clientId?: IntFieldUpdateOperationsInput | number
     py?: NullableStringFieldUpdateOperationsInput | string | null
@@ -14689,13 +14689,13 @@ export namespace Prisma {
     not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
-  export type UserOrderByRelevanceInput = {
-    fields: UserOrderByRelevanceFieldEnum | UserOrderByRelevanceFieldEnum[]
+  export type userOrderByRelevanceInput = {
+    fields: userOrderByRelevanceFieldEnum | userOrderByRelevanceFieldEnum[]
     sort: SortOrder
     search: string
   }
 
-  export type UserCountOrderByAggregateInput = {
+  export type userCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
     email?: SortOrder
@@ -14713,29 +14713,11 @@ export namespace Prisma {
     updatedAt?: SortOrder
   }
 
-  export type UserAvgOrderByAggregateInput = {
+  export type userAvgOrderByAggregateInput = {
     id?: SortOrder
   }
 
-  export type UserMaxOrderByAggregateInput = {
-    id?: SortOrder
-    name?: SortOrder
-    email?: SortOrder
-    password?: SortOrder
-    admin?: SortOrder
-    canUpload?: SortOrder
-    canCreate?: SortOrder
-    canViewDeck?: SortOrder
-    canUploadDeck?: SortOrder
-    canAdd?: SortOrder
-    canRemove?: SortOrder
-    canEdit?: SortOrder
-    superAdmin?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-  }
-
-  export type UserMinOrderByAggregateInput = {
+  export type userMaxOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
     email?: SortOrder
@@ -14753,7 +14735,25 @@ export namespace Prisma {
     updatedAt?: SortOrder
   }
 
-  export type UserSumOrderByAggregateInput = {
+  export type userMinOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    email?: SortOrder
+    password?: SortOrder
+    admin?: SortOrder
+    canUpload?: SortOrder
+    canCreate?: SortOrder
+    canViewDeck?: SortOrder
+    canUploadDeck?: SortOrder
+    canAdd?: SortOrder
+    canRemove?: SortOrder
+    canEdit?: SortOrder
+    superAdmin?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type userSumOrderByAggregateInput = {
     id?: SortOrder
   }
 
@@ -14814,51 +14814,51 @@ export namespace Prisma {
   }
 
   export type ClientsListRelationFilter = {
-    every?: ClientsWhereInput
-    some?: ClientsWhereInput
-    none?: ClientsWhereInput
+    every?: clientsWhereInput
+    some?: clientsWhereInput
+    none?: clientsWhereInput
   }
 
   export type UploadsListRelationFilter = {
-    every?: UploadsWhereInput
-    some?: UploadsWhereInput
-    none?: UploadsWhereInput
+    every?: uploadsWhereInput
+    some?: uploadsWhereInput
+    none?: uploadsWhereInput
   }
 
-  export type ClientsOrderByRelationAggregateInput = {
+  export type clientsOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
-  export type UploadsOrderByRelationAggregateInput = {
+  export type uploadsOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
-  export type InsurersOrderByRelevanceInput = {
-    fields: InsurersOrderByRelevanceFieldEnum | InsurersOrderByRelevanceFieldEnum[]
+  export type insurersOrderByRelevanceInput = {
+    fields: insurersOrderByRelevanceFieldEnum | insurersOrderByRelevanceFieldEnum[]
     sort: SortOrder
     search: string
   }
 
-  export type InsurersCountOrderByAggregateInput = {
+  export type insurersCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
   }
 
-  export type InsurersAvgOrderByAggregateInput = {
+  export type insurersAvgOrderByAggregateInput = {
     id?: SortOrder
   }
 
-  export type InsurersMaxOrderByAggregateInput = {
-    id?: SortOrder
-    name?: SortOrder
-  }
-
-  export type InsurersMinOrderByAggregateInput = {
+  export type insurersMaxOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
   }
 
-  export type InsurersSumOrderByAggregateInput = {
+  export type insurersMinOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+  }
+
+  export type insurersSumOrderByAggregateInput = {
     id?: SortOrder
   }
 
@@ -14889,44 +14889,44 @@ export namespace Prisma {
   }
 
   export type InsurersNullableScalarRelationFilter = {
-    is?: InsurersWhereInput | null
-    isNot?: InsurersWhereInput | null
+    is?: insurersWhereInput | null
+    isNot?: insurersWhereInput | null
   }
 
   export type DecksListRelationFilter = {
-    every?: DecksWhereInput
-    some?: DecksWhereInput
-    none?: DecksWhereInput
+    every?: decksWhereInput
+    some?: decksWhereInput
+    none?: decksWhereInput
   }
 
   export type IntellicareMasterlistListRelationFilter = {
-    every?: IntellicareMasterlistWhereInput
-    some?: IntellicareMasterlistWhereInput
-    none?: IntellicareMasterlistWhereInput
+    every?: intellicareMasterlistWhereInput
+    some?: intellicareMasterlistWhereInput
+    none?: intellicareMasterlistWhereInput
   }
 
   export type MaxicareMasterlistListRelationFilter = {
-    every?: MaxicareMasterlistWhereInput
-    some?: MaxicareMasterlistWhereInput
-    none?: MaxicareMasterlistWhereInput
+    every?: maxicareMasterlistWhereInput
+    some?: maxicareMasterlistWhereInput
+    none?: maxicareMasterlistWhereInput
   }
 
   export type IntellicareListRelationFilter = {
-    every?: IntellicareWhereInput
-    some?: IntellicareWhereInput
-    none?: IntellicareWhereInput
+    every?: intellicareWhereInput
+    some?: intellicareWhereInput
+    none?: intellicareWhereInput
   }
 
   export type MaxicareListRelationFilter = {
-    every?: MaxicareWhereInput
-    some?: MaxicareWhereInput
-    none?: MaxicareWhereInput
+    every?: maxicareWhereInput
+    some?: maxicareWhereInput
+    none?: maxicareWhereInput
   }
 
   export type CustomIllnessesListRelationFilter = {
-    every?: CustomIllnessesWhereInput
-    some?: CustomIllnessesWhereInput
-    none?: CustomIllnessesWhereInput
+    every?: customIllnessesWhereInput
+    some?: customIllnessesWhereInput
+    none?: customIllnessesWhereInput
   }
 
   export type SortOrderInput = {
@@ -14934,63 +14934,63 @@ export namespace Prisma {
     nulls?: NullsOrder
   }
 
-  export type DecksOrderByRelationAggregateInput = {
+  export type decksOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
-  export type IntellicareMasterlistOrderByRelationAggregateInput = {
+  export type intellicareMasterlistOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
-  export type MaxicareMasterlistOrderByRelationAggregateInput = {
+  export type maxicareMasterlistOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
-  export type IntellicareOrderByRelationAggregateInput = {
+  export type intellicareOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
-  export type MaxicareOrderByRelationAggregateInput = {
+  export type maxicareOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
-  export type CustomIllnessesOrderByRelationAggregateInput = {
+  export type customIllnessesOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
-  export type ClientsOrderByRelevanceInput = {
-    fields: ClientsOrderByRelevanceFieldEnum | ClientsOrderByRelevanceFieldEnum[]
+  export type clientsOrderByRelevanceInput = {
+    fields: clientsOrderByRelevanceFieldEnum | clientsOrderByRelevanceFieldEnum[]
     sort: SortOrder
     search: string
   }
 
-  export type ClientsCountOrderByAggregateInput = {
+  export type clientsCountOrderByAggregateInput = {
     id?: SortOrder
     client_name?: SortOrder
     description?: SortOrder
     insurer_id?: SortOrder
   }
 
-  export type ClientsAvgOrderByAggregateInput = {
+  export type clientsAvgOrderByAggregateInput = {
     id?: SortOrder
     insurer_id?: SortOrder
   }
 
-  export type ClientsMaxOrderByAggregateInput = {
-    id?: SortOrder
-    client_name?: SortOrder
-    description?: SortOrder
-    insurer_id?: SortOrder
-  }
-
-  export type ClientsMinOrderByAggregateInput = {
+  export type clientsMaxOrderByAggregateInput = {
     id?: SortOrder
     client_name?: SortOrder
     description?: SortOrder
     insurer_id?: SortOrder
   }
 
-  export type ClientsSumOrderByAggregateInput = {
+  export type clientsMinOrderByAggregateInput = {
+    id?: SortOrder
+    client_name?: SortOrder
+    description?: SortOrder
+    insurer_id?: SortOrder
+  }
+
+  export type clientsSumOrderByAggregateInput = {
     id?: SortOrder
     insurer_id?: SortOrder
   }
@@ -15030,22 +15030,22 @@ export namespace Prisma {
   }
 
   export type ClientsScalarRelationFilter = {
-    is?: ClientsWhereInput
-    isNot?: ClientsWhereInput
+    is?: clientsWhereInput
+    isNot?: clientsWhereInput
   }
 
   export type InsurersScalarRelationFilter = {
-    is?: InsurersWhereInput
-    isNot?: InsurersWhereInput
+    is?: insurersWhereInput
+    isNot?: insurersWhereInput
   }
 
-  export type UploadsOrderByRelevanceInput = {
-    fields: UploadsOrderByRelevanceFieldEnum | UploadsOrderByRelevanceFieldEnum[]
+  export type uploadsOrderByRelevanceInput = {
+    fields: uploadsOrderByRelevanceFieldEnum | uploadsOrderByRelevanceFieldEnum[]
     sort: SortOrder
     search: string
   }
 
-  export type UploadsCountOrderByAggregateInput = {
+  export type uploadsCountOrderByAggregateInput = {
     id?: SortOrder
     clientId?: SortOrder
     insurerId?: SortOrder
@@ -15056,24 +15056,13 @@ export namespace Prisma {
     updatedAt?: SortOrder
   }
 
-  export type UploadsAvgOrderByAggregateInput = {
+  export type uploadsAvgOrderByAggregateInput = {
     id?: SortOrder
     clientId?: SortOrder
     insurerId?: SortOrder
   }
 
-  export type UploadsMaxOrderByAggregateInput = {
-    id?: SortOrder
-    clientId?: SortOrder
-    insurerId?: SortOrder
-    year?: SortOrder
-    months?: SortOrder
-    type?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-  }
-
-  export type UploadsMinOrderByAggregateInput = {
+  export type uploadsMaxOrderByAggregateInput = {
     id?: SortOrder
     clientId?: SortOrder
     insurerId?: SortOrder
@@ -15084,19 +15073,30 @@ export namespace Prisma {
     updatedAt?: SortOrder
   }
 
-  export type UploadsSumOrderByAggregateInput = {
+  export type uploadsMinOrderByAggregateInput = {
+    id?: SortOrder
+    clientId?: SortOrder
+    insurerId?: SortOrder
+    year?: SortOrder
+    months?: SortOrder
+    type?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type uploadsSumOrderByAggregateInput = {
     id?: SortOrder
     clientId?: SortOrder
     insurerId?: SortOrder
   }
 
-  export type DecksOrderByRelevanceInput = {
-    fields: DecksOrderByRelevanceFieldEnum | DecksOrderByRelevanceFieldEnum[]
+  export type decksOrderByRelevanceInput = {
+    fields: decksOrderByRelevanceFieldEnum | decksOrderByRelevanceFieldEnum[]
     sort: SortOrder
     search: string
   }
 
-  export type DecksCountOrderByAggregateInput = {
+  export type decksCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
     description?: SortOrder
@@ -15105,21 +15105,12 @@ export namespace Prisma {
     clientId?: SortOrder
   }
 
-  export type DecksAvgOrderByAggregateInput = {
+  export type decksAvgOrderByAggregateInput = {
     id?: SortOrder
     clientId?: SortOrder
   }
 
-  export type DecksMaxOrderByAggregateInput = {
-    id?: SortOrder
-    name?: SortOrder
-    description?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-    clientId?: SortOrder
-  }
-
-  export type DecksMinOrderByAggregateInput = {
+  export type decksMaxOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
     description?: SortOrder
@@ -15128,7 +15119,16 @@ export namespace Prisma {
     clientId?: SortOrder
   }
 
-  export type DecksSumOrderByAggregateInput = {
+  export type decksMinOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    description?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    clientId?: SortOrder
+  }
+
+  export type decksSumOrderByAggregateInput = {
     id?: SortOrder
     clientId?: SortOrder
   }
@@ -15155,13 +15155,13 @@ export namespace Prisma {
     not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
   }
 
-  export type IntellicareMasterlistOrderByRelevanceInput = {
-    fields: IntellicareMasterlistOrderByRelevanceFieldEnum | IntellicareMasterlistOrderByRelevanceFieldEnum[]
+  export type intellicareMasterlistOrderByRelevanceInput = {
+    fields: intellicareMasterlistOrderByRelevanceFieldEnum | intellicareMasterlistOrderByRelevanceFieldEnum[]
     sort: SortOrder
     search: string
   }
 
-  export type IntellicareMasterlistCountOrderByAggregateInput = {
+  export type intellicareMasterlistCountOrderByAggregateInput = {
     id?: SortOrder
     clientId?: SortOrder
     PY?: SortOrder
@@ -15181,7 +15181,7 @@ export namespace Prisma {
     updatedAt?: SortOrder
   }
 
-  export type IntellicareMasterlistAvgOrderByAggregateInput = {
+  export type intellicareMasterlistAvgOrderByAggregateInput = {
     id?: SortOrder
     clientId?: SortOrder
     PREEXIST?: SortOrder
@@ -15189,27 +15189,7 @@ export namespace Prisma {
     AGE?: SortOrder
   }
 
-  export type IntellicareMasterlistMaxOrderByAggregateInput = {
-    id?: SortOrder
-    clientId?: SortOrder
-    PY?: SortOrder
-    ACCOUNT_NO?: SortOrder
-    STATUS?: SortOrder
-    MEMBER_TYPE?: SortOrder
-    RNB?: SortOrder
-    PREEXIST?: SortOrder
-    LIMIT?: SortOrder
-    BIRTHDATE?: SortOrder
-    AGE?: SortOrder
-    RELATION?: SortOrder
-    EE_ID?: SortOrder
-    CARD_NO?: SortOrder
-    COMPANY?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-  }
-
-  export type IntellicareMasterlistMinOrderByAggregateInput = {
+  export type intellicareMasterlistMaxOrderByAggregateInput = {
     id?: SortOrder
     clientId?: SortOrder
     PY?: SortOrder
@@ -15229,7 +15209,27 @@ export namespace Prisma {
     updatedAt?: SortOrder
   }
 
-  export type IntellicareMasterlistSumOrderByAggregateInput = {
+  export type intellicareMasterlistMinOrderByAggregateInput = {
+    id?: SortOrder
+    clientId?: SortOrder
+    PY?: SortOrder
+    ACCOUNT_NO?: SortOrder
+    STATUS?: SortOrder
+    MEMBER_TYPE?: SortOrder
+    RNB?: SortOrder
+    PREEXIST?: SortOrder
+    LIMIT?: SortOrder
+    BIRTHDATE?: SortOrder
+    AGE?: SortOrder
+    RELATION?: SortOrder
+    EE_ID?: SortOrder
+    CARD_NO?: SortOrder
+    COMPANY?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type intellicareMasterlistSumOrderByAggregateInput = {
     id?: SortOrder
     clientId?: SortOrder
     PREEXIST?: SortOrder
@@ -15267,13 +15267,13 @@ export namespace Prisma {
     _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
-  export type MaxicareMasterlistOrderByRelevanceInput = {
-    fields: MaxicareMasterlistOrderByRelevanceFieldEnum | MaxicareMasterlistOrderByRelevanceFieldEnum[]
+  export type maxicareMasterlistOrderByRelevanceInput = {
+    fields: maxicareMasterlistOrderByRelevanceFieldEnum | maxicareMasterlistOrderByRelevanceFieldEnum[]
     sort: SortOrder
     search: string
   }
 
-  export type MaxicareMasterlistCountOrderByAggregateInput = {
+  export type maxicareMasterlistCountOrderByAggregateInput = {
     id?: SortOrder
     clientId?: SortOrder
     PY?: SortOrder
@@ -15289,29 +15289,13 @@ export namespace Prisma {
     updatedAt?: SortOrder
   }
 
-  export type MaxicareMasterlistAvgOrderByAggregateInput = {
+  export type maxicareMasterlistAvgOrderByAggregateInput = {
     id?: SortOrder
     clientId?: SortOrder
     LIMIT?: SortOrder
   }
 
-  export type MaxicareMasterlistMaxOrderByAggregateInput = {
-    id?: SortOrder
-    clientId?: SortOrder
-    PY?: SortOrder
-    ACCOUNT_NO?: SortOrder
-    STATUS?: SortOrder
-    MEMBER_TYPE?: SortOrder
-    LIMIT?: SortOrder
-    RELATION?: SortOrder
-    EE_ID?: SortOrder
-    CARD_NO?: SortOrder
-    COMPANY?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-  }
-
-  export type MaxicareMasterlistMinOrderByAggregateInput = {
+  export type maxicareMasterlistMaxOrderByAggregateInput = {
     id?: SortOrder
     clientId?: SortOrder
     PY?: SortOrder
@@ -15327,19 +15311,35 @@ export namespace Prisma {
     updatedAt?: SortOrder
   }
 
-  export type MaxicareMasterlistSumOrderByAggregateInput = {
+  export type maxicareMasterlistMinOrderByAggregateInput = {
+    id?: SortOrder
+    clientId?: SortOrder
+    PY?: SortOrder
+    ACCOUNT_NO?: SortOrder
+    STATUS?: SortOrder
+    MEMBER_TYPE?: SortOrder
+    LIMIT?: SortOrder
+    RELATION?: SortOrder
+    EE_ID?: SortOrder
+    CARD_NO?: SortOrder
+    COMPANY?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type maxicareMasterlistSumOrderByAggregateInput = {
     id?: SortOrder
     clientId?: SortOrder
     LIMIT?: SortOrder
   }
 
-  export type IntellicareOrderByRelevanceInput = {
-    fields: IntellicareOrderByRelevanceFieldEnum | IntellicareOrderByRelevanceFieldEnum[]
+  export type intellicareOrderByRelevanceInput = {
+    fields: intellicareOrderByRelevanceFieldEnum | intellicareOrderByRelevanceFieldEnum[]
     sort: SortOrder
     search: string
   }
 
-  export type IntellicareCountOrderByAggregateInput = {
+  export type intellicareCountOrderByAggregateInput = {
     id?: SortOrder
     clientId?: SortOrder
     PY?: SortOrder
@@ -15361,36 +15361,14 @@ export namespace Prisma {
     updatedAt?: SortOrder
   }
 
-  export type IntellicareAvgOrderByAggregateInput = {
+  export type intellicareAvgOrderByAggregateInput = {
     id?: SortOrder
     clientId?: SortOrder
     Approved_Claim_Amount?: SortOrder
     Maximum_Benefit_Limit?: SortOrder
   }
 
-  export type IntellicareMaxOrderByAggregateInput = {
-    id?: SortOrder
-    clientId?: SortOrder
-    PY?: SortOrder
-    Company?: SortOrder
-    Member_Account?: SortOrder
-    Member_Type?: SortOrder
-    ICD_10_Code?: SortOrder
-    Diagnosis?: SortOrder
-    Claim_Type?: SortOrder
-    Admission_Date?: SortOrder
-    Provider_Name?: SortOrder
-    Provider_Type?: SortOrder
-    Approved_Claim_Amount?: SortOrder
-    Class_Plan_Level?: SortOrder
-    Maximum_Benefit_Limit?: SortOrder
-    Date_of_Birth?: SortOrder
-    Relationship?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-  }
-
-  export type IntellicareMinOrderByAggregateInput = {
+  export type intellicareMaxOrderByAggregateInput = {
     id?: SortOrder
     clientId?: SortOrder
     PY?: SortOrder
@@ -15412,20 +15390,42 @@ export namespace Prisma {
     updatedAt?: SortOrder
   }
 
-  export type IntellicareSumOrderByAggregateInput = {
+  export type intellicareMinOrderByAggregateInput = {
+    id?: SortOrder
+    clientId?: SortOrder
+    PY?: SortOrder
+    Company?: SortOrder
+    Member_Account?: SortOrder
+    Member_Type?: SortOrder
+    ICD_10_Code?: SortOrder
+    Diagnosis?: SortOrder
+    Claim_Type?: SortOrder
+    Admission_Date?: SortOrder
+    Provider_Name?: SortOrder
+    Provider_Type?: SortOrder
+    Approved_Claim_Amount?: SortOrder
+    Class_Plan_Level?: SortOrder
+    Maximum_Benefit_Limit?: SortOrder
+    Date_of_Birth?: SortOrder
+    Relationship?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type intellicareSumOrderByAggregateInput = {
     id?: SortOrder
     clientId?: SortOrder
     Approved_Claim_Amount?: SortOrder
     Maximum_Benefit_Limit?: SortOrder
   }
 
-  export type MaxicareOrderByRelevanceInput = {
-    fields: MaxicareOrderByRelevanceFieldEnum | MaxicareOrderByRelevanceFieldEnum[]
+  export type maxicareOrderByRelevanceInput = {
+    fields: maxicareOrderByRelevanceFieldEnum | maxicareOrderByRelevanceFieldEnum[]
     sort: SortOrder
     search: string
   }
 
-  export type MaxicareCountOrderByAggregateInput = {
+  export type maxicareCountOrderByAggregateInput = {
     id?: SortOrder
     clientId?: SortOrder
     PY?: SortOrder
@@ -15444,32 +15444,13 @@ export namespace Prisma {
     updatedAt?: SortOrder
   }
 
-  export type MaxicareAvgOrderByAggregateInput = {
+  export type maxicareAvgOrderByAggregateInput = {
     id?: SortOrder
     clientId?: SortOrder
     Approved_Claim_Amount?: SortOrder
   }
 
-  export type MaxicareMaxOrderByAggregateInput = {
-    id?: SortOrder
-    clientId?: SortOrder
-    PY?: SortOrder
-    Company?: SortOrder
-    Member_Account?: SortOrder
-    Member_Type?: SortOrder
-    ICD_10_Code?: SortOrder
-    Diagnosis?: SortOrder
-    Claim_Type?: SortOrder
-    Admission_Date?: SortOrder
-    Provider_Name?: SortOrder
-    Provider_Type?: SortOrder
-    Approved_Claim_Amount?: SortOrder
-    Relationship?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-  }
-
-  export type MaxicareMinOrderByAggregateInput = {
+  export type maxicareMaxOrderByAggregateInput = {
     id?: SortOrder
     clientId?: SortOrder
     PY?: SortOrder
@@ -15488,7 +15469,26 @@ export namespace Prisma {
     updatedAt?: SortOrder
   }
 
-  export type MaxicareSumOrderByAggregateInput = {
+  export type maxicareMinOrderByAggregateInput = {
+    id?: SortOrder
+    clientId?: SortOrder
+    PY?: SortOrder
+    Company?: SortOrder
+    Member_Account?: SortOrder
+    Member_Type?: SortOrder
+    ICD_10_Code?: SortOrder
+    Diagnosis?: SortOrder
+    Claim_Type?: SortOrder
+    Admission_Date?: SortOrder
+    Provider_Name?: SortOrder
+    Provider_Type?: SortOrder
+    Approved_Claim_Amount?: SortOrder
+    Relationship?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type maxicareSumOrderByAggregateInput = {
     id?: SortOrder
     clientId?: SortOrder
     Approved_Claim_Amount?: SortOrder
@@ -15505,13 +15505,13 @@ export namespace Prisma {
     not?: NestedDecimalNullableFilter<$PrismaModel> | Decimal | DecimalJsLike | number | string | null
   }
 
-  export type CustomIllnessesOrderByRelevanceInput = {
-    fields: CustomIllnessesOrderByRelevanceFieldEnum | CustomIllnessesOrderByRelevanceFieldEnum[]
+  export type customIllnessesOrderByRelevanceInput = {
+    fields: customIllnessesOrderByRelevanceFieldEnum | customIllnessesOrderByRelevanceFieldEnum[]
     sort: SortOrder
     search: string
   }
 
-  export type CustomIllnessesCountOrderByAggregateInput = {
+  export type customIllnessesCountOrderByAggregateInput = {
     id?: SortOrder
     clientId?: SortOrder
     py?: SortOrder
@@ -15527,7 +15527,7 @@ export namespace Prisma {
     updatedAt?: SortOrder
   }
 
-  export type CustomIllnessesAvgOrderByAggregateInput = {
+  export type customIllnessesAvgOrderByAggregateInput = {
     id?: SortOrder
     clientId?: SortOrder
     claim_amount?: SortOrder
@@ -15537,23 +15537,7 @@ export namespace Prisma {
     average_cost_per_claim?: SortOrder
   }
 
-  export type CustomIllnessesMaxOrderByAggregateInput = {
-    id?: SortOrder
-    clientId?: SortOrder
-    py?: SortOrder
-    member_type?: SortOrder
-    icd_10_code?: SortOrder
-    diagnosis?: SortOrder
-    claim_amount?: SortOrder
-    percentage_to_total_amount?: SortOrder
-    claim_count?: SortOrder
-    percentage_to_total_count?: SortOrder
-    average_cost_per_claim?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-  }
-
-  export type CustomIllnessesMinOrderByAggregateInput = {
+  export type customIllnessesMaxOrderByAggregateInput = {
     id?: SortOrder
     clientId?: SortOrder
     py?: SortOrder
@@ -15569,7 +15553,23 @@ export namespace Prisma {
     updatedAt?: SortOrder
   }
 
-  export type CustomIllnessesSumOrderByAggregateInput = {
+  export type customIllnessesMinOrderByAggregateInput = {
+    id?: SortOrder
+    clientId?: SortOrder
+    py?: SortOrder
+    member_type?: SortOrder
+    icd_10_code?: SortOrder
+    diagnosis?: SortOrder
+    claim_amount?: SortOrder
+    percentage_to_total_amount?: SortOrder
+    claim_count?: SortOrder
+    percentage_to_total_count?: SortOrder
+    average_cost_per_claim?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type customIllnessesSumOrderByAggregateInput = {
     id?: SortOrder
     clientId?: SortOrder
     claim_amount?: SortOrder
@@ -15615,304 +15615,304 @@ export namespace Prisma {
     divide?: number
   }
 
-  export type ClientsCreateNestedManyWithoutInsurerInput = {
-    create?: XOR<ClientsCreateWithoutInsurerInput, ClientsUncheckedCreateWithoutInsurerInput> | ClientsCreateWithoutInsurerInput[] | ClientsUncheckedCreateWithoutInsurerInput[]
-    connectOrCreate?: ClientsCreateOrConnectWithoutInsurerInput | ClientsCreateOrConnectWithoutInsurerInput[]
-    createMany?: ClientsCreateManyInsurerInputEnvelope
-    connect?: ClientsWhereUniqueInput | ClientsWhereUniqueInput[]
+  export type clientsCreateNestedManyWithoutInsurerInput = {
+    create?: XOR<clientsCreateWithoutInsurerInput, clientsUncheckedCreateWithoutInsurerInput> | clientsCreateWithoutInsurerInput[] | clientsUncheckedCreateWithoutInsurerInput[]
+    connectOrCreate?: clientsCreateOrConnectWithoutInsurerInput | clientsCreateOrConnectWithoutInsurerInput[]
+    createMany?: clientsCreateManyInsurerInputEnvelope
+    connect?: clientsWhereUniqueInput | clientsWhereUniqueInput[]
   }
 
-  export type UploadsCreateNestedManyWithoutInsurersInput = {
-    create?: XOR<UploadsCreateWithoutInsurersInput, UploadsUncheckedCreateWithoutInsurersInput> | UploadsCreateWithoutInsurersInput[] | UploadsUncheckedCreateWithoutInsurersInput[]
-    connectOrCreate?: UploadsCreateOrConnectWithoutInsurersInput | UploadsCreateOrConnectWithoutInsurersInput[]
-    createMany?: UploadsCreateManyInsurersInputEnvelope
-    connect?: UploadsWhereUniqueInput | UploadsWhereUniqueInput[]
+  export type uploadsCreateNestedManyWithoutInsurersInput = {
+    create?: XOR<uploadsCreateWithoutInsurersInput, uploadsUncheckedCreateWithoutInsurersInput> | uploadsCreateWithoutInsurersInput[] | uploadsUncheckedCreateWithoutInsurersInput[]
+    connectOrCreate?: uploadsCreateOrConnectWithoutInsurersInput | uploadsCreateOrConnectWithoutInsurersInput[]
+    createMany?: uploadsCreateManyInsurersInputEnvelope
+    connect?: uploadsWhereUniqueInput | uploadsWhereUniqueInput[]
   }
 
-  export type ClientsUncheckedCreateNestedManyWithoutInsurerInput = {
-    create?: XOR<ClientsCreateWithoutInsurerInput, ClientsUncheckedCreateWithoutInsurerInput> | ClientsCreateWithoutInsurerInput[] | ClientsUncheckedCreateWithoutInsurerInput[]
-    connectOrCreate?: ClientsCreateOrConnectWithoutInsurerInput | ClientsCreateOrConnectWithoutInsurerInput[]
-    createMany?: ClientsCreateManyInsurerInputEnvelope
-    connect?: ClientsWhereUniqueInput | ClientsWhereUniqueInput[]
+  export type clientsUncheckedCreateNestedManyWithoutInsurerInput = {
+    create?: XOR<clientsCreateWithoutInsurerInput, clientsUncheckedCreateWithoutInsurerInput> | clientsCreateWithoutInsurerInput[] | clientsUncheckedCreateWithoutInsurerInput[]
+    connectOrCreate?: clientsCreateOrConnectWithoutInsurerInput | clientsCreateOrConnectWithoutInsurerInput[]
+    createMany?: clientsCreateManyInsurerInputEnvelope
+    connect?: clientsWhereUniqueInput | clientsWhereUniqueInput[]
   }
 
-  export type UploadsUncheckedCreateNestedManyWithoutInsurersInput = {
-    create?: XOR<UploadsCreateWithoutInsurersInput, UploadsUncheckedCreateWithoutInsurersInput> | UploadsCreateWithoutInsurersInput[] | UploadsUncheckedCreateWithoutInsurersInput[]
-    connectOrCreate?: UploadsCreateOrConnectWithoutInsurersInput | UploadsCreateOrConnectWithoutInsurersInput[]
-    createMany?: UploadsCreateManyInsurersInputEnvelope
-    connect?: UploadsWhereUniqueInput | UploadsWhereUniqueInput[]
+  export type uploadsUncheckedCreateNestedManyWithoutInsurersInput = {
+    create?: XOR<uploadsCreateWithoutInsurersInput, uploadsUncheckedCreateWithoutInsurersInput> | uploadsCreateWithoutInsurersInput[] | uploadsUncheckedCreateWithoutInsurersInput[]
+    connectOrCreate?: uploadsCreateOrConnectWithoutInsurersInput | uploadsCreateOrConnectWithoutInsurersInput[]
+    createMany?: uploadsCreateManyInsurersInputEnvelope
+    connect?: uploadsWhereUniqueInput | uploadsWhereUniqueInput[]
   }
 
-  export type ClientsUpdateManyWithoutInsurerNestedInput = {
-    create?: XOR<ClientsCreateWithoutInsurerInput, ClientsUncheckedCreateWithoutInsurerInput> | ClientsCreateWithoutInsurerInput[] | ClientsUncheckedCreateWithoutInsurerInput[]
-    connectOrCreate?: ClientsCreateOrConnectWithoutInsurerInput | ClientsCreateOrConnectWithoutInsurerInput[]
-    upsert?: ClientsUpsertWithWhereUniqueWithoutInsurerInput | ClientsUpsertWithWhereUniqueWithoutInsurerInput[]
-    createMany?: ClientsCreateManyInsurerInputEnvelope
-    set?: ClientsWhereUniqueInput | ClientsWhereUniqueInput[]
-    disconnect?: ClientsWhereUniqueInput | ClientsWhereUniqueInput[]
-    delete?: ClientsWhereUniqueInput | ClientsWhereUniqueInput[]
-    connect?: ClientsWhereUniqueInput | ClientsWhereUniqueInput[]
-    update?: ClientsUpdateWithWhereUniqueWithoutInsurerInput | ClientsUpdateWithWhereUniqueWithoutInsurerInput[]
-    updateMany?: ClientsUpdateManyWithWhereWithoutInsurerInput | ClientsUpdateManyWithWhereWithoutInsurerInput[]
-    deleteMany?: ClientsScalarWhereInput | ClientsScalarWhereInput[]
+  export type clientsUpdateManyWithoutInsurerNestedInput = {
+    create?: XOR<clientsCreateWithoutInsurerInput, clientsUncheckedCreateWithoutInsurerInput> | clientsCreateWithoutInsurerInput[] | clientsUncheckedCreateWithoutInsurerInput[]
+    connectOrCreate?: clientsCreateOrConnectWithoutInsurerInput | clientsCreateOrConnectWithoutInsurerInput[]
+    upsert?: clientsUpsertWithWhereUniqueWithoutInsurerInput | clientsUpsertWithWhereUniqueWithoutInsurerInput[]
+    createMany?: clientsCreateManyInsurerInputEnvelope
+    set?: clientsWhereUniqueInput | clientsWhereUniqueInput[]
+    disconnect?: clientsWhereUniqueInput | clientsWhereUniqueInput[]
+    delete?: clientsWhereUniqueInput | clientsWhereUniqueInput[]
+    connect?: clientsWhereUniqueInput | clientsWhereUniqueInput[]
+    update?: clientsUpdateWithWhereUniqueWithoutInsurerInput | clientsUpdateWithWhereUniqueWithoutInsurerInput[]
+    updateMany?: clientsUpdateManyWithWhereWithoutInsurerInput | clientsUpdateManyWithWhereWithoutInsurerInput[]
+    deleteMany?: clientsScalarWhereInput | clientsScalarWhereInput[]
   }
 
-  export type UploadsUpdateManyWithoutInsurersNestedInput = {
-    create?: XOR<UploadsCreateWithoutInsurersInput, UploadsUncheckedCreateWithoutInsurersInput> | UploadsCreateWithoutInsurersInput[] | UploadsUncheckedCreateWithoutInsurersInput[]
-    connectOrCreate?: UploadsCreateOrConnectWithoutInsurersInput | UploadsCreateOrConnectWithoutInsurersInput[]
-    upsert?: UploadsUpsertWithWhereUniqueWithoutInsurersInput | UploadsUpsertWithWhereUniqueWithoutInsurersInput[]
-    createMany?: UploadsCreateManyInsurersInputEnvelope
-    set?: UploadsWhereUniqueInput | UploadsWhereUniqueInput[]
-    disconnect?: UploadsWhereUniqueInput | UploadsWhereUniqueInput[]
-    delete?: UploadsWhereUniqueInput | UploadsWhereUniqueInput[]
-    connect?: UploadsWhereUniqueInput | UploadsWhereUniqueInput[]
-    update?: UploadsUpdateWithWhereUniqueWithoutInsurersInput | UploadsUpdateWithWhereUniqueWithoutInsurersInput[]
-    updateMany?: UploadsUpdateManyWithWhereWithoutInsurersInput | UploadsUpdateManyWithWhereWithoutInsurersInput[]
-    deleteMany?: UploadsScalarWhereInput | UploadsScalarWhereInput[]
+  export type uploadsUpdateManyWithoutInsurersNestedInput = {
+    create?: XOR<uploadsCreateWithoutInsurersInput, uploadsUncheckedCreateWithoutInsurersInput> | uploadsCreateWithoutInsurersInput[] | uploadsUncheckedCreateWithoutInsurersInput[]
+    connectOrCreate?: uploadsCreateOrConnectWithoutInsurersInput | uploadsCreateOrConnectWithoutInsurersInput[]
+    upsert?: uploadsUpsertWithWhereUniqueWithoutInsurersInput | uploadsUpsertWithWhereUniqueWithoutInsurersInput[]
+    createMany?: uploadsCreateManyInsurersInputEnvelope
+    set?: uploadsWhereUniqueInput | uploadsWhereUniqueInput[]
+    disconnect?: uploadsWhereUniqueInput | uploadsWhereUniqueInput[]
+    delete?: uploadsWhereUniqueInput | uploadsWhereUniqueInput[]
+    connect?: uploadsWhereUniqueInput | uploadsWhereUniqueInput[]
+    update?: uploadsUpdateWithWhereUniqueWithoutInsurersInput | uploadsUpdateWithWhereUniqueWithoutInsurersInput[]
+    updateMany?: uploadsUpdateManyWithWhereWithoutInsurersInput | uploadsUpdateManyWithWhereWithoutInsurersInput[]
+    deleteMany?: uploadsScalarWhereInput | uploadsScalarWhereInput[]
   }
 
-  export type ClientsUncheckedUpdateManyWithoutInsurerNestedInput = {
-    create?: XOR<ClientsCreateWithoutInsurerInput, ClientsUncheckedCreateWithoutInsurerInput> | ClientsCreateWithoutInsurerInput[] | ClientsUncheckedCreateWithoutInsurerInput[]
-    connectOrCreate?: ClientsCreateOrConnectWithoutInsurerInput | ClientsCreateOrConnectWithoutInsurerInput[]
-    upsert?: ClientsUpsertWithWhereUniqueWithoutInsurerInput | ClientsUpsertWithWhereUniqueWithoutInsurerInput[]
-    createMany?: ClientsCreateManyInsurerInputEnvelope
-    set?: ClientsWhereUniqueInput | ClientsWhereUniqueInput[]
-    disconnect?: ClientsWhereUniqueInput | ClientsWhereUniqueInput[]
-    delete?: ClientsWhereUniqueInput | ClientsWhereUniqueInput[]
-    connect?: ClientsWhereUniqueInput | ClientsWhereUniqueInput[]
-    update?: ClientsUpdateWithWhereUniqueWithoutInsurerInput | ClientsUpdateWithWhereUniqueWithoutInsurerInput[]
-    updateMany?: ClientsUpdateManyWithWhereWithoutInsurerInput | ClientsUpdateManyWithWhereWithoutInsurerInput[]
-    deleteMany?: ClientsScalarWhereInput | ClientsScalarWhereInput[]
+  export type clientsUncheckedUpdateManyWithoutInsurerNestedInput = {
+    create?: XOR<clientsCreateWithoutInsurerInput, clientsUncheckedCreateWithoutInsurerInput> | clientsCreateWithoutInsurerInput[] | clientsUncheckedCreateWithoutInsurerInput[]
+    connectOrCreate?: clientsCreateOrConnectWithoutInsurerInput | clientsCreateOrConnectWithoutInsurerInput[]
+    upsert?: clientsUpsertWithWhereUniqueWithoutInsurerInput | clientsUpsertWithWhereUniqueWithoutInsurerInput[]
+    createMany?: clientsCreateManyInsurerInputEnvelope
+    set?: clientsWhereUniqueInput | clientsWhereUniqueInput[]
+    disconnect?: clientsWhereUniqueInput | clientsWhereUniqueInput[]
+    delete?: clientsWhereUniqueInput | clientsWhereUniqueInput[]
+    connect?: clientsWhereUniqueInput | clientsWhereUniqueInput[]
+    update?: clientsUpdateWithWhereUniqueWithoutInsurerInput | clientsUpdateWithWhereUniqueWithoutInsurerInput[]
+    updateMany?: clientsUpdateManyWithWhereWithoutInsurerInput | clientsUpdateManyWithWhereWithoutInsurerInput[]
+    deleteMany?: clientsScalarWhereInput | clientsScalarWhereInput[]
   }
 
-  export type UploadsUncheckedUpdateManyWithoutInsurersNestedInput = {
-    create?: XOR<UploadsCreateWithoutInsurersInput, UploadsUncheckedCreateWithoutInsurersInput> | UploadsCreateWithoutInsurersInput[] | UploadsUncheckedCreateWithoutInsurersInput[]
-    connectOrCreate?: UploadsCreateOrConnectWithoutInsurersInput | UploadsCreateOrConnectWithoutInsurersInput[]
-    upsert?: UploadsUpsertWithWhereUniqueWithoutInsurersInput | UploadsUpsertWithWhereUniqueWithoutInsurersInput[]
-    createMany?: UploadsCreateManyInsurersInputEnvelope
-    set?: UploadsWhereUniqueInput | UploadsWhereUniqueInput[]
-    disconnect?: UploadsWhereUniqueInput | UploadsWhereUniqueInput[]
-    delete?: UploadsWhereUniqueInput | UploadsWhereUniqueInput[]
-    connect?: UploadsWhereUniqueInput | UploadsWhereUniqueInput[]
-    update?: UploadsUpdateWithWhereUniqueWithoutInsurersInput | UploadsUpdateWithWhereUniqueWithoutInsurersInput[]
-    updateMany?: UploadsUpdateManyWithWhereWithoutInsurersInput | UploadsUpdateManyWithWhereWithoutInsurersInput[]
-    deleteMany?: UploadsScalarWhereInput | UploadsScalarWhereInput[]
+  export type uploadsUncheckedUpdateManyWithoutInsurersNestedInput = {
+    create?: XOR<uploadsCreateWithoutInsurersInput, uploadsUncheckedCreateWithoutInsurersInput> | uploadsCreateWithoutInsurersInput[] | uploadsUncheckedCreateWithoutInsurersInput[]
+    connectOrCreate?: uploadsCreateOrConnectWithoutInsurersInput | uploadsCreateOrConnectWithoutInsurersInput[]
+    upsert?: uploadsUpsertWithWhereUniqueWithoutInsurersInput | uploadsUpsertWithWhereUniqueWithoutInsurersInput[]
+    createMany?: uploadsCreateManyInsurersInputEnvelope
+    set?: uploadsWhereUniqueInput | uploadsWhereUniqueInput[]
+    disconnect?: uploadsWhereUniqueInput | uploadsWhereUniqueInput[]
+    delete?: uploadsWhereUniqueInput | uploadsWhereUniqueInput[]
+    connect?: uploadsWhereUniqueInput | uploadsWhereUniqueInput[]
+    update?: uploadsUpdateWithWhereUniqueWithoutInsurersInput | uploadsUpdateWithWhereUniqueWithoutInsurersInput[]
+    updateMany?: uploadsUpdateManyWithWhereWithoutInsurersInput | uploadsUpdateManyWithWhereWithoutInsurersInput[]
+    deleteMany?: uploadsScalarWhereInput | uploadsScalarWhereInput[]
   }
 
-  export type InsurersCreateNestedOneWithoutClientsInput = {
-    create?: XOR<InsurersCreateWithoutClientsInput, InsurersUncheckedCreateWithoutClientsInput>
-    connectOrCreate?: InsurersCreateOrConnectWithoutClientsInput
-    connect?: InsurersWhereUniqueInput
+  export type insurersCreateNestedOneWithoutClientsInput = {
+    create?: XOR<insurersCreateWithoutClientsInput, insurersUncheckedCreateWithoutClientsInput>
+    connectOrCreate?: insurersCreateOrConnectWithoutClientsInput
+    connect?: insurersWhereUniqueInput
   }
 
-  export type UploadsCreateNestedManyWithoutClientsInput = {
-    create?: XOR<UploadsCreateWithoutClientsInput, UploadsUncheckedCreateWithoutClientsInput> | UploadsCreateWithoutClientsInput[] | UploadsUncheckedCreateWithoutClientsInput[]
-    connectOrCreate?: UploadsCreateOrConnectWithoutClientsInput | UploadsCreateOrConnectWithoutClientsInput[]
-    createMany?: UploadsCreateManyClientsInputEnvelope
-    connect?: UploadsWhereUniqueInput | UploadsWhereUniqueInput[]
+  export type uploadsCreateNestedManyWithoutClientsInput = {
+    create?: XOR<uploadsCreateWithoutClientsInput, uploadsUncheckedCreateWithoutClientsInput> | uploadsCreateWithoutClientsInput[] | uploadsUncheckedCreateWithoutClientsInput[]
+    connectOrCreate?: uploadsCreateOrConnectWithoutClientsInput | uploadsCreateOrConnectWithoutClientsInput[]
+    createMany?: uploadsCreateManyClientsInputEnvelope
+    connect?: uploadsWhereUniqueInput | uploadsWhereUniqueInput[]
   }
 
-  export type DecksCreateNestedManyWithoutClientsInput = {
-    create?: XOR<DecksCreateWithoutClientsInput, DecksUncheckedCreateWithoutClientsInput> | DecksCreateWithoutClientsInput[] | DecksUncheckedCreateWithoutClientsInput[]
-    connectOrCreate?: DecksCreateOrConnectWithoutClientsInput | DecksCreateOrConnectWithoutClientsInput[]
-    createMany?: DecksCreateManyClientsInputEnvelope
-    connect?: DecksWhereUniqueInput | DecksWhereUniqueInput[]
+  export type decksCreateNestedManyWithoutClientsInput = {
+    create?: XOR<decksCreateWithoutClientsInput, decksUncheckedCreateWithoutClientsInput> | decksCreateWithoutClientsInput[] | decksUncheckedCreateWithoutClientsInput[]
+    connectOrCreate?: decksCreateOrConnectWithoutClientsInput | decksCreateOrConnectWithoutClientsInput[]
+    createMany?: decksCreateManyClientsInputEnvelope
+    connect?: decksWhereUniqueInput | decksWhereUniqueInput[]
   }
 
-  export type IntellicareMasterlistCreateNestedManyWithoutClientsInput = {
-    create?: XOR<IntellicareMasterlistCreateWithoutClientsInput, IntellicareMasterlistUncheckedCreateWithoutClientsInput> | IntellicareMasterlistCreateWithoutClientsInput[] | IntellicareMasterlistUncheckedCreateWithoutClientsInput[]
-    connectOrCreate?: IntellicareMasterlistCreateOrConnectWithoutClientsInput | IntellicareMasterlistCreateOrConnectWithoutClientsInput[]
-    createMany?: IntellicareMasterlistCreateManyClientsInputEnvelope
-    connect?: IntellicareMasterlistWhereUniqueInput | IntellicareMasterlistWhereUniqueInput[]
+  export type intellicareMasterlistCreateNestedManyWithoutClientsInput = {
+    create?: XOR<intellicareMasterlistCreateWithoutClientsInput, intellicareMasterlistUncheckedCreateWithoutClientsInput> | intellicareMasterlistCreateWithoutClientsInput[] | intellicareMasterlistUncheckedCreateWithoutClientsInput[]
+    connectOrCreate?: intellicareMasterlistCreateOrConnectWithoutClientsInput | intellicareMasterlistCreateOrConnectWithoutClientsInput[]
+    createMany?: intellicareMasterlistCreateManyClientsInputEnvelope
+    connect?: intellicareMasterlistWhereUniqueInput | intellicareMasterlistWhereUniqueInput[]
   }
 
-  export type MaxicareMasterlistCreateNestedManyWithoutClientsInput = {
-    create?: XOR<MaxicareMasterlistCreateWithoutClientsInput, MaxicareMasterlistUncheckedCreateWithoutClientsInput> | MaxicareMasterlistCreateWithoutClientsInput[] | MaxicareMasterlistUncheckedCreateWithoutClientsInput[]
-    connectOrCreate?: MaxicareMasterlistCreateOrConnectWithoutClientsInput | MaxicareMasterlistCreateOrConnectWithoutClientsInput[]
-    createMany?: MaxicareMasterlistCreateManyClientsInputEnvelope
-    connect?: MaxicareMasterlistWhereUniqueInput | MaxicareMasterlistWhereUniqueInput[]
+  export type maxicareMasterlistCreateNestedManyWithoutClientsInput = {
+    create?: XOR<maxicareMasterlistCreateWithoutClientsInput, maxicareMasterlistUncheckedCreateWithoutClientsInput> | maxicareMasterlistCreateWithoutClientsInput[] | maxicareMasterlistUncheckedCreateWithoutClientsInput[]
+    connectOrCreate?: maxicareMasterlistCreateOrConnectWithoutClientsInput | maxicareMasterlistCreateOrConnectWithoutClientsInput[]
+    createMany?: maxicareMasterlistCreateManyClientsInputEnvelope
+    connect?: maxicareMasterlistWhereUniqueInput | maxicareMasterlistWhereUniqueInput[]
   }
 
-  export type IntellicareCreateNestedManyWithoutClientsInput = {
-    create?: XOR<IntellicareCreateWithoutClientsInput, IntellicareUncheckedCreateWithoutClientsInput> | IntellicareCreateWithoutClientsInput[] | IntellicareUncheckedCreateWithoutClientsInput[]
-    connectOrCreate?: IntellicareCreateOrConnectWithoutClientsInput | IntellicareCreateOrConnectWithoutClientsInput[]
-    createMany?: IntellicareCreateManyClientsInputEnvelope
-    connect?: IntellicareWhereUniqueInput | IntellicareWhereUniqueInput[]
+  export type intellicareCreateNestedManyWithoutClientsInput = {
+    create?: XOR<intellicareCreateWithoutClientsInput, intellicareUncheckedCreateWithoutClientsInput> | intellicareCreateWithoutClientsInput[] | intellicareUncheckedCreateWithoutClientsInput[]
+    connectOrCreate?: intellicareCreateOrConnectWithoutClientsInput | intellicareCreateOrConnectWithoutClientsInput[]
+    createMany?: intellicareCreateManyClientsInputEnvelope
+    connect?: intellicareWhereUniqueInput | intellicareWhereUniqueInput[]
   }
 
-  export type MaxicareCreateNestedManyWithoutClientsInput = {
-    create?: XOR<MaxicareCreateWithoutClientsInput, MaxicareUncheckedCreateWithoutClientsInput> | MaxicareCreateWithoutClientsInput[] | MaxicareUncheckedCreateWithoutClientsInput[]
-    connectOrCreate?: MaxicareCreateOrConnectWithoutClientsInput | MaxicareCreateOrConnectWithoutClientsInput[]
-    createMany?: MaxicareCreateManyClientsInputEnvelope
-    connect?: MaxicareWhereUniqueInput | MaxicareWhereUniqueInput[]
+  export type maxicareCreateNestedManyWithoutClientsInput = {
+    create?: XOR<maxicareCreateWithoutClientsInput, maxicareUncheckedCreateWithoutClientsInput> | maxicareCreateWithoutClientsInput[] | maxicareUncheckedCreateWithoutClientsInput[]
+    connectOrCreate?: maxicareCreateOrConnectWithoutClientsInput | maxicareCreateOrConnectWithoutClientsInput[]
+    createMany?: maxicareCreateManyClientsInputEnvelope
+    connect?: maxicareWhereUniqueInput | maxicareWhereUniqueInput[]
   }
 
-  export type CustomIllnessesCreateNestedManyWithoutClientsInput = {
-    create?: XOR<CustomIllnessesCreateWithoutClientsInput, CustomIllnessesUncheckedCreateWithoutClientsInput> | CustomIllnessesCreateWithoutClientsInput[] | CustomIllnessesUncheckedCreateWithoutClientsInput[]
-    connectOrCreate?: CustomIllnessesCreateOrConnectWithoutClientsInput | CustomIllnessesCreateOrConnectWithoutClientsInput[]
-    createMany?: CustomIllnessesCreateManyClientsInputEnvelope
-    connect?: CustomIllnessesWhereUniqueInput | CustomIllnessesWhereUniqueInput[]
+  export type customIllnessesCreateNestedManyWithoutClientsInput = {
+    create?: XOR<customIllnessesCreateWithoutClientsInput, customIllnessesUncheckedCreateWithoutClientsInput> | customIllnessesCreateWithoutClientsInput[] | customIllnessesUncheckedCreateWithoutClientsInput[]
+    connectOrCreate?: customIllnessesCreateOrConnectWithoutClientsInput | customIllnessesCreateOrConnectWithoutClientsInput[]
+    createMany?: customIllnessesCreateManyClientsInputEnvelope
+    connect?: customIllnessesWhereUniqueInput | customIllnessesWhereUniqueInput[]
   }
 
-  export type UploadsUncheckedCreateNestedManyWithoutClientsInput = {
-    create?: XOR<UploadsCreateWithoutClientsInput, UploadsUncheckedCreateWithoutClientsInput> | UploadsCreateWithoutClientsInput[] | UploadsUncheckedCreateWithoutClientsInput[]
-    connectOrCreate?: UploadsCreateOrConnectWithoutClientsInput | UploadsCreateOrConnectWithoutClientsInput[]
-    createMany?: UploadsCreateManyClientsInputEnvelope
-    connect?: UploadsWhereUniqueInput | UploadsWhereUniqueInput[]
+  export type uploadsUncheckedCreateNestedManyWithoutClientsInput = {
+    create?: XOR<uploadsCreateWithoutClientsInput, uploadsUncheckedCreateWithoutClientsInput> | uploadsCreateWithoutClientsInput[] | uploadsUncheckedCreateWithoutClientsInput[]
+    connectOrCreate?: uploadsCreateOrConnectWithoutClientsInput | uploadsCreateOrConnectWithoutClientsInput[]
+    createMany?: uploadsCreateManyClientsInputEnvelope
+    connect?: uploadsWhereUniqueInput | uploadsWhereUniqueInput[]
   }
 
-  export type DecksUncheckedCreateNestedManyWithoutClientsInput = {
-    create?: XOR<DecksCreateWithoutClientsInput, DecksUncheckedCreateWithoutClientsInput> | DecksCreateWithoutClientsInput[] | DecksUncheckedCreateWithoutClientsInput[]
-    connectOrCreate?: DecksCreateOrConnectWithoutClientsInput | DecksCreateOrConnectWithoutClientsInput[]
-    createMany?: DecksCreateManyClientsInputEnvelope
-    connect?: DecksWhereUniqueInput | DecksWhereUniqueInput[]
+  export type decksUncheckedCreateNestedManyWithoutClientsInput = {
+    create?: XOR<decksCreateWithoutClientsInput, decksUncheckedCreateWithoutClientsInput> | decksCreateWithoutClientsInput[] | decksUncheckedCreateWithoutClientsInput[]
+    connectOrCreate?: decksCreateOrConnectWithoutClientsInput | decksCreateOrConnectWithoutClientsInput[]
+    createMany?: decksCreateManyClientsInputEnvelope
+    connect?: decksWhereUniqueInput | decksWhereUniqueInput[]
   }
 
-  export type IntellicareMasterlistUncheckedCreateNestedManyWithoutClientsInput = {
-    create?: XOR<IntellicareMasterlistCreateWithoutClientsInput, IntellicareMasterlistUncheckedCreateWithoutClientsInput> | IntellicareMasterlistCreateWithoutClientsInput[] | IntellicareMasterlistUncheckedCreateWithoutClientsInput[]
-    connectOrCreate?: IntellicareMasterlistCreateOrConnectWithoutClientsInput | IntellicareMasterlistCreateOrConnectWithoutClientsInput[]
-    createMany?: IntellicareMasterlistCreateManyClientsInputEnvelope
-    connect?: IntellicareMasterlistWhereUniqueInput | IntellicareMasterlistWhereUniqueInput[]
+  export type intellicareMasterlistUncheckedCreateNestedManyWithoutClientsInput = {
+    create?: XOR<intellicareMasterlistCreateWithoutClientsInput, intellicareMasterlistUncheckedCreateWithoutClientsInput> | intellicareMasterlistCreateWithoutClientsInput[] | intellicareMasterlistUncheckedCreateWithoutClientsInput[]
+    connectOrCreate?: intellicareMasterlistCreateOrConnectWithoutClientsInput | intellicareMasterlistCreateOrConnectWithoutClientsInput[]
+    createMany?: intellicareMasterlistCreateManyClientsInputEnvelope
+    connect?: intellicareMasterlistWhereUniqueInput | intellicareMasterlistWhereUniqueInput[]
   }
 
-  export type MaxicareMasterlistUncheckedCreateNestedManyWithoutClientsInput = {
-    create?: XOR<MaxicareMasterlistCreateWithoutClientsInput, MaxicareMasterlistUncheckedCreateWithoutClientsInput> | MaxicareMasterlistCreateWithoutClientsInput[] | MaxicareMasterlistUncheckedCreateWithoutClientsInput[]
-    connectOrCreate?: MaxicareMasterlistCreateOrConnectWithoutClientsInput | MaxicareMasterlistCreateOrConnectWithoutClientsInput[]
-    createMany?: MaxicareMasterlistCreateManyClientsInputEnvelope
-    connect?: MaxicareMasterlistWhereUniqueInput | MaxicareMasterlistWhereUniqueInput[]
+  export type maxicareMasterlistUncheckedCreateNestedManyWithoutClientsInput = {
+    create?: XOR<maxicareMasterlistCreateWithoutClientsInput, maxicareMasterlistUncheckedCreateWithoutClientsInput> | maxicareMasterlistCreateWithoutClientsInput[] | maxicareMasterlistUncheckedCreateWithoutClientsInput[]
+    connectOrCreate?: maxicareMasterlistCreateOrConnectWithoutClientsInput | maxicareMasterlistCreateOrConnectWithoutClientsInput[]
+    createMany?: maxicareMasterlistCreateManyClientsInputEnvelope
+    connect?: maxicareMasterlistWhereUniqueInput | maxicareMasterlistWhereUniqueInput[]
   }
 
-  export type IntellicareUncheckedCreateNestedManyWithoutClientsInput = {
-    create?: XOR<IntellicareCreateWithoutClientsInput, IntellicareUncheckedCreateWithoutClientsInput> | IntellicareCreateWithoutClientsInput[] | IntellicareUncheckedCreateWithoutClientsInput[]
-    connectOrCreate?: IntellicareCreateOrConnectWithoutClientsInput | IntellicareCreateOrConnectWithoutClientsInput[]
-    createMany?: IntellicareCreateManyClientsInputEnvelope
-    connect?: IntellicareWhereUniqueInput | IntellicareWhereUniqueInput[]
+  export type intellicareUncheckedCreateNestedManyWithoutClientsInput = {
+    create?: XOR<intellicareCreateWithoutClientsInput, intellicareUncheckedCreateWithoutClientsInput> | intellicareCreateWithoutClientsInput[] | intellicareUncheckedCreateWithoutClientsInput[]
+    connectOrCreate?: intellicareCreateOrConnectWithoutClientsInput | intellicareCreateOrConnectWithoutClientsInput[]
+    createMany?: intellicareCreateManyClientsInputEnvelope
+    connect?: intellicareWhereUniqueInput | intellicareWhereUniqueInput[]
   }
 
-  export type MaxicareUncheckedCreateNestedManyWithoutClientsInput = {
-    create?: XOR<MaxicareCreateWithoutClientsInput, MaxicareUncheckedCreateWithoutClientsInput> | MaxicareCreateWithoutClientsInput[] | MaxicareUncheckedCreateWithoutClientsInput[]
-    connectOrCreate?: MaxicareCreateOrConnectWithoutClientsInput | MaxicareCreateOrConnectWithoutClientsInput[]
-    createMany?: MaxicareCreateManyClientsInputEnvelope
-    connect?: MaxicareWhereUniqueInput | MaxicareWhereUniqueInput[]
+  export type maxicareUncheckedCreateNestedManyWithoutClientsInput = {
+    create?: XOR<maxicareCreateWithoutClientsInput, maxicareUncheckedCreateWithoutClientsInput> | maxicareCreateWithoutClientsInput[] | maxicareUncheckedCreateWithoutClientsInput[]
+    connectOrCreate?: maxicareCreateOrConnectWithoutClientsInput | maxicareCreateOrConnectWithoutClientsInput[]
+    createMany?: maxicareCreateManyClientsInputEnvelope
+    connect?: maxicareWhereUniqueInput | maxicareWhereUniqueInput[]
   }
 
-  export type CustomIllnessesUncheckedCreateNestedManyWithoutClientsInput = {
-    create?: XOR<CustomIllnessesCreateWithoutClientsInput, CustomIllnessesUncheckedCreateWithoutClientsInput> | CustomIllnessesCreateWithoutClientsInput[] | CustomIllnessesUncheckedCreateWithoutClientsInput[]
-    connectOrCreate?: CustomIllnessesCreateOrConnectWithoutClientsInput | CustomIllnessesCreateOrConnectWithoutClientsInput[]
-    createMany?: CustomIllnessesCreateManyClientsInputEnvelope
-    connect?: CustomIllnessesWhereUniqueInput | CustomIllnessesWhereUniqueInput[]
+  export type customIllnessesUncheckedCreateNestedManyWithoutClientsInput = {
+    create?: XOR<customIllnessesCreateWithoutClientsInput, customIllnessesUncheckedCreateWithoutClientsInput> | customIllnessesCreateWithoutClientsInput[] | customIllnessesUncheckedCreateWithoutClientsInput[]
+    connectOrCreate?: customIllnessesCreateOrConnectWithoutClientsInput | customIllnessesCreateOrConnectWithoutClientsInput[]
+    createMany?: customIllnessesCreateManyClientsInputEnvelope
+    connect?: customIllnessesWhereUniqueInput | customIllnessesWhereUniqueInput[]
   }
 
   export type NullableStringFieldUpdateOperationsInput = {
     set?: string | null
   }
 
-  export type InsurersUpdateOneWithoutClientsNestedInput = {
-    create?: XOR<InsurersCreateWithoutClientsInput, InsurersUncheckedCreateWithoutClientsInput>
-    connectOrCreate?: InsurersCreateOrConnectWithoutClientsInput
-    upsert?: InsurersUpsertWithoutClientsInput
-    disconnect?: InsurersWhereInput | boolean
-    delete?: InsurersWhereInput | boolean
-    connect?: InsurersWhereUniqueInput
-    update?: XOR<XOR<InsurersUpdateToOneWithWhereWithoutClientsInput, InsurersUpdateWithoutClientsInput>, InsurersUncheckedUpdateWithoutClientsInput>
+  export type insurersUpdateOneWithoutClientsNestedInput = {
+    create?: XOR<insurersCreateWithoutClientsInput, insurersUncheckedCreateWithoutClientsInput>
+    connectOrCreate?: insurersCreateOrConnectWithoutClientsInput
+    upsert?: insurersUpsertWithoutClientsInput
+    disconnect?: insurersWhereInput | boolean
+    delete?: insurersWhereInput | boolean
+    connect?: insurersWhereUniqueInput
+    update?: XOR<XOR<insurersUpdateToOneWithWhereWithoutClientsInput, insurersUpdateWithoutClientsInput>, insurersUncheckedUpdateWithoutClientsInput>
   }
 
-  export type UploadsUpdateManyWithoutClientsNestedInput = {
-    create?: XOR<UploadsCreateWithoutClientsInput, UploadsUncheckedCreateWithoutClientsInput> | UploadsCreateWithoutClientsInput[] | UploadsUncheckedCreateWithoutClientsInput[]
-    connectOrCreate?: UploadsCreateOrConnectWithoutClientsInput | UploadsCreateOrConnectWithoutClientsInput[]
-    upsert?: UploadsUpsertWithWhereUniqueWithoutClientsInput | UploadsUpsertWithWhereUniqueWithoutClientsInput[]
-    createMany?: UploadsCreateManyClientsInputEnvelope
-    set?: UploadsWhereUniqueInput | UploadsWhereUniqueInput[]
-    disconnect?: UploadsWhereUniqueInput | UploadsWhereUniqueInput[]
-    delete?: UploadsWhereUniqueInput | UploadsWhereUniqueInput[]
-    connect?: UploadsWhereUniqueInput | UploadsWhereUniqueInput[]
-    update?: UploadsUpdateWithWhereUniqueWithoutClientsInput | UploadsUpdateWithWhereUniqueWithoutClientsInput[]
-    updateMany?: UploadsUpdateManyWithWhereWithoutClientsInput | UploadsUpdateManyWithWhereWithoutClientsInput[]
-    deleteMany?: UploadsScalarWhereInput | UploadsScalarWhereInput[]
+  export type uploadsUpdateManyWithoutClientsNestedInput = {
+    create?: XOR<uploadsCreateWithoutClientsInput, uploadsUncheckedCreateWithoutClientsInput> | uploadsCreateWithoutClientsInput[] | uploadsUncheckedCreateWithoutClientsInput[]
+    connectOrCreate?: uploadsCreateOrConnectWithoutClientsInput | uploadsCreateOrConnectWithoutClientsInput[]
+    upsert?: uploadsUpsertWithWhereUniqueWithoutClientsInput | uploadsUpsertWithWhereUniqueWithoutClientsInput[]
+    createMany?: uploadsCreateManyClientsInputEnvelope
+    set?: uploadsWhereUniqueInput | uploadsWhereUniqueInput[]
+    disconnect?: uploadsWhereUniqueInput | uploadsWhereUniqueInput[]
+    delete?: uploadsWhereUniqueInput | uploadsWhereUniqueInput[]
+    connect?: uploadsWhereUniqueInput | uploadsWhereUniqueInput[]
+    update?: uploadsUpdateWithWhereUniqueWithoutClientsInput | uploadsUpdateWithWhereUniqueWithoutClientsInput[]
+    updateMany?: uploadsUpdateManyWithWhereWithoutClientsInput | uploadsUpdateManyWithWhereWithoutClientsInput[]
+    deleteMany?: uploadsScalarWhereInput | uploadsScalarWhereInput[]
   }
 
-  export type DecksUpdateManyWithoutClientsNestedInput = {
-    create?: XOR<DecksCreateWithoutClientsInput, DecksUncheckedCreateWithoutClientsInput> | DecksCreateWithoutClientsInput[] | DecksUncheckedCreateWithoutClientsInput[]
-    connectOrCreate?: DecksCreateOrConnectWithoutClientsInput | DecksCreateOrConnectWithoutClientsInput[]
-    upsert?: DecksUpsertWithWhereUniqueWithoutClientsInput | DecksUpsertWithWhereUniqueWithoutClientsInput[]
-    createMany?: DecksCreateManyClientsInputEnvelope
-    set?: DecksWhereUniqueInput | DecksWhereUniqueInput[]
-    disconnect?: DecksWhereUniqueInput | DecksWhereUniqueInput[]
-    delete?: DecksWhereUniqueInput | DecksWhereUniqueInput[]
-    connect?: DecksWhereUniqueInput | DecksWhereUniqueInput[]
-    update?: DecksUpdateWithWhereUniqueWithoutClientsInput | DecksUpdateWithWhereUniqueWithoutClientsInput[]
-    updateMany?: DecksUpdateManyWithWhereWithoutClientsInput | DecksUpdateManyWithWhereWithoutClientsInput[]
-    deleteMany?: DecksScalarWhereInput | DecksScalarWhereInput[]
+  export type decksUpdateManyWithoutClientsNestedInput = {
+    create?: XOR<decksCreateWithoutClientsInput, decksUncheckedCreateWithoutClientsInput> | decksCreateWithoutClientsInput[] | decksUncheckedCreateWithoutClientsInput[]
+    connectOrCreate?: decksCreateOrConnectWithoutClientsInput | decksCreateOrConnectWithoutClientsInput[]
+    upsert?: decksUpsertWithWhereUniqueWithoutClientsInput | decksUpsertWithWhereUniqueWithoutClientsInput[]
+    createMany?: decksCreateManyClientsInputEnvelope
+    set?: decksWhereUniqueInput | decksWhereUniqueInput[]
+    disconnect?: decksWhereUniqueInput | decksWhereUniqueInput[]
+    delete?: decksWhereUniqueInput | decksWhereUniqueInput[]
+    connect?: decksWhereUniqueInput | decksWhereUniqueInput[]
+    update?: decksUpdateWithWhereUniqueWithoutClientsInput | decksUpdateWithWhereUniqueWithoutClientsInput[]
+    updateMany?: decksUpdateManyWithWhereWithoutClientsInput | decksUpdateManyWithWhereWithoutClientsInput[]
+    deleteMany?: decksScalarWhereInput | decksScalarWhereInput[]
   }
 
-  export type IntellicareMasterlistUpdateManyWithoutClientsNestedInput = {
-    create?: XOR<IntellicareMasterlistCreateWithoutClientsInput, IntellicareMasterlistUncheckedCreateWithoutClientsInput> | IntellicareMasterlistCreateWithoutClientsInput[] | IntellicareMasterlistUncheckedCreateWithoutClientsInput[]
-    connectOrCreate?: IntellicareMasterlistCreateOrConnectWithoutClientsInput | IntellicareMasterlistCreateOrConnectWithoutClientsInput[]
-    upsert?: IntellicareMasterlistUpsertWithWhereUniqueWithoutClientsInput | IntellicareMasterlistUpsertWithWhereUniqueWithoutClientsInput[]
-    createMany?: IntellicareMasterlistCreateManyClientsInputEnvelope
-    set?: IntellicareMasterlistWhereUniqueInput | IntellicareMasterlistWhereUniqueInput[]
-    disconnect?: IntellicareMasterlistWhereUniqueInput | IntellicareMasterlistWhereUniqueInput[]
-    delete?: IntellicareMasterlistWhereUniqueInput | IntellicareMasterlistWhereUniqueInput[]
-    connect?: IntellicareMasterlistWhereUniqueInput | IntellicareMasterlistWhereUniqueInput[]
-    update?: IntellicareMasterlistUpdateWithWhereUniqueWithoutClientsInput | IntellicareMasterlistUpdateWithWhereUniqueWithoutClientsInput[]
-    updateMany?: IntellicareMasterlistUpdateManyWithWhereWithoutClientsInput | IntellicareMasterlistUpdateManyWithWhereWithoutClientsInput[]
-    deleteMany?: IntellicareMasterlistScalarWhereInput | IntellicareMasterlistScalarWhereInput[]
+  export type intellicareMasterlistUpdateManyWithoutClientsNestedInput = {
+    create?: XOR<intellicareMasterlistCreateWithoutClientsInput, intellicareMasterlistUncheckedCreateWithoutClientsInput> | intellicareMasterlistCreateWithoutClientsInput[] | intellicareMasterlistUncheckedCreateWithoutClientsInput[]
+    connectOrCreate?: intellicareMasterlistCreateOrConnectWithoutClientsInput | intellicareMasterlistCreateOrConnectWithoutClientsInput[]
+    upsert?: intellicareMasterlistUpsertWithWhereUniqueWithoutClientsInput | intellicareMasterlistUpsertWithWhereUniqueWithoutClientsInput[]
+    createMany?: intellicareMasterlistCreateManyClientsInputEnvelope
+    set?: intellicareMasterlistWhereUniqueInput | intellicareMasterlistWhereUniqueInput[]
+    disconnect?: intellicareMasterlistWhereUniqueInput | intellicareMasterlistWhereUniqueInput[]
+    delete?: intellicareMasterlistWhereUniqueInput | intellicareMasterlistWhereUniqueInput[]
+    connect?: intellicareMasterlistWhereUniqueInput | intellicareMasterlistWhereUniqueInput[]
+    update?: intellicareMasterlistUpdateWithWhereUniqueWithoutClientsInput | intellicareMasterlistUpdateWithWhereUniqueWithoutClientsInput[]
+    updateMany?: intellicareMasterlistUpdateManyWithWhereWithoutClientsInput | intellicareMasterlistUpdateManyWithWhereWithoutClientsInput[]
+    deleteMany?: intellicareMasterlistScalarWhereInput | intellicareMasterlistScalarWhereInput[]
   }
 
-  export type MaxicareMasterlistUpdateManyWithoutClientsNestedInput = {
-    create?: XOR<MaxicareMasterlistCreateWithoutClientsInput, MaxicareMasterlistUncheckedCreateWithoutClientsInput> | MaxicareMasterlistCreateWithoutClientsInput[] | MaxicareMasterlistUncheckedCreateWithoutClientsInput[]
-    connectOrCreate?: MaxicareMasterlistCreateOrConnectWithoutClientsInput | MaxicareMasterlistCreateOrConnectWithoutClientsInput[]
-    upsert?: MaxicareMasterlistUpsertWithWhereUniqueWithoutClientsInput | MaxicareMasterlistUpsertWithWhereUniqueWithoutClientsInput[]
-    createMany?: MaxicareMasterlistCreateManyClientsInputEnvelope
-    set?: MaxicareMasterlistWhereUniqueInput | MaxicareMasterlistWhereUniqueInput[]
-    disconnect?: MaxicareMasterlistWhereUniqueInput | MaxicareMasterlistWhereUniqueInput[]
-    delete?: MaxicareMasterlistWhereUniqueInput | MaxicareMasterlistWhereUniqueInput[]
-    connect?: MaxicareMasterlistWhereUniqueInput | MaxicareMasterlistWhereUniqueInput[]
-    update?: MaxicareMasterlistUpdateWithWhereUniqueWithoutClientsInput | MaxicareMasterlistUpdateWithWhereUniqueWithoutClientsInput[]
-    updateMany?: MaxicareMasterlistUpdateManyWithWhereWithoutClientsInput | MaxicareMasterlistUpdateManyWithWhereWithoutClientsInput[]
-    deleteMany?: MaxicareMasterlistScalarWhereInput | MaxicareMasterlistScalarWhereInput[]
+  export type maxicareMasterlistUpdateManyWithoutClientsNestedInput = {
+    create?: XOR<maxicareMasterlistCreateWithoutClientsInput, maxicareMasterlistUncheckedCreateWithoutClientsInput> | maxicareMasterlistCreateWithoutClientsInput[] | maxicareMasterlistUncheckedCreateWithoutClientsInput[]
+    connectOrCreate?: maxicareMasterlistCreateOrConnectWithoutClientsInput | maxicareMasterlistCreateOrConnectWithoutClientsInput[]
+    upsert?: maxicareMasterlistUpsertWithWhereUniqueWithoutClientsInput | maxicareMasterlistUpsertWithWhereUniqueWithoutClientsInput[]
+    createMany?: maxicareMasterlistCreateManyClientsInputEnvelope
+    set?: maxicareMasterlistWhereUniqueInput | maxicareMasterlistWhereUniqueInput[]
+    disconnect?: maxicareMasterlistWhereUniqueInput | maxicareMasterlistWhereUniqueInput[]
+    delete?: maxicareMasterlistWhereUniqueInput | maxicareMasterlistWhereUniqueInput[]
+    connect?: maxicareMasterlistWhereUniqueInput | maxicareMasterlistWhereUniqueInput[]
+    update?: maxicareMasterlistUpdateWithWhereUniqueWithoutClientsInput | maxicareMasterlistUpdateWithWhereUniqueWithoutClientsInput[]
+    updateMany?: maxicareMasterlistUpdateManyWithWhereWithoutClientsInput | maxicareMasterlistUpdateManyWithWhereWithoutClientsInput[]
+    deleteMany?: maxicareMasterlistScalarWhereInput | maxicareMasterlistScalarWhereInput[]
   }
 
-  export type IntellicareUpdateManyWithoutClientsNestedInput = {
-    create?: XOR<IntellicareCreateWithoutClientsInput, IntellicareUncheckedCreateWithoutClientsInput> | IntellicareCreateWithoutClientsInput[] | IntellicareUncheckedCreateWithoutClientsInput[]
-    connectOrCreate?: IntellicareCreateOrConnectWithoutClientsInput | IntellicareCreateOrConnectWithoutClientsInput[]
-    upsert?: IntellicareUpsertWithWhereUniqueWithoutClientsInput | IntellicareUpsertWithWhereUniqueWithoutClientsInput[]
-    createMany?: IntellicareCreateManyClientsInputEnvelope
-    set?: IntellicareWhereUniqueInput | IntellicareWhereUniqueInput[]
-    disconnect?: IntellicareWhereUniqueInput | IntellicareWhereUniqueInput[]
-    delete?: IntellicareWhereUniqueInput | IntellicareWhereUniqueInput[]
-    connect?: IntellicareWhereUniqueInput | IntellicareWhereUniqueInput[]
-    update?: IntellicareUpdateWithWhereUniqueWithoutClientsInput | IntellicareUpdateWithWhereUniqueWithoutClientsInput[]
-    updateMany?: IntellicareUpdateManyWithWhereWithoutClientsInput | IntellicareUpdateManyWithWhereWithoutClientsInput[]
-    deleteMany?: IntellicareScalarWhereInput | IntellicareScalarWhereInput[]
+  export type intellicareUpdateManyWithoutClientsNestedInput = {
+    create?: XOR<intellicareCreateWithoutClientsInput, intellicareUncheckedCreateWithoutClientsInput> | intellicareCreateWithoutClientsInput[] | intellicareUncheckedCreateWithoutClientsInput[]
+    connectOrCreate?: intellicareCreateOrConnectWithoutClientsInput | intellicareCreateOrConnectWithoutClientsInput[]
+    upsert?: intellicareUpsertWithWhereUniqueWithoutClientsInput | intellicareUpsertWithWhereUniqueWithoutClientsInput[]
+    createMany?: intellicareCreateManyClientsInputEnvelope
+    set?: intellicareWhereUniqueInput | intellicareWhereUniqueInput[]
+    disconnect?: intellicareWhereUniqueInput | intellicareWhereUniqueInput[]
+    delete?: intellicareWhereUniqueInput | intellicareWhereUniqueInput[]
+    connect?: intellicareWhereUniqueInput | intellicareWhereUniqueInput[]
+    update?: intellicareUpdateWithWhereUniqueWithoutClientsInput | intellicareUpdateWithWhereUniqueWithoutClientsInput[]
+    updateMany?: intellicareUpdateManyWithWhereWithoutClientsInput | intellicareUpdateManyWithWhereWithoutClientsInput[]
+    deleteMany?: intellicareScalarWhereInput | intellicareScalarWhereInput[]
   }
 
-  export type MaxicareUpdateManyWithoutClientsNestedInput = {
-    create?: XOR<MaxicareCreateWithoutClientsInput, MaxicareUncheckedCreateWithoutClientsInput> | MaxicareCreateWithoutClientsInput[] | MaxicareUncheckedCreateWithoutClientsInput[]
-    connectOrCreate?: MaxicareCreateOrConnectWithoutClientsInput | MaxicareCreateOrConnectWithoutClientsInput[]
-    upsert?: MaxicareUpsertWithWhereUniqueWithoutClientsInput | MaxicareUpsertWithWhereUniqueWithoutClientsInput[]
-    createMany?: MaxicareCreateManyClientsInputEnvelope
-    set?: MaxicareWhereUniqueInput | MaxicareWhereUniqueInput[]
-    disconnect?: MaxicareWhereUniqueInput | MaxicareWhereUniqueInput[]
-    delete?: MaxicareWhereUniqueInput | MaxicareWhereUniqueInput[]
-    connect?: MaxicareWhereUniqueInput | MaxicareWhereUniqueInput[]
-    update?: MaxicareUpdateWithWhereUniqueWithoutClientsInput | MaxicareUpdateWithWhereUniqueWithoutClientsInput[]
-    updateMany?: MaxicareUpdateManyWithWhereWithoutClientsInput | MaxicareUpdateManyWithWhereWithoutClientsInput[]
-    deleteMany?: MaxicareScalarWhereInput | MaxicareScalarWhereInput[]
+  export type maxicareUpdateManyWithoutClientsNestedInput = {
+    create?: XOR<maxicareCreateWithoutClientsInput, maxicareUncheckedCreateWithoutClientsInput> | maxicareCreateWithoutClientsInput[] | maxicareUncheckedCreateWithoutClientsInput[]
+    connectOrCreate?: maxicareCreateOrConnectWithoutClientsInput | maxicareCreateOrConnectWithoutClientsInput[]
+    upsert?: maxicareUpsertWithWhereUniqueWithoutClientsInput | maxicareUpsertWithWhereUniqueWithoutClientsInput[]
+    createMany?: maxicareCreateManyClientsInputEnvelope
+    set?: maxicareWhereUniqueInput | maxicareWhereUniqueInput[]
+    disconnect?: maxicareWhereUniqueInput | maxicareWhereUniqueInput[]
+    delete?: maxicareWhereUniqueInput | maxicareWhereUniqueInput[]
+    connect?: maxicareWhereUniqueInput | maxicareWhereUniqueInput[]
+    update?: maxicareUpdateWithWhereUniqueWithoutClientsInput | maxicareUpdateWithWhereUniqueWithoutClientsInput[]
+    updateMany?: maxicareUpdateManyWithWhereWithoutClientsInput | maxicareUpdateManyWithWhereWithoutClientsInput[]
+    deleteMany?: maxicareScalarWhereInput | maxicareScalarWhereInput[]
   }
 
-  export type CustomIllnessesUpdateManyWithoutClientsNestedInput = {
-    create?: XOR<CustomIllnessesCreateWithoutClientsInput, CustomIllnessesUncheckedCreateWithoutClientsInput> | CustomIllnessesCreateWithoutClientsInput[] | CustomIllnessesUncheckedCreateWithoutClientsInput[]
-    connectOrCreate?: CustomIllnessesCreateOrConnectWithoutClientsInput | CustomIllnessesCreateOrConnectWithoutClientsInput[]
-    upsert?: CustomIllnessesUpsertWithWhereUniqueWithoutClientsInput | CustomIllnessesUpsertWithWhereUniqueWithoutClientsInput[]
-    createMany?: CustomIllnessesCreateManyClientsInputEnvelope
-    set?: CustomIllnessesWhereUniqueInput | CustomIllnessesWhereUniqueInput[]
-    disconnect?: CustomIllnessesWhereUniqueInput | CustomIllnessesWhereUniqueInput[]
-    delete?: CustomIllnessesWhereUniqueInput | CustomIllnessesWhereUniqueInput[]
-    connect?: CustomIllnessesWhereUniqueInput | CustomIllnessesWhereUniqueInput[]
-    update?: CustomIllnessesUpdateWithWhereUniqueWithoutClientsInput | CustomIllnessesUpdateWithWhereUniqueWithoutClientsInput[]
-    updateMany?: CustomIllnessesUpdateManyWithWhereWithoutClientsInput | CustomIllnessesUpdateManyWithWhereWithoutClientsInput[]
-    deleteMany?: CustomIllnessesScalarWhereInput | CustomIllnessesScalarWhereInput[]
+  export type customIllnessesUpdateManyWithoutClientsNestedInput = {
+    create?: XOR<customIllnessesCreateWithoutClientsInput, customIllnessesUncheckedCreateWithoutClientsInput> | customIllnessesCreateWithoutClientsInput[] | customIllnessesUncheckedCreateWithoutClientsInput[]
+    connectOrCreate?: customIllnessesCreateOrConnectWithoutClientsInput | customIllnessesCreateOrConnectWithoutClientsInput[]
+    upsert?: customIllnessesUpsertWithWhereUniqueWithoutClientsInput | customIllnessesUpsertWithWhereUniqueWithoutClientsInput[]
+    createMany?: customIllnessesCreateManyClientsInputEnvelope
+    set?: customIllnessesWhereUniqueInput | customIllnessesWhereUniqueInput[]
+    disconnect?: customIllnessesWhereUniqueInput | customIllnessesWhereUniqueInput[]
+    delete?: customIllnessesWhereUniqueInput | customIllnessesWhereUniqueInput[]
+    connect?: customIllnessesWhereUniqueInput | customIllnessesWhereUniqueInput[]
+    update?: customIllnessesUpdateWithWhereUniqueWithoutClientsInput | customIllnessesUpdateWithWhereUniqueWithoutClientsInput[]
+    updateMany?: customIllnessesUpdateManyWithWhereWithoutClientsInput | customIllnessesUpdateManyWithWhereWithoutClientsInput[]
+    deleteMany?: customIllnessesScalarWhereInput | customIllnessesScalarWhereInput[]
   }
 
   export type NullableIntFieldUpdateOperationsInput = {
@@ -15923,150 +15923,150 @@ export namespace Prisma {
     divide?: number
   }
 
-  export type UploadsUncheckedUpdateManyWithoutClientsNestedInput = {
-    create?: XOR<UploadsCreateWithoutClientsInput, UploadsUncheckedCreateWithoutClientsInput> | UploadsCreateWithoutClientsInput[] | UploadsUncheckedCreateWithoutClientsInput[]
-    connectOrCreate?: UploadsCreateOrConnectWithoutClientsInput | UploadsCreateOrConnectWithoutClientsInput[]
-    upsert?: UploadsUpsertWithWhereUniqueWithoutClientsInput | UploadsUpsertWithWhereUniqueWithoutClientsInput[]
-    createMany?: UploadsCreateManyClientsInputEnvelope
-    set?: UploadsWhereUniqueInput | UploadsWhereUniqueInput[]
-    disconnect?: UploadsWhereUniqueInput | UploadsWhereUniqueInput[]
-    delete?: UploadsWhereUniqueInput | UploadsWhereUniqueInput[]
-    connect?: UploadsWhereUniqueInput | UploadsWhereUniqueInput[]
-    update?: UploadsUpdateWithWhereUniqueWithoutClientsInput | UploadsUpdateWithWhereUniqueWithoutClientsInput[]
-    updateMany?: UploadsUpdateManyWithWhereWithoutClientsInput | UploadsUpdateManyWithWhereWithoutClientsInput[]
-    deleteMany?: UploadsScalarWhereInput | UploadsScalarWhereInput[]
+  export type uploadsUncheckedUpdateManyWithoutClientsNestedInput = {
+    create?: XOR<uploadsCreateWithoutClientsInput, uploadsUncheckedCreateWithoutClientsInput> | uploadsCreateWithoutClientsInput[] | uploadsUncheckedCreateWithoutClientsInput[]
+    connectOrCreate?: uploadsCreateOrConnectWithoutClientsInput | uploadsCreateOrConnectWithoutClientsInput[]
+    upsert?: uploadsUpsertWithWhereUniqueWithoutClientsInput | uploadsUpsertWithWhereUniqueWithoutClientsInput[]
+    createMany?: uploadsCreateManyClientsInputEnvelope
+    set?: uploadsWhereUniqueInput | uploadsWhereUniqueInput[]
+    disconnect?: uploadsWhereUniqueInput | uploadsWhereUniqueInput[]
+    delete?: uploadsWhereUniqueInput | uploadsWhereUniqueInput[]
+    connect?: uploadsWhereUniqueInput | uploadsWhereUniqueInput[]
+    update?: uploadsUpdateWithWhereUniqueWithoutClientsInput | uploadsUpdateWithWhereUniqueWithoutClientsInput[]
+    updateMany?: uploadsUpdateManyWithWhereWithoutClientsInput | uploadsUpdateManyWithWhereWithoutClientsInput[]
+    deleteMany?: uploadsScalarWhereInput | uploadsScalarWhereInput[]
   }
 
-  export type DecksUncheckedUpdateManyWithoutClientsNestedInput = {
-    create?: XOR<DecksCreateWithoutClientsInput, DecksUncheckedCreateWithoutClientsInput> | DecksCreateWithoutClientsInput[] | DecksUncheckedCreateWithoutClientsInput[]
-    connectOrCreate?: DecksCreateOrConnectWithoutClientsInput | DecksCreateOrConnectWithoutClientsInput[]
-    upsert?: DecksUpsertWithWhereUniqueWithoutClientsInput | DecksUpsertWithWhereUniqueWithoutClientsInput[]
-    createMany?: DecksCreateManyClientsInputEnvelope
-    set?: DecksWhereUniqueInput | DecksWhereUniqueInput[]
-    disconnect?: DecksWhereUniqueInput | DecksWhereUniqueInput[]
-    delete?: DecksWhereUniqueInput | DecksWhereUniqueInput[]
-    connect?: DecksWhereUniqueInput | DecksWhereUniqueInput[]
-    update?: DecksUpdateWithWhereUniqueWithoutClientsInput | DecksUpdateWithWhereUniqueWithoutClientsInput[]
-    updateMany?: DecksUpdateManyWithWhereWithoutClientsInput | DecksUpdateManyWithWhereWithoutClientsInput[]
-    deleteMany?: DecksScalarWhereInput | DecksScalarWhereInput[]
+  export type decksUncheckedUpdateManyWithoutClientsNestedInput = {
+    create?: XOR<decksCreateWithoutClientsInput, decksUncheckedCreateWithoutClientsInput> | decksCreateWithoutClientsInput[] | decksUncheckedCreateWithoutClientsInput[]
+    connectOrCreate?: decksCreateOrConnectWithoutClientsInput | decksCreateOrConnectWithoutClientsInput[]
+    upsert?: decksUpsertWithWhereUniqueWithoutClientsInput | decksUpsertWithWhereUniqueWithoutClientsInput[]
+    createMany?: decksCreateManyClientsInputEnvelope
+    set?: decksWhereUniqueInput | decksWhereUniqueInput[]
+    disconnect?: decksWhereUniqueInput | decksWhereUniqueInput[]
+    delete?: decksWhereUniqueInput | decksWhereUniqueInput[]
+    connect?: decksWhereUniqueInput | decksWhereUniqueInput[]
+    update?: decksUpdateWithWhereUniqueWithoutClientsInput | decksUpdateWithWhereUniqueWithoutClientsInput[]
+    updateMany?: decksUpdateManyWithWhereWithoutClientsInput | decksUpdateManyWithWhereWithoutClientsInput[]
+    deleteMany?: decksScalarWhereInput | decksScalarWhereInput[]
   }
 
-  export type IntellicareMasterlistUncheckedUpdateManyWithoutClientsNestedInput = {
-    create?: XOR<IntellicareMasterlistCreateWithoutClientsInput, IntellicareMasterlistUncheckedCreateWithoutClientsInput> | IntellicareMasterlistCreateWithoutClientsInput[] | IntellicareMasterlistUncheckedCreateWithoutClientsInput[]
-    connectOrCreate?: IntellicareMasterlistCreateOrConnectWithoutClientsInput | IntellicareMasterlistCreateOrConnectWithoutClientsInput[]
-    upsert?: IntellicareMasterlistUpsertWithWhereUniqueWithoutClientsInput | IntellicareMasterlistUpsertWithWhereUniqueWithoutClientsInput[]
-    createMany?: IntellicareMasterlistCreateManyClientsInputEnvelope
-    set?: IntellicareMasterlistWhereUniqueInput | IntellicareMasterlistWhereUniqueInput[]
-    disconnect?: IntellicareMasterlistWhereUniqueInput | IntellicareMasterlistWhereUniqueInput[]
-    delete?: IntellicareMasterlistWhereUniqueInput | IntellicareMasterlistWhereUniqueInput[]
-    connect?: IntellicareMasterlistWhereUniqueInput | IntellicareMasterlistWhereUniqueInput[]
-    update?: IntellicareMasterlistUpdateWithWhereUniqueWithoutClientsInput | IntellicareMasterlistUpdateWithWhereUniqueWithoutClientsInput[]
-    updateMany?: IntellicareMasterlistUpdateManyWithWhereWithoutClientsInput | IntellicareMasterlistUpdateManyWithWhereWithoutClientsInput[]
-    deleteMany?: IntellicareMasterlistScalarWhereInput | IntellicareMasterlistScalarWhereInput[]
+  export type intellicareMasterlistUncheckedUpdateManyWithoutClientsNestedInput = {
+    create?: XOR<intellicareMasterlistCreateWithoutClientsInput, intellicareMasterlistUncheckedCreateWithoutClientsInput> | intellicareMasterlistCreateWithoutClientsInput[] | intellicareMasterlistUncheckedCreateWithoutClientsInput[]
+    connectOrCreate?: intellicareMasterlistCreateOrConnectWithoutClientsInput | intellicareMasterlistCreateOrConnectWithoutClientsInput[]
+    upsert?: intellicareMasterlistUpsertWithWhereUniqueWithoutClientsInput | intellicareMasterlistUpsertWithWhereUniqueWithoutClientsInput[]
+    createMany?: intellicareMasterlistCreateManyClientsInputEnvelope
+    set?: intellicareMasterlistWhereUniqueInput | intellicareMasterlistWhereUniqueInput[]
+    disconnect?: intellicareMasterlistWhereUniqueInput | intellicareMasterlistWhereUniqueInput[]
+    delete?: intellicareMasterlistWhereUniqueInput | intellicareMasterlistWhereUniqueInput[]
+    connect?: intellicareMasterlistWhereUniqueInput | intellicareMasterlistWhereUniqueInput[]
+    update?: intellicareMasterlistUpdateWithWhereUniqueWithoutClientsInput | intellicareMasterlistUpdateWithWhereUniqueWithoutClientsInput[]
+    updateMany?: intellicareMasterlistUpdateManyWithWhereWithoutClientsInput | intellicareMasterlistUpdateManyWithWhereWithoutClientsInput[]
+    deleteMany?: intellicareMasterlistScalarWhereInput | intellicareMasterlistScalarWhereInput[]
   }
 
-  export type MaxicareMasterlistUncheckedUpdateManyWithoutClientsNestedInput = {
-    create?: XOR<MaxicareMasterlistCreateWithoutClientsInput, MaxicareMasterlistUncheckedCreateWithoutClientsInput> | MaxicareMasterlistCreateWithoutClientsInput[] | MaxicareMasterlistUncheckedCreateWithoutClientsInput[]
-    connectOrCreate?: MaxicareMasterlistCreateOrConnectWithoutClientsInput | MaxicareMasterlistCreateOrConnectWithoutClientsInput[]
-    upsert?: MaxicareMasterlistUpsertWithWhereUniqueWithoutClientsInput | MaxicareMasterlistUpsertWithWhereUniqueWithoutClientsInput[]
-    createMany?: MaxicareMasterlistCreateManyClientsInputEnvelope
-    set?: MaxicareMasterlistWhereUniqueInput | MaxicareMasterlistWhereUniqueInput[]
-    disconnect?: MaxicareMasterlistWhereUniqueInput | MaxicareMasterlistWhereUniqueInput[]
-    delete?: MaxicareMasterlistWhereUniqueInput | MaxicareMasterlistWhereUniqueInput[]
-    connect?: MaxicareMasterlistWhereUniqueInput | MaxicareMasterlistWhereUniqueInput[]
-    update?: MaxicareMasterlistUpdateWithWhereUniqueWithoutClientsInput | MaxicareMasterlistUpdateWithWhereUniqueWithoutClientsInput[]
-    updateMany?: MaxicareMasterlistUpdateManyWithWhereWithoutClientsInput | MaxicareMasterlistUpdateManyWithWhereWithoutClientsInput[]
-    deleteMany?: MaxicareMasterlistScalarWhereInput | MaxicareMasterlistScalarWhereInput[]
+  export type maxicareMasterlistUncheckedUpdateManyWithoutClientsNestedInput = {
+    create?: XOR<maxicareMasterlistCreateWithoutClientsInput, maxicareMasterlistUncheckedCreateWithoutClientsInput> | maxicareMasterlistCreateWithoutClientsInput[] | maxicareMasterlistUncheckedCreateWithoutClientsInput[]
+    connectOrCreate?: maxicareMasterlistCreateOrConnectWithoutClientsInput | maxicareMasterlistCreateOrConnectWithoutClientsInput[]
+    upsert?: maxicareMasterlistUpsertWithWhereUniqueWithoutClientsInput | maxicareMasterlistUpsertWithWhereUniqueWithoutClientsInput[]
+    createMany?: maxicareMasterlistCreateManyClientsInputEnvelope
+    set?: maxicareMasterlistWhereUniqueInput | maxicareMasterlistWhereUniqueInput[]
+    disconnect?: maxicareMasterlistWhereUniqueInput | maxicareMasterlistWhereUniqueInput[]
+    delete?: maxicareMasterlistWhereUniqueInput | maxicareMasterlistWhereUniqueInput[]
+    connect?: maxicareMasterlistWhereUniqueInput | maxicareMasterlistWhereUniqueInput[]
+    update?: maxicareMasterlistUpdateWithWhereUniqueWithoutClientsInput | maxicareMasterlistUpdateWithWhereUniqueWithoutClientsInput[]
+    updateMany?: maxicareMasterlistUpdateManyWithWhereWithoutClientsInput | maxicareMasterlistUpdateManyWithWhereWithoutClientsInput[]
+    deleteMany?: maxicareMasterlistScalarWhereInput | maxicareMasterlistScalarWhereInput[]
   }
 
-  export type IntellicareUncheckedUpdateManyWithoutClientsNestedInput = {
-    create?: XOR<IntellicareCreateWithoutClientsInput, IntellicareUncheckedCreateWithoutClientsInput> | IntellicareCreateWithoutClientsInput[] | IntellicareUncheckedCreateWithoutClientsInput[]
-    connectOrCreate?: IntellicareCreateOrConnectWithoutClientsInput | IntellicareCreateOrConnectWithoutClientsInput[]
-    upsert?: IntellicareUpsertWithWhereUniqueWithoutClientsInput | IntellicareUpsertWithWhereUniqueWithoutClientsInput[]
-    createMany?: IntellicareCreateManyClientsInputEnvelope
-    set?: IntellicareWhereUniqueInput | IntellicareWhereUniqueInput[]
-    disconnect?: IntellicareWhereUniqueInput | IntellicareWhereUniqueInput[]
-    delete?: IntellicareWhereUniqueInput | IntellicareWhereUniqueInput[]
-    connect?: IntellicareWhereUniqueInput | IntellicareWhereUniqueInput[]
-    update?: IntellicareUpdateWithWhereUniqueWithoutClientsInput | IntellicareUpdateWithWhereUniqueWithoutClientsInput[]
-    updateMany?: IntellicareUpdateManyWithWhereWithoutClientsInput | IntellicareUpdateManyWithWhereWithoutClientsInput[]
-    deleteMany?: IntellicareScalarWhereInput | IntellicareScalarWhereInput[]
+  export type intellicareUncheckedUpdateManyWithoutClientsNestedInput = {
+    create?: XOR<intellicareCreateWithoutClientsInput, intellicareUncheckedCreateWithoutClientsInput> | intellicareCreateWithoutClientsInput[] | intellicareUncheckedCreateWithoutClientsInput[]
+    connectOrCreate?: intellicareCreateOrConnectWithoutClientsInput | intellicareCreateOrConnectWithoutClientsInput[]
+    upsert?: intellicareUpsertWithWhereUniqueWithoutClientsInput | intellicareUpsertWithWhereUniqueWithoutClientsInput[]
+    createMany?: intellicareCreateManyClientsInputEnvelope
+    set?: intellicareWhereUniqueInput | intellicareWhereUniqueInput[]
+    disconnect?: intellicareWhereUniqueInput | intellicareWhereUniqueInput[]
+    delete?: intellicareWhereUniqueInput | intellicareWhereUniqueInput[]
+    connect?: intellicareWhereUniqueInput | intellicareWhereUniqueInput[]
+    update?: intellicareUpdateWithWhereUniqueWithoutClientsInput | intellicareUpdateWithWhereUniqueWithoutClientsInput[]
+    updateMany?: intellicareUpdateManyWithWhereWithoutClientsInput | intellicareUpdateManyWithWhereWithoutClientsInput[]
+    deleteMany?: intellicareScalarWhereInput | intellicareScalarWhereInput[]
   }
 
-  export type MaxicareUncheckedUpdateManyWithoutClientsNestedInput = {
-    create?: XOR<MaxicareCreateWithoutClientsInput, MaxicareUncheckedCreateWithoutClientsInput> | MaxicareCreateWithoutClientsInput[] | MaxicareUncheckedCreateWithoutClientsInput[]
-    connectOrCreate?: MaxicareCreateOrConnectWithoutClientsInput | MaxicareCreateOrConnectWithoutClientsInput[]
-    upsert?: MaxicareUpsertWithWhereUniqueWithoutClientsInput | MaxicareUpsertWithWhereUniqueWithoutClientsInput[]
-    createMany?: MaxicareCreateManyClientsInputEnvelope
-    set?: MaxicareWhereUniqueInput | MaxicareWhereUniqueInput[]
-    disconnect?: MaxicareWhereUniqueInput | MaxicareWhereUniqueInput[]
-    delete?: MaxicareWhereUniqueInput | MaxicareWhereUniqueInput[]
-    connect?: MaxicareWhereUniqueInput | MaxicareWhereUniqueInput[]
-    update?: MaxicareUpdateWithWhereUniqueWithoutClientsInput | MaxicareUpdateWithWhereUniqueWithoutClientsInput[]
-    updateMany?: MaxicareUpdateManyWithWhereWithoutClientsInput | MaxicareUpdateManyWithWhereWithoutClientsInput[]
-    deleteMany?: MaxicareScalarWhereInput | MaxicareScalarWhereInput[]
+  export type maxicareUncheckedUpdateManyWithoutClientsNestedInput = {
+    create?: XOR<maxicareCreateWithoutClientsInput, maxicareUncheckedCreateWithoutClientsInput> | maxicareCreateWithoutClientsInput[] | maxicareUncheckedCreateWithoutClientsInput[]
+    connectOrCreate?: maxicareCreateOrConnectWithoutClientsInput | maxicareCreateOrConnectWithoutClientsInput[]
+    upsert?: maxicareUpsertWithWhereUniqueWithoutClientsInput | maxicareUpsertWithWhereUniqueWithoutClientsInput[]
+    createMany?: maxicareCreateManyClientsInputEnvelope
+    set?: maxicareWhereUniqueInput | maxicareWhereUniqueInput[]
+    disconnect?: maxicareWhereUniqueInput | maxicareWhereUniqueInput[]
+    delete?: maxicareWhereUniqueInput | maxicareWhereUniqueInput[]
+    connect?: maxicareWhereUniqueInput | maxicareWhereUniqueInput[]
+    update?: maxicareUpdateWithWhereUniqueWithoutClientsInput | maxicareUpdateWithWhereUniqueWithoutClientsInput[]
+    updateMany?: maxicareUpdateManyWithWhereWithoutClientsInput | maxicareUpdateManyWithWhereWithoutClientsInput[]
+    deleteMany?: maxicareScalarWhereInput | maxicareScalarWhereInput[]
   }
 
-  export type CustomIllnessesUncheckedUpdateManyWithoutClientsNestedInput = {
-    create?: XOR<CustomIllnessesCreateWithoutClientsInput, CustomIllnessesUncheckedCreateWithoutClientsInput> | CustomIllnessesCreateWithoutClientsInput[] | CustomIllnessesUncheckedCreateWithoutClientsInput[]
-    connectOrCreate?: CustomIllnessesCreateOrConnectWithoutClientsInput | CustomIllnessesCreateOrConnectWithoutClientsInput[]
-    upsert?: CustomIllnessesUpsertWithWhereUniqueWithoutClientsInput | CustomIllnessesUpsertWithWhereUniqueWithoutClientsInput[]
-    createMany?: CustomIllnessesCreateManyClientsInputEnvelope
-    set?: CustomIllnessesWhereUniqueInput | CustomIllnessesWhereUniqueInput[]
-    disconnect?: CustomIllnessesWhereUniqueInput | CustomIllnessesWhereUniqueInput[]
-    delete?: CustomIllnessesWhereUniqueInput | CustomIllnessesWhereUniqueInput[]
-    connect?: CustomIllnessesWhereUniqueInput | CustomIllnessesWhereUniqueInput[]
-    update?: CustomIllnessesUpdateWithWhereUniqueWithoutClientsInput | CustomIllnessesUpdateWithWhereUniqueWithoutClientsInput[]
-    updateMany?: CustomIllnessesUpdateManyWithWhereWithoutClientsInput | CustomIllnessesUpdateManyWithWhereWithoutClientsInput[]
-    deleteMany?: CustomIllnessesScalarWhereInput | CustomIllnessesScalarWhereInput[]
+  export type customIllnessesUncheckedUpdateManyWithoutClientsNestedInput = {
+    create?: XOR<customIllnessesCreateWithoutClientsInput, customIllnessesUncheckedCreateWithoutClientsInput> | customIllnessesCreateWithoutClientsInput[] | customIllnessesUncheckedCreateWithoutClientsInput[]
+    connectOrCreate?: customIllnessesCreateOrConnectWithoutClientsInput | customIllnessesCreateOrConnectWithoutClientsInput[]
+    upsert?: customIllnessesUpsertWithWhereUniqueWithoutClientsInput | customIllnessesUpsertWithWhereUniqueWithoutClientsInput[]
+    createMany?: customIllnessesCreateManyClientsInputEnvelope
+    set?: customIllnessesWhereUniqueInput | customIllnessesWhereUniqueInput[]
+    disconnect?: customIllnessesWhereUniqueInput | customIllnessesWhereUniqueInput[]
+    delete?: customIllnessesWhereUniqueInput | customIllnessesWhereUniqueInput[]
+    connect?: customIllnessesWhereUniqueInput | customIllnessesWhereUniqueInput[]
+    update?: customIllnessesUpdateWithWhereUniqueWithoutClientsInput | customIllnessesUpdateWithWhereUniqueWithoutClientsInput[]
+    updateMany?: customIllnessesUpdateManyWithWhereWithoutClientsInput | customIllnessesUpdateManyWithWhereWithoutClientsInput[]
+    deleteMany?: customIllnessesScalarWhereInput | customIllnessesScalarWhereInput[]
   }
 
-  export type ClientsCreateNestedOneWithoutUploadsInput = {
-    create?: XOR<ClientsCreateWithoutUploadsInput, ClientsUncheckedCreateWithoutUploadsInput>
-    connectOrCreate?: ClientsCreateOrConnectWithoutUploadsInput
-    connect?: ClientsWhereUniqueInput
+  export type clientsCreateNestedOneWithoutUploadsInput = {
+    create?: XOR<clientsCreateWithoutUploadsInput, clientsUncheckedCreateWithoutUploadsInput>
+    connectOrCreate?: clientsCreateOrConnectWithoutUploadsInput
+    connect?: clientsWhereUniqueInput
   }
 
-  export type InsurersCreateNestedOneWithoutUploadsInput = {
-    create?: XOR<InsurersCreateWithoutUploadsInput, InsurersUncheckedCreateWithoutUploadsInput>
-    connectOrCreate?: InsurersCreateOrConnectWithoutUploadsInput
-    connect?: InsurersWhereUniqueInput
+  export type insurersCreateNestedOneWithoutUploadsInput = {
+    create?: XOR<insurersCreateWithoutUploadsInput, insurersUncheckedCreateWithoutUploadsInput>
+    connectOrCreate?: insurersCreateOrConnectWithoutUploadsInput
+    connect?: insurersWhereUniqueInput
   }
 
-  export type ClientsUpdateOneRequiredWithoutUploadsNestedInput = {
-    create?: XOR<ClientsCreateWithoutUploadsInput, ClientsUncheckedCreateWithoutUploadsInput>
-    connectOrCreate?: ClientsCreateOrConnectWithoutUploadsInput
-    upsert?: ClientsUpsertWithoutUploadsInput
-    connect?: ClientsWhereUniqueInput
-    update?: XOR<XOR<ClientsUpdateToOneWithWhereWithoutUploadsInput, ClientsUpdateWithoutUploadsInput>, ClientsUncheckedUpdateWithoutUploadsInput>
+  export type clientsUpdateOneRequiredWithoutUploadsNestedInput = {
+    create?: XOR<clientsCreateWithoutUploadsInput, clientsUncheckedCreateWithoutUploadsInput>
+    connectOrCreate?: clientsCreateOrConnectWithoutUploadsInput
+    upsert?: clientsUpsertWithoutUploadsInput
+    connect?: clientsWhereUniqueInput
+    update?: XOR<XOR<clientsUpdateToOneWithWhereWithoutUploadsInput, clientsUpdateWithoutUploadsInput>, clientsUncheckedUpdateWithoutUploadsInput>
   }
 
-  export type InsurersUpdateOneRequiredWithoutUploadsNestedInput = {
-    create?: XOR<InsurersCreateWithoutUploadsInput, InsurersUncheckedCreateWithoutUploadsInput>
-    connectOrCreate?: InsurersCreateOrConnectWithoutUploadsInput
-    upsert?: InsurersUpsertWithoutUploadsInput
-    connect?: InsurersWhereUniqueInput
-    update?: XOR<XOR<InsurersUpdateToOneWithWhereWithoutUploadsInput, InsurersUpdateWithoutUploadsInput>, InsurersUncheckedUpdateWithoutUploadsInput>
+  export type insurersUpdateOneRequiredWithoutUploadsNestedInput = {
+    create?: XOR<insurersCreateWithoutUploadsInput, insurersUncheckedCreateWithoutUploadsInput>
+    connectOrCreate?: insurersCreateOrConnectWithoutUploadsInput
+    upsert?: insurersUpsertWithoutUploadsInput
+    connect?: insurersWhereUniqueInput
+    update?: XOR<XOR<insurersUpdateToOneWithWhereWithoutUploadsInput, insurersUpdateWithoutUploadsInput>, insurersUncheckedUpdateWithoutUploadsInput>
   }
 
-  export type ClientsCreateNestedOneWithoutDecksInput = {
-    create?: XOR<ClientsCreateWithoutDecksInput, ClientsUncheckedCreateWithoutDecksInput>
-    connectOrCreate?: ClientsCreateOrConnectWithoutDecksInput
-    connect?: ClientsWhereUniqueInput
+  export type clientsCreateNestedOneWithoutDecksInput = {
+    create?: XOR<clientsCreateWithoutDecksInput, clientsUncheckedCreateWithoutDecksInput>
+    connectOrCreate?: clientsCreateOrConnectWithoutDecksInput
+    connect?: clientsWhereUniqueInput
   }
 
-  export type ClientsUpdateOneRequiredWithoutDecksNestedInput = {
-    create?: XOR<ClientsCreateWithoutDecksInput, ClientsUncheckedCreateWithoutDecksInput>
-    connectOrCreate?: ClientsCreateOrConnectWithoutDecksInput
-    upsert?: ClientsUpsertWithoutDecksInput
-    connect?: ClientsWhereUniqueInput
-    update?: XOR<XOR<ClientsUpdateToOneWithWhereWithoutDecksInput, ClientsUpdateWithoutDecksInput>, ClientsUncheckedUpdateWithoutDecksInput>
+  export type clientsUpdateOneRequiredWithoutDecksNestedInput = {
+    create?: XOR<clientsCreateWithoutDecksInput, clientsUncheckedCreateWithoutDecksInput>
+    connectOrCreate?: clientsCreateOrConnectWithoutDecksInput
+    upsert?: clientsUpsertWithoutDecksInput
+    connect?: clientsWhereUniqueInput
+    update?: XOR<XOR<clientsUpdateToOneWithWhereWithoutDecksInput, clientsUpdateWithoutDecksInput>, clientsUncheckedUpdateWithoutDecksInput>
   }
 
-  export type ClientsCreateNestedOneWithoutIntellicareMasterlistInput = {
-    create?: XOR<ClientsCreateWithoutIntellicareMasterlistInput, ClientsUncheckedCreateWithoutIntellicareMasterlistInput>
-    connectOrCreate?: ClientsCreateOrConnectWithoutIntellicareMasterlistInput
-    connect?: ClientsWhereUniqueInput
+  export type clientsCreateNestedOneWithoutIntellicareMasterlistInput = {
+    create?: XOR<clientsCreateWithoutIntellicareMasterlistInput, clientsUncheckedCreateWithoutIntellicareMasterlistInput>
+    connectOrCreate?: clientsCreateOrConnectWithoutIntellicareMasterlistInput
+    connect?: clientsWhereUniqueInput
   }
 
   export type NullableFloatFieldUpdateOperationsInput = {
@@ -16081,60 +16081,60 @@ export namespace Prisma {
     set?: Date | string | null
   }
 
-  export type ClientsUpdateOneRequiredWithoutIntellicareMasterlistNestedInput = {
-    create?: XOR<ClientsCreateWithoutIntellicareMasterlistInput, ClientsUncheckedCreateWithoutIntellicareMasterlistInput>
-    connectOrCreate?: ClientsCreateOrConnectWithoutIntellicareMasterlistInput
-    upsert?: ClientsUpsertWithoutIntellicareMasterlistInput
-    connect?: ClientsWhereUniqueInput
-    update?: XOR<XOR<ClientsUpdateToOneWithWhereWithoutIntellicareMasterlistInput, ClientsUpdateWithoutIntellicareMasterlistInput>, ClientsUncheckedUpdateWithoutIntellicareMasterlistInput>
+  export type clientsUpdateOneRequiredWithoutIntellicareMasterlistNestedInput = {
+    create?: XOR<clientsCreateWithoutIntellicareMasterlistInput, clientsUncheckedCreateWithoutIntellicareMasterlistInput>
+    connectOrCreate?: clientsCreateOrConnectWithoutIntellicareMasterlistInput
+    upsert?: clientsUpsertWithoutIntellicareMasterlistInput
+    connect?: clientsWhereUniqueInput
+    update?: XOR<XOR<clientsUpdateToOneWithWhereWithoutIntellicareMasterlistInput, clientsUpdateWithoutIntellicareMasterlistInput>, clientsUncheckedUpdateWithoutIntellicareMasterlistInput>
   }
 
-  export type ClientsCreateNestedOneWithoutMaxicareMasterlistInput = {
-    create?: XOR<ClientsCreateWithoutMaxicareMasterlistInput, ClientsUncheckedCreateWithoutMaxicareMasterlistInput>
-    connectOrCreate?: ClientsCreateOrConnectWithoutMaxicareMasterlistInput
-    connect?: ClientsWhereUniqueInput
+  export type clientsCreateNestedOneWithoutMaxicareMasterlistInput = {
+    create?: XOR<clientsCreateWithoutMaxicareMasterlistInput, clientsUncheckedCreateWithoutMaxicareMasterlistInput>
+    connectOrCreate?: clientsCreateOrConnectWithoutMaxicareMasterlistInput
+    connect?: clientsWhereUniqueInput
   }
 
-  export type ClientsUpdateOneRequiredWithoutMaxicareMasterlistNestedInput = {
-    create?: XOR<ClientsCreateWithoutMaxicareMasterlistInput, ClientsUncheckedCreateWithoutMaxicareMasterlistInput>
-    connectOrCreate?: ClientsCreateOrConnectWithoutMaxicareMasterlistInput
-    upsert?: ClientsUpsertWithoutMaxicareMasterlistInput
-    connect?: ClientsWhereUniqueInput
-    update?: XOR<XOR<ClientsUpdateToOneWithWhereWithoutMaxicareMasterlistInput, ClientsUpdateWithoutMaxicareMasterlistInput>, ClientsUncheckedUpdateWithoutMaxicareMasterlistInput>
+  export type clientsUpdateOneRequiredWithoutMaxicareMasterlistNestedInput = {
+    create?: XOR<clientsCreateWithoutMaxicareMasterlistInput, clientsUncheckedCreateWithoutMaxicareMasterlistInput>
+    connectOrCreate?: clientsCreateOrConnectWithoutMaxicareMasterlistInput
+    upsert?: clientsUpsertWithoutMaxicareMasterlistInput
+    connect?: clientsWhereUniqueInput
+    update?: XOR<XOR<clientsUpdateToOneWithWhereWithoutMaxicareMasterlistInput, clientsUpdateWithoutMaxicareMasterlistInput>, clientsUncheckedUpdateWithoutMaxicareMasterlistInput>
   }
 
-  export type ClientsCreateNestedOneWithoutIntellicareInput = {
-    create?: XOR<ClientsCreateWithoutIntellicareInput, ClientsUncheckedCreateWithoutIntellicareInput>
-    connectOrCreate?: ClientsCreateOrConnectWithoutIntellicareInput
-    connect?: ClientsWhereUniqueInput
+  export type clientsCreateNestedOneWithoutIntellicareInput = {
+    create?: XOR<clientsCreateWithoutIntellicareInput, clientsUncheckedCreateWithoutIntellicareInput>
+    connectOrCreate?: clientsCreateOrConnectWithoutIntellicareInput
+    connect?: clientsWhereUniqueInput
   }
 
-  export type ClientsUpdateOneRequiredWithoutIntellicareNestedInput = {
-    create?: XOR<ClientsCreateWithoutIntellicareInput, ClientsUncheckedCreateWithoutIntellicareInput>
-    connectOrCreate?: ClientsCreateOrConnectWithoutIntellicareInput
-    upsert?: ClientsUpsertWithoutIntellicareInput
-    connect?: ClientsWhereUniqueInput
-    update?: XOR<XOR<ClientsUpdateToOneWithWhereWithoutIntellicareInput, ClientsUpdateWithoutIntellicareInput>, ClientsUncheckedUpdateWithoutIntellicareInput>
+  export type clientsUpdateOneRequiredWithoutIntellicareNestedInput = {
+    create?: XOR<clientsCreateWithoutIntellicareInput, clientsUncheckedCreateWithoutIntellicareInput>
+    connectOrCreate?: clientsCreateOrConnectWithoutIntellicareInput
+    upsert?: clientsUpsertWithoutIntellicareInput
+    connect?: clientsWhereUniqueInput
+    update?: XOR<XOR<clientsUpdateToOneWithWhereWithoutIntellicareInput, clientsUpdateWithoutIntellicareInput>, clientsUncheckedUpdateWithoutIntellicareInput>
   }
 
-  export type ClientsCreateNestedOneWithoutMaxicareInput = {
-    create?: XOR<ClientsCreateWithoutMaxicareInput, ClientsUncheckedCreateWithoutMaxicareInput>
-    connectOrCreate?: ClientsCreateOrConnectWithoutMaxicareInput
-    connect?: ClientsWhereUniqueInput
+  export type clientsCreateNestedOneWithoutMaxicareInput = {
+    create?: XOR<clientsCreateWithoutMaxicareInput, clientsUncheckedCreateWithoutMaxicareInput>
+    connectOrCreate?: clientsCreateOrConnectWithoutMaxicareInput
+    connect?: clientsWhereUniqueInput
   }
 
-  export type ClientsUpdateOneRequiredWithoutMaxicareNestedInput = {
-    create?: XOR<ClientsCreateWithoutMaxicareInput, ClientsUncheckedCreateWithoutMaxicareInput>
-    connectOrCreate?: ClientsCreateOrConnectWithoutMaxicareInput
-    upsert?: ClientsUpsertWithoutMaxicareInput
-    connect?: ClientsWhereUniqueInput
-    update?: XOR<XOR<ClientsUpdateToOneWithWhereWithoutMaxicareInput, ClientsUpdateWithoutMaxicareInput>, ClientsUncheckedUpdateWithoutMaxicareInput>
+  export type clientsUpdateOneRequiredWithoutMaxicareNestedInput = {
+    create?: XOR<clientsCreateWithoutMaxicareInput, clientsUncheckedCreateWithoutMaxicareInput>
+    connectOrCreate?: clientsCreateOrConnectWithoutMaxicareInput
+    upsert?: clientsUpsertWithoutMaxicareInput
+    connect?: clientsWhereUniqueInput
+    update?: XOR<XOR<clientsUpdateToOneWithWhereWithoutMaxicareInput, clientsUpdateWithoutMaxicareInput>, clientsUncheckedUpdateWithoutMaxicareInput>
   }
 
-  export type ClientsCreateNestedOneWithoutCustomIllnessesInput = {
-    create?: XOR<ClientsCreateWithoutCustomIllnessesInput, ClientsUncheckedCreateWithoutCustomIllnessesInput>
-    connectOrCreate?: ClientsCreateOrConnectWithoutCustomIllnessesInput
-    connect?: ClientsWhereUniqueInput
+  export type clientsCreateNestedOneWithoutCustomIllnessesInput = {
+    create?: XOR<clientsCreateWithoutCustomIllnessesInput, clientsUncheckedCreateWithoutCustomIllnessesInput>
+    connectOrCreate?: clientsCreateOrConnectWithoutCustomIllnessesInput
+    connect?: clientsWhereUniqueInput
   }
 
   export type NullableDecimalFieldUpdateOperationsInput = {
@@ -16145,12 +16145,12 @@ export namespace Prisma {
     divide?: Decimal | DecimalJsLike | number | string
   }
 
-  export type ClientsUpdateOneRequiredWithoutCustomIllnessesNestedInput = {
-    create?: XOR<ClientsCreateWithoutCustomIllnessesInput, ClientsUncheckedCreateWithoutCustomIllnessesInput>
-    connectOrCreate?: ClientsCreateOrConnectWithoutCustomIllnessesInput
-    upsert?: ClientsUpsertWithoutCustomIllnessesInput
-    connect?: ClientsWhereUniqueInput
-    update?: XOR<XOR<ClientsUpdateToOneWithWhereWithoutCustomIllnessesInput, ClientsUpdateWithoutCustomIllnessesInput>, ClientsUncheckedUpdateWithoutCustomIllnessesInput>
+  export type clientsUpdateOneRequiredWithoutCustomIllnessesNestedInput = {
+    create?: XOR<clientsCreateWithoutCustomIllnessesInput, clientsUncheckedCreateWithoutCustomIllnessesInput>
+    connectOrCreate?: clientsCreateOrConnectWithoutCustomIllnessesInput
+    upsert?: clientsUpsertWithoutCustomIllnessesInput
+    connect?: clientsWhereUniqueInput
+    update?: XOR<XOR<clientsUpdateToOneWithWhereWithoutCustomIllnessesInput, clientsUpdateWithoutCustomIllnessesInput>, clientsUncheckedUpdateWithoutCustomIllnessesInput>
   }
 
   export type NestedIntFilter<$PrismaModel = never> = {
@@ -16401,51 +16401,51 @@ export namespace Prisma {
     _max?: NestedDecimalNullableFilter<$PrismaModel>
   }
 
-  export type ClientsCreateWithoutInsurerInput = {
+  export type clientsCreateWithoutInsurerInput = {
     client_name: string
     description?: string | null
-    Uploads?: UploadsCreateNestedManyWithoutClientsInput
-    Decks?: DecksCreateNestedManyWithoutClientsInput
-    IntellicareMasterlist?: IntellicareMasterlistCreateNestedManyWithoutClientsInput
-    MaxicareMasterlist?: MaxicareMasterlistCreateNestedManyWithoutClientsInput
-    Intellicare?: IntellicareCreateNestedManyWithoutClientsInput
-    Maxicare?: MaxicareCreateNestedManyWithoutClientsInput
-    CustomIllnesses?: CustomIllnessesCreateNestedManyWithoutClientsInput
+    uploads?: uploadsCreateNestedManyWithoutClientsInput
+    decks?: decksCreateNestedManyWithoutClientsInput
+    intellicareMasterlist?: intellicareMasterlistCreateNestedManyWithoutClientsInput
+    maxicareMasterlist?: maxicareMasterlistCreateNestedManyWithoutClientsInput
+    intellicare?: intellicareCreateNestedManyWithoutClientsInput
+    maxicare?: maxicareCreateNestedManyWithoutClientsInput
+    customIllnesses?: customIllnessesCreateNestedManyWithoutClientsInput
   }
 
-  export type ClientsUncheckedCreateWithoutInsurerInput = {
+  export type clientsUncheckedCreateWithoutInsurerInput = {
     id?: number
     client_name: string
     description?: string | null
-    Uploads?: UploadsUncheckedCreateNestedManyWithoutClientsInput
-    Decks?: DecksUncheckedCreateNestedManyWithoutClientsInput
-    IntellicareMasterlist?: IntellicareMasterlistUncheckedCreateNestedManyWithoutClientsInput
-    MaxicareMasterlist?: MaxicareMasterlistUncheckedCreateNestedManyWithoutClientsInput
-    Intellicare?: IntellicareUncheckedCreateNestedManyWithoutClientsInput
-    Maxicare?: MaxicareUncheckedCreateNestedManyWithoutClientsInput
-    CustomIllnesses?: CustomIllnessesUncheckedCreateNestedManyWithoutClientsInput
+    uploads?: uploadsUncheckedCreateNestedManyWithoutClientsInput
+    decks?: decksUncheckedCreateNestedManyWithoutClientsInput
+    intellicareMasterlist?: intellicareMasterlistUncheckedCreateNestedManyWithoutClientsInput
+    maxicareMasterlist?: maxicareMasterlistUncheckedCreateNestedManyWithoutClientsInput
+    intellicare?: intellicareUncheckedCreateNestedManyWithoutClientsInput
+    maxicare?: maxicareUncheckedCreateNestedManyWithoutClientsInput
+    customIllnesses?: customIllnessesUncheckedCreateNestedManyWithoutClientsInput
   }
 
-  export type ClientsCreateOrConnectWithoutInsurerInput = {
-    where: ClientsWhereUniqueInput
-    create: XOR<ClientsCreateWithoutInsurerInput, ClientsUncheckedCreateWithoutInsurerInput>
+  export type clientsCreateOrConnectWithoutInsurerInput = {
+    where: clientsWhereUniqueInput
+    create: XOR<clientsCreateWithoutInsurerInput, clientsUncheckedCreateWithoutInsurerInput>
   }
 
-  export type ClientsCreateManyInsurerInputEnvelope = {
-    data: ClientsCreateManyInsurerInput | ClientsCreateManyInsurerInput[]
+  export type clientsCreateManyInsurerInputEnvelope = {
+    data: clientsCreateManyInsurerInput | clientsCreateManyInsurerInput[]
     skipDuplicates?: boolean
   }
 
-  export type UploadsCreateWithoutInsurersInput = {
+  export type uploadsCreateWithoutInsurersInput = {
     year: string
     months?: string | null
     type: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    Clients: ClientsCreateNestedOneWithoutUploadsInput
+    clients: clientsCreateNestedOneWithoutUploadsInput
   }
 
-  export type UploadsUncheckedCreateWithoutInsurersInput = {
+  export type uploadsUncheckedCreateWithoutInsurersInput = {
     id?: number
     clientId: number
     year: string
@@ -16455,98 +16455,98 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type UploadsCreateOrConnectWithoutInsurersInput = {
-    where: UploadsWhereUniqueInput
-    create: XOR<UploadsCreateWithoutInsurersInput, UploadsUncheckedCreateWithoutInsurersInput>
+  export type uploadsCreateOrConnectWithoutInsurersInput = {
+    where: uploadsWhereUniqueInput
+    create: XOR<uploadsCreateWithoutInsurersInput, uploadsUncheckedCreateWithoutInsurersInput>
   }
 
-  export type UploadsCreateManyInsurersInputEnvelope = {
-    data: UploadsCreateManyInsurersInput | UploadsCreateManyInsurersInput[]
+  export type uploadsCreateManyInsurersInputEnvelope = {
+    data: uploadsCreateManyInsurersInput | uploadsCreateManyInsurersInput[]
     skipDuplicates?: boolean
   }
 
-  export type ClientsUpsertWithWhereUniqueWithoutInsurerInput = {
-    where: ClientsWhereUniqueInput
-    update: XOR<ClientsUpdateWithoutInsurerInput, ClientsUncheckedUpdateWithoutInsurerInput>
-    create: XOR<ClientsCreateWithoutInsurerInput, ClientsUncheckedCreateWithoutInsurerInput>
+  export type clientsUpsertWithWhereUniqueWithoutInsurerInput = {
+    where: clientsWhereUniqueInput
+    update: XOR<clientsUpdateWithoutInsurerInput, clientsUncheckedUpdateWithoutInsurerInput>
+    create: XOR<clientsCreateWithoutInsurerInput, clientsUncheckedCreateWithoutInsurerInput>
   }
 
-  export type ClientsUpdateWithWhereUniqueWithoutInsurerInput = {
-    where: ClientsWhereUniqueInput
-    data: XOR<ClientsUpdateWithoutInsurerInput, ClientsUncheckedUpdateWithoutInsurerInput>
+  export type clientsUpdateWithWhereUniqueWithoutInsurerInput = {
+    where: clientsWhereUniqueInput
+    data: XOR<clientsUpdateWithoutInsurerInput, clientsUncheckedUpdateWithoutInsurerInput>
   }
 
-  export type ClientsUpdateManyWithWhereWithoutInsurerInput = {
-    where: ClientsScalarWhereInput
-    data: XOR<ClientsUpdateManyMutationInput, ClientsUncheckedUpdateManyWithoutInsurerInput>
+  export type clientsUpdateManyWithWhereWithoutInsurerInput = {
+    where: clientsScalarWhereInput
+    data: XOR<clientsUpdateManyMutationInput, clientsUncheckedUpdateManyWithoutInsurerInput>
   }
 
-  export type ClientsScalarWhereInput = {
-    AND?: ClientsScalarWhereInput | ClientsScalarWhereInput[]
-    OR?: ClientsScalarWhereInput[]
-    NOT?: ClientsScalarWhereInput | ClientsScalarWhereInput[]
-    id?: IntFilter<"Clients"> | number
-    client_name?: StringFilter<"Clients"> | string
-    description?: StringNullableFilter<"Clients"> | string | null
-    insurer_id?: IntNullableFilter<"Clients"> | number | null
+  export type clientsScalarWhereInput = {
+    AND?: clientsScalarWhereInput | clientsScalarWhereInput[]
+    OR?: clientsScalarWhereInput[]
+    NOT?: clientsScalarWhereInput | clientsScalarWhereInput[]
+    id?: IntFilter<"clients"> | number
+    client_name?: StringFilter<"clients"> | string
+    description?: StringNullableFilter<"clients"> | string | null
+    insurer_id?: IntNullableFilter<"clients"> | number | null
   }
 
-  export type UploadsUpsertWithWhereUniqueWithoutInsurersInput = {
-    where: UploadsWhereUniqueInput
-    update: XOR<UploadsUpdateWithoutInsurersInput, UploadsUncheckedUpdateWithoutInsurersInput>
-    create: XOR<UploadsCreateWithoutInsurersInput, UploadsUncheckedCreateWithoutInsurersInput>
+  export type uploadsUpsertWithWhereUniqueWithoutInsurersInput = {
+    where: uploadsWhereUniqueInput
+    update: XOR<uploadsUpdateWithoutInsurersInput, uploadsUncheckedUpdateWithoutInsurersInput>
+    create: XOR<uploadsCreateWithoutInsurersInput, uploadsUncheckedCreateWithoutInsurersInput>
   }
 
-  export type UploadsUpdateWithWhereUniqueWithoutInsurersInput = {
-    where: UploadsWhereUniqueInput
-    data: XOR<UploadsUpdateWithoutInsurersInput, UploadsUncheckedUpdateWithoutInsurersInput>
+  export type uploadsUpdateWithWhereUniqueWithoutInsurersInput = {
+    where: uploadsWhereUniqueInput
+    data: XOR<uploadsUpdateWithoutInsurersInput, uploadsUncheckedUpdateWithoutInsurersInput>
   }
 
-  export type UploadsUpdateManyWithWhereWithoutInsurersInput = {
-    where: UploadsScalarWhereInput
-    data: XOR<UploadsUpdateManyMutationInput, UploadsUncheckedUpdateManyWithoutInsurersInput>
+  export type uploadsUpdateManyWithWhereWithoutInsurersInput = {
+    where: uploadsScalarWhereInput
+    data: XOR<uploadsUpdateManyMutationInput, uploadsUncheckedUpdateManyWithoutInsurersInput>
   }
 
-  export type UploadsScalarWhereInput = {
-    AND?: UploadsScalarWhereInput | UploadsScalarWhereInput[]
-    OR?: UploadsScalarWhereInput[]
-    NOT?: UploadsScalarWhereInput | UploadsScalarWhereInput[]
-    id?: IntFilter<"Uploads"> | number
-    clientId?: IntFilter<"Uploads"> | number
-    insurerId?: IntFilter<"Uploads"> | number
-    year?: StringFilter<"Uploads"> | string
-    months?: StringNullableFilter<"Uploads"> | string | null
-    type?: StringFilter<"Uploads"> | string
-    createdAt?: DateTimeFilter<"Uploads"> | Date | string
-    updatedAt?: DateTimeFilter<"Uploads"> | Date | string
+  export type uploadsScalarWhereInput = {
+    AND?: uploadsScalarWhereInput | uploadsScalarWhereInput[]
+    OR?: uploadsScalarWhereInput[]
+    NOT?: uploadsScalarWhereInput | uploadsScalarWhereInput[]
+    id?: IntFilter<"uploads"> | number
+    clientId?: IntFilter<"uploads"> | number
+    insurerId?: IntFilter<"uploads"> | number
+    year?: StringFilter<"uploads"> | string
+    months?: StringNullableFilter<"uploads"> | string | null
+    type?: StringFilter<"uploads"> | string
+    createdAt?: DateTimeFilter<"uploads"> | Date | string
+    updatedAt?: DateTimeFilter<"uploads"> | Date | string
   }
 
-  export type InsurersCreateWithoutClientsInput = {
+  export type insurersCreateWithoutClientsInput = {
     name: string
-    Uploads?: UploadsCreateNestedManyWithoutInsurersInput
+    uploads?: uploadsCreateNestedManyWithoutInsurersInput
   }
 
-  export type InsurersUncheckedCreateWithoutClientsInput = {
+  export type insurersUncheckedCreateWithoutClientsInput = {
     id?: number
     name: string
-    Uploads?: UploadsUncheckedCreateNestedManyWithoutInsurersInput
+    uploads?: uploadsUncheckedCreateNestedManyWithoutInsurersInput
   }
 
-  export type InsurersCreateOrConnectWithoutClientsInput = {
-    where: InsurersWhereUniqueInput
-    create: XOR<InsurersCreateWithoutClientsInput, InsurersUncheckedCreateWithoutClientsInput>
+  export type insurersCreateOrConnectWithoutClientsInput = {
+    where: insurersWhereUniqueInput
+    create: XOR<insurersCreateWithoutClientsInput, insurersUncheckedCreateWithoutClientsInput>
   }
 
-  export type UploadsCreateWithoutClientsInput = {
+  export type uploadsCreateWithoutClientsInput = {
     year: string
     months?: string | null
     type: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    Insurers: InsurersCreateNestedOneWithoutUploadsInput
+    insurers: insurersCreateNestedOneWithoutUploadsInput
   }
 
-  export type UploadsUncheckedCreateWithoutClientsInput = {
+  export type uploadsUncheckedCreateWithoutClientsInput = {
     id?: number
     insurerId: number
     year: string
@@ -16556,24 +16556,24 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type UploadsCreateOrConnectWithoutClientsInput = {
-    where: UploadsWhereUniqueInput
-    create: XOR<UploadsCreateWithoutClientsInput, UploadsUncheckedCreateWithoutClientsInput>
+  export type uploadsCreateOrConnectWithoutClientsInput = {
+    where: uploadsWhereUniqueInput
+    create: XOR<uploadsCreateWithoutClientsInput, uploadsUncheckedCreateWithoutClientsInput>
   }
 
-  export type UploadsCreateManyClientsInputEnvelope = {
-    data: UploadsCreateManyClientsInput | UploadsCreateManyClientsInput[]
+  export type uploadsCreateManyClientsInputEnvelope = {
+    data: uploadsCreateManyClientsInput | uploadsCreateManyClientsInput[]
     skipDuplicates?: boolean
   }
 
-  export type DecksCreateWithoutClientsInput = {
+  export type decksCreateWithoutClientsInput = {
     name: string
     description: string
     createdAt?: Date | string
     updatedAt?: Date | string
   }
 
-  export type DecksUncheckedCreateWithoutClientsInput = {
+  export type decksUncheckedCreateWithoutClientsInput = {
     id?: number
     name: string
     description: string
@@ -16581,17 +16581,17 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type DecksCreateOrConnectWithoutClientsInput = {
-    where: DecksWhereUniqueInput
-    create: XOR<DecksCreateWithoutClientsInput, DecksUncheckedCreateWithoutClientsInput>
+  export type decksCreateOrConnectWithoutClientsInput = {
+    where: decksWhereUniqueInput
+    create: XOR<decksCreateWithoutClientsInput, decksUncheckedCreateWithoutClientsInput>
   }
 
-  export type DecksCreateManyClientsInputEnvelope = {
-    data: DecksCreateManyClientsInput | DecksCreateManyClientsInput[]
+  export type decksCreateManyClientsInputEnvelope = {
+    data: decksCreateManyClientsInput | decksCreateManyClientsInput[]
     skipDuplicates?: boolean
   }
 
-  export type IntellicareMasterlistCreateWithoutClientsInput = {
+  export type intellicareMasterlistCreateWithoutClientsInput = {
     PY?: string | null
     ACCOUNT_NO?: string | null
     STATUS?: string | null
@@ -16609,7 +16609,7 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type IntellicareMasterlistUncheckedCreateWithoutClientsInput = {
+  export type intellicareMasterlistUncheckedCreateWithoutClientsInput = {
     id?: number
     PY?: string | null
     ACCOUNT_NO?: string | null
@@ -16628,17 +16628,17 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type IntellicareMasterlistCreateOrConnectWithoutClientsInput = {
-    where: IntellicareMasterlistWhereUniqueInput
-    create: XOR<IntellicareMasterlistCreateWithoutClientsInput, IntellicareMasterlistUncheckedCreateWithoutClientsInput>
+  export type intellicareMasterlistCreateOrConnectWithoutClientsInput = {
+    where: intellicareMasterlistWhereUniqueInput
+    create: XOR<intellicareMasterlistCreateWithoutClientsInput, intellicareMasterlistUncheckedCreateWithoutClientsInput>
   }
 
-  export type IntellicareMasterlistCreateManyClientsInputEnvelope = {
-    data: IntellicareMasterlistCreateManyClientsInput | IntellicareMasterlistCreateManyClientsInput[]
+  export type intellicareMasterlistCreateManyClientsInputEnvelope = {
+    data: intellicareMasterlistCreateManyClientsInput | intellicareMasterlistCreateManyClientsInput[]
     skipDuplicates?: boolean
   }
 
-  export type MaxicareMasterlistCreateWithoutClientsInput = {
+  export type maxicareMasterlistCreateWithoutClientsInput = {
     PY?: string | null
     ACCOUNT_NO?: string | null
     STATUS?: string | null
@@ -16652,7 +16652,7 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type MaxicareMasterlistUncheckedCreateWithoutClientsInput = {
+  export type maxicareMasterlistUncheckedCreateWithoutClientsInput = {
     id?: number
     PY?: string | null
     ACCOUNT_NO?: string | null
@@ -16667,17 +16667,17 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type MaxicareMasterlistCreateOrConnectWithoutClientsInput = {
-    where: MaxicareMasterlistWhereUniqueInput
-    create: XOR<MaxicareMasterlistCreateWithoutClientsInput, MaxicareMasterlistUncheckedCreateWithoutClientsInput>
+  export type maxicareMasterlistCreateOrConnectWithoutClientsInput = {
+    where: maxicareMasterlistWhereUniqueInput
+    create: XOR<maxicareMasterlistCreateWithoutClientsInput, maxicareMasterlistUncheckedCreateWithoutClientsInput>
   }
 
-  export type MaxicareMasterlistCreateManyClientsInputEnvelope = {
-    data: MaxicareMasterlistCreateManyClientsInput | MaxicareMasterlistCreateManyClientsInput[]
+  export type maxicareMasterlistCreateManyClientsInputEnvelope = {
+    data: maxicareMasterlistCreateManyClientsInput | maxicareMasterlistCreateManyClientsInput[]
     skipDuplicates?: boolean
   }
 
-  export type IntellicareCreateWithoutClientsInput = {
+  export type intellicareCreateWithoutClientsInput = {
     PY: string
     Company?: string | null
     Member_Account?: string | null
@@ -16697,7 +16697,7 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type IntellicareUncheckedCreateWithoutClientsInput = {
+  export type intellicareUncheckedCreateWithoutClientsInput = {
     id?: number
     PY: string
     Company?: string | null
@@ -16718,17 +16718,17 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type IntellicareCreateOrConnectWithoutClientsInput = {
-    where: IntellicareWhereUniqueInput
-    create: XOR<IntellicareCreateWithoutClientsInput, IntellicareUncheckedCreateWithoutClientsInput>
+  export type intellicareCreateOrConnectWithoutClientsInput = {
+    where: intellicareWhereUniqueInput
+    create: XOR<intellicareCreateWithoutClientsInput, intellicareUncheckedCreateWithoutClientsInput>
   }
 
-  export type IntellicareCreateManyClientsInputEnvelope = {
-    data: IntellicareCreateManyClientsInput | IntellicareCreateManyClientsInput[]
+  export type intellicareCreateManyClientsInputEnvelope = {
+    data: intellicareCreateManyClientsInput | intellicareCreateManyClientsInput[]
     skipDuplicates?: boolean
   }
 
-  export type MaxicareCreateWithoutClientsInput = {
+  export type maxicareCreateWithoutClientsInput = {
     PY: string
     Company?: string | null
     Member_Account?: string | null
@@ -16745,7 +16745,7 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type MaxicareUncheckedCreateWithoutClientsInput = {
+  export type maxicareUncheckedCreateWithoutClientsInput = {
     id?: number
     PY: string
     Company?: string | null
@@ -16763,17 +16763,17 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type MaxicareCreateOrConnectWithoutClientsInput = {
-    where: MaxicareWhereUniqueInput
-    create: XOR<MaxicareCreateWithoutClientsInput, MaxicareUncheckedCreateWithoutClientsInput>
+  export type maxicareCreateOrConnectWithoutClientsInput = {
+    where: maxicareWhereUniqueInput
+    create: XOR<maxicareCreateWithoutClientsInput, maxicareUncheckedCreateWithoutClientsInput>
   }
 
-  export type MaxicareCreateManyClientsInputEnvelope = {
-    data: MaxicareCreateManyClientsInput | MaxicareCreateManyClientsInput[]
+  export type maxicareCreateManyClientsInputEnvelope = {
+    data: maxicareCreateManyClientsInput | maxicareCreateManyClientsInput[]
     skipDuplicates?: boolean
   }
 
-  export type CustomIllnessesCreateWithoutClientsInput = {
+  export type customIllnessesCreateWithoutClientsInput = {
     py?: string | null
     member_type?: string | null
     icd_10_code?: string | null
@@ -16787,7 +16787,7 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type CustomIllnessesUncheckedCreateWithoutClientsInput = {
+  export type customIllnessesUncheckedCreateWithoutClientsInput = {
     id?: number
     py?: string | null
     member_type?: string | null
@@ -16802,777 +16802,777 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type CustomIllnessesCreateOrConnectWithoutClientsInput = {
-    where: CustomIllnessesWhereUniqueInput
-    create: XOR<CustomIllnessesCreateWithoutClientsInput, CustomIllnessesUncheckedCreateWithoutClientsInput>
+  export type customIllnessesCreateOrConnectWithoutClientsInput = {
+    where: customIllnessesWhereUniqueInput
+    create: XOR<customIllnessesCreateWithoutClientsInput, customIllnessesUncheckedCreateWithoutClientsInput>
   }
 
-  export type CustomIllnessesCreateManyClientsInputEnvelope = {
-    data: CustomIllnessesCreateManyClientsInput | CustomIllnessesCreateManyClientsInput[]
+  export type customIllnessesCreateManyClientsInputEnvelope = {
+    data: customIllnessesCreateManyClientsInput | customIllnessesCreateManyClientsInput[]
     skipDuplicates?: boolean
   }
 
-  export type InsurersUpsertWithoutClientsInput = {
-    update: XOR<InsurersUpdateWithoutClientsInput, InsurersUncheckedUpdateWithoutClientsInput>
-    create: XOR<InsurersCreateWithoutClientsInput, InsurersUncheckedCreateWithoutClientsInput>
-    where?: InsurersWhereInput
+  export type insurersUpsertWithoutClientsInput = {
+    update: XOR<insurersUpdateWithoutClientsInput, insurersUncheckedUpdateWithoutClientsInput>
+    create: XOR<insurersCreateWithoutClientsInput, insurersUncheckedCreateWithoutClientsInput>
+    where?: insurersWhereInput
   }
 
-  export type InsurersUpdateToOneWithWhereWithoutClientsInput = {
-    where?: InsurersWhereInput
-    data: XOR<InsurersUpdateWithoutClientsInput, InsurersUncheckedUpdateWithoutClientsInput>
+  export type insurersUpdateToOneWithWhereWithoutClientsInput = {
+    where?: insurersWhereInput
+    data: XOR<insurersUpdateWithoutClientsInput, insurersUncheckedUpdateWithoutClientsInput>
   }
 
-  export type InsurersUpdateWithoutClientsInput = {
+  export type insurersUpdateWithoutClientsInput = {
     name?: StringFieldUpdateOperationsInput | string
-    Uploads?: UploadsUpdateManyWithoutInsurersNestedInput
+    uploads?: uploadsUpdateManyWithoutInsurersNestedInput
   }
 
-  export type InsurersUncheckedUpdateWithoutClientsInput = {
+  export type insurersUncheckedUpdateWithoutClientsInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
-    Uploads?: UploadsUncheckedUpdateManyWithoutInsurersNestedInput
+    uploads?: uploadsUncheckedUpdateManyWithoutInsurersNestedInput
   }
 
-  export type UploadsUpsertWithWhereUniqueWithoutClientsInput = {
-    where: UploadsWhereUniqueInput
-    update: XOR<UploadsUpdateWithoutClientsInput, UploadsUncheckedUpdateWithoutClientsInput>
-    create: XOR<UploadsCreateWithoutClientsInput, UploadsUncheckedCreateWithoutClientsInput>
+  export type uploadsUpsertWithWhereUniqueWithoutClientsInput = {
+    where: uploadsWhereUniqueInput
+    update: XOR<uploadsUpdateWithoutClientsInput, uploadsUncheckedUpdateWithoutClientsInput>
+    create: XOR<uploadsCreateWithoutClientsInput, uploadsUncheckedCreateWithoutClientsInput>
   }
 
-  export type UploadsUpdateWithWhereUniqueWithoutClientsInput = {
-    where: UploadsWhereUniqueInput
-    data: XOR<UploadsUpdateWithoutClientsInput, UploadsUncheckedUpdateWithoutClientsInput>
+  export type uploadsUpdateWithWhereUniqueWithoutClientsInput = {
+    where: uploadsWhereUniqueInput
+    data: XOR<uploadsUpdateWithoutClientsInput, uploadsUncheckedUpdateWithoutClientsInput>
   }
 
-  export type UploadsUpdateManyWithWhereWithoutClientsInput = {
-    where: UploadsScalarWhereInput
-    data: XOR<UploadsUpdateManyMutationInput, UploadsUncheckedUpdateManyWithoutClientsInput>
+  export type uploadsUpdateManyWithWhereWithoutClientsInput = {
+    where: uploadsScalarWhereInput
+    data: XOR<uploadsUpdateManyMutationInput, uploadsUncheckedUpdateManyWithoutClientsInput>
   }
 
-  export type DecksUpsertWithWhereUniqueWithoutClientsInput = {
-    where: DecksWhereUniqueInput
-    update: XOR<DecksUpdateWithoutClientsInput, DecksUncheckedUpdateWithoutClientsInput>
-    create: XOR<DecksCreateWithoutClientsInput, DecksUncheckedCreateWithoutClientsInput>
+  export type decksUpsertWithWhereUniqueWithoutClientsInput = {
+    where: decksWhereUniqueInput
+    update: XOR<decksUpdateWithoutClientsInput, decksUncheckedUpdateWithoutClientsInput>
+    create: XOR<decksCreateWithoutClientsInput, decksUncheckedCreateWithoutClientsInput>
   }
 
-  export type DecksUpdateWithWhereUniqueWithoutClientsInput = {
-    where: DecksWhereUniqueInput
-    data: XOR<DecksUpdateWithoutClientsInput, DecksUncheckedUpdateWithoutClientsInput>
+  export type decksUpdateWithWhereUniqueWithoutClientsInput = {
+    where: decksWhereUniqueInput
+    data: XOR<decksUpdateWithoutClientsInput, decksUncheckedUpdateWithoutClientsInput>
   }
 
-  export type DecksUpdateManyWithWhereWithoutClientsInput = {
-    where: DecksScalarWhereInput
-    data: XOR<DecksUpdateManyMutationInput, DecksUncheckedUpdateManyWithoutClientsInput>
+  export type decksUpdateManyWithWhereWithoutClientsInput = {
+    where: decksScalarWhereInput
+    data: XOR<decksUpdateManyMutationInput, decksUncheckedUpdateManyWithoutClientsInput>
   }
 
-  export type DecksScalarWhereInput = {
-    AND?: DecksScalarWhereInput | DecksScalarWhereInput[]
-    OR?: DecksScalarWhereInput[]
-    NOT?: DecksScalarWhereInput | DecksScalarWhereInput[]
-    id?: IntFilter<"Decks"> | number
-    name?: StringFilter<"Decks"> | string
-    description?: StringFilter<"Decks"> | string
-    createdAt?: DateTimeFilter<"Decks"> | Date | string
-    updatedAt?: DateTimeFilter<"Decks"> | Date | string
-    clientId?: IntFilter<"Decks"> | number
+  export type decksScalarWhereInput = {
+    AND?: decksScalarWhereInput | decksScalarWhereInput[]
+    OR?: decksScalarWhereInput[]
+    NOT?: decksScalarWhereInput | decksScalarWhereInput[]
+    id?: IntFilter<"decks"> | number
+    name?: StringFilter<"decks"> | string
+    description?: StringFilter<"decks"> | string
+    createdAt?: DateTimeFilter<"decks"> | Date | string
+    updatedAt?: DateTimeFilter<"decks"> | Date | string
+    clientId?: IntFilter<"decks"> | number
   }
 
-  export type IntellicareMasterlistUpsertWithWhereUniqueWithoutClientsInput = {
-    where: IntellicareMasterlistWhereUniqueInput
-    update: XOR<IntellicareMasterlistUpdateWithoutClientsInput, IntellicareMasterlistUncheckedUpdateWithoutClientsInput>
-    create: XOR<IntellicareMasterlistCreateWithoutClientsInput, IntellicareMasterlistUncheckedCreateWithoutClientsInput>
+  export type intellicareMasterlistUpsertWithWhereUniqueWithoutClientsInput = {
+    where: intellicareMasterlistWhereUniqueInput
+    update: XOR<intellicareMasterlistUpdateWithoutClientsInput, intellicareMasterlistUncheckedUpdateWithoutClientsInput>
+    create: XOR<intellicareMasterlistCreateWithoutClientsInput, intellicareMasterlistUncheckedCreateWithoutClientsInput>
   }
 
-  export type IntellicareMasterlistUpdateWithWhereUniqueWithoutClientsInput = {
-    where: IntellicareMasterlistWhereUniqueInput
-    data: XOR<IntellicareMasterlistUpdateWithoutClientsInput, IntellicareMasterlistUncheckedUpdateWithoutClientsInput>
+  export type intellicareMasterlistUpdateWithWhereUniqueWithoutClientsInput = {
+    where: intellicareMasterlistWhereUniqueInput
+    data: XOR<intellicareMasterlistUpdateWithoutClientsInput, intellicareMasterlistUncheckedUpdateWithoutClientsInput>
   }
 
-  export type IntellicareMasterlistUpdateManyWithWhereWithoutClientsInput = {
-    where: IntellicareMasterlistScalarWhereInput
-    data: XOR<IntellicareMasterlistUpdateManyMutationInput, IntellicareMasterlistUncheckedUpdateManyWithoutClientsInput>
+  export type intellicareMasterlistUpdateManyWithWhereWithoutClientsInput = {
+    where: intellicareMasterlistScalarWhereInput
+    data: XOR<intellicareMasterlistUpdateManyMutationInput, intellicareMasterlistUncheckedUpdateManyWithoutClientsInput>
   }
 
-  export type IntellicareMasterlistScalarWhereInput = {
-    AND?: IntellicareMasterlistScalarWhereInput | IntellicareMasterlistScalarWhereInput[]
-    OR?: IntellicareMasterlistScalarWhereInput[]
-    NOT?: IntellicareMasterlistScalarWhereInput | IntellicareMasterlistScalarWhereInput[]
-    id?: IntFilter<"IntellicareMasterlist"> | number
-    clientId?: IntFilter<"IntellicareMasterlist"> | number
-    PY?: StringNullableFilter<"IntellicareMasterlist"> | string | null
-    ACCOUNT_NO?: StringNullableFilter<"IntellicareMasterlist"> | string | null
-    STATUS?: StringNullableFilter<"IntellicareMasterlist"> | string | null
-    MEMBER_TYPE?: StringNullableFilter<"IntellicareMasterlist"> | string | null
-    RNB?: StringNullableFilter<"IntellicareMasterlist"> | string | null
-    PREEXIST?: FloatNullableFilter<"IntellicareMasterlist"> | number | null
-    LIMIT?: FloatNullableFilter<"IntellicareMasterlist"> | number | null
-    BIRTHDATE?: DateTimeNullableFilter<"IntellicareMasterlist"> | Date | string | null
-    AGE?: IntNullableFilter<"IntellicareMasterlist"> | number | null
-    RELATION?: StringNullableFilter<"IntellicareMasterlist"> | string | null
-    EE_ID?: StringNullableFilter<"IntellicareMasterlist"> | string | null
-    CARD_NO?: StringNullableFilter<"IntellicareMasterlist"> | string | null
-    COMPANY?: StringNullableFilter<"IntellicareMasterlist"> | string | null
-    createdAt?: DateTimeFilter<"IntellicareMasterlist"> | Date | string
-    updatedAt?: DateTimeFilter<"IntellicareMasterlist"> | Date | string
+  export type intellicareMasterlistScalarWhereInput = {
+    AND?: intellicareMasterlistScalarWhereInput | intellicareMasterlistScalarWhereInput[]
+    OR?: intellicareMasterlistScalarWhereInput[]
+    NOT?: intellicareMasterlistScalarWhereInput | intellicareMasterlistScalarWhereInput[]
+    id?: IntFilter<"intellicareMasterlist"> | number
+    clientId?: IntFilter<"intellicareMasterlist"> | number
+    PY?: StringNullableFilter<"intellicareMasterlist"> | string | null
+    ACCOUNT_NO?: StringNullableFilter<"intellicareMasterlist"> | string | null
+    STATUS?: StringNullableFilter<"intellicareMasterlist"> | string | null
+    MEMBER_TYPE?: StringNullableFilter<"intellicareMasterlist"> | string | null
+    RNB?: StringNullableFilter<"intellicareMasterlist"> | string | null
+    PREEXIST?: FloatNullableFilter<"intellicareMasterlist"> | number | null
+    LIMIT?: FloatNullableFilter<"intellicareMasterlist"> | number | null
+    BIRTHDATE?: DateTimeNullableFilter<"intellicareMasterlist"> | Date | string | null
+    AGE?: IntNullableFilter<"intellicareMasterlist"> | number | null
+    RELATION?: StringNullableFilter<"intellicareMasterlist"> | string | null
+    EE_ID?: StringNullableFilter<"intellicareMasterlist"> | string | null
+    CARD_NO?: StringNullableFilter<"intellicareMasterlist"> | string | null
+    COMPANY?: StringNullableFilter<"intellicareMasterlist"> | string | null
+    createdAt?: DateTimeFilter<"intellicareMasterlist"> | Date | string
+    updatedAt?: DateTimeFilter<"intellicareMasterlist"> | Date | string
   }
 
-  export type MaxicareMasterlistUpsertWithWhereUniqueWithoutClientsInput = {
-    where: MaxicareMasterlistWhereUniqueInput
-    update: XOR<MaxicareMasterlistUpdateWithoutClientsInput, MaxicareMasterlistUncheckedUpdateWithoutClientsInput>
-    create: XOR<MaxicareMasterlistCreateWithoutClientsInput, MaxicareMasterlistUncheckedCreateWithoutClientsInput>
+  export type maxicareMasterlistUpsertWithWhereUniqueWithoutClientsInput = {
+    where: maxicareMasterlistWhereUniqueInput
+    update: XOR<maxicareMasterlistUpdateWithoutClientsInput, maxicareMasterlistUncheckedUpdateWithoutClientsInput>
+    create: XOR<maxicareMasterlistCreateWithoutClientsInput, maxicareMasterlistUncheckedCreateWithoutClientsInput>
   }
 
-  export type MaxicareMasterlistUpdateWithWhereUniqueWithoutClientsInput = {
-    where: MaxicareMasterlistWhereUniqueInput
-    data: XOR<MaxicareMasterlistUpdateWithoutClientsInput, MaxicareMasterlistUncheckedUpdateWithoutClientsInput>
+  export type maxicareMasterlistUpdateWithWhereUniqueWithoutClientsInput = {
+    where: maxicareMasterlistWhereUniqueInput
+    data: XOR<maxicareMasterlistUpdateWithoutClientsInput, maxicareMasterlistUncheckedUpdateWithoutClientsInput>
   }
 
-  export type MaxicareMasterlistUpdateManyWithWhereWithoutClientsInput = {
-    where: MaxicareMasterlistScalarWhereInput
-    data: XOR<MaxicareMasterlistUpdateManyMutationInput, MaxicareMasterlistUncheckedUpdateManyWithoutClientsInput>
+  export type maxicareMasterlistUpdateManyWithWhereWithoutClientsInput = {
+    where: maxicareMasterlistScalarWhereInput
+    data: XOR<maxicareMasterlistUpdateManyMutationInput, maxicareMasterlistUncheckedUpdateManyWithoutClientsInput>
   }
 
-  export type MaxicareMasterlistScalarWhereInput = {
-    AND?: MaxicareMasterlistScalarWhereInput | MaxicareMasterlistScalarWhereInput[]
-    OR?: MaxicareMasterlistScalarWhereInput[]
-    NOT?: MaxicareMasterlistScalarWhereInput | MaxicareMasterlistScalarWhereInput[]
-    id?: IntFilter<"MaxicareMasterlist"> | number
-    clientId?: IntFilter<"MaxicareMasterlist"> | number
-    PY?: StringNullableFilter<"MaxicareMasterlist"> | string | null
-    ACCOUNT_NO?: StringNullableFilter<"MaxicareMasterlist"> | string | null
-    STATUS?: StringNullableFilter<"MaxicareMasterlist"> | string | null
-    MEMBER_TYPE?: StringNullableFilter<"MaxicareMasterlist"> | string | null
-    LIMIT?: FloatNullableFilter<"MaxicareMasterlist"> | number | null
-    RELATION?: StringNullableFilter<"MaxicareMasterlist"> | string | null
-    EE_ID?: StringNullableFilter<"MaxicareMasterlist"> | string | null
-    CARD_NO?: StringNullableFilter<"MaxicareMasterlist"> | string | null
-    COMPANY?: StringNullableFilter<"MaxicareMasterlist"> | string | null
-    createdAt?: DateTimeFilter<"MaxicareMasterlist"> | Date | string
-    updatedAt?: DateTimeFilter<"MaxicareMasterlist"> | Date | string
+  export type maxicareMasterlistScalarWhereInput = {
+    AND?: maxicareMasterlistScalarWhereInput | maxicareMasterlistScalarWhereInput[]
+    OR?: maxicareMasterlistScalarWhereInput[]
+    NOT?: maxicareMasterlistScalarWhereInput | maxicareMasterlistScalarWhereInput[]
+    id?: IntFilter<"maxicareMasterlist"> | number
+    clientId?: IntFilter<"maxicareMasterlist"> | number
+    PY?: StringNullableFilter<"maxicareMasterlist"> | string | null
+    ACCOUNT_NO?: StringNullableFilter<"maxicareMasterlist"> | string | null
+    STATUS?: StringNullableFilter<"maxicareMasterlist"> | string | null
+    MEMBER_TYPE?: StringNullableFilter<"maxicareMasterlist"> | string | null
+    LIMIT?: FloatNullableFilter<"maxicareMasterlist"> | number | null
+    RELATION?: StringNullableFilter<"maxicareMasterlist"> | string | null
+    EE_ID?: StringNullableFilter<"maxicareMasterlist"> | string | null
+    CARD_NO?: StringNullableFilter<"maxicareMasterlist"> | string | null
+    COMPANY?: StringNullableFilter<"maxicareMasterlist"> | string | null
+    createdAt?: DateTimeFilter<"maxicareMasterlist"> | Date | string
+    updatedAt?: DateTimeFilter<"maxicareMasterlist"> | Date | string
   }
 
-  export type IntellicareUpsertWithWhereUniqueWithoutClientsInput = {
-    where: IntellicareWhereUniqueInput
-    update: XOR<IntellicareUpdateWithoutClientsInput, IntellicareUncheckedUpdateWithoutClientsInput>
-    create: XOR<IntellicareCreateWithoutClientsInput, IntellicareUncheckedCreateWithoutClientsInput>
+  export type intellicareUpsertWithWhereUniqueWithoutClientsInput = {
+    where: intellicareWhereUniqueInput
+    update: XOR<intellicareUpdateWithoutClientsInput, intellicareUncheckedUpdateWithoutClientsInput>
+    create: XOR<intellicareCreateWithoutClientsInput, intellicareUncheckedCreateWithoutClientsInput>
   }
 
-  export type IntellicareUpdateWithWhereUniqueWithoutClientsInput = {
-    where: IntellicareWhereUniqueInput
-    data: XOR<IntellicareUpdateWithoutClientsInput, IntellicareUncheckedUpdateWithoutClientsInput>
+  export type intellicareUpdateWithWhereUniqueWithoutClientsInput = {
+    where: intellicareWhereUniqueInput
+    data: XOR<intellicareUpdateWithoutClientsInput, intellicareUncheckedUpdateWithoutClientsInput>
   }
 
-  export type IntellicareUpdateManyWithWhereWithoutClientsInput = {
-    where: IntellicareScalarWhereInput
-    data: XOR<IntellicareUpdateManyMutationInput, IntellicareUncheckedUpdateManyWithoutClientsInput>
+  export type intellicareUpdateManyWithWhereWithoutClientsInput = {
+    where: intellicareScalarWhereInput
+    data: XOR<intellicareUpdateManyMutationInput, intellicareUncheckedUpdateManyWithoutClientsInput>
   }
 
-  export type IntellicareScalarWhereInput = {
-    AND?: IntellicareScalarWhereInput | IntellicareScalarWhereInput[]
-    OR?: IntellicareScalarWhereInput[]
-    NOT?: IntellicareScalarWhereInput | IntellicareScalarWhereInput[]
-    id?: IntFilter<"Intellicare"> | number
-    clientId?: IntFilter<"Intellicare"> | number
-    PY?: StringFilter<"Intellicare"> | string
-    Company?: StringNullableFilter<"Intellicare"> | string | null
-    Member_Account?: StringNullableFilter<"Intellicare"> | string | null
-    Member_Type?: StringNullableFilter<"Intellicare"> | string | null
-    ICD_10_Code?: StringNullableFilter<"Intellicare"> | string | null
-    Diagnosis?: StringNullableFilter<"Intellicare"> | string | null
-    Claim_Type?: StringNullableFilter<"Intellicare"> | string | null
-    Admission_Date?: DateTimeNullableFilter<"Intellicare"> | Date | string | null
-    Provider_Name?: StringNullableFilter<"Intellicare"> | string | null
-    Provider_Type?: StringNullableFilter<"Intellicare"> | string | null
-    Approved_Claim_Amount?: FloatNullableFilter<"Intellicare"> | number | null
-    Class_Plan_Level?: StringNullableFilter<"Intellicare"> | string | null
-    Maximum_Benefit_Limit?: FloatNullableFilter<"Intellicare"> | number | null
-    Date_of_Birth?: DateTimeNullableFilter<"Intellicare"> | Date | string | null
-    Relationship?: StringNullableFilter<"Intellicare"> | string | null
-    createdAt?: DateTimeFilter<"Intellicare"> | Date | string
-    updatedAt?: DateTimeFilter<"Intellicare"> | Date | string
+  export type intellicareScalarWhereInput = {
+    AND?: intellicareScalarWhereInput | intellicareScalarWhereInput[]
+    OR?: intellicareScalarWhereInput[]
+    NOT?: intellicareScalarWhereInput | intellicareScalarWhereInput[]
+    id?: IntFilter<"intellicare"> | number
+    clientId?: IntFilter<"intellicare"> | number
+    PY?: StringFilter<"intellicare"> | string
+    Company?: StringNullableFilter<"intellicare"> | string | null
+    Member_Account?: StringNullableFilter<"intellicare"> | string | null
+    Member_Type?: StringNullableFilter<"intellicare"> | string | null
+    ICD_10_Code?: StringNullableFilter<"intellicare"> | string | null
+    Diagnosis?: StringNullableFilter<"intellicare"> | string | null
+    Claim_Type?: StringNullableFilter<"intellicare"> | string | null
+    Admission_Date?: DateTimeNullableFilter<"intellicare"> | Date | string | null
+    Provider_Name?: StringNullableFilter<"intellicare"> | string | null
+    Provider_Type?: StringNullableFilter<"intellicare"> | string | null
+    Approved_Claim_Amount?: FloatNullableFilter<"intellicare"> | number | null
+    Class_Plan_Level?: StringNullableFilter<"intellicare"> | string | null
+    Maximum_Benefit_Limit?: FloatNullableFilter<"intellicare"> | number | null
+    Date_of_Birth?: DateTimeNullableFilter<"intellicare"> | Date | string | null
+    Relationship?: StringNullableFilter<"intellicare"> | string | null
+    createdAt?: DateTimeFilter<"intellicare"> | Date | string
+    updatedAt?: DateTimeFilter<"intellicare"> | Date | string
   }
 
-  export type MaxicareUpsertWithWhereUniqueWithoutClientsInput = {
-    where: MaxicareWhereUniqueInput
-    update: XOR<MaxicareUpdateWithoutClientsInput, MaxicareUncheckedUpdateWithoutClientsInput>
-    create: XOR<MaxicareCreateWithoutClientsInput, MaxicareUncheckedCreateWithoutClientsInput>
+  export type maxicareUpsertWithWhereUniqueWithoutClientsInput = {
+    where: maxicareWhereUniqueInput
+    update: XOR<maxicareUpdateWithoutClientsInput, maxicareUncheckedUpdateWithoutClientsInput>
+    create: XOR<maxicareCreateWithoutClientsInput, maxicareUncheckedCreateWithoutClientsInput>
   }
 
-  export type MaxicareUpdateWithWhereUniqueWithoutClientsInput = {
-    where: MaxicareWhereUniqueInput
-    data: XOR<MaxicareUpdateWithoutClientsInput, MaxicareUncheckedUpdateWithoutClientsInput>
+  export type maxicareUpdateWithWhereUniqueWithoutClientsInput = {
+    where: maxicareWhereUniqueInput
+    data: XOR<maxicareUpdateWithoutClientsInput, maxicareUncheckedUpdateWithoutClientsInput>
   }
 
-  export type MaxicareUpdateManyWithWhereWithoutClientsInput = {
-    where: MaxicareScalarWhereInput
-    data: XOR<MaxicareUpdateManyMutationInput, MaxicareUncheckedUpdateManyWithoutClientsInput>
+  export type maxicareUpdateManyWithWhereWithoutClientsInput = {
+    where: maxicareScalarWhereInput
+    data: XOR<maxicareUpdateManyMutationInput, maxicareUncheckedUpdateManyWithoutClientsInput>
   }
 
-  export type MaxicareScalarWhereInput = {
-    AND?: MaxicareScalarWhereInput | MaxicareScalarWhereInput[]
-    OR?: MaxicareScalarWhereInput[]
-    NOT?: MaxicareScalarWhereInput | MaxicareScalarWhereInput[]
-    id?: IntFilter<"Maxicare"> | number
-    clientId?: IntFilter<"Maxicare"> | number
-    PY?: StringFilter<"Maxicare"> | string
-    Company?: StringNullableFilter<"Maxicare"> | string | null
-    Member_Account?: StringNullableFilter<"Maxicare"> | string | null
-    Member_Type?: StringNullableFilter<"Maxicare"> | string | null
-    ICD_10_Code?: StringNullableFilter<"Maxicare"> | string | null
-    Diagnosis?: StringNullableFilter<"Maxicare"> | string | null
-    Claim_Type?: StringNullableFilter<"Maxicare"> | string | null
-    Admission_Date?: DateTimeNullableFilter<"Maxicare"> | Date | string | null
-    Provider_Name?: StringNullableFilter<"Maxicare"> | string | null
-    Provider_Type?: StringNullableFilter<"Maxicare"> | string | null
-    Approved_Claim_Amount?: FloatNullableFilter<"Maxicare"> | number | null
-    Relationship?: StringNullableFilter<"Maxicare"> | string | null
-    createdAt?: DateTimeFilter<"Maxicare"> | Date | string
-    updatedAt?: DateTimeFilter<"Maxicare"> | Date | string
+  export type maxicareScalarWhereInput = {
+    AND?: maxicareScalarWhereInput | maxicareScalarWhereInput[]
+    OR?: maxicareScalarWhereInput[]
+    NOT?: maxicareScalarWhereInput | maxicareScalarWhereInput[]
+    id?: IntFilter<"maxicare"> | number
+    clientId?: IntFilter<"maxicare"> | number
+    PY?: StringFilter<"maxicare"> | string
+    Company?: StringNullableFilter<"maxicare"> | string | null
+    Member_Account?: StringNullableFilter<"maxicare"> | string | null
+    Member_Type?: StringNullableFilter<"maxicare"> | string | null
+    ICD_10_Code?: StringNullableFilter<"maxicare"> | string | null
+    Diagnosis?: StringNullableFilter<"maxicare"> | string | null
+    Claim_Type?: StringNullableFilter<"maxicare"> | string | null
+    Admission_Date?: DateTimeNullableFilter<"maxicare"> | Date | string | null
+    Provider_Name?: StringNullableFilter<"maxicare"> | string | null
+    Provider_Type?: StringNullableFilter<"maxicare"> | string | null
+    Approved_Claim_Amount?: FloatNullableFilter<"maxicare"> | number | null
+    Relationship?: StringNullableFilter<"maxicare"> | string | null
+    createdAt?: DateTimeFilter<"maxicare"> | Date | string
+    updatedAt?: DateTimeFilter<"maxicare"> | Date | string
   }
 
-  export type CustomIllnessesUpsertWithWhereUniqueWithoutClientsInput = {
-    where: CustomIllnessesWhereUniqueInput
-    update: XOR<CustomIllnessesUpdateWithoutClientsInput, CustomIllnessesUncheckedUpdateWithoutClientsInput>
-    create: XOR<CustomIllnessesCreateWithoutClientsInput, CustomIllnessesUncheckedCreateWithoutClientsInput>
+  export type customIllnessesUpsertWithWhereUniqueWithoutClientsInput = {
+    where: customIllnessesWhereUniqueInput
+    update: XOR<customIllnessesUpdateWithoutClientsInput, customIllnessesUncheckedUpdateWithoutClientsInput>
+    create: XOR<customIllnessesCreateWithoutClientsInput, customIllnessesUncheckedCreateWithoutClientsInput>
   }
 
-  export type CustomIllnessesUpdateWithWhereUniqueWithoutClientsInput = {
-    where: CustomIllnessesWhereUniqueInput
-    data: XOR<CustomIllnessesUpdateWithoutClientsInput, CustomIllnessesUncheckedUpdateWithoutClientsInput>
+  export type customIllnessesUpdateWithWhereUniqueWithoutClientsInput = {
+    where: customIllnessesWhereUniqueInput
+    data: XOR<customIllnessesUpdateWithoutClientsInput, customIllnessesUncheckedUpdateWithoutClientsInput>
   }
 
-  export type CustomIllnessesUpdateManyWithWhereWithoutClientsInput = {
-    where: CustomIllnessesScalarWhereInput
-    data: XOR<CustomIllnessesUpdateManyMutationInput, CustomIllnessesUncheckedUpdateManyWithoutClientsInput>
+  export type customIllnessesUpdateManyWithWhereWithoutClientsInput = {
+    where: customIllnessesScalarWhereInput
+    data: XOR<customIllnessesUpdateManyMutationInput, customIllnessesUncheckedUpdateManyWithoutClientsInput>
   }
 
-  export type CustomIllnessesScalarWhereInput = {
-    AND?: CustomIllnessesScalarWhereInput | CustomIllnessesScalarWhereInput[]
-    OR?: CustomIllnessesScalarWhereInput[]
-    NOT?: CustomIllnessesScalarWhereInput | CustomIllnessesScalarWhereInput[]
-    id?: IntFilter<"CustomIllnesses"> | number
-    clientId?: IntFilter<"CustomIllnesses"> | number
-    py?: StringNullableFilter<"CustomIllnesses"> | string | null
-    member_type?: StringNullableFilter<"CustomIllnesses"> | string | null
-    icd_10_code?: StringNullableFilter<"CustomIllnesses"> | string | null
-    diagnosis?: StringNullableFilter<"CustomIllnesses"> | string | null
-    claim_amount?: IntNullableFilter<"CustomIllnesses"> | number | null
-    percentage_to_total_amount?: DecimalNullableFilter<"CustomIllnesses"> | Decimal | DecimalJsLike | number | string | null
-    claim_count?: IntNullableFilter<"CustomIllnesses"> | number | null
-    percentage_to_total_count?: DecimalNullableFilter<"CustomIllnesses"> | Decimal | DecimalJsLike | number | string | null
-    average_cost_per_claim?: IntNullableFilter<"CustomIllnesses"> | number | null
-    createdAt?: DateTimeFilter<"CustomIllnesses"> | Date | string
-    updatedAt?: DateTimeFilter<"CustomIllnesses"> | Date | string
+  export type customIllnessesScalarWhereInput = {
+    AND?: customIllnessesScalarWhereInput | customIllnessesScalarWhereInput[]
+    OR?: customIllnessesScalarWhereInput[]
+    NOT?: customIllnessesScalarWhereInput | customIllnessesScalarWhereInput[]
+    id?: IntFilter<"customIllnesses"> | number
+    clientId?: IntFilter<"customIllnesses"> | number
+    py?: StringNullableFilter<"customIllnesses"> | string | null
+    member_type?: StringNullableFilter<"customIllnesses"> | string | null
+    icd_10_code?: StringNullableFilter<"customIllnesses"> | string | null
+    diagnosis?: StringNullableFilter<"customIllnesses"> | string | null
+    claim_amount?: IntNullableFilter<"customIllnesses"> | number | null
+    percentage_to_total_amount?: DecimalNullableFilter<"customIllnesses"> | Decimal | DecimalJsLike | number | string | null
+    claim_count?: IntNullableFilter<"customIllnesses"> | number | null
+    percentage_to_total_count?: DecimalNullableFilter<"customIllnesses"> | Decimal | DecimalJsLike | number | string | null
+    average_cost_per_claim?: IntNullableFilter<"customIllnesses"> | number | null
+    createdAt?: DateTimeFilter<"customIllnesses"> | Date | string
+    updatedAt?: DateTimeFilter<"customIllnesses"> | Date | string
   }
 
-  export type ClientsCreateWithoutUploadsInput = {
+  export type clientsCreateWithoutUploadsInput = {
     client_name: string
     description?: string | null
-    insurer?: InsurersCreateNestedOneWithoutClientsInput
-    Decks?: DecksCreateNestedManyWithoutClientsInput
-    IntellicareMasterlist?: IntellicareMasterlistCreateNestedManyWithoutClientsInput
-    MaxicareMasterlist?: MaxicareMasterlistCreateNestedManyWithoutClientsInput
-    Intellicare?: IntellicareCreateNestedManyWithoutClientsInput
-    Maxicare?: MaxicareCreateNestedManyWithoutClientsInput
-    CustomIllnesses?: CustomIllnessesCreateNestedManyWithoutClientsInput
+    insurer?: insurersCreateNestedOneWithoutClientsInput
+    decks?: decksCreateNestedManyWithoutClientsInput
+    intellicareMasterlist?: intellicareMasterlistCreateNestedManyWithoutClientsInput
+    maxicareMasterlist?: maxicareMasterlistCreateNestedManyWithoutClientsInput
+    intellicare?: intellicareCreateNestedManyWithoutClientsInput
+    maxicare?: maxicareCreateNestedManyWithoutClientsInput
+    customIllnesses?: customIllnessesCreateNestedManyWithoutClientsInput
   }
 
-  export type ClientsUncheckedCreateWithoutUploadsInput = {
+  export type clientsUncheckedCreateWithoutUploadsInput = {
     id?: number
     client_name: string
     description?: string | null
     insurer_id?: number | null
-    Decks?: DecksUncheckedCreateNestedManyWithoutClientsInput
-    IntellicareMasterlist?: IntellicareMasterlistUncheckedCreateNestedManyWithoutClientsInput
-    MaxicareMasterlist?: MaxicareMasterlistUncheckedCreateNestedManyWithoutClientsInput
-    Intellicare?: IntellicareUncheckedCreateNestedManyWithoutClientsInput
-    Maxicare?: MaxicareUncheckedCreateNestedManyWithoutClientsInput
-    CustomIllnesses?: CustomIllnessesUncheckedCreateNestedManyWithoutClientsInput
+    decks?: decksUncheckedCreateNestedManyWithoutClientsInput
+    intellicareMasterlist?: intellicareMasterlistUncheckedCreateNestedManyWithoutClientsInput
+    maxicareMasterlist?: maxicareMasterlistUncheckedCreateNestedManyWithoutClientsInput
+    intellicare?: intellicareUncheckedCreateNestedManyWithoutClientsInput
+    maxicare?: maxicareUncheckedCreateNestedManyWithoutClientsInput
+    customIllnesses?: customIllnessesUncheckedCreateNestedManyWithoutClientsInput
   }
 
-  export type ClientsCreateOrConnectWithoutUploadsInput = {
-    where: ClientsWhereUniqueInput
-    create: XOR<ClientsCreateWithoutUploadsInput, ClientsUncheckedCreateWithoutUploadsInput>
+  export type clientsCreateOrConnectWithoutUploadsInput = {
+    where: clientsWhereUniqueInput
+    create: XOR<clientsCreateWithoutUploadsInput, clientsUncheckedCreateWithoutUploadsInput>
   }
 
-  export type InsurersCreateWithoutUploadsInput = {
+  export type insurersCreateWithoutUploadsInput = {
     name: string
-    Clients?: ClientsCreateNestedManyWithoutInsurerInput
+    clients?: clientsCreateNestedManyWithoutInsurerInput
   }
 
-  export type InsurersUncheckedCreateWithoutUploadsInput = {
+  export type insurersUncheckedCreateWithoutUploadsInput = {
     id?: number
     name: string
-    Clients?: ClientsUncheckedCreateNestedManyWithoutInsurerInput
+    clients?: clientsUncheckedCreateNestedManyWithoutInsurerInput
   }
 
-  export type InsurersCreateOrConnectWithoutUploadsInput = {
-    where: InsurersWhereUniqueInput
-    create: XOR<InsurersCreateWithoutUploadsInput, InsurersUncheckedCreateWithoutUploadsInput>
+  export type insurersCreateOrConnectWithoutUploadsInput = {
+    where: insurersWhereUniqueInput
+    create: XOR<insurersCreateWithoutUploadsInput, insurersUncheckedCreateWithoutUploadsInput>
   }
 
-  export type ClientsUpsertWithoutUploadsInput = {
-    update: XOR<ClientsUpdateWithoutUploadsInput, ClientsUncheckedUpdateWithoutUploadsInput>
-    create: XOR<ClientsCreateWithoutUploadsInput, ClientsUncheckedCreateWithoutUploadsInput>
-    where?: ClientsWhereInput
+  export type clientsUpsertWithoutUploadsInput = {
+    update: XOR<clientsUpdateWithoutUploadsInput, clientsUncheckedUpdateWithoutUploadsInput>
+    create: XOR<clientsCreateWithoutUploadsInput, clientsUncheckedCreateWithoutUploadsInput>
+    where?: clientsWhereInput
   }
 
-  export type ClientsUpdateToOneWithWhereWithoutUploadsInput = {
-    where?: ClientsWhereInput
-    data: XOR<ClientsUpdateWithoutUploadsInput, ClientsUncheckedUpdateWithoutUploadsInput>
+  export type clientsUpdateToOneWithWhereWithoutUploadsInput = {
+    where?: clientsWhereInput
+    data: XOR<clientsUpdateWithoutUploadsInput, clientsUncheckedUpdateWithoutUploadsInput>
   }
 
-  export type ClientsUpdateWithoutUploadsInput = {
+  export type clientsUpdateWithoutUploadsInput = {
     client_name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
-    insurer?: InsurersUpdateOneWithoutClientsNestedInput
-    Decks?: DecksUpdateManyWithoutClientsNestedInput
-    IntellicareMasterlist?: IntellicareMasterlistUpdateManyWithoutClientsNestedInput
-    MaxicareMasterlist?: MaxicareMasterlistUpdateManyWithoutClientsNestedInput
-    Intellicare?: IntellicareUpdateManyWithoutClientsNestedInput
-    Maxicare?: MaxicareUpdateManyWithoutClientsNestedInput
-    CustomIllnesses?: CustomIllnessesUpdateManyWithoutClientsNestedInput
+    insurer?: insurersUpdateOneWithoutClientsNestedInput
+    decks?: decksUpdateManyWithoutClientsNestedInput
+    intellicareMasterlist?: intellicareMasterlistUpdateManyWithoutClientsNestedInput
+    maxicareMasterlist?: maxicareMasterlistUpdateManyWithoutClientsNestedInput
+    intellicare?: intellicareUpdateManyWithoutClientsNestedInput
+    maxicare?: maxicareUpdateManyWithoutClientsNestedInput
+    customIllnesses?: customIllnessesUpdateManyWithoutClientsNestedInput
   }
 
-  export type ClientsUncheckedUpdateWithoutUploadsInput = {
+  export type clientsUncheckedUpdateWithoutUploadsInput = {
     id?: IntFieldUpdateOperationsInput | number
     client_name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     insurer_id?: NullableIntFieldUpdateOperationsInput | number | null
-    Decks?: DecksUncheckedUpdateManyWithoutClientsNestedInput
-    IntellicareMasterlist?: IntellicareMasterlistUncheckedUpdateManyWithoutClientsNestedInput
-    MaxicareMasterlist?: MaxicareMasterlistUncheckedUpdateManyWithoutClientsNestedInput
-    Intellicare?: IntellicareUncheckedUpdateManyWithoutClientsNestedInput
-    Maxicare?: MaxicareUncheckedUpdateManyWithoutClientsNestedInput
-    CustomIllnesses?: CustomIllnessesUncheckedUpdateManyWithoutClientsNestedInput
+    decks?: decksUncheckedUpdateManyWithoutClientsNestedInput
+    intellicareMasterlist?: intellicareMasterlistUncheckedUpdateManyWithoutClientsNestedInput
+    maxicareMasterlist?: maxicareMasterlistUncheckedUpdateManyWithoutClientsNestedInput
+    intellicare?: intellicareUncheckedUpdateManyWithoutClientsNestedInput
+    maxicare?: maxicareUncheckedUpdateManyWithoutClientsNestedInput
+    customIllnesses?: customIllnessesUncheckedUpdateManyWithoutClientsNestedInput
   }
 
-  export type InsurersUpsertWithoutUploadsInput = {
-    update: XOR<InsurersUpdateWithoutUploadsInput, InsurersUncheckedUpdateWithoutUploadsInput>
-    create: XOR<InsurersCreateWithoutUploadsInput, InsurersUncheckedCreateWithoutUploadsInput>
-    where?: InsurersWhereInput
+  export type insurersUpsertWithoutUploadsInput = {
+    update: XOR<insurersUpdateWithoutUploadsInput, insurersUncheckedUpdateWithoutUploadsInput>
+    create: XOR<insurersCreateWithoutUploadsInput, insurersUncheckedCreateWithoutUploadsInput>
+    where?: insurersWhereInput
   }
 
-  export type InsurersUpdateToOneWithWhereWithoutUploadsInput = {
-    where?: InsurersWhereInput
-    data: XOR<InsurersUpdateWithoutUploadsInput, InsurersUncheckedUpdateWithoutUploadsInput>
+  export type insurersUpdateToOneWithWhereWithoutUploadsInput = {
+    where?: insurersWhereInput
+    data: XOR<insurersUpdateWithoutUploadsInput, insurersUncheckedUpdateWithoutUploadsInput>
   }
 
-  export type InsurersUpdateWithoutUploadsInput = {
+  export type insurersUpdateWithoutUploadsInput = {
     name?: StringFieldUpdateOperationsInput | string
-    Clients?: ClientsUpdateManyWithoutInsurerNestedInput
+    clients?: clientsUpdateManyWithoutInsurerNestedInput
   }
 
-  export type InsurersUncheckedUpdateWithoutUploadsInput = {
+  export type insurersUncheckedUpdateWithoutUploadsInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
-    Clients?: ClientsUncheckedUpdateManyWithoutInsurerNestedInput
+    clients?: clientsUncheckedUpdateManyWithoutInsurerNestedInput
   }
 
-  export type ClientsCreateWithoutDecksInput = {
+  export type clientsCreateWithoutDecksInput = {
     client_name: string
     description?: string | null
-    insurer?: InsurersCreateNestedOneWithoutClientsInput
-    Uploads?: UploadsCreateNestedManyWithoutClientsInput
-    IntellicareMasterlist?: IntellicareMasterlistCreateNestedManyWithoutClientsInput
-    MaxicareMasterlist?: MaxicareMasterlistCreateNestedManyWithoutClientsInput
-    Intellicare?: IntellicareCreateNestedManyWithoutClientsInput
-    Maxicare?: MaxicareCreateNestedManyWithoutClientsInput
-    CustomIllnesses?: CustomIllnessesCreateNestedManyWithoutClientsInput
+    insurer?: insurersCreateNestedOneWithoutClientsInput
+    uploads?: uploadsCreateNestedManyWithoutClientsInput
+    intellicareMasterlist?: intellicareMasterlistCreateNestedManyWithoutClientsInput
+    maxicareMasterlist?: maxicareMasterlistCreateNestedManyWithoutClientsInput
+    intellicare?: intellicareCreateNestedManyWithoutClientsInput
+    maxicare?: maxicareCreateNestedManyWithoutClientsInput
+    customIllnesses?: customIllnessesCreateNestedManyWithoutClientsInput
   }
 
-  export type ClientsUncheckedCreateWithoutDecksInput = {
+  export type clientsUncheckedCreateWithoutDecksInput = {
     id?: number
     client_name: string
     description?: string | null
     insurer_id?: number | null
-    Uploads?: UploadsUncheckedCreateNestedManyWithoutClientsInput
-    IntellicareMasterlist?: IntellicareMasterlistUncheckedCreateNestedManyWithoutClientsInput
-    MaxicareMasterlist?: MaxicareMasterlistUncheckedCreateNestedManyWithoutClientsInput
-    Intellicare?: IntellicareUncheckedCreateNestedManyWithoutClientsInput
-    Maxicare?: MaxicareUncheckedCreateNestedManyWithoutClientsInput
-    CustomIllnesses?: CustomIllnessesUncheckedCreateNestedManyWithoutClientsInput
+    uploads?: uploadsUncheckedCreateNestedManyWithoutClientsInput
+    intellicareMasterlist?: intellicareMasterlistUncheckedCreateNestedManyWithoutClientsInput
+    maxicareMasterlist?: maxicareMasterlistUncheckedCreateNestedManyWithoutClientsInput
+    intellicare?: intellicareUncheckedCreateNestedManyWithoutClientsInput
+    maxicare?: maxicareUncheckedCreateNestedManyWithoutClientsInput
+    customIllnesses?: customIllnessesUncheckedCreateNestedManyWithoutClientsInput
   }
 
-  export type ClientsCreateOrConnectWithoutDecksInput = {
-    where: ClientsWhereUniqueInput
-    create: XOR<ClientsCreateWithoutDecksInput, ClientsUncheckedCreateWithoutDecksInput>
+  export type clientsCreateOrConnectWithoutDecksInput = {
+    where: clientsWhereUniqueInput
+    create: XOR<clientsCreateWithoutDecksInput, clientsUncheckedCreateWithoutDecksInput>
   }
 
-  export type ClientsUpsertWithoutDecksInput = {
-    update: XOR<ClientsUpdateWithoutDecksInput, ClientsUncheckedUpdateWithoutDecksInput>
-    create: XOR<ClientsCreateWithoutDecksInput, ClientsUncheckedCreateWithoutDecksInput>
-    where?: ClientsWhereInput
+  export type clientsUpsertWithoutDecksInput = {
+    update: XOR<clientsUpdateWithoutDecksInput, clientsUncheckedUpdateWithoutDecksInput>
+    create: XOR<clientsCreateWithoutDecksInput, clientsUncheckedCreateWithoutDecksInput>
+    where?: clientsWhereInput
   }
 
-  export type ClientsUpdateToOneWithWhereWithoutDecksInput = {
-    where?: ClientsWhereInput
-    data: XOR<ClientsUpdateWithoutDecksInput, ClientsUncheckedUpdateWithoutDecksInput>
+  export type clientsUpdateToOneWithWhereWithoutDecksInput = {
+    where?: clientsWhereInput
+    data: XOR<clientsUpdateWithoutDecksInput, clientsUncheckedUpdateWithoutDecksInput>
   }
 
-  export type ClientsUpdateWithoutDecksInput = {
+  export type clientsUpdateWithoutDecksInput = {
     client_name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
-    insurer?: InsurersUpdateOneWithoutClientsNestedInput
-    Uploads?: UploadsUpdateManyWithoutClientsNestedInput
-    IntellicareMasterlist?: IntellicareMasterlistUpdateManyWithoutClientsNestedInput
-    MaxicareMasterlist?: MaxicareMasterlistUpdateManyWithoutClientsNestedInput
-    Intellicare?: IntellicareUpdateManyWithoutClientsNestedInput
-    Maxicare?: MaxicareUpdateManyWithoutClientsNestedInput
-    CustomIllnesses?: CustomIllnessesUpdateManyWithoutClientsNestedInput
+    insurer?: insurersUpdateOneWithoutClientsNestedInput
+    uploads?: uploadsUpdateManyWithoutClientsNestedInput
+    intellicareMasterlist?: intellicareMasterlistUpdateManyWithoutClientsNestedInput
+    maxicareMasterlist?: maxicareMasterlistUpdateManyWithoutClientsNestedInput
+    intellicare?: intellicareUpdateManyWithoutClientsNestedInput
+    maxicare?: maxicareUpdateManyWithoutClientsNestedInput
+    customIllnesses?: customIllnessesUpdateManyWithoutClientsNestedInput
   }
 
-  export type ClientsUncheckedUpdateWithoutDecksInput = {
+  export type clientsUncheckedUpdateWithoutDecksInput = {
     id?: IntFieldUpdateOperationsInput | number
     client_name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     insurer_id?: NullableIntFieldUpdateOperationsInput | number | null
-    Uploads?: UploadsUncheckedUpdateManyWithoutClientsNestedInput
-    IntellicareMasterlist?: IntellicareMasterlistUncheckedUpdateManyWithoutClientsNestedInput
-    MaxicareMasterlist?: MaxicareMasterlistUncheckedUpdateManyWithoutClientsNestedInput
-    Intellicare?: IntellicareUncheckedUpdateManyWithoutClientsNestedInput
-    Maxicare?: MaxicareUncheckedUpdateManyWithoutClientsNestedInput
-    CustomIllnesses?: CustomIllnessesUncheckedUpdateManyWithoutClientsNestedInput
+    uploads?: uploadsUncheckedUpdateManyWithoutClientsNestedInput
+    intellicareMasterlist?: intellicareMasterlistUncheckedUpdateManyWithoutClientsNestedInput
+    maxicareMasterlist?: maxicareMasterlistUncheckedUpdateManyWithoutClientsNestedInput
+    intellicare?: intellicareUncheckedUpdateManyWithoutClientsNestedInput
+    maxicare?: maxicareUncheckedUpdateManyWithoutClientsNestedInput
+    customIllnesses?: customIllnessesUncheckedUpdateManyWithoutClientsNestedInput
   }
 
-  export type ClientsCreateWithoutIntellicareMasterlistInput = {
+  export type clientsCreateWithoutIntellicareMasterlistInput = {
     client_name: string
     description?: string | null
-    insurer?: InsurersCreateNestedOneWithoutClientsInput
-    Uploads?: UploadsCreateNestedManyWithoutClientsInput
-    Decks?: DecksCreateNestedManyWithoutClientsInput
-    MaxicareMasterlist?: MaxicareMasterlistCreateNestedManyWithoutClientsInput
-    Intellicare?: IntellicareCreateNestedManyWithoutClientsInput
-    Maxicare?: MaxicareCreateNestedManyWithoutClientsInput
-    CustomIllnesses?: CustomIllnessesCreateNestedManyWithoutClientsInput
+    insurer?: insurersCreateNestedOneWithoutClientsInput
+    uploads?: uploadsCreateNestedManyWithoutClientsInput
+    decks?: decksCreateNestedManyWithoutClientsInput
+    maxicareMasterlist?: maxicareMasterlistCreateNestedManyWithoutClientsInput
+    intellicare?: intellicareCreateNestedManyWithoutClientsInput
+    maxicare?: maxicareCreateNestedManyWithoutClientsInput
+    customIllnesses?: customIllnessesCreateNestedManyWithoutClientsInput
   }
 
-  export type ClientsUncheckedCreateWithoutIntellicareMasterlistInput = {
+  export type clientsUncheckedCreateWithoutIntellicareMasterlistInput = {
     id?: number
     client_name: string
     description?: string | null
     insurer_id?: number | null
-    Uploads?: UploadsUncheckedCreateNestedManyWithoutClientsInput
-    Decks?: DecksUncheckedCreateNestedManyWithoutClientsInput
-    MaxicareMasterlist?: MaxicareMasterlistUncheckedCreateNestedManyWithoutClientsInput
-    Intellicare?: IntellicareUncheckedCreateNestedManyWithoutClientsInput
-    Maxicare?: MaxicareUncheckedCreateNestedManyWithoutClientsInput
-    CustomIllnesses?: CustomIllnessesUncheckedCreateNestedManyWithoutClientsInput
+    uploads?: uploadsUncheckedCreateNestedManyWithoutClientsInput
+    decks?: decksUncheckedCreateNestedManyWithoutClientsInput
+    maxicareMasterlist?: maxicareMasterlistUncheckedCreateNestedManyWithoutClientsInput
+    intellicare?: intellicareUncheckedCreateNestedManyWithoutClientsInput
+    maxicare?: maxicareUncheckedCreateNestedManyWithoutClientsInput
+    customIllnesses?: customIllnessesUncheckedCreateNestedManyWithoutClientsInput
   }
 
-  export type ClientsCreateOrConnectWithoutIntellicareMasterlistInput = {
-    where: ClientsWhereUniqueInput
-    create: XOR<ClientsCreateWithoutIntellicareMasterlistInput, ClientsUncheckedCreateWithoutIntellicareMasterlistInput>
+  export type clientsCreateOrConnectWithoutIntellicareMasterlistInput = {
+    where: clientsWhereUniqueInput
+    create: XOR<clientsCreateWithoutIntellicareMasterlistInput, clientsUncheckedCreateWithoutIntellicareMasterlistInput>
   }
 
-  export type ClientsUpsertWithoutIntellicareMasterlistInput = {
-    update: XOR<ClientsUpdateWithoutIntellicareMasterlistInput, ClientsUncheckedUpdateWithoutIntellicareMasterlistInput>
-    create: XOR<ClientsCreateWithoutIntellicareMasterlistInput, ClientsUncheckedCreateWithoutIntellicareMasterlistInput>
-    where?: ClientsWhereInput
+  export type clientsUpsertWithoutIntellicareMasterlistInput = {
+    update: XOR<clientsUpdateWithoutIntellicareMasterlistInput, clientsUncheckedUpdateWithoutIntellicareMasterlistInput>
+    create: XOR<clientsCreateWithoutIntellicareMasterlistInput, clientsUncheckedCreateWithoutIntellicareMasterlistInput>
+    where?: clientsWhereInput
   }
 
-  export type ClientsUpdateToOneWithWhereWithoutIntellicareMasterlistInput = {
-    where?: ClientsWhereInput
-    data: XOR<ClientsUpdateWithoutIntellicareMasterlistInput, ClientsUncheckedUpdateWithoutIntellicareMasterlistInput>
+  export type clientsUpdateToOneWithWhereWithoutIntellicareMasterlistInput = {
+    where?: clientsWhereInput
+    data: XOR<clientsUpdateWithoutIntellicareMasterlistInput, clientsUncheckedUpdateWithoutIntellicareMasterlistInput>
   }
 
-  export type ClientsUpdateWithoutIntellicareMasterlistInput = {
+  export type clientsUpdateWithoutIntellicareMasterlistInput = {
     client_name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
-    insurer?: InsurersUpdateOneWithoutClientsNestedInput
-    Uploads?: UploadsUpdateManyWithoutClientsNestedInput
-    Decks?: DecksUpdateManyWithoutClientsNestedInput
-    MaxicareMasterlist?: MaxicareMasterlistUpdateManyWithoutClientsNestedInput
-    Intellicare?: IntellicareUpdateManyWithoutClientsNestedInput
-    Maxicare?: MaxicareUpdateManyWithoutClientsNestedInput
-    CustomIllnesses?: CustomIllnessesUpdateManyWithoutClientsNestedInput
+    insurer?: insurersUpdateOneWithoutClientsNestedInput
+    uploads?: uploadsUpdateManyWithoutClientsNestedInput
+    decks?: decksUpdateManyWithoutClientsNestedInput
+    maxicareMasterlist?: maxicareMasterlistUpdateManyWithoutClientsNestedInput
+    intellicare?: intellicareUpdateManyWithoutClientsNestedInput
+    maxicare?: maxicareUpdateManyWithoutClientsNestedInput
+    customIllnesses?: customIllnessesUpdateManyWithoutClientsNestedInput
   }
 
-  export type ClientsUncheckedUpdateWithoutIntellicareMasterlistInput = {
+  export type clientsUncheckedUpdateWithoutIntellicareMasterlistInput = {
     id?: IntFieldUpdateOperationsInput | number
     client_name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     insurer_id?: NullableIntFieldUpdateOperationsInput | number | null
-    Uploads?: UploadsUncheckedUpdateManyWithoutClientsNestedInput
-    Decks?: DecksUncheckedUpdateManyWithoutClientsNestedInput
-    MaxicareMasterlist?: MaxicareMasterlistUncheckedUpdateManyWithoutClientsNestedInput
-    Intellicare?: IntellicareUncheckedUpdateManyWithoutClientsNestedInput
-    Maxicare?: MaxicareUncheckedUpdateManyWithoutClientsNestedInput
-    CustomIllnesses?: CustomIllnessesUncheckedUpdateManyWithoutClientsNestedInput
+    uploads?: uploadsUncheckedUpdateManyWithoutClientsNestedInput
+    decks?: decksUncheckedUpdateManyWithoutClientsNestedInput
+    maxicareMasterlist?: maxicareMasterlistUncheckedUpdateManyWithoutClientsNestedInput
+    intellicare?: intellicareUncheckedUpdateManyWithoutClientsNestedInput
+    maxicare?: maxicareUncheckedUpdateManyWithoutClientsNestedInput
+    customIllnesses?: customIllnessesUncheckedUpdateManyWithoutClientsNestedInput
   }
 
-  export type ClientsCreateWithoutMaxicareMasterlistInput = {
+  export type clientsCreateWithoutMaxicareMasterlistInput = {
     client_name: string
     description?: string | null
-    insurer?: InsurersCreateNestedOneWithoutClientsInput
-    Uploads?: UploadsCreateNestedManyWithoutClientsInput
-    Decks?: DecksCreateNestedManyWithoutClientsInput
-    IntellicareMasterlist?: IntellicareMasterlistCreateNestedManyWithoutClientsInput
-    Intellicare?: IntellicareCreateNestedManyWithoutClientsInput
-    Maxicare?: MaxicareCreateNestedManyWithoutClientsInput
-    CustomIllnesses?: CustomIllnessesCreateNestedManyWithoutClientsInput
+    insurer?: insurersCreateNestedOneWithoutClientsInput
+    uploads?: uploadsCreateNestedManyWithoutClientsInput
+    decks?: decksCreateNestedManyWithoutClientsInput
+    intellicareMasterlist?: intellicareMasterlistCreateNestedManyWithoutClientsInput
+    intellicare?: intellicareCreateNestedManyWithoutClientsInput
+    maxicare?: maxicareCreateNestedManyWithoutClientsInput
+    customIllnesses?: customIllnessesCreateNestedManyWithoutClientsInput
   }
 
-  export type ClientsUncheckedCreateWithoutMaxicareMasterlistInput = {
+  export type clientsUncheckedCreateWithoutMaxicareMasterlistInput = {
     id?: number
     client_name: string
     description?: string | null
     insurer_id?: number | null
-    Uploads?: UploadsUncheckedCreateNestedManyWithoutClientsInput
-    Decks?: DecksUncheckedCreateNestedManyWithoutClientsInput
-    IntellicareMasterlist?: IntellicareMasterlistUncheckedCreateNestedManyWithoutClientsInput
-    Intellicare?: IntellicareUncheckedCreateNestedManyWithoutClientsInput
-    Maxicare?: MaxicareUncheckedCreateNestedManyWithoutClientsInput
-    CustomIllnesses?: CustomIllnessesUncheckedCreateNestedManyWithoutClientsInput
+    uploads?: uploadsUncheckedCreateNestedManyWithoutClientsInput
+    decks?: decksUncheckedCreateNestedManyWithoutClientsInput
+    intellicareMasterlist?: intellicareMasterlistUncheckedCreateNestedManyWithoutClientsInput
+    intellicare?: intellicareUncheckedCreateNestedManyWithoutClientsInput
+    maxicare?: maxicareUncheckedCreateNestedManyWithoutClientsInput
+    customIllnesses?: customIllnessesUncheckedCreateNestedManyWithoutClientsInput
   }
 
-  export type ClientsCreateOrConnectWithoutMaxicareMasterlistInput = {
-    where: ClientsWhereUniqueInput
-    create: XOR<ClientsCreateWithoutMaxicareMasterlistInput, ClientsUncheckedCreateWithoutMaxicareMasterlistInput>
+  export type clientsCreateOrConnectWithoutMaxicareMasterlistInput = {
+    where: clientsWhereUniqueInput
+    create: XOR<clientsCreateWithoutMaxicareMasterlistInput, clientsUncheckedCreateWithoutMaxicareMasterlistInput>
   }
 
-  export type ClientsUpsertWithoutMaxicareMasterlistInput = {
-    update: XOR<ClientsUpdateWithoutMaxicareMasterlistInput, ClientsUncheckedUpdateWithoutMaxicareMasterlistInput>
-    create: XOR<ClientsCreateWithoutMaxicareMasterlistInput, ClientsUncheckedCreateWithoutMaxicareMasterlistInput>
-    where?: ClientsWhereInput
+  export type clientsUpsertWithoutMaxicareMasterlistInput = {
+    update: XOR<clientsUpdateWithoutMaxicareMasterlistInput, clientsUncheckedUpdateWithoutMaxicareMasterlistInput>
+    create: XOR<clientsCreateWithoutMaxicareMasterlistInput, clientsUncheckedCreateWithoutMaxicareMasterlistInput>
+    where?: clientsWhereInput
   }
 
-  export type ClientsUpdateToOneWithWhereWithoutMaxicareMasterlistInput = {
-    where?: ClientsWhereInput
-    data: XOR<ClientsUpdateWithoutMaxicareMasterlistInput, ClientsUncheckedUpdateWithoutMaxicareMasterlistInput>
+  export type clientsUpdateToOneWithWhereWithoutMaxicareMasterlistInput = {
+    where?: clientsWhereInput
+    data: XOR<clientsUpdateWithoutMaxicareMasterlistInput, clientsUncheckedUpdateWithoutMaxicareMasterlistInput>
   }
 
-  export type ClientsUpdateWithoutMaxicareMasterlistInput = {
+  export type clientsUpdateWithoutMaxicareMasterlistInput = {
     client_name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
-    insurer?: InsurersUpdateOneWithoutClientsNestedInput
-    Uploads?: UploadsUpdateManyWithoutClientsNestedInput
-    Decks?: DecksUpdateManyWithoutClientsNestedInput
-    IntellicareMasterlist?: IntellicareMasterlistUpdateManyWithoutClientsNestedInput
-    Intellicare?: IntellicareUpdateManyWithoutClientsNestedInput
-    Maxicare?: MaxicareUpdateManyWithoutClientsNestedInput
-    CustomIllnesses?: CustomIllnessesUpdateManyWithoutClientsNestedInput
+    insurer?: insurersUpdateOneWithoutClientsNestedInput
+    uploads?: uploadsUpdateManyWithoutClientsNestedInput
+    decks?: decksUpdateManyWithoutClientsNestedInput
+    intellicareMasterlist?: intellicareMasterlistUpdateManyWithoutClientsNestedInput
+    intellicare?: intellicareUpdateManyWithoutClientsNestedInput
+    maxicare?: maxicareUpdateManyWithoutClientsNestedInput
+    customIllnesses?: customIllnessesUpdateManyWithoutClientsNestedInput
   }
 
-  export type ClientsUncheckedUpdateWithoutMaxicareMasterlistInput = {
+  export type clientsUncheckedUpdateWithoutMaxicareMasterlistInput = {
     id?: IntFieldUpdateOperationsInput | number
     client_name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     insurer_id?: NullableIntFieldUpdateOperationsInput | number | null
-    Uploads?: UploadsUncheckedUpdateManyWithoutClientsNestedInput
-    Decks?: DecksUncheckedUpdateManyWithoutClientsNestedInput
-    IntellicareMasterlist?: IntellicareMasterlistUncheckedUpdateManyWithoutClientsNestedInput
-    Intellicare?: IntellicareUncheckedUpdateManyWithoutClientsNestedInput
-    Maxicare?: MaxicareUncheckedUpdateManyWithoutClientsNestedInput
-    CustomIllnesses?: CustomIllnessesUncheckedUpdateManyWithoutClientsNestedInput
+    uploads?: uploadsUncheckedUpdateManyWithoutClientsNestedInput
+    decks?: decksUncheckedUpdateManyWithoutClientsNestedInput
+    intellicareMasterlist?: intellicareMasterlistUncheckedUpdateManyWithoutClientsNestedInput
+    intellicare?: intellicareUncheckedUpdateManyWithoutClientsNestedInput
+    maxicare?: maxicareUncheckedUpdateManyWithoutClientsNestedInput
+    customIllnesses?: customIllnessesUncheckedUpdateManyWithoutClientsNestedInput
   }
 
-  export type ClientsCreateWithoutIntellicareInput = {
+  export type clientsCreateWithoutIntellicareInput = {
     client_name: string
     description?: string | null
-    insurer?: InsurersCreateNestedOneWithoutClientsInput
-    Uploads?: UploadsCreateNestedManyWithoutClientsInput
-    Decks?: DecksCreateNestedManyWithoutClientsInput
-    IntellicareMasterlist?: IntellicareMasterlistCreateNestedManyWithoutClientsInput
-    MaxicareMasterlist?: MaxicareMasterlistCreateNestedManyWithoutClientsInput
-    Maxicare?: MaxicareCreateNestedManyWithoutClientsInput
-    CustomIllnesses?: CustomIllnessesCreateNestedManyWithoutClientsInput
+    insurer?: insurersCreateNestedOneWithoutClientsInput
+    uploads?: uploadsCreateNestedManyWithoutClientsInput
+    decks?: decksCreateNestedManyWithoutClientsInput
+    intellicareMasterlist?: intellicareMasterlistCreateNestedManyWithoutClientsInput
+    maxicareMasterlist?: maxicareMasterlistCreateNestedManyWithoutClientsInput
+    maxicare?: maxicareCreateNestedManyWithoutClientsInput
+    customIllnesses?: customIllnessesCreateNestedManyWithoutClientsInput
   }
 
-  export type ClientsUncheckedCreateWithoutIntellicareInput = {
+  export type clientsUncheckedCreateWithoutIntellicareInput = {
     id?: number
     client_name: string
     description?: string | null
     insurer_id?: number | null
-    Uploads?: UploadsUncheckedCreateNestedManyWithoutClientsInput
-    Decks?: DecksUncheckedCreateNestedManyWithoutClientsInput
-    IntellicareMasterlist?: IntellicareMasterlistUncheckedCreateNestedManyWithoutClientsInput
-    MaxicareMasterlist?: MaxicareMasterlistUncheckedCreateNestedManyWithoutClientsInput
-    Maxicare?: MaxicareUncheckedCreateNestedManyWithoutClientsInput
-    CustomIllnesses?: CustomIllnessesUncheckedCreateNestedManyWithoutClientsInput
+    uploads?: uploadsUncheckedCreateNestedManyWithoutClientsInput
+    decks?: decksUncheckedCreateNestedManyWithoutClientsInput
+    intellicareMasterlist?: intellicareMasterlistUncheckedCreateNestedManyWithoutClientsInput
+    maxicareMasterlist?: maxicareMasterlistUncheckedCreateNestedManyWithoutClientsInput
+    maxicare?: maxicareUncheckedCreateNestedManyWithoutClientsInput
+    customIllnesses?: customIllnessesUncheckedCreateNestedManyWithoutClientsInput
   }
 
-  export type ClientsCreateOrConnectWithoutIntellicareInput = {
-    where: ClientsWhereUniqueInput
-    create: XOR<ClientsCreateWithoutIntellicareInput, ClientsUncheckedCreateWithoutIntellicareInput>
+  export type clientsCreateOrConnectWithoutIntellicareInput = {
+    where: clientsWhereUniqueInput
+    create: XOR<clientsCreateWithoutIntellicareInput, clientsUncheckedCreateWithoutIntellicareInput>
   }
 
-  export type ClientsUpsertWithoutIntellicareInput = {
-    update: XOR<ClientsUpdateWithoutIntellicareInput, ClientsUncheckedUpdateWithoutIntellicareInput>
-    create: XOR<ClientsCreateWithoutIntellicareInput, ClientsUncheckedCreateWithoutIntellicareInput>
-    where?: ClientsWhereInput
+  export type clientsUpsertWithoutIntellicareInput = {
+    update: XOR<clientsUpdateWithoutIntellicareInput, clientsUncheckedUpdateWithoutIntellicareInput>
+    create: XOR<clientsCreateWithoutIntellicareInput, clientsUncheckedCreateWithoutIntellicareInput>
+    where?: clientsWhereInput
   }
 
-  export type ClientsUpdateToOneWithWhereWithoutIntellicareInput = {
-    where?: ClientsWhereInput
-    data: XOR<ClientsUpdateWithoutIntellicareInput, ClientsUncheckedUpdateWithoutIntellicareInput>
+  export type clientsUpdateToOneWithWhereWithoutIntellicareInput = {
+    where?: clientsWhereInput
+    data: XOR<clientsUpdateWithoutIntellicareInput, clientsUncheckedUpdateWithoutIntellicareInput>
   }
 
-  export type ClientsUpdateWithoutIntellicareInput = {
+  export type clientsUpdateWithoutIntellicareInput = {
     client_name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
-    insurer?: InsurersUpdateOneWithoutClientsNestedInput
-    Uploads?: UploadsUpdateManyWithoutClientsNestedInput
-    Decks?: DecksUpdateManyWithoutClientsNestedInput
-    IntellicareMasterlist?: IntellicareMasterlistUpdateManyWithoutClientsNestedInput
-    MaxicareMasterlist?: MaxicareMasterlistUpdateManyWithoutClientsNestedInput
-    Maxicare?: MaxicareUpdateManyWithoutClientsNestedInput
-    CustomIllnesses?: CustomIllnessesUpdateManyWithoutClientsNestedInput
+    insurer?: insurersUpdateOneWithoutClientsNestedInput
+    uploads?: uploadsUpdateManyWithoutClientsNestedInput
+    decks?: decksUpdateManyWithoutClientsNestedInput
+    intellicareMasterlist?: intellicareMasterlistUpdateManyWithoutClientsNestedInput
+    maxicareMasterlist?: maxicareMasterlistUpdateManyWithoutClientsNestedInput
+    maxicare?: maxicareUpdateManyWithoutClientsNestedInput
+    customIllnesses?: customIllnessesUpdateManyWithoutClientsNestedInput
   }
 
-  export type ClientsUncheckedUpdateWithoutIntellicareInput = {
+  export type clientsUncheckedUpdateWithoutIntellicareInput = {
     id?: IntFieldUpdateOperationsInput | number
     client_name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     insurer_id?: NullableIntFieldUpdateOperationsInput | number | null
-    Uploads?: UploadsUncheckedUpdateManyWithoutClientsNestedInput
-    Decks?: DecksUncheckedUpdateManyWithoutClientsNestedInput
-    IntellicareMasterlist?: IntellicareMasterlistUncheckedUpdateManyWithoutClientsNestedInput
-    MaxicareMasterlist?: MaxicareMasterlistUncheckedUpdateManyWithoutClientsNestedInput
-    Maxicare?: MaxicareUncheckedUpdateManyWithoutClientsNestedInput
-    CustomIllnesses?: CustomIllnessesUncheckedUpdateManyWithoutClientsNestedInput
+    uploads?: uploadsUncheckedUpdateManyWithoutClientsNestedInput
+    decks?: decksUncheckedUpdateManyWithoutClientsNestedInput
+    intellicareMasterlist?: intellicareMasterlistUncheckedUpdateManyWithoutClientsNestedInput
+    maxicareMasterlist?: maxicareMasterlistUncheckedUpdateManyWithoutClientsNestedInput
+    maxicare?: maxicareUncheckedUpdateManyWithoutClientsNestedInput
+    customIllnesses?: customIllnessesUncheckedUpdateManyWithoutClientsNestedInput
   }
 
-  export type ClientsCreateWithoutMaxicareInput = {
+  export type clientsCreateWithoutMaxicareInput = {
     client_name: string
     description?: string | null
-    insurer?: InsurersCreateNestedOneWithoutClientsInput
-    Uploads?: UploadsCreateNestedManyWithoutClientsInput
-    Decks?: DecksCreateNestedManyWithoutClientsInput
-    IntellicareMasterlist?: IntellicareMasterlistCreateNestedManyWithoutClientsInput
-    MaxicareMasterlist?: MaxicareMasterlistCreateNestedManyWithoutClientsInput
-    Intellicare?: IntellicareCreateNestedManyWithoutClientsInput
-    CustomIllnesses?: CustomIllnessesCreateNestedManyWithoutClientsInput
+    insurer?: insurersCreateNestedOneWithoutClientsInput
+    uploads?: uploadsCreateNestedManyWithoutClientsInput
+    decks?: decksCreateNestedManyWithoutClientsInput
+    intellicareMasterlist?: intellicareMasterlistCreateNestedManyWithoutClientsInput
+    maxicareMasterlist?: maxicareMasterlistCreateNestedManyWithoutClientsInput
+    intellicare?: intellicareCreateNestedManyWithoutClientsInput
+    customIllnesses?: customIllnessesCreateNestedManyWithoutClientsInput
   }
 
-  export type ClientsUncheckedCreateWithoutMaxicareInput = {
+  export type clientsUncheckedCreateWithoutMaxicareInput = {
     id?: number
     client_name: string
     description?: string | null
     insurer_id?: number | null
-    Uploads?: UploadsUncheckedCreateNestedManyWithoutClientsInput
-    Decks?: DecksUncheckedCreateNestedManyWithoutClientsInput
-    IntellicareMasterlist?: IntellicareMasterlistUncheckedCreateNestedManyWithoutClientsInput
-    MaxicareMasterlist?: MaxicareMasterlistUncheckedCreateNestedManyWithoutClientsInput
-    Intellicare?: IntellicareUncheckedCreateNestedManyWithoutClientsInput
-    CustomIllnesses?: CustomIllnessesUncheckedCreateNestedManyWithoutClientsInput
+    uploads?: uploadsUncheckedCreateNestedManyWithoutClientsInput
+    decks?: decksUncheckedCreateNestedManyWithoutClientsInput
+    intellicareMasterlist?: intellicareMasterlistUncheckedCreateNestedManyWithoutClientsInput
+    maxicareMasterlist?: maxicareMasterlistUncheckedCreateNestedManyWithoutClientsInput
+    intellicare?: intellicareUncheckedCreateNestedManyWithoutClientsInput
+    customIllnesses?: customIllnessesUncheckedCreateNestedManyWithoutClientsInput
   }
 
-  export type ClientsCreateOrConnectWithoutMaxicareInput = {
-    where: ClientsWhereUniqueInput
-    create: XOR<ClientsCreateWithoutMaxicareInput, ClientsUncheckedCreateWithoutMaxicareInput>
+  export type clientsCreateOrConnectWithoutMaxicareInput = {
+    where: clientsWhereUniqueInput
+    create: XOR<clientsCreateWithoutMaxicareInput, clientsUncheckedCreateWithoutMaxicareInput>
   }
 
-  export type ClientsUpsertWithoutMaxicareInput = {
-    update: XOR<ClientsUpdateWithoutMaxicareInput, ClientsUncheckedUpdateWithoutMaxicareInput>
-    create: XOR<ClientsCreateWithoutMaxicareInput, ClientsUncheckedCreateWithoutMaxicareInput>
-    where?: ClientsWhereInput
+  export type clientsUpsertWithoutMaxicareInput = {
+    update: XOR<clientsUpdateWithoutMaxicareInput, clientsUncheckedUpdateWithoutMaxicareInput>
+    create: XOR<clientsCreateWithoutMaxicareInput, clientsUncheckedCreateWithoutMaxicareInput>
+    where?: clientsWhereInput
   }
 
-  export type ClientsUpdateToOneWithWhereWithoutMaxicareInput = {
-    where?: ClientsWhereInput
-    data: XOR<ClientsUpdateWithoutMaxicareInput, ClientsUncheckedUpdateWithoutMaxicareInput>
+  export type clientsUpdateToOneWithWhereWithoutMaxicareInput = {
+    where?: clientsWhereInput
+    data: XOR<clientsUpdateWithoutMaxicareInput, clientsUncheckedUpdateWithoutMaxicareInput>
   }
 
-  export type ClientsUpdateWithoutMaxicareInput = {
+  export type clientsUpdateWithoutMaxicareInput = {
     client_name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
-    insurer?: InsurersUpdateOneWithoutClientsNestedInput
-    Uploads?: UploadsUpdateManyWithoutClientsNestedInput
-    Decks?: DecksUpdateManyWithoutClientsNestedInput
-    IntellicareMasterlist?: IntellicareMasterlistUpdateManyWithoutClientsNestedInput
-    MaxicareMasterlist?: MaxicareMasterlistUpdateManyWithoutClientsNestedInput
-    Intellicare?: IntellicareUpdateManyWithoutClientsNestedInput
-    CustomIllnesses?: CustomIllnessesUpdateManyWithoutClientsNestedInput
+    insurer?: insurersUpdateOneWithoutClientsNestedInput
+    uploads?: uploadsUpdateManyWithoutClientsNestedInput
+    decks?: decksUpdateManyWithoutClientsNestedInput
+    intellicareMasterlist?: intellicareMasterlistUpdateManyWithoutClientsNestedInput
+    maxicareMasterlist?: maxicareMasterlistUpdateManyWithoutClientsNestedInput
+    intellicare?: intellicareUpdateManyWithoutClientsNestedInput
+    customIllnesses?: customIllnessesUpdateManyWithoutClientsNestedInput
   }
 
-  export type ClientsUncheckedUpdateWithoutMaxicareInput = {
+  export type clientsUncheckedUpdateWithoutMaxicareInput = {
     id?: IntFieldUpdateOperationsInput | number
     client_name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     insurer_id?: NullableIntFieldUpdateOperationsInput | number | null
-    Uploads?: UploadsUncheckedUpdateManyWithoutClientsNestedInput
-    Decks?: DecksUncheckedUpdateManyWithoutClientsNestedInput
-    IntellicareMasterlist?: IntellicareMasterlistUncheckedUpdateManyWithoutClientsNestedInput
-    MaxicareMasterlist?: MaxicareMasterlistUncheckedUpdateManyWithoutClientsNestedInput
-    Intellicare?: IntellicareUncheckedUpdateManyWithoutClientsNestedInput
-    CustomIllnesses?: CustomIllnessesUncheckedUpdateManyWithoutClientsNestedInput
+    uploads?: uploadsUncheckedUpdateManyWithoutClientsNestedInput
+    decks?: decksUncheckedUpdateManyWithoutClientsNestedInput
+    intellicareMasterlist?: intellicareMasterlistUncheckedUpdateManyWithoutClientsNestedInput
+    maxicareMasterlist?: maxicareMasterlistUncheckedUpdateManyWithoutClientsNestedInput
+    intellicare?: intellicareUncheckedUpdateManyWithoutClientsNestedInput
+    customIllnesses?: customIllnessesUncheckedUpdateManyWithoutClientsNestedInput
   }
 
-  export type ClientsCreateWithoutCustomIllnessesInput = {
+  export type clientsCreateWithoutCustomIllnessesInput = {
     client_name: string
     description?: string | null
-    insurer?: InsurersCreateNestedOneWithoutClientsInput
-    Uploads?: UploadsCreateNestedManyWithoutClientsInput
-    Decks?: DecksCreateNestedManyWithoutClientsInput
-    IntellicareMasterlist?: IntellicareMasterlistCreateNestedManyWithoutClientsInput
-    MaxicareMasterlist?: MaxicareMasterlistCreateNestedManyWithoutClientsInput
-    Intellicare?: IntellicareCreateNestedManyWithoutClientsInput
-    Maxicare?: MaxicareCreateNestedManyWithoutClientsInput
+    insurer?: insurersCreateNestedOneWithoutClientsInput
+    uploads?: uploadsCreateNestedManyWithoutClientsInput
+    decks?: decksCreateNestedManyWithoutClientsInput
+    intellicareMasterlist?: intellicareMasterlistCreateNestedManyWithoutClientsInput
+    maxicareMasterlist?: maxicareMasterlistCreateNestedManyWithoutClientsInput
+    intellicare?: intellicareCreateNestedManyWithoutClientsInput
+    maxicare?: maxicareCreateNestedManyWithoutClientsInput
   }
 
-  export type ClientsUncheckedCreateWithoutCustomIllnessesInput = {
+  export type clientsUncheckedCreateWithoutCustomIllnessesInput = {
     id?: number
     client_name: string
     description?: string | null
     insurer_id?: number | null
-    Uploads?: UploadsUncheckedCreateNestedManyWithoutClientsInput
-    Decks?: DecksUncheckedCreateNestedManyWithoutClientsInput
-    IntellicareMasterlist?: IntellicareMasterlistUncheckedCreateNestedManyWithoutClientsInput
-    MaxicareMasterlist?: MaxicareMasterlistUncheckedCreateNestedManyWithoutClientsInput
-    Intellicare?: IntellicareUncheckedCreateNestedManyWithoutClientsInput
-    Maxicare?: MaxicareUncheckedCreateNestedManyWithoutClientsInput
+    uploads?: uploadsUncheckedCreateNestedManyWithoutClientsInput
+    decks?: decksUncheckedCreateNestedManyWithoutClientsInput
+    intellicareMasterlist?: intellicareMasterlistUncheckedCreateNestedManyWithoutClientsInput
+    maxicareMasterlist?: maxicareMasterlistUncheckedCreateNestedManyWithoutClientsInput
+    intellicare?: intellicareUncheckedCreateNestedManyWithoutClientsInput
+    maxicare?: maxicareUncheckedCreateNestedManyWithoutClientsInput
   }
 
-  export type ClientsCreateOrConnectWithoutCustomIllnessesInput = {
-    where: ClientsWhereUniqueInput
-    create: XOR<ClientsCreateWithoutCustomIllnessesInput, ClientsUncheckedCreateWithoutCustomIllnessesInput>
+  export type clientsCreateOrConnectWithoutCustomIllnessesInput = {
+    where: clientsWhereUniqueInput
+    create: XOR<clientsCreateWithoutCustomIllnessesInput, clientsUncheckedCreateWithoutCustomIllnessesInput>
   }
 
-  export type ClientsUpsertWithoutCustomIllnessesInput = {
-    update: XOR<ClientsUpdateWithoutCustomIllnessesInput, ClientsUncheckedUpdateWithoutCustomIllnessesInput>
-    create: XOR<ClientsCreateWithoutCustomIllnessesInput, ClientsUncheckedCreateWithoutCustomIllnessesInput>
-    where?: ClientsWhereInput
+  export type clientsUpsertWithoutCustomIllnessesInput = {
+    update: XOR<clientsUpdateWithoutCustomIllnessesInput, clientsUncheckedUpdateWithoutCustomIllnessesInput>
+    create: XOR<clientsCreateWithoutCustomIllnessesInput, clientsUncheckedCreateWithoutCustomIllnessesInput>
+    where?: clientsWhereInput
   }
 
-  export type ClientsUpdateToOneWithWhereWithoutCustomIllnessesInput = {
-    where?: ClientsWhereInput
-    data: XOR<ClientsUpdateWithoutCustomIllnessesInput, ClientsUncheckedUpdateWithoutCustomIllnessesInput>
+  export type clientsUpdateToOneWithWhereWithoutCustomIllnessesInput = {
+    where?: clientsWhereInput
+    data: XOR<clientsUpdateWithoutCustomIllnessesInput, clientsUncheckedUpdateWithoutCustomIllnessesInput>
   }
 
-  export type ClientsUpdateWithoutCustomIllnessesInput = {
+  export type clientsUpdateWithoutCustomIllnessesInput = {
     client_name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
-    insurer?: InsurersUpdateOneWithoutClientsNestedInput
-    Uploads?: UploadsUpdateManyWithoutClientsNestedInput
-    Decks?: DecksUpdateManyWithoutClientsNestedInput
-    IntellicareMasterlist?: IntellicareMasterlistUpdateManyWithoutClientsNestedInput
-    MaxicareMasterlist?: MaxicareMasterlistUpdateManyWithoutClientsNestedInput
-    Intellicare?: IntellicareUpdateManyWithoutClientsNestedInput
-    Maxicare?: MaxicareUpdateManyWithoutClientsNestedInput
+    insurer?: insurersUpdateOneWithoutClientsNestedInput
+    uploads?: uploadsUpdateManyWithoutClientsNestedInput
+    decks?: decksUpdateManyWithoutClientsNestedInput
+    intellicareMasterlist?: intellicareMasterlistUpdateManyWithoutClientsNestedInput
+    maxicareMasterlist?: maxicareMasterlistUpdateManyWithoutClientsNestedInput
+    intellicare?: intellicareUpdateManyWithoutClientsNestedInput
+    maxicare?: maxicareUpdateManyWithoutClientsNestedInput
   }
 
-  export type ClientsUncheckedUpdateWithoutCustomIllnessesInput = {
+  export type clientsUncheckedUpdateWithoutCustomIllnessesInput = {
     id?: IntFieldUpdateOperationsInput | number
     client_name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     insurer_id?: NullableIntFieldUpdateOperationsInput | number | null
-    Uploads?: UploadsUncheckedUpdateManyWithoutClientsNestedInput
-    Decks?: DecksUncheckedUpdateManyWithoutClientsNestedInput
-    IntellicareMasterlist?: IntellicareMasterlistUncheckedUpdateManyWithoutClientsNestedInput
-    MaxicareMasterlist?: MaxicareMasterlistUncheckedUpdateManyWithoutClientsNestedInput
-    Intellicare?: IntellicareUncheckedUpdateManyWithoutClientsNestedInput
-    Maxicare?: MaxicareUncheckedUpdateManyWithoutClientsNestedInput
+    uploads?: uploadsUncheckedUpdateManyWithoutClientsNestedInput
+    decks?: decksUncheckedUpdateManyWithoutClientsNestedInput
+    intellicareMasterlist?: intellicareMasterlistUncheckedUpdateManyWithoutClientsNestedInput
+    maxicareMasterlist?: maxicareMasterlistUncheckedUpdateManyWithoutClientsNestedInput
+    intellicare?: intellicareUncheckedUpdateManyWithoutClientsNestedInput
+    maxicare?: maxicareUncheckedUpdateManyWithoutClientsNestedInput
   }
 
-  export type ClientsCreateManyInsurerInput = {
+  export type clientsCreateManyInsurerInput = {
     id?: number
     client_name: string
     description?: string | null
   }
 
-  export type UploadsCreateManyInsurersInput = {
+  export type uploadsCreateManyInsurersInput = {
     id?: number
     clientId: number
     year: string
@@ -17582,47 +17582,47 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type ClientsUpdateWithoutInsurerInput = {
+  export type clientsUpdateWithoutInsurerInput = {
     client_name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
-    Uploads?: UploadsUpdateManyWithoutClientsNestedInput
-    Decks?: DecksUpdateManyWithoutClientsNestedInput
-    IntellicareMasterlist?: IntellicareMasterlistUpdateManyWithoutClientsNestedInput
-    MaxicareMasterlist?: MaxicareMasterlistUpdateManyWithoutClientsNestedInput
-    Intellicare?: IntellicareUpdateManyWithoutClientsNestedInput
-    Maxicare?: MaxicareUpdateManyWithoutClientsNestedInput
-    CustomIllnesses?: CustomIllnessesUpdateManyWithoutClientsNestedInput
+    uploads?: uploadsUpdateManyWithoutClientsNestedInput
+    decks?: decksUpdateManyWithoutClientsNestedInput
+    intellicareMasterlist?: intellicareMasterlistUpdateManyWithoutClientsNestedInput
+    maxicareMasterlist?: maxicareMasterlistUpdateManyWithoutClientsNestedInput
+    intellicare?: intellicareUpdateManyWithoutClientsNestedInput
+    maxicare?: maxicareUpdateManyWithoutClientsNestedInput
+    customIllnesses?: customIllnessesUpdateManyWithoutClientsNestedInput
   }
 
-  export type ClientsUncheckedUpdateWithoutInsurerInput = {
+  export type clientsUncheckedUpdateWithoutInsurerInput = {
     id?: IntFieldUpdateOperationsInput | number
     client_name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
-    Uploads?: UploadsUncheckedUpdateManyWithoutClientsNestedInput
-    Decks?: DecksUncheckedUpdateManyWithoutClientsNestedInput
-    IntellicareMasterlist?: IntellicareMasterlistUncheckedUpdateManyWithoutClientsNestedInput
-    MaxicareMasterlist?: MaxicareMasterlistUncheckedUpdateManyWithoutClientsNestedInput
-    Intellicare?: IntellicareUncheckedUpdateManyWithoutClientsNestedInput
-    Maxicare?: MaxicareUncheckedUpdateManyWithoutClientsNestedInput
-    CustomIllnesses?: CustomIllnessesUncheckedUpdateManyWithoutClientsNestedInput
+    uploads?: uploadsUncheckedUpdateManyWithoutClientsNestedInput
+    decks?: decksUncheckedUpdateManyWithoutClientsNestedInput
+    intellicareMasterlist?: intellicareMasterlistUncheckedUpdateManyWithoutClientsNestedInput
+    maxicareMasterlist?: maxicareMasterlistUncheckedUpdateManyWithoutClientsNestedInput
+    intellicare?: intellicareUncheckedUpdateManyWithoutClientsNestedInput
+    maxicare?: maxicareUncheckedUpdateManyWithoutClientsNestedInput
+    customIllnesses?: customIllnessesUncheckedUpdateManyWithoutClientsNestedInput
   }
 
-  export type ClientsUncheckedUpdateManyWithoutInsurerInput = {
+  export type clientsUncheckedUpdateManyWithoutInsurerInput = {
     id?: IntFieldUpdateOperationsInput | number
     client_name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
-  export type UploadsUpdateWithoutInsurersInput = {
+  export type uploadsUpdateWithoutInsurersInput = {
     year?: StringFieldUpdateOperationsInput | string
     months?: NullableStringFieldUpdateOperationsInput | string | null
     type?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    Clients?: ClientsUpdateOneRequiredWithoutUploadsNestedInput
+    clients?: clientsUpdateOneRequiredWithoutUploadsNestedInput
   }
 
-  export type UploadsUncheckedUpdateWithoutInsurersInput = {
+  export type uploadsUncheckedUpdateWithoutInsurersInput = {
     id?: IntFieldUpdateOperationsInput | number
     clientId?: IntFieldUpdateOperationsInput | number
     year?: StringFieldUpdateOperationsInput | string
@@ -17632,7 +17632,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type UploadsUncheckedUpdateManyWithoutInsurersInput = {
+  export type uploadsUncheckedUpdateManyWithoutInsurersInput = {
     id?: IntFieldUpdateOperationsInput | number
     clientId?: IntFieldUpdateOperationsInput | number
     year?: StringFieldUpdateOperationsInput | string
@@ -17642,7 +17642,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type UploadsCreateManyClientsInput = {
+  export type uploadsCreateManyClientsInput = {
     id?: number
     insurerId: number
     year: string
@@ -17652,7 +17652,7 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type DecksCreateManyClientsInput = {
+  export type decksCreateManyClientsInput = {
     id?: number
     name: string
     description: string
@@ -17660,7 +17660,7 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type IntellicareMasterlistCreateManyClientsInput = {
+  export type intellicareMasterlistCreateManyClientsInput = {
     id?: number
     PY?: string | null
     ACCOUNT_NO?: string | null
@@ -17679,7 +17679,7 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type MaxicareMasterlistCreateManyClientsInput = {
+  export type maxicareMasterlistCreateManyClientsInput = {
     id?: number
     PY?: string | null
     ACCOUNT_NO?: string | null
@@ -17694,7 +17694,7 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type IntellicareCreateManyClientsInput = {
+  export type intellicareCreateManyClientsInput = {
     id?: number
     PY: string
     Company?: string | null
@@ -17715,7 +17715,7 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type MaxicareCreateManyClientsInput = {
+  export type maxicareCreateManyClientsInput = {
     id?: number
     PY: string
     Company?: string | null
@@ -17733,7 +17733,7 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type CustomIllnessesCreateManyClientsInput = {
+  export type customIllnessesCreateManyClientsInput = {
     id?: number
     py?: string | null
     member_type?: string | null
@@ -17748,16 +17748,16 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type UploadsUpdateWithoutClientsInput = {
+  export type uploadsUpdateWithoutClientsInput = {
     year?: StringFieldUpdateOperationsInput | string
     months?: NullableStringFieldUpdateOperationsInput | string | null
     type?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    Insurers?: InsurersUpdateOneRequiredWithoutUploadsNestedInput
+    insurers?: insurersUpdateOneRequiredWithoutUploadsNestedInput
   }
 
-  export type UploadsUncheckedUpdateWithoutClientsInput = {
+  export type uploadsUncheckedUpdateWithoutClientsInput = {
     id?: IntFieldUpdateOperationsInput | number
     insurerId?: IntFieldUpdateOperationsInput | number
     year?: StringFieldUpdateOperationsInput | string
@@ -17767,7 +17767,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type UploadsUncheckedUpdateManyWithoutClientsInput = {
+  export type uploadsUncheckedUpdateManyWithoutClientsInput = {
     id?: IntFieldUpdateOperationsInput | number
     insurerId?: IntFieldUpdateOperationsInput | number
     year?: StringFieldUpdateOperationsInput | string
@@ -17777,14 +17777,14 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type DecksUpdateWithoutClientsInput = {
+  export type decksUpdateWithoutClientsInput = {
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type DecksUncheckedUpdateWithoutClientsInput = {
+  export type decksUncheckedUpdateWithoutClientsInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
@@ -17792,7 +17792,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type DecksUncheckedUpdateManyWithoutClientsInput = {
+  export type decksUncheckedUpdateManyWithoutClientsInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
@@ -17800,7 +17800,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type IntellicareMasterlistUpdateWithoutClientsInput = {
+  export type intellicareMasterlistUpdateWithoutClientsInput = {
     PY?: NullableStringFieldUpdateOperationsInput | string | null
     ACCOUNT_NO?: NullableStringFieldUpdateOperationsInput | string | null
     STATUS?: NullableStringFieldUpdateOperationsInput | string | null
@@ -17818,26 +17818,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type IntellicareMasterlistUncheckedUpdateWithoutClientsInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    PY?: NullableStringFieldUpdateOperationsInput | string | null
-    ACCOUNT_NO?: NullableStringFieldUpdateOperationsInput | string | null
-    STATUS?: NullableStringFieldUpdateOperationsInput | string | null
-    MEMBER_TYPE?: NullableStringFieldUpdateOperationsInput | string | null
-    RNB?: NullableStringFieldUpdateOperationsInput | string | null
-    PREEXIST?: NullableFloatFieldUpdateOperationsInput | number | null
-    LIMIT?: NullableFloatFieldUpdateOperationsInput | number | null
-    BIRTHDATE?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    AGE?: NullableIntFieldUpdateOperationsInput | number | null
-    RELATION?: NullableStringFieldUpdateOperationsInput | string | null
-    EE_ID?: NullableStringFieldUpdateOperationsInput | string | null
-    CARD_NO?: NullableStringFieldUpdateOperationsInput | string | null
-    COMPANY?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type IntellicareMasterlistUncheckedUpdateManyWithoutClientsInput = {
+  export type intellicareMasterlistUncheckedUpdateWithoutClientsInput = {
     id?: IntFieldUpdateOperationsInput | number
     PY?: NullableStringFieldUpdateOperationsInput | string | null
     ACCOUNT_NO?: NullableStringFieldUpdateOperationsInput | string | null
@@ -17856,7 +17837,26 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type MaxicareMasterlistUpdateWithoutClientsInput = {
+  export type intellicareMasterlistUncheckedUpdateManyWithoutClientsInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    PY?: NullableStringFieldUpdateOperationsInput | string | null
+    ACCOUNT_NO?: NullableStringFieldUpdateOperationsInput | string | null
+    STATUS?: NullableStringFieldUpdateOperationsInput | string | null
+    MEMBER_TYPE?: NullableStringFieldUpdateOperationsInput | string | null
+    RNB?: NullableStringFieldUpdateOperationsInput | string | null
+    PREEXIST?: NullableFloatFieldUpdateOperationsInput | number | null
+    LIMIT?: NullableFloatFieldUpdateOperationsInput | number | null
+    BIRTHDATE?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    AGE?: NullableIntFieldUpdateOperationsInput | number | null
+    RELATION?: NullableStringFieldUpdateOperationsInput | string | null
+    EE_ID?: NullableStringFieldUpdateOperationsInput | string | null
+    CARD_NO?: NullableStringFieldUpdateOperationsInput | string | null
+    COMPANY?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type maxicareMasterlistUpdateWithoutClientsInput = {
     PY?: NullableStringFieldUpdateOperationsInput | string | null
     ACCOUNT_NO?: NullableStringFieldUpdateOperationsInput | string | null
     STATUS?: NullableStringFieldUpdateOperationsInput | string | null
@@ -17870,7 +17870,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type MaxicareMasterlistUncheckedUpdateWithoutClientsInput = {
+  export type maxicareMasterlistUncheckedUpdateWithoutClientsInput = {
     id?: IntFieldUpdateOperationsInput | number
     PY?: NullableStringFieldUpdateOperationsInput | string | null
     ACCOUNT_NO?: NullableStringFieldUpdateOperationsInput | string | null
@@ -17885,7 +17885,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type MaxicareMasterlistUncheckedUpdateManyWithoutClientsInput = {
+  export type maxicareMasterlistUncheckedUpdateManyWithoutClientsInput = {
     id?: IntFieldUpdateOperationsInput | number
     PY?: NullableStringFieldUpdateOperationsInput | string | null
     ACCOUNT_NO?: NullableStringFieldUpdateOperationsInput | string | null
@@ -17900,7 +17900,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type IntellicareUpdateWithoutClientsInput = {
+  export type intellicareUpdateWithoutClientsInput = {
     PY?: StringFieldUpdateOperationsInput | string
     Company?: NullableStringFieldUpdateOperationsInput | string | null
     Member_Account?: NullableStringFieldUpdateOperationsInput | string | null
@@ -17920,28 +17920,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type IntellicareUncheckedUpdateWithoutClientsInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    PY?: StringFieldUpdateOperationsInput | string
-    Company?: NullableStringFieldUpdateOperationsInput | string | null
-    Member_Account?: NullableStringFieldUpdateOperationsInput | string | null
-    Member_Type?: NullableStringFieldUpdateOperationsInput | string | null
-    ICD_10_Code?: NullableStringFieldUpdateOperationsInput | string | null
-    Diagnosis?: NullableStringFieldUpdateOperationsInput | string | null
-    Claim_Type?: NullableStringFieldUpdateOperationsInput | string | null
-    Admission_Date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    Provider_Name?: NullableStringFieldUpdateOperationsInput | string | null
-    Provider_Type?: NullableStringFieldUpdateOperationsInput | string | null
-    Approved_Claim_Amount?: NullableFloatFieldUpdateOperationsInput | number | null
-    Class_Plan_Level?: NullableStringFieldUpdateOperationsInput | string | null
-    Maximum_Benefit_Limit?: NullableFloatFieldUpdateOperationsInput | number | null
-    Date_of_Birth?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    Relationship?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type IntellicareUncheckedUpdateManyWithoutClientsInput = {
+  export type intellicareUncheckedUpdateWithoutClientsInput = {
     id?: IntFieldUpdateOperationsInput | number
     PY?: StringFieldUpdateOperationsInput | string
     Company?: NullableStringFieldUpdateOperationsInput | string | null
@@ -17962,7 +17941,28 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type MaxicareUpdateWithoutClientsInput = {
+  export type intellicareUncheckedUpdateManyWithoutClientsInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    PY?: StringFieldUpdateOperationsInput | string
+    Company?: NullableStringFieldUpdateOperationsInput | string | null
+    Member_Account?: NullableStringFieldUpdateOperationsInput | string | null
+    Member_Type?: NullableStringFieldUpdateOperationsInput | string | null
+    ICD_10_Code?: NullableStringFieldUpdateOperationsInput | string | null
+    Diagnosis?: NullableStringFieldUpdateOperationsInput | string | null
+    Claim_Type?: NullableStringFieldUpdateOperationsInput | string | null
+    Admission_Date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    Provider_Name?: NullableStringFieldUpdateOperationsInput | string | null
+    Provider_Type?: NullableStringFieldUpdateOperationsInput | string | null
+    Approved_Claim_Amount?: NullableFloatFieldUpdateOperationsInput | number | null
+    Class_Plan_Level?: NullableStringFieldUpdateOperationsInput | string | null
+    Maximum_Benefit_Limit?: NullableFloatFieldUpdateOperationsInput | number | null
+    Date_of_Birth?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    Relationship?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type maxicareUpdateWithoutClientsInput = {
     PY?: StringFieldUpdateOperationsInput | string
     Company?: NullableStringFieldUpdateOperationsInput | string | null
     Member_Account?: NullableStringFieldUpdateOperationsInput | string | null
@@ -17979,7 +17979,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type MaxicareUncheckedUpdateWithoutClientsInput = {
+  export type maxicareUncheckedUpdateWithoutClientsInput = {
     id?: IntFieldUpdateOperationsInput | number
     PY?: StringFieldUpdateOperationsInput | string
     Company?: NullableStringFieldUpdateOperationsInput | string | null
@@ -17997,7 +17997,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type MaxicareUncheckedUpdateManyWithoutClientsInput = {
+  export type maxicareUncheckedUpdateManyWithoutClientsInput = {
     id?: IntFieldUpdateOperationsInput | number
     PY?: StringFieldUpdateOperationsInput | string
     Company?: NullableStringFieldUpdateOperationsInput | string | null
@@ -18015,7 +18015,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type CustomIllnessesUpdateWithoutClientsInput = {
+  export type customIllnessesUpdateWithoutClientsInput = {
     py?: NullableStringFieldUpdateOperationsInput | string | null
     member_type?: NullableStringFieldUpdateOperationsInput | string | null
     icd_10_code?: NullableStringFieldUpdateOperationsInput | string | null
@@ -18029,7 +18029,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type CustomIllnessesUncheckedUpdateWithoutClientsInput = {
+  export type customIllnessesUncheckedUpdateWithoutClientsInput = {
     id?: IntFieldUpdateOperationsInput | number
     py?: NullableStringFieldUpdateOperationsInput | string | null
     member_type?: NullableStringFieldUpdateOperationsInput | string | null
@@ -18044,7 +18044,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type CustomIllnessesUncheckedUpdateManyWithoutClientsInput = {
+  export type customIllnessesUncheckedUpdateManyWithoutClientsInput = {
     id?: IntFieldUpdateOperationsInput | number
     py?: NullableStringFieldUpdateOperationsInput | string | null
     member_type?: NullableStringFieldUpdateOperationsInput | string | null

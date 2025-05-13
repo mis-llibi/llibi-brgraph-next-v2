@@ -5,7 +5,7 @@ import xmark from "./icons/xmark.svg";
 import check from "./icons/check.svg";
 import Image from "next/image";
 import apiClient from "@/lib/axios";
-import type { Clients } from "@prisma/client";
+import type { clients } from "../../../../prisma/generated/client";
 import { useRouter } from "next/navigation";
 
 const Page = () => {
@@ -13,7 +13,7 @@ const Page = () => {
     id?: number;
     client_name: string;
   } | null>(null);
-  const [clients, setClients] = useState<Clients[]>([]);
+  const [clients, setClients] = useState<clients[]>([]);
   const { data: session } = useSession();
   const user = session?.user;
   const router = useRouter();
@@ -27,7 +27,7 @@ const Page = () => {
     );
   });
 
-  const handleClick = (client: Clients) => {
+  const handleClick = (client: clients) => {
     setSearchClient(client);
   };
 

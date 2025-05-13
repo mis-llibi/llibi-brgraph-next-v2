@@ -1,5 +1,0 @@
--- AlterTable
-ALTER TABLE `user` ADD COLUMN `canAdd` BOOLEAN NOT NULL DEFAULT false,
-    ADD COLUMN `canEdit` BOOLEAN NOT NULL DEFAULT false,
-    ADD COLUMN `canRemove` BOOLEAN NOT NULL DEFAULT false,
-    ADD COLUMN `superAdmin` BOOLEAN NOT NULL DEFAULT false;

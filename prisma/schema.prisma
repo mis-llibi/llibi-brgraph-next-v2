@@ -12,9 +12,10 @@ generator client {
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
-model User{
+model user{
   id       Int      @id @default(autoincrement())
   name     String
   email    String   @unique
@@ -30,33 +31,39 @@ model User{
   superAdmin Boolean @default(false)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  @@map("user")
 }
 
-model Insurers{
+model insurers{
   id Int @id @default(autoincrement())
   name String @unique
 
-  Clients Clients[]
-  Uploads Uploads[]
+  clients clients[]
+  uploads uploads[]
+
+  @@map("insurers")
 }
 
-model Clients{
+model clients{
   id Int @id @default(autoincrement()) 
   client_name String
   description String?
   insurer_id Int?
-  insurer Insurers? @relation(fields: [insurer_id], references: [id])
+  insurer insurers? @relation(fields: [insurer_id], references: [id])
 
-  Uploads Uploads[]
-  Decks Decks[]
-  IntellicareMasterlist IntellicareMasterlist[]
-  MaxicareMasterlist MaxicareMasterlist[]
-  Intellicare Intellicare[]
-  Maxicare Maxicare[]
-  CustomIllnesses CustomIllnesses[]
+  uploads uploads[]
+  decks decks[]
+  intellicareMasterlist intellicareMasterlist[]
+  maxicareMasterlist maxicareMasterlist[]
+  intellicare intellicare[]
+  maxicare maxicare[]
+  customIllnesses customIllnesses[]
+
+  @@map("clients")
 }
 
-model Uploads{
+model uploads{
   id Int @id @default(autoincrement())
   clientId Int
   insurerId Int
@@ -66,11 +73,11 @@ model Uploads{
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  Clients Clients @relation(fields: [clientId], references: [id])
-  Insurers Insurers @relation(fields: [insurerId], references: [id])
+  clients clients @relation(fields: [clientId], references: [id])
+  insurers insurers @relation(fields: [insurerId], references: [id])
 }
 
-model Decks {
+model decks {
   id Int @id @default(autoincrement())
   name String
   description String
@@ -78,10 +85,12 @@ model Decks {
   updatedAt DateTime @updatedAt
   clientId Int
 
-  Clients Clients @relation(fields: [clientId], references: [id])
+  clients clients @relation(fields: [clientId], references: [id])
+
+  @@map("decks")
 }
 
-model IntellicareMasterlist {
+model intellicareMasterlist {
   id Int @id @default(autoincrement())
   clientId Int
   PY String?
@@ -100,10 +109,12 @@ model IntellicareMasterlist {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  Clients Clients @relation(fields: [clientId], references: [id])
+  clients clients @relation(fields: [clientId], references: [id])
+
+  @@map("intellicareMasterlist")
 }
 
-model MaxicareMasterlist {
+model maxicareMasterlist {
   id Int @id @default(autoincrement())
   clientId Int
   PY String?
@@ -118,10 +129,12 @@ model MaxicareMasterlist {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  Clients Clients @relation(fields: [clientId], references: [id])
+  clients clients @relation(fields: [clientId], references: [id])
+
+  @@map("maxicareMasterlist")
 }
 
-model Intellicare {
+model intellicare {
   id Int @id @default(autoincrement())
   clientId Int
   PY String
@@ -142,10 +155,12 @@ model Intellicare {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   
-  Clients Clients @relation(fields: [clientId], references: [id])
+  clients clients @relation(fields: [clientId], references: [id])
+
+  @@map("intellicare")
 }
 
-model Maxicare {
+model maxicare {
   id Int @id @default(autoincrement())
   clientId Int
   PY String
@@ -163,11 +178,13 @@ model Maxicare {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   
-  Clients Clients @relation(fields: [clientId], references: [id])
+  clients clients @relation(fields: [clientId], references: [id])
+
+  @@map("maxicare")
 }
 
 
-model CustomIllnesses{
+model customIllnesses{
   id Int @id @default(autoincrement())
   clientId Int
   py String?
@@ -182,7 +199,9 @@ model CustomIllnesses{
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  Clients Clients @relation(fields: [clientId], references: [id])
+  clients clients @relation(fields: [clientId], references: [id])
+
+  @@map("customIllnesses")
 }
 
 

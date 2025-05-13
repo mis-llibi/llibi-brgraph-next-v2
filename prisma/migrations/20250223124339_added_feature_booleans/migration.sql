@@ -1,5 +1,0 @@
--- AlterTable
-ALTER TABLE `user` ADD COLUMN `canUpload` BOOLEAN NOT NULL DEFAULT false,
-    ADD COLUMN `canUploadDeck` BOOLEAN NOT NULL DEFAULT false,
-    ADD COLUMN `canView` BOOLEAN NOT NULL DEFAULT false,
-    ADD COLUMN `canViewDeck` BOOLEAN NOT NULL DEFAULT false;
