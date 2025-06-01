@@ -52,6 +52,8 @@ const ClientHeader = ({ client }: Props) => {
             year: year.value,
             insurerId: client.insurer_id,
           });
+          await queryClient.invalidateQueries({ queryKey: ["client"] });
+          await queryClient.refetchQueries({ queryKey: ["client"] });
         }
 
         swalReact.hideLoading();

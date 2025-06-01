@@ -1,11 +1,16 @@
 export const dynamic = "force-dynamic";
 import { prisma } from "@/lib/prisma";
-import { PrismaClientKnownRequestError } from "../../../../../../prisma/generated/client/runtime/library"
+import { PrismaClientKnownRequestError } from "../../../../../../prisma/generated/client/runtime/library";
 import { Workbook } from "exceljs";
-import { promises as fs } from "fs";
 import { DateTime } from "luxon";
+import { s3 } from "@/lib/s3";
+import { env } from "@/lib/env";
 
 import { NextResponse, NextRequest } from "next/server";
+import { DeleteObjectCommand, GetObjectCommand, PutObjectCommand } from "@aws-sdk/client-s3";
+
+import { streamToBuffer } from "@/lib/helper/streamToBuffer";
+import { Readable } from "node:stream";
 
 /* This route and any of its subroutes is designed for anything related to Intellicare */
 
@@ -24,22 +29,12 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Missing required fields" });
   }
   try {
-    const workbook = new Workbook();
     if (file) {
       const [name, extension] = file.name.split(".");
       console.log("Uploading File...");
-      await saveFile(file);
+      const { key } = await saveFile(file);
       console.log("Reading File...");
-      const worksheet = await workbook.xlsx
-        .readFile(`./public/${name}.${extension}`)
-        .then(() => {
-          return workbook.getWorksheet(1);
-        })
-        .catch((error) => {
-          console.error(error);
-          return null;
-        });
-
+      const worksheet = await readFile(key);
       if (!worksheet) {
         return NextResponse.json({ error: "Failed to read excel file" });
       } else {
@@ -102,8 +97,6 @@ export async function POST(req: NextRequest) {
                 year: year as string,
               },
             });
-
-            
 
             worksheetData.forEach((data, idx) => {
               if (data.PY !== (year as string)) {
@@ -169,7 +162,7 @@ export async function POST(req: NextRequest) {
         }
 
         // delete the file after reading
-        await deleteFile(name, extension);
+        await deleteFile(key);
         return NextResponse.json({
           message: "File uploaded successfully",
           success: true,
@@ -181,24 +174,44 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "File is null" });
     }
   } catch (error) {
+    console.log(error)
     return NextResponse.json({ error: "Failed to upload excel file" });
   }
 }
 
 async function saveFile(file: File) {
-  const data = await file.arrayBuffer();
-  const [name, extension] = file.name.split(".");
-  await fs
-    .appendFile(`./public/${name}.${extension}`, Buffer.from(data))
-    .catch((error) => {
-      console.error(error);
-    });
-  return;
+  const buffer = Buffer.from(await file.arrayBuffer());
+  const key = `brgraphv2/masterlist/${Date.now()}-${file.name}`;
+  await s3.send(
+    new PutObjectCommand({
+      Bucket: env.BUCKET_NAME,
+      Key: key,
+      Body: buffer,
+      ACL: "public-read",
+      ContentType: file.type,
+    })
+  );
+
+  return {
+    key,
+    url: `${env.CDN_URL}/${key}`,
+  };
 }
 
-async function deleteFile(name: string, extension: string) {
-  await fs.unlink(`./public/${name}.${extension}`).catch((error) => {
-    console.error(error);
-  });
+async function readFile(key: string) {
+  const command = new GetObjectCommand({ Bucket: env.BUCKET_NAME, Key: key });
+  const response = await s3.send(command);
+
+  const stream = response.Body as Readable;
+  const buffer = await streamToBuffer(stream);
+
+  const workbook = new Workbook();
+  // @ts-expect-error: TypeScript misinterprets Buffer generics, but this works fine
+  await workbook.xlsx.load(buffer);
+  return workbook.getWorksheet(1);
+}
+
+async function deleteFile(key:string) {
+  await s3.send(new DeleteObjectCommand({ Bucket: env.BUCKET_NAME, Key: key}))
   return;
 }
