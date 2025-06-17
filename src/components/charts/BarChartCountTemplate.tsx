@@ -28,8 +28,6 @@ Chart.register(
 
 interface BarChartProps {
   data: any;
-  width: number;
-  height: number;
   bodySize: number;
   legendSize: number;
   id: string;
@@ -37,8 +35,6 @@ interface BarChartProps {
 
 const BarChartCountTemplate: React.FC<BarChartProps> = ({
   data,
-  width,
-  height,
   bodySize,
   legendSize,
   id,
@@ -54,6 +50,7 @@ const BarChartCountTemplate: React.FC<BarChartProps> = ({
       type: "bar",
       data,
       options: {
+        devicePixelRatio: 3,
         layout: {
           padding: { top: 12, bottom: 16, left: 20, right: 20 },
         },
@@ -122,8 +119,8 @@ const BarChartCountTemplate: React.FC<BarChartProps> = ({
   }, [data, bodySize, legendSize]);
 
   return (
-    <div style={{ width: `${width}px` }}>
-      <div style={{ width: `${width}px`, height: `${height}px` }}>
+    <div>
+      <div className="relative w-[700px] h-[400px] overflow-hidden">
         <canvas ref={canvasRef} id={id}></canvas>
       </div>
     </div>

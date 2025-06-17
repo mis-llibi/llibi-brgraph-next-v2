@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import StackedBarChartTemplate from "@/components/charts/StackedBarChartTemplate";
 
 type RelationshipData = {
@@ -20,9 +20,12 @@ const colorSet = [
 
 type Props = {
   data: RelationshipData[];
+  chartTitle: string;
 };
 
-const Chart4: React.FC<Props> = ({ data }) => {
+const Chart4: React.FC<Props> = ({ data, chartTitle }) => {
+  const [legendSize, setLegendSize] = useState(16);
+  const [bodySize, setBodySize] = useState(20);
   const labels = ["Head Count", "Claim Count", "Claim Amount"];
 
   const datasets = data.map((item, index) => ({
@@ -45,21 +48,45 @@ const Chart4: React.FC<Props> = ({ data }) => {
   };
 
   return (
-    <div
-      className="w-fit"
-      id="chart4-capture-container"
-      style={{
-        zoom: 0.3,
-      }}
-    >
-      <StackedBarChartTemplate
-        data={chartData}
-        height={1550}
-        width={1500}
-        bodySize={62}
-        legendSize={54}
-        id="chart4-capture"
-      />
+    <div className="border p-2">
+      <h2 className="text-xl font-semibold mb-4">{chartTitle}</h2>
+      <div className="flex flex-col gap-2 mb-4 w-1/4 justify-start">
+        <div>
+          <label className="mr-2">Legend Font Size</label>
+          <input
+            type="number"
+            min={10}
+            max={100}
+            value={legendSize}
+            onChange={(e) => setLegendSize(Number(e.target.value))}
+            className="w-16"
+            aria-label="Legend font size"
+          />
+        </div>
+        <div>
+          <label className="mr-2">Body Font Size</label>
+          <input
+            type="number"
+            min={10}
+            max={100}
+            value={bodySize}
+            onChange={(e) => setBodySize(Number(e.target.value))}
+            className="mb-2 w-16 text-center"
+            aria-label="Body font size"
+          />
+        </div>
+      </div>
+      <div
+        className="w-full max-w-full h-[400px]"
+        id="chart4-capture-container"
+      >
+        <StackedBarChartTemplate
+          data={chartData}
+          bodySize={bodySize}
+          legendSize={legendSize}
+          id="chart4-capture"
+        />
+      </div>
     </div>
   );
 };

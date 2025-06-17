@@ -7,6 +7,7 @@ import { Table1, Table3, Table4, Table5, Table6 } from "./tables/tables";
 import { useRouter } from "next/navigation";
 import domtoimage from "dom-to-image-more";
 import JSZip from "jszip";
+import apiClient from "@/lib/axios";
 
 const Page = () => {
   const data = useBRReportStore((s) => s.data);
@@ -49,7 +50,6 @@ const Page = () => {
           });
           const base64Data = dataUrl.split(",")[1];
           zip.file(`${id}.png`, base64Data, { base64: true });
-          container.style.zoom = "0.3";
         }
       }
     });
@@ -94,7 +94,7 @@ const Page = () => {
   if (!data) return null;
 
   return (
-    <div className="relative flex flex-col aptos-font">
+    <div className="relative flex flex-col aptos-font p-4">
       <div className="fixed right-7 bottom-3 z-60 flex flex-col gap-4 text-center">
         <div
           className=" rounded-full px-4 py-2 bg-blue-400  cursor-pointer"
@@ -135,7 +135,7 @@ const Page = () => {
         <>
           <h1>BR Report</h1>
           {show === "report" && (
-            <>
+            <div className="flex flex-col gap-4 divide-y-2 w-full">
               <Chart1
                 data={data.chart1}
                 chartTitle="Demographics by Member Type"
@@ -153,17 +153,56 @@ const Page = () => {
               <div className="w-7/12 p-4">
                 <Table3 data={data.chart3} year={data.py[0]} />
               </div>
-              <Chart4 data={data.chart4} />
+              <Chart4 chartTitle="Claims by Demographic" data={data.chart4} />
               <div className="w-7/12 p-4">
                 <Table4 data={data.chart4} />
               </div>
               <div className="w-7/12 p-4">
+                <div className="w-1/2 flex justify-between mb-4">
+                  <button
+                    className=" rounded-xl bg-green-400 px-2 py-1 hover:bg-green-500"
+                    onClick={async () => {
+                      const response = await apiClient.post(
+                        "/generate/exportT5/maxicare",
+                        {
+                          clientId: data.lastData.clientId,
+                          startDate: data.lastData.startDate,
+                          endDate: data.lastData.endDate,
+                        },
+                        {
+                          responseType: "blob",
+                        }
+                      );
+
+                      const blob = new Blob([response.data], {
+                        type: "text/csv",
+                      });
+                      const url = window.URL.createObjectURL(blob);
+
+                      const a = document.createElement("a");
+                      a.href = url;
+                      a.download = `table5-export.csv`;
+                      document.body.appendChild(a);
+                      a.click();
+                      a.remove();
+                      window.URL.revokeObjectURL(url); // cleanup
+                    }}
+                  >
+                    {" "}
+                    Export Data (CSV)
+                  </button>
+                  <button className=" rounded-xl bg-blue-400 px-2 py-1 hover:bg-blue-500">
+                    {" "}
+                    Import Data (CSV)
+                  </button>
+                </div>
+
                 <Table5 data={data.chart5.data} totals={data.chart5.total} />
               </div>
               <div className="w-7/12 p-4">
                 <Table6 data={data.chart6.data} totals={data.chart6.total} />
               </div>
-            </>
+            </div>
           )}
           <div
             id="output-body"

@@ -70,9 +70,13 @@ const OldAccount = ({ client }: Props) => {
     const response = await generateMultiYear(payload);
     //setLoading(false);
     if (response.success && response.data) {
-      useBRReportStore
-        .getState()
-        .setData({ ...response.data, py: finalData.map((value) => value.py) });
+      useBRReportStore.getState().setData({
+        ...response.data,
+        py: finalData.map((value) => value.py),
+        clientId: client.id,
+        insurerId: client.insurer_id,
+        lastData: finalData[finalData.length - 1],
+      });
       console.log(response.data);
       router.push("/client/result/multi");
     }

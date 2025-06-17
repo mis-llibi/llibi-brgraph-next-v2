@@ -22,8 +22,6 @@ Chart.register(
 
 interface StackedBarChartTemplateProps {
   data: any;
-  width: number;
-  height: number;
   bodySize: number;
   legendSize: number;
   id?: string;
@@ -31,8 +29,6 @@ interface StackedBarChartTemplateProps {
 
 const StackedBarChartTemplate: React.FC<StackedBarChartTemplateProps> = ({
   data,
-  width,
-  height,
   bodySize,
   legendSize,
   id,
@@ -79,6 +75,44 @@ const StackedBarChartTemplate: React.FC<StackedBarChartTemplateProps> = ({
                 ? "rgba(0,0,0,0)"
                 : context.dataset.backgroundColor;
             },
+            anchor: "center",
+            align: (context: any) => {
+              const val = context.dataset.data[context.dataIndex];
+              const index = context.datasetIndex;
+              const col = context.dataIndex;
+              const datasets = context.chart.data.datasets;
+
+              let smallCount = 0;
+              for (let i = 0; i < index; i++) {
+                const prev = datasets[i].data[col];
+                if (prev !== undefined && prev < 10) smallCount++;
+              }
+
+              // ✅ Only apply sideways nudge to the SECOND small value
+              if (val < 10 && smallCount === 1) {
+                return "left";
+              }
+
+              return "center";
+            },
+            offset: (context: any) => {
+              const val = context.dataset.data[context.dataIndex];
+              const index = context.datasetIndex;
+              const col = context.dataIndex;
+              const datasets = context.chart.data.datasets;
+
+              let smallCount = 0;
+              for (let i = 0; i < index; i++) {
+                const prev = datasets[i].data[col];
+                if (prev !== undefined && prev < 10) smallCount++;
+              }
+
+              if (val < 10 && smallCount === 1) {
+                return 25; // ✅ more nudge distance
+              }
+
+              return 0;
+            },
             color: "white",
             formatter: (value: number) => (value === 0 ? "" : `${value}%`),
             font: { size: bodySize },
@@ -96,6 +130,8 @@ const StackedBarChartTemplate: React.FC<StackedBarChartTemplateProps> = ({
         interaction: { mode: "nearest", intersect: false },
         animation: { duration: 500 },
         maintainAspectRatio: false,
+        responsive: true,
+        devicePixelRatio: 3,
         resizeDelay: 200,
       },
     });
@@ -105,7 +141,7 @@ const StackedBarChartTemplate: React.FC<StackedBarChartTemplateProps> = ({
   }, [data, bodySize, legendSize]);
 
   return (
-    <div style={{ width: `${width}px`, height: `${height}px` }}>
+    <div className="relative w-[700px] h-[400px] overflow-hidden">
       <canvas ref={canvasRef} id={id}></canvas>
     </div>
   );

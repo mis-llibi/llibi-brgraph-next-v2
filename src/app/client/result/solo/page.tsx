@@ -166,13 +166,6 @@ const Page = () => {
               </div>
             </>
           )}
-          <div
-            id="output-body"
-            className="mt-6"
-            style={{
-              zoom: 0.3,
-            }}
-          ></div>
         </>
       )}
     </div>

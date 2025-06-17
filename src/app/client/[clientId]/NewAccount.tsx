@@ -18,7 +18,6 @@ const NewAccount = ({ client }: Props) => {
   const ref = useRef<HTMLSpanElement>(null);
   const { loading, setLoading } = useLoading();
   const router = useRouter();
-  const { data, setData } = useGeneratedData();
 
   const utilization = client.utilization;
   const dates = utilization
@@ -126,7 +125,19 @@ const NewAccount = ({ client }: Props) => {
     const response = await generateOneYear(payload);
     setLoading(false);
     if (response.success && response.data) {
-      useBRReportStore.getState().setData({ ...response.data, py: masterlist });
+      useBRReportStore.getState().setData({
+        ...response.data,
+        py: masterlist,
+        clientId: client.id,
+        insurerId: client.insurer_id,
+        lastData: {
+          clientId: client.id,
+          insurerId: client.insurer_id,
+          startDate: startingDate,
+          endDate: endingDate,
+          py: masterlist,
+        },
+      });
       console.log(response.data);
       router.push("/client/result/solo");
     }

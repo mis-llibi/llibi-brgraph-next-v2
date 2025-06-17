@@ -10,7 +10,11 @@ const nextConfig: NextConfig = {
       },
     ];
   },
-  transpilePackages: ["@prisma/client", "@auth/prisma-adapter", "@babel/runtime"],
+  transpilePackages: [
+    "@prisma/client",
+    "@auth/prisma-adapter",
+    "@babel/runtime",
+  ],
   /* config options here */
 };
 

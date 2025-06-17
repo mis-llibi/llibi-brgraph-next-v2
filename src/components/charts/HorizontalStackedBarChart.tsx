@@ -25,8 +25,6 @@ ChartJS.register(
 
 type Props = {
   data: ChartData<"bar">;
-  width: number;
-  height: number;
   bodySize: number;
   legendSize: number;
   id: string;
@@ -34,8 +32,6 @@ type Props = {
 
 const HorizontalStackedBarChart = ({
   data,
-  width,
-  height,
   bodySize,
   legendSize,
   id,
@@ -46,6 +42,8 @@ const HorizontalStackedBarChart = ({
     setOptions({
       responsive: true,
       indexAxis: "y",
+      devicePixelRatio: window.devicePixelRatio,
+      maintainAspectRatio: false,
       layout: {
         padding: {
           top: 12,
@@ -165,8 +163,7 @@ const HorizontalStackedBarChart = ({
 
   return (
     <div
-      className=" grow"
-      style={{ width, height, zoom: 0.3 }}
+      className="relative w-[700px] h-[400px] overflow-hidden"
       id={id + "-container"}
     >
       <Bar data={data} options={options} plugins={[ChartDataLabels]} id={id} />

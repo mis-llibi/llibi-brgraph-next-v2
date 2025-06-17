@@ -5,7 +5,7 @@ import xmark from "./icons/xmark.svg";
 import check from "./icons/check.svg";
 import Image from "next/image";
 import apiClient from "@/lib/axios";
-import type { clients } from "../../../../prisma/generated/client";
+import type { clients } from "@prisma/client";
 import { useRouter } from "next/navigation";
 
 const Page = () => {

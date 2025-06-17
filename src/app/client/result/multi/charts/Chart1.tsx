@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import HorizontalStackedBarChart from "@/components/charts/HorizontalStackedBarChart";
 import { ChartData } from "chart.js";
-import { ValueType } from "exceljs";
 
 type DataItem = {
   employees_percentage: number;
@@ -21,6 +20,8 @@ type Props = {
 };
 
 const Chart1 = ({ chartTitle, data, years }: Props) => {
+  const [legendSize, setLegendSize] = useState(16);
+  const [bodySize, setBodySize] = useState(20);
   // Validate data and years arrays match
   if (data.length !== years.length) {
     console.error("Data and years arrays must have the same length");
@@ -79,19 +80,45 @@ const Chart1 = ({ chartTitle, data, years }: Props) => {
   console.log(chartData);
 
   return data.length > 0 ? (
-    <div>
-      <h1>{chartTitle}</h1>
+    <div className="border p-2">
+      <h1 className=" text-xl bold">{chartTitle}</h1>
+      <hr className="my-4" />
+      <div className="flex flex-col gap-2 mb-4 w-1/4 justify-start">
+        <div>
+          <label className=" mr-2">Legend Font Size</label>
+          <input
+            type="number"
+            min={10}
+            max={100}
+            value={bodySize}
+            onChange={(e) => setBodySize(Number(e.target.value))}
+            className="w-16"
+            aria-label="Body font size"
+          />
+        </div>
+        <div>
+          <label className=" mr-2">Body Font Size</label>
+          <input
+            type="number"
+            min={10}
+            max={100}
+            value={bodySize}
+            onChange={(e) => setBodySize(Number(e.target.value))}
+            className="mb-2 w-16 text-center"
+            aria-label="Body font size"
+          />
+        </div>
+      </div>
+
       <HorizontalStackedBarChart
         data={chartData}
-        width={1458}
-        height={1164}
-        bodySize={56}
-        legendSize={46}
+        bodySize={bodySize}
+        legendSize={legendSize}
         id="chart1-capture"
       />
     </div>
   ) : (
-    <div className="flex justify-center items-center h-96">
+    <div className="flex justify-center items-center">
       <h1 className="text-3xl">No chart available</h1>
     </div>
   );
