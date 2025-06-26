@@ -53,8 +53,6 @@ const Chart2 = ({ chartTitle, data, year }: Props) => {
       >
         <BarChartCountTemplate
           data={chartData}
-          width={1800}
-          height={1600}
           bodySize={56}
           legendSize={46}
           id={"chart2-capture"}

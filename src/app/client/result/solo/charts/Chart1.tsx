@@ -55,8 +55,6 @@ const Chart1 = (props: Props) => {
       <h1>{props.chartTitle}</h1>
       <HorizontalStackedBarChart
         data={data}
-        width={1458}
-        height={1164}
         bodySize={56}
         legendSize={46}
         id="chart1-capture"

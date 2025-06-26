@@ -54,8 +54,6 @@ const Chart4: React.FC<Props> = ({ data }) => {
     >
       <StackedBarChartTemplate
         data={chartData}
-        height={1550}
-        width={1500}
         bodySize={62}
         legendSize={54}
         id="chart4-capture"

@@ -13,7 +13,8 @@
     "prisma:migrate:dev": "npx prisma migrate dev",
     "prisma:migrate:reset": "npx prisma migrate reset",
     "prisma:db:seed": "npx prisma db seed",
-    "prisma:studio": "npx prisma studio"
+    "prisma:studio": "npx prisma studio",
+    "vercel-build": "npx prisma generate && npx prisma migrate deploy && npm run prisma:db:seed && next build"
   },
   "prisma": {
     "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
@@ -67,6 +68,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@prisma/nextjs-monorepo-workaround-plugin": "^6.10.1",
     "@tanstack/eslint-plugin-query": "^5.66.1",
     "@types/bcryptjs": "^2.4.6",
     "@types/dom-to-image": "^2.6.7",
