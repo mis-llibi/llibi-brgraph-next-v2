@@ -132,6 +132,7 @@ const NewAccount = ({ client }: Props) => {
         insurerId: client.insurer_id,
         lastData: {
           clientId: client.id,
+          clientName: client.client_name,
           insurerId: client.insurer_id,
           startDate: startingDate,
           endDate: endingDate,

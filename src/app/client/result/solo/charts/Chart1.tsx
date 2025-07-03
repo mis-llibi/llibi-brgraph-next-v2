@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import HorizontalStackedBarChart from "@/components/charts/HorizontalStackedBarChart";
 import { ChartData } from "chart.js";
 
@@ -9,6 +9,8 @@ type Props = {
 };
 
 const Chart1 = (props: Props) => {
+  const [legendSize, setLegendSize] = useState(16);
+  const [bodySize, setBodySize] = useState(20);
   const { dependents, dependents_percentage, company, ...chartData } =
     props.data[props.data.length - 1];
 
@@ -51,12 +53,39 @@ const Chart1 = (props: Props) => {
   };
 
   return props.data.length > 0 ? (
-    <div>
-      <h1>{props.chartTitle}</h1>
+    <div className="border p-2">
+      <h1 className=" text-xl bold">{props.chartTitle}</h1>
+      <hr className="my-4" />
+      <div className="flex flex-col gap-2 mb-4 w-1/4 justify-start">
+        <div>
+          <label className=" mr-2">Legend Font Size</label>
+          <input
+            type="number"
+            min={10}
+            max={100}
+            value={bodySize}
+            onChange={(e) => setBodySize(Number(e.target.value))}
+            className="w-16"
+            aria-label="Body font size"
+          />
+        </div>
+        <div>
+          <label className=" mr-2">Body Font Size</label>
+          <input
+            type="number"
+            min={10}
+            max={100}
+            value={bodySize}
+            onChange={(e) => setBodySize(Number(e.target.value))}
+            className="mb-2 w-16 text-center"
+            aria-label="Body font size"
+          />
+        </div>
+      </div>
       <HorizontalStackedBarChart
         data={data}
-        bodySize={56}
-        legendSize={46}
+        bodySize={bodySize}
+        legendSize={legendSize}
         id="chart1-capture"
       />
     </div>

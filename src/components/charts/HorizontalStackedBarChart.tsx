@@ -42,7 +42,7 @@ const HorizontalStackedBarChart = ({
     setOptions({
       responsive: true,
       indexAxis: "y",
-      devicePixelRatio: window.devicePixelRatio,
+      devicePixelRatio: 3,
       maintainAspectRatio: false,
       layout: {
         padding: {

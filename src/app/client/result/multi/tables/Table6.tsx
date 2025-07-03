@@ -80,7 +80,7 @@ const Table6: React.FC<Props> = ({ data, totals }) => {
               style={{ width: "3584px" }}
             >
               <div
-                className="text-start underline flex items-center pl-4"
+                className="text-start underline flex items-center pl-4 bg-white"
                 style={{
                   width: firstColumnWidth,
                   color: color.header,
