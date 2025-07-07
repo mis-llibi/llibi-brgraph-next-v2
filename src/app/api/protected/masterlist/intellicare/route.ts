@@ -30,7 +30,6 @@ export async function POST(req: NextRequest) {
   }
   try {
     if (file) {
-      const [name, extension] = file.name.split(".");
       console.log("Uploading File...");
       const { key } = await saveFile(file);
       console.log("Reading File...");
