@@ -31,7 +31,7 @@ const Decks = () => {
   return (
     <div className=" mx-8 my-4">
       <div className=" flex justify-between items-center">
-        <h3 className=" text-xl font-bold">Decks for client {clientId}</h3>
+        <h3 className=" text-xl font-bold">Decks (coming soon)</h3>
         <button className="flex items-center bg-blue-100 hover:bg-blue-200 text-blue-700 font-semibold py-2 px-4 rounded shadow-md transition duration-200">
           <FaFileUpload className="text-blue-500 cursor-pointer" />
           <span className="ml-2 text-blue-500">Upload New Deck</span>
