@@ -53,3 +53,21 @@ export async function deleteFile(key: string) {
   await s3.send(new DeleteObjectCommand({ Bucket: env.BUCKET_NAME, Key: key }));
   return;
 }
+
+export async function uploadDeck(file: File, clientId: string) {
+  const buffer = Buffer.from(await file.arrayBuffer());
+  const key = `brgraphv2/decks/${clientId}/${Date.now()}-${file.name}`;
+  await s3.send(
+    new PutObjectCommand({
+      Bucket: env.BUCKET_NAME,
+      Key: key,
+      Body: buffer,
+      ACL: "public-read",
+      ContentType: file.type,
+    })
+  );
+  return {
+    key,
+    url: `${env.CDN_URL}/${key}`,
+  };
+}

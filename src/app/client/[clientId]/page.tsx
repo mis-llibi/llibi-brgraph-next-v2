@@ -8,6 +8,7 @@ import ClientHeader from "./ClientHeader";
 import ReportGenerator from "./ReportGenerator";
 import { FinalDataProvider } from "./FinalData";
 import Overview from "@/components/client/Overview";
+import Decks from "./Decks";
 
 const Page = () => {
   const params = useParams();
@@ -43,7 +44,7 @@ const Page = () => {
             <div className="flex flex-col justify-center w-full border-b mt-6">
               <ReportGenerator client={client} />
               <Overview client={client} />
-              Decks
+              <Decks />
             </div>
           </>
         )}
