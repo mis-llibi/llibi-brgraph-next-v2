@@ -15,14 +15,14 @@ jobs:
       - name: 🟢 Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'yarn'
+          node-version: "22"
+          cache: "npm"
 
       - name: 📦 Install dependencies
-        run: yarn install --frozen-lockfile
+        run: npm install --frozen-lockfile
 
       - name: ✅ Lint (errors only)
-        run: yarn lint
+        run: npm lint
 
       - name: 🔧 Build project
-        run: yarn build
+        run: npm build
