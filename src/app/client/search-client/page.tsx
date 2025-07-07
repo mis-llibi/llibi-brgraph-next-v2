@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useSession } from "next-auth/react";
 import xmark from "./icons/xmark.svg";
 import check from "./icons/check.svg";
@@ -17,6 +17,8 @@ const Page = () => {
   const { data: session } = useSession();
   const user = session?.user;
   const router = useRouter();
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const filterClients = clients.filter((client) => {
     const clientNameLower = client.client_name.toLowerCase();
@@ -48,6 +50,7 @@ const Page = () => {
       console.error("Failed to fetch client", error);
     }
   };
+
   useEffect(() => {
     const fetchClients = async () => {
       try {
@@ -58,6 +61,22 @@ const Page = () => {
       }
     };
     fetchClients();
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setShowSuggestions(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, []);
 
   return (
@@ -118,7 +137,10 @@ const Page = () => {
       <div>
         <div className="my-node flex flex-col justify-center items-center py-8">
           <img src={"/logo.svg"} alt="Logo" className="w-72 h-36" />
-          <div className="relative flex flex-col items-center justify-center">
+          <div
+            className="relative flex flex-col items-center justify-center"
+            ref={dropdownRef}
+          >
             <input
               type="text"
               placeholder="Input Client Name"
@@ -130,8 +152,9 @@ const Page = () => {
                   client_name: e.target.value,
                 });
               }}
+              onFocus={() => setShowSuggestions(true)}
             />
-            {searchClient && (
+            {showSuggestions && searchClient && (
               <ul className="absolute top-10 w-96 border border-gray-300 rounded-lg mt-2 bg-white z-10">
                 {filterClients.map((client, index) => (
                   <li
