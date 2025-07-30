@@ -143,27 +143,39 @@ const Table1 = (props: Props) => {
   }, []);
 
   if (!props.data.length) return null;
-
+  console.log("Sorted Data:", sortedData);
   return (
     <>
-      <label
-        htmlFor="default-range"
-        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-      >
-        Default range
-      </label>
-      <input
-        id="default-range"
-        type="range"
-        value={fontSize}
-        className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
-        min={24}
-        max={100}
-        onChange={(e) => {
-          const value = e.target.value;
-          setFontSize(+value);
-        }}
-      />
+      {/* Table 1 Customization Controls */}
+      <div className="mb-6 p-4 border rounded-lg bg-gray-50 w-full">
+        <h3 className="text-lg font-semibold text-gray-900 mb-4">
+          Table 1 Customization
+        </h3>
+
+        {/* Font Size Control */}
+        <div className="mb-4">
+          <label
+            htmlFor="font-size-input"
+            className="block mb-2 text-sm font-medium text-gray-900"
+          >
+            Header Size (px)
+          </label>
+          <input
+            id="font-size-input"
+            type="number"
+            value={fontSize}
+            min={24}
+            max={100}
+            className="w-32 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            onChange={(e) => {
+              const value = parseInt(e.target.value);
+              if (!isNaN(value) && value >= 24 && value <= 100) {
+                setFontSize(value);
+              }
+            }}
+          />
+        </div>
+      </div>
 
       <div
         id="table1-capture"
@@ -203,7 +215,7 @@ const Table1 = (props: Props) => {
                     : company.company}
                 </div>
 
-                {props.year.map((year, index) => {
+                {[...props.year].reverse().map((year, index) => {
                   return (
                     <React.Fragment key={index}>
                       <div
@@ -245,22 +257,22 @@ const Table1 = (props: Props) => {
                 return (
                   <div
                     key={j}
-                    className="grid grid-cols-6 w-[2468px] h-[146px] text-[78px] border border-gray-400 aptos-font"
+                    className="grid grid-cols-6 w-[2468px] h-[146px] text-[78px] border border-white aptos-font"
                     style={{
                       backgroundColor: bgColor,
                       color: textColor,
                       fontWeight: isTotal || isHighlight ? "bold" : "normal",
                     }}
                   >
-                    <div className="text-center leading-[146px] border border-gray-300 col-span-2">
+                    <div className="text-center leading-[146px] border border-white col-span-2">
                       {row.label}
                     </div>
-                    {props.year.map((year, idx) => (
+                    {[...props.year].reverse().map((year) => (
                       <React.Fragment key={year}>
-                        <div className="text-center leading-[146px] border border-gray-300">
+                        <div className="text-center leading-[146px] border border-white">
                           {company[`${row.key}_${year}`] ?? 0}
                         </div>
-                        <div className="text-center leading-[146px] border border-gray-300">
+                        <div className="text-center leading-[146px] border border-white">
                           {!isTotal
                             ? company[`${row.key}_percentage_${year}`] ?? 0
                             : company[`${row.key}Percentage_${year}`] ?? 0}

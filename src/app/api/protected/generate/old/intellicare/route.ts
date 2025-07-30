@@ -5,7 +5,7 @@ import { DateTime } from "luxon";
 
 import { NextResponse as res, NextRequest } from "next/server";
 
-// This route is for new account generation for Intellicare
+// This route is for multi-year account generation for Intellicare
 
 type generateOneYearRequest = {
   startDate: string;
@@ -20,39 +20,37 @@ export async function POST(req: NextRequest) {
   if (!req.body) {
     return res.json({ error: "Request body is null" });
   }
-  const data: generateOneYearRequest = await req.json();
+  const data: generateOneYearRequest[] = await req.json();
+  const latestData: generateOneYearRequest = data[data.length - 1];
 
-  const chart1Result = await chart1(data);
-  if (chart1Result.error) {
-    return res.json({ error: chart1Result.error });
-  }
-  const chart2Result = await chart2(data);
-  const chart3Result = await chart3(data);
-  if (chart3Result.error) {
-    return res.json({ error: chart3Result.error });
-  }
-  const chart4Result = await chart4(data);
-  if (chart4Result.error) {
-    return res.json({ error: chart4Result.error });
-  }
-  const chart5Result = await chart5(data);
-  if (chart5Result.error) {
-    return res.json({ error: chart5Result.error });
-  }
-  const chart6Result = await chart6(data);
-  if (chart6Result.error) {
-    return res.json({ error: chart6Result.error });
-  }
+  const chart1Result = await Promise.all(
+    data.map(async (dataRow) => {
+      const payload = await chart1(dataRow);
+      return payload.data || payload.error;
+    })
+  );
+  console.log(chart1Result);
+  const chart2Result = await Promise.all(
+    data.map(async (dataRow) => {
+      const payload = await chart2(dataRow);
+      return payload.data || payload.error;
+    })
+  );
+  console.log(chart2Result);
+  const chart3Result = await chart3(latestData);
+  const chart4Result = await chart4(latestData);
+  const chart5Result = await chart5(latestData);
+  const chart6Result = await chart6(latestData);
 
   return res.json({
     success: true,
     data: {
-      chart1: chart1Result.data,
-      chart2: chart2Result.data,
-      chart3: chart3Result.data,
-      chart4: chart4Result.data,
-      chart5: chart5Result.data,
-      chart6: chart6Result.data,
+      chart1: chart1Result,
+      chart2: chart2Result,
+      chart3: chart3Result.data || chart3Result.error,
+      chart4: chart4Result.data || chart4Result.error,
+      chart5: chart5Result.data || chart5Result.error,
+      chart6: chart6Result.data || chart6Result.error,
     },
   });
 }
@@ -138,8 +136,7 @@ const chart1 = async (
           const total = employees + dependents;
           const detailedDependents = await Promise.all(
             sortedRelations.map(async (relation) => {
-              //if employee, return
-              if (relation.RELATION === "Employee") return;
+              if (relation.RELATION?.toLowerCase() === "employee") return;
               const count = await tx.intellicareMasterlist.count({
                 where: {
                   clientId: clientId,
@@ -862,7 +859,14 @@ const chart5 = async (
       };
     });
 
-    return { data: { data: processedData, total: totals } };
+    const payload = processedData.sort((a, b) => {
+      const priorityOrder: Record<string, number> = { P: 1, D: 2 };
+      const aPriority = priorityOrder[a.Member_Type] ?? 99;
+      const bPriority = priorityOrder[b.Member_Type] ?? 99;
+      return aPriority - bPriority;
+    });
+
+    return { data: { data: payload, total: totals } };
   } catch (error) {
     return { error: error };
   }
@@ -1055,7 +1059,14 @@ const chart6 = async (
       };
     });
 
-    return { data: { data: processedData, total: totals } };
+    const payload = processedData.sort((a, b) => {
+      const priorityOrder: Record<string, number> = { P: 1, D: 2 };
+      const aPriority = priorityOrder[a.Member_Type] ?? 99;
+      const bPriority = priorityOrder[b.Member_Type] ?? 99;
+      return aPriority - bPriority;
+    });
+
+    return { data: { data: payload, total: totals } };
   } catch (error) {
     return { error: error };
   }

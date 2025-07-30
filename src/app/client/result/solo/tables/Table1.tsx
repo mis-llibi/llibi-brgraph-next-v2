@@ -75,6 +75,7 @@ const Table1 = (props: Props) => {
   const { fontSize, setFontSize } = useToggleSize({ initial: 78 });
 
   if (!props.data.length) return null;
+  console.log("Table1 data:", props.data);
 
   return (
     <>

@@ -24,18 +24,22 @@ type Props = {
 };
 
 const Chart4: React.FC<Props> = ({ data, chartTitle }) => {
-  const [legendSize, setLegendSize] = useState(16);
-  const [bodySize, setBodySize] = useState(20);
+  const [legendSize, setLegendSize] = useState(14);
+  const [bodySize, setBodySize] = useState(12);
+  const [thickness, setThickness] = useState(70);
   const labels = ["Head Count", "Claim Count", "Claim Amount"];
+  console.log("Chart 4 Data:", data);
 
   const datasets = data.map((item, index) => ({
     label: item.Relationship,
     data: [
-      Math.round((item.headcount / total("headcount")) * 100),
-      Math.round((item.claimCount / total("claimCount")) * 100),
-      Math.round((item.claimAmount / total("claimAmount")) * 100),
+      (item.headcount / total("headcount")) * 100,
+      (item.claimCount / total("claimCount")) * 100,
+      (item.claimAmount / total("claimAmount")) * 100,
     ],
     backgroundColor: colorSet[index % colorSet.length].bg,
+    minBarLength: 2,
+    barThickness: thickness,
   }));
 
   function total(field: keyof RelationshipData) {
@@ -55,7 +59,7 @@ const Chart4: React.FC<Props> = ({ data, chartTitle }) => {
           <label className="mr-2">Legend Font Size</label>
           <input
             type="number"
-            min={10}
+            min={1}
             max={100}
             value={legendSize}
             onChange={(e) => setLegendSize(Number(e.target.value))}
@@ -67,7 +71,7 @@ const Chart4: React.FC<Props> = ({ data, chartTitle }) => {
           <label className="mr-2">Body Font Size</label>
           <input
             type="number"
-            min={10}
+            min={1}
             max={100}
             value={bodySize}
             onChange={(e) => setBodySize(Number(e.target.value))}
@@ -77,7 +81,7 @@ const Chart4: React.FC<Props> = ({ data, chartTitle }) => {
         </div>
       </div>
       <div
-        className="w-full max-w-full h-[400px]"
+        className="w-full max-w-full h-[500px]"
         id="chart4-capture-container"
       >
         <StackedBarChartTemplate

@@ -9,6 +9,7 @@ import domtoimage from "dom-to-image-more";
 import JSZip from "jszip";
 import apiClient from "@/lib/axios";
 import { parse } from "papaparse";
+import { useSession } from "next-auth/react";
 
 const Page = () => {
   const data = useBRReportStore((s) => s.data);
@@ -19,6 +20,7 @@ const Page = () => {
     totals: [],
   });
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const { data: session } = useSession();
   const charts = [
     "chart1-capture",
     "chart2-capture",
@@ -88,16 +90,30 @@ const Page = () => {
   };
 
   const fetchCustomIllnesses = async () => {
-    const response = await apiClient.get(
-      `/generate/checkCustomIllnesses/maxicare?clientId=${data.lastData.clientId}&py=${data.lastData.py}`
-    );
-    if (response.data.success) {
-      console.log("Custom illnesses data:", response.data.data);
-      console.log("Custom illnesses totals:", response.data.totals);
-      setCustomIllnesses({
-        data: response.data.data,
-        totals: response.data.totals,
-      });
+    if (data.insurerId === 1) {
+      const response = await apiClient.get(
+        `/generate/checkCustomIllnesses/intellicare?clientId=${data.lastData.clientId}&py=${data.lastData.py}`
+      );
+      if (response.data.success) {
+        console.log("Custom illnesses data:", response.data.data);
+        console.log("Custom illnesses totals:", response.data.totals);
+        setCustomIllnesses({
+          data: response.data.data,
+          totals: response.data.totals,
+        });
+      }
+    } else if (data.insurerId === 2) {
+      const response = await apiClient.get(
+        `/generate/checkCustomIllnesses/maxicare?clientId=${data.lastData.clientId}&py=${data.lastData.py}`
+      );
+      if (response.data.success) {
+        console.log("Custom illnesses data:", response.data.data);
+        console.log("Custom illnesses totals:", response.data.totals);
+        setCustomIllnesses({
+          data: response.data.data,
+          totals: response.data.totals,
+        });
+      }
     }
   };
 

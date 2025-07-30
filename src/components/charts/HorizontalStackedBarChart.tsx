@@ -71,31 +71,48 @@ const HorizontalStackedBarChart = ({
           stacked: true,
           max: 100,
           grid: {
-            display: false,
-            color: "#ddd",
+            display: true,
           },
           border: {
             display: false,
           },
           ticks: {
-            display: false,
+            display: true,
+            color: "#013474",
+            font: { size: 16, family: "Aptos", weight: "bold" },
+            stepSize: 20, // tick every 20%
+            callback: (v) => `${v}%`,
           },
         },
       },
       plugins: {
         datalabels: {
+          clamp: true,
           color: "white",
           backgroundColor: (ctx) => {
             const val = ctx.dataset.data[0] as number;
             return val === 0 ? null : (ctx.dataset.backgroundColor as string);
           },
-          formatter: (val) => (val === 0 ? "" : val + "%"),
+          formatter: (value, ctx) => {
+            const total = ctx.chart.data.datasets
+              .map((ds) => ds.data[ctx.dataIndex] as number)
+              .reduce((a, b) => a + b, 0);
+
+            const pct = (value / total) * 100;
+
+            if (pct < 1) {
+              return Math.round(pct) > 0
+                ? `${Math.round(pct)}%`
+                : `${pct.toFixed(1)}%`;
+            }
+
+            return `${Math.round(pct)}%`;
+          },
           font: { size: bodySize, weight: "bold", family: "Aptos" },
           anchor: "center",
           align: (ctx) => {
             const datasetIndex = ctx.datasetIndex;
             const allDatasets = ctx.chart.data.datasets;
-            const currentValue = allDatasets[datasetIndex].data[0] as number;
 
             const prev1 =
               datasetIndex > 0
@@ -150,7 +167,23 @@ const HorizontalStackedBarChart = ({
         tooltip: {
           callbacks: {
             title: () => "", // disables title
-            label: (context) => context.parsed.x.toLocaleString() + "%",
+            label: (context) => {
+              const total = context.chart.data.datasets
+                .map((ds) => ds.data[context.dataIndex] as number)
+                .reduce((a, b) => a + b, 0);
+
+              const value = context.raw as number;
+              const pct = (value / total) * 100;
+
+              const formatted =
+                pct < 1
+                  ? Math.round(pct) > 0
+                    ? `${Math.round(pct)}%`
+                    : `${pct.toFixed(1)}%`
+                  : `${Math.round(pct)}%`;
+
+              return `${context.dataset.label}: ${formatted}`;
+            },
           },
           bodyColor: "#222",
           backgroundColor: "#fff",
