@@ -11,10 +11,26 @@ type Props = {
 const Chart1 = (props: Props) => {
   const [legendSize, setLegendSize] = useState(16);
   const [bodySize, setBodySize] = useState(20);
-  const { dependents, dependents_percentage, company, ...chartData } =
+  const { dependents, dependents_percentage, company, ...raw } =
     props.data[props.data.length - 1];
+  const total =
+    raw.employees + raw.spouse + raw.child + raw.parent + raw.sibling;
 
-  console.log(props.year);
+  const chartData = {
+    employees_percentage: (raw.employees / total) * 100,
+    spouse_percentage: (raw.spouse / total) * 100,
+    child_percentage: (raw.child / total) * 100,
+    parent_percentage: (raw.parent / total) * 100,
+    sibling_percentage: (raw.sibling / total) * 100,
+    dependents,
+    dependents_percentage: (dependents / total) * 100,
+    company,
+    employees: raw.employees,
+    spouse: raw.spouse,
+    child: raw.child,
+    parent: raw.parent,
+    sibling: raw.sibling,
+  };
 
   const data: ChartData<"bar"> = {
     labels: [props.year],

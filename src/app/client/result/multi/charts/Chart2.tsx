@@ -14,7 +14,8 @@ type Props = {
 
 const Chart2 = ({ chartTitle, data, years }: Props) => {
   const [legendSize, setLegendSize] = useState(16);
-  const [bodySize, setBodySize] = useState(20);
+  const [bodySize, setBodySize] = useState(14);
+  const [thickness, setThickness] = useState(70);
   const color = {
     bg: "#002161",
     hover: "#002161",
@@ -27,6 +28,11 @@ const Chart2 = ({ chartTitle, data, years }: Props) => {
     return null;
   }
 
+  const dataY2 = data.map((item) => item.claimCount);
+  const minY2 = Math.floor(Math.min(...dataY2) / 100) * 100;
+  const maxY2 = Math.ceil(Math.max(...dataY2) / 50) * 50;
+  console.log(" Min Y2:", minY2, "Max Y2:", maxY2);
+
   const datasets = [
     {
       label: "Claim Amount",
@@ -35,6 +41,7 @@ const Chart2 = ({ chartTitle, data, years }: Props) => {
       hoverBackgroundColor: color.hover,
       yAxisID: "y",
       order: 2,
+      barThickness: thickness,
     },
     {
       label: "Claim Count",
@@ -45,6 +52,7 @@ const Chart2 = ({ chartTitle, data, years }: Props) => {
       tension: 0.4,
       yAxisID: "y-axis-2",
       order: 1,
+      barThickness: thickness,
     },
   ];
 
@@ -91,6 +99,9 @@ const Chart2 = ({ chartTitle, data, years }: Props) => {
           bodySize={bodySize}
           legendSize={legendSize}
           id="chart2-capture"
+          minY2={minY2}
+          maxY2={maxY2}
+          multi
         />
       </div>
     </div>

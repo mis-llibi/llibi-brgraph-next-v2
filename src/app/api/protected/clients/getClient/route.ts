@@ -29,15 +29,15 @@ export async function GET(req: NextRequest) {
           },
         });
 
-        const decks = await prisma.decks.findMany({
-          where: { clientId: client.id },
-        });
+        // const decks = await prisma.decks.findMany({
+        //   where: { clientId: client.id },
+        // });
 
         const clientData = {
           ...client,
           masterlist: masterlist,
           utilization: utilization,
-          decks: decks,
+          //decks: decks,
         };
 
         return NextResponse.json({ client: clientData }, { status: 200 });

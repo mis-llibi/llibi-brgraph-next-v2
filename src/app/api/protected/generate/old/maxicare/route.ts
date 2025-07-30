@@ -5,6 +5,14 @@ import { DateTime } from "luxon";
 
 import { NextResponse as res, NextRequest } from "next/server";
 
+// Helper function to calculate percentage with decimal handling
+const calculatePercentage = (part: number, total: number): number => {
+  const percentage = (part / total) * 100;
+  return Math.round(percentage) === 0 && percentage > 0
+    ? Number(percentage.toFixed(1))
+    : Math.round(percentage);
+};
+
 // This route is for new account generation for maxicare
 
 type generateOneYearRequest = {
@@ -149,13 +157,11 @@ const chart1 = async (
 
               // create a payload with the relation as key
               const payload: { [key: string]: number } = {};
-              for (let i = 0; i < sortedRelations.length; i++) {
-                if (relation.RELATION) {
-                  payload[relation.RELATION.trim().toLowerCase()] = count;
-                  payload[
-                    `${relation.RELATION.trim().toLowerCase()}_percentage`
-                  ] = (count / totalAll) * 100;
-                }
+              if (relation.RELATION) {
+                payload[relation.RELATION.trim().toLowerCase()] = count;
+                payload[
+                  `${relation.RELATION.trim().toLowerCase()}_percentage`
+                ] = calculatePercentage(count, totalAll);
               }
 
               return payload;
@@ -164,9 +170,9 @@ const chart1 = async (
           const payload = {
             company: company.COMPANY,
             employees: employees,
-            employees_percentage: Math.round((employees / totalAll) * 100),
+            employees_percentage: calculatePercentage(employees, totalAll),
             dependents: dependents,
-            dependents_percentage: Math.round((dependents / totalAll) * 100),
+            dependents_percentage: calculatePercentage(dependents, totalAll),
             spouse: detailedDependents[0]?.spouse ?? 0,
             spouse_percentage: Math.round(
               detailedDependents[0]?.spouse_percentage ?? 0
@@ -184,7 +190,7 @@ const chart1 = async (
               detailedDependents[3]?.sibling_percentage ?? 0
             ),
             companyTotal: total,
-            companyTotalPercentage: Math.round((total / totalAll) * 100),
+            companyTotalPercentage: calculatePercentage(total, totalAll),
           };
 
           return payload;
@@ -226,9 +232,9 @@ const chart1 = async (
       const totalDependentsPercentage = Math.round(
         (totalDependents / totalAll) * 100
       );
-      const totalSpousePercentage = Math.round((totalSpouse / totalAll) * 100);
-      const totalChildPercentage = Math.round((totalChild / totalAll) * 100);
-      const totalParentPercentage = Math.round((totalParent / totalAll) * 100);
+      const totalSpousePercentage = calculatePercentage(totalSpouse, totalAll);
+      const totalChildPercentage = calculatePercentage(totalChild, totalAll);
+      const totalParentPercentage = calculatePercentage(totalParent, totalAll);
       const totalSiblingPercentage = Math.round(
         (totalSibling / totalAll) * 100
       );
@@ -249,7 +255,7 @@ const chart1 = async (
         sibling: totalSibling,
         sibling_percentage: totalSiblingPercentage,
         companyTotal: total,
-        companyTotalPercentage: Math.round((total / totalAll) * 100),
+        companyTotalPercentage: calculatePercentage(total, totalAll),
       };
 
       companyData.push(combined);

@@ -61,7 +61,7 @@ const StackedBarChartTemplate: React.FC<StackedBarChartTemplateProps> = ({
             stacked: true,
             ticks: {
               font: { size: bodySize },
-              color: "#94a3b8",
+              color: "#00005e",
               maxRotation: 0,
             },
             grid: { display: false },
@@ -114,15 +114,28 @@ const StackedBarChartTemplate: React.FC<StackedBarChartTemplateProps> = ({
               return 0;
             },
             color: "white",
-            formatter: (value: number) => (value === 0 ? "" : `${value}%`),
+            formatter: (value: number) => {
+              if (value === 0) return "";
+
+              if (value < 1) {
+                return Math.round(value) > 0
+                  ? `${Math.round(value)}%`
+                  : `${value.toFixed(1)}%`;
+              }
+
+              return `${Math.round(value)}%`;
+            },
             font: { size: bodySize },
           },
           legend: {
             display: true,
             position: "bottom",
             labels: {
-              font: { size: legendSize },
-              padding: 16,
+              font: { size: legendSize, weight: 600 },
+              color: "#00005e",
+              padding: 10,
+              pointStyle: "rect",
+              usePointStyle: true,
             },
           },
           tooltip: { enabled: false },
@@ -141,7 +154,7 @@ const StackedBarChartTemplate: React.FC<StackedBarChartTemplateProps> = ({
   }, [data, bodySize, legendSize]);
 
   return (
-    <div className="relative w-[700px] h-[400px] overflow-hidden">
+    <div className="relative w-[570px] h-[500px] overflow-hidden">
       <canvas ref={canvasRef} id={id}></canvas>
     </div>
   );

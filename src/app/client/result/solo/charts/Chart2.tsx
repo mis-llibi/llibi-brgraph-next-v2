@@ -13,6 +13,7 @@ type Props = {
 const Chart2 = ({ chartTitle, data, year }: Props) => {
   const [legendSize, setLegendSize] = useState(16);
   const [bodySize, setBodySize] = useState(20);
+  const [thickness, setThickness] = useState(70);
 
   const color = {
     bg: "#002161",
@@ -28,6 +29,7 @@ const Chart2 = ({ chartTitle, data, year }: Props) => {
       backgroundColor: color.bg,
       hoverBackgroundColor: color.hover,
       yAxisID: "y",
+      barThickness: thickness,
     },
     {
       label: "Claim Count",
@@ -37,6 +39,7 @@ const Chart2 = ({ chartTitle, data, year }: Props) => {
       type: "line",
       tension: 0.4,
       yAxisID: "y-axis-2",
+      barThickness: thickness,
     },
   ];
 

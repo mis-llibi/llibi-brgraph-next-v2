@@ -11,6 +11,11 @@ type DataItem = {
   dependents: number;
   dependents_percentage: number;
   company: string;
+  employees: number;
+  spouse: number;
+  child: number;
+  parent: number;
+  sibling: number;
 };
 
 type Props = {
@@ -22,6 +27,7 @@ type Props = {
 const Chart1 = ({ chartTitle, data, years }: Props) => {
   const [legendSize, setLegendSize] = useState(16);
   const [bodySize, setBodySize] = useState(20);
+  console.log("Chart1 data:", data);
   // Validate data and years arrays match
   if (data.length !== years.length) {
     console.error("Data and years arrays must have the same length");
@@ -39,6 +45,23 @@ const Chart1 = ({ chartTitle, data, years }: Props) => {
 
   const flattenedData = filteredData.flat();
 
+  const processedData = flattenedData.map((entry) => {
+    const total =
+      entry.employees +
+      entry.spouse +
+      entry.child +
+      entry.parent +
+      entry.sibling;
+
+    return {
+      employees: (entry.employees / total) * 100,
+      spouse: (entry.spouse / total) * 100,
+      child: (entry.child / total) * 100,
+      parent: (entry.parent / total) * 100,
+      sibling: (entry.sibling / total) * 100,
+    };
+  });
+
   console.log(flattenedData);
 
   const chartData: ChartData<"bar"> = {
@@ -46,31 +69,31 @@ const Chart1 = ({ chartTitle, data, years }: Props) => {
     datasets: [
       {
         label: "Employees",
-        data: flattenedData.map((value) => value.employees_percentage),
+        data: processedData.map((value) => value.employees),
         backgroundColor: "#002161",
         stack: "stack1",
       },
       {
         label: "Spouse",
-        data: flattenedData.map((value) => value.spouse_percentage),
+        data: processedData.map((value) => value.spouse),
         backgroundColor: "#0071c1",
         stack: "stack1",
       },
       {
         label: "Child",
-        data: flattenedData.map((value) => value.child_percentage),
+        data: processedData.map((value) => value.child),
         backgroundColor: "#810100",
         stack: "stack1",
       },
       {
         label: "Parent",
-        data: flattenedData.map((value) => value.parent_percentage),
+        data: processedData.map((value) => value.parent),
         backgroundColor: "#f3ab84",
         stack: "stack1",
       },
       {
         label: "Sibling",
-        data: flattenedData.map((value) => value.sibling_percentage),
+        data: processedData.map((value) => value.sibling),
         backgroundColor: "#7030a0",
         stack: "stack1",
       },

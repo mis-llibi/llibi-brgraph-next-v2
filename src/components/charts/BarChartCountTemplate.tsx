@@ -31,6 +31,9 @@ interface BarChartProps {
   bodySize: number;
   legendSize: number;
   id: string;
+  minY2?: number;
+  maxY2?: number;
+  multi?: boolean;
 }
 
 const BarChartCountTemplate: React.FC<BarChartProps> = ({
@@ -38,6 +41,9 @@ const BarChartCountTemplate: React.FC<BarChartProps> = ({
   bodySize,
   legendSize,
   id,
+  minY2 = 0,
+  maxY2 = 0,
+  multi = false,
 }) => {
   const [chart, setChart] = useState<Chart | null>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -58,8 +64,12 @@ const BarChartCountTemplate: React.FC<BarChartProps> = ({
           y: {
             border: { display: false },
             ticks: {
-              maxTicksLimit: 5,
-              callback: (value: any) => Math.round(value),
+              count: 8,
+              callback: (value: any, index, ticks) => {
+                // Replace the first tick label with "-"
+                if (index === 0) return "-";
+                return value.toLocaleString();
+              },
               color: "#1F2937",
               font: { size: bodySize },
             },
@@ -70,8 +80,11 @@ const BarChartCountTemplate: React.FC<BarChartProps> = ({
             position: "right",
             grid: { display: false },
             border: { display: false },
+            beginAtZero: false,
+            min: minY2 === 0 ? undefined : minY2,
+            max: maxY2 === 0 ? undefined : maxY2,
             ticks: {
-              maxTicksLimit: 5,
+              count: 6,
               callback: (value: any) => Math.round(value),
               color: "#1F2937",
               font: { size: bodySize, family: "Aptos" },
@@ -89,8 +102,19 @@ const BarChartCountTemplate: React.FC<BarChartProps> = ({
         },
         plugins: {
           datalabels: {
-            align: "center",
-            anchor: "center",
+            align: (ctx) => {
+              const datasetId = (ctx.dataset as any)?.yAxisID;
+
+              return datasetId === "y" ? "end" : "center";
+            },
+            anchor: (ctx) => {
+              const datasetId = (ctx.dataset as any)?.yAxisID;
+              return datasetId === "y" ? "end" : "center";
+            },
+            offset: (ctx) => {
+              const datasetId = (ctx.dataset as any)?.yAxisID;
+              return datasetId === "y" ? 16 : 0;
+            },
             backgroundColor: (context: any) => context.dataset.backgroundColor,
             borderRadius: 4,
             color: "white",

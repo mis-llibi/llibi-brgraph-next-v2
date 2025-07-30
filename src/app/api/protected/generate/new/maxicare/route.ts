@@ -136,42 +136,56 @@ const chart1 = async (
 
               // create a payload with the relation as key
               const payload: { [key: string]: number } = {};
-              for (let i = 0; i < sortedRelations.length; i++) {
-                if (relation.RELATION) {
-                  payload[relation.RELATION.trim().toLowerCase()] = count;
-                  payload[
-                    `${relation.RELATION.trim().toLowerCase()}_percentage`
-                  ] = (count / totalAll) * 100;
-                }
+              if (relation.RELATION) {
+                payload[relation.RELATION.trim().toLowerCase()] = count;
+                const percentage = (count / totalAll) * 100;
+                payload[
+                  `${relation.RELATION.trim().toLowerCase()}_percentage`
+                ] =
+                  Math.round(percentage) === 0 && percentage > 0
+                    ? Number(percentage.toFixed(1))
+                    : Math.round(percentage);
               }
 
               return payload;
             })
           );
+          const calculatePercentage = (value: number, total: number) => {
+            const percentage = (value / total) * 100;
+            if (Math.round(percentage) === 0 && percentage > 0) {
+              return Number(percentage.toFixed(1));
+            }
+            return Math.round(percentage);
+          };
+
           const payload = {
             company: company.COMPANY,
             employees: employees,
-            employees_percentage: Math.round((employees / totalAll) * 100),
+            employees_percentage: calculatePercentage(employees, totalAll),
             dependents: dependents,
-            dependents_percentage: Math.round((dependents / totalAll) * 100),
+            dependents_percentage: calculatePercentage(dependents, totalAll),
             spouse: detailedDependents[0]?.spouse ?? 0,
-            spouse_percentage: Math.round(
-              detailedDependents[0]?.spouse_percentage ?? 0
+            spouse_percentage: calculatePercentage(
+              detailedDependents[0]?.spouse ?? 0,
+              totalAll
             ),
             child: detailedDependents[1]?.child ?? 0,
-            child_percentage: Math.round(
-              detailedDependents[1]?.child_percentage ?? 0
+            child_percentage: calculatePercentage(
+              detailedDependents[1]?.child ?? 0,
+              totalAll
             ),
             parent: detailedDependents[2]?.parent ?? 0,
-            parent_percentage: Math.round(
-              detailedDependents[2]?.parent_percentage ?? 0
+            parent_percentage: calculatePercentage(
+              detailedDependents[2]?.parent ?? 0,
+              totalAll
             ),
             sibling: detailedDependents[3]?.sibling ?? 0,
-            sibling_percentage: Math.round(
-              detailedDependents[3]?.sibling_percentage ?? 0
+            sibling_percentage: calculatePercentage(
+              detailedDependents[3]?.sibling ?? 0,
+              totalAll
             ),
             companyTotal: total,
-            companyTotalPercentage: Math.round((total / totalAll) * 100),
+            companyTotalPercentage: calculatePercentage(total, totalAll),
           };
 
           return payload;
@@ -206,18 +220,29 @@ const chart1 = async (
 
       const total = totalEmployees + totalDependents;
 
+      const calculatePercentage = (value: number, total: number) => {
+        const percentage = (value / total) * 100;
+        if (Math.round(percentage) === 0 && percentage > 0) {
+          return Number(percentage.toFixed(1));
+        }
+        return Math.round(percentage);
+      };
+
       // get total employees and dependents percentage
-      const totalEmployeesPercentage = Math.round(
-        (totalEmployees / totalAll) * 100
+      const totalEmployeesPercentage = calculatePercentage(
+        totalEmployees,
+        totalAll
       );
-      const totalDependentsPercentage = Math.round(
-        (totalDependents / totalAll) * 100
+      const totalDependentsPercentage = calculatePercentage(
+        totalDependents,
+        totalAll
       );
-      const totalSpousePercentage = Math.round((totalSpouse / totalAll) * 100);
-      const totalChildPercentage = Math.round((totalChild / totalAll) * 100);
-      const totalParentPercentage = Math.round((totalParent / totalAll) * 100);
-      const totalSiblingPercentage = Math.round(
-        (totalSibling / totalAll) * 100
+      const totalSpousePercentage = calculatePercentage(totalSpouse, totalAll);
+      const totalChildPercentage = calculatePercentage(totalChild, totalAll);
+      const totalParentPercentage = calculatePercentage(totalParent, totalAll);
+      const totalSiblingPercentage = calculatePercentage(
+        totalSibling,
+        totalAll
       );
 
       // add COMBINED company
@@ -236,7 +261,7 @@ const chart1 = async (
         sibling: totalSibling,
         sibling_percentage: totalSiblingPercentage,
         companyTotal: total,
-        companyTotalPercentage: Math.round((total / totalAll) * 100),
+        companyTotalPercentage: calculatePercentage(total, totalAll),
       };
 
       companyData.push(combined);

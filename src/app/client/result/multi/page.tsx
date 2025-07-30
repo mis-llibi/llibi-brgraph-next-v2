@@ -82,21 +82,40 @@ const Page = () => {
     const zipBlob = await zip.generateAsync({ type: "blob" });
     const link = document.createElement("a");
     link.href = URL.createObjectURL(zipBlob);
-    link.download = "report-assets.zip";
+    const fileName = (data.lastData.clientName as string)
+      .replace(/[^a-zA-Z0-9 ]/g, "") // remove special characters
+      .split(" ")
+      .map((e: string) => e.trim())
+      .join("");
+    link.download = `${fileName}.zip`;
     link.click();
   };
 
   const fetchCustomIllnesses = async () => {
-    const response = await apiClient.get(
-      `/generate/checkCustomIllnesses/maxicare?clientId=${data.lastData.clientId}&py=${data.lastData.py}`
-    );
-    if (response.data.success) {
-      console.log("Custom illnesses data:", response.data.data);
-      console.log("Custom illnesses totals:", response.data.totals);
-      setCustomIllnesses({
-        data: response.data.data,
-        totals: response.data.totals,
-      });
+    if (data.insurerId === 1) {
+      const response = await apiClient.get(
+        `/generate/checkCustomIllnesses/intellicare?clientId=${data.lastData.clientId}&py=${data.lastData.py}`
+      );
+      if (response.data.success) {
+        console.log("Custom illnesses data:", response.data.data);
+        console.log("Custom illnesses totals:", response.data.totals);
+        setCustomIllnesses({
+          data: response.data.data,
+          totals: response.data.totals,
+        });
+      }
+    } else if (data.insurerId === 2) {
+      const response = await apiClient.get(
+        `/generate/checkCustomIllnesses/maxicare?clientId=${data.lastData.clientId}&py=${data.lastData.py}`
+      );
+      if (response.data.success) {
+        console.log("Custom illnesses data:", response.data.data);
+        console.log("Custom illnesses totals:", response.data.totals);
+        setCustomIllnesses({
+          data: response.data.data,
+          totals: response.data.totals,
+        });
+      }
     }
   };
 
@@ -164,7 +183,18 @@ const Page = () => {
 
   return (
     <div className="relative flex flex-col aptos-font p-4">
-      <h1 className="text-2xl mb-8">{data.lastData.clientName}</h1>
+      <div className="flex justify-between">
+        <h1 className="text-2xl mb-8">{data.lastData.clientName}</h1>
+        <div>
+          <button
+            className=" bg-green-400 hover:bg-green-500 px-4 py-2 rounded-xl"
+            onClick={exportTableAsImage}
+          >
+            Download Charts and Tables
+          </button>
+        </div>
+      </div>
+
       <div className="flex flex-col gap-4 divide-y-2 w-full">
         <Chart1
           data={data.chart1}
