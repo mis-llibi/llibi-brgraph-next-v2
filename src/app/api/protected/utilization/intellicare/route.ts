@@ -1,9 +1,10 @@
 export const dynamic = "force-dynamic";
 import { prisma } from "@/lib/prisma";
 import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
-import { Workbook } from "exceljs";
-import { promises as fs } from "fs";
 import { DateTime } from "luxon";
+import { readFile, deleteFile, s3 } from "@/lib/s3";
+import { env } from "@/lib/env";
+import { PutObjectCommand } from "@aws-sdk/client-s3";
 
 import { NextResponse as res, NextRequest } from "next/server";
 
@@ -24,21 +25,11 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    const workbook = new Workbook();
     if (file) {
-      const [name, extension] = file.name.split(".");
       console.log("Uploading File...");
-      await saveFile(file);
+      const { key } = await saveFile(file);
       console.log("Reading File...");
-      const worksheet = await workbook.xlsx
-        .readFile(`./public/${name}.${extension}`)
-        .then(() => {
-          return workbook.getWorksheet(1);
-        })
-        .catch((error) => {
-          console.error(error);
-          return null;
-        });
+      const worksheet = await readFile(key);
 
       if (!worksheet) {
         return res.json({ error: "Failed to read excel file" });
@@ -239,7 +230,7 @@ export async function POST(req: NextRequest) {
           });
         } catch (error: any) {
           // delete the file after reading
-          await deleteFile(name, extension);
+          await deleteFile(key);
           if (error instanceof PrismaClientKnownRequestError) {
             console.error(error.message);
           } else {
@@ -250,7 +241,7 @@ export async function POST(req: NextRequest) {
         }
 
         // delete the file after reading
-        await deleteFile(name, extension);
+        await deleteFile(key);
         return res.json({
           message: "File uploaded successfully",
           success: true,
@@ -262,24 +253,26 @@ export async function POST(req: NextRequest) {
       return res.json({ error: "File is null" });
     }
   } catch (error) {
+    console.error("Failed to upload excel file:", error);
     return res.json({ error: "Failed to upload excel file" });
   }
 }
 
 async function saveFile(file: File) {
-  const data = await file.arrayBuffer();
-  const [name, extension] = file.name.split(".");
-  await fs
-    .appendFile(`./public/${name}.${extension}`, Buffer.from(data))
-    .catch((error) => {
-      console.error(error);
-    });
-  return;
-}
+  const buffer = Buffer.from(await file.arrayBuffer());
+  const key = `brgraphv2/utilization/${Date.now()}-${file.name}`;
+  await s3.send(
+    new PutObjectCommand({
+      Bucket: env.BUCKET_NAME,
+      Key: key,
+      Body: buffer,
+      ACL: "public-read",
+      ContentType: file.type,
+    })
+  );
 
-async function deleteFile(name: string, extension: string) {
-  await fs.unlink(`./public/${name}.${extension}`).catch((error) => {
-    console.error(error);
-  });
-  return;
+  return {
+    key,
+    url: `${env.CDN_URL}/${key}`,
+  };
 }
