@@ -229,30 +229,57 @@ const Page = () => {
             <button
               className=" rounded-xl bg-green-400 px-2 py-1 hover:bg-green-500"
               onClick={async () => {
-                const response = await apiClient.post(
-                  "/generate/exportT5/maxicare",
-                  {
-                    clientId: data.lastData.clientId,
-                    startDate: data.lastData.startDate,
-                    endDate: data.lastData.endDate,
-                  },
-                  {
-                    responseType: "blob",
-                  }
-                );
+                if (data.insurerId === 1) {
+                  const response = await apiClient.post(
+                    "/generate/exportT5/intellicare",
+                    {
+                      clientId: data.lastData.clientId,
+                      startDate: data.lastData.startDate,
+                      endDate: data.lastData.endDate,
+                    },
+                    {
+                      responseType: "blob",
+                    }
+                  );
 
-                const blob = new Blob([response.data], {
-                  type: "text/csv",
-                });
-                const url = window.URL.createObjectURL(blob);
+                  const blob = new Blob([response.data], {
+                    type: "text/csv",
+                  });
+                  const url = window.URL.createObjectURL(blob);
 
-                const a = document.createElement("a");
-                a.href = url;
-                a.download = `table5-export.csv`;
-                document.body.appendChild(a);
-                a.click();
-                a.remove();
-                window.URL.revokeObjectURL(url); // cleanup
+                  const a = document.createElement("a");
+                  a.href = url;
+                  a.download = `table5-export.csv`;
+                  document.body.appendChild(a);
+                  a.click();
+                  a.remove();
+                  window.URL.revokeObjectURL(url); // cleanup
+                } else if (data.insurerId === 2) {
+                  const response = await apiClient.post(
+                    "/generate/exportT5/maxicare",
+                    {
+                      clientId: data.lastData.clientId,
+                      startDate: data.lastData.startDate,
+                      endDate: data.lastData.endDate,
+                    },
+                    {
+                      responseType: "blob",
+                    }
+                  );
+
+                  const blob = new Blob([response.data], {
+                    type: "text/csv",
+                  });
+                  const url = window.URL.createObjectURL(blob);
+
+                  const a = document.createElement("a");
+                  a.href = url;
+                  a.download = `table5-export.csv`;
+                  document.body.appendChild(a);
+                  a.click();
+                  a.remove();
+                  window.URL.revokeObjectURL(url); // cleanup
+                }
               }}
             >
               {" "}
