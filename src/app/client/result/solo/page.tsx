@@ -183,7 +183,10 @@ const Page = () => {
     <div className="relative flex flex-col aptos-font p-4">
       <div className=" fixed bottom-0 right-4 flex items-end justify-end p-4">
         <div>
-          <button className="rounded-xl py-2 px-4 bg-green-400 hover:bg-green-500">
+          <button
+            className="rounded-xl py-2 px-4 bg-green-400 hover:bg-green-500"
+            onClick={exportTableAsImage}
+          >
             Download all
           </button>
         </div>
