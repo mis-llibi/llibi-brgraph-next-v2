@@ -29,8 +29,16 @@ model user{
   canRemove Boolean @default(false)
   canEdit Boolean @default(false)
   superAdmin Boolean @default(false)
+  isActive Boolean @default(true)
+  mustChangePassword Boolean @default(false)
+  lastLogin DateTime?
+  createdBy Int?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  // Self-referencing relation for tracking who created whom
+  creator user? @relation("UserCreatedBy", fields: [createdBy], references: [id])
+  createdUsers user[] @relation("UserCreatedBy")
 
   @@map("user")
 }
