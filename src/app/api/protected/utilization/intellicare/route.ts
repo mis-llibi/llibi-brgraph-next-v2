@@ -1,5 +1,6 @@
 export const dynamic = "force-dynamic";
 import { prisma } from "@/lib/prisma";
+import { requireAuth, requirePermission } from "@/lib/auth-middleware";
 import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
 import { DateTime } from "luxon";
 import { readFile, deleteFile, s3 } from "@/lib/s3";
@@ -12,19 +13,31 @@ import { NextResponse as res, NextRequest } from "next/server";
 
 // This route is for uploading the utilization of a client
 export async function POST(req: NextRequest) {
-  if (!req.body) {
-    return res.json({ error: "Request body is null" });
-  }
-  const formData = await req.formData();
-  const file = formData.get("file") as File;
-  const clientId = formData.get("id");
-  const year = formData.get("year") as string;
-  const insurerId = formData.get("insurerId");
-  if (!clientId || !year || !insurerId || !file) {
-    return res.json({ error: "Missing required fields" });
-  }
-
   try {
+    // Require authentication first
+    const authResult = await requireAuth();
+    if (authResult instanceof res) {
+      return authResult; // Return auth error response
+    }
+
+    // Check canUpload permission for uploading utilization data
+    const permissionResult = requirePermission(authResult.user, "canUpload");
+    if (permissionResult) {
+      return permissionResult; // Return permission error response
+    }
+
+    if (!req.body) {
+      return res.json({ error: "Request body is null" });
+    }
+    const formData = await req.formData();
+    const file = formData.get("file") as File;
+    const clientId = formData.get("id");
+    const year = formData.get("year") as string;
+    const insurerId = formData.get("insurerId");
+    if (!clientId || !year || !insurerId || !file) {
+      return res.json({ error: "Missing required fields" });
+    }
+
     if (file) {
       console.log("Uploading File...");
       const { key } = await saveFile(file);
@@ -34,7 +47,7 @@ export async function POST(req: NextRequest) {
       if (!worksheet) {
         return res.json({ error: "Failed to read excel file" });
       } else {
-        const worksheetData: any[] = [];
+        const worksheetData: unknown[] = [];
         const headers: string[] = [];
         const keep = [
           "PY",
@@ -72,7 +85,7 @@ export async function POST(req: NextRequest) {
           .toFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
 
         worksheet.eachRow({ includeEmpty: true }, function (row, rowNumber) {
-          const rowObject: { [key: string]: any } = {};
+          const rowObject: { [key: string]: unknown } = {};
           // if 1st row, skip
           if (rowNumber === 1) return;
 
@@ -108,16 +121,17 @@ export async function POST(req: NextRequest) {
             const months: string[] = [];
 
             worksheetData.forEach((data, idx) => {
+              const typedData = data as any;
               // Replace "\n" with " " in the row data
-              for (const key in data) {
-                if (typeof data[key] === "string") {
-                  data[key] = data[key].replace(/\n/g, " ");
+              for (const key in typedData) {
+                if (typeof typedData[key] === "string") {
+                  typedData[key] = typedData[key].replace(/\n/g, " ");
                 }
               }
 
               // check if Admission_Date is valid
               const admissionDate = DateTime.fromISO(
-                data.Admission_Date.toISOString(),
+                typedData.Admission_Date.toISOString(),
                 {
                   zone: "utc",
                   setZone: false,
@@ -143,7 +157,7 @@ export async function POST(req: NextRequest) {
                   }'s Admission Date`
                 );
               } else {
-                data.Admission_Date = admissionDate.toFormat(
+                typedData.Admission_Date = admissionDate.toFormat(
                   "yyyy-MM-dd'T'HH:mm:ss'Z'"
                 );
 
@@ -156,9 +170,9 @@ export async function POST(req: NextRequest) {
 
               // check all BIRTHDATE if valid, if not still continue but do not process
 
-              if (data.Date_of_Birth) {
+              if (typedData.Date_of_Birth) {
                 const birthdate = DateTime.fromISO(
-                  data.Date_of_Birth.toISOString(),
+                  typedData.Date_of_Birth.toISOString(),
                   {
                     zone: "utc",
                     setZone: false,
@@ -170,18 +184,18 @@ export async function POST(req: NextRequest) {
                     `Invalid birthdate. Check row ${idx + 1}'s BIRTHDATE`
                   );
                 } else {
-                  data.Date_of_Birth = birthdate.toFormat(
+                  typedData.Date_of_Birth = birthdate.toFormat(
                     "yyyy-MM-dd'T'HH:mm:ss'Z'"
                   );
                 }
               }
 
               // parse approved claim amount and maximum benefit limit to float
-              data.Approved_Claim_Amount = parseFloat(
-                data.Approved_Claim_Amount
+              typedData.Approved_Claim_Amount = parseFloat(
+                typedData.Approved_Claim_Amount
               );
 
-              if (isNaN(data.Approved_Claim_Amount)) {
+              if (isNaN(typedData.Approved_Claim_Amount)) {
                 throw new Error(
                   `Invalid Approved Claim Amount. Check row ${
                     idx + 1
@@ -189,11 +203,11 @@ export async function POST(req: NextRequest) {
                 );
               }
 
-              data.Maximum_Benefit_Limit = parseFloat(
-                data.Maximum_Benefit_Limit
+              typedData.Maximum_Benefit_Limit = parseFloat(
+                typedData.Maximum_Benefit_Limit
               );
 
-              if (isNaN(data.Maximum_Benefit_Limit)) {
+              if (isNaN(typedData.Maximum_Benefit_Limit)) {
                 throw new Error(
                   `Invalid Maximum Benefit Limit. Check row ${
                     idx + 1
@@ -201,12 +215,12 @@ export async function POST(req: NextRequest) {
                 );
               }
 
-              data.clientId = +clientId;
+              typedData.clientId = +clientId;
             });
 
             // insert all data to masterlist
             await tx.intellicare.createMany({
-              data: worksheetData,
+              data: worksheetData as any,
             });
 
             // sort months array
@@ -228,16 +242,19 @@ export async function POST(req: NextRequest) {
               },
             });
           });
-        } catch (error: any) {
+        } catch (error: unknown) {
           // delete the file after reading
           await deleteFile(key);
           if (error instanceof PrismaClientKnownRequestError) {
             console.error(error.message);
-          } else {
+            return res.json({ error: error.message });
+          } else if (error instanceof Error) {
             console.error(error.message);
+            return res.json({ error: error.message });
+          } else {
+            console.error("Unknown error:", error);
+            return res.json({ error: "An unknown error occurred" });
           }
-
-          return res.json({ error: error.message });
         }
 
         // delete the file after reading

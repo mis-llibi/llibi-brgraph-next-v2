@@ -1,5 +1,5 @@
-import NextAuth, { DefaultSession } from "next-auth";
-import { JWT, DefaultJWT } from "next-auth/jwt";
+import { DefaultSession } from "next-auth";
+import { DefaultJWT } from "next-auth/jwt";
 
 declare module "next-auth" {
   interface User {
@@ -16,6 +16,10 @@ declare module "next-auth" {
     canRemove: boolean;
     canEdit: boolean;
     superAdmin: boolean;
+    isActive: boolean;
+    mustChangePassword: boolean;
+    lastLogin?: Date | null;
+    createdBy?: number | null;
   }
 
   interface Session {
@@ -33,6 +37,10 @@ declare module "next-auth" {
       canRemove: boolean | false;
       canEdit: boolean | false;
       superAdmin: boolean | false;
+      isActive: boolean | true;
+      mustChangePassword: boolean | false;
+      lastLogin?: Date | null;
+      createdBy?: number | null;
     } & DefaultSession["user"];
     expires: ISODateString;
   }
@@ -53,5 +61,9 @@ declare module "next-auth/jwt" {
     canRemove: boolean | false;
     canEdit: boolean | false;
     superAdmin: boolean | false;
+    isActive: boolean | true;
+    mustChangePassword: boolean | false;
+    lastLogin?: Date | null;
+    createdBy?: number | null;
   }
 }

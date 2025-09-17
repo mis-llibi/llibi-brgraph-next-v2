@@ -1,5 +1,6 @@
 export const dynamic = "force-dynamic";
 import { prisma } from "@/lib/prisma";
+import { requireAuth, requirePermission } from "@/lib/auth-middleware";
 import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
 import { saveFile, readFile, deleteFile } from "@/lib/s3";
 
@@ -9,19 +10,32 @@ import { NextResponse, NextRequest } from "next/server";
 
 // This route is for uploading the masterlist of a client
 export async function POST(req: NextRequest) {
-  // get the file from the request
-  if (!req.body) {
-    return NextResponse.json({ error: "Request body is null" });
-  }
-  const formData = await req.formData();
-  const file = formData.get("file") as File;
-  const clientId = formData.get("id");
-  const year = formData.get("year");
-  const insurerId = formData.get("insurerId");
-  if (!clientId || !year || !insurerId || !file) {
-    return NextResponse.json({ error: "Missing required fields" });
-  }
   try {
+    // Require authentication first
+    const authResult = await requireAuth();
+    if (authResult instanceof NextResponse) {
+      return authResult; // Return auth error response
+    }
+
+    // Check canUpload permission for uploading masterlists
+    const permissionResult = requirePermission(authResult.user, "canUpload");
+    if (permissionResult) {
+      return permissionResult; // Return permission error response
+    }
+
+    // get the file from the request
+    if (!req.body) {
+      return NextResponse.json({ error: "Request body is null" });
+    }
+    const formData = await req.formData();
+    const file = formData.get("file") as File;
+    const clientId = formData.get("id");
+    const year = formData.get("year");
+    const insurerId = formData.get("insurerId");
+    if (!clientId || !year || !insurerId || !file) {
+      return NextResponse.json({ error: "Missing required fields" });
+    }
+
     const company = await prisma.clients.findFirst({
       select: {
         client_name: true,
@@ -40,7 +54,7 @@ export async function POST(req: NextRequest) {
       if (!worksheet) {
         return NextResponse.json({ error: "Failed to read excel file" });
       } else {
-        const worksheetData: any[] = [];
+        const worksheetData: unknown[] = [];
         const headers: string[] = [];
         const keep = [
           "PY",
@@ -64,7 +78,7 @@ export async function POST(req: NextRequest) {
         });
 
         worksheet.eachRow({ includeEmpty: true }, function (row, rowNumber) {
-          const rowObject: { [key: string]: any } = {};
+          const rowObject: { [key: string]: unknown } = {};
           // if 1st row, skip
           if (rowNumber === 1) return;
 
@@ -115,7 +129,7 @@ export async function POST(req: NextRequest) {
             await tx.maxicareMasterlist.deleteMany({
               where: {
                 clientId: +clientId,
-                PY: worksheetData[0].PY,
+                PY: (worksheetData[0] as any)?.PY as string,
               },
             });
 
@@ -128,24 +142,26 @@ export async function POST(req: NextRequest) {
             });
 
             worksheetData.forEach((data, idx) => {
-              if (data.PY !== (year as string)) {
+              const typedData = data as any;
+              if (typedData.PY !== (year as string)) {
                 throw new Error(
                   `PY does not match the year. Check row ${idx + 1}'s PY`
                 );
               }
 
               // convert all LIMIT to float value (2 decimal places)
-              const limit = parseFloat(data.LIMIT);
+              const limitValue = typedData.LIMIT?.toString() || "0";
+              const limit = parseFloat(limitValue);
               if (isNaN(limit)) {
                 throw new Error(`Invalid limit. Check row ${idx + 1}'s LIMIT`);
               }
 
-              data.clientId = +clientId;
+              typedData.clientId = +clientId;
             });
 
             // insert all data to masterlist
             await tx.maxicareMasterlist.createMany({
-              data: worksheetData,
+              data: worksheetData as any,
             });
 
             // insert the upload data
@@ -158,14 +174,17 @@ export async function POST(req: NextRequest) {
               },
             });
           });
-        } catch (error: any) {
+        } catch (error: unknown) {
           if (error instanceof PrismaClientKnownRequestError) {
             console.error(error.message);
-          } else {
+            return NextResponse.json({ error: error.message });
+          } else if (error instanceof Error) {
             console.error(error.message);
+            return NextResponse.json({ error: error.message });
+          } else {
+            console.error("Unknown error:", error);
+            return NextResponse.json({ error: "An unknown error occurred" });
           }
-
-          return NextResponse.json({ error: error.message });
         }
 
         // delete the file after reading
