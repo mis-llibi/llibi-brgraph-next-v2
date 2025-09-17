@@ -171,7 +171,7 @@ export default function ClientManagementPage() {
 
     try {
       const response = await axios.delete(
-        `client-management/${selectedClient.id}`
+        `/api/protected/client-management/${selectedClient.id}`
       );
 
       if (response.data.success) {
