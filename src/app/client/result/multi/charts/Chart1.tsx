@@ -16,6 +16,7 @@ type DataItem = {
   child: number;
   parent: number;
   sibling: number;
+  other?: number;
 };
 
 type Props = {
@@ -51,7 +52,8 @@ const Chart1 = ({ chartTitle, data, years }: Props) => {
       entry.spouse +
       entry.child +
       entry.parent +
-      entry.sibling;
+      entry.sibling +
+      (entry?.other ?? 0);
 
     return {
       employees: (entry.employees / total) * 100,
@@ -59,45 +61,57 @@ const Chart1 = ({ chartTitle, data, years }: Props) => {
       child: (entry.child / total) * 100,
       parent: (entry.parent / total) * 100,
       sibling: (entry.sibling / total) * 100,
+      other: entry?.other ? (entry.other / total) * 100 : undefined,
     };
   });
 
   console.log(flattenedData);
 
+  const datasets = [
+    {
+      label: "Employees",
+      data: processedData.map((value) => value.employees),
+      backgroundColor: "#002161",
+      stack: "stack1",
+    },
+    {
+      label: "Spouse",
+      data: processedData.map((value) => value.spouse),
+      backgroundColor: "#0071c1",
+      stack: "stack1",
+    },
+    {
+      label: "Child",
+      data: processedData.map((value) => value.child),
+      backgroundColor: "#810100",
+      stack: "stack1",
+    },
+    {
+      label: "Parent",
+      data: processedData.map((value) => value.parent),
+      backgroundColor: "#f3ab84",
+      stack: "stack1",
+    },
+    {
+      label: "Sibling",
+      data: processedData.map((value) => value.sibling),
+      backgroundColor: "#7030a0",
+      stack: "stack1",
+    },
+  ];
+
+  if (processedData.some((value) => (value.other ?? 0) > 0)) {
+    datasets.push({
+      label: "Other",
+      data: processedData.map((value) => value?.other ?? 0),
+      backgroundColor: "#ff6b9d",
+      stack: "stack1",
+    });
+  }
+
   const chartData: ChartData<"bar"> = {
     labels: years, // Use all years as labels
-    datasets: [
-      {
-        label: "Employees",
-        data: processedData.map((value) => value.employees),
-        backgroundColor: "#002161",
-        stack: "stack1",
-      },
-      {
-        label: "Spouse",
-        data: processedData.map((value) => value.spouse),
-        backgroundColor: "#0071c1",
-        stack: "stack1",
-      },
-      {
-        label: "Child",
-        data: processedData.map((value) => value.child),
-        backgroundColor: "#810100",
-        stack: "stack1",
-      },
-      {
-        label: "Parent",
-        data: processedData.map((value) => value.parent),
-        backgroundColor: "#f3ab84",
-        stack: "stack1",
-      },
-      {
-        label: "Sibling",
-        data: processedData.map((value) => value.sibling),
-        backgroundColor: "#7030a0",
-        stack: "stack1",
-      },
-    ],
+    datasets,
   };
 
   console.log(chartData);

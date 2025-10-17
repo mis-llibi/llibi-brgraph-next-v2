@@ -4,6 +4,8 @@ export const convertInsurer = (insurerId: number): string => {
       return "Intellicare";
     case 2:
       return "Maxicare";
+    case 3:
+      return "Philcare";
     default:
       return "Unknown";
   }

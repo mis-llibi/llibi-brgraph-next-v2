@@ -33,6 +33,7 @@ interface BarChartProps {
   id: string;
   minY2?: number;
   maxY2?: number;
+  maxY?: number;
   multi?: boolean;
 }
 
@@ -43,6 +44,7 @@ const BarChartCountTemplate: React.FC<BarChartProps> = ({
   id,
   minY2 = 0,
   maxY2 = 0,
+  maxY = 0,
   multi = false,
 }) => {
   const [chart, setChart] = useState<Chart | null>(null);
@@ -63,12 +65,13 @@ const BarChartCountTemplate: React.FC<BarChartProps> = ({
         scales: {
           y: {
             border: { display: false },
+            max: maxY === 0 ? undefined : maxY,
             ticks: {
               count: 8,
               callback: (value: any, index, ticks) => {
                 // Replace the first tick label with "-"
                 if (index === 0) return "-";
-                return value.toLocaleString();
+                return Math.round(value).toLocaleString();
               },
               color: "#1F2937",
               font: { size: bodySize },
@@ -113,7 +116,7 @@ const BarChartCountTemplate: React.FC<BarChartProps> = ({
             },
             offset: (ctx) => {
               const datasetId = (ctx.dataset as any)?.yAxisID;
-              return datasetId === "y" ? 16 : 0;
+              return datasetId === "y" ? 0 : 0;
             },
             backgroundColor: (context: any) => context.dataset.backgroundColor,
             borderRadius: 4,

@@ -20,6 +20,8 @@ type CompanyBRReport = {
   parent_percentage: number;
   sibling: number;
   sibling_percentage: number;
+  other?: number;
+  other_percentage?: number;
   companyTotal: number;
   companyTotalPercentage: number;
 };
@@ -124,6 +126,7 @@ const Table1 = (props: Props) => {
     { label: "Child", key: "child" },
     { label: "Parent", key: "parent" },
     { label: "Sibling", key: "sibling" },
+    { label: "Other", key: "other" },
     { label: "Total", key: "companyTotal" },
   ];
 
@@ -143,7 +146,8 @@ const Table1 = (props: Props) => {
   }, []);
 
   if (!props.data.length) return null;
-  console.log("Sorted Data:", sortedData);
+  if (sortedData.length === 2) sortedData.pop();
+  console.log("Sorted Data Table 1:", sortedData);
   return (
     <>
       {/* Table 1 Customization Controls */}

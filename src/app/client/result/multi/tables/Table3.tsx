@@ -169,6 +169,9 @@ const Table3 = ({ data, year }: Props) => {
     setCompanies([...sortableCompanies, ...(combined ? [combined] : [])]);
   };
 
+  console.log("Rendering Table3 with companies order:", companies);
+  if (companies.length === 2) companies.pop();
+
   return (
     <>
       {/* Combined Customization Controls */}

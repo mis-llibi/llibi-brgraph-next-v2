@@ -25,6 +25,7 @@ export const UploadUtilizationFile = async (
   data: UploadUtilizationRequest
 ): Promise<boolean> => {
   console.log(data.file, data.id, data.year, data.insurerId);
+  console.log("Processing upload...");
   try {
     const formData = new FormData();
     formData.append("file", data.file);
@@ -36,8 +37,12 @@ export const UploadUtilizationFile = async (
         ? "intellicare"
         : data.insurerId === 2
         ? "maxicare"
+        : data.insurerId === 3
+        ? "philcare"
         : "unknown"
     ) as string;
+
+    console.log("Insurer: ", insurer);
 
     const response = await apiClient.post(`/utilization/${insurer}`, formData, {
       headers: {
@@ -82,6 +87,8 @@ export const UploadMasterlistFile = async (
         ? "intellicare"
         : data.insurerId === 2
         ? "maxicare"
+        : data.insurerId === 3
+        ? "philcare"
         : "unknown"
     ) as string;
 
