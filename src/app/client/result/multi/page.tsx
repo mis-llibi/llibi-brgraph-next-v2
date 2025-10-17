@@ -9,6 +9,7 @@ import domtoimage from "dom-to-image-more";
 import JSZip from "jszip";
 import apiClient from "@/lib/axios";
 import { parse } from "papaparse";
+import { convertInsurer } from "@/lib/insurers";
 
 const Page = () => {
   const data = useBRReportStore((s) => s.data);
@@ -116,6 +117,18 @@ const Page = () => {
           totals: response.data.totals,
         });
       }
+    } else if (data.insurerId === 3) {
+      const response = await apiClient.get(
+        `/generate/checkCustomIllnesses/philcare?clientId=${data.lastData.clientId}&py=${data.lastData.py}`
+      );
+      if (response.data.success) {
+        console.log("Custom illnesses data:", response.data.data);
+        console.log("Custom illnesses totals:", response.data.totals);
+        setCustomIllnesses({
+          data: response.data.data,
+          totals: response.data.totals,
+        });
+      }
     }
   };
 
@@ -165,9 +178,9 @@ const Page = () => {
           };
         });
 
-        console.log("Parsed rows:", cleanedRows);
+        const insurer = convertInsurer(data.lastData.insurerId);
 
-        await apiClient.post("/generate/importT5/maxicare", {
+        await apiClient.post(`/generate/importT5/${insurer.toLowerCase()}`, {
           clientId: data.lastData.clientId,
           py: data.lastData.py,
           rows: cleanedRows,
@@ -229,57 +242,31 @@ const Page = () => {
             <button
               className=" rounded-xl bg-green-400 px-2 py-1 hover:bg-green-500"
               onClick={async () => {
-                if (data.insurerId === 1) {
-                  const response = await apiClient.post(
-                    "/generate/exportT5/intellicare",
-                    {
-                      clientId: data.lastData.clientId,
-                      startDate: data.lastData.startDate,
-                      endDate: data.lastData.endDate,
-                    },
-                    {
-                      responseType: "blob",
-                    }
-                  );
+                const insurer = convertInsurer(data.lastData.insurerId);
+                const response = await apiClient.post(
+                  `/generate/exportT5/${insurer.toLowerCase()}`,
+                  {
+                    clientId: data.lastData.clientId,
+                    startDate: data.lastData.startDate,
+                    endDate: data.lastData.endDate,
+                  },
+                  {
+                    responseType: "blob",
+                  }
+                );
 
-                  const blob = new Blob([response.data], {
-                    type: "text/csv",
-                  });
-                  const url = window.URL.createObjectURL(blob);
+                const blob = new Blob([response.data], {
+                  type: "text/csv",
+                });
+                const url = window.URL.createObjectURL(blob);
 
-                  const a = document.createElement("a");
-                  a.href = url;
-                  a.download = `table5-export.csv`;
-                  document.body.appendChild(a);
-                  a.click();
-                  a.remove();
-                  window.URL.revokeObjectURL(url); // cleanup
-                } else if (data.insurerId === 2) {
-                  const response = await apiClient.post(
-                    "/generate/exportT5/maxicare",
-                    {
-                      clientId: data.lastData.clientId,
-                      startDate: data.lastData.startDate,
-                      endDate: data.lastData.endDate,
-                    },
-                    {
-                      responseType: "blob",
-                    }
-                  );
-
-                  const blob = new Blob([response.data], {
-                    type: "text/csv",
-                  });
-                  const url = window.URL.createObjectURL(blob);
-
-                  const a = document.createElement("a");
-                  a.href = url;
-                  a.download = `table5-export.csv`;
-                  document.body.appendChild(a);
-                  a.click();
-                  a.remove();
-                  window.URL.revokeObjectURL(url); // cleanup
-                }
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = `table5-export.csv`;
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+                window.URL.revokeObjectURL(url); // cleanup
               }}
             >
               {" "}

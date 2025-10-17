@@ -31,6 +31,10 @@ const table3Colors: ColorTheme[] = [
 
 const Table3 = ({ data, year }: Props) => {
   const companies = Array.from(new Set(data.map((entry) => entry.Company)));
+  console.log("Companies in Table3:", companies);
+  if (companies.length === 2) {
+    companies.pop();
+  }
   const { fontSize, setFontSize } = useToggleSize({ initial: 52 });
 
   return (

@@ -28,6 +28,9 @@ export const generateOneYear = async (
     case "Maxicare":
       res = await apiClient.post("/generate/new/maxicare", data);
       break;
+    case "Philcare":
+      res = await apiClient.post("/generate/new/philcare", data);
+      break;
   }
 
   if (!res) {
@@ -62,6 +65,9 @@ export const generateMultiYear = async (
       break;
     case "Maxicare":
       res = await apiClient.post("/generate/old/maxicare", data);
+      break;
+    case "Philcare":
+      res = await apiClient.post("/generate/old/philcare", data);
       break;
   }
 

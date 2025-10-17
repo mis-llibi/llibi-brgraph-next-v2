@@ -125,6 +125,7 @@ const NewAccount = ({ client }: Props) => {
     const response = await generateOneYear(payload);
     setLoading(false);
     if (response.success && response.data) {
+      console.log(response.data)
       useBRReportStore.getState().setData({
         ...response.data,
         py: masterlist,

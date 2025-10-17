@@ -100,7 +100,7 @@ const ClientHeader = ({ client }: Props) => {
           ?.querySelector("#utilizationYear");
 
         if (data && data.files && data.files.length > 0 && year) {
-          const success = await UploadUtilizationFile({
+          await UploadUtilizationFile({
             file: data.files[0],
             id: client.id,
             year: year.value,

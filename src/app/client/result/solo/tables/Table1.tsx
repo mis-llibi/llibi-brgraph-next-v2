@@ -22,6 +22,8 @@ type CompanyBRReport = {
   parent_percentage: number;
   sibling: number;
   sibling_percentage: number;
+  other?: number;
+  other_percentage?: number;
   companyTotal: number;
   companyTotalPercentage: number;
 };
@@ -75,6 +77,7 @@ const Table1 = (props: Props) => {
   const { fontSize, setFontSize } = useToggleSize({ initial: 78 });
 
   if (!props.data.length) return null;
+  if (props.data.length === 2) props.data.pop()
   console.log("Table1 data:", props.data);
 
   return (
@@ -142,12 +145,23 @@ const Table1 = (props: Props) => {
               value: company.sibling,
               percent: company.sibling_percentage,
             },
-            {
-              label: "Total",
-              value: company.companyTotal,
-              percent: company.companyTotalPercentage,
-            },
           ];
+
+          // Only add "Other" row if there's actual data
+          if (company.other && company.other > 0) {
+            rows.push({
+              label: "Other",
+              value: company.other,
+              percent: company.other_percentage || 0,
+            });
+          }
+
+          // Add Total row at the end
+          rows.push({
+            label: "Total",
+            value: company.companyTotal,
+            percent: company.companyTotalPercentage,
+          });
 
           return (
             <div key={i} className=" aptos-font">

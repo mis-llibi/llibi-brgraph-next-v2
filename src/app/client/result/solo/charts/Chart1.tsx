@@ -14,7 +14,12 @@ const Chart1 = (props: Props) => {
   const { dependents, dependents_percentage, company, ...raw } =
     props.data[props.data.length - 1];
   const total =
-    raw.employees + raw.spouse + raw.child + raw.parent + raw.sibling;
+    raw.employees +
+    raw.spouse +
+    raw.child +
+    raw.parent +
+    raw.sibling +
+    (raw?.other ?? 0);
 
   const chartData = {
     employees_percentage: (raw.employees / total) * 100,
@@ -22,6 +27,7 @@ const Chart1 = (props: Props) => {
     child_percentage: (raw.child / total) * 100,
     parent_percentage: (raw.parent / total) * 100,
     sibling_percentage: (raw.sibling / total) * 100,
+    other_percentage: ((raw?.other ?? 0) / total) * 100,
     dependents,
     dependents_percentage: (dependents / total) * 100,
     company,
@@ -30,42 +36,55 @@ const Chart1 = (props: Props) => {
     child: raw.child,
     parent: raw.parent,
     sibling: raw.sibling,
+    other: raw?.other ?? 0,
   };
+
+  const datasets = [
+    {
+      label: "Employees",
+      data: [chartData.employees_percentage],
+      backgroundColor: "#002161",
+      stack: "stack1",
+    },
+    {
+      label: "Spouse",
+      data: [chartData.spouse_percentage],
+      backgroundColor: "#0071c1",
+      stack: "stack1",
+    },
+    {
+      label: "Child",
+      data: [chartData.child_percentage],
+      backgroundColor: "#810100",
+      stack: "stack1",
+    },
+    {
+      label: "Parent",
+      data: [chartData.parent_percentage],
+      backgroundColor: "#f3ab84",
+      stack: "stack1",
+    },
+    {
+      label: "Sibling",
+      data: [chartData.sibling_percentage],
+      backgroundColor: "#7030a0",
+      stack: "stack1",
+    },
+  ];
+
+  // Only add "Other" dataset if there's actual data
+  if (chartData.other_percentage > 0) {
+    datasets.push({
+      label: "Other",
+      data: [chartData.other_percentage],
+      backgroundColor: "#ff6b9d",
+      stack: "stack1",
+    });
+  }
 
   const data: ChartData<"bar"> = {
     labels: [props.year],
-    datasets: [
-      {
-        label: "Employees",
-        data: [chartData.employees_percentage],
-        backgroundColor: "#002161",
-        stack: "stack1",
-      },
-      {
-        label: "Spouse",
-        data: [chartData.spouse_percentage],
-        backgroundColor: "#0071c1",
-        stack: "stack1",
-      },
-      {
-        label: "Child",
-        data: [chartData.child_percentage],
-        backgroundColor: "#810100",
-        stack: "stack1",
-      },
-      {
-        label: "Parent",
-        data: [chartData.parent_percentage],
-        backgroundColor: "#f3ab84",
-        stack: "stack1",
-      },
-      {
-        label: "Sibling",
-        data: [chartData.sibling_percentage],
-        backgroundColor: "#7030a0",
-        stack: "stack1",
-      },
-    ],
+    datasets,
   };
 
   return props.data.length > 0 ? (
