@@ -10,10 +10,11 @@ import "animate.css";
 type Props = {
   masterlist: Upload[];
   id?: number;
+  insurerId: number;
   ref: any;
 };
 
-const UploadMasterlist = ({ masterlist, id, ref }: Props) => {
+const UploadMasterlist = ({ masterlist, insurerId, id, ref }: Props) => {
   console.log(masterlist);
   const [selectedYear, setSelectedYear] = useState<{
     year: string | "";
@@ -38,7 +39,7 @@ const UploadMasterlist = ({ masterlist, id, ref }: Props) => {
   });
 
   return (
-    <div className="flex flex-col h-full w-full">
+    <div className="flex flex-col h-full w-full gap-3">
       <div className="mt-2">
         <span className="">Select Year: </span>
         <select
@@ -60,7 +61,14 @@ const UploadMasterlist = ({ masterlist, id, ref }: Props) => {
           ))}
         </select>
       </div>
-      <div className="mt-6">
+      <div>
+        <a href={`/api/protected/downloadMasterTemp?insurerId=${insurerId}`}>
+          <span className=" text-blue-500 underline">
+            Click here to download example template
+          </span>
+        </a>
+      </div>
+      <div>
         <Dropzone onDrop={(acceptedFiles) => setFile(acceptedFiles[0])}>
           {({ getRootProps, getInputProps }) => (
             <section className="container">

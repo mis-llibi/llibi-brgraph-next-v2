@@ -28,6 +28,7 @@ const ClientHeader = ({ client }: Props) => {
       title: "Upload Masterlist",
       html: (
         <UploadMasterlist
+          insurerId={client.insurer_id}
           masterlist={client.masterlist || []}
           ref={masterListUploadRef}
         />
@@ -82,6 +83,7 @@ const ClientHeader = ({ client }: Props) => {
       title: "Upload Utilization",
       html: (
         <UploadUtilization
+          insurerId={client.insurer_id}
           utilization={client.utilization || []}
           ref={utilizationUploadRef}
         />
