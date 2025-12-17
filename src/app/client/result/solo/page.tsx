@@ -196,17 +196,17 @@ const Page = () => {
 
   return (
     <div className="relative flex flex-col aptos-font p-4">
-      <div className=" fixed bottom-0 right-4 flex items-end justify-end p-4">
+      <div className="flex justify-between">
+        <h1 className="text-2xl mb-8">{data.lastData.clientName}</h1>
         <div>
           <button
-            className="rounded-xl py-2 px-4 bg-green-400 hover:bg-green-500"
+            className=" bg-green-400 hover:bg-green-500 px-4 py-2 rounded-xl"
             onClick={exportTableAsImage}
           >
-            Download all
+            Download Charts and Tables
           </button>
         </div>
       </div>
-      <h1 className="text-2xl mb-8">{data.lastData.clientName}</h1>
       <div className="flex flex-col gap-4 divide-y-2 w-full">
         <Chart1
           data={data.chart1}
