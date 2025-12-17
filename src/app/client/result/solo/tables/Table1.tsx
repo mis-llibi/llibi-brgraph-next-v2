@@ -1,6 +1,6 @@
 // Div-based layout version for html2canvas compatibility (patched with line-height centering)
 
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import useToggleSize from "@/hooks/useToggleSize";
 
 type Props = {
@@ -74,32 +74,63 @@ const titleColors = [
 ];
 
 const Table1 = (props: Props) => {
+  const [editingIndex, setEditingIndex] = useState<number | null>(null);
+  const editableRef = useRef<HTMLDivElement | null>(null);
   const { fontSize, setFontSize } = useToggleSize({ initial: 78 });
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        editableRef.current &&
+        !editableRef.current.contains(event.target as Node)
+      ) {
+        setEditingIndex(null);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   if (!props.data.length) return null;
-  if (props.data.length === 2) props.data.pop()
+  if (props.data.length === 2) props.data.pop();
   console.log("Table1 data:", props.data);
 
   return (
     <>
-      <label
-        htmlFor="default-range"
-        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-      >
-        Default range
-      </label>
-      <input
-        id="default-range"
-        type="range"
-        value={fontSize}
-        className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
-        min={24}
-        max={100}
-        onChange={(e) => {
-          const value = e.target.value;
-          setFontSize(+value);
-        }}
-      />
+      <div className="mb-6 p-4 border rounded-lg bg-gray-50 w-full">
+        <h3 className="text-lg font-semibold text-gray-900 mb-4">
+          Table 1 Customization
+        </h3>
+
+        {/* Font Size Control */}
+        <div className="mb-4">
+          <label
+            htmlFor="font-size-input"
+            className="block mb-2 text-sm font-medium text-gray-900"
+          >
+            Header Size (px)
+          </label>
+          <input
+            id="font-size-input"
+            type="number"
+            value={fontSize}
+            min={24}
+            max={100}
+            className="w-32 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            onChange={(e) => {
+              const value = parseInt(e.target.value);
+              if (!isNaN(value) && value >= 24 && value <= 100) {
+                setFontSize(value);
+              }
+            }}
+          />
+          <small className="block text-gray-500 text-xs mt-1">
+            Double-click company names to edit (except COMBINED)
+          </small>
+        </div>
+      </div>
 
       <div
         id="table1-capture"
@@ -168,11 +199,20 @@ const Table1 = (props: Props) => {
               {/* Header Row */}
               <div className="grid grid-cols-4 w-[2468px] h-[160px] text-[78px] font-bold text-white aptos-font">
                 <div
-                  className="text-center leading-[160px] col-span-2"
+                  ref={i === editingIndex ? editableRef : null}
+                  className="text-center leading-[160px] col-span-2 outline-none"
                   style={{
                     backgroundColor: colors.header,
                     fontSize: company.company !== "COMBINED" ? fontSize : 78,
                   }}
+                  contentEditable={i === editingIndex}
+                  suppressContentEditableWarning={true}
+                  onDoubleClick={() => {
+                    if (company.company !== "COMBINED") {
+                      setEditingIndex(i);
+                    }
+                  }}
+                  onBlur={() => setEditingIndex(null)}
                 >
                   {company.company.split("-")[0].length > 4
                     ? company.company.split("-")[0]

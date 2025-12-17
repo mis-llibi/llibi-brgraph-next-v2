@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import NavLink from "@/components/NavLink";
 import { usePathname } from "next/navigation";
-import { useSession } from "next-auth/react";
+import { useSession, signOut } from "next-auth/react";
 import { useSidebar } from "@/contexts/SideBarContext";
 import SidebarLinkGroup from "@/components/Sidebar/SidebarLinkGroup";
 
@@ -326,22 +326,56 @@ const Sidebar = () => {
           )}
         </div>
 
-        {/* Expand / collapse button */}
-        <div className="pt-3 hidden lg:inline-flex 2xl:hidden justify-end mt-auto">
-          <div className="px-3 py-2">
-            <button onClick={() => setExpanded(!expanded)}>
-              <span className="sr-only">Expand / collapse sidebar</span>
-              <svg
-                className="w-6 h-6 fill-current sidebar-expanded:rotate-180"
-                viewBox="0 0 24 24"
+        {/* Bottom actions */}
+        <div className="mt-auto">
+          {session && (
+            <div className="mt-4 pt-3 border-t border-slate-300">
+              <button
+                onClick={() => signOut({ callbackUrl: "/" })}
+                className="w-full text-left text-black truncate transition duration-150 hover:scale-105"
+                aria-label="Logout"
               >
-                <path
-                  className="text-slate-400"
-                  d="M19.586 11l-5-5L16 4.586 23.414 12 16 19.414 14.586 18l5-5H7v-2z"
-                />
-                <path className="text-slate-600" d="M3 23H1V1h2z" />
-              </svg>
-            </button>
+                <div className="flex items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="icon icon-tabler icon-tabler-logout"
+                    width={sidebarOpen ? "2rem" : "1.5rem"}
+                    height={sidebarOpen ? "2.5rem" : "2rem"}
+                    viewBox="0 0 24 24"
+                    strokeWidth="2.25"
+                    stroke="#2c3e50"
+                    fill="none"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M4 4h8v16H4z" />
+                    <path d="M14 12h6" />
+                    <path d="M18 8l4 4l-4 4" />
+                  </svg>
+                  <span className="text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                    Logout
+                  </span>
+                </div>
+              </button>
+            </div>
+          )}
+          <div className="pt-3 hidden lg:inline-flex 2xl:hidden justify-end">
+            <div className="px-3 py-2">
+              <button onClick={() => setExpanded(!expanded)}>
+                <span className="sr-only">Expand / collapse sidebar</span>
+                <svg
+                  className="w-6 h-6 fill-current sidebar-expanded:rotate-180"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    className="text-slate-400"
+                    d="M19.586 11l-5-5L16 4.586 23.414 12 16 19.414 14.586 18l5-5H7v-2z"
+                  />
+                  <path className="text-slate-600" d="M3 23H1V1h2z" />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </div>
