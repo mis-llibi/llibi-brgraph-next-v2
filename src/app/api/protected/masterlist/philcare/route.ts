@@ -129,6 +129,14 @@ export async function POST(req: NextRequest) {
           headers.push(header);
         });
 
+        // Validate that all required columns are present
+        const missingColumns = keep.filter((col) => !headers.includes(col));
+        if (missingColumns.length > 0) {
+          return NextResponse.json({
+            error: `Missing required columns: ${missingColumns.join(", ")}`,
+          });
+        }
+
         worksheet.eachRow({ includeEmpty: true }, function (row, rowNumber) {
           const rowObject: { [key: string]: unknown } = {};
           // if 1st row, skip
@@ -188,7 +196,7 @@ export async function POST(req: NextRequest) {
                 break;
               case "Relationship":
                 rowObject.RELATIONSHIP = standardizeRelation(
-                  cell.value?.toString() || ""
+                  cell.value?.toString() || "",
                 );
                 break;
               case "Class Code":
@@ -284,10 +292,26 @@ export async function POST(req: NextRequest) {
             worksheetData.forEach((data, idx) => {
               // eslint-disable-next-line @typescript-eslint/no-explicit-any
               const typedData = data as any;
+              const rowNumber = idx + 2;
+
+              if (!typedData.PY || !typedData.PY.toString().trim()) {
+                throw new Error(
+                  `Missing required field PY at row ${rowNumber}. Value: "${typedData.PY}"`,
+                );
+              }
+
               if (typedData.PY !== (year as string)) {
                 throw new Error(
-                  `PY does not match the year. Check row ${idx + 1}'s PY`
+                  `PY does not match the year at row ${rowNumber}. Column: PY. Value: "${typedData.PY}"`,
                 );
+              }
+
+              for (const [column, value] of Object.entries(typedData)) {
+                if (typeof value === "string" && value.length > 191) {
+                  throw new Error(
+                    `Value too long at row ${rowNumber}. Column: ${column}. Length: ${value.length}. Value: "${value.slice(0, 80)}..."`,
+                  );
+                }
               }
 
               // Format date fields if they exist and are valid
@@ -302,7 +326,7 @@ export async function POST(req: NextRequest) {
                     {
                       zone: "utc",
                       setZone: false,
-                    }
+                    },
                   );
                 } else if (typeof typedData.DATE_OF_BIRTH === "string") {
                   // It's a string, try to parse it (MM/DD/YYYY format)
@@ -328,7 +352,7 @@ export async function POST(req: NextRequest) {
                       idx + 1
                     }. Expected Date object or string, got: ${typeof typedData.DATE_OF_BIRTH}. Value: ${
                       typedData.DATE_OF_BIRTH
-                    }`
+                    }`,
                   );
                 }
 
@@ -338,12 +362,12 @@ export async function POST(req: NextRequest) {
                       idx + 1
                     }. Could not parse: "${
                       typedData.DATE_OF_BIRTH
-                    }". Expected formats: MM/DD/YYYY, YYYY-MM-DD, or ISO date.`
+                    }". Expected formats: MM/DD/YYYY, YYYY-MM-DD, or ISO date.`,
                   );
                 }
 
                 typedData.DATE_OF_BIRTH = birthDate.toFormat(
-                  "yyyy-MM-dd'T'HH:mm:ss'Z'"
+                  "yyyy-MM-dd'T'HH:mm:ss'Z'",
                 );
               }
 
@@ -357,7 +381,7 @@ export async function POST(req: NextRequest) {
                     {
                       zone: "utc",
                       setZone: false,
-                    }
+                    },
                   );
                 } else if (typeof typedData.MEMBER_ORIG_EFF_DATE === "string") {
                   const dateStr = typedData.MEMBER_ORIG_EFF_DATE.toString();
@@ -380,7 +404,7 @@ export async function POST(req: NextRequest) {
                       idx + 1
                     }. Expected Date object or string, got: ${typeof typedData.MEMBER_ORIG_EFF_DATE}. Value: ${
                       typedData.MEMBER_ORIG_EFF_DATE
-                    }`
+                    }`,
                   );
                 }
 
@@ -390,12 +414,12 @@ export async function POST(req: NextRequest) {
                       idx + 1
                     }. Could not parse: "${
                       typedData.MEMBER_ORIG_EFF_DATE
-                    }". Expected formats: MM/DD/YYYY, YYYY-MM-DD, or ISO date.`
+                    }". Expected formats: MM/DD/YYYY, YYYY-MM-DD, or ISO date.`,
                   );
                 }
 
                 typedData.MEMBER_ORIG_EFF_DATE = origEffDate.toFormat(
-                  "yyyy-MM-dd'T'HH:mm:ss'Z'"
+                  "yyyy-MM-dd'T'HH:mm:ss'Z'",
                 );
               }
 
@@ -409,7 +433,7 @@ export async function POST(req: NextRequest) {
                     {
                       zone: "utc",
                       setZone: false,
-                    }
+                    },
                   );
                 } else if (typeof typedData.MEMBER_EFF_DATE === "string") {
                   const dateStr = typedData.MEMBER_EFF_DATE.toString();
@@ -432,7 +456,7 @@ export async function POST(req: NextRequest) {
                       idx + 1
                     }. Expected Date object or string, got: ${typeof typedData.MEMBER_EFF_DATE}. Value: ${
                       typedData.MEMBER_EFF_DATE
-                    }`
+                    }`,
                   );
                 }
 
@@ -442,25 +466,25 @@ export async function POST(req: NextRequest) {
                       idx + 1
                     }. Could not parse: "${
                       typedData.MEMBER_EFF_DATE
-                    }". Expected formats: MM/DD/YYYY, YYYY-MM-DD, or ISO date.`
+                    }". Expected formats: MM/DD/YYYY, YYYY-MM-DD, or ISO date.`,
                   );
                 }
 
                 typedData.MEMBER_EFF_DATE = effDate.toFormat(
-                  "yyyy-MM-dd'T'HH:mm:ss'Z'"
+                  "yyyy-MM-dd'T'HH:mm:ss'Z'",
                 );
               }
 
               // Convert numeric fields with better error handling
               if (typedData.SUB_OFFICE_CODE) {
                 const subOfficeCode = parseInt(
-                  typedData.SUB_OFFICE_CODE.toString()
+                  typedData.SUB_OFFICE_CODE.toString(),
                 );
                 if (isNaN(subOfficeCode)) {
                   throw new Error(
                     `Invalid SUB_OFFICE_CODE in row ${
                       idx + 1
-                    }. Expected number, got: "${typedData.SUB_OFFICE_CODE}"`
+                    }. Expected number, got: "${typedData.SUB_OFFICE_CODE}"`,
                   );
                 }
                 typedData.SUB_OFFICE_CODE = subOfficeCode;
@@ -472,7 +496,7 @@ export async function POST(req: NextRequest) {
                   throw new Error(
                     `Invalid AGE in row ${idx + 1}. Expected number, got: "${
                       typedData.AGE
-                    }"`
+                    }"`,
                   );
                 }
                 typedData.AGE = age;
@@ -484,7 +508,7 @@ export async function POST(req: NextRequest) {
                   throw new Error(
                     `Invalid CLASS_CODE in row ${
                       idx + 1
-                    }. Expected number, got: "${typedData.CLASS_CODE}"`
+                    }. Expected number, got: "${typedData.CLASS_CODE}"`,
                   );
                 }
                 typedData.CLASS_CODE = classCode;
@@ -492,13 +516,13 @@ export async function POST(req: NextRequest) {
 
               if (typedData.PRE_EXISTING_CODE) {
                 const preExistingCode = parseInt(
-                  typedData.PRE_EXISTING_CODE.toString()
+                  typedData.PRE_EXISTING_CODE.toString(),
                 );
                 if (isNaN(preExistingCode)) {
                   throw new Error(
                     `Invalid PRE_EXISTING_CODE in row ${
                       idx + 1
-                    }. Expected number, got: "${typedData.PRE_EXISTING_CODE}"`
+                    }. Expected number, got: "${typedData.PRE_EXISTING_CODE}"`,
                   );
                 }
                 typedData.PRE_EXISTING_CODE = preExistingCode;
@@ -523,7 +547,7 @@ export async function POST(req: NextRequest) {
                     throw new Error(
                       `Invalid ${field} in row ${
                         idx + 1
-                      }. Expected number, got: "${typedData[field]}"`
+                      }. Expected number, got: "${typedData[field]}"`,
                     );
                   }
                   typedData[field] = floatValue;

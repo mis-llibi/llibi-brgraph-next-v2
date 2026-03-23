@@ -90,6 +90,14 @@ export async function POST(req: NextRequest) {
           .endOf("year")
           .toFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
 
+        // Validate that all required columns are present
+        const missingColumns = keep.filter((col) => !headers.includes(col));
+        if (missingColumns.length > 0) {
+          return res.json({
+            error: `Missing required columns: ${missingColumns.join(", ")}`,
+          });
+        }
+
         worksheet.eachRow({ includeEmpty: true }, function (row, rowNumber) {
           const rowObject: { [key: string]: unknown } = {};
           // if 1st row, skip
@@ -174,67 +182,84 @@ export async function POST(req: NextRequest) {
             const months: string[] = [];
 
             worksheetData.forEach((data, idx) => {
-              const typedData = data as any;
-              // Replace "\n" with " " in the row data
-              for (const key in typedData) {
-                if (typeof typedData[key] === "string") {
-                  typedData[key] = typedData[key].replace(/\n/g, " ");
+              try {
+                const typedData = data as any;
+                // Replace "\n" with " " in the row data
+                for (const key in typedData) {
+                  if (typeof typedData[key] === "string") {
+                    typedData[key] = typedData[key].replace(/\n/g, " ");
+                  }
                 }
-              }
 
-              // check if Admission_Date is valid
-              const admissionDate = DateTime.fromISO(
-                typedData.Admission_Date.toISOString(),
-                {
-                  zone: "utc",
-                  setZone: false,
+                // Validate Diagnosis field length (MySQL VARCHAR limit is 191 chars for Prisma String)
+                if (
+                  typedData.Diagnosis &&
+                  typeof typedData.Diagnosis === "string" &&
+                  typedData.Diagnosis.length > 191
+                ) {
+                  throw new Error(
+                    `Diagnosis field too long (${typedData.Diagnosis.length} characters, max 191). Value: "${typedData.Diagnosis.substring(0, 50)}..."`,
+                  );
                 }
-              );
 
-              // check if Admission_Date is within the year
-              if (
-                admissionDate < DateTime.fromISO(yearStartDate) ||
-                admissionDate > DateTime.fromISO(yearEndDate)
-              ) {
-                throw new Error(
-                  `Admission Date is not within the year. Check row ${
-                    idx + 1
-                  }'s Admission Date`
-                );
-              }
-
-              if (!admissionDate.isValid) {
-                throw new Error(
-                  `Invalid Admission Date. Check row ${
-                    idx + 1
-                  }'s Admission Date`
-                );
-              } else {
-                typedData.Admission_Date = admissionDate.toFormat(
-                  "yyyy-MM-dd'T'HH:mm:ss'Z'"
+                // check if Admission_Date is valid
+                const admissionDate = DateTime.fromISO(
+                  typedData.Admission_Date.toISOString(),
+                  {
+                    zone: "utc",
+                    setZone: false,
+                  },
                 );
 
-                // get month (ex. April) and check if it already exists. If not, add it to the months array
-                const month = admissionDate.toFormat("LLL");
-                if (!months.includes(month)) {
-                  months.push(month);
+                // check if Admission_Date is within the year
+                if (
+                  admissionDate < DateTime.fromISO(yearStartDate) ||
+                  admissionDate > DateTime.fromISO(yearEndDate)
+                ) {
+                  throw new Error(
+                    `Admission Date is not within the year. Check row ${
+                      idx + 1
+                    }'s Admission Date`,
+                  );
                 }
-              }
 
-              // parse approved claim amount and maximum benefit limit to float
-              typedData.Approved_Claim_Amount = parseFloat(
-                typedData.Approved_Claim_Amount
-              );
+                if (!admissionDate.isValid) {
+                  throw new Error(
+                    `Invalid Admission Date. Check row ${
+                      idx + 1
+                    }'s Admission Date`,
+                  );
+                } else {
+                  typedData.Admission_Date = admissionDate.toFormat(
+                    "yyyy-MM-dd'T'HH:mm:ss'Z'",
+                  );
 
-              if (isNaN(typedData.Approved_Claim_Amount)) {
+                  // get month (ex. April) and check if it already exists. If not, add it to the months array
+                  const month = admissionDate.toFormat("LLL");
+                  if (!months.includes(month)) {
+                    months.push(month);
+                  }
+                }
+
+                // parse approved claim amount and maximum benefit limit to float
+                typedData.Approved_Claim_Amount = parseFloat(
+                  typedData.Approved_Claim_Amount,
+                );
+
+                if (isNaN(typedData.Approved_Claim_Amount)) {
+                  throw new Error(
+                    `Invalid Approved Claim Amount. Check row ${
+                      idx + 1
+                    }'s Approved Claim Amount`,
+                  );
+                }
+
+                typedData.clientId = +clientId;
+              } catch (error) {
                 throw new Error(
-                  `Invalid Approved Claim Amount. Check row ${
-                    idx + 1
-                  }'s Approved Claim Amount`
+                  `Row ${idx + 2} error: ${error instanceof Error ? error.message : String(error)}`,
                 );
               }
-
-              typedData.clientId = +clientId;
             });
 
             // insert all data to masterlist
@@ -264,9 +289,18 @@ export async function POST(req: NextRequest) {
         } catch (error: unknown) {
           // delete the file after reading
           await deleteFile(key);
+          const errorMessage =
+            error instanceof Error ? error.message : String(error);
+
+          // Extract row number if available
+          const rowMatch = errorMessage.match(/Row (\d+)/);
+          const rowNumber = rowMatch ? rowMatch[1] : "unknown";
+
           if (error instanceof PrismaClientKnownRequestError) {
-            console.error(error.message);
-            return res.json({ error: error.message });
+            console.error(`Error at row ${rowNumber}:`, error.message);
+            return res.json({
+              error: `Error at row ${rowNumber}: ${error.message}`,
+            });
           } else if (error instanceof Error) {
             console.error(error.message);
             return res.json({ error: error.message });

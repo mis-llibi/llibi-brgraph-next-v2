@@ -20,6 +20,10 @@ const nextConfig: NextConfig = {
     config.plugins.push(new PrismaPlugin());
     return config;
   },
+  turbopack: {
+    // Add empty turbopack config to silence the warning
+    // The Prisma plugin is webpack-specific, so we keep webpack config
+  },
   /* config options here */
 };
 
