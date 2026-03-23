@@ -84,6 +84,14 @@ export async function POST(req: NextRequest) {
           .endOf("year")
           .toFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
 
+        // Validate that all required columns are present
+        const missingColumns = keep.filter(col => !headers.includes(col));
+        if (missingColumns.length > 0) {
+          return res.json({ 
+            error: `Missing required columns: ${missingColumns.join(", ")}` 
+          });
+        }
+
         worksheet.eachRow({ includeEmpty: true }, function (row, rowNumber) {
           const rowObject: { [key: string]: unknown } = {};
           // if 1st row, skip

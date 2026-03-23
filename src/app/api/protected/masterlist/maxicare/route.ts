@@ -77,6 +77,14 @@ export async function POST(req: NextRequest) {
           headers.push(header);
         });
 
+        // Validate that all required columns are present
+        const missingColumns = keep.filter((col) => !headers.includes(col));
+        if (missingColumns.length > 0) {
+          return NextResponse.json({
+            error: `Missing required columns: ${missingColumns.join(", ")}`,
+          });
+        }
+
         worksheet.eachRow({ includeEmpty: true }, function (row, rowNumber) {
           const rowObject: { [key: string]: unknown } = {};
           // if 1st row, skip
@@ -143,17 +151,55 @@ export async function POST(req: NextRequest) {
 
             worksheetData.forEach((data, idx) => {
               const typedData = data as any;
+              const rowNumber = idx + 2;
+
+              if (!typedData.PY || !typedData.PY.toString().trim()) {
+                throw new Error(
+                  `Missing required field PY at row ${rowNumber}. Value: "${typedData.PY}"`,
+                );
+              }
+
               if (typedData.PY !== (year as string)) {
                 throw new Error(
-                  `PY does not match the year. Check row ${idx + 1}'s PY`
+                  `PY does not match the year at row ${rowNumber}. Column: PY. Value: "${typedData.PY}"`,
                 );
+              }
+
+              if (
+                typedData.STATUS &&
+                typeof typedData.STATUS === "string" &&
+                typedData.STATUS.length > 1
+              ) {
+                throw new Error(
+                  `Invalid STATUS at row ${rowNumber}. Column: STATUS expects max length 1, got "${typedData.STATUS}"`,
+                );
+              }
+
+              if (
+                typedData.MEMBER_TYPE &&
+                typeof typedData.MEMBER_TYPE === "string" &&
+                typedData.MEMBER_TYPE.length > 1
+              ) {
+                throw new Error(
+                  `Invalid MEMBER_TYPE at row ${rowNumber}. Column: MEMBER_TYPE expects max length 1, got "${typedData.MEMBER_TYPE}"`,
+                );
+              }
+
+              for (const [column, value] of Object.entries(typedData)) {
+                if (typeof value === "string" && value.length > 191) {
+                  throw new Error(
+                    `Value too long at row ${rowNumber}. Column: ${column}. Length: ${value.length}. Value: "${value.slice(0, 80)}..."`,
+                  );
+                }
               }
 
               // convert all LIMIT to float value (2 decimal places)
               const limitValue = typedData.LIMIT?.toString() || "0";
               const limit = parseFloat(limitValue);
               if (isNaN(limit)) {
-                throw new Error(`Invalid limit. Check row ${idx + 1}'s LIMIT`);
+                throw new Error(
+                  `Invalid LIMIT at row ${rowNumber}. Column: LIMIT. Value: "${typedData.LIMIT}"`,
+                );
               }
 
               typedData.clientId = +clientId;

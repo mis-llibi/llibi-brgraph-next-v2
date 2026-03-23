@@ -91,6 +91,14 @@ export async function POST(req: NextRequest) {
           headers.push(header);
         });
 
+        // Validate that all required columns are present
+        const missingColumns = keep.filter((col) => !headers.includes(col));
+        if (missingColumns.length > 0) {
+          return NextResponse.json({
+            error: `Missing required columns: ${missingColumns.join(", ")}`,
+          });
+        }
+
         worksheet.eachRow({ includeEmpty: true }, function (row, rowNumber) {
           const rowObject: { [key: string]: unknown } = {};
           // if 1st row, skip
@@ -125,16 +133,52 @@ export async function POST(req: NextRequest) {
             });
 
             worksheetData.forEach((data, idx) => {
+              const rowNumber = idx + 2;
+
+              if (!data.PY || !data.PY.toString().trim()) {
+                throw new Error(
+                  `Missing required field PY at row ${rowNumber}. Value: "${data.PY}"`,
+                );
+              }
+
               if (data.PY !== (year as string)) {
                 throw new Error(
-                  `PY does not match the year. Check row ${idx + 1}'s PY`
+                  `PY does not match the year at row ${rowNumber}. Column: PY. Value: "${data.PY}"`,
                 );
+              }
+
+              if (
+                data.STATUS &&
+                typeof data.STATUS === "string" &&
+                data.STATUS.length > 1
+              ) {
+                throw new Error(
+                  `Invalid STATUS at row ${rowNumber}. Column: STATUS expects max length 1, got "${data.STATUS}"`,
+                );
+              }
+
+              if (
+                data.MEMBER_TYPE &&
+                typeof data.MEMBER_TYPE === "string" &&
+                data.MEMBER_TYPE.length > 1
+              ) {
+                throw new Error(
+                  `Invalid MEMBER_TYPE at row ${rowNumber}. Column: MEMBER_TYPE expects max length 1, got "${data.MEMBER_TYPE}"`,
+                );
+              }
+
+              for (const [column, value] of Object.entries(data)) {
+                if (typeof value === "string" && value.length > 191) {
+                  throw new Error(
+                    `Value too long at row ${rowNumber}. Column: ${column}. Length: ${value.length}. Value: "${value.slice(0, 80)}..."`,
+                  );
+                }
               }
 
               // check all BIRTHDATE if valid
               if (!data.BIRTHDATE || !(data.BIRTHDATE instanceof Date)) {
                 throw new Error(
-                  `Invalid birthdate format. Check row ${idx + 1}'s BIRTHDATE`
+                  `Invalid birthdate format at row ${rowNumber}. Column: BIRTHDATE. Value: "${data.BIRTHDATE}"`,
                 );
               }
 
@@ -145,11 +189,11 @@ export async function POST(req: NextRequest) {
 
               if (!birthdate.isValid) {
                 throw new Error(
-                  `Invalid birthdate. Check row ${idx + 1}'s BIRTHDATE`
+                  `Invalid birthdate at row ${rowNumber}. Column: BIRTHDATE. Value: "${data.BIRTHDATE}"`,
                 );
               } else {
                 (data.BIRTHDATE as any) = birthdate.toFormat(
-                  "yyyy-MM-dd'T'HH:mm:ss'Z'"
+                  "yyyy-MM-dd'T'HH:mm:ss'Z'",
                 );
               }
 
@@ -158,7 +202,7 @@ export async function POST(req: NextRequest) {
               const preexist = parseFloat(preexistValue);
               if (isNaN(preexist)) {
                 throw new Error(
-                  `Invalid preexist. Check row ${idx + 1}'s PREEXIST`
+                  `Invalid PREEXIST at row ${rowNumber}. Column: PREEXIST. Value: "${data.PREEXIST}"`,
                 );
               }
 
@@ -166,7 +210,9 @@ export async function POST(req: NextRequest) {
               const limitValue = data.LIMIT?.toString() || "0";
               const limit = parseFloat(limitValue);
               if (isNaN(limit)) {
-                throw new Error(`Invalid limit. Check row ${idx + 1}'s LIMIT`);
+                throw new Error(
+                  `Invalid LIMIT at row ${rowNumber}. Column: LIMIT. Value: "${data.LIMIT}"`,
+                );
               }
 
               data.clientId = +clientId;
@@ -228,7 +274,7 @@ async function saveFile(file: File) {
       Body: buffer,
       ACL: "public-read",
       ContentType: file.type,
-    })
+    }),
   );
 
   return {
