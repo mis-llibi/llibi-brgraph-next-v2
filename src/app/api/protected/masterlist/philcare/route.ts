@@ -121,6 +121,13 @@ export async function POST(req: NextRequest) {
           "Account Type",
           "PY",
         ];
+        const requiredColumns = [
+          "PY",
+          "Sub Office Name",
+          "Class Definition",
+          "Class Code",
+          "Relationship",
+        ];
 
         // get headers first (from 1st row)
         worksheet.getRow(1).eachCell({ includeEmpty: true }, (cell) => {
@@ -130,7 +137,9 @@ export async function POST(req: NextRequest) {
         });
 
         // Validate that all required columns are present
-        const missingColumns = keep.filter((col) => !headers.includes(col));
+        const missingColumns = requiredColumns.filter(
+          (col) => !headers.includes(col),
+        );
         if (missingColumns.length > 0) {
           return NextResponse.json({
             error: `Missing required columns: ${missingColumns.join(", ")}`,

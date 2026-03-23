@@ -70,6 +70,13 @@ export async function POST(req: NextRequest) {
           "Relationship",
           "ICD10_Code",
         ];
+        const requiredColumns = [
+          "PY",
+          "ICD10_Desc",
+          "Coverage_Type",
+          "Admission_Date",
+          "Approved_Claim_Amount",
+        ];
 
         // get headers first (from 1st column)
         worksheet.getRow(1).eachCell({ includeEmpty: true }, (cell) => {
@@ -91,7 +98,9 @@ export async function POST(req: NextRequest) {
           .toFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
 
         // Validate that all required columns are present
-        const missingColumns = keep.filter((col) => !headers.includes(col));
+        const missingColumns = requiredColumns.filter(
+          (col) => !headers.includes(col),
+        );
         if (missingColumns.length > 0) {
           return res.json({
             error: `Missing required columns: ${missingColumns.join(", ")}`,

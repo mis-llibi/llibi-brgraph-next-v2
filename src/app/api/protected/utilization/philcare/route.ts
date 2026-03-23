@@ -123,6 +123,12 @@ export async function POST(req: NextRequest) {
           "Utilization",
           "Relation",
         ];
+        const requiredColumns = [
+          "Diagnosis",
+          "Date From",
+          "IP/OP",
+          "Utilization",
+        ];
 
         // get headers first (from 1st row)
         worksheet.getRow(1).eachCell({ includeEmpty: true }, (cell) => {
@@ -141,10 +147,12 @@ export async function POST(req: NextRequest) {
           .toFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
 
         // Validate that all required columns are present
-        const missingColumns = keep.filter(col => !headers.includes(col));
+        const missingColumns = requiredColumns.filter(
+          (col) => !headers.includes(col),
+        );
         if (missingColumns.length > 0) {
-          return res.json({ 
-            error: `Missing required columns: ${missingColumns.join(", ")}` 
+          return res.json({
+            error: `Missing required columns: ${missingColumns.join(", ")}`,
           });
         }
 
@@ -180,7 +188,7 @@ export async function POST(req: NextRequest) {
                 break;
               case "IP/OP":
                 rowObject.Claim_Type = standardizeClaimType(
-                  cell.value?.toString() || ""
+                  cell.value?.toString() || "",
                 );
                 break;
               case "NR/R":
@@ -191,7 +199,7 @@ export async function POST(req: NextRequest) {
                 break;
               case "Relation":
                 rowObject.Relationship = standardizeRelation(
-                  cell.value?.toString() || ""
+                  cell.value?.toString() || "",
                 );
                 break;
               default:
@@ -248,7 +256,7 @@ export async function POST(req: NextRequest) {
                 throw new Error(
                   `Missing Admission Date in row ${
                     idx + 1
-                  }. Date From field is required.`
+                  }. Date From field is required.`,
                 );
               }
 
@@ -260,21 +268,21 @@ export async function POST(req: NextRequest) {
                   {
                     zone: "utc",
                     setZone: false,
-                  }
+                  },
                 );
               } else if (typeof typedData.Admission_Date === "string") {
                 // Try to parse string date
                 admissionDate = DateTime.fromFormat(
                   typedData.Admission_Date,
                   "MM/dd/yyyy",
-                  { zone: "utc" }
+                  { zone: "utc" },
                 );
 
                 if (!admissionDate.isValid) {
                   admissionDate = DateTime.fromFormat(
                     typedData.Admission_Date,
                     "yyyy-MM-dd",
-                    { zone: "utc" }
+                    { zone: "utc" },
                   );
                 }
 
@@ -289,7 +297,7 @@ export async function POST(req: NextRequest) {
                     idx + 1
                   }. Expected Date object or string, got: ${typeof typedData.Admission_Date}. Value: ${
                     typedData.Admission_Date
-                  }`
+                  }`,
                 );
               }
 
@@ -302,8 +310,8 @@ export async function POST(req: NextRequest) {
                   `Admission Date in row ${
                     idx + 1
                   } is not within the year ${year}. Date: ${admissionDate.toFormat(
-                    "yyyy-MM-dd"
-                  )}`
+                    "yyyy-MM-dd",
+                  )}`,
                 );
               }
 
@@ -313,12 +321,12 @@ export async function POST(req: NextRequest) {
                     idx + 1
                   }. Could not parse: "${
                     typedData.Admission_Date
-                  }". Expected formats: MM/DD/YYYY, YYYY-MM-DD, or ISO date.`
+                  }". Expected formats: MM/DD/YYYY, YYYY-MM-DD, or ISO date.`,
                 );
               }
 
               typedData.Admission_Date = admissionDate.toFormat(
-                "yyyy-MM-dd'T'HH:mm:ss'Z'"
+                "yyyy-MM-dd'T'HH:mm:ss'Z'",
               );
 
               // Track months for upload record
@@ -334,11 +342,11 @@ export async function POST(req: NextRequest) {
                   {
                     zone: "utc",
                     setZone: false,
-                  }
+                  },
                 );
                 if (dateTo.isValid) {
                   typedData.Date_To = dateTo.toFormat(
-                    "yyyy-MM-dd'T'HH:mm:ss'Z'"
+                    "yyyy-MM-dd'T'HH:mm:ss'Z'",
                   );
                 }
               }
@@ -349,7 +357,7 @@ export async function POST(req: NextRequest) {
                 typedData.Approved_Claim_Amount !== null
               ) {
                 const claimAmount = parseFloat(
-                  typedData.Approved_Claim_Amount.toString()
+                  typedData.Approved_Claim_Amount.toString(),
                 );
                 if (isNaN(claimAmount)) {
                   throw new Error(
@@ -357,7 +365,7 @@ export async function POST(req: NextRequest) {
                       idx + 1
                     }. Expected number, got: "${
                       typedData.Approved_Claim_Amount
-                    }"`
+                    }"`,
                   );
                 }
                 typedData.Approved_Claim_Amount = claimAmount;
@@ -370,7 +378,7 @@ export async function POST(req: NextRequest) {
                   throw new Error(
                     `Invalid LOS (Length of Stay) in row ${
                       idx + 1
-                    }. Expected number, got: "${typedData.LOS}"`
+                    }. Expected number, got: "${typedData.LOS}"`,
                   );
                 }
                 typedData.LOS = los;

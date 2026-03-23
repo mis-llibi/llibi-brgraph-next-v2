@@ -66,6 +66,13 @@ export async function POST(req: NextRequest) {
           "Relationship",
           "ICD_10_Code",
         ];
+        const requiredColumns = [
+          "PY",
+          "Diagnosis",
+          "Claim_Type",
+          "Admission_Date",
+          "Approved_Claim_Amount",
+        ];
 
         // get headers first (from 1st column)
         worksheet.getRow(1).eachCell({ includeEmpty: true }, (cell) => {
@@ -85,10 +92,12 @@ export async function POST(req: NextRequest) {
           .toFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
 
         // Validate that all required columns are present
-        const missingColumns = keep.filter(col => !headers.includes(col));
+        const missingColumns = requiredColumns.filter(
+          (col) => !headers.includes(col),
+        );
         if (missingColumns.length > 0) {
-          return res.json({ 
-            error: `Missing required columns: ${missingColumns.join(", ")}` 
+          return res.json({
+            error: `Missing required columns: ${missingColumns.join(", ")}`,
           });
         }
 
@@ -143,7 +152,7 @@ export async function POST(req: NextRequest) {
                 {
                   zone: "utc",
                   setZone: false,
-                }
+                },
               );
 
               // check if Admission_Date is within the year
@@ -154,7 +163,7 @@ export async function POST(req: NextRequest) {
                 throw new Error(
                   `Admission Date is not within the year. Check row ${
                     idx + 1
-                  }'s Admission Date`
+                  }'s Admission Date`,
                 );
               }
 
@@ -162,11 +171,11 @@ export async function POST(req: NextRequest) {
                 throw new Error(
                   `Invalid Admission Date. Check row ${
                     idx + 1
-                  }'s Admission Date`
+                  }'s Admission Date`,
                 );
               } else {
                 typedData.Admission_Date = admissionDate.toFormat(
-                  "yyyy-MM-dd'T'HH:mm:ss'Z'"
+                  "yyyy-MM-dd'T'HH:mm:ss'Z'",
                 );
 
                 // get month (ex. April) and check if it already exists. If not, add it to the months array
@@ -184,42 +193,42 @@ export async function POST(req: NextRequest) {
                   {
                     zone: "utc",
                     setZone: false,
-                  }
+                  },
                 );
 
                 if (!birthdate.isValid) {
                   throw new Error(
-                    `Invalid birthdate. Check row ${idx + 1}'s BIRTHDATE`
+                    `Invalid birthdate. Check row ${idx + 1}'s BIRTHDATE`,
                   );
                 } else {
                   typedData.Date_of_Birth = birthdate.toFormat(
-                    "yyyy-MM-dd'T'HH:mm:ss'Z'"
+                    "yyyy-MM-dd'T'HH:mm:ss'Z'",
                   );
                 }
               }
 
               // parse approved claim amount and maximum benefit limit to float
               typedData.Approved_Claim_Amount = parseFloat(
-                typedData.Approved_Claim_Amount
+                typedData.Approved_Claim_Amount,
               );
 
               if (isNaN(typedData.Approved_Claim_Amount)) {
                 throw new Error(
                   `Invalid Approved Claim Amount. Check row ${
                     idx + 1
-                  }'s Approved Claim Amount`
+                  }'s Approved Claim Amount`,
                 );
               }
 
               typedData.Maximum_Benefit_Limit = parseFloat(
-                typedData.Maximum_Benefit_Limit
+                typedData.Maximum_Benefit_Limit,
               );
 
               if (isNaN(typedData.Maximum_Benefit_Limit)) {
                 throw new Error(
                   `Invalid Maximum Benefit Limit. Check row ${
                     idx + 1
-                  }'s Maximum Benefit Limit`
+                  }'s Maximum Benefit Limit`,
                 );
               }
 
@@ -293,7 +302,7 @@ async function saveFile(file: File) {
       Body: buffer,
       ACL: "public-read",
       ContentType: file.type,
-    })
+    }),
   );
 
   return {
