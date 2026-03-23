@@ -81,6 +81,7 @@ export async function POST(req: NextRequest) {
           "CARD_NO",
           "COMPANY",
         ];
+        const requiredColumns = ["PY", "COMPANY", "MEMBER_TYPE", "RELATION"];
         // get headers first (from 1st column)
         worksheet.getRow(1).eachCell({ includeEmpty: true }, (cell) => {
           let header = cell.value?.toString() || "";
@@ -92,7 +93,9 @@ export async function POST(req: NextRequest) {
         });
 
         // Validate that all required columns are present
-        const missingColumns = keep.filter((col) => !headers.includes(col));
+        const missingColumns = requiredColumns.filter(
+          (col) => !headers.includes(col),
+        );
         if (missingColumns.length > 0) {
           return NextResponse.json({
             error: `Missing required columns: ${missingColumns.join(", ")}`,
