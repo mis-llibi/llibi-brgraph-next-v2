@@ -200,14 +200,14 @@ export async function POST(req: NextRequest) {
                   }
                 }
 
-                // Validate Diagnosis field length (MySQL VARCHAR limit is 191 chars for Prisma String)
+                // Validate Diagnosis field length (MySQL VARCHAR limit is 255 chars for Prisma String)
                 if (
                   typedData.Diagnosis &&
                   typeof typedData.Diagnosis === "string" &&
-                  typedData.Diagnosis.length > 191
+                  typedData.Diagnosis.length > 255
                 ) {
                   throw new Error(
-                    `Diagnosis field too long (${typedData.Diagnosis.length} characters, max 191). Value: "${typedData.Diagnosis.substring(0, 50)}..."`,
+                    `Diagnosis field too long (${typedData.Diagnosis.length} characters, max 255). Value: "${typedData.Diagnosis.substring(0, 50)}..."`,
                   );
                 }
 

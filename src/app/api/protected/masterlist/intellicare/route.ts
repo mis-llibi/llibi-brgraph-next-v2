@@ -171,7 +171,7 @@ export async function POST(req: NextRequest) {
               }
 
               for (const [column, value] of Object.entries(data)) {
-                if (typeof value === "string" && value.length > 191) {
+                if (typeof value === "string" && value.length > 255) {
                   throw new Error(
                     `Value too long at row ${rowNumber}. Column: ${column}. Length: ${value.length}. Value: "${value.slice(0, 80)}..."`,
                   );
