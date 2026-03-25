@@ -116,7 +116,7 @@ model intellicareMasterlist {
   RELATION String?
   EE_ID String?
   CARD_NO String?
-  COMPANY String?
+  COMPANY String? @db.VarChar(255)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
@@ -136,7 +136,7 @@ model maxicareMasterlist {
   RELATION String? //REALDESC
   EE_ID String? //EMPNO
   CARD_NO String? //CARDNO
-  COMPANY String? //COMPANY
+  COMPANY String? @db.VarChar(255) //COMPANY
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
@@ -153,7 +153,7 @@ model philcareMasterlist {
   AGREEMENT_NO String? //Agreement No
   EMPLOYEE_NO String? //Employee No
   SUB_OFFICE_CODE Int? //Sub Office Code
-  SUB_OFFICE_NAME String? //Sub Office Name
+  SUB_OFFICE_NAME String? @db.VarChar(255) //Sub Office Name
   CERTIFICATE_NO String? //Certificate No
   LAST_NAME String? //Last Name
   FIRST_NAME String? //First Name
@@ -195,11 +195,11 @@ model intellicare {
   id Int @id @default(autoincrement())
   clientId Int
   PY String
-  Company String?
+  Company String? @db.VarChar(255)
   Member_Account String?
   Member_Type String?
   ICD_10_Code String?
-  Diagnosis String?
+  Diagnosis String? @db.VarChar(255)
   Claim_Type String?
   Admission_Date  DateTime?
   Provider_Name String?
@@ -221,11 +221,11 @@ model maxicare {
   id Int @id @default(autoincrement())
   clientId Int
   PY String
-  Company String?
+  Company String? @db.VarChar(255)
   Member_Account String? //Member_ID
   Member_Type String? //Plan
   ICD_10_Code String? //ICD10_Code
-  Diagnosis String? //ICD10_Desc
+  Diagnosis String? @db.VarChar(255) //ICD10_Desc
   Claim_Type String? //Claim_Type
   Admission_Date  DateTime? //Admission_Date
   Provider_Name String? //Provider_Name
@@ -244,11 +244,11 @@ model philcare {
   id Int @id @default(autoincrement())
   clientId Int
   PY String
-  Company String? //Company
+  Company String? @db.VarChar(255) //Company
   Member_Account String? //Claim No
   Member_Type String? //Derived from Relation or IP/OP
   ICD_10_Code String? //Not available in current format
-  Diagnosis String? //Diagnosis
+  Diagnosis String? @db.VarChar(255) //Diagnosis
   Claim_Type String? //IP/OP
   Admission_Date DateTime? //Date From
   Provider_Name String? //Provider
