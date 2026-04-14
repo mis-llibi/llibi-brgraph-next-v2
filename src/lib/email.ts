@@ -30,7 +30,6 @@ export async function sendCredentialsEmail({
   });
 
   try {
-
     const subject = `Welcome to LLIBI - Your Account Credentials`;
 
     const permissionsList =
@@ -136,21 +135,27 @@ This is an automated message. Please do not reply to this email.
 LLIBI © ${new Date().getFullYear()}. All rights reserved.
   `;
 
-  const info = await resend.emails.send({
-  from: `${process.env.SMTP_FROM_NAME} <${process.env.SMTP_FROM_EMAIL}>`,
-  to: to,
-  subject: subject,
-  html: html,
-});
+    const { data, error } = await resend.emails.send({
+      from: `${process.env.SMTP_FROM_NAME} <${process.env.SMTP_FROM_EMAIL}>`,
+      to,
+      subject,
+      html,
+    });
 
-    console.log("Email sent successfully:", info.messageId);
-    return { success: true, messageId: info.messageId };
+    if (error) {
+      console.error("Error sending email:", error);
+      throw new Error(error.message);
+    }
+
+    console.log("Email sent successfully:", data?.id);
+
+    return { success: true, messageId: data?.id };
   } catch (error) {
     console.error("Error sending email:", error);
     throw new Error(
       `Failed to send email: ${
         error instanceof Error ? error.message : "Unknown error"
-      }`
+      }`,
     );
   }
 }
