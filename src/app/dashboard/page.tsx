@@ -1,13 +1,16 @@
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/auth";
 import { redirect } from "next/navigation";
 import DashboardPage from "@/components/dashboard/Dashboard";
+import { requirePageAuth } from "@/lib/auth-middleware";
 
 export default async function Dashboard() {
-  const session = await getServerSession(authOptions);
+  const authResult = await requirePageAuth({
+    signInRedirect: "/api/auth/signin?callbackUrl=/dashboard",
+    passwordChangeRedirect: "/change-password",
+  });
 
-  if (!session) {
-    redirect("/api/auth/signin?callbackUrl=/dashboard");
+  const redirectTo = authResult.redirectTo;
+  if (redirectTo) {
+    redirect(redirectTo);
   }
 
   return <DashboardPage />;

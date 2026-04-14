@@ -20,6 +20,15 @@ export interface AuthenticatedUser {
   mustChangePassword: boolean;
 }
 
+export interface PageAuthOptions {
+  signInRedirect?: string;
+  passwordChangeRedirect?: string;
+}
+
+export type PageAuthResult =
+  | { user: AuthenticatedUser; redirectTo?: never }
+  | { user?: never; redirectTo: string };
+
 /**
  * Middleware to check authentication and return user session
  */
@@ -81,6 +90,64 @@ export async function requireAuth(): Promise<{ user: AuthenticatedUser } | NextR
       { error: 'Authentication failed' },
       { status: 500 }
     );
+  }
+}
+
+/**
+ * Check authentication for server-rendered pages and return a redirect target when needed.
+ */
+export async function requirePageAuth(
+  options: PageAuthOptions = {}
+): Promise<PageAuthResult> {
+  const {
+    signInRedirect = '/api/auth/signin?callbackUrl=/dashboard',
+    passwordChangeRedirect = '/change-password',
+  } = options;
+
+  try {
+    const session = await getServerSession(authOptions);
+
+    if (!session || !session.user || !session.user.id) {
+      return { redirectTo: signInRedirect };
+    }
+
+    const user = await prisma.user.findUnique({
+      where: { id: parseInt(session.user.id) },
+      select: {
+        id: true,
+        name: true,
+        email: true,
+        admin: true,
+        superAdmin: true,
+        canUpload: true,
+        canCreate: true,
+        canViewDeck: true,
+        canUploadDeck: true,
+        canAdd: true,
+        canRemove: true,
+        canEdit: true,
+        isActive: true,
+        mustChangePassword: true,
+      },
+    });
+
+    if (!user || !user.isActive) {
+      return { redirectTo: signInRedirect };
+    }
+
+    if (user.mustChangePassword) {
+      return { redirectTo: passwordChangeRedirect };
+    }
+
+    return {
+      user: {
+        ...user,
+        id: user.id.toString(),
+      } as AuthenticatedUser,
+    };
+  } catch (error) {
+    console.error('Page authentication error:', error);
+    return { redirectTo: signInRedirect };
   }
 }
 

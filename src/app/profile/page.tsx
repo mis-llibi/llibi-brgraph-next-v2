@@ -1,10 +1,23 @@
-"use client";
-
+import { redirect } from "next/navigation";
 import PasswordChangeForm from "@/components/account/PasswordChangeForm";
-import { useSession } from "next-auth/react";
+import { requirePageAuth } from "@/lib/auth-middleware";
 
-export default function ProfilePage() {
-  const { data: session } = useSession();
+export default async function ProfilePage() {
+  const authResult = await requirePageAuth({
+    signInRedirect: "/api/auth/signin?callbackUrl=/profile",
+    passwordChangeRedirect: "/change-password",
+  });
+
+  const redirectTo = authResult.redirectTo;
+  if (redirectTo) {
+    redirect(redirectTo);
+  }
+
+  if (!authResult.user) {
+    redirect("/api/auth/signin?callbackUrl=/profile");
+  }
+
+  const { user } = authResult;
 
   return (
     <main className="min-h-screen bg-slate-50 px-4 py-8 sm:px-6 lg:px-8">
@@ -21,7 +34,7 @@ export default function ProfilePage() {
                 Name
               </p>
               <p className="mt-1 text-sm font-medium text-slate-900">
-                {session?.user?.name || "-"}
+                {user.name || "-"}
               </p>
             </div>
             <div>
@@ -29,7 +42,7 @@ export default function ProfilePage() {
                 Email
               </p>
               <p className="mt-1 text-sm font-medium text-slate-900">
-                {session?.user?.email || "-"}
+                {user.email || "-"}
               </p>
             </div>
           </div>
