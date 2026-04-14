@@ -28,6 +28,16 @@ export const authOptions: AuthOptions = {
             user.password,
           ))
         ) {
+          try {
+            await prisma.user.update({
+              where: { id: user.id },
+              data: { lastLogin: new Date() },
+            });
+          } catch (error) {
+            // Do not block login if last login tracking fails.
+            console.error("Failed to update last login:", error);
+          }
+
           return { ...user, id: user.id.toString() };
         }
         return null;
