@@ -589,12 +589,18 @@ export default function AdminManagementPage() {
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                     <div className="flex space-x-2">
-                      <button
-                        onClick={() => openModal("edit", admin)}
-                        className="text-blue-600 hover:text-blue-900"
-                      >
-                        Edit
-                      </button>
+                      {admin.id !== parseInt(session.user.id || "0") ? (
+                        <button
+                          onClick={() => openModal("edit", admin)}
+                          className="text-blue-600 hover:text-blue-900"
+                        >
+                          Edit
+                        </button>
+                      ) : (
+                        <span className="text-gray-400 cursor-not-allowed">
+                          Edit
+                        </span>
+                      )}
                       <button
                         onClick={() => openModal("resetPassword", admin)}
                         className="text-orange-600 hover:text-orange-900"

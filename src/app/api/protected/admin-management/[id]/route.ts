@@ -97,11 +97,11 @@ export async function PUT(
       return NextResponse.json({ error: "Invalid admin ID" }, { status: 400 });
     }
 
-    // Prevent self-modification
+    // Prevent self-permission changes
     if (adminId === parseInt(user.id)) {
       return NextResponse.json(
-        { error: "Cannot modify your own account" },
-        { status: 400 },
+        { error: "You cannot edit your own administrator permissions" },
+        { status: 403 },
       );
     }
 
