@@ -2,6 +2,8 @@ import { redirect } from "next/navigation";
 import PasswordChangeForm from "@/components/account/PasswordChangeForm";
 import { requirePageAuth } from "@/lib/auth-middleware";
 
+export const dynamic = "force-dynamic";
+
 export default async function ProfilePage() {
   const authResult = await requirePageAuth({
     signInRedirect: "/api/auth/signin?callbackUrl=/profile",
