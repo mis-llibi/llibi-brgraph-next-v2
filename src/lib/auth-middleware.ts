@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/auth';
 import { prisma } from '@/lib/prisma';
+import { unstable_noStore as noStore } from 'next/cache';
 
 export interface AuthenticatedUser {
   id: string;
@@ -99,6 +100,8 @@ export async function requireAuth(): Promise<{ user: AuthenticatedUser } | NextR
 export async function requirePageAuth(
   options: PageAuthOptions = {}
 ): Promise<PageAuthResult> {
+  noStore();
+
   const {
     signInRedirect = '/api/auth/signin?callbackUrl=/dashboard',
     passwordChangeRedirect = '/change-password',
@@ -146,7 +149,16 @@ export async function requirePageAuth(
       } as AuthenticatedUser,
     };
   } catch (error) {
-    console.error('Page authentication error:', error);
+    const isDynamicServerUsage =
+      typeof error === 'object' &&
+      error !== null &&
+      'digest' in error &&
+      (error as { digest?: string }).digest === 'DYNAMIC_SERVER_USAGE';
+
+    if (!isDynamicServerUsage) {
+      console.error('Page authentication error:', error);
+    }
+
     return { redirectTo: signInRedirect };
   }
 }
