@@ -5,6 +5,8 @@ import { prisma } from "@/lib/prisma";
 import { comparePassword } from "./lib/hash";
 import type { Adapter } from "next-auth/adapters";
 
+const authSecret = process.env.AUTH_SECRET ?? process.env.NEXTAUTH_SECRET;
+
 export const authOptions: AuthOptions = {
   adapter: PrismaAdapter(prisma) as Adapter,
   providers: [
@@ -23,7 +25,7 @@ export const authOptions: AuthOptions = {
           user &&
           (await comparePassword(
             credentials?.password as string,
-            user.password
+            user.password,
           ))
         ) {
           return { ...user, id: user.id.toString() };
@@ -46,7 +48,7 @@ export const authOptions: AuthOptions = {
     },
   },
   session: { strategy: "jwt" },
-  secret: process.env.AUTH_SECRET,
+  secret: authSecret,
 };
 
 export const { auth, handlers } = NextAuth(authOptions);
