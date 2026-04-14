@@ -1,14 +1,14 @@
 export const dynamic = "force-dynamic";
 
 import { authOptions } from "@/auth";
-import { getServerSession } from "next-auth";
+import { getServerSession, type Session } from "next-auth";
 import { getToken } from "next-auth/jwt";
 import { NextRequest, NextResponse } from "next/server";
 
 const authSecret = process.env.AUTH_SECRET ?? process.env.NEXTAUTH_SECRET;
 
 function safeTokenSnapshot(token: Awaited<ReturnType<typeof getToken>>) {
-  if (!token) return null;
+  if (!token || typeof token === "string") return null;
 
   return {
     id: token.id ?? null,
@@ -21,9 +21,7 @@ function safeTokenSnapshot(token: Awaited<ReturnType<typeof getToken>>) {
   };
 }
 
-function safeSessionSnapshot(
-  session: Awaited<ReturnType<typeof getServerSession>>,
-) {
+function safeSessionSnapshot(session: Session | null) {
   if (!session?.user) return null;
 
   return {
