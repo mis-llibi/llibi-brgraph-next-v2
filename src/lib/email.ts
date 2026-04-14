@@ -1,21 +1,7 @@
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 
 // Create reusable transporter object using SMTP transport
-const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: parseInt(process.env.SMTP_PORT || "2525"),
-  secure: false, // true for 465, false for other ports like 587, 2525
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
-  },
-  tls: {
-    rejectUnauthorized: false, // Allow self-signed certificates for testing
-  },
-  connectionTimeout: 10000, // 10 seconds
-  greetingTimeout: 5000, // 5 seconds
-  socketTimeout: 10000, // 10 seconds
-});
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export interface SendCredentialsEmailParams {
   to: string;
@@ -44,13 +30,6 @@ export async function sendCredentialsEmail({
   });
 
   try {
-    // Test connection first
-    console.log("Testing SMTP connection...");
-    const isConnected = await verifyEmailConnection();
-    if (!isConnected) {
-      throw new Error("SMTP connection verification failed");
-    }
-    console.log("SMTP connection verified successfully");
 
     const subject = `Welcome to LLIBI - Your Account Credentials`;
 
@@ -157,13 +136,12 @@ This is an automated message. Please do not reply to this email.
 LLIBI © ${new Date().getFullYear()}. All rights reserved.
   `;
 
-    const info = await transporter.sendMail({
-      from: `"${process.env.SMTP_FROM_NAME}" <${process.env.SMTP_FROM_EMAIL}>`,
-      to: to,
-      subject: subject,
-      text: text,
-      html: html,
-    });
+  const info = await resend.emails.send({
+  from: `${process.env.SMTP_FROM_NAME} <${process.env.SMTP_FROM_EMAIL}>`,
+  to: to,
+  subject: subject,
+  html: html,
+});
 
     console.log("Email sent successfully:", info.messageId);
     return { success: true, messageId: info.messageId };
@@ -174,16 +152,5 @@ LLIBI © ${new Date().getFullYear()}. All rights reserved.
         error instanceof Error ? error.message : "Unknown error"
       }`
     );
-  }
-}
-
-export async function verifyEmailConnection() {
-  try {
-    await transporter.verify();
-    console.log("SMTP connection verified successfully");
-    return true;
-  } catch (error) {
-    console.error("SMTP connection failed:", error);
-    return false;
   }
 }
