@@ -6,7 +6,7 @@ import { prisma } from "@/lib/prisma";
 // GET /api/protected/admin-management/[id] - Get specific admin (SuperAdmin only)
 export async function GET(
   request: Request,
-  context: { params: Promise<{ id: string }> }
+  context: { params: Promise<{ id: string }> },
 ) {
   const params = await context.params;
   const authResult = await requireAuth();
@@ -58,7 +58,7 @@ export async function GET(
     if (!admin) {
       return NextResponse.json(
         { error: "Administrator not found" },
-        { status: 404 }
+        { status: 404 },
       );
     }
 
@@ -67,7 +67,7 @@ export async function GET(
     console.error("Error fetching admin:", error);
     return NextResponse.json(
       { error: "Failed to fetch administrator" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -75,7 +75,7 @@ export async function GET(
 // PUT /api/protected/admin-management/[id] - Update admin (SuperAdmin only)
 export async function PUT(
   request: Request,
-  context: { params: Promise<{ id: string }> }
+  context: { params: Promise<{ id: string }> },
 ) {
   const params = await context.params;
   const authResult = await requireAuth();
@@ -101,7 +101,7 @@ export async function PUT(
     if (adminId === parseInt(user.id)) {
       return NextResponse.json(
         { error: "Cannot modify your own account" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -113,9 +113,27 @@ export async function PUT(
       canRemove,
       canEdit,
       isActive,
-      admin: isAdmin,
-      superAdmin: isSuperAdmin,
+      admin,
+      isAdmin,
+      superAdmin,
+      isSuperAdmin,
     } = body;
+
+    const nextIsAdmin =
+      typeof isAdmin === "boolean"
+        ? isAdmin
+        : typeof admin === "boolean"
+          ? admin
+          : undefined;
+
+    const nextIsSuperAdmin =
+      typeof isSuperAdmin === "boolean"
+        ? isSuperAdmin
+        : typeof superAdmin === "boolean"
+          ? superAdmin
+          : undefined;
+
+    const shouldForceFullAccess = nextIsSuperAdmin === true;
 
     // Check if admin exists
     const existingAdmin = await prisma.user.findUnique({
@@ -128,7 +146,7 @@ export async function PUT(
     if (!existingAdmin) {
       return NextResponse.json(
         { error: "Administrator not found" },
-        { status: 404 }
+        { status: 404 },
       );
     }
 
@@ -144,7 +162,7 @@ export async function PUT(
       if (emailExists) {
         return NextResponse.json(
           { error: "Email is already in use by another user" },
-          { status: 409 }
+          { status: 409 },
         );
       }
     }
@@ -155,12 +173,25 @@ export async function PUT(
       data: {
         ...(name && { name }),
         ...(email && { email }),
-        ...(typeof canAdd === "boolean" && { canAdd }),
-        ...(typeof canRemove === "boolean" && { canRemove }),
-        ...(typeof canEdit === "boolean" && { canEdit }),
+        ...(typeof canAdd === "boolean" && {
+          canAdd: shouldForceFullAccess ? true : canAdd,
+        }),
+        ...(typeof canRemove === "boolean" && {
+          canRemove: shouldForceFullAccess ? true : canRemove,
+        }),
+        ...(typeof canEdit === "boolean" && {
+          canEdit: shouldForceFullAccess ? true : canEdit,
+        }),
+        ...(shouldForceFullAccess && {
+          canAdd: true,
+          canRemove: true,
+          canEdit: true,
+        }),
         ...(typeof isActive === "boolean" && { isActive }),
-        ...(typeof isAdmin === "boolean" && { admin: isAdmin }),
-        ...(typeof isSuperAdmin === "boolean" && { superAdmin: isSuperAdmin }),
+        ...(typeof nextIsAdmin === "boolean" && { admin: nextIsAdmin }),
+        ...(typeof nextIsSuperAdmin === "boolean" && {
+          superAdmin: nextIsSuperAdmin,
+        }),
       },
       select: {
         id: true,
@@ -187,7 +218,7 @@ export async function PUT(
     console.error("Error updating admin:", error);
     return NextResponse.json(
       { error: "Failed to update administrator" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -195,7 +226,7 @@ export async function PUT(
 // DELETE /api/protected/admin-management/[id] - Delete admin (SuperAdmin only)
 export async function DELETE(
   request: Request,
-  context: { params: Promise<{ id: string }> }
+  context: { params: Promise<{ id: string }> },
 ) {
   const params = await context.params;
   const authResult = await requireAuth();
@@ -221,7 +252,7 @@ export async function DELETE(
     if (adminId === parseInt(user.id)) {
       return NextResponse.json(
         { error: "Cannot delete your own account" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -236,7 +267,7 @@ export async function DELETE(
     if (!existingAdmin) {
       return NextResponse.json(
         { error: "Administrator not found" },
-        { status: 404 }
+        { status: 404 },
       );
     }
 
@@ -253,7 +284,7 @@ export async function DELETE(
     console.error("Error deleting admin:", error);
     return NextResponse.json(
       { error: "Failed to delete administrator" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

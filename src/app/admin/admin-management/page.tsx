@@ -88,7 +88,7 @@ export default function AdminManagementPage() {
       setAdmins(data.admins);
     } catch (err) {
       setError(
-        err instanceof Error ? err.message : "Failed to fetch administrators"
+        err instanceof Error ? err.message : "Failed to fetch administrators",
       );
     } finally {
       setLoading(false);
@@ -151,7 +151,7 @@ export default function AdminManagementPage() {
         `/api/protected/admin-management/${selectedAdmin.id}`,
         {
           method: "DELETE",
-        }
+        },
       );
 
       const data = await response.json();
@@ -164,7 +164,7 @@ export default function AdminManagementPage() {
       setShowModal(false);
     } catch (err) {
       setError(
-        err instanceof Error ? err.message : "Failed to delete administrator"
+        err instanceof Error ? err.message : "Failed to delete administrator",
       );
     } finally {
       setSubmitting(false);
@@ -183,7 +183,7 @@ export default function AdminManagementPage() {
         `/api/protected/admin-management/${selectedAdmin.id}/reset-password`,
         {
           method: "POST",
-        }
+        },
       );
 
       const data = await response.json();
@@ -223,9 +223,9 @@ export default function AdminManagementPage() {
         setFormData({
           name: admin.name,
           email: admin.email,
-          canAdd: admin.canAdd,
-          canRemove: admin.canRemove,
-          canEdit: admin.canEdit,
+          canAdd: admin.superAdmin ? true : admin.canAdd,
+          canRemove: admin.superAdmin ? true : admin.canRemove,
+          canEdit: admin.superAdmin ? true : admin.canEdit,
           isAdmin: admin.admin,
           isSuperAdmin: admin.superAdmin,
           isActive: admin.isActive,
@@ -370,18 +370,25 @@ export default function AdminManagementPage() {
                     <input
                       type="checkbox"
                       checked={formData.isSuperAdmin}
-                      onChange={(e) =>
+                      onChange={(e) => {
+                        const isSuperAdmin = e.target.checked;
                         setFormData({
                           ...formData,
-                          isSuperAdmin: e.target.checked,
-                        })
-                      }
+                          isSuperAdmin,
+                          canAdd: isSuperAdmin ? true : formData.canAdd,
+                          canRemove: isSuperAdmin ? true : formData.canRemove,
+                          canEdit: isSuperAdmin ? true : formData.canEdit,
+                        });
+                      }}
                       className="mr-2"
                     />
                     <span className="text-sm">
                       Super Administrator (Full Access)
                     </span>
                   </label>
+                  <p className="ml-6 text-xs text-gray-500">
+                    Automatically enables Add, Remove, and Edit permissions.
+                  </p>
 
                   <label className="flex items-center">
                     <input
@@ -457,8 +464,8 @@ export default function AdminManagementPage() {
                 {submitting
                   ? "Saving..."
                   : modalType === "create"
-                  ? "Create"
-                  : "Update"}
+                    ? "Create"
+                    : "Update"}
               </button>
             </div>
           </form>

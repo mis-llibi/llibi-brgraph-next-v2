@@ -59,7 +59,7 @@ export async function GET() {
     console.error("Error fetching admins:", error);
     return NextResponse.json(
       { error: "Failed to fetch administrators" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -94,14 +94,14 @@ export async function POST(request: Request) {
     if (!name || !email) {
       return NextResponse.json(
         { error: "Name and email are required" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     if (!email.includes("@")) {
       return NextResponse.json(
         { error: "Invalid email format" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -113,13 +113,14 @@ export async function POST(request: Request) {
     if (existingUser) {
       return NextResponse.json(
         { error: "User with this email already exists" },
-        { status: 409 }
+        { status: 409 },
       );
     }
 
     // Generate secure password
     const tempPassword = generateSecurePassword(12);
     const hashedPassword = await hashPassword(tempPassword);
+    const hasFullAccess = Boolean(isSuperAdmin);
 
     // Create the admin user
     const newAdmin = await prisma.user.create({
@@ -129,9 +130,9 @@ export async function POST(request: Request) {
         password: hashedPassword,
         admin: isAdmin,
         superAdmin: isSuperAdmin,
-        canAdd: canAdd || false,
-        canRemove: canRemove || false,
-        canEdit: canEdit || false,
+        canAdd: hasFullAccess ? true : canAdd || false,
+        canRemove: hasFullAccess ? true : canRemove || false,
+        canEdit: hasFullAccess ? true : canEdit || false,
         isActive: true,
         mustChangePassword: true,
         createdBy: parseInt(user.id),
@@ -172,7 +173,7 @@ export async function POST(request: Request) {
     console.error("Error creating admin:", error);
     return NextResponse.json(
       { error: "Failed to create administrator" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
