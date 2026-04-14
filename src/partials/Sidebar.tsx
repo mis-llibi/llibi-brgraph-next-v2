@@ -18,7 +18,7 @@ const Sidebar = () => {
       ? localStorage.getItem("sidebar-expanded")
       : null;
   const [expanded, setExpanded] = useState(
-    storedSidebarExpanded === null ? "false" : storedSidebarExpanded === "true"
+    storedSidebarExpanded === null ? "false" : storedSidebarExpanded === "true",
   );
 
   // Close sidebar when clicking outside
@@ -330,9 +330,36 @@ const Sidebar = () => {
         <div className="mt-auto">
           {session && (
             <div className="mt-4 pt-3 border-t border-slate-300">
+              <NavLink
+                href="/profile"
+                className="w-full text-left text-black truncate transition duration-150 hover:scale-105"
+                activeClassName="!text-black !font-bold"
+              >
+                <div className="flex items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="icon icon-tabler icon-tabler-user"
+                    width={sidebarOpen ? "2rem" : "1.5rem"}
+                    height={sidebarOpen ? "2.5rem" : "2rem"}
+                    viewBox="0 0 24 24"
+                    strokeWidth="2.25"
+                    stroke="#2c3e50"
+                    fill="none"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+                    <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                  </svg>
+                  <span className="text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                    Profile
+                  </span>
+                </div>
+              </NavLink>
               <button
                 onClick={() => signOut({ callbackUrl: "/" })}
-                className="w-full text-left text-black truncate transition duration-150 hover:scale-105"
+                className="mt-2 w-full text-left text-black truncate transition duration-150 hover:scale-105"
                 aria-label="Logout"
               >
                 <div className="flex items-center">
