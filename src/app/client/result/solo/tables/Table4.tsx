@@ -37,11 +37,11 @@ const Table4: React.FC<Props> = ({ data }) => {
     claimAmount: data.reduce((acc, d) => acc + d.claimAmount, 0),
     claimAverage: Math.round(
       data.reduce((acc, d) => acc + d.claimAmount, 0) /
-        data.reduce((acc, d) => acc + d.claimCount, 0)
+        data.reduce((acc, d) => acc + d.claimCount, 0),
     ),
     personAverage: Math.round(
       data.reduce((acc, d) => acc + d.claimAmount, 0) /
-        data.reduce((acc, d) => acc + d.headcount, 0)
+        data.reduce((acc, d) => acc + d.headcount, 0),
     ),
   };
 
@@ -131,7 +131,7 @@ const Table4: React.FC<Props> = ({ data }) => {
           className="flex items-center justify-center border-b border-white"
           style={{ width: firstColumnWidth }}
         >
-          TOTAL
+          Total
         </div>
         {[
           totals.headcount,
