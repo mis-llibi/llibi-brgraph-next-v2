@@ -5,75 +5,73 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client-js"
+  provider      = "prisma-client-js"
   binaryTargets = ["native", "rhel-openssl-3.0.x"]
 }
 
 datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
+  provider          = "mysql"
+  url               = env("DATABASE_URL")
   shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
-model user{
-  id       Int      @id @default(autoincrement())
-  name     String
-  email    String   @unique
-  password String
-  admin   Boolean  @default(false)
-  canUpload Boolean @default(false)
-  canCreate Boolean @default(false)
-  canViewDeck Boolean @default(false)
-  canUploadDeck Boolean @default(false)
-  canAdd Boolean @default(false)
-  canRemove Boolean @default(false)
-  canEdit Boolean @default(false)
-  superAdmin Boolean @default(false)
-  isActive Boolean @default(true)
-  mustChangePassword Boolean @default(false)
-  lastLogin DateTime?
-  createdBy Int?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+model user {
+  id                 Int       @id @default(autoincrement())
+  name               String
+  email              String    @unique
+  password           String
+  admin              Boolean   @default(false)
+  canUpload          Boolean   @default(false)
+  canCreate          Boolean   @default(false)
+  canViewDeck        Boolean   @default(false)
+  canUploadDeck      Boolean   @default(false)
+  canAdd             Boolean   @default(false)
+  canRemove          Boolean   @default(false)
+  canEdit            Boolean   @default(false)
+  superAdmin         Boolean   @default(false)
+  isActive           Boolean   @default(true)
+  mustChangePassword Boolean   @default(false)
+  lastLogin          DateTime?
+  createdBy          Int?
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
 
   // Self-referencing relation for tracking who created whom
-  creator user? @relation("UserCreatedBy", fields: [createdBy], references: [id])
+  creator      user?  @relation("UserCreatedBy", fields: [createdBy], references: [id])
   createdUsers user[] @relation("UserCreatedBy")
 
   @@map("user")
 }
 
-model insurers{
-  id Int @id @default(autoincrement())
+model insurers {
+  id   Int    @id @default(autoincrement())
   name String @unique
 
-  clients clients[]
-  uploads uploads[]
-  datasets datasets[]
+  clients            clients[]
+  uploads            uploads[]
+  datasets           datasets[]
+  masterlistEntries  masterlistEntries[]
+  utilizationEntries utilizationEntries[]
 
   @@map("insurers")
 }
 
 model datasets {
-  id Int @id @default(autoincrement())
-  clientId Int
+  id        Int      @id @default(autoincrement())
+  clientId  Int
   insurerId Int
-  title String @db.VarChar(191)
+  title     String   @db.VarChar(191)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   // Relations
-  clients clients @relation(fields: [clientId], references: [id])
+  clients  clients  @relation(fields: [clientId], references: [id])
   insurers insurers @relation(fields: [insurerId], references: [id])
 
   // Dataset records
-  intellicareMasterlist intellicareMasterlist[]
-  maxicareMasterlist maxicareMasterlist[]
-  philcareMasterlist philcareMasterlist[]
-  intellicare intellicare[]
-  maxicare maxicare[]
-  philcare philcare[]
-  uploads uploads[]
+  masterlistEntries  masterlistEntries[]
+  utilizationEntries utilizationEntries[]
+  uploads            uploads[]
 
   @@unique([clientId, title])
   @@index([clientId])
@@ -82,40 +80,36 @@ model datasets {
   @@map("datasets")
 }
 
-model clients{
-  id Int @id @default(autoincrement()) 
+model clients {
+  id          Int       @id @default(autoincrement())
   client_name String
   description String?
-  insurer_id Int?
-  insurer insurers? @relation(fields: [insurer_id], references: [id])
+  insurer_id  Int?
+  insurer     insurers? @relation(fields: [insurer_id], references: [id])
 
-  uploads uploads[]
-  datasets datasets[]
-  decks decks[]
-  intellicareMasterlist intellicareMasterlist[]
-  maxicareMasterlist maxicareMasterlist[]
-  philcareMasterlist philcareMasterlist[]
-  intellicare intellicare[]
-  maxicare maxicare[]
-  philcare philcare[]
-  customIllnesses customIllnesses[]
+  uploads            uploads[]
+  datasets           datasets[]
+  decks              decks[]
+  masterlistEntries  masterlistEntries[]
+  utilizationEntries utilizationEntries[]
+  customIllnesses    customIllnesses[]
 
   @@map("clients")
 }
 
-model uploads{
-  id Int @id @default(autoincrement())
-  clientId Int
+model uploads {
+  id        Int      @id @default(autoincrement())
+  clientId  Int
   insurerId Int
   datasetId Int?
-  year String
-  months String?
-  type String
+  year      String
+  months    String?
+  type      String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  clients clients @relation(fields: [clientId], references: [id])
-  insurers insurers @relation(fields: [insurerId], references: [id])
+  clients  clients   @relation(fields: [clientId], references: [id])
+  insurers insurers  @relation(fields: [insurerId], references: [id])
   datasets datasets? @relation(fields: [datasetId], references: [id], onDelete: Cascade)
 
   @@index([datasetId])
@@ -123,186 +117,92 @@ model uploads{
 }
 
 model decks {
-  id Int @id @default(autoincrement())
-  name String
-  key String
+  id          Int      @id @default(autoincrement())
+  name        String
+  key         String
   description String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  clientId Int
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  clientId    Int
 
   clients clients @relation(fields: [clientId], references: [id])
 
   @@map("decks")
 }
 
-model intellicareMasterlist {
-  id Int @id @default(autoincrement())
-  clientId Int
-  datasetId Int?
-  PY String?
-  ACCOUNT_NO String?
-  STATUS String? @db.Char(1)
-  MEMBER_TYPE String? @db.Char(1)
-  RNB String?
-  PREEXIST Float?
-  LIMIT Float?
-  BIRTHDATE DateTime?
-  AGE Int?
-  RELATION String?
-  EE_ID String?
-  CARD_NO String?
-  COMPANY String? @db.VarChar(500)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+model masterlistEntries {
+  id           Int      @id @default(autoincrement())
+  clientId     Int
+  insurerId    Int
+  datasetId    Int
+  maskedId     String?  @db.VarChar(191)
+  companyName  String   @db.VarChar(500)
+  relationship String   @db.VarChar(191)
+  memberType   String   @db.VarChar(191)
+  planType     String?  @db.VarChar(191)
+  mbl          Float?   @db.Double
+  ageGroup     String?  @db.VarChar(191)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 
-  clients clients @relation(fields: [clientId], references: [id])
-  datasets datasets? @relation(fields: [datasetId], references: [id], onDelete: Cascade)
+  clients  clients  @relation(fields: [clientId], references: [id])
+  insurers insurers @relation(fields: [insurerId], references: [id])
+  datasets datasets @relation(fields: [datasetId], references: [id], onDelete: Cascade)
 
+  @@index([clientId])
+  @@index([insurerId])
   @@index([datasetId])
-  @@map("intellicareMasterlist")
+  @@map("masterlistEntries")
 }
 
-model maxicareMasterlist {
-  id Int @id @default(autoincrement())
-  clientId Int
-  datasetId Int?
-  PY String?
-  ACCOUNT_NO String? //POLICYNO
-  STATUS String? @db.Char(1) //STATUSDESC
-  MEMBER_TYPE String? @db.Char(1) //MEMBERTYPE
-  LIMIT Float? //MBL
-  RELATION String? //REALDESC
-  EE_ID String? //EMPNO
-  CARD_NO String? //CARDNO
-  COMPANY String? @db.VarChar(500) //COMPANY
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+model utilizationEntries {
+  id                  Int       @id @default(autoincrement())
+  clientId            Int
+  insurerId           Int
+  datasetId           Int
+  maskedId            String?   @db.VarChar(191)
+  companyName         String    @db.VarChar(500)
+  relationship        String    @db.VarChar(191)
+  memberType          String    @db.VarChar(191)
+  planType            String?   @db.VarChar(191)
+  mbl                 Float?    @db.Double
+  ageGroup            String?   @db.VarChar(191)
+  diagnosis           String    @db.VarChar(1000)
+  providerName        String    @db.VarChar(500)
+  claimCoverageType   String    @db.VarChar(191)
+  admissionDate       DateTime?
+  dischargeDate       DateTime?
+  dateProcessed       DateTime?
+  approvedClaimAmount Float     @db.Double
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
 
-  clients clients @relation(fields: [clientId], references: [id])
-  datasets datasets? @relation(fields: [datasetId], references: [id], onDelete: Cascade)
+  clients  clients  @relation(fields: [clientId], references: [id])
+  insurers insurers @relation(fields: [insurerId], references: [id])
+  datasets datasets @relation(fields: [datasetId], references: [id], onDelete: Cascade)
 
+  @@index([clientId])
+  @@index([insurerId])
   @@index([datasetId])
-  @@map("maxicareMasterlist")
+  @@map("utilizationEntries")
 }
 
-model philcareMasterlist {
-  id Int @id @default(autoincrement())
-  clientId Int
-  datasetId Int?
-  PY String?
-  SUB_OFFICE_NAME String? @db.VarChar(500) //Sub Office Name
-  RELATIONSHIP String? //Relationship
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  clients clients @relation(fields: [clientId], references: [id])
-  datasets datasets? @relation(fields: [datasetId], references: [id], onDelete: Cascade)
-
-  @@index([datasetId])
-  @@map("philcareMasterlist")
-}
-
-model intellicare {
-  id Int @id @default(autoincrement())
-  clientId Int
-  datasetId Int?
-  PY String
-  Company String? @db.VarChar(500)
-  Member_Account String?
-  Member_Type String?
-  ICD_10_Code String?
-  Diagnosis String? @db.VarChar(1000)
-  Claim_Type String?
-  Admission_Date  DateTime?
-  Provider_Name String? @db.VarChar(500)
-  Provider_Type String?
-  Approved_Claim_Amount Float? @db.Double
-  Class_Plan_Level String?
-  Maximum_Benefit_Limit Float? @db.Double
-  Date_of_Birth DateTime?
-  Relationship String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  
-  clients clients @relation(fields: [clientId], references: [id])
-  datasets datasets? @relation(fields: [datasetId], references: [id], onDelete: Cascade)
-
-  @@index([datasetId])
-  @@map("intellicare")
-}
-
-model maxicare {
-  id Int @id @default(autoincrement())
-  clientId Int
-  datasetId Int?
-  PY String
-  Company String? @db.VarChar(500)
-  Member_Account String? //Member_ID
-  Member_Type String? //Plan
-  ICD_10_Code String? //ICD10_Code
-  Diagnosis String? @db.VarChar(1000) //ICD10_Desc
-  Claim_Type String? //Claim_Type
-  Admission_Date  DateTime? //Admission_Date
-  Provider_Name String? @db.VarChar(500) //Provider_Name
-  Provider_Type String? //Provider_Type
-  Approved_Claim_Amount Float? @db.Double //Approved_Claim_Amount
-  Relationship String? //Relationship
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  
-  clients clients @relation(fields: [clientId], references: [id])
-  datasets datasets? @relation(fields: [datasetId], references: [id], onDelete: Cascade)
-
-  @@index([datasetId])
-  @@map("maxicare")
-}
-
-model philcare {
-  id Int @id @default(autoincrement())
-  clientId Int
-  datasetId Int?
-  PY String
-  Company String? @db.VarChar(500) //Company
-  Member_Account String? //Claim No
-  Member_Type String? //Derived from Relation or IP/OP
-  Diagnosis String? @db.VarChar(1000) //Diagnosis
-  Claim_Type String? //IP/OP
-  Admission_Date DateTime? //Date From
-  Provider_Name String? @db.VarChar(500) //Provider
-  Approved_Claim_Amount Float? @db.Double //Utilization
-  Relationship String? //Relation
-  // Philcare-specific fields
-  LOS Int? //LOS (Length of Stay)
-  NR_R String? //NR/R (Non-Reimbursable/Reimbursable)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  
-  clients clients @relation(fields: [clientId], references: [id])
-  datasets datasets? @relation(fields: [datasetId], references: [id], onDelete: Cascade)
-
-  @@index([datasetId])
-  @@map("philcare")
-}
-
-
-model customIllnesses{
-  id Int @id @default(autoincrement())
-  clientId Int
-  py String?
-  member_type String?
-  icd_10_code String?
-  diagnosis String? @db.VarChar(1000)
-  claim_amount Int?
-  percentage_to_total_amount Decimal? @db.Decimal(8,2)
-  claim_count Int?
-  percentage_to_total_count Decimal? @db.Decimal(8,2)
-  average_cost_per_claim Int?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+model customIllnesses {
+  id                         Int      @id @default(autoincrement())
+  clientId                   Int
+  py                         String?
+  member_type                String?
+  icd_10_code                String?
+  diagnosis                  String?  @db.VarChar(1000)
+  claim_amount               Int?
+  percentage_to_total_amount Decimal? @db.Decimal(8, 2)
+  claim_count                Int?
+  percentage_to_total_count  Decimal? @db.Decimal(8, 2)
+  average_cost_per_claim     Int?
+  createdAt                  DateTime @default(now())
+  updatedAt                  DateTime @updatedAt
 
   clients clients @relation(fields: [clientId], references: [id])
 
   @@map("customIllnesses")
 }
-

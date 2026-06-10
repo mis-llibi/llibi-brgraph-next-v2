@@ -32,19 +32,7 @@ export const UploadUtilizationFile = async (
     } else if (data.datasetTitle) {
       formData.append("dataset_title", data.datasetTitle);
     }
-    const insurer = (
-      data.insurerId === 1
-        ? "intellicare"
-        : data.insurerId === 2
-        ? "maxicare"
-        : data.insurerId === 3
-        ? "philcare"
-        : "unknown"
-    ) as string;
-
-    console.log("Insurer: ", insurer);
-
-    const response = await apiClient.post(`/utilization/${insurer}`, formData, {
+    const response = await apiClient.post("/utilization", formData, {
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -86,17 +74,7 @@ export const UploadMasterlistFile = async (
     } else if (data.datasetTitle) {
       formData.append("dataset_title", data.datasetTitle);
     }
-    const insurer = (
-      data.insurerId === 1
-        ? "intellicare"
-        : data.insurerId === 2
-        ? "maxicare"
-        : data.insurerId === 3
-        ? "philcare"
-        : "unknown"
-    ) as string;
-
-    const response = await apiClient.post(`/masterlist/${insurer}`, formData, {
+    const response = await apiClient.post("/masterlist", formData, {
       headers: {
         "Content-Type": "multipart/form-data",
       },

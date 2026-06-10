@@ -9,7 +9,6 @@ import domtoimage from "dom-to-image-more";
 import JSZip from "jszip";
 import apiClient from "@/lib/axios";
 import { parse } from "papaparse";
-import { convertInsurer } from "@/lib/insurers";
 
 const Page = () => {
   const data = useBRReportStore((s) => s.data);
@@ -93,42 +92,14 @@ const Page = () => {
   };
 
   const fetchCustomIllnesses = async () => {
-    if (data.insurerId === 1) {
-      const response = await apiClient.get(
-        `/generate/checkCustomIllnesses/intellicare?clientId=${data.lastData.clientId}&py=${data.lastData.py}`
-      );
-      if (response.data.success) {
-        console.log("Custom illnesses data:", response.data.data);
-        console.log("Custom illnesses totals:", response.data.totals);
-        setCustomIllnesses({
-          data: response.data.data,
-          totals: response.data.totals,
-        });
-      }
-    } else if (data.insurerId === 2) {
-      const response = await apiClient.get(
-        `/generate/checkCustomIllnesses/maxicare?clientId=${data.lastData.clientId}&py=${data.lastData.py}`
-      );
-      if (response.data.success) {
-        console.log("Custom illnesses data:", response.data.data);
-        console.log("Custom illnesses totals:", response.data.totals);
-        setCustomIllnesses({
-          data: response.data.data,
-          totals: response.data.totals,
-        });
-      }
-    } else if (data.insurerId === 3) {
-      const response = await apiClient.get(
-        `/generate/checkCustomIllnesses/philcare?clientId=${data.lastData.clientId}&py=${data.lastData.py}`
-      );
-      if (response.data.success) {
-        console.log("Custom illnesses data:", response.data.data);
-        console.log("Custom illnesses totals:", response.data.totals);
-        setCustomIllnesses({
-          data: response.data.data,
-          totals: response.data.totals,
-        });
-      }
+    const response = await apiClient.get(
+      `/generate/checkCustomIllnesses?clientId=${data.lastData.clientId}&py=${data.lastData.py}`,
+    );
+    if (response.data.success) {
+      setCustomIllnesses({
+        data: response.data.data,
+        totals: response.data.totals,
+      });
     }
   };
 
@@ -178,9 +149,7 @@ const Page = () => {
           };
         });
 
-        const insurer = convertInsurer(data.lastData.insurerId);
-
-        await apiClient.post(`/generate/importT5/${insurer.toLowerCase()}`, {
+        await apiClient.post("/generate/importT5", {
           clientId: data.lastData.clientId,
           py: data.lastData.py,
           rows: cleanedRows,
@@ -242,9 +211,8 @@ const Page = () => {
             <button
               className=" rounded-xl bg-green-400 px-2 py-1 hover:bg-green-500"
               onClick={async () => {
-                const insurer = convertInsurer(data.lastData.insurerId);
                 const response = await apiClient.post(
-                  `/generate/exportT5/${insurer.toLowerCase()}`,
+                  "/generate/exportT5",
                   {
                     clientId: data.lastData.clientId,
                     datasetId: data.lastData.datasetId,

@@ -25,7 +25,7 @@ export async function GET(
       );
     }
 
-    const client = await prisma.clients.findUnique({
+    const client = await (prisma.clients as any).findUnique({
       where: { id: clientId },
       include: {
         insurer: true,
@@ -33,10 +33,8 @@ export async function GET(
           select: {
             uploads: true,
             decks: true,
-            intellicareMasterlist: true,
-            maxicareMasterlist: true,
-            intellicare: true,
-            maxicare: true,
+            masterlistEntries: true,
+            utilizationEntries: true,
           },
         },
       },
@@ -60,10 +58,8 @@ export async function GET(
         counts: {
           uploads: client._count.uploads,
           decks: client._count.decks,
-          intellicareMasterlist: client._count.intellicareMasterlist,
-          maxicareMasterlist: client._count.maxicareMasterlist,
-          intellicare: client._count.intellicare,
-          maxicare: client._count.maxicare,
+          masterlistEntries: client._count.masterlistEntries,
+          utilizationEntries: client._count.utilizationEntries,
         },
       },
     });
@@ -223,17 +219,15 @@ export async function DELETE(
     }
 
     // Check if client exists and get related data count
-    const client = await prisma.clients.findUnique({
+    const client = await (prisma.clients as any).findUnique({
       where: { id: clientId },
       include: {
         _count: {
           select: {
             uploads: true,
             decks: true,
-            intellicareMasterlist: true,
-            maxicareMasterlist: true,
-            intellicare: true,
-            maxicare: true,
+            masterlistEntries: true,
+            utilizationEntries: true,
           },
         },
       },
@@ -250,10 +244,8 @@ export async function DELETE(
     const totalRelatedRecords =
       client._count.uploads +
       client._count.decks +
-      client._count.intellicareMasterlist +
-      client._count.maxicareMasterlist +
-      client._count.intellicare +
-      client._count.maxicare;
+      client._count.masterlistEntries +
+      client._count.utilizationEntries;
 
     if (totalRelatedRecords > 0) {
       return NextResponse.json(
@@ -263,10 +255,8 @@ export async function DELETE(
           details: {
             uploads: client._count.uploads,
             decks: client._count.decks,
-            masterlists:
-              client._count.intellicareMasterlist +
-              client._count.maxicareMasterlist,
-            utilizations: client._count.intellicare + client._count.maxicare,
+            masterlists: client._count.masterlistEntries,
+            utilizations: client._count.utilizationEntries,
           },
         },
         { status: 409 }

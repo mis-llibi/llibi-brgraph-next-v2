@@ -1,6 +1,5 @@
 "use client";
 import apiClient from "@/lib/axios";
-import { convertInsurer } from "@/lib/insurers";
 
 export type generateOneYearRequest = {
   insurer_id: number;
@@ -15,19 +14,7 @@ export const generateOneYear = async (
   success: boolean;
   data?: any;
 }> => {
-  const insurer = convertInsurer(data.insurer_id);
-  let res;
-  switch (insurer) {
-    case "Intellicare":
-      res = await apiClient.post("/generate/new/intellicare", data);
-      break;
-    case "Maxicare":
-      res = await apiClient.post("/generate/new/maxicare", data);
-      break;
-    case "Philcare":
-      res = await apiClient.post("/generate/new/philcare", data);
-      break;
-  }
+  const res = await apiClient.post("/generate/new", data);
 
   if (!res) {
     return {
@@ -52,20 +39,8 @@ export const generateMultiYear = async (
   success: boolean;
   data?: any;
 }> => {
-  const insurer = convertInsurer(data[0].insurer_id);
-  let res;
   console.log("From API", data);
-  switch (insurer) {
-    case "Intellicare":
-      res = await apiClient.post("/generate/old/intellicare", data);
-      break;
-    case "Maxicare":
-      res = await apiClient.post("/generate/old/maxicare", data);
-      break;
-    case "Philcare":
-      res = await apiClient.post("/generate/old/philcare", data);
-      break;
-  }
+  const res = await apiClient.post("/generate/old", data);
 
   if (!res) {
     return {

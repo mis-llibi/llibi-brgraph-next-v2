@@ -30,6 +30,12 @@ async function main() {
     {
       name: "Intellicare",
     },
+    {
+      name: "Maxicare",
+    },
+    {
+      name: "Philcare",
+    },
   ];
 
   console.log("🚧 Creating Super Admin user...");
