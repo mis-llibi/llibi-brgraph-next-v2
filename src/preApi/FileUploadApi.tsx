@@ -5,33 +5,33 @@ import apiClient from "@/lib/axios";
 type uploadMasterlistRequest = {
   file: File;
   id: number;
-  year: string;
   insurerId: number;
+  datasetId?: number;
+  datasetTitle?: string;
 };
 
 type UploadUtilizationRequest = {
   file: File;
   id: number;
-  year: string;
   insurerId: number;
-};
-
-type response = {
-  message: string;
-  success: boolean;
+  datasetId?: number;
+  datasetTitle?: string;
 };
 
 export const UploadUtilizationFile = async (
   data: UploadUtilizationRequest
 ): Promise<boolean> => {
-  console.log(data.file, data.id, data.year, data.insurerId);
   console.log("Processing upload...");
   try {
     const formData = new FormData();
     formData.append("file", data.file);
     formData.append("id", data.id.toString());
-    formData.append("year", data.year);
     formData.append("insurerId", data.insurerId.toString());
+    if (data.datasetId) {
+      formData.append("dataset_id", data.datasetId.toString());
+    } else if (data.datasetTitle) {
+      formData.append("dataset_title", data.datasetTitle);
+    }
     const insurer = (
       data.insurerId === 1
         ? "intellicare"
@@ -80,8 +80,12 @@ export const UploadMasterlistFile = async (
     const formData = new FormData();
     formData.append("file", data.file);
     formData.append("id", data.id.toString());
-    formData.append("year", data.year);
     formData.append("insurerId", data.insurerId.toString());
+    if (data.datasetId) {
+      formData.append("dataset_id", data.datasetId.toString());
+    } else if (data.datasetTitle) {
+      formData.append("dataset_title", data.datasetTitle);
+    }
     const insurer = (
       data.insurerId === 1
         ? "intellicare"

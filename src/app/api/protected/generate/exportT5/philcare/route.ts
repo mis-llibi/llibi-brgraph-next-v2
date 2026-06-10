@@ -7,9 +7,9 @@ import { NextResponse as res, NextRequest } from "next/server";
 
 // This route is for exporting Table 5 data
 type exportT5Request = {
-  startDate: string;
-  endDate: string;
   clientId: number;
+  datasetId: number;
+  title?: string;
 };
 
 export async function POST(req: NextRequest) {
@@ -17,20 +17,12 @@ export async function POST(req: NextRequest) {
     return res.json({ error: "Request body is null" });
   }
   const data: exportT5Request = await req.json();
-  const startDate = data.startDate;
-  const endDate = DateTime.fromISO(data.endDate)
-    .endOf("month")
-    .set({
-      hour: 0,
-      minute: 0,
-      second: 0,
-    })
-    .toFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
   const clientId = data.clientId;
+  const datasetId = data.datasetId;
 
   try {
     const initialData = await prisma.philcare.groupBy({
-      by: ["Member_Type", "Diagnosis", "ICD_10_Code"],
+      by: ["Member_Type", "Diagnosis"],
       _sum: {
         Approved_Claim_Amount: true,
       },
@@ -41,11 +33,8 @@ export async function POST(req: NextRequest) {
         Approved_Claim_Amount: true,
       },
       where: {
-        Admission_Date: {
-          gte: startDate,
-          lte: endDate,
-        },
         clientId,
+        datasetId,
         Approved_Claim_Amount: {
           not: null,
         },
@@ -103,7 +92,7 @@ export async function POST(req: NextRequest) {
 
         return {
           ...payload,
-          ICD_10_Code: data.ICD_10_Code,
+          ICD_10_Code: "",
           claimAmount,
           claimAmount_percentage: finalCA_percentage,
           claimCount,

@@ -29,6 +29,41 @@ export async function GET(req: NextRequest) {
           },
         });
 
+        const datasets = await prisma.datasets.findMany({
+          where: { clientId: client.id },
+          include: {
+            uploads: {
+              where: { clientId: client.id },
+              orderBy: {
+                updatedAt: "desc",
+              },
+            },
+          },
+          orderBy: {
+            title: "asc",
+          },
+        });
+
+        const formattedDatasets = datasets.map((dataset) => {
+          const masterlistUpload = dataset.uploads.find(
+            (upload) => upload.type === "masterlist"
+          );
+          const utilizationUpload = dataset.uploads.find(
+            (upload) => upload.type === "utilization"
+          );
+
+          return {
+            id: dataset.id,
+            title: dataset.title,
+            hasMasterlist: Boolean(masterlistUpload),
+            hasUtilization: Boolean(utilizationUpload),
+            masterlistUploadId: masterlistUpload?.id ?? null,
+            utilizationUploadId: utilizationUpload?.id ?? null,
+            masterlistUpload: masterlistUpload ?? null,
+            utilizationUpload: utilizationUpload ?? null,
+          };
+        });
+
         // const decks = await prisma.decks.findMany({
         //   where: { clientId: client.id },
         // });
@@ -37,6 +72,7 @@ export async function GET(req: NextRequest) {
           ...client,
           masterlist: masterlist,
           utilization: utilization,
+          datasets: formattedDatasets,
           //decks: decks,
         };
 

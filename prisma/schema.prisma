@@ -49,8 +49,37 @@ model insurers{
 
   clients clients[]
   uploads uploads[]
+  datasets datasets[]
 
   @@map("insurers")
+}
+
+model datasets {
+  id Int @id @default(autoincrement())
+  clientId Int
+  insurerId Int
+  title String @db.VarChar(191)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  clients clients @relation(fields: [clientId], references: [id])
+  insurers insurers @relation(fields: [insurerId], references: [id])
+
+  // Dataset records
+  intellicareMasterlist intellicareMasterlist[]
+  maxicareMasterlist maxicareMasterlist[]
+  philcareMasterlist philcareMasterlist[]
+  intellicare intellicare[]
+  maxicare maxicare[]
+  philcare philcare[]
+  uploads uploads[]
+
+  @@unique([clientId, title])
+  @@index([clientId])
+  @@index([insurerId])
+  @@index([title])
+  @@map("datasets")
 }
 
 model clients{
@@ -61,6 +90,7 @@ model clients{
   insurer insurers? @relation(fields: [insurer_id], references: [id])
 
   uploads uploads[]
+  datasets datasets[]
   decks decks[]
   intellicareMasterlist intellicareMasterlist[]
   maxicareMasterlist maxicareMasterlist[]
@@ -77,6 +107,7 @@ model uploads{
   id Int @id @default(autoincrement())
   clientId Int
   insurerId Int
+  datasetId Int?
   year String
   months String?
   type String
@@ -85,6 +116,10 @@ model uploads{
 
   clients clients @relation(fields: [clientId], references: [id])
   insurers insurers @relation(fields: [insurerId], references: [id])
+  datasets datasets? @relation(fields: [datasetId], references: [id], onDelete: Cascade)
+
+  @@index([datasetId])
+  @@map("uploads")
 }
 
 model decks {
@@ -104,6 +139,7 @@ model decks {
 model intellicareMasterlist {
   id Int @id @default(autoincrement())
   clientId Int
+  datasetId Int?
   PY String?
   ACCOUNT_NO String?
   STATUS String? @db.Char(1)
@@ -121,13 +157,16 @@ model intellicareMasterlist {
   updatedAt DateTime @updatedAt
 
   clients clients @relation(fields: [clientId], references: [id])
+  datasets datasets? @relation(fields: [datasetId], references: [id], onDelete: Cascade)
 
+  @@index([datasetId])
   @@map("intellicareMasterlist")
 }
 
 model maxicareMasterlist {
   id Int @id @default(autoincrement())
   clientId Int
+  datasetId Int?
   PY String?
   ACCOUNT_NO String? //POLICYNO
   STATUS String? @db.Char(1) //STATUSDESC
@@ -141,59 +180,33 @@ model maxicareMasterlist {
   updatedAt DateTime @updatedAt
 
   clients clients @relation(fields: [clientId], references: [id])
+  datasets datasets? @relation(fields: [datasetId], references: [id], onDelete: Cascade)
 
+  @@index([datasetId])
   @@map("maxicareMasterlist")
 }
 
 model philcareMasterlist {
   id Int @id @default(autoincrement())
   clientId Int
+  datasetId Int?
   PY String?
-  POLICY_NO String? //Policy No
-  AGREEMENT_NO String? //Agreement No
-  EMPLOYEE_NO String? //Employee No
-  SUB_OFFICE_CODE Int? //Sub Office Code
   SUB_OFFICE_NAME String? @db.VarChar(500) //Sub Office Name
-  CERTIFICATE_NO String? //Certificate No
-  LAST_NAME String? //Last Name
-  FIRST_NAME String? //First Name
-  MI String? //MI
-  MEMBER_ORIG_EFF_DATE DateTime? //Member Orig Eff Date
-  MEMBER_EFF_DATE DateTime? //Member Eff Date
-  GENDER String? //Gender
-  AGE Int? //Age
-  DATE_OF_BIRTH DateTime? //Date Of Birth
-  MARITAL_STATUS String? //Marital Status
   RELATIONSHIP String? //Relationship
-  CLASS_CODE Int? //Class Code
-  CLASS_DEFINITION String? //Class Definition
-  ROOM_TYPE String? //Room Type
-  ROOM_BOARD_MAX_AMT Float? //Room Board Max Amt
-  MEMBER_FEE_PLUS_RIDER Float? //Member Fee Plus Rider
-  DENTAL_CODE String? //Dental Code
-  ACCIDENTAL_RIDER Float? //Accidental Rider
-  ACCIDENTAL_RIDER_COVERAGE_AMT Float? //Accidental Rider Coverage Amount
-  LIFE_RIDER Float? //Life Rider
-  LIFE_RIDER_COVERAGE_AMT Float? //Life Rider Coverage Amount
-  TRAVEL_ASSISTANCE_PROGRAM Float? //Travel Assistance Program
-  TAP_COVERAGE_AMT Float? //TAP Coverage Amount
-  PRE_EXISTING_CODE Int? //Pre-Existing Code
-  MEMBER_STATUS String? //Member Status
-  PAYOR String? //Payor
-  MEMBER_COVERAGE String? //Member Coverage
-  REMARKS String? //Remarks
-  ACCOUNT_TYPE String? //Account Type
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   clients clients @relation(fields: [clientId], references: [id])
+  datasets datasets? @relation(fields: [datasetId], references: [id], onDelete: Cascade)
 
+  @@index([datasetId])
   @@map("philcareMasterlist")
 }
 
 model intellicare {
   id Int @id @default(autoincrement())
   clientId Int
+  datasetId Int?
   PY String
   Company String? @db.VarChar(500)
   Member_Account String?
@@ -213,13 +226,16 @@ model intellicare {
   updatedAt DateTime @updatedAt
   
   clients clients @relation(fields: [clientId], references: [id])
+  datasets datasets? @relation(fields: [datasetId], references: [id], onDelete: Cascade)
 
+  @@index([datasetId])
   @@map("intellicare")
 }
 
 model maxicare {
   id Int @id @default(autoincrement())
   clientId Int
+  datasetId Int?
   PY String
   Company String? @db.VarChar(500)
   Member_Account String? //Member_ID
@@ -236,34 +252,36 @@ model maxicare {
   updatedAt DateTime @updatedAt
   
   clients clients @relation(fields: [clientId], references: [id])
+  datasets datasets? @relation(fields: [datasetId], references: [id], onDelete: Cascade)
 
+  @@index([datasetId])
   @@map("maxicare")
 }
 
 model philcare {
   id Int @id @default(autoincrement())
   clientId Int
+  datasetId Int?
   PY String
   Company String? @db.VarChar(500) //Company
   Member_Account String? //Claim No
   Member_Type String? //Derived from Relation or IP/OP
-  ICD_10_Code String? //Not available in current format
   Diagnosis String? @db.VarChar(1000) //Diagnosis
   Claim_Type String? //IP/OP
   Admission_Date DateTime? //Date From
   Provider_Name String? @db.VarChar(500) //Provider
-  Provider_Type String? //Not available, could be derived
   Approved_Claim_Amount Float? @db.Double //Utilization
   Relationship String? //Relation
   // Philcare-specific fields
   LOS Int? //LOS (Length of Stay)
-  IP_OP String? //IP/OP
   NR_R String? //NR/R (Non-Reimbursable/Reimbursable)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   
   clients clients @relation(fields: [clientId], references: [id])
+  datasets datasets? @relation(fields: [datasetId], references: [id], onDelete: Cascade)
 
+  @@index([datasetId])
   @@map("philcare")
 }
 
@@ -287,5 +305,4 @@ model customIllnesses{
 
   @@map("customIllnesses")
 }
-
 

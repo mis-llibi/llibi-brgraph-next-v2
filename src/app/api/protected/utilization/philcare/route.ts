@@ -4,6 +4,10 @@ import { requireAuth, requirePermission } from "@/lib/auth-middleware";
 import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
 import { DateTime } from "luxon";
 import { readFile, deleteFile, saveFile } from "@/lib/s3";
+import {
+  getDatasetSelection,
+  resolveDatasetForUpload,
+} from "@/lib/datasets";
 
 import { NextResponse as res, NextRequest } from "next/server";
 
@@ -93,11 +97,21 @@ export async function POST(req: NextRequest) {
     const formData = await req.formData();
     const file = formData.get("file") as File;
     const clientId = formData.get("id");
-    const year = formData.get("year") as string;
     const insurerId = formData.get("insurerId");
-    if (!clientId || !year || !insurerId || !file) {
+
+    if (!clientId || !insurerId || !file) {
       return res.json({ error: "Missing required fields" });
     }
+
+    const { datasetId, datasetTitle } = getDatasetSelection(formData);
+    const resolvedDataset = await resolveDatasetForUpload({
+      clientId: +clientId,
+      insurerId: +insurerId,
+      datasetId,
+      datasetTitle,
+    });
+
+    const datasetPy = resolvedDataset.title;
 
     if (file) {
       console.log("Uploading Philcare utilization file...");
@@ -138,13 +152,6 @@ export async function POST(req: NextRequest) {
         });
 
         console.log("Philcare headers found:", headers);
-
-        const yearStartDate = DateTime.fromFormat(year, "yyyy")
-          .startOf("year")
-          .toFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
-        const yearEndDate = DateTime.fromFormat(year, "yyyy")
-          .endOf("year")
-          .toFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
 
         // Validate that all required columns are present
         const missingColumns = requiredColumns.filter(
@@ -210,21 +217,19 @@ export async function POST(req: NextRequest) {
           });
 
           // Set standard fields
-          rowObject.PY = year;
+          rowObject.PY = datasetPy;
+          rowObject.datasetId = resolvedDataset.id;
           rowObject.clientId = +clientId;
           worksheetData.push(rowObject);
         });
 
         try {
           await prisma.$transaction(async (tx) => {
-            // Delete existing utilization data for the year
+            // Replace utilization data for this dataset
             await tx.philcare.deleteMany({
               where: {
                 clientId: +clientId,
-                Admission_Date: {
-                  gte: yearStartDate,
-                  lte: yearEndDate,
-                },
+                datasetId: resolvedDataset.id,
               },
             });
 
@@ -233,7 +238,7 @@ export async function POST(req: NextRequest) {
               where: {
                 clientId: +clientId,
                 insurerId: +insurerId,
-                year: year,
+                datasetId: resolvedDataset.id,
                 type: "utilization",
               },
             });
@@ -298,20 +303,6 @@ export async function POST(req: NextRequest) {
                   }. Expected Date object or string, got: ${typeof typedData.Admission_Date}. Value: ${
                     typedData.Admission_Date
                   }`,
-                );
-              }
-
-              // Check if Admission_Date is within the year
-              if (
-                admissionDate < DateTime.fromISO(yearStartDate) ||
-                admissionDate > DateTime.fromISO(yearEndDate)
-              ) {
-                throw new Error(
-                  `Admission Date in row ${
-                    idx + 1
-                  } is not within the year ${year}. Date: ${admissionDate.toFormat(
-                    "yyyy-MM-dd",
-                  )}`,
                 );
               }
 
@@ -403,6 +394,8 @@ export async function POST(req: NextRequest) {
               }
 
               typedData.clientId = +clientId;
+              typedData.datasetId = resolvedDataset.id;
+              typedData.PY = datasetPy;
             });
 
             // Insert all data to philcare table
@@ -423,7 +416,8 @@ export async function POST(req: NextRequest) {
               data: {
                 clientId: +clientId,
                 insurerId: +insurerId,
-                year: year,
+                datasetId: resolvedDataset.id,
+                year: datasetPy,
                 months:
                   months.length > 0
                     ? months[0] + "-" + months[months.length - 1]

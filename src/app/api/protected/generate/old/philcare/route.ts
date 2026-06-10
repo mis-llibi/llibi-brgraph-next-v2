@@ -1,7 +1,6 @@
 export const dynamic = "force-dynamic";
 import { prisma } from "@/lib/prisma";
 import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
-import { DateTime } from "luxon";
 
 import { NextResponse as res, NextRequest } from "next/server";
 
@@ -16,12 +15,10 @@ const calculatePercentage = (part: number, total: number): number => {
 // This route is for new account generation for philcare
 
 type generateOneYearRequest = {
-  startDate: string;
-  endDate: string;
-  py: string;
   clientId: number;
-  insurer: string;
-  masterlist: string;
+  insurer_id: number;
+  datasetId: number;
+  title: string;
 };
 
 export async function POST(req: NextRequest) {
@@ -66,16 +63,14 @@ export async function POST(req: NextRequest) {
 const chart1 = async (
   data: generateOneYearRequest
 ): Promise<{ data?: any; error?: any }> => {
-  const py = data.py;
-  const startDate = data.startDate;
-  const endDate = data.endDate;
   const clientId = data.clientId;
+  const datasetId = data.datasetId;
 
   try {
     const result = await prisma.$transaction(async (tx) => {
       // get unique companies
       const companies = await tx.philcareMasterlist.findMany({
-        where: { clientId: clientId, PY: py },
+        where: { clientId: clientId, datasetId },
         select: { SUB_OFFICE_NAME: true },
         distinct: ["SUB_OFFICE_NAME"],
         orderBy: { SUB_OFFICE_NAME: "desc" },
@@ -85,7 +80,7 @@ const chart1 = async (
       const relations = await tx.philcareMasterlist.findMany({
         where: {
           clientId: clientId,
-          PY: py,
+          datasetId,
           RELATIONSHIP: {
             not: "Employee",
           },
@@ -120,7 +115,7 @@ const chart1 = async (
       });
 
       const totalAll = await tx.philcareMasterlist.count({
-        where: { clientId: clientId, PY: py },
+        where: { clientId: clientId, datasetId },
       });
 
       // get employees and dependents count for each company
@@ -130,18 +125,18 @@ const chart1 = async (
             where: {
               clientId: clientId,
               SUB_OFFICE_NAME: company.SUB_OFFICE_NAME,
-              CLASS_DEFINITION: "EMPLOYEES",
-              PY: py,
+              RELATIONSHIP: "Employee",
+              datasetId,
             },
           });
           const dependents = await tx.philcareMasterlist.count({
             where: {
               clientId: clientId,
               SUB_OFFICE_NAME: company.SUB_OFFICE_NAME,
-              CLASS_CODE: {
-                in: [2, 3],
+              RELATIONSHIP: {
+                not: "Employee",
               },
-              PY: py,
+              datasetId,
             },
           });
           const total = employees + dependents;
@@ -153,10 +148,7 @@ const chart1 = async (
                   clientId: clientId,
                   SUB_OFFICE_NAME: company.SUB_OFFICE_NAME,
                   RELATIONSHIP: relation.RELATIONSHIP,
-                  CLASS_CODE: {
-                    in: [2, 3],
-                  },
-                  PY: py,
+                  datasetId,
                 },
               });
 
@@ -298,17 +290,8 @@ const chart1 = async (
 const chart2 = async (
   data: generateOneYearRequest
 ): Promise<{ data?: any; error?: any }> => {
-  const py = data.py;
-  const startDate = data.startDate;
-  const endDate = DateTime.fromISO(data.endDate)
-    .endOf("month")
-    .set({
-      hour: 0,
-      minute: 0,
-      second: 0,
-    })
-    .toFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
   const clientId = data.clientId;
+  const datasetId = data.datasetId;
 
   const totalClaimAmount = await prisma.philcare.aggregate({
     _sum: {
@@ -318,22 +301,18 @@ const chart2 = async (
       Approved_Claim_Amount: true,
     },
     where: {
-      Admission_Date: {
-        gte: startDate,
-        lte: endDate,
-        not: null,
-      },
       clientId,
+      datasetId,
+      Admission_Date: {
+            not: null,
+          },
     },
   });
 
   const claimCount = await prisma.philcare.count({
     where: {
-      Admission_Date: {
-        gte: startDate,
-        lte: endDate,
-      },
       clientId,
+      datasetId,
     },
   });
 
@@ -348,17 +327,8 @@ const chart2 = async (
 const chart3 = async (
   data: generateOneYearRequest
 ): Promise<{ data?: any; error?: any }> => {
-  const py = data.py;
-  const startDate = data.startDate;
-  const endDate = DateTime.fromISO(data.endDate)
-    .endOf("month")
-    .set({
-      hour: 0,
-      minute: 0,
-      second: 0,
-    })
-    .toFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
   const clientId = data.clientId;
+  const datasetId = data.datasetId;
 
   try {
     const result = await prisma.$transaction(async (tx) => {
@@ -375,9 +345,8 @@ const chart3 = async (
         },
         where: {
           clientId,
+          datasetId,
           Admission_Date: {
-            gte: startDate,
-            lte: endDate,
             not: null,
           },
           Approved_Claim_Amount: {
@@ -435,11 +404,10 @@ const chart3 = async (
       },
       where: {
         clientId,
+        datasetId,
         Admission_Date: {
-          gte: startDate,
-          lte: endDate,
-          not: null,
-        },
+            not: null,
+          },
         Approved_Claim_Amount: {
           not: null,
         },
@@ -567,17 +535,8 @@ const chart3 = async (
 const chart4 = async (
   data: generateOneYearRequest
 ): Promise<{ data?: any; error?: any }> => {
-  const py = data.py;
-  const startDate = data.startDate;
-  const endDate = DateTime.fromISO(data.endDate)
-    .endOf("month")
-    .set({
-      hour: 0,
-      minute: 0,
-      second: 0,
-    })
-    .toFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
   const clientId = data.clientId;
+  const datasetId = data.datasetId;
 
   try {
     const result = await prisma.$transaction(async (tx) => {
@@ -594,9 +553,8 @@ const chart4 = async (
         },
         where: {
           clientId,
+          datasetId,
           Admission_Date: {
-            gte: startDate,
-            lte: endDate,
             not: null,
           },
           Approved_Claim_Amount: {
@@ -616,7 +574,7 @@ const chart4 = async (
           where: {
             clientId,
             RELATIONSHIP: data.Relationship,
-            PY: py,
+            datasetId,
           },
         });
         const personAverage = Math.round(claimAmount / headcount);
@@ -670,17 +628,8 @@ const chart4 = async (
 const chart5 = async (
   data: generateOneYearRequest
 ): Promise<{ data?: any; error?: any }> => {
-  const py = data.py;
-  const startDate = data.startDate;
-  const endDate = DateTime.fromISO(data.endDate)
-    .endOf("month")
-    .set({
-      hour: 0,
-      minute: 0,
-      second: 0,
-    })
-    .toFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
   const clientId = data.clientId;
+  const datasetId = data.datasetId;
 
   try {
     const initialData = await prisma.philcare.groupBy({
@@ -695,11 +644,10 @@ const chart5 = async (
         Approved_Claim_Amount: true,
       },
       where: {
-        Admission_Date: {
-          gte: startDate,
-          lte: endDate,
-        },
+
         clientId,
+
+        datasetId,
         Approved_Claim_Amount: {
           not: null,
         },
@@ -794,11 +742,10 @@ const chart5 = async (
         Approved_Claim_Amount: true,
       },
       where: {
-        Admission_Date: {
-          gte: startDate,
-          lte: endDate,
-        },
+
         clientId,
+
+        datasetId,
         Approved_Claim_Amount: {
           not: null,
         },
@@ -871,17 +818,8 @@ const chart5 = async (
 const chart6 = async (
   data: generateOneYearRequest
 ): Promise<{ data?: any; error?: any }> => {
-  const py = data.py;
-  const startDate = data.startDate;
-  const endDate = DateTime.fromISO(data.endDate)
-    .endOf("month")
-    .set({
-      hour: 0,
-      minute: 0,
-      second: 0,
-    })
-    .toFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
   const clientId = data.clientId;
+  const datasetId = data.datasetId;
 
   try {
     const initialData = await prisma.philcare.groupBy({
@@ -896,11 +834,10 @@ const chart6 = async (
         Approved_Claim_Amount: true,
       },
       where: {
-        Admission_Date: {
-          gte: startDate,
-          lte: endDate,
-        },
+
         clientId,
+
+        datasetId,
         Approved_Claim_Amount: {
           not: null,
         },
@@ -994,11 +931,10 @@ const chart6 = async (
         Approved_Claim_Amount: true,
       },
       where: {
-        Admission_Date: {
-          gte: startDate,
-          lte: endDate,
-        },
+
         clientId,
+
+        datasetId,
         Approved_Claim_Amount: {
           not: null,
         },

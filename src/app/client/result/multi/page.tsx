@@ -247,8 +247,8 @@ const Page = () => {
                   `/generate/exportT5/${insurer.toLowerCase()}`,
                   {
                     clientId: data.lastData.clientId,
-                    startDate: data.lastData.startDate,
-                    endDate: data.lastData.endDate,
+                    datasetId: data.lastData.datasetId,
+                    title: data.lastData.title,
                   },
                   {
                     responseType: "blob",

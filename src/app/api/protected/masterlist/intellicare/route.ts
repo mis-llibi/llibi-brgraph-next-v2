@@ -6,6 +6,10 @@ import { Workbook } from "exceljs";
 import { DateTime } from "luxon";
 import { s3 } from "@/lib/s3";
 import { env } from "@/lib/env";
+import {
+  getDatasetSelection,
+  resolveDatasetForUpload,
+} from "@/lib/datasets";
 
 import { NextResponse, NextRequest } from "next/server";
 import {
@@ -24,6 +28,7 @@ interface IntellicareRowData {
   PREEXIST?: string | number;
   LIMIT?: string | number;
   clientId?: number;
+  datasetId?: number;
 }
 
 /* This route and any of its subroutes is designed for anything related to Intellicare */
@@ -50,11 +55,17 @@ export async function POST(req: NextRequest) {
     const formData = await req.formData();
     const file = formData.get("file") as File;
     const clientId = formData.get("id");
-    const year = formData.get("year");
     const insurerId = formData.get("insurerId");
-    if (!clientId || !year || !insurerId || !file) {
+    if (!clientId || !insurerId || !file) {
       return NextResponse.json({ error: "Missing required fields" });
     }
+    const { datasetId, datasetTitle } = getDatasetSelection(formData);
+    const resolvedDataset = await resolveDatasetForUpload({
+      clientId: +clientId,
+      insurerId: +insurerId,
+      datasetId,
+      datasetTitle,
+    });
 
     if (file) {
       console.log("Uploading File...");
@@ -81,7 +92,7 @@ export async function POST(req: NextRequest) {
           "CARD_NO",
           "COMPANY",
         ];
-        const requiredColumns = ["PY", "COMPANY", "MEMBER_TYPE", "RELATION"];
+        const requiredColumns = ["COMPANY", "MEMBER_TYPE", "RELATION"];
         // get headers first (from 1st column)
         worksheet.getRow(1).eachCell({ includeEmpty: true }, (cell) => {
           let header = cell.value?.toString() || "";
@@ -119,11 +130,11 @@ export async function POST(req: NextRequest) {
         try {
           // prisma transaction
           await prisma.$transaction(async (tx) => {
-            // delete all masterlist with the same PY
+            // Replace only the masterlist data for this dataset.
             await tx.intellicareMasterlist.deleteMany({
               where: {
                 clientId: +clientId,
-                PY: worksheetData[0]?.PY as string,
+                datasetId: resolvedDataset.id,
               },
             });
 
@@ -131,24 +142,13 @@ export async function POST(req: NextRequest) {
               where: {
                 clientId: +clientId,
                 insurerId: +insurerId,
-                year: year as string,
+                datasetId: resolvedDataset.id,
+                type: "masterlist",
               },
             });
 
             worksheetData.forEach((data, idx) => {
               const rowNumber = idx + 2;
-
-              if (!data.PY || !data.PY.toString().trim()) {
-                throw new Error(
-                  `Missing required field PY at row ${rowNumber}. Value: "${data.PY}"`,
-                );
-              }
-
-              if (data.PY !== (year as string)) {
-                throw new Error(
-                  `PY does not match the year at row ${rowNumber}. Column: PY. Value: "${data.PY}"`,
-                );
-              }
 
               if (
                 data.STATUS &&
@@ -219,6 +219,8 @@ export async function POST(req: NextRequest) {
               }
 
               data.clientId = +clientId;
+              data.datasetId = resolvedDataset.id;
+              data.PY = resolvedDataset.title;
             });
 
             // insert all data to masterlist
@@ -231,7 +233,8 @@ export async function POST(req: NextRequest) {
               data: {
                 clientId: +clientId,
                 insurerId: +insurerId,
-                year: year as string,
+                datasetId: resolvedDataset.id,
+                year: resolvedDataset.title,
                 type: "masterlist",
               },
             });

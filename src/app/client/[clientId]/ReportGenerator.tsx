@@ -20,8 +20,8 @@ const ReportGenerator = ({ client }: Props) => {
             <div>
               <h3 className="text-lg text-slate-800">Demographics</h3>
               <p className="text-sm text-slate-800">
-                Select if you want to generate from a New or Old Account and
-                select the year and month to generate the BR report
+                Select one complete dataset or compare multiple complete
+                datasets.
               </p>
 
               <div className="flex flex-row items-center">
@@ -35,7 +35,7 @@ const ReportGenerator = ({ client }: Props) => {
                     setSelectedAccount("new");
                   }}
                 >
-                  One Year
+                  Single
                 </button>
                 <button
                   className={` font-bold px-4 rounded h-10 mt-4 w-34 mr-4 ${
@@ -47,7 +47,7 @@ const ReportGenerator = ({ client }: Props) => {
                     setSelectedAccount("old");
                   }}
                 >
-                  2+ Years
+                  Comparative
                 </button>
               </div>
             </div>

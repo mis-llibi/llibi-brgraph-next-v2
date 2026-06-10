@@ -1,16 +1,12 @@
 "use client";
-import Swal from "sweetalert2";
 import apiClient from "@/lib/axios";
 import { convertInsurer } from "@/lib/insurers";
 
 export type generateOneYearRequest = {
   insurer_id: number;
-  startDate: string;
-  endDate: string;
-  py: string;
   clientId: number;
-  insurer: string;
-  masterlist: string;
+  datasetId: number;
+  title: string;
 };
 
 export const generateOneYear = async (

@@ -1,19 +1,16 @@
 export const dynamic = "force-dynamic";
 import { prisma } from "@/lib/prisma";
 import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
-import { DateTime } from "luxon";
 
 import { NextResponse as res, NextRequest } from "next/server";
 
 // This route is for new account generation for maxicare
 
 type generateOneYearRequest = {
-  startDate: string;
-  endDate: string;
-  py: string;
   clientId: number;
-  insurer: string;
-  masterlist: string;
+  insurer_id: number;
+  datasetId: number;
+  title: string;
 };
 
 export async function POST(req: NextRequest) {
@@ -43,18 +40,16 @@ export async function POST(req: NextRequest) {
 }
 
 const chart1 = async (
-  data: generateOneYearRequest
+  data: generateOneYearRequest,
 ): Promise<{ data?: any; error?: any }> => {
-  const py = data.py;
-  const startDate = data.startDate;
-  const endDate = data.endDate;
   const clientId = data.clientId;
+  const datasetId = data.datasetId;
 
   try {
     const result = await prisma.$transaction(async (tx) => {
       // get unique companies
       const companies = await tx.philcareMasterlist.findMany({
-        where: { clientId: clientId, PY: py },
+        where: { clientId: clientId, datasetId },
         select: { SUB_OFFICE_NAME: true },
         distinct: ["SUB_OFFICE_NAME"],
         orderBy: { SUB_OFFICE_NAME: "desc" },
@@ -64,7 +59,7 @@ const chart1 = async (
       const relations = await tx.philcareMasterlist.findMany({
         where: {
           clientId: clientId,
-          PY: py,
+          datasetId,
           RELATIONSHIP: {
             not: "Employee",
           },
@@ -85,21 +80,21 @@ const chart1 = async (
       // order by spouse, child, parent, sibling
       const sortedRelations = relations.sort((a, b) => {
         const aPriority = a.RELATIONSHIP
-          ? priorityOrder[
+          ? (priorityOrder[
               a.RELATIONSHIP.toLowerCase() as keyof typeof priorityOrder
-            ] ?? 99
+            ] ?? 99)
           : 99; // Default priority for unknown values
         const bPriority = b.RELATIONSHIP
-          ? priorityOrder[
+          ? (priorityOrder[
               b.RELATIONSHIP.toLowerCase() as keyof typeof priorityOrder
-            ] ?? 99
+            ] ?? 99)
           : 99;
 
         return aPriority - bPriority;
       });
 
       const totalAll = await tx.philcareMasterlist.count({
-        where: { clientId: clientId, PY: py },
+        where: { clientId: clientId, datasetId },
       });
 
       // get employees and dependents count for each company
@@ -109,33 +104,37 @@ const chart1 = async (
             where: {
               clientId: clientId,
               SUB_OFFICE_NAME: company.SUB_OFFICE_NAME,
-              CLASS_DEFINITION: "EMPLOYEES",
-              PY: py,
+              RELATIONSHIP: "Employee",
+              datasetId,
             },
           });
           const dependents = await tx.philcareMasterlist.count({
             where: {
               clientId: clientId,
               SUB_OFFICE_NAME: company.SUB_OFFICE_NAME,
-              CLASS_CODE: {
-                in: [2, 3],
+              RELATIONSHIP: {
+                not: "Employee",
               },
-              PY: py,
+              datasetId,
             },
           });
           const total = employees + dependents;
           const detailedDependents = await Promise.all(
             sortedRelations.map(async (relation) => {
-              if (relation.RELATIONSHIP?.toLowerCase() === "principal") return;
+              if (
+                relation &&
+                relation.RELATIONSHIP &&
+                ["Principal", "Employee"].includes(
+                  relation.RELATIONSHIP.toLowerCase(),
+                )
+              )
+                return;
               const count = await tx.philcareMasterlist.count({
                 where: {
                   clientId: clientId,
                   SUB_OFFICE_NAME: company.SUB_OFFICE_NAME,
                   RELATIONSHIP: relation.RELATIONSHIP,
-                  CLASS_CODE: {
-                    in: [2, 3],
-                  },
-                  PY: py,
+                  datasetId,
                 },
               });
 
@@ -153,7 +152,7 @@ const chart1 = async (
               }
 
               return payload;
-            })
+            }),
           );
           const calculatePercentage = (value: number, total: number) => {
             const percentage = (value / total) * 100;
@@ -172,64 +171,64 @@ const chart1 = async (
             spouse: detailedDependents[0]?.spouse ?? 0,
             spouse_percentage: calculatePercentage(
               detailedDependents[0]?.spouse ?? 0,
-              totalAll
+              totalAll,
             ),
             child: detailedDependents[1]?.child ?? 0,
             child_percentage: calculatePercentage(
               detailedDependents[1]?.child ?? 0,
-              totalAll
+              totalAll,
             ),
             parent: detailedDependents[2]?.parent ?? 0,
             parent_percentage: calculatePercentage(
               detailedDependents[2]?.parent ?? 0,
-              totalAll
+              totalAll,
             ),
             sibling: detailedDependents[3]?.sibling ?? 0,
             sibling_percentage: calculatePercentage(
               detailedDependents[3]?.sibling ?? 0,
-              totalAll
+              totalAll,
             ),
             other: detailedDependents[4]?.other ?? 0,
             other_percentage: calculatePercentage(
               detailedDependents[4]?.other ?? 0,
-              totalAll
+              totalAll,
             ),
             companyTotal: total,
             companyTotalPercentage: calculatePercentage(total, totalAll),
           };
 
           return payload;
-        })
+        }),
       );
 
       // get total employees and dependents count
       const totalEmployees = companyData.reduce(
         (acc, company) => acc + company.employees,
-        0
+        0,
       );
       const totalDependents = companyData.reduce(
         (acc, company) => acc + company.dependents,
-        0
+        0,
       );
       const totalSpouse = companyData.reduce(
         (acc, company) => acc + company.spouse,
-        0
+        0,
       );
       const totalChild = companyData.reduce(
         (acc, company) => acc + company.child,
-        0
+        0,
       );
       const totalParent = companyData.reduce(
         (acc, company) => acc + company.parent,
-        0
+        0,
       );
       const totalSibling = companyData.reduce(
         (acc, company) => acc + company.sibling,
-        0
+        0,
       );
       const totalOther = companyData.reduce(
         (acc, company) => acc + company.other,
-        0
+        0,
       );
 
       const total = totalEmployees + totalDependents;
@@ -245,18 +244,18 @@ const chart1 = async (
       // get total employees and dependents percentage
       const totalEmployeesPercentage = calculatePercentage(
         totalEmployees,
-        totalAll
+        totalAll,
       );
       const totalDependentsPercentage = calculatePercentage(
         totalDependents,
-        totalAll
+        totalAll,
       );
       const totalSpousePercentage = calculatePercentage(totalSpouse, totalAll);
       const totalChildPercentage = calculatePercentage(totalChild, totalAll);
       const totalParentPercentage = calculatePercentage(totalParent, totalAll);
       const totalSiblingPercentage = calculatePercentage(
         totalSibling,
-        totalAll
+        totalAll,
       );
       const totalOtherPercentage = calculatePercentage(totalOther, totalAll);
 
@@ -302,19 +301,10 @@ const chart1 = async (
 };
 
 const chart2 = async (
-  data: generateOneYearRequest
+  data: generateOneYearRequest,
 ): Promise<{ data?: any; error?: any }> => {
-  const py = data.py;
-  const startDate = data.startDate;
-  const endDate = DateTime.fromISO(data.endDate)
-    .endOf("month")
-    .set({
-      hour: 0,
-      minute: 0,
-      second: 0,
-    })
-    .toFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
   const clientId = data.clientId;
+  const datasetId = data.datasetId;
 
   const totalClaimAmount = await prisma.philcare.aggregate({
     _sum: {
@@ -324,22 +314,18 @@ const chart2 = async (
       Approved_Claim_Amount: true,
     },
     where: {
-      Admission_Date: {
-        gte: startDate,
-        lte: endDate,
-        not: null,
-      },
       clientId,
+      datasetId,
+      Admission_Date: {
+            not: null,
+          },
     },
   });
 
   const claimCount = await prisma.philcare.count({
     where: {
-      Admission_Date: {
-        gte: startDate,
-        lte: endDate,
-      },
       clientId,
+      datasetId,
     },
   });
 
@@ -352,19 +338,10 @@ const chart2 = async (
 };
 
 const chart3 = async (
-  data: generateOneYearRequest
+  data: generateOneYearRequest,
 ): Promise<{ data?: any; error?: any }> => {
-  const py = data.py;
-  const startDate = data.startDate;
-  const endDate = DateTime.fromISO(data.endDate)
-    .endOf("month")
-    .set({
-      hour: 0,
-      minute: 0,
-      second: 0,
-    })
-    .toFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
   const clientId = data.clientId;
+  const datasetId = data.datasetId;
 
   try {
     const result = await prisma.$transaction(async (tx) => {
@@ -381,9 +358,8 @@ const chart3 = async (
         },
         where: {
           clientId,
+          datasetId,
           Admission_Date: {
-            gte: startDate,
-            lte: endDate,
             not: null,
           },
           Approved_Claim_Amount: {
@@ -404,7 +380,7 @@ const chart3 = async (
         const claimAmount = Math.round(data._sum.Approved_Claim_Amount ?? 0);
         const claimCount = data._count.Approved_Claim_Amount;
         const averageClaimAmount = Math.round(
-          data._avg.Approved_Claim_Amount ?? 0
+          data._avg.Approved_Claim_Amount ?? 0,
         );
         const { _sum, _count, _avg, ...payload } = data;
         return {
@@ -420,13 +396,20 @@ const chart3 = async (
 
     const totalClaimAmount = result.reduce(
       (acc, company) => acc + company.claimAmount,
-      0
+      0,
     );
 
     const totalClaimCount = result.reduce(
       (acc, company) => acc + company.claimCount,
-      0
+      0,
     );
+
+    const companyCount = result.reduce((acc, company) => {
+      if (company.Company && !acc.includes(company.Company)) {
+        acc.push(company.Company);
+      }
+      return acc;
+    }, [] as string[]);
 
     const combinedData = await prisma.philcare.groupBy({
       by: ["Claim_Type"],
@@ -441,37 +424,42 @@ const chart3 = async (
       },
       where: {
         clientId,
+        datasetId,
         Admission_Date: {
-          gte: startDate,
-          lte: endDate,
-          not: null,
-        },
+            not: null,
+          },
         Approved_Claim_Amount: {
           not: null,
         },
       },
     });
 
-    const combinedDataCompany = combinedData.map((data, idx) => {
-      const claimAmount = Math.round(data._sum.Approved_Claim_Amount ?? 0);
-      const claimCount = data._count.Approved_Claim_Amount;
-      const averageClaimAmount = Math.round(
-        data._avg.Approved_Claim_Amount ?? 0
-      );
-      const { _sum, _count, _avg, ...payload } = data;
-      return {
-        Company: "Combined",
-        ...payload,
-        claimAmount,
-        claimCount,
-        averageClaimAmount,
-      };
-    });
+    let combinedDataCompany;
 
-    const combinedResult = [...result, ...combinedDataCompany].map((data) => ({
-      ...data,
-      Company: data.Company ?? "Unknown Company", // Replace null with a default value
-    }));
+    if (companyCount.length > 1) {
+      combinedDataCompany = combinedData.map((data, idx) => {
+        const claimAmount = Math.round(data._sum.Approved_Claim_Amount ?? 0);
+        const claimCount = data._count.Approved_Claim_Amount;
+        const averageClaimAmount = Math.round(
+          data._avg.Approved_Claim_Amount ?? 0,
+        );
+        const { _sum, _count, _avg, ...payload } = data;
+        return {
+          Company: "Combined",
+          ...payload,
+          claimAmount,
+          claimCount,
+          averageClaimAmount,
+        };
+      });
+    }
+
+    const combinedResult = [...result, ...(combinedDataCompany || [])].map(
+      (data) => ({
+        ...data,
+        Company: data.Company ?? "Unknown Company", // Replace null with a default value
+      }),
+    );
 
     const uniqueCompanies = [
       ...new Set(combinedResult.map((data) => data.Company)),
@@ -479,18 +467,18 @@ const chart3 = async (
 
     const companyTotals = uniqueCompanies.map((company) => {
       const companyData = combinedResult.filter(
-        (data) => data.Company === company
+        (data) => data.Company === company,
       );
       const claimAmount = companyData.reduce(
         (acc, data) => acc + data.claimAmount,
-        0
+        0,
       );
       const claimCount = companyData.reduce(
         (acc, data) => acc + data.claimCount,
-        0
+        0,
       );
       const claimAmount_percentage = Math.round(
-        (claimAmount / totalClaimAmount) * 100
+        (claimAmount / totalClaimAmount) * 100,
       );
       const claimAmountAverage = Math.round(claimAmount / claimCount);
       const finalCA_percentage =
@@ -498,12 +486,12 @@ const chart3 = async (
           ? Number(
               (
                 Math.round((claimAmount / totalClaimAmount) * 100 * 100) / 100
-              ).toFixed(1)
+              ).toFixed(1),
             )
           : claimAmount_percentage;
 
       const claimCount_percentage = Math.round(
-        (claimCount / totalClaimCount) * 100
+        (claimCount / totalClaimCount) * 100,
       );
       return {
         Company: company,
@@ -521,7 +509,7 @@ const chart3 = async (
 
     const payload = combinedResult.map((data, idx) => {
       const claimAmount_percentage = Math.round(
-        (data.claimAmount / totalClaimAmount) * 100
+        (data.claimAmount / totalClaimAmount) * 100,
       );
       const finalCA_percentage =
         claimAmount_percentage === 0 && data.claimAmount !== 0
@@ -529,7 +517,7 @@ const chart3 = async (
               (
                 Math.round((data.claimAmount / totalClaimAmount) * 100 * 100) /
                 100
-              ).toFixed(1)
+              ).toFixed(1),
             )
           : claimAmount_percentage;
 
@@ -537,7 +525,7 @@ const chart3 = async (
         ...data,
         claimAmount_percentage: finalCA_percentage,
         claimCount_percentage: Math.round(
-          (data.claimCount / totalClaimCount) * 100
+          (data.claimCount / totalClaimCount) * 100,
         ),
       };
     });
@@ -571,19 +559,10 @@ const chart3 = async (
 };
 
 const chart4 = async (
-  data: generateOneYearRequest
+  data: generateOneYearRequest,
 ): Promise<{ data?: any; error?: any }> => {
-  const py = data.py;
-  const startDate = data.startDate;
-  const endDate = DateTime.fromISO(data.endDate)
-    .endOf("month")
-    .set({
-      hour: 0,
-      minute: 0,
-      second: 0,
-    })
-    .toFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
   const clientId = data.clientId;
+  const datasetId = data.datasetId;
 
   try {
     const result = await prisma.$transaction(async (tx) => {
@@ -600,9 +579,8 @@ const chart4 = async (
         },
         where: {
           clientId,
+          datasetId,
           Admission_Date: {
-            gte: startDate,
-            lte: endDate,
             not: null,
           },
           Approved_Claim_Amount: {
@@ -624,7 +602,7 @@ const chart4 = async (
           where: {
             clientId,
             RELATIONSHIP: data.Relationship,
-            PY: py,
+            datasetId,
           },
         });
         const personAverage = Math.round(claimAmount / headcount);
@@ -652,14 +630,14 @@ const chart4 = async (
 
       const sortedPayload = resolvedPayload.sort((a, b) => {
         const aPriority = a.Relationship
-          ? priorityOrder[
+          ? (priorityOrder[
               a.Relationship.toLowerCase() as keyof typeof priorityOrder
-            ] ?? 99
+            ] ?? 99)
           : 99; // Default priority for unknown values
         const bPriority = b.Relationship
-          ? priorityOrder[
+          ? (priorityOrder[
               b.Relationship.toLowerCase() as keyof typeof priorityOrder
-            ] ?? 99
+            ] ?? 99)
           : 99;
 
         return aPriority - bPriority;
@@ -676,19 +654,10 @@ const chart4 = async (
 };
 
 const chart5 = async (
-  data: generateOneYearRequest
+  data: generateOneYearRequest,
 ): Promise<{ data?: any; error?: any }> => {
-  const py = data.py;
-  const startDate = data.startDate;
-  const endDate = DateTime.fromISO(data.endDate)
-    .endOf("month")
-    .set({
-      hour: 0,
-      minute: 0,
-      second: 0,
-    })
-    .toFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
   const clientId = data.clientId;
+  const datasetId = data.datasetId;
 
   try {
     const initialData = await prisma.philcare.groupBy({
@@ -703,11 +672,10 @@ const chart5 = async (
         Approved_Claim_Amount: true,
       },
       where: {
-        Admission_Date: {
-          gte: startDate,
-          lte: endDate,
-        },
+
         clientId,
+
+        datasetId,
         Approved_Claim_Amount: {
           not: null,
         },
@@ -740,45 +708,45 @@ const chart5 = async (
     const top5Results = Object.keys(groupedByMemberType).flatMap(
       (memberType) => {
         return groupedByMemberType[memberType].slice(0, 5);
-      }
+      },
     );
 
     const totalClaimAmount = initialData.reduce(
       (acc, disease) => acc + (disease._sum.Approved_Claim_Amount ?? 0),
-      0
+      0,
     );
     const totalClaimCount = initialData.reduce(
       (acc, disease) => acc + disease._count.Approved_Claim_Amount,
-      0
+      0,
     );
 
     const processedData = top5Results.map((data) => {
       const claimAmount = Math.round(data._sum.Approved_Claim_Amount ?? 0);
       const claimAmount_percentage = Math.round(
-        (claimAmount / totalClaimAmount) * 100
+        (claimAmount / totalClaimAmount) * 100,
       );
       const finalCA_percentage =
         claimAmount_percentage === 0 && claimAmount !== 0
           ? Number(
               (
                 Math.round((claimAmount / totalClaimAmount) * 100 * 100) / 100
-              ).toFixed(1)
+              ).toFixed(1),
             )
           : claimAmount_percentage;
       const claimCount = data._count.Approved_Claim_Amount;
       const claimCount_percentage = Math.round(
-        (claimCount / totalClaimCount) * 100
+        (claimCount / totalClaimCount) * 100,
       );
       const finalCC_percentage =
         claimCount_percentage === 0 && claimCount !== 0
           ? Number(
               (
                 Math.round((claimCount / totalClaimCount) * 100 * 100) / 100
-              ).toFixed(1)
+              ).toFixed(1),
             )
           : claimCount_percentage;
       const averageClaimAmount = Math.round(
-        data._avg.Approved_Claim_Amount ?? 0
+        data._avg.Approved_Claim_Amount ?? 0,
       );
 
       const { _avg, _count, _sum, ...payload } = data;
@@ -802,11 +770,10 @@ const chart5 = async (
         Approved_Claim_Amount: true,
       },
       where: {
-        Admission_Date: {
-          gte: startDate,
-          lte: endDate,
-        },
+
         clientId,
+
+        datasetId,
         Approved_Claim_Amount: {
           not: null,
         },
@@ -818,27 +785,27 @@ const chart5 = async (
     const totalClaimCountSum = _count.Approved_Claim_Amount ?? 0;
 
     const memberTypes = Array.from(
-      new Set(processedData.map((d) => d.Member_Type))
+      new Set(processedData.map((d) => d.Member_Type)),
     );
     const totals = memberTypes.map((type) => {
       const rows = processedData.filter((d) => d.Member_Type === type);
       const totalClaimAmount = rows.reduce((sum, r) => sum + r.claimAmount, 0);
       const tCA_percentage = Math.round(
-        (totalClaimAmount / totalClaimAmountSum) * 100
+        (totalClaimAmount / totalClaimAmountSum) * 100,
       );
       const finalCA_percentage =
         tCA_percentage === 0 && totalClaimAmount !== 0
           ? Number(
               (
                 Math.round(
-                  (totalClaimAmount / totalClaimAmountSum) * 100 * 100
+                  (totalClaimAmount / totalClaimAmountSum) * 100 * 100,
                 ) / 100
-              ).toFixed(1)
+              ).toFixed(1),
             )
           : tCA_percentage;
       const totalClaimCount = rows.reduce((sum, r) => sum + r.claimCount, 0);
       const tCC_percentage = Math.round(
-        (totalClaimCount / totalClaimCountSum) * 100
+        (totalClaimCount / totalClaimCountSum) * 100,
       );
       const finalCC_percentage =
         tCC_percentage === 0 && totalClaimCount !== 0
@@ -846,7 +813,7 @@ const chart5 = async (
               (
                 Math.round((totalClaimCount / totalClaimCountSum) * 100 * 100) /
                 100
-              ).toFixed(1)
+              ).toFixed(1),
             )
           : tCC_percentage;
 
@@ -877,19 +844,10 @@ const chart5 = async (
 };
 
 const chart6 = async (
-  data: generateOneYearRequest
+  data: generateOneYearRequest,
 ): Promise<{ data?: any; error?: any }> => {
-  const py = data.py;
-  const startDate = data.startDate;
-  const endDate = DateTime.fromISO(data.endDate)
-    .endOf("month")
-    .set({
-      hour: 0,
-      minute: 0,
-      second: 0,
-    })
-    .toFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
   const clientId = data.clientId;
+  const datasetId = data.datasetId;
 
   try {
     const initialData = await prisma.philcare.groupBy({
@@ -904,11 +862,10 @@ const chart6 = async (
         Approved_Claim_Amount: true,
       },
       where: {
-        Admission_Date: {
-          gte: startDate,
-          lte: endDate,
-        },
+
         clientId,
+
+        datasetId,
         Approved_Claim_Amount: {
           not: null,
         },
@@ -941,44 +898,44 @@ const chart6 = async (
     const top5Results = Object.keys(groupedByMemberType).flatMap(
       (memberType) => {
         return groupedByMemberType[memberType].slice(0, 5);
-      }
+      },
     );
 
     const totalClaimAmount = initialData.reduce(
       (acc, provider) => acc + (provider._sum.Approved_Claim_Amount ?? 0),
-      0
+      0,
     );
     const totalClaimCount = initialData.reduce(
       (acc, provider) => acc + provider._count.Approved_Claim_Amount,
-      0
+      0,
     );
     const processedData = top5Results.map((data) => {
       const claimAmount = Math.round(data._sum.Approved_Claim_Amount ?? 0);
       const claimAmount_percentage = Math.round(
-        (claimAmount / totalClaimAmount) * 100
+        (claimAmount / totalClaimAmount) * 100,
       );
       const finalCA_percentage =
         claimAmount_percentage === 0 && claimAmount !== 0
           ? Number(
               (
                 Math.round((claimAmount / totalClaimAmount) * 100 * 100) / 100
-              ).toFixed(1)
+              ).toFixed(1),
             )
           : claimAmount_percentage;
       const claimCount = data._count.Approved_Claim_Amount;
       const claimCount_percentage = Math.round(
-        (claimCount / totalClaimCount) * 100
+        (claimCount / totalClaimCount) * 100,
       );
       const finalCC_percentage =
         claimCount_percentage === 0 && claimCount !== 0
           ? Number(
               (
                 Math.round((claimCount / totalClaimCount) * 100 * 100) / 100
-              ).toFixed(1)
+              ).toFixed(1),
             )
           : claimCount_percentage;
       const averageClaimAmount = Math.round(
-        data._avg.Approved_Claim_Amount ?? 0
+        data._avg.Approved_Claim_Amount ?? 0,
       );
 
       const { _avg, _count, _sum, ...payload } = data;
@@ -1002,11 +959,10 @@ const chart6 = async (
         Approved_Claim_Amount: true,
       },
       where: {
-        Admission_Date: {
-          gte: startDate,
-          lte: endDate,
-        },
+
         clientId,
+
+        datasetId,
         Approved_Claim_Amount: {
           not: null,
         },
@@ -1018,27 +974,27 @@ const chart6 = async (
     const totalClaimCountSum = _count.Approved_Claim_Amount ?? 0;
 
     const memberTypes = Array.from(
-      new Set(processedData.map((d) => d.Member_Type))
+      new Set(processedData.map((d) => d.Member_Type)),
     );
     const totals = memberTypes.map((type) => {
       const rows = processedData.filter((d) => d.Member_Type === type);
       const totalClaimAmount = rows.reduce((sum, r) => sum + r.claimAmount, 0);
       const tCA_percentage = Math.round(
-        (totalClaimAmount / totalClaimAmountSum) * 100
+        (totalClaimAmount / totalClaimAmountSum) * 100,
       );
       const finalCA_percentage =
         tCA_percentage === 0 && totalClaimAmount !== 0
           ? Number(
               (
                 Math.round(
-                  (totalClaimAmount / totalClaimAmountSum) * 100 * 100
+                  (totalClaimAmount / totalClaimAmountSum) * 100 * 100,
                 ) / 100
-              ).toFixed(1)
+              ).toFixed(1),
             )
           : tCA_percentage;
       const totalClaimCount = rows.reduce((sum, r) => sum + r.claimCount, 0);
       const tCC_percentage = Math.round(
-        (totalClaimCount / totalClaimCountSum) * 100
+        (totalClaimCount / totalClaimCountSum) * 100,
       );
       const finalCC_percentage =
         tCC_percentage === 0 && totalClaimCount !== 0
@@ -1046,7 +1002,7 @@ const chart6 = async (
               (
                 Math.round((totalClaimCount / totalClaimCountSum) * 100 * 100) /
                 100
-              ).toFixed(1)
+              ).toFixed(1),
             )
           : tCC_percentage;
 

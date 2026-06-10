@@ -3,7 +3,10 @@ import { prisma } from "@/lib/prisma";
 import { requireAuth, requirePermission } from "@/lib/auth-middleware";
 import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
 import { saveFile, readFile, deleteFile } from "@/lib/s3";
-import { DateTime } from "luxon";
+import {
+  getDatasetSelection,
+  resolveDatasetForUpload,
+} from "@/lib/datasets";
 
 import { NextResponse, NextRequest } from "next/server";
 
@@ -56,11 +59,19 @@ export async function POST(req: NextRequest) {
     const formData = await req.formData();
     const file = formData.get("file") as File;
     const clientId = formData.get("id");
-    const year = formData.get("year");
     const insurerId = formData.get("insurerId");
-    if (!clientId || !year || !insurerId || !file) {
+
+    if (!clientId || !insurerId || !file) {
       return NextResponse.json({ error: "Missing required fields" });
     }
+
+    const { datasetId, datasetTitle } = getDatasetSelection(formData);
+    const resolvedDataset = await resolveDatasetForUpload({
+      clientId: +clientId,
+      insurerId: +insurerId,
+      datasetId,
+      datasetTitle,
+    });
 
     const company = await prisma.clients.findFirst({
       select: {
@@ -84,50 +95,8 @@ export async function POST(req: NextRequest) {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const worksheetData: any[] = [];
         const headers: string[] = [];
-        const keep = [
-          "Policy No",
-          "Agreement No",
-          "Employee No",
-          "Sub Office Code",
-          "Sub Office Name",
-          "Certificate No",
-          "Last Name",
-          "First Name",
-          "MI",
-          "Member Orig Eff Date",
-          "Member Eff Date",
-          "Gender",
-          "Age",
-          "Date Of Birth",
-          "Marital Status",
-          "Relationship",
-          "Class Code",
-          "Class Definition",
-          "Room Type",
-          "Room Board Max Amt",
-          "Member Fee Plus Rider",
-          "Dental Code",
-          "Accidental Rider",
-          "Accidental Rider Coverage Amount",
-          "Life Rider",
-          "Life Rider Coverage Amount",
-          "Travel Assistance Program",
-          "TAP Coverage Amount",
-          "Pre-Existing Code",
-          "Member Status",
-          "Payor",
-          "Member Coverage",
-          "Remarks",
-          "Account Type",
-          "PY",
-        ];
-        const requiredColumns = [
-          "PY",
-          "Sub Office Name",
-          "Class Definition",
-          "Class Code",
-          "Relationship",
-        ];
+        const keep = ["Sub Office Name", "Relationship"];
+        const requiredColumns = ["Sub Office Name", "Relationship"];
 
         // get headers first (from 1st row)
         worksheet.getRow(1).eachCell({ includeEmpty: true }, (cell) => {
@@ -158,135 +127,34 @@ export async function POST(req: NextRequest) {
 
             // Map Excel column names to database field names
             switch (headerName) {
-              case "Policy No":
-                rowObject.POLICY_NO = cell.value;
-                break;
-              case "Agreement No":
-                rowObject.AGREEMENT_NO = cell.value;
-                break;
-              case "Employee No":
-                rowObject.EMPLOYEE_NO = cell.value;
-                break;
-              case "Sub Office Code":
-                rowObject.SUB_OFFICE_CODE = cell.value;
-                break;
               case "Sub Office Name":
                 rowObject.SUB_OFFICE_NAME = cell.value;
-                break;
-              case "Certificate No":
-                rowObject.CERTIFICATE_NO = cell.value;
-                break;
-              case "Last Name":
-                rowObject.LAST_NAME = cell.value;
-                break;
-              case "First Name":
-                rowObject.FIRST_NAME = cell.value;
-                break;
-              case "MI":
-                rowObject.MI = cell.value;
-                break;
-              case "Member Orig Eff Date":
-                rowObject.MEMBER_ORIG_EFF_DATE = cell.value;
-                break;
-              case "Member Eff Date":
-                rowObject.MEMBER_EFF_DATE = cell.value;
-                break;
-              case "Gender":
-                rowObject.GENDER = cell.value;
-                break;
-              case "Age":
-                rowObject.AGE = cell.value;
-                break;
-              case "Date Of Birth":
-                rowObject.DATE_OF_BIRTH = cell.value;
-                break;
-              case "Marital Status":
-                rowObject.MARITAL_STATUS = cell.value;
                 break;
               case "Relationship":
                 rowObject.RELATIONSHIP = standardizeRelation(
                   cell.value?.toString() || "",
                 );
                 break;
-              case "Class Code":
-                rowObject.CLASS_CODE = cell.value;
-                break;
-              case "Class Definition":
-                rowObject.CLASS_DEFINITION = cell.value;
-                break;
-              case "Room Type":
-                rowObject.ROOM_TYPE = cell.value;
-                break;
-              case "Room Board Max Amt":
-                rowObject.ROOM_BOARD_MAX_AMT = cell.value;
-                break;
-              case "Member Fee Plus Rider":
-                rowObject.MEMBER_FEE_PLUS_RIDER = cell.value;
-                break;
-              case "Dental Code":
-                rowObject.DENTAL_CODE = cell.value;
-                break;
-              case "Accidental Rider":
-                rowObject.ACCIDENTAL_RIDER = cell.value;
-                break;
-              case "Accidental Rider Coverage Amount":
-                rowObject.ACCIDENTAL_RIDER_COVERAGE_AMT = cell.value;
-                break;
-              case "Life Rider":
-                rowObject.LIFE_RIDER = cell.value;
-                break;
-              case "Life Rider Coverage Amount":
-                rowObject.LIFE_RIDER_COVERAGE_AMT = cell.value;
-                break;
-              case "Travel Assistance Program":
-                rowObject.TRAVEL_ASSISTANCE_PROGRAM = cell.value;
-                break;
-              case "TAP Coverage Amount":
-                rowObject.TAP_COVERAGE_AMT = cell.value;
-                break;
-              case "Pre-Existing Code":
-                rowObject.PRE_EXISTING_CODE = cell.value;
-                break;
-              case "Member Status":
-                rowObject.MEMBER_STATUS = cell.value;
-                break;
-              case "Payor":
-                rowObject.PAYOR = cell.value;
-                break;
-              case "Member Coverage":
-                rowObject.MEMBER_COVERAGE = cell.value;
-                break;
-              case "Remarks":
-                rowObject.REMARKS = cell.value;
-                break;
-              case "Account Type":
-                rowObject.ACCOUNT_TYPE = cell.value;
-                break;
-              case "PY":
-                rowObject.PY = cell.value;
-                break;
               default:
-                // fallback for any unmapped fields
-                const dbFieldName = headerName.toUpperCase().replace(/ /g, "_");
-                rowObject[dbFieldName] = cell.value;
                 break;
             }
           });
 
           // Set clientId before pushing
           rowObject.clientId = +clientId;
+          rowObject.datasetId = resolvedDataset.id;
+          rowObject.PY = resolvedDataset.title;
           worksheetData.push(rowObject);
         });
 
         try {
           // prisma transaction
           await prisma.$transaction(async (tx) => {
-            // delete all masterlist with the same PY
+            // Replace masterlist data for this dataset
             await tx.philcareMasterlist.deleteMany({
               where: {
                 clientId: +clientId,
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                PY: (worksheetData[0] as any)?.PY as string,
+                datasetId: resolvedDataset.id,
               },
             });
 
@@ -294,7 +162,8 @@ export async function POST(req: NextRequest) {
               where: {
                 clientId: +clientId,
                 insurerId: +insurerId,
-                year: year as string,
+                datasetId: resolvedDataset.id,
+                type: "masterlist",
               },
             });
 
@@ -303,15 +172,9 @@ export async function POST(req: NextRequest) {
               const typedData = data as any;
               const rowNumber = idx + 2;
 
-              if (!typedData.PY || !typedData.PY.toString().trim()) {
+              if (!typedData.SUB_OFFICE_NAME || !typedData.RELATIONSHIP) {
                 throw new Error(
-                  `Missing required field PY at row ${rowNumber}. Value: "${typedData.PY}"`,
-                );
-              }
-
-              if (typedData.PY !== (year as string)) {
-                throw new Error(
-                  `PY does not match the year at row ${rowNumber}. Column: PY. Value: "${typedData.PY}"`,
+                  `Missing required values at row ${rowNumber}. Required: Sub Office Name, Relationship`,
                 );
               }
 
@@ -322,248 +185,9 @@ export async function POST(req: NextRequest) {
                   );
                 }
               }
-
-              // Format date fields if they exist and are valid
-              // Handle DATE_OF_BIRTH - can be DateTime object or string
-              if (typedData.DATE_OF_BIRTH) {
-                let birthDate: DateTime;
-
-                if (typedData.DATE_OF_BIRTH instanceof Date) {
-                  // It's already a Date object from Excel
-                  birthDate = DateTime.fromISO(
-                    typedData.DATE_OF_BIRTH.toISOString(),
-                    {
-                      zone: "utc",
-                      setZone: false,
-                    },
-                  );
-                } else if (typeof typedData.DATE_OF_BIRTH === "string") {
-                  // It's a string, try to parse it (MM/DD/YYYY format)
-                  const dateStr = typedData.DATE_OF_BIRTH.toString();
-                  // Try MM/DD/YYYY format first
-                  birthDate = DateTime.fromFormat(dateStr, "MM/dd/yyyy", {
-                    zone: "utc",
-                  });
-
-                  if (!birthDate.isValid) {
-                    // Try other common formats
-                    birthDate = DateTime.fromFormat(dateStr, "yyyy-MM-dd", {
-                      zone: "utc",
-                    });
-                  }
-
-                  if (!birthDate.isValid) {
-                    birthDate = DateTime.fromISO(dateStr, { zone: "utc" });
-                  }
-                } else {
-                  throw new Error(
-                    `Invalid DATE_OF_BIRTH format in row ${
-                      idx + 1
-                    }. Expected Date object or string, got: ${typeof typedData.DATE_OF_BIRTH}. Value: ${
-                      typedData.DATE_OF_BIRTH
-                    }`,
-                  );
-                }
-
-                if (!birthDate.isValid) {
-                  throw new Error(
-                    `Invalid DATE_OF_BIRTH value in row ${
-                      idx + 1
-                    }. Could not parse: "${
-                      typedData.DATE_OF_BIRTH
-                    }". Expected formats: MM/DD/YYYY, YYYY-MM-DD, or ISO date.`,
-                  );
-                }
-
-                typedData.DATE_OF_BIRTH = birthDate.toFormat(
-                  "yyyy-MM-dd'T'HH:mm:ss'Z'",
-                );
-              }
-
-              // Handle MEMBER_ORIG_EFF_DATE
-              if (typedData.MEMBER_ORIG_EFF_DATE) {
-                let origEffDate: DateTime;
-
-                if (typedData.MEMBER_ORIG_EFF_DATE instanceof Date) {
-                  origEffDate = DateTime.fromISO(
-                    typedData.MEMBER_ORIG_EFF_DATE.toISOString(),
-                    {
-                      zone: "utc",
-                      setZone: false,
-                    },
-                  );
-                } else if (typeof typedData.MEMBER_ORIG_EFF_DATE === "string") {
-                  const dateStr = typedData.MEMBER_ORIG_EFF_DATE.toString();
-                  origEffDate = DateTime.fromFormat(dateStr, "MM/dd/yyyy", {
-                    zone: "utc",
-                  });
-
-                  if (!origEffDate.isValid) {
-                    origEffDate = DateTime.fromFormat(dateStr, "yyyy-MM-dd", {
-                      zone: "utc",
-                    });
-                  }
-
-                  if (!origEffDate.isValid) {
-                    origEffDate = DateTime.fromISO(dateStr, { zone: "utc" });
-                  }
-                } else {
-                  throw new Error(
-                    `Invalid MEMBER_ORIG_EFF_DATE format in row ${
-                      idx + 1
-                    }. Expected Date object or string, got: ${typeof typedData.MEMBER_ORIG_EFF_DATE}. Value: ${
-                      typedData.MEMBER_ORIG_EFF_DATE
-                    }`,
-                  );
-                }
-
-                if (!origEffDate.isValid) {
-                  throw new Error(
-                    `Invalid MEMBER_ORIG_EFF_DATE value in row ${
-                      idx + 1
-                    }. Could not parse: "${
-                      typedData.MEMBER_ORIG_EFF_DATE
-                    }". Expected formats: MM/DD/YYYY, YYYY-MM-DD, or ISO date.`,
-                  );
-                }
-
-                typedData.MEMBER_ORIG_EFF_DATE = origEffDate.toFormat(
-                  "yyyy-MM-dd'T'HH:mm:ss'Z'",
-                );
-              }
-
-              // Handle MEMBER_EFF_DATE
-              if (typedData.MEMBER_EFF_DATE) {
-                let effDate: DateTime;
-
-                if (typedData.MEMBER_EFF_DATE instanceof Date) {
-                  effDate = DateTime.fromISO(
-                    typedData.MEMBER_EFF_DATE.toISOString(),
-                    {
-                      zone: "utc",
-                      setZone: false,
-                    },
-                  );
-                } else if (typeof typedData.MEMBER_EFF_DATE === "string") {
-                  const dateStr = typedData.MEMBER_EFF_DATE.toString();
-                  effDate = DateTime.fromFormat(dateStr, "MM/dd/yyyy", {
-                    zone: "utc",
-                  });
-
-                  if (!effDate.isValid) {
-                    effDate = DateTime.fromFormat(dateStr, "yyyy-MM-dd", {
-                      zone: "utc",
-                    });
-                  }
-
-                  if (!effDate.isValid) {
-                    effDate = DateTime.fromISO(dateStr, { zone: "utc" });
-                  }
-                } else {
-                  throw new Error(
-                    `Invalid MEMBER_EFF_DATE format in row ${
-                      idx + 1
-                    }. Expected Date object or string, got: ${typeof typedData.MEMBER_EFF_DATE}. Value: ${
-                      typedData.MEMBER_EFF_DATE
-                    }`,
-                  );
-                }
-
-                if (!effDate.isValid) {
-                  throw new Error(
-                    `Invalid MEMBER_EFF_DATE value in row ${
-                      idx + 1
-                    }. Could not parse: "${
-                      typedData.MEMBER_EFF_DATE
-                    }". Expected formats: MM/DD/YYYY, YYYY-MM-DD, or ISO date.`,
-                  );
-                }
-
-                typedData.MEMBER_EFF_DATE = effDate.toFormat(
-                  "yyyy-MM-dd'T'HH:mm:ss'Z'",
-                );
-              }
-
-              // Convert numeric fields with better error handling
-              if (typedData.SUB_OFFICE_CODE) {
-                const subOfficeCode = parseInt(
-                  typedData.SUB_OFFICE_CODE.toString(),
-                );
-                if (isNaN(subOfficeCode)) {
-                  throw new Error(
-                    `Invalid SUB_OFFICE_CODE in row ${
-                      idx + 1
-                    }. Expected number, got: "${typedData.SUB_OFFICE_CODE}"`,
-                  );
-                }
-                typedData.SUB_OFFICE_CODE = subOfficeCode;
-              }
-
-              if (typedData.AGE) {
-                const age = parseInt(typedData.AGE.toString());
-                if (isNaN(age)) {
-                  throw new Error(
-                    `Invalid AGE in row ${idx + 1}. Expected number, got: "${
-                      typedData.AGE
-                    }"`,
-                  );
-                }
-                typedData.AGE = age;
-              }
-
-              if (typedData.CLASS_CODE) {
-                const classCode = parseInt(typedData.CLASS_CODE.toString());
-                if (isNaN(classCode)) {
-                  throw new Error(
-                    `Invalid CLASS_CODE in row ${
-                      idx + 1
-                    }. Expected number, got: "${typedData.CLASS_CODE}"`,
-                  );
-                }
-                typedData.CLASS_CODE = classCode;
-              }
-
-              if (typedData.PRE_EXISTING_CODE) {
-                const preExistingCode = parseInt(
-                  typedData.PRE_EXISTING_CODE.toString(),
-                );
-                if (isNaN(preExistingCode)) {
-                  throw new Error(
-                    `Invalid PRE_EXISTING_CODE in row ${
-                      idx + 1
-                    }. Expected number, got: "${typedData.PRE_EXISTING_CODE}"`,
-                  );
-                }
-                typedData.PRE_EXISTING_CODE = preExistingCode;
-              }
-
-              // Convert float fields with better error handling
-              const floatFields = [
-                "ROOM_BOARD_MAX_AMT",
-                "MEMBER_FEE_PLUS_RIDER",
-                "ACCIDENTAL_RIDER",
-                "ACCIDENTAL_RIDER_COVERAGE_AMT",
-                "LIFE_RIDER",
-                "LIFE_RIDER_COVERAGE_AMT",
-                "TRAVEL_ASSISTANCE_PROGRAM",
-                "TAP_COVERAGE_AMT",
-              ];
-
-              floatFields.forEach((field) => {
-                if (typedData[field]) {
-                  const floatValue = parseFloat(typedData[field].toString());
-                  if (isNaN(floatValue)) {
-                    throw new Error(
-                      `Invalid ${field} in row ${
-                        idx + 1
-                      }. Expected number, got: "${typedData[field]}"`,
-                    );
-                  }
-                  typedData[field] = floatValue;
-                }
-              });
-
               typedData.clientId = +clientId;
+              typedData.datasetId = resolvedDataset.id;
+              typedData.PY = resolvedDataset.title;
             });
 
             // insert all data to masterlist
@@ -576,7 +200,8 @@ export async function POST(req: NextRequest) {
               data: {
                 clientId: +clientId,
                 insurerId: +insurerId,
-                year: year as string,
+                datasetId: resolvedDataset.id,
+                year: resolvedDataset.title,
                 type: "masterlist",
               },
             });

@@ -3,6 +3,10 @@ import { prisma } from "@/lib/prisma";
 import { requireAuth, requirePermission } from "@/lib/auth-middleware";
 import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
 import { saveFile, readFile, deleteFile } from "@/lib/s3";
+import {
+  getDatasetSelection,
+  resolveDatasetForUpload,
+} from "@/lib/datasets";
 
 import { NextResponse, NextRequest } from "next/server";
 
@@ -30,11 +34,17 @@ export async function POST(req: NextRequest) {
     const formData = await req.formData();
     const file = formData.get("file") as File;
     const clientId = formData.get("id");
-    const year = formData.get("year");
     const insurerId = formData.get("insurerId");
-    if (!clientId || !year || !insurerId || !file) {
+    if (!clientId || !insurerId || !file) {
       return NextResponse.json({ error: "Missing required fields" });
     }
+    const { datasetId, datasetTitle } = getDatasetSelection(formData);
+    const resolvedDataset = await resolveDatasetForUpload({
+      clientId: +clientId,
+      insurerId: +insurerId,
+      datasetId,
+      datasetTitle,
+    });
 
     const company = await prisma.clients.findFirst({
       select: {
@@ -67,7 +77,7 @@ export async function POST(req: NextRequest) {
           "CARD_NO",
           "COMPANY",
         ];
-        const requiredColumns = ["PY", "COMPANY", "MEMBERTYPE", "REALDESC"];
+        const requiredColumns = ["COMPANY", "MEMBERTYPE", "REALDESC"];
         // get headers first (from 1st column)
         worksheet.getRow(1).eachCell({ includeEmpty: true }, (cell) => {
           let header = cell.value?.toString() || "";
@@ -136,11 +146,11 @@ export async function POST(req: NextRequest) {
         try {
           // prisma transaction
           await prisma.$transaction(async (tx) => {
-            // delete all masterlist with the same PY
+            // Replace only the masterlist data for this dataset.
             await tx.maxicareMasterlist.deleteMany({
               where: {
                 clientId: +clientId,
-                PY: (worksheetData[0] as any)?.PY as string,
+                datasetId: resolvedDataset.id,
               },
             });
 
@@ -148,25 +158,14 @@ export async function POST(req: NextRequest) {
               where: {
                 clientId: +clientId,
                 insurerId: +insurerId,
-                year: year as string,
+                datasetId: resolvedDataset.id,
+                type: "masterlist",
               },
             });
 
             worksheetData.forEach((data, idx) => {
               const typedData = data as any;
               const rowNumber = idx + 2;
-
-              if (!typedData.PY || !typedData.PY.toString().trim()) {
-                throw new Error(
-                  `Missing required field PY at row ${rowNumber}. Value: "${typedData.PY}"`,
-                );
-              }
-
-              if (typedData.PY !== (year as string)) {
-                throw new Error(
-                  `PY does not match the year at row ${rowNumber}. Column: PY. Value: "${typedData.PY}"`,
-                );
-              }
 
               if (
                 typedData.STATUS &&
@@ -206,6 +205,8 @@ export async function POST(req: NextRequest) {
               }
 
               typedData.clientId = +clientId;
+              typedData.datasetId = resolvedDataset.id;
+              typedData.PY = resolvedDataset.title;
             });
 
             // insert all data to masterlist
@@ -218,7 +219,8 @@ export async function POST(req: NextRequest) {
               data: {
                 clientId: +clientId,
                 insurerId: +insurerId,
-                year: year as string,
+                datasetId: resolvedDataset.id,
+                year: resolvedDataset.title,
                 type: "masterlist",
               },
             });

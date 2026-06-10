@@ -1,65 +1,46 @@
 import React, { useState } from "react";
-import type { Upload } from "@/types/Client/client";
-import { DateTime } from "luxon";
+import type { Dataset } from "@/types/Client/client";
 import Dropzone from "react-dropzone";
 import useFile from "@/hooks/useFile";
-import Swal from "sweetalert2";
 
 import "animate.css";
 
 type Props = {
-  masterlist: Upload[];
-  id?: number;
+  datasets: Dataset[];
   insurerId: number;
-  ref: any;
 };
 
-const UploadMasterlist = ({ masterlist, insurerId, id, ref }: Props) => {
-  console.log(masterlist);
-  const [selectedYear, setSelectedYear] = useState<{
-    year: string | "";
-    withData: boolean | false;
-  }>();
+const UploadMasterlist = ({ datasets, insurerId }: Props) => {
+  const [datasetTitle, setDatasetTitle] = useState("");
   const { file, setFile } = useFile();
   const fileTypes = ["xlsx", "xls", "csv"];
-
-  const currentYear = DateTime.now().year;
-  const yearList = Array.from({ length: 4 }, (_, i) => {
-    const yearEnd = currentYear - i;
-    const yearStart = yearEnd - 1;
-    const converted = yearStart + "-" + yearEnd.toString().substring(2, 4);
-    const withData = masterlist.find((data) => {
-      console.log("Checking year:", data.year, "against", converted);
-      return data.year === converted;
-    });
-    return {
-      year: converted,
-      withData: withData ? true : false,
-    };
-  });
+  const selectedDataset = datasets.find(
+    (dataset) => dataset.title === datasetTitle.trim()
+  );
 
   return (
     <div className="flex flex-col h-full w-full gap-3">
       <div className="mt-2">
-        <span className="">Select Year: </span>
-        <select
-          className="h-10 w-36"
-          onChange={async (e) => {
-            const selectedYear = yearList.find(
-              (year) => year.year === e.target.value
-            );
-            setSelectedYear(selectedYear);
-          }}
-          defaultValue={""}
-          id="masterlistYear"
-        >
-          <option value={""}>Select Year</option>
-          {yearList.map((value) => (
-            <option key={value.year} value={value.year}>
-              {value.year} {value.withData && "(with data)"}
-            </option>
+        <span className="">Dataset Title: </span>
+        <input
+          className="h-10 w-72 border rounded px-2"
+          list="masterlistDatasetOptions"
+          id="masterlistDatasetTitle"
+          value={datasetTitle}
+          onChange={(e) => setDatasetTitle(e.target.value)}
+          placeholder="Choose or type a title"
+        />
+        <input
+          id="masterlistDatasetId"
+          type="hidden"
+          value={selectedDataset?.id ?? ""}
+          readOnly
+        />
+        <datalist id="masterlistDatasetOptions">
+          {datasets.map((dataset) => (
+            <option key={dataset.id} value={dataset.title} />
           ))}
-        </select>
+        </datalist>
       </div>
       <div>
         <a href={`/api/protected/downloadMasterTemp?insurerId=${insurerId}`}>
@@ -89,7 +70,7 @@ const UploadMasterlist = ({ masterlist, insurerId, id, ref }: Props) => {
                   {file ? (
                     <div className="flex flex-col items-center">
                       <p className="text-gray-700 text-center cursor-default">
-                        File "{file.name}" is uploaded.
+                        File &quot;{file.name}&quot; is uploaded.
                       </p>
                       <p className="text-gray-500 text-center mt-2 text-sm">
                         You can drag/drop a new file or click here to replace

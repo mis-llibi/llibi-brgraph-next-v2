@@ -4,6 +4,10 @@ import { requireAuth, requirePermission } from "@/lib/auth-middleware";
 import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
 import { DateTime } from "luxon";
 import { saveFile, readFile, deleteFile } from "@/lib/s3";
+import {
+  getDatasetSelection,
+  resolveDatasetForUpload,
+} from "@/lib/datasets";
 
 import { NextResponse as res, NextRequest } from "next/server";
 
@@ -30,11 +34,17 @@ export async function POST(req: NextRequest) {
     const formData = await req.formData();
     const file = formData.get("file") as File;
     const clientId = formData.get("id");
-    const year = formData.get("year") as string;
     const insurerId = formData.get("insurerId");
-    if (!clientId || !year || !insurerId || !file) {
+    if (!clientId || !insurerId || !file) {
       return res.json({ error: "Missing required fields" });
     }
+    const { datasetId, datasetTitle } = getDatasetSelection(formData);
+    const resolvedDataset = await resolveDatasetForUpload({
+      clientId: +clientId,
+      insurerId: +insurerId,
+      datasetId,
+      datasetTitle,
+    });
 
     const company = await prisma.clients.findUnique({
       select: {
@@ -71,7 +81,6 @@ export async function POST(req: NextRequest) {
           "ICD10_Code",
         ];
         const requiredColumns = [
-          "PY",
           "ICD10_Desc",
           "Coverage_Type",
           "Admission_Date",
@@ -89,13 +98,6 @@ export async function POST(req: NextRequest) {
         });
 
         console.log(headers);
-
-        const yearStartDate = DateTime.fromFormat(year, "yyyy")
-          .startOf("year")
-          .toFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
-        const yearEndDate = DateTime.fromFormat(year, "yyyy")
-          .endOf("year")
-          .toFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
 
         // Validate that all required columns are present
         const missingColumns = requiredColumns.filter(
@@ -173,10 +175,7 @@ export async function POST(req: NextRequest) {
             await tx.maxicare.deleteMany({
               where: {
                 clientId: +clientId,
-                Admission_Date: {
-                  gte: yearStartDate,
-                  lte: yearEndDate,
-                },
+                datasetId: resolvedDataset.id,
               },
             });
 
@@ -184,7 +183,8 @@ export async function POST(req: NextRequest) {
               where: {
                 clientId: +clientId,
                 insurerId: +insurerId,
-                year: year,
+                datasetId: resolvedDataset.id,
+                type: "utilization",
               },
             });
 
@@ -220,18 +220,6 @@ export async function POST(req: NextRequest) {
                   },
                 );
 
-                // check if Admission_Date is within the year
-                if (
-                  admissionDate < DateTime.fromISO(yearStartDate) ||
-                  admissionDate > DateTime.fromISO(yearEndDate)
-                ) {
-                  throw new Error(
-                    `Admission Date is not within the year. Check row ${
-                      idx + 1
-                    }'s Admission Date`,
-                  );
-                }
-
                 if (!admissionDate.isValid) {
                   throw new Error(
                     `Invalid Admission Date. Check row ${
@@ -264,6 +252,8 @@ export async function POST(req: NextRequest) {
                 }
 
                 typedData.clientId = +clientId;
+                typedData.datasetId = resolvedDataset.id;
+                typedData.PY = resolvedDataset.title;
               } catch (error) {
                 throw new Error(
                   `Row ${idx + 2} error: ${error instanceof Error ? error.message : String(error)}`,
@@ -289,7 +279,8 @@ export async function POST(req: NextRequest) {
               data: {
                 clientId: +clientId,
                 insurerId: +insurerId,
-                year: year,
+                datasetId: resolvedDataset.id,
+                year: resolvedDataset.title,
                 months: months[0] + "-" + months[months.length - 1],
                 type: "utilization",
               },

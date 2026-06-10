@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import type { ClientData } from "@/types/Client/client";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
@@ -17,8 +17,6 @@ type Props = {
 const ClientHeader = ({ client }: Props) => {
   const swalReact = withReactContent(Swal);
 
-  const masterListUploadRef = useRef<HTMLInputElement>(null);
-  const utilizationUploadRef = useRef<HTMLInputElement>(null);
   const queryClient = useQueryClient();
 
   console.log(client);
@@ -29,8 +27,7 @@ const ClientHeader = ({ client }: Props) => {
       html: (
         <UploadMasterlist
           insurerId={client.insurer_id}
-          masterlist={client.masterlist || []}
-          ref={masterListUploadRef}
+          datasets={client.datasets || []}
         />
       ),
       showConfirmButton: true,
@@ -42,16 +39,25 @@ const ClientHeader = ({ client }: Props) => {
         const data: HTMLInputElement | null | undefined = swalReact
           .getPopup()
           ?.querySelector("#masterFile");
-        const year: HTMLSelectElement | null | undefined = swalReact
+        const datasetTitleInput: HTMLInputElement | null | undefined = swalReact
           ?.getPopup()
-          ?.querySelector("#masterlistYear");
+          ?.querySelector("#masterlistDatasetTitle");
+        const datasetIdInput: HTMLInputElement | null | undefined = swalReact
+          ?.getPopup()
+          ?.querySelector("#masterlistDatasetId");
 
-        if (data && data.files && data.files.length > 0 && year) {
+        const datasetTitle = datasetTitleInput?.value.trim() || "";
+        const datasetId = datasetIdInput?.value
+          ? Number(datasetIdInput.value)
+          : undefined;
+
+        if (data && data.files && data.files.length > 0 && datasetTitle) {
           await UploadMasterlistFile({
             file: data.files[0],
             id: client.id,
-            year: year.value,
             insurerId: client.insurer_id,
+            datasetId,
+            datasetTitle: datasetId ? undefined : datasetTitle,
           });
           await queryClient.invalidateQueries({ queryKey: ["client"] });
           await queryClient.refetchQueries({ queryKey: ["client"] });
@@ -84,8 +90,7 @@ const ClientHeader = ({ client }: Props) => {
       html: (
         <UploadUtilization
           insurerId={client.insurer_id}
-          utilization={client.utilization || []}
-          ref={utilizationUploadRef}
+          datasets={client.datasets || []}
         />
       ),
       showConfirmButton: true,
@@ -97,16 +102,25 @@ const ClientHeader = ({ client }: Props) => {
         const data: HTMLInputElement | null | undefined = swalReact
           .getPopup()
           ?.querySelector("#utilizationFile");
-        const year: HTMLSelectElement | null | undefined = swalReact
+        const datasetTitleInput: HTMLInputElement | null | undefined = swalReact
           ?.getPopup()
-          ?.querySelector("#utilizationYear");
+          ?.querySelector("#utilizationDatasetTitle");
+        const datasetIdInput: HTMLInputElement | null | undefined = swalReact
+          ?.getPopup()
+          ?.querySelector("#utilizationDatasetId");
 
-        if (data && data.files && data.files.length > 0 && year) {
+        const datasetTitle = datasetTitleInput?.value.trim() || "";
+        const datasetId = datasetIdInput?.value
+          ? Number(datasetIdInput.value)
+          : undefined;
+
+        if (data && data.files && data.files.length > 0 && datasetTitle) {
           await UploadUtilizationFile({
             file: data.files[0],
             id: client.id,
-            year: year.value,
             insurerId: client.insurer_id,
+            datasetId,
+            datasetTitle: datasetId ? undefined : datasetTitle,
           });
           await queryClient.invalidateQueries({ queryKey: ["client"] });
           await queryClient.refetchQueries({ queryKey: ["client"] });
