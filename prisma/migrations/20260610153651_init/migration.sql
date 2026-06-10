@@ -202,4 +202,3 @@ ALTER TABLE `utilizationEntries` ADD CONSTRAINT `utilizationEntries_datasetId_fk
 
 -- AddForeignKey
 ALTER TABLE `customIllnesses` ADD CONSTRAINT `customIllnesses_clientId_fkey` FOREIGN KEY (`clientId`) REFERENCES `clients`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
-
