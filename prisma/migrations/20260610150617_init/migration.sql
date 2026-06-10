@@ -13,6 +13,10 @@ CREATE TABLE `user` (
     `canRemove` BOOLEAN NOT NULL DEFAULT false,
     `canEdit` BOOLEAN NOT NULL DEFAULT false,
     `superAdmin` BOOLEAN NOT NULL DEFAULT false,
+    `isActive` BOOLEAN NOT NULL DEFAULT true,
+    `mustChangePassword` BOOLEAN NOT NULL DEFAULT false,
+    `lastLogin` DATETIME(3) NULL,
+    `createdBy` INTEGER NULL,
     `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     `updatedAt` DATETIME(3) NOT NULL,
 
@@ -26,6 +30,22 @@ CREATE TABLE `insurers` (
     `name` VARCHAR(191) NOT NULL,
 
     UNIQUE INDEX `insurers_name_key`(`name`),
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
+CREATE TABLE `datasets` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `clientId` INTEGER NOT NULL,
+    `insurerId` INTEGER NOT NULL,
+    `title` VARCHAR(191) NOT NULL,
+    `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `updatedAt` DATETIME(3) NOT NULL,
+
+    INDEX `datasets_clientId_idx`(`clientId`),
+    INDEX `datasets_insurerId_idx`(`insurerId`),
+    INDEX `datasets_title_idx`(`title`),
+    UNIQUE INDEX `datasets_clientId_title_key`(`clientId`, `title`),
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
@@ -44,12 +64,14 @@ CREATE TABLE `uploads` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `clientId` INTEGER NOT NULL,
     `insurerId` INTEGER NOT NULL,
+    `datasetId` INTEGER NULL,
     `year` VARCHAR(191) NOT NULL,
     `months` VARCHAR(191) NULL,
     `type` VARCHAR(191) NOT NULL,
     `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     `updatedAt` DATETIME(3) NOT NULL,
 
+    INDEX `uploads_datasetId_idx`(`datasetId`),
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
@@ -57,6 +79,7 @@ CREATE TABLE `uploads` (
 CREATE TABLE `decks` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(191) NOT NULL,
+    `key` VARCHAR(191) NOT NULL,
     `description` VARCHAR(191) NOT NULL,
     `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     `updatedAt` DATETIME(3) NOT NULL,
@@ -69,6 +92,7 @@ CREATE TABLE `decks` (
 CREATE TABLE `intellicareMasterlist` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `clientId` INTEGER NOT NULL,
+    `datasetId` INTEGER NULL,
     `PY` VARCHAR(191) NULL,
     `ACCOUNT_NO` VARCHAR(191) NULL,
     `STATUS` CHAR(1) NULL,
@@ -81,10 +105,11 @@ CREATE TABLE `intellicareMasterlist` (
     `RELATION` VARCHAR(191) NULL,
     `EE_ID` VARCHAR(191) NULL,
     `CARD_NO` VARCHAR(191) NULL,
-    `COMPANY` VARCHAR(191) NULL,
+    `COMPANY` VARCHAR(500) NULL,
     `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     `updatedAt` DATETIME(3) NOT NULL,
 
+    INDEX `intellicareMasterlist_datasetId_idx`(`datasetId`),
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
@@ -92,6 +117,7 @@ CREATE TABLE `intellicareMasterlist` (
 CREATE TABLE `maxicareMasterlist` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `clientId` INTEGER NOT NULL,
+    `datasetId` INTEGER NULL,
     `PY` VARCHAR(191) NULL,
     `ACCOUNT_NO` VARCHAR(191) NULL,
     `STATUS` CHAR(1) NULL,
@@ -100,10 +126,26 @@ CREATE TABLE `maxicareMasterlist` (
     `RELATION` VARCHAR(191) NULL,
     `EE_ID` VARCHAR(191) NULL,
     `CARD_NO` VARCHAR(191) NULL,
-    `COMPANY` VARCHAR(191) NULL,
+    `COMPANY` VARCHAR(500) NULL,
     `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     `updatedAt` DATETIME(3) NOT NULL,
 
+    INDEX `maxicareMasterlist_datasetId_idx`(`datasetId`),
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
+CREATE TABLE `philcareMasterlist` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `clientId` INTEGER NOT NULL,
+    `datasetId` INTEGER NULL,
+    `PY` VARCHAR(191) NULL,
+    `SUB_OFFICE_NAME` VARCHAR(500) NULL,
+    `RELATIONSHIP` VARCHAR(191) NULL,
+    `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `updatedAt` DATETIME(3) NOT NULL,
+
+    INDEX `philcareMasterlist_datasetId_idx`(`datasetId`),
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
@@ -111,15 +153,16 @@ CREATE TABLE `maxicareMasterlist` (
 CREATE TABLE `intellicare` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `clientId` INTEGER NOT NULL,
+    `datasetId` INTEGER NULL,
     `PY` VARCHAR(191) NOT NULL,
-    `Company` VARCHAR(191) NULL,
+    `Company` VARCHAR(500) NULL,
     `Member_Account` VARCHAR(191) NULL,
     `Member_Type` VARCHAR(191) NULL,
     `ICD_10_Code` VARCHAR(191) NULL,
-    `Diagnosis` VARCHAR(191) NULL,
+    `Diagnosis` VARCHAR(1000) NULL,
     `Claim_Type` VARCHAR(191) NULL,
     `Admission_Date` DATETIME(3) NULL,
-    `Provider_Name` VARCHAR(191) NULL,
+    `Provider_Name` VARCHAR(500) NULL,
     `Provider_Type` VARCHAR(191) NULL,
     `Approved_Claim_Amount` DOUBLE NULL,
     `Class_Plan_Level` VARCHAR(191) NULL,
@@ -129,6 +172,7 @@ CREATE TABLE `intellicare` (
     `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     `updatedAt` DATETIME(3) NOT NULL,
 
+    INDEX `intellicare_datasetId_idx`(`datasetId`),
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
@@ -136,21 +180,47 @@ CREATE TABLE `intellicare` (
 CREATE TABLE `maxicare` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `clientId` INTEGER NOT NULL,
+    `datasetId` INTEGER NULL,
     `PY` VARCHAR(191) NOT NULL,
-    `Company` VARCHAR(191) NULL,
+    `Company` VARCHAR(500) NULL,
     `Member_Account` VARCHAR(191) NULL,
     `Member_Type` VARCHAR(191) NULL,
     `ICD_10_Code` VARCHAR(191) NULL,
-    `Diagnosis` VARCHAR(191) NULL,
+    `Diagnosis` VARCHAR(1000) NULL,
     `Claim_Type` VARCHAR(191) NULL,
     `Admission_Date` DATETIME(3) NULL,
-    `Provider_Name` VARCHAR(191) NULL,
+    `Provider_Name` VARCHAR(500) NULL,
     `Provider_Type` VARCHAR(191) NULL,
     `Approved_Claim_Amount` DOUBLE NULL,
     `Relationship` VARCHAR(191) NULL,
     `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     `updatedAt` DATETIME(3) NOT NULL,
 
+    INDEX `maxicare_datasetId_idx`(`datasetId`),
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
+CREATE TABLE `philcare` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `clientId` INTEGER NOT NULL,
+    `datasetId` INTEGER NULL,
+    `PY` VARCHAR(191) NOT NULL,
+    `Company` VARCHAR(500) NULL,
+    `Member_Account` VARCHAR(191) NULL,
+    `Member_Type` VARCHAR(191) NULL,
+    `Diagnosis` VARCHAR(1000) NULL,
+    `Claim_Type` VARCHAR(191) NULL,
+    `Admission_Date` DATETIME(3) NULL,
+    `Provider_Name` VARCHAR(500) NULL,
+    `Approved_Claim_Amount` DOUBLE NULL,
+    `Relationship` VARCHAR(191) NULL,
+    `LOS` INTEGER NULL,
+    `NR_R` VARCHAR(191) NULL,
+    `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `updatedAt` DATETIME(3) NOT NULL,
+
+    INDEX `philcare_datasetId_idx`(`datasetId`),
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
@@ -161,7 +231,7 @@ CREATE TABLE `customIllnesses` (
     `py` VARCHAR(191) NULL,
     `member_type` VARCHAR(191) NULL,
     `icd_10_code` VARCHAR(191) NULL,
-    `diagnosis` VARCHAR(191) NULL,
+    `diagnosis` VARCHAR(1000) NULL,
     `claim_amount` INTEGER NULL,
     `percentage_to_total_amount` DECIMAL(8, 2) NULL,
     `claim_count` INTEGER NULL,
@@ -174,6 +244,15 @@ CREATE TABLE `customIllnesses` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- AddForeignKey
+ALTER TABLE `user` ADD CONSTRAINT `user_createdBy_fkey` FOREIGN KEY (`createdBy`) REFERENCES `user`(`id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE `datasets` ADD CONSTRAINT `datasets_clientId_fkey` FOREIGN KEY (`clientId`) REFERENCES `clients`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE `datasets` ADD CONSTRAINT `datasets_insurerId_fkey` FOREIGN KEY (`insurerId`) REFERENCES `insurers`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
 ALTER TABLE `clients` ADD CONSTRAINT `clients_insurer_id_fkey` FOREIGN KEY (`insurer_id`) REFERENCES `insurers`(`id`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
@@ -183,19 +262,46 @@ ALTER TABLE `uploads` ADD CONSTRAINT `uploads_clientId_fkey` FOREIGN KEY (`clien
 ALTER TABLE `uploads` ADD CONSTRAINT `uploads_insurerId_fkey` FOREIGN KEY (`insurerId`) REFERENCES `insurers`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
+ALTER TABLE `uploads` ADD CONSTRAINT `uploads_datasetId_fkey` FOREIGN KEY (`datasetId`) REFERENCES `datasets`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
 ALTER TABLE `decks` ADD CONSTRAINT `decks_clientId_fkey` FOREIGN KEY (`clientId`) REFERENCES `clients`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE `intellicareMasterlist` ADD CONSTRAINT `intellicareMasterlist_clientId_fkey` FOREIGN KEY (`clientId`) REFERENCES `clients`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
+ALTER TABLE `intellicareMasterlist` ADD CONSTRAINT `intellicareMasterlist_datasetId_fkey` FOREIGN KEY (`datasetId`) REFERENCES `datasets`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
 ALTER TABLE `maxicareMasterlist` ADD CONSTRAINT `maxicareMasterlist_clientId_fkey` FOREIGN KEY (`clientId`) REFERENCES `clients`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE `maxicareMasterlist` ADD CONSTRAINT `maxicareMasterlist_datasetId_fkey` FOREIGN KEY (`datasetId`) REFERENCES `datasets`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE `philcareMasterlist` ADD CONSTRAINT `philcareMasterlist_clientId_fkey` FOREIGN KEY (`clientId`) REFERENCES `clients`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE `philcareMasterlist` ADD CONSTRAINT `philcareMasterlist_datasetId_fkey` FOREIGN KEY (`datasetId`) REFERENCES `datasets`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE `intellicare` ADD CONSTRAINT `intellicare_clientId_fkey` FOREIGN KEY (`clientId`) REFERENCES `clients`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
+ALTER TABLE `intellicare` ADD CONSTRAINT `intellicare_datasetId_fkey` FOREIGN KEY (`datasetId`) REFERENCES `datasets`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
 ALTER TABLE `maxicare` ADD CONSTRAINT `maxicare_clientId_fkey` FOREIGN KEY (`clientId`) REFERENCES `clients`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE `maxicare` ADD CONSTRAINT `maxicare_datasetId_fkey` FOREIGN KEY (`datasetId`) REFERENCES `datasets`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE `philcare` ADD CONSTRAINT `philcare_clientId_fkey` FOREIGN KEY (`clientId`) REFERENCES `clients`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE `philcare` ADD CONSTRAINT `philcare_datasetId_fkey` FOREIGN KEY (`datasetId`) REFERENCES `datasets`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE `customIllnesses` ADD CONSTRAINT `customIllnesses_clientId_fkey` FOREIGN KEY (`clientId`) REFERENCES `clients`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
