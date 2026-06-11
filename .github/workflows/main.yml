@@ -7,6 +7,24 @@ on:
 jobs:
   lint-and-build:
     runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: mysql://test:test@127.0.0.1:3307/llibi_brgraph_test
+      SHADOW_DATABASE_URL: mysql://test:test@127.0.0.1:3307/llibi_brgraph_shadow
+      AUTH_SECRET: test-auth-secret
+      NEXTAUTH_SECRET: test-auth-secret
+      NEXTAUTH_URL: http://127.0.0.1:4000
+      RESEND_API_KEY: test-resend-key
+      SMTP_HOST: localhost
+      SMTP_PORT: "1025"
+      SMTP_USER: test
+      SMTP_FROM_NAME: LLIBI Tests
+      SMTP_FROM_EMAIL: tests@example.com
+      DO_LLIBI_ACCESS_KEY_ID: test
+      DO_LLIBI_SECRET_ACCESS_KEY: test
+      DO_LLIBI_DEFAULT_REGION: us-east-1
+      DO_LLIBI_ENDPOINT: http://localhost:9000
+      DO_LLIBI_BUCKET: test-bucket
+      DO_LLIBI_CDN_ENDPOINT: http://localhost:9000/test-bucket
 
     steps:
       - name: ⬇️ Checkout code
@@ -19,10 +37,13 @@ jobs:
           cache: "npm"
 
       - name: 📦 Install dependencies
-        run: npm install --frozen-lockfile
+        run: npm ci
 
       - name: ✅ Lint (errors only)
-        run: npm lint
+        run: npm run lint:errors
+
+      - name: 🧪 Unit tests
+        run: npm run test:unit
 
       - name: 🔧 Build project
-        run: npm build
+        run: npm run build
