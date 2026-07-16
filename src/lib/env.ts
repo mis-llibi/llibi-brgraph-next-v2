@@ -13,4 +13,6 @@ export const env = {
   DO_SPACES_ENDPOINT: getEnvVar("DO_LLIBI_ENDPOINT"),
   BUCKET_NAME: getEnvVar("DO_LLIBI_BUCKET"),
   CDN_URL: getEnvVar("DO_LLIBI_CDN_ENDPOINT"),
+  S3_FORCE_PATH_STYLE: process.env.S3_FORCE_PATH_STYLE === "true",
+  S3_USE_PUBLIC_READ_ACL: process.env.S3_USE_PUBLIC_READ_ACL !== "false",
 };

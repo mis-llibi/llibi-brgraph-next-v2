@@ -25,7 +25,7 @@ export const filterClients = (
   return clients
     .filter((client) => {
       const clientName = client.name.toLowerCase();
-      return clientName.includes(searchTerm) && clientName !== searchTerm;
+      return clientName.includes(searchTerm);
     })
     .map((client) => ({
       ...client,
@@ -45,7 +45,9 @@ const calculateMatchScore = (
   const name = clientName.toLowerCase();
   const term = searchTerm.toLowerCase();
 
-  // Exact match at start gets highest score
+  if (name === term) return 120;
+
+  // Match at start gets the next-highest score
   if (name.startsWith(term)) return 100;
 
   // Word boundary match gets high score

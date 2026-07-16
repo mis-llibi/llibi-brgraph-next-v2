@@ -155,6 +155,7 @@ const Page = () => {
           rows: cleanedRows,
         });
 
+        await fetchCustomIllnesses();
         alert("Import complete");
         if (fileInputRef.current) {
           fileInputRef.current.value = "";

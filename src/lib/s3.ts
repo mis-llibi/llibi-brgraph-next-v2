@@ -12,11 +12,16 @@ import { Workbook } from "exceljs";
 export const s3 = new S3Client({
   region: env.DO_SPACES_REGION,
   endpoint: env.DO_SPACES_ENDPOINT,
+  forcePathStyle: env.S3_FORCE_PATH_STYLE,
   credentials: {
     accessKeyId: env.DO_SPACES_ACCESS_KEY,
     secretAccessKey: env.DO_SPACES_SECRET_KEY,
   },
 });
+
+const publicReadAcl = env.S3_USE_PUBLIC_READ_ACL
+  ? { ACL: "public-read" as const }
+  : {};
 
 export async function saveFile(file: File) {
   const buffer = Buffer.from(await file.arrayBuffer());
@@ -26,7 +31,7 @@ export async function saveFile(file: File) {
       Bucket: env.BUCKET_NAME,
       Key: key,
       Body: buffer,
-      ACL: "public-read",
+      ...publicReadAcl,
       ContentType: file.type,
     })
   );
@@ -62,7 +67,7 @@ export async function uploadDeck(file: File, clientId: string) {
       Bucket: env.BUCKET_NAME,
       Key: key,
       Body: buffer,
-      ACL: "public-read",
+      ...publicReadAcl,
       ContentType: file.type,
     })
   );

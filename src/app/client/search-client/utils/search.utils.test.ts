@@ -24,7 +24,7 @@ describe("search utilities", () => {
     });
   });
 
-  it("filters partial matches and excludes exact matches", () => {
+  it("includes exact matches and ranks them ahead of partial matches", () => {
     const clients: ClientSearchResult[] = [
       { id: 1, name: "Acme Holdings" },
       { id: 2, name: "North Acme" },
@@ -33,6 +33,7 @@ describe("search utilities", () => {
     ];
 
     expect(filterClients(clients, "acme")).toEqual([
+      { id: 3, name: "Acme", matchScore: 120 },
       { id: 1, name: "Acme Holdings", matchScore: 100 },
       { id: 2, name: "North Acme", matchScore: 80 },
     ]);
