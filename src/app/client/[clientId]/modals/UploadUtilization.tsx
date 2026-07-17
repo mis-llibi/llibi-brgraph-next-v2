@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import type { Dataset } from "@/types/Client/client";
 import Dropzone from "react-dropzone";
 import useFile from "@/hooks/useFile";
+import DatasetTitleCombobox from "./DatasetTitleCombobox";
 
 import "animate.css";
 
@@ -11,36 +12,17 @@ type Props = {
 };
 
 const UploadUtilization = ({ datasets, insurerId }: Props) => {
-  const [datasetTitle, setDatasetTitle] = useState("");
   const { file, setFile } = useFile();
   const fileTypes = ["xlsx", "xls", "csv"];
-  const selectedDataset = datasets.find(
-    (dataset) => dataset.title === datasetTitle.trim()
-  );
 
   return (
     <div className="flex flex-col h-full w-full gap-3">
       <div className="mt-2">
-        <span className="">Dataset Title: </span>
-        <input
-          className="h-10 w-72 border rounded px-2"
-          list="utilizationDatasetOptions"
-          id="utilizationDatasetTitle"
-          value={datasetTitle}
-          onChange={(e) => setDatasetTitle(e.target.value)}
-          placeholder="Choose or type a title"
+        <DatasetTitleCombobox
+          datasets={datasets}
+          inputId="utilizationDatasetTitle"
+          hiddenInputId="utilizationDatasetId"
         />
-        <input
-          id="utilizationDatasetId"
-          type="hidden"
-          value={selectedDataset?.id ?? ""}
-          readOnly
-        />
-        <datalist id="utilizationDatasetOptions">
-          {datasets.map((dataset) => (
-            <option key={dataset.id} value={dataset.title} />
-          ))}
-        </datalist>
       </div>
       <div>
         <a href={`/api/protected/downloadUtilTemp?insurerId=${insurerId}`}>
